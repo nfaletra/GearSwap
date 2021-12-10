@@ -45,26 +45,26 @@
 
 -- Initialization function for this job file.
 function get_sets()
-    -- Load and initialize the include file.
-    include('Sel-Include.lua')
+	-- Load and initialize the include file.
+	include('Sel-Include.lua')
 end
 
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
 
-    state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
-    state.Buff['Hundred Fists'] = buffactive['Hundred Fists'] or false
+	state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
+	state.Buff['Hundred Fists'] = buffactive['Hundred Fists'] or false
 	state.Buff['Impetus'] = buffactive['Impetus'] or false
 	state.Buff['Boost'] = buffactive['Boost'] or false
 	
 	state.AutoBoost = M(false, 'Auto Boost Mode')
 	
 	autows = 'Victory Smite'
-	autofood = 'Soy Ramen'
+	autofood = 'Sublime Sushi'
 	
-    info.impetus_hit_count = 0
-    --windower.raw_register_event('action', on_action_for_impetus)
+	info.impetus_hit_count = 0
+	--windower.raw_register_event('action', on_action_for_impetus)
 	update_melee_groups()
 	init_job_states({"Capacity","AutoRuneMode","AutoTrustMode","AutoWSMode","AutoShadowMode","AutoFoodMode","AutoStunMode","AutoDefenseMode",},{"AutoBuffMode","AutoSambaMode","Weapons","OffenseMode","WeaponskillMode","IdleMode","Passive","RuneElement","TreasureMode",})
 end
@@ -107,7 +107,7 @@ function job_post_precast(spell, spellMap, eventArgs)
 	if spell.type == 'WeaponSkill' then
 		local WSset = standardize_set(get_precast_set(spell, spellMap))
 		local wsacc = check_ws_acc()
-		
+
 		if (WSset.ear1 == "Moonshade Earring" or WSset.ear2 == "Moonshade Earring") then
 			-- Replace Moonshade Earring if we're at cap TP
 			if get_effective_player_tp(spell, WSset) > 3200 then
@@ -119,8 +119,8 @@ function job_post_precast(spell, spellMap, eventArgs)
 				end
 			end
 		end
-		
-        if state.Buff['Impetus'] and (spell.english == "Ascetic's Fury" or spell.english == "Victory Smite") then
+
+		if state.Buff['Impetus'] and (spell.english == "Ascetic's Fury" or spell.english == "Victory Smite") then
 			if sets.buff.ImpetusWS then
 				equip(sets.buff.ImpetusWS)
 			else
@@ -169,24 +169,24 @@ function job_customize_melee_set(meleeSet)
 		meleeSet = set_combine(meleeSet, sets.buff.Boost)
 	end
 	
-    return meleeSet
+	return meleeSet
 end
 
 function job_customize_defense_set(defenseSet)
-    return defenseSet
+	return defenseSet
 end
 
 function job_customize_idle_set(idleSet)
-    if state.Buff['Boost'] and sets.buff.Boost then
-        idleSet = set_combine(idleSet, sets.buff.Boost)
-    end
+	if state.Buff['Boost'] and sets.buff.Boost then
+		idleSet = set_combine(idleSet, sets.buff.Boost)
+	end
 	
-    return idleSet
+	return idleSet
 end
 
 -- Called by the 'update' self-command.
 function job_update(cmdParams, eventArgs)
-    update_melee_groups()
+	supdate_melee_groups()
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -308,17 +308,17 @@ function check_buff()
 end
 
 function update_melee_groups()
-    classes.CustomMeleeGroups:clear()
+	classes.CustomMeleeGroups:clear()
 
 	if buffactive.footwork and not buffactive['hundred fists'] then
-        classes.CustomMeleeGroups:append('Footwork')
-    end
+		classes.CustomMeleeGroups:append('Footwork')
+	end
 	
 	if player.equipment.main and player.equipment.main == "Glanzfaust" and state.Buff['Aftermath: Lv.3'] then
 		classes.CustomMeleeGroups:append('AM')
 	end
-	
-    if state.Buff['Hundred Fists'] then
-        classes.CustomMeleeGroups:append('HF')
-    end
+
+	if state.Buff['Hundred Fists'] then
+		classes.CustomMeleeGroups:append('HF')
+	end
 end
