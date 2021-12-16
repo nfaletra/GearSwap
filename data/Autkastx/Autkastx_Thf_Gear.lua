@@ -209,8 +209,8 @@ function init_gear_sets()
 	sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
-	sets.MaxTP = {ear1="Sherida Earring",ear2="Ishvara Earring"}
-	sets.AccMaxTP = {ear1="Sherida Earring +1",ear2="Mache Earring +1"}
+	sets.MaxTP = { ear1="Sherida Earring",ear2="Ishvara Earring" }
+	sets.AccMaxTP = { ear1="Sherida Earring +1",ear2="Mache Earring +1" }
 
 	--------------------------------------
 	-- Midcast sets
@@ -370,5 +370,7 @@ end
 
 state.Weapons:options('Aeneas','Aeolian','Savage','AccSavage','AccAeneas','ProcWeapons','Evisceration','Throwing','SwordThrowing','Bow')
 
-autows_list = {['Aeneas']="Rudra's Storm",['Aeolian']='Aeolian Edge',['Savage']='Savage Blade',['AccSavage']='Savage Blade',
-	['AccAeneas']='Savage Blade',['ProcWeapons']='Wasp Sting'}
+autows_list = {
+	['Aeneas']="Rudra's Storm",['Aeolian']='Aeolian Edge',['Savage']='Savage Blade',['AccSavage']='Savage Blade',
+	['AccAeneas']='Savage Blade',['ProcWeapons']='Wasp Sting'
+}

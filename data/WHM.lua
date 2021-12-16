@@ -44,15 +44,14 @@
 
 -- Initialization function for this job file.
 function get_sets()    
-    -- Load and initialize the include file.
-    include('Sel-Include.lua')
+	-- Load and initialize the include file.
+	include('Sel-Include.lua')
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
-
-    state.Buff['Afflatus Solace'] = buffactive['Afflatus Solace'] or false
-    state.Buff['Afflatus Misery'] = buffactive['Afflatus Misery'] or false
+	state.Buff['Afflatus Solace'] = buffactive['Afflatus Solace'] or false
+	state.Buff['Afflatus Misery'] = buffactive['Afflatus Misery'] or false
 	state.Buff['Divine Caress'] = buffactive['Divine Caress'] or false
 	
 	state.AutoCaress = M(true, 'Auto Caress Mode')
@@ -127,7 +126,7 @@ function job_setup()
 			else
 				add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
 			end
-		elseif missingHP < 900 then
+		elseif missingHP < 1200 then
 			if spell_recasts[3] < spell_latency then
 				windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
 			elseif spell_recasts[4] < spell_latency then
@@ -137,7 +136,7 @@ function job_setup()
 			else
 				add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
 			end
-		elseif missingHP < 1400 then
+		elseif missingHP < 2000 then
 			if spell_recasts[5] < spell_latency then
 				windower.chat.input('/ma "Cure V" '..cureTarget.id..'')
 			elseif spell_recasts[4] < spell_latency then
@@ -180,14 +179,20 @@ function job_pretarget(spell, spellMap, eventArgs)
 end
 
 function job_precast(spell, spellMap, eventArgs)
-
-	if spell.action_type == 'Magic' then
+	if spell.english == 'Arise' and player.sub_job == 'SCH' then
+		if not buffactive['Celerity'] then
+			eventArgs.cancel = true
+			windower.chat.input('/ja Celerity <me>')
+			windower.chat.input:schedule(1, '/ma "'..spell.english..'" '..spell.target.raw..'')
+			return
+		end
+	elseif spell.action_type == 'Magic' then
 		if spellMap == 'StatusRemoval' and not (spell.english == "Erase" or spell.english == "Esuna" or spell.english == "Sacrifice") then
 			local abil_recasts = windower.ffxi.get_ability_recasts()
 			if abil_recasts[32] < latency and not silent_check_amnesia() and state.AutoCaress.value then
 				eventArgs.cancel = true
 				windower.chat.input('/ja "Divine Caress" <me>')
-				windower.chat.input:schedule(1,'/ma "'..spell.english..'" '..spell.target.raw..'')
+				windower.chat.input:schedule(1, '/ma "'..spell.english..'" '..spell.target.raw..'')
 				return
 			end
 		end
@@ -218,8 +223,8 @@ function job_post_precast(spell, spellMap, eventArgs)
 end
 
 function job_post_midcast(spell, spellMap, eventArgs)
-    -- Apply Divine Caress boosting items as highest priority over other gear, if applicable.
-    if spellMap == 'StatusRemoval' then
+	-- Apply Divine Caress boosting items as highest priority over other gear, if applicable.
+	if spellMap == 'StatusRemoval' then
 		if state.Buff['Divine Caress'] then
 			equip(sets.buff['Divine Caress'])
 		end
@@ -235,8 +240,8 @@ function job_post_midcast(spell, spellMap, eventArgs)
 		if (state.Buff['Light Arts'] or state.Buff['Addendum: White']) and sets.midcast.BarElement and sets.midcast.BarElement.LightArts then
 			equip(sets.midcast.BarElement.LightArts)
 		end
-    elseif spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' and spell.english ~= 'Impact' then
-        if state.MagicBurstMode.value ~= 'Off' then equip(sets.MagicBurst) end
+	elseif spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' and spell.english ~= 'Impact' then
+		if state.MagicBurstMode.value ~= 'Off' then equip(sets.MagicBurst) end
 		if spell.element == world.weather_element or spell.element == world.day_element then
 			if state.CastingMode.value == 'Fodder' then
 				if spell.element == world.day_element then
@@ -251,19 +256,19 @@ function job_post_midcast(spell, spellMap, eventArgs)
 		if spell.element and sets.element[spell.element] then
 			equip(sets.element[spell.element])
 		end
-    end
+	end
 	
 end
 
 function job_aftercast(spell, spellMap, eventArgs)
-    if not spell.interrupted then
-        if state.UseCustomTimers.value and spell.english == 'Sleep' or spell.english == 'Sleepga' then
-            send_command('@timers c "'..spell.english..' ['..spell.target.name..']" 60 down spells/00220.png')
-        elseif spell.skill == 'Elemental Magic' and state.MagicBurstMode.value == 'Single' then
-            state.MagicBurstMode:reset()
+	if not spell.interrupted then
+		if state.UseCustomTimers.value and spell.english == 'Sleep' or spell.english == 'Sleepga' then
+			send_command('@timers c "'..spell.english..' ['..spell.target.name..']" 60 down spells/00220.png')
+		elseif spell.skill == 'Elemental Magic' and state.MagicBurstMode.value == 'Single' then
+			state.MagicBurstMode:reset()
 			if state.DisplayMode.value then update_job_states()	end
-        end
-    end
+		end
+	end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -276,7 +281,7 @@ end
 
 -- Custom spell mapping.
 function job_get_spell_map(spell, default_spell_map)
-    if spell.action_type == 'Magic' then
+	if spell.action_type == 'Magic' then
 		if default_spell_map == 'Curaga' then
 			if world.weather_element == 'Light' then
 				return 'LightWeatherCuraga'
@@ -309,33 +314,33 @@ function job_get_spell_map(spell, default_spell_map)
 					return "CureSolace"
 				end
 			elseif world.weather_element == 'Light' then
-                return 'LightWeatherCure'
+				return 'LightWeatherCure'
 			elseif world.day_element == 'Light' then
-                return 'LightDayCure'
+				return 'LightDayCure'
 			end
 		elseif spell.skill == "Enfeebling Magic" then
 			if spell.english:startswith('Dia') then
 				return "Dia"
-            elseif spell.type == "WhiteMagic" or spell.english:startswith('Frazzle') or spell.english:startswith('Distract') then
-                return 'MndEnfeebles'
-            else
-                return 'IntEnfeebles'
-            end
-        end
-    end
+			elseif spell.type == "WhiteMagic" or spell.english:startswith('Frazzle') or spell.english:startswith('Distract') then
+				return 'MndEnfeebles'
+			else
+				return 'IntEnfeebles'
+			end
+		end
+	end
 end
 
 
 function job_customize_idle_set(idleSet)
-    if buffactive['Sublimation: Activated'] then
-        if (state.IdleMode.value == 'Normal' or state.IdleMode.value:contains('Sphere')) and sets.buff.Sublimation then
-            idleSet = set_combine(idleSet, sets.buff.Sublimation)
-        elseif state.IdleMode.value:contains('DT') and sets.buff.DTSublimation then
-            idleSet = set_combine(idleSet, sets.buff.DTSublimation)
-        end
-    end
+	if buffactive['Sublimation: Activated'] then
+		if (state.IdleMode.value == 'Normal' or state.IdleMode.value:contains('Sphere')) and sets.buff.Sublimation then
+			idleSet = set_combine(idleSet, sets.buff.Sublimation)
+		elseif state.IdleMode.value:contains('DT') and sets.buff.DTSublimation then
+			idleSet = set_combine(idleSet, sets.buff.DTSublimation)
+		end
+	end
 
-    if state.IdleMode.value == 'Normal' or state.IdleMode.value:contains('Sphere') then
+	if state.IdleMode.value == 'Normal' or state.IdleMode.value:contains('Sphere') then
 		if player.mpp < 51 then
 			if sets.latent_refresh then
 				idleSet = set_combine(idleSet, sets.latent_refresh)
@@ -353,9 +358,9 @@ function job_customize_idle_set(idleSet)
 				end
 			end
 		end
-   end
+	end
 	
-    return idleSet
+	return idleSet
 end
 
 -- Called by the 'update' self-command.
@@ -366,8 +371,8 @@ end
 
 -- Function to display the current relevant user state when doing an update.
 function display_current_job_state(eventArgs)
-    display_current_caster_state()
-    eventArgs.handled = true
+	display_current_caster_state()
+	eventArgs.handled = true
 end
 
     -- Allow jobs to override this code
@@ -409,14 +414,14 @@ function check_arts()
 end
 
 function handle_elemental(cmdParams)
-    -- cmdParams[1] == 'elemental'
-    -- cmdParams[2] == ability to use
+	-- cmdParams[1] == 'elemental'
+	-- cmdParams[2] == ability to use
 
-    if not cmdParams[2] then
-        add_to_chat(123,'Error: No elemental command given.')
-        return
-    end
-    local command = cmdParams[2]:lower()
+	if not cmdParams[2] then
+		add_to_chat(123,'Error: No elemental command given.')
+		return
+	end
+	local command = cmdParams[2]:lower()
 
 	if command == 'spikes' then
 		windower.chat.input('/ma "'..data.elements.spikes_of[state.ElementalMode.value]..' Spikes" <me>')
@@ -492,9 +497,9 @@ function handle_elemental(cmdParams)
 	elseif command == 'bardsong' then
 		windower.chat.input('/ma "'..data.elements.threnody_of[state.ElementalMode.value]..' Threnody" '..target..'')
 
-    else
-        add_to_chat(123,'Unrecognized elemental command.')
-    end
+	else
+		add_to_chat(123,'Unrecognized elemental command.')
+	end
 end
 
 function check_buff()
