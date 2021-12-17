@@ -35,6 +35,10 @@ function user_tick()
 			
 		end
 	end
+
 	-- return false to allow more tick functions to run
 	return false
+end
+
+function party_buff_change(affectedPlayer, buffName, gain)
 end
