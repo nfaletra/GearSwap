@@ -213,7 +213,7 @@ function init_gear_sets()
 	sets.idle = {
 		head="Espial Cap",neck="Chivalrous Chain",ear1="Spike Earring",ear2="Suppanomimi",
 		body="Espical Gambison",hands="Espial Bracers",ring1="Ecphoria Ring",ring2="Jaeger Ring",
-		back="Amemet Mantle +1",waist="Mrc.Cpt. Belt",legs="Espial Hose",feet="Espial Socks"
+		back="Amemet Mantle +1",waist="Mrc.Cpt. Belt",legs="Feast Hose",feet="Espial Socks"
 	}
 
 	sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
@@ -252,7 +252,7 @@ function init_gear_sets()
 	sets.engaged = {
 		head="Espial Cap",neck="Chivalrous Chain",ear1="Spike Earring",ear2="Suppanomimi",
 		body="Espical Gambison",hands="Espial Bracers",ring1="Ecphoria Ring",ring2="Jaeger Ring",
-		back="Amemet Mantle +1",waist="Mrc.Cpt. Belt",legs="Espial Hose",feet="Espial Socks"
+		back="Amemet Mantle +1",waist="Mrc.Cpt. Belt",legs="Feast Hose",feet="Espial Socks"
 	}
 		
 	sets.engaged.DTLite = {
