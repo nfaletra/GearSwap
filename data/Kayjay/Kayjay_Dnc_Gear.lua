@@ -212,7 +212,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
 		head="Espial Cap",neck="Chivalrous Chain",ear1="Spike Earring",ear2="Suppanomimi",
-		body="Espical Gambison",hands="Espial Bracers",ring1="Ecphoria Ring",ring2="Jaeger Ring",
+		body="Espial Gambison",hands="Espial Bracers",ring1="Ecphoria Ring",ring2="Jaeger Ring",
 		back="Amemet Mantle +1",waist="Mrc.Cpt. Belt",legs="Feast Hose",feet="Espial Socks"
 	}
 
@@ -251,7 +251,7 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged = {
 		head="Espial Cap",neck="Chivalrous Chain",ear1="Spike Earring",ear2="Suppanomimi",
-		body="Espical Gambison",hands="Espial Bracers",ring1="Ecphoria Ring",ring2="Jaeger Ring",
+		body="Espial Gambison",hands="Espial Bracers",ring1="Ecphoria Ring",ring2="Jaeger Ring",
 		back="Amemet Mantle +1",waist="Mrc.Cpt. Belt",legs="Feast Hose",feet="Espial Socks"
 	}
 		
@@ -264,7 +264,7 @@ function init_gear_sets()
     
 	sets.engaged.Acc = {
 		head="Espial Cap",neck="Chivalrous Chain",ear1="Spike Earring",ear2="Suppanomimi",
-		body="Espical Gambison",hands="Espial Bracers",ring1="Ecphoria Ring",ring2="Jaeger Ring",
+		body="Espial Gambison",hands="Espial Bracers",ring1="Ecphoria Ring",ring2="Jaeger Ring",
 		back="Amemet Mantle +1",waist="Mrc.Cpt. Belt",legs="Espial Hose",feet="Espial Socks"
 	}
 
