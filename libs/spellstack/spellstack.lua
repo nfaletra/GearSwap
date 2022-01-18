@@ -1,15 +1,20 @@
 -- Include default settings
-if file_exists('settings/default.lua') then
-	include('settings/default.lua')
+if file_exists('spellstack/settings/default.lua') then
+	include('spellstack/settings/default.lua')
 end
 
+-- Settings file load priority: Name_JOB.lua, Name.lua, JOB.lua
+local NameJobFile = 'spellstack/settings/'..player.name..'_'..player.main_job..'.lua'
+local NameFile = 'spellstack/settings/'..player.name..'.lua'
+local JobFile = 'spellstack/settings/'..player.main_job..'.lua'
+
 -- Include any override settings
-if file_exists('settings/'..player.name..'_'..player.main_job..'.lua') then
-	include('settings/'..player.name..'_'..player.main_job..'.lua')
-elseif file_exists('settings/'..player.name..'.lua') then
-	include('settings/'..player.name..'.lua')
-elseif file_exists('settings/'..player.main_job..'.lua') then
-	include('settings/'..player.main_job..'.lua')
+if file_exists(NameJobFile) then
+	include(NameJobFile)
+elseif file_exists(NameFile) then
+	include(NameFile)
+elseif file_exists(JobFile) then
+	include(JobFile)
 end
 
 windower.text.create('StackWindow')
@@ -26,20 +31,17 @@ function user_unload()
 	windower.text.delete('StackWindow')
 end
 
--- Convert spell/ability/weaponskill ranges to distance in yalms
-local RangeConversions = {
-	[2] = 2 * 1.55,
-	[3] = 3 * 1.490909,
-	[4] = 4 * 1.44,
-	[5] = 5 * 1.377778,
-	[6] = 6 * 1.30,
-	[7] = 7 * 1.15,
-	[8] = 8 * 1.25,
-	[9] = 9 * 1.377778,
-	[10] = 10 * 1.45,
-	[11] = 11 * 1.454545454545455,
-	[12] = 12 * 1.666666666666667,
-}
+-- @return Spell resource from spell name
+function GetSpellFromName(spellName)
+	return SpellMap[spellName]
+end
+
+-- @return Ability resource from ability name
+function GetAbilityFromName(abilityName)
+	return AbilityMap[abilityName]
+end
+
+
 
 function AddSpellToStack(spellToAdd, spellTarget, options)
 	options = options or {}
@@ -105,19 +107,9 @@ function IsValidTarget(spell, spellTarget)
 		mob = windower.ffxi.get_mob_by_id(spellTarget)
 	end
 
-	-- Check mob is valid
-	if not mob or type(mob) ~= 'table' or not mob.distance then
-		-- Could not find the target
+	-- Mob target status is invalid
+	if not mob.valid_target then
 		return false
-	end
-
-	-- Check that the mob is in range
-	if spell and spell.range then
-		-- Pad distance check by size of self and target models
-		local testRange = mob.mode_size + RangeConversions[spell.range] + player.model_size
-		if mob.distance:sqrt() > testRange or distance ~= 0 then
-			return false
-		end
 	end
 
 	-- Mob is dead
@@ -125,9 +117,24 @@ function IsValidTarget(spell, spellTarget)
 		return false
 	end
 
-	-- Mob target status is invalid
-	if not mob.valid_target then
+	-- Check mob is valid
+	if not mob or type(mob) ~= 'table' then
+		-- Could not find the target
 		return false
+	end
+
+	-- Check distance variable is valid
+	if not mob.distance or mob.distance == 0 then
+		return false
+	end
+
+	-- Check that the mob is in range
+	if spell and spell.range then
+		-- Pad distance check by size of self and target models
+		local testRange = mob.mode_size + RangeMap[spell.range] + player.model_size
+		if mob.distance > (testRange * testRange) then
+			return false
+		end
 	end
 
 	return true
