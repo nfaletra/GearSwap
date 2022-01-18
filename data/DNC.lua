@@ -44,62 +44,59 @@
 -------------------------------------------------------------------------------------------------------------------
 
 --[[
-    Custom commands:
-    
-    gs c step
-        Uses the currently configured step on the target, with either <t> or <stnpc> depending on setting.
+	Custom commands:
 
-    gs c step t
-        Uses the currently configured step on the target, but forces use of <t>.
-    
-    
-    Configuration commands:
-    
-    gs c cycle mainstep
-        Cycles through the available steps to use as the primary step when using one of the above commands.
-        
-    gs c cycle altstep
-        Cycles through the available steps to use for alternating with the configured main step.
-        
-    gs c toggle usealtstep
-        Toggles whether or not to use an alternate step.
+	gs c step
+		Uses the currently configured step on the target, with either <t> or <stnpc> depending on setting.
+
+	gs c step t
+		Uses the currently configured step on the target, but forces use of <t>.
+
+	Configuration commands:
+
+	gs c cycle mainstep
+		Cycles through the available steps to use as the primary step when using one of the above commands.
+
+	gs c cycle altstep
+		Cycles through the available steps to use for alternating with the configured main step.
+
+	gs c toggle usealtstep
+		Toggles whether or not to use an alternate step.
 
 --]]
 
 
 -- Initialization function for this job file.
 function get_sets()
-    -- Load and initialize the include file.
-    include('Sel-Include.lua')
+	-- Load and initialize the include file.
+	include('Sel-Include.lua')
 end
 
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
-
-    state.Buff['Climactic Flourish'] = buffactive['Climactic Flourish'] or false
+	state.Buff['Climactic Flourish'] = buffactive['Climactic Flourish'] or false
 	state.Buff['Building Flourish'] = buffactive['Building Flourish'] or false
 	state.Buff['Presto'] = buffactive['Presto'] or false
 	state.Buff['Contradance'] = buffactive['Contradance'] or false
 	state.Buff['Saber Dance'] = buffactive['Saber Dance'] or false
 	state.Buff['Fan Dance'] = buffactive['Fan Dance'] or false
 	state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
-	
-    state.MainStep = M{['description']='Main Step', 'Box Step','Quickstep','Feather Step','Stutter Step'}
-    state.AltStep = M{['description']='Alt Step', 'Feather Step','Quickstep','Stutter Step','Box Step'}
-    state.UseAltStep = M(true, 'Use Alt Step')
-    state.CurrentStep = M{['description']='Current Step', 'Main', 'Alt'}
+
+	state.MainStep = M{ ['description'] = 'Main Step', 'Box Step', 'Quickstep', 'Feather Step', 'Stutter Step' }
+	state.AltStep = M{ ['description'] = 'Alt Step', 'Feather Step', 'Quickstep', 'Stutter Step', 'Box Step' }
+	state.UseAltStep = M(true, 'Use Alt Step')
+	state.CurrentStep = M{ ['description'] = 'Current Step', 'Main', 'Alt' }
 
 	state.AutoPrestoMode = M(true, 'Auto Presto Mode')
-	state.DanceStance = M{['description']='Dance Stance','None','Saber Dance','Fan Dance'}
-
+	state.DanceStance = M{ ['description'] = 'Dance Stance', 'None', 'Saber Dance', 'Fan Dance' }
 
 	autows = "Rudra's Storm"
-	autofood = 'Soy Ramen'
-	
+	autofood = 'Sublime Sushi'
+
 	function calculate_step_feet_reduction()
 		local tp_reduction = 0
-		
+
 		if sets.precast.Step and sets.precast.Step.feet and standardize_set(sets.precast.Step).feet:startswith('Horos T. Shoes') then
 			if sets.precast.Step.feet:endswith('+2') then
 				tp_reduction = 10
@@ -107,14 +104,15 @@ function job_setup()
 				tp_reduction = 20
 			end
 		end
-		
+
 		return tp_reduction 
 	end
 
 	step_feet_reduction = calculate_step_feet_reduction()
 	
-    update_melee_groups()
-	init_job_states({"Capacity","AutoRuneMode","AutoTrustMode","AutoWSMode","AutoShadowMode","AutoFoodMode","AutoStunMode","AutoDefenseMode",},{"AutoBuffMode","AutoSambaMode","Weapons","OffenseMode","WeaponskillMode","IdleMode","DanceStance","Passive","RuneElement","TreasureMode",})
+	update_melee_groups()
+	init_job_states({ "Capacity","AutoRuneMode","AutoTrustMode","AutoWSMode","AutoShadowMode","AutoFoodMode","AutoStunMode","AutoDefenseMode" },
+		{"AutoBuffMode","AutoSambaMode","Weapons","OffenseMode","WeaponskillMode","IdleMode","DanceStance","Passive","RuneElement","TreasureMode" })
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -124,11 +122,9 @@ end
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 
 function job_filtered_action(spell, eventArgs)
-
 end
 
 function job_precast(spell, spellMap, eventArgs)
-
 	if spell.type == 'WeaponSkill' and state.AutoBuffMode.value ~= 'Off' and player.tp > (999 + step_cost()) then
 		local abil_recasts = windower.ffxi.get_ability_recasts()
 		if under3FMs() and abil_recasts[220] < latency and (abil_recasts[236] < latency or state.Buff['Presto']) and player.status == 'Engaged' then
@@ -162,15 +158,15 @@ function job_precast(spell, spellMap, eventArgs)
 			tickdelay = os.clock() + 1.25
 			return
 		end
-    elseif spell.type == 'Step' and player.main_job_level >= 77 and state.AutoPrestoMode.value and player.tp > 99 and player.status == 'Engaged' and under3FMs() then
-        local abil_recasts = windower.ffxi.get_ability_recasts()
+	elseif spell.type == 'Step' and player.main_job_level >= 77 and state.AutoPrestoMode.value and player.tp > 99 and player.status == 'Engaged' and under3FMs() then
+		local abil_recasts = windower.ffxi.get_ability_recasts()
 
-        if abil_recasts[236] < latency and abil_recasts[220] < latency then
-            eventArgs.cancel = true
+		if abil_recasts[236] < latency and abil_recasts[220] < latency then
+			eventArgs.cancel = true
 			windower.chat.input('/ja "Presto" <me>')
 			windower.chat.input:schedule(1.1,'/ja "'..spell.english..'" '..spell.target.raw..'')
-        end
-    end
+		end
+	end
 end
 
 function job_post_precast(spell, spellMap, eventArgs)
@@ -178,7 +174,7 @@ function job_post_precast(spell, spellMap, eventArgs)
 		local WSset = standardize_set(get_precast_set(spell, spellMap))
 		local wsacc = check_ws_acc()
 		
-		if (WSset.ear1 == "Moonshade Earring" or WSset.ear2 == "Moonshade Earring") then
+		if WSset.ear1 == "Moonshade Earring" or WSset.ear2 == "Moonshade Earring" then
 			-- Replace Moonshade Earring if we're at cap TP
 			if get_effective_player_tp(spell, WSset) > 3200 then
 				if wsacc:contains('Acc') and not buffactive['Sneak Attack'] and sets.AccMaxTP then
@@ -194,17 +190,16 @@ function job_post_precast(spell, spellMap, eventArgs)
 			equip(sets.buff['Building Flourish'])
 		end
 ]]
-        if state.Buff['Climactic Flourish'] and sets.buff['Climactic Flourish'] then
-            equip(sets.buff['Climactic Flourish'])
-        end
+		if state.Buff['Climactic Flourish'] and sets.buff['Climactic Flourish'] then
+			equip(sets.buff['Climactic Flourish'])
+		end
 	end
 end
 
 -- Return true if we handled the aftercast work.  Otherwise it will fall back
 -- to the general aftercast() code in Mote-Include.
 function job_aftercast(spell, spellMap, eventArgs)
-    -- Lock feet after using Mana Wall.
-    if not spell.interrupted then
+	if not spell.interrupted then
 		if spell.type == 'WeaponSkill' and state.Buff['Climactic Flourish'] and not under3FMs() and player.tp < 999 then
 			local abil_recasts = windower.ffxi.get_ability_recasts()
 			if abil_recasts[222] < latency then
@@ -213,7 +208,7 @@ function job_aftercast(spell, spellMap, eventArgs)
 		elseif state.UseAltStep.value and spell.english == state[state.CurrentStep.current..'Step'].current then
 			state.CurrentStep:cycle()
 		end
-    end
+	end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -233,67 +228,67 @@ end
 
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
-    update_melee_groups()
+	update_melee_groups()
 end
 
 
 function job_customize_idle_set(idleSet)
-    return idleSet
+	return idleSet
 end
 
 function job_customize_melee_set(meleeSet)
-    if state.DefenseMode.value ~= 'None' then
-        if state.Buff['Saber Dance'] then
-            meleeSet = set_combine(meleeSet, sets.buff['Saber Dance'])
-        end
-        if state.Buff['Climactic Flourish'] then
-            meleeSet = set_combine(meleeSet, sets.buff['Climactic Flourish'])
-        end
-    end
-    
-    return meleeSet
+	if state.DefenseMode.value ~= 'None' then
+		if state.Buff['Saber Dance'] then
+			meleeSet = set_combine(meleeSet, sets.buff['Saber Dance'])
+		end
+		if state.Buff['Climactic Flourish'] then
+			meleeSet = set_combine(meleeSet, sets.buff['Climactic Flourish'])
+		end
+	end
+
+	return meleeSet
 end
 
 -- Function to display the current relevant user state when doing an update.
 -- Set eventArgs.handled to true if display was handled, and you don't want the default info shown.
 function display_current_job_state(eventArgs)
-    local msg = 'Melee'
-    
-    if state.CombatForm.has_value then
-        msg = msg .. ' (' .. state.CombatForm.value .. ')'
-    end
-    
-    msg = msg .. ': '
-    
-    msg = msg .. state.OffenseMode.value
-    if state.HybridMode.value ~= 'Normal' then
-        msg = msg .. '/' .. state.HybridMode.value
-    end
-    msg = msg .. ', WS: ' .. state.WeaponskillMode.value
-    
-    if state.DefenseMode.value ~= 'None' then
-        msg = msg .. ', ' .. 'Defense: ' .. state.DefenseMode.value .. ' (' .. state[state.DefenseMode.value .. 'DefenseMode'].value .. ')'
-    end
-    
-    if state.Kiting.value then
-        msg = msg .. ', Kiting'
-    end
+	local msg = 'Melee'
 
-    msg = msg .. ', ['..state.MainStep.current
+	if state.CombatForm.has_value then
+		msg = msg .. ' (' .. state.CombatForm.value .. ')'
+	end
 
-    if state.UseAltStep.value == true then
-        msg = msg .. '/'..state.AltStep.current
-    end
-    
-    msg = msg .. ']'
+	msg = msg .. ': '
 
-    if state.SelectStepTarget.value == true then
-        steps = steps..' (Targetted)'
-    end
+	msg = msg .. state.OffenseMode.value
+	if state.HybridMode.value ~= 'Normal' then
+		msg = msg .. '/' .. state.HybridMode.value
+	end
+	msg = msg .. ', WS: ' .. state.WeaponskillMode.value
 
-    add_to_chat(122, msg)
+	if state.DefenseMode.value ~= 'None' then
+		msg = msg .. ', ' .. 'Defense: ' .. state.DefenseMode.value .. ' (' .. state[state.DefenseMode.value .. 'DefenseMode'].value .. ')'
+	end
 
-    eventArgs.handled = true
+	if state.Kiting.value then
+		msg = msg .. ', Kiting'
+	end
+
+	msg = msg .. ', ['..state.MainStep.current
+
+	if state.UseAltStep.value == true then
+		msg = msg .. '/'..state.AltStep.current
+	end
+
+	msg = msg .. ']'
+
+	if state.SelectStepTarget.value == true then
+		steps = steps..' (Targetted)'
+	end
+
+	add_to_chat(122, msg)
+
+	eventArgs.handled = true
 end
 
 
@@ -303,16 +298,16 @@ end
 
 -- Called for custom player commands.
 function job_self_command(commandArgs, eventArgs)
-    if commandArgs[1] == 'step' then
-        local doStep = ''
-        if state.UseAltStep.value == true then
-            doStep = state[state.CurrentStep.current..'Step'].current
-        else
-            doStep = state.MainStep.current
-        end        
-        
-        send_command('@input /ja "'..doStep..'" <t>')
-    end
+	if commandArgs[1] == 'step' then
+		local doStep = ''
+		if state.UseAltStep.value == true then
+			doStep = state[state.CurrentStep.current..'Step'].current
+		else
+			doStep = state.MainStep.current
+		end
+
+		send_command('@input /ja "'..doStep..'" <t>')
+	end
 end
 
 function job_tick()

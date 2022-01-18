@@ -95,39 +95,41 @@ function init_gear_sets()
 
 	-- Specific weaponskill sets.
 	sets.precast.WS['Raging Fists'] = set_combine(sets.precast.WS, {
+		head="Mpaca's Cap",
 		body="Adhemar Jacket +1",hands="Adhemar Wrist. +1",
 		legs="Tatenashi Haidate +1",
 	})
 	sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS, {
-		body="Tatenashi Haramaki +1",hands=gear.hearculean_ta_hands,
-		legs="Tatenashi Haidate +1",
+		head="Mpaca's Cap",
+		body="Mpaca's Doublet",hands=gear.hearculean_ta_hands,
+		legs="Mpaca's Hose",
 	})
 	sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {
-		neck="Fotia Gorget",ear2="Ishvara Earring",
+		neck="Fotia Gorget",ear2="Odnowa Earring +1",
 		body="Hes. Cyclas +3","Anchor. Gloves +3",ring2="Regal Ring",
 		waist="Fotia Belt",legs="Tatenashi Haidate +1",feet="Hes. Gaiters +3"
 	})
 	sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
-		head="Ken. Jinpachi +1",ear2="Odr Earring",
-		body="Ken. Samue",gear.herculean_ta_hands,
-		feet=gear.herculean_crit_feet
+		head="Ken. Jinpachi",neck="Fotia Gorget",ear2="Odr Earring",
+		body="Ken. Samue",hands="Ryuo Tekko +1",
+		legs="Mpaca's Hose",feet=gear.herculean_crit_feet
 	})
 	sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
 		head="Adhemar Bonnet +1",ear2="Odr Earring",
-		body="Ken. Samue",hands="Ryuo Tekko +1",
-		legs="Ken. Hakama +1",feet=gear.herculean_crit_feet
+		body="Mpaca's Doublet",hands="Ryuo Tekko +1",
+		legs="Ken. Hakama",feet=gear.herculean_crit_feet
 	})
 	sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {
-		ear2="Mache Earring +1",
-		body="Tatenashi Haramaki +1",hands=gear.herculean_ta_hands,
-		legs="Tatenashi Haidate +1",feet=gear.herculean_ta_feet,
+		neck="Fotia Gorget",ear2="Mache Earring +1",
+		body="Mpaca's Doublet",hands=gear.herculean_ta_hands,
+		legs="Tatenashi Haidate +1",
 	})
 	sets.precast.WS['Dragon Kick'] = set_combine(sets.precast.WS, {
-		body="Tatenashi Haramaki +1",
+		body="Mpaca's Doublet",
 		feet="Anch. Gaiters +3"
 	})
 	sets.precast.WS['Tornado Kick'] = set_combine(sets.precast.WS, {
-		body="Tatenashi Haramaki +1",hands=gear.herculean_ta_hands,
+		body="Mpaca's Doublet",hands=gear.herculean_ta_hands,
 		legs="Tatenashi Haidate +1",feet="Anch. Gaiters +3"
 	})
 	sets.precast.WS['Spinning Attack'] = set_combine(sets.precast.WS, {})
