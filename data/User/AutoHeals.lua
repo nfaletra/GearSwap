@@ -24,10 +24,12 @@ function user_tick()
 
 	-- Store off party members that need healing
 	local SortedParty = {}
+	local healCount = 0
 	for k, v in pairs(alliance[1]) do
 		if type(v) == 'table' then
-			if v.hpp < curethreshold then
+			if v.hpp <= curethreshold then
 				table.insert(SortedParty, v)
+				healCount = healCount + 1
 			end
 		end
 	end
@@ -35,13 +37,28 @@ function user_tick()
 	-- Sort by lowest HP Percent
 	table.sort(SortedParty, function(a, b) return a.hpp < b.hpp end)
 
-	-- Calculate how much hp is missing
+	-- If >= 3 targets need healing, see if they're all in range of a curaga
+	local canCuraga = false
+	if healCount >= 3 then
+		-- Find the average position of the players
+		for _, v in ipairs(SortedParty) do
 
-	for _, v in ipairs(SortedParty) do
-		add_cure(v)
+		end
 	end
 
+	-- Calculate how much hp is missing
 	local playerMissingHP = {}
+	for _, v in ipairs(SortedParty) do
+		-- Store off missing hp by name
+		playerMissingHP[v.name] = v.hp / (v.hpp / 100) - v.hp
+		if v.hpp <= curethreshold then
+			healCount = v + 1
+		end
+	end
+
+	
+
+	
 	local playerDebuffs = {}
 
 	-- Prioritize local party healing
