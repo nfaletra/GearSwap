@@ -24,55 +24,70 @@ function user_tick()
 
 	-- Store off party members that need healing
 	local SortedParty = {}
-	local healCount = 0
-	for k, v in pairs(alliance[1]) do
+	local PlayersCurrentHP = {}
+	for _, v in pairs(alliance[1]) do
 		if type(v) == 'table' then
 			if v.hpp <= curethreshold then
 				table.insert(SortedParty, v)
-				healCount = healCount + 1
+				PlayersCurrentHP[v.name] = v.hp / (v.hpp / 100) - v.hp
 			end
 		end
 	end
-
-	-- Sort by lowest HP Percent
-	table.sort(SortedParty, function(a, b) return a.hpp < b.hpp end)
 
 	-- If >= 3 targets need healing, see if they're all in range of a curaga
 	local canCuraga = false
-	if healCount >= 3 then
-		-- Find the average position of the players
-		for _, v in ipairs(SortedParty) do
+	if table.getn(SortedParty) >= 3 then
+		-- Find the centroid of the players
+		local Centroid = Vector3()
+		for _, v in pairs(SortedParty) do
+			Centroid = Centroid + Vector3(v.x, v.y, v.z)
+		end
+		
+		-- Divide by number of players needing heals to get the average position
+		Centroid = Centroid / healCount
 
+		-- Use the player closest to the average position as our cure target
+		local cureTarget = nil
+		local closestDistSq = 75 * 75 -- Use a large-ish number for our max distance. Anything outside 50 yalms isn't loaded anyway.
+		for _, v in pairs(SortedParty) do
+			local ToCentroid = Centroid - Vector3(v.x, v.y, v.z)
+			local distSq = ToCentroid:SizeSq()
+			if distSq < closestDistSq then
+				closestDistSq = distSq
+				cureTarget = v
+			end
+		end
+
+		-- If at least 2 other players are in range of our cure target, we can use a curaga
+		if cureTarget then
+			local PlayersInRange = {}
+			local lowestHP = 0
+			for _, v in pairs(SortedParty) do
+				if cureTarget ~= v then
+					local ToPlayer = Vector3(v.x, v.y, v.z) - Vector3(cureTarget.x, cureTarget.y, cureTarget.z)
+					if ToPlayer:SizeSq() <= (15 * 15) then -- Curaga AoE Range (is this in resources somewhere?)
+						table.insert(PlayersInRange, v)
+						if PlayersCurrentHP[v.name] < lowestHP then
+							lowestHP = PlayersCurrentHP[v.name]
+						end
+					end
+				end
+			end
+
+			canCuraga = table.getn(PlayersInRange) >= 2
 		end
 	end
 
-	-- Calculate how much hp is missing
-	local playerMissingHP = {}
-	for _, v in ipairs(SortedParty) do
-		-- Store off missing hp by name
-		playerMissingHP[v.name] = v.hp / (v.hpp / 100) - v.hp
-		if v.hpp <= curethreshold then
-			healCount = v + 1
+	if canCuraga then
+		add_cure(cureTarget, lowestHP, canCuraga)
+	else
+		-- Queue up cures for everyone
+		for _, v in pairs(SortedParty) do
+			add_cure(v, PlayersMissingHP[v.name])
 		end
 	end
 
-	
-
-	
 	local playerDebuffs = {}
-
-	-- Prioritize local party healing
-	for k, v in pairs(alliance[1]) do
-		if type(v) == 'table' then
-			if v.name == player.name then
-				healerKey = k
-			end
-
-			if v.hp ~= nil and v.hp > 0 then
-				playerMissingHP[v.name] = v.hp / (v.hpp / 100) - v.hp
-			end
-		end
-	end
 
 	-- Attempt to heal other alliance parties
 	if state.AllianceCureMode.value == 'Top' or state.AllianceCureMode.value == 'All' then
@@ -82,7 +97,6 @@ function user_tick()
 
 	if state.AllianceCureMode.value == 'Bottom' or state.AllianceCureMode.value == 'All' then
 		for k, v in pairs(alliance[3]) do
-			
 		end
 	end
 
@@ -93,8 +107,7 @@ end
 function party_buff_change(affectedPlayer, buffName, gain)
 end
 
-function add_cure(cureTarget)
-	local missingHP = cureTarget.hp / (cureTaget.hpp / 100) - cureTarget.hp
+function add_cure(cureTarget, missingHP, useCuraga)
 	if missingHP < 250 then -- Prioritize Tier 1
 		if spell_recasts[1] < spell_latency then
 			-- Add Cure to stack for target

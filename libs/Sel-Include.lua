@@ -665,6 +665,27 @@ function global_unload()
 	send_command('unbind ^delete')
 	send_command('unbind !delete')
 	send_command('unbind @delete')
+
+	send_command('unbind ^f1')
+	send_command('unbind ^f2')
+	send_command('unbind ^f3')
+	send_command('unbind ^f4')
+	send_command('unbind ^f5')
+	send_command('unbind ^f6')
+
+	send_command('unbind !f1')
+	send_command('unbind !f2')
+	send_command('unbind !f3')
+	send_command('unbind !f4')
+	send_command('unbind !f5')
+	send_command('unbind !f6')
+
+	send_command('unbind @f1')
+	send_command('unbind @f2')
+	send_command('unbind @f3')
+	send_command('unbind @f4')
+	send_command('unbind @f5')
+	send_command('unbind @f6')
 	
 	if clear_job_states then
 		clear_job_states()
