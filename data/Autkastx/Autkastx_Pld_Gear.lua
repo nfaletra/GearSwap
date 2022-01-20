@@ -1,21 +1,21 @@
 function user_job_setup()
 
-    -- Options: Override default values	
-	state.OffenseMode:options('Normal','Acc')
-    state.HybridMode:options('Tank','DDTank','Normal')
-    state.WeaponskillMode:options('Match','Normal', 'Acc')
-    state.CastingMode:options('Normal','SIRD')
-	state.Passive:options('None','AbsorbMP')
-    state.PhysicalDefenseMode:options('PDT_HP','PDT','PDT_Reraise')
-    state.MagicalDefenseMode:options('MDT_HP','MDT','MDT_Reraise')
-	state.ResistDefenseMode:options('MEVA_HP','MEVA')
-	state.IdleMode:options('Tank','Kiting','PDT','Block','MDT','Normal')
-	state.Weapons:options('None','SakpataAegis','SakpataOchain','NaeglingBlurred')
+	-- Options: Override default values	
+	state.OffenseMode:options('Normal', 'Acc')
+	state.HybridMode:options('Tank', 'DDTank', 'Normal')
+	state.WeaponskillMode:options('Match', 'Normal', 'Acc')
+	state.CastingMode:options('Normal', 'SIRD')
+	state.Passive:options('None', 'AbsorbMP')
+	state.PhysicalDefenseMode:options('PDT_HP', 'PDT', 'PDT_Reraise')
+	state.MagicalDefenseMode:options('MDT_HP', 'MDT', 'MDT_Reraise')
+	state.ResistDefenseMode:options('MEVA_HP', 'MEVA')
+	state.IdleMode:options('Tank', 'Kiting', 'PDT', 'Block', 'MDT', 'Normal')
+	state.Weapons:options('None', 'SakpataAegis', 'SakpataOchain', 'NaeglingBlurred')
 	
-    state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP','Twilight'}
+	state.ExtraDefenseMode = M{ ['description'] = 'Extra Defense Mode', 'None', 'MP', 'Twilight' }
 	
-	gear.fastcast_jse_back = {name="Rudianos's Mantle",augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10',}}
-	gear.enmity_jse_back = {name="Rudianos's Mantle",augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10',}}
+	gear.fastcast_jse_back = { name = "Rudianos's Mantle", augments = { 'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10' }}
+	gear.enmity_jse_back = { name = "Rudianos's Mantle", augments = { 'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10' }}
 
 	-- Additional local binds
 	send_command('bind !` gs c SubJobEnmity')
