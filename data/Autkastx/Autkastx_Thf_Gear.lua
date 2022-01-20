@@ -4,18 +4,18 @@ function user_job_setup()
 	state.OffenseMode:options('Normal', 'Acc')
 	state.HybridMode:options('Normal', 'DT')
 	state.RangedMode:options('Normal', 'Acc')
-	state.WeaponskillMode:options('Match','Normal','Acc','Proc')
+	state.WeaponskillMode:options('Match', 'Normal', 'Acc', 'Proc')
 	state.IdleMode:options('Normal', 'Sphere')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Aeneas','Aeolian','Savage','ProcWeapons','Evisceration','Throwing','SwordThrowing','Bow')
+	state.Weapons:options('Aeneas', 'Aeolian', 'Savage', 'ProcWeapons', 'Evisceration', 'Throwing', 'SwordThrowing', 'Bow')
 
-	state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWMax','Parry'}
+	state.ExtraMeleeMode = M{ ['description'] = 'Extra Melee Mode', 'None', 'Suppa', 'DWMax', 'Parry'}
 	state.AmbushMode = M(false, 'Ambush Mode')
 
-	gear.toutatis_tp = "Toutatis's Cape" -- {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
-	gear.toutatis_wsd = "Toutatis's Cape" -- {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+	gear.toutatis_tp = "Toutatis's Cape"
+	gear.toutatis_wsd = "Toutatis's Cape"
 
 	-- Additional local binds
 	send_command('bind ^` input /ja "Flee" <me>')
@@ -36,51 +36,53 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-    --------------------------------------
-    -- Special sets (required by rules)
-    --------------------------------------
-	sets.TreasureHunter = { hands="Asn. Armlets +2",feet="Skulk. Poulaines +1" }
-	sets.Kiting = { feet="Trotter Boots" }
+	--------------------------------------
+	-- Special sets (required by rules)
+	--------------------------------------
+	sets.TreasureHunter = { hands = "Asn. Armlets +2", feet = "Skulk. Poulaines +1" }
+	sets.Kiting = { feet = "Trotter Boots" }
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {}
-	
+
 	sets.buff['Sneak Attack'] = {}
-	sets.buff['Trick Attack'] = { hands="Pill. Armlets +2" }
+	sets.buff['Trick Attack'] = { hands = "Pill. Armlets +2" }
 
 	-- Extra Melee sets.  Apply these on top of melee sets.
 	sets.Knockback = {}
-	sets.Suppa = { ear1="Sherida Earring",ear2="Suppanomimi" }
-	sets.DWEarrings = { ear1="Eabani Earring",ear2="Suppanomimi" }
-	sets.DWMax = { ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Adhemar Jacket +1",hands="Floral Gauntlets",waist="Reiki Yotai" }
-	sets.Parry = {} --{ hands="Turms Mittens +1",ring1="Defending Ring" }
-	sets.Ambush = {} --body="Plunderer's Vest +1"
-	
+	sets.Suppa = { ear1 = "Sherida Earring", ear2 = "Suppanomimi" }
+	sets.DWEarrings = { ear1 = "Eabani Earring", ear2 = "Suppanomimi" }
+	sets.DWMax = { ear1 = "Eabani Earring", ear2 = "Suppanomimi", body = "Adhemar Jacket +1", hands = "Floral Gauntlets", waist = "Reiki Yotai" }
+	sets.Parry = {}
+	sets.Ambush = {}
+
 	-- Weapons sets
-	sets.weapons.Aeneas = {main="Aeneas",sub="Shijo"}
-	sets.weapons.Aeolian = {main="Malevolence",sub="Malevolence"}
-	sets.weapons.Savage = {main="Naegling",sub="Shijo"}
-	sets.weapons.ProcWeapons = {main="Blurred Knife +1",sub="Atoyac"}
-	sets.weapons.Evisceration = {main="Tauret",sub="Shijo"}
-	sets.weapons.Throwing = {main="Aeneas",sub="Shijo",range="Raider's Bmrng.",ammo=empty}
-	sets.weapons.SwordThrowing = {main="Naegling",sub="Shijo",range="Raider's Bmrng.",ammo=empty}
-	sets.weapons.Bow = {main="Aeneas",sub="Kustawi +1",range="Kaja Bow",ammo="Chapuli Arrow"}
-	
+	sets.weapons.Aeneas = { main = "Aeneas", sub = "Shijo" }
+	sets.weapons.Aeolian = { main = "Malevolence", sub = "Malevolence" }
+	sets.weapons.Savage = { main = "Naegling", sub = "Shijo" }
+	sets.weapons.ProcWeapons = { main = "Blurred Knife +1", sub = "Atoyac" }
+	sets.weapons.Evisceration = { main = "Tauret", sub = "Shijo" }
+	sets.weapons.Throwing = { main = "Aeneas", sub = "Shijo", range = "Raider's Bmrng.", ammo = empty }
+	sets.weapons.SwordThrowing = { main = "Naegling", sub = "Shijo", range = "Raider's Bmrng.", ammo = empty }
+	sets.weapons.Bow = { main = "Aeneas", sub = "Kustawi +1", range = "Kaja Bow", ammo = "Chapuli Arrow" }
+
 	-- Actions we want to use to tag TH.
-	sets.precast.Step = {
-		ammo="C. Palug Stone",
-		head="Malignance Chapeau",neck="Combatant's Torque",ear1="Mache Earring +1",ear2="Odr Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-		back=gear.toutatis_tp,waist="Olseni Belt",legs="Malignance Tights",feet="Malignance Boots"
+	sets.precast.Step =
+	{
+		ammo = "C. Palug Stone",
+		head = "Malignance Chapeau", neck = "Combatant's Torque", ear1 = "Mache Earring +1", ear2 = "Odr Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Ramuh Ring +1", ring2 = "Ramuh Ring +1",
+		back = gear.toutatis_tp, waist = "Olseni Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
-		
-	sets.precast.JA['Violent Flourish'] = {
-		ammo="C. Palug Stone",
-		head="Malignance Chapeau",neck="Combatant's Torque",ear1="Digni. Earring",ear2="Odr Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-		back=gear.toutatis_tp,waist="Olseni Belt",legs="Malignance Tights",feet="Malignance Boots"
+
+	sets.precast.JA['Violent Flourish'] =
+	{
+		ammo = "C. Palug Stone",
+		head = "Malignance Chapeau", neck = "Combatant's Torque", ear1 = "Digni. Earring", ear2 = "Odr Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Ramuh Ring +1", ring2 = "Ramuh Ring +1",
+		back = gear.toutatis_tp, waist = "Olseni Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
-		
+
 	sets.precast.JA['Animated Flourish'] = sets.TreasureHunter
 	sets.precast.JA.Provoke = sets.TreasureHunter
 
@@ -89,42 +91,43 @@ function init_gear_sets()
 	--------------------------------------
 
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Collaborator'] = { head="Skulker's Bonnet" }
-	sets.precast.JA['Accomplice'] = { head="Skulker's Bonnet" }
-	sets.precast.JA['Flee'] = {} --feet="Pillager's Poulaines +1"
-	sets.precast.JA['Hide'] = { body="Pillager's Vest +2" }
-	sets.precast.JA['Conspirator'] = { body="Skulker's Vest" } 
-	sets.precast.JA['Steal'] = {} --feet="Pillager's Poulaines +1"
+	sets.precast.JA['Collaborator'] = {}
+	sets.precast.JA['Accomplice'] = {}
+	sets.precast.JA['Flee'] = {}
+	sets.precast.JA['Hide'] = { body = "Pillager's Vest +2" }
+	sets.precast.JA['Conspirator'] = {} 
+	sets.precast.JA['Steal'] = {}
 	sets.precast.JA['Mug'] = {}
-	sets.precast.JA['Despoil'] = { legs="Skulker's Culottes",feet="Skulk. Poulaines +1" }
-	sets.precast.JA['Perfect Dodge'] = { hands="Asn. Armlets +2" }
-	sets.precast.JA['Feint'] = {} -- {legs="Assassin's Culottes +2"}
+	sets.precast.JA['Despoil'] = { feet = "Skulk. Poulaines +1" }
+	sets.precast.JA['Perfect Dodge'] = { hands = "Asn. Armlets +2" }
+	sets.precast.JA['Feint'] = {}
 
 	sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
 	sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
 
 	-- Waltz set (chr and vit)
-	sets.precast.Waltz = {
-		ammo="Yamarang",
-		head="Mummu Bonnet +2",neck="Unmoving Collar +1",ear1="Enchntr. Earring +1",ear2="Handler's Earring +1",
-		body=gear.herculean_waltz_body,hands=gear.herculean_waltz_hands,ring1="Defending Ring",ring2="Valseur's Ring",
-		back="Moonlight Cape",waist="Chaac Belt",legs="Dashing Subligar",feet=gear.herculean_waltz_feet
+	sets.precast.Waltz =
+	{
+		ammo = "Yamarang",
+		head = "Mummu Bonnet +2", neck = "Unmoving Collar +1", ear1 = "Enchntr. Earring +1",
+		ring2 = "Defending Ring",
 	}
 
-	sets.Self_Waltz = { head="Mummu Bonnet +2",body="Passion Jacket",ring1="Asklepian Ring" }
+	sets.Self_Waltz = { head = "Mummu Bonnet +2" }
 
 	-- Don't need any special gear for Healing Waltz.
 	sets.precast.Waltz['Healing Waltz'] = {}
 
 	-- Fast cast sets for spells
-	sets.precast.FC = {
-		ammo="Impatiens",
-		head=gear.herculean_fc_head,ear1="Loquac. Earring",
-		hands="Leyline Gloves",ring2="Kishar Ring",
-		legs="Limbo Trousers"
+	sets.precast.FC =
+	{
+		ammo = "Sapience Orb",
+		head = gear.herculean_fc_head, ear1 = "Loquac. Earring",
+		hands = "Leyline Gloves", ring2 = "Kishar Ring",
+		legs = "Limbo Trousers"
 	}
 
-	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads",body="Passion Jacket" })
+	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { body = "Passion Jacket", neck = "Magoraga Beads" })
 
 	-- Ranged snapshot gear
 	sets.precast.RA = {}
@@ -132,11 +135,12 @@ function init_gear_sets()
 	-- Weaponskill sets
 
 	-- Default set for any weaponskill that isn't any more specifically defined
-	sets.precast.WS = {
-		ammo="Falcon Eye",
-		head="Pill. Bonnet +2",neck="Asn. Gorget +2",ear1="Sherida Earring",ear2="Moonshade Earring",
-		hands="Meg. Gloves +1",ring1="Ilabrat Ring",ring2="Regal Ring",
-		back=gear.toutatis_wsd,feet="Plun. Poulaines +3",
+	sets.precast.WS =
+	{
+		ammo = "Falcon Eye",
+		head = "Pill. Bonnet +2", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
+		body = hands = "Meg. Gloves +2", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		back = gear.toutatis_wsd, feet = "Plun. Poulaines +3",
 	}
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
 
