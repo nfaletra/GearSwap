@@ -8,19 +8,19 @@ function user_job_setup()
 	state.HybridMode:options('Normal', 'DT')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
 	state.Weapons:options('Default', 'Ranged', 'Savage', 'Evisceration', 'DualWeapons', 'DualSavageWeapons', 'DualEvisceration', 'DualLeadenRanged', 'DualLeadenMelee', 'DualAeolian', 'DualLeadenMeleeAcc', 'DualRanged', 'DualProcWeapons', 'None')
-	state.CompensatorMode:options('Always', '300', '1000', 'Never')
+	state.CompensatorMode:options('Never', '300', '1000', 'Always')
 
-	gear.RAbullet = "Chrono Bullet"
-	gear.WSbullet = "Chrono Bullet"
+	gear.RAbullet = "Orichalc. Bullet"
+	gear.WSbullet = "Orichalc. Bullet"
 	gear.MAbullet = "Orichalc. Bullet" --For MAB WS, do not put single-use bullets here.
-	gear.QDbullet = "Animikii Bullet"
+	gear.QDbullet = "Orichalc. Bullet"
 	options.ammo_warning_limit = 15
 
 	gear.camulus_range_tp = {name="Camulus's Mantle",augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10',}}
 	gear.camulus_snapshot = {name="Camulus's Mantle",augments={'"Snapshot"+10',}}
-	gear.camulus_melee_tp = {name="Camulus's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10',}}
+	gear.camulus_melee_tp = { name = "Camulus's Mantle", augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' }}
 	gear.camulus_wsd = {name="Camulus's Mantle",augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
-	gear.camulus_leaden = {name="Camulus's Mantle",augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}
+	gear.camulus_leaden = { name = "Camulus's Mantle", augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+5', 'Weapon skill damage +10%', 'Mag. Evasion+15' }}
 	gear.camulus_savage = {name="Camulus's Mantle",augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 
 	-- Additional local binds
@@ -57,8 +57,8 @@ function init_gear_sets()
 
 	sets.precast.JA['Triple Shot'] = { body = "Chasseur's Frac +1" }
 	sets.precast.JA['Snake Eye'] = { legs = "Lanun Trews +1" }
-	sets.precast.JA['Wild Card'] = { feet = "Lanun Bottes +3" }
-	sets.precast.JA['Random Deal'] = { body = "Lanun Frac +3" }
+	sets.precast.JA['Wild Card'] = { feet = "Lanun Bottes +1" }
+	sets.precast.JA['Random Deal'] = { body = "Lanun Frac +1" }
 	sets.precast.FoldDoubleBust = { hands = "Lanun Gants +1" }
 
 	sets.precast.CorsairRoll =
@@ -172,7 +172,7 @@ function init_gear_sets()
 	{
 		ammo = gear.WSbullet,
 		head = "Lanun Tricorne +1", neck = "Fotia Gorget", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
-		body = "Laksa. Frac +1", hands = "Meg. Gloves +2", ring1 = "Regal Ring", ring2 = "Dingir Ring",
+		body = "Meg. Cuirie +2", hands = "Meg. Gloves +2", ring1 = "Regal Ring", ring2 = "Dingir Ring",
 		back = gear.camulus_wsd, waist = "Fotia Belt", legs = "Meg. Chausses +2", feet = "Lanun Bottes +1"
 	}
 
@@ -186,7 +186,7 @@ function init_gear_sets()
 	{
 		ammo = gear.MAbullet,
 		head = "Pixie Hairpin +1", neck = "Comm. Charm +2", ear1 = "Friomisi Earring",ear2="Moonshade Earring",
-		body = "Laksa. Frac +1", hands = "Carmine Fin. Ga. +1", ring1 = "Regal Ring", ring2 = "Dingir Ring",
+		body = "Lanun Frac +1", hands = "Carmine Fin. Ga. +1", ring1 = "Regal Ring", ring2 = "Dingir Ring",
 		back = gear.camulus_leaden, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +1"
 	}
 
@@ -200,7 +200,7 @@ function init_gear_sets()
 	sets.precast.WS['Wildfire'] =
 	{
 		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
-		body = "Laksa. Frac +1", hands = "Carmine Fin. Ga. +1", ring1 = "Regal Ring", ring2 = "Dingir Ring",
+		body = "Lanun Frac +1", hands = "Carmine Fin. Ga. +1", ring1 = "Regal Ring", ring2 = "Dingir Ring",
 		back = gear.camulus_wsd, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +1"
 	}
 
@@ -262,147 +262,155 @@ function init_gear_sets()
 	sets.resting = {}
 
 	-- Idle sets
-	sets.idle = {ammo=gear.RAbullet,
-        head="Nyame Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Sanare Earring",
-        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Moonlight Cape",waist="Carrier's Sash",legs="Carmine Cuisses +1",feet="Nyame Sollerets"}
-		
-    sets.idle.PDT = {ammo=gear.RAbullet,
-        head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Dark Ring",
-        back="Shadow Mantle",waist="Flume Belt +1",legs="Nyame Flanchard",feet="Malignance Boots"}
-		
-    sets.idle.Refresh = {ammo=gear.RAbullet,
-        head="Rawhide Mask",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
-        body="Mekosu. Harness",hands=gear.herculean_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
-        back="Moonlight Cape",waist="Flume Belt +1",legs="Rawhide Trousers",feet="Malignance Boots"}
-    
-    -- Defense sets
-    sets.defense.PDT = {ammo=gear.RAbullet,
-        head="Nyame Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Tuisto Earring",
-        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Warden's Ring",
-        back="Shadow Mantle",waist="Flume Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+	sets.idle =
+	{
+		ammo = gear.RAbullet,
+		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Shadow Ring",
+		back= gear.camulus_snapshot, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
 
-    sets.defense.MDT = {ammo=gear.RAbullet,
-        head="Nyame Helm",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Moonlight Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
-		
-    sets.defense.MEVA = {ammo=gear.RAbullet,
-        head="Nyame Helm",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Moonlight Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+	sets.idle.PDT =
+	{
+		ammo = gear.RAbullet,
+		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Shadow Ring",
+		back= gear.camulus_snapshot, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
 
-    sets.Kiting = {legs="Carmine Cuisses +1"}
+	sets.idle.Refresh =
+	{
+		ammo = gear.RAbullet,
+		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Shadow Ring",
+		back= gear.camulus_snapshot, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
+
+	-- Defense sets
+	sets.defense.PDT =
+	{
+		ammo = gear.RAbullet,
+		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Shadow Ring",
+		back= gear.camulus_snapshot, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
+
+	sets.defense.MDT =
+	{
+		ammo = gear.RAbullet,
+		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Shadow Ring",
+		back= gear.camulus_snapshot, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
+
+	sets.defense.MEVA =
+	{
+		ammo = gear.RAbullet,
+		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Shadow Ring",
+		back= gear.camulus_snapshot, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
+
+	sets.Kiting = { legs = "Carmine Cuisses +1" }
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
-	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Adhemar Jacket +1",hands="Floral Gauntlets",waist="Reiki Yotai"}
+	sets.DWMax = { ear1 = "Dudgeon Earring", ear2 = "Heartseeker Earring", body = "Adhemar Jacket +1", hands = "Floral Gauntlets", waist = "Reiki Yotai"}
 
 	-- Weapons sets
-	sets.weapons.Default = {main="Naegling",sub="Nusku Shield",range="Fomalhaut"}
-	sets.weapons.Ranged = {main="Rostam",sub="Nusku Shield",range="Fomalhaut"}
-	sets.weapons.Evisceration = {main="Tauret",sub="Nusku Shield",range="Ataktos"}
-	sets.weapons.DualWeapons = {main="Naegling",sub="Blurred Knife +1",range="Fomalhaut"}
-	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Blurred Knife +1",range="Ataktos"}
-	sets.weapons.DualEvisceration = {main="Tauret",sub="Blurred Knife +1",range="Ataktos"}
-	sets.weapons.Savage = {main="Naegling",sub="Nusku Shield",range="Ataktos"}
-	sets.weapons.DualLeadenRanged = {main="Rostam",sub="Tauret",range="Fomalhaut"}
-	sets.weapons.DualLeadenMelee = {main="Naegling",sub="Atoyac",range="Fomalhaut"}
-	sets.weapons.DualAeolian = {main="Rostam",sub="Tauret",range="Ataktos"}
-	sets.weapons.DualLeadenMeleeAcc = {main="Naegling",sub="Blurred Knife +1",range="Fomalhaut"}
-	sets.weapons.DualRanged = {main="Rostam",sub="Kustawi +1",range="Fomalhaut"}
-	
-    -- Engaged sets
+	sets.weapons.Default = { main = "Naegling", sub = "Nusku Shield", range = "Molybdosis"}
+	sets.weapons.Ranged = { main = "Rostam", sub = "Nusku Shield", range = "Molybdosis"}
+	sets.weapons.Evisceration = { main = "Tauret", sub = "Nusku Shield", range = "Ataktos"}
+	sets.weapons.DualWeapons = { main = "Naegling", sub = "Tauret", range = "Molybdosis"}
+	sets.weapons.DualSavageWeapons = { main = "Naegling", sub = "Blurred Knife +1", range = "Ataktos"}
+	sets.weapons.DualEvisceration = { main = "Tauret", sub = "Blurred Knife +1", range = "Ataktos" }
+	sets.weapons.Savage = { main = "Naegling", sub = "Nusku Shield", range = "Ataktos"}
+	sets.weapons.DualLeadenRanged = { main ="Rostam", sub = "Tauret", range = "Molybdosis"}
+	sets.weapons.DualLeadenMelee = { main = "Naegling", sub = "Atoyac", range = "Molybdosis" }
+	sets.weapons.DualAeolian = { main = "Rostam", sub = "Tauret", range = "Ataktos" }
+	sets.weapons.DualLeadenMeleeAcc = { main = "Naegling", sub = "Blurred Knife +1", range = "Molybdosis"}
+	sets.weapons.DualRanged = { main = "Rostam", sub = "Kustawi +1", range = "Molybdosis" }
 
-    -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
-    -- sets if more refined versions aren't defined.
-    -- If you create a set with both offense and defense modes, the offense mode should be first.
-    -- EG: sets.engaged.Dagger.Accuracy.Evasion
-    
-    -- Normal melee group
-    sets.engaged = {
-		head="Dampening Tam",neck="Iskur Gorget",ear1="Cessance Earring",ear2="Brutal Earring",
-		body="Meg. Cuirie +2",hands="Adhemar Wrist. +1",ring1="Petrov Ring",ring2="Epona's Ring",
-		back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_ta_feet}
-    
-    sets.engaged.Acc = {
-		head="Carmine Mask +1",neck="Combatant's Torque",ear1="Cessance Earring",ear2="Telos Earring",
-		body="Meg. Cuirie +2",hands="Adhemar Wrist. +1",ring1="Ramuh Ring +1",ring2="Epona's Ring",
-		back=gear.tp_jse_back,waist="Olseni Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
-		
-    sets.engaged.DT = {
-        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Petrov Ring",
-        back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
-    
-    sets.engaged.Acc.DT = {
-        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Ramuh Ring +1",
-        back=gear.tp_jse_back,waist="Olseni Belt",legs="Malignance Tights",feet="Malignance Boots"}
+	-- Engaged sets
 
-    sets.engaged.DW = {
-		head="Dampening Tam",neck="Iskur Gorget",ear1="Suppanomimi",ear2="Brutal Earring",
-		body="Adhemar Jacket +1",hands="Adhemar Wrist. +1",ring1="Petrov Ring",ring2="Epona's Ring",
-		back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_ta_feet}
-    
-    sets.engaged.DW.Acc = {
-		head="Carmine Mask +1",neck="Combatant's Torque",ear1="Odr Earring",ear2="Telos Earring",
-		body="Malignance Tabard",hands="Floral Gauntlets",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-		back=gear.tp_jse_back,waist="Olseni Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
-		
-    sets.engaged.DW.DT = {
-        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Brutal Earring",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Epona's Ring",
-        back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
-    
-    sets.engaged.DW.Acc.DT = {
-        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Telos Earring",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Ramuh Ring +1",
-        back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
+	-- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
+	-- sets if more refined versions aren't defined.
+	-- If you create a set with both offense and defense modes, the offense mode should be first.
+	-- EG: sets.engaged.Dagger.Accuracy.Evasion
+
+	-- Normal melee group
+	sets.engaged =
+	{
+		head = "Adhemar Bonnet +1", neck = "Iskur Gorget", ear1 = "Telos Earring", ear2 = "Brutal Earring",
+		body = "Meg. Cuirie +2", hands = "Adhemar Wrist. +1", ring1 = "Petrov Ring", ring2 = "Epona's Ring",
+		back = gear.camulus_melee_tp, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
+	}
+
+	sets.engaged.Acc =
+	{
+		head = "Adhemar Bonnet +1", neck = "Iskur Gorget", ear1 = "Telos Earring", ear2 = "Brutal Earring",
+		body = "Meg. Cuirie +2", hands = "Adhemar Wrist. +1", ring1 = "Petrov Ring", ring2 = "Epona's Ring",
+		back = gear.camulus_melee_tp, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
+	}
+
+	sets.engaged.DT =
+	{
+		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Telos Earring", ear2 = "Brutal Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Petrov Ring", ring2 = "Epona's Ring",
+		back = gear.camulus_melee_tp, waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
+
+	sets.engaged.Acc.DT =
+	{
+		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Telos Earring", ear2 = "Brutal Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Petrov Ring", ring2 = "Epona's Ring",
+		back = gear.camulus_melee_tp, waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
+
+	sets.engaged.DW =
+	{
+		head = "Adhemar Bonnet +1", neck = "Iskur Gorget", ear1 = "Suppanomimi", ear2 = "Telos Earring",
+		body = "Adhemar Jacket +1", hands = "Adhemar Wrist. +1", ring1 = "Petrov Ring", ring2 = "Epona's Ring",
+		back = gear.camulus_melee_tp, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
+	}
+
+	sets.engaged.DW.Acc =
+	{
+		head = "Adhemar Bonnet +1", neck = "Iskur Gorget", ear1 = "Suppanomimi", ear2 = "Telos Earring",
+		body = "Adhemar Jacket +1", hands = "Adhemar Wrist. +1", ring1 = "Petrov Ring", ring2 = "Epona's Ring",
+		back = gear.camulus_melee_tp, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
+	}
+
+	sets.engaged.DW.DT =
+	{
+		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Suppanomimi", ear2 = "Telos Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Petrov Ring", ring2 = "Epona's Ring",
+		back = gear.camulus_melee_tp, waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
+
+	sets.engaged.DW.DT =
+	{
+		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Suppanomimi", ear2 = "Telos Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Petrov Ring", ring2 = "Epona's Ring",
+		back = gear.camulus_melee_tp, waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
 end
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
-    if player.sub_job == 'NIN' then
-        set_macro_page(2, 11)
-    elseif player.sub_job == 'DNC' then
-		set_macro_page(1, 11)
-    elseif player.sub_job == 'RNG' then
-        set_macro_page(9, 11)
-    elseif player.sub_job == 'DRG' then
-        set_macro_page(5, 11)
-    else
-        set_macro_page(10, 11)
-    end
+	if player.sub_job == 'NIN' then
+		set_macro_page(1, 10)
+	elseif player.sub_job == 'DNC' then
+		set_macro_page(2, 10)
+	elseif player.sub_job == 'RNG' then
+		set_macro_page(3, 10)
+	elseif player.sub_job == 'DRG' then
+		set_macro_page(4, 10)
+	else
+		set_macro_page(5, 10)
+	end
 end
 
 function user_job_lockstyle()
-	if player.equipment.main == nil or player.equipment.main == 'empty' then
-		windower.chat.input('/lockstyleset 001')
-	elseif res.items[item_name_to_id(player.equipment.main)].skill == 3 then --Sword in main hand.
-		if player.equipment.sub == nil or player.equipment.sub == 'empty' then --Sword/Nothing.
-				windower.chat.input('/lockstyleset 001')
-		elseif res.items[item_name_to_id(player.equipment.sub)].shield_size then --Sword/Shield
-				windower.chat.input('/lockstyleset 001')
-		elseif res.items[item_name_to_id(player.equipment.sub)].skill == 3 then --Sword/Sword.
-			windower.chat.input('/lockstyleset 001')
-		elseif res.items[item_name_to_id(player.equipment.sub)].skill == 2 then --Sword/Dagger.
-			windower.chat.input('/lockstyleset 001')
-		else
-			windower.chat.input('/lockstyleset 001') --Catchall just in case something's weird.
-		end
-	elseif res.items[item_name_to_id(player.equipment.main)].skill == 2 then --Dagger in main hand.
-		if player.equipment.sub == nil or player.equipment.sub == 'empty' then --Dagger/Nothing.
-			windower.chat.input('/lockstyleset 001')
-		elseif res.items[item_name_to_id(player.equipment.sub)].shield_size then --Dagger/Shield
-			windower.chat.input('/lockstyleset 001')
-		elseif res.items[item_name_to_id(player.equipment.sub)].skill == 3 then --Dagger/Sword.
-			windower.chat.input('/lockstyleset 001')
-		elseif res.items[item_name_to_id(player.equipment.sub)].skill == 2 then --Dagger/Dagger.
-			windower.chat.input('/lockstyleset 001')
-		else
-			windower.chat.input('/lockstyleset 001') --Catchall just in case something's weird.
-		end
-	end
+	windower.chat.input('/lockstyleset 007')
 end
 
 autows_list = {['Default']='Savage Blade',['Evisceration']='Evisceration',['Savage']='Savage Blade',['Ranged']='Last Stand',['DualWeapons']='Savage Blade',['DualSavageWeapons']='Savage Blade',['DualEvisceration']='Evisceration',['DualLeadenRanged']='Leaden Salute',['DualLeadenMelee']='Leaden Salute',['DualAeolian']='Aeolian Edge',['DualRanged']='Last Stand'}

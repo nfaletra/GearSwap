@@ -148,7 +148,7 @@ end
 function job_self_command(commandArgs, eventArgs)
 	if commandArgs[1]:lower() == 'elemental' and commandArgs[2]:lower() == 'quickdraw' then
 		windower.chat.input('/ja "'..data.elements.quickdraw_of[state.ElementalMode.Value]..' Shot" <t>')
-		eventArgs.handled = true			
+		eventArgs.handled = true
 	end
 end
 

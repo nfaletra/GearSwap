@@ -186,7 +186,7 @@ end
 
 -- Called by the 'update' self-command.
 function job_update(cmdParams, eventArgs)
-	supdate_melee_groups()
+	update_melee_groups()
 end
 
 -------------------------------------------------------------------------------------------------------------------

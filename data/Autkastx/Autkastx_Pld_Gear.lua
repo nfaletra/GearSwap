@@ -457,17 +457,9 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
 	-- Default macro set/book
-	if player.sub_job == 'NIN' then
-		set_macro_page(2, 4)
- 	elseif player.sub_job == 'RUN' then
-		set_macro_page(9, 4)
-	elseif player.sub_job == 'RDM' then
-		set_macro_page(6, 4)
-	elseif player.sub_job == 'BLU' then
-		set_macro_page(8, 4)
-	elseif player.sub_job == 'DNC' then
-		set_macro_page(4, 4)
-	else
-		set_macro_page(1, 4) --War/Etc
-	end
+	set_macro_page(1, 8)
+end
+
+function user_job_lockstyle()
+	windower.chat.input('/lockstyleset 006')
 end

@@ -136,7 +136,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS, {})
 
-	sets.precst.WS['Hexa Strike'] = set_combine(sets.precast.WS,
+	sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS,
 	{
 		neck = "Fotia Gorget", ear1 = "Telos Earring",
 		body = "Piety Bliaut +3", hands = "Piety Mitts +3", ring1 = "Petrov Ring",
@@ -145,16 +145,16 @@ function init_gear_sets()
 
 	sets.MaxTP = { ear1="Telos Earring", ear2="Brutal Earring" }
 
-    -- Midcast Sets
+	-- Midcast Sets
 
-    sets.Kiting = {}
-    sets.latent_refresh = {}
+	sets.Kiting = {}
+	sets.latent_refresh = {}
 	sets.latent_refresh_grip = {}
 	sets.TPEat = {}
 	sets.DayIdle = {}
 	sets.NightIdle = {}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
-	
+
 	--Situational sets: Gear that is equipped on certain targets
 	sets.Self_Healing = {}
 	sets.Cure_Received = {}
@@ -202,7 +202,7 @@ function init_gear_sets()
 		body = "Ebers Bliaut +1", hands = "Theophany Mitts +3", ring1 = "Janniston Ring", ring2 = "Lebeche Ring",
 		back = "Alaunus's Cape", waist = "Hachirin-no-Obi", legs = "Ebers Pant. +1", feet = "Vanya Clogs"
 	}
-		
+
 	sets.midcast.MeleeCureSolace = set_combine(sets.midcast.MeleeCure, { body = "Ebers Bliaut +1" })
 	sets.midcast.MeleeLightWeatherCure = set_combine(sets.midcast.MeleeCure, { waist = "Hachirin-no-Obi" })
 	sets.midcast.MeleeLightWeatherCureSolace = set_combine(sets.midcast.MeleeCure, { body = "Ebers Bliaut +1", waist = "Hachirin-no-Obi" })
@@ -243,7 +243,7 @@ function init_gear_sets()
 	{
 		head = "Ebers Cap +1",
 	}
-		
+
 	sets.midcast.Erase = set_combine(sets.midcast.StatusRemoval, { neck="Cleric's Torque" })
 
 	-- 110 total Enhancing Magic Skill; caps even without Light Arts
