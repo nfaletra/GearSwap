@@ -14,7 +14,7 @@ function user_job_setup()
 	gear.WSbullet = "Orichalc. Bullet"
 	gear.MAbullet = "Orichalc. Bullet" --For MAB WS, do not put single-use bullets here.
 	gear.QDbullet = "Orichalc. Bullet"
-	options.ammo_warning_limit = 15
+	options.ammo_warning_limit = 5
 
 	gear.camulus_range_tp = {name="Camulus's Mantle",augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10',}}
 	gear.camulus_snapshot = {name="Camulus's Mantle",augments={'"Snapshot"+10',}}
@@ -65,7 +65,7 @@ function init_gear_sets()
 	{
 		head = "Lanun Tricorne +1", neck = "Regal Necklace", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Chasseur's Gants +1", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.camulus_range_tp, waist = "Flume Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.camulus_melee_tp, waist = "Flume Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.precast.LuzafRing = { ring2 = "Luzaf's Ring" }
@@ -316,17 +316,17 @@ function init_gear_sets()
 	sets.DWMax = { ear1 = "Dudgeon Earring", ear2 = "Heartseeker Earring", body = "Adhemar Jacket +1", hands = "Floral Gauntlets", waist = "Reiki Yotai"}
 
 	-- Weapons sets
-	sets.weapons.Default = { main = "Naegling", sub = "Nusku Shield", range = "Molybdosis"}
-	sets.weapons.Ranged = { main = "Rostam", sub = "Nusku Shield", range = "Molybdosis"}
-	sets.weapons.Evisceration = { main = "Tauret", sub = "Nusku Shield", range = "Ataktos"}
-	sets.weapons.DualWeapons = { main = "Naegling", sub = "Tauret", range = "Molybdosis"}
-	sets.weapons.DualSavageWeapons = { main = "Naegling", sub = "Blurred Knife +1", range = "Ataktos"}
+	sets.weapons.Default = { main = "Naegling", sub = "Nusku Shield", range = "Molybdosis" }
+	sets.weapons.Ranged = { main = "Rostam", sub = "Nusku Shield", range = "Molybdosis" }
+	sets.weapons.Evisceration = { main = "Tauret", sub = "Nusku Shield", range = "Ataktos" }
+	sets.weapons.DualWeapons = { main = "Naegling", sub = "Tauret", range = "Molybdosis" }
+	sets.weapons.DualSavageWeapons = { main = "Naegling", sub = "Blurred Knife +1", range = "Ataktos" }
 	sets.weapons.DualEvisceration = { main = "Tauret", sub = "Blurred Knife +1", range = "Ataktos" }
-	sets.weapons.Savage = { main = "Naegling", sub = "Nusku Shield", range = "Ataktos"}
-	sets.weapons.DualLeadenRanged = { main ="Rostam", sub = "Tauret", range = "Molybdosis"}
+	sets.weapons.Savage = { main = "Naegling", sub = "Nusku Shield", range = "Ataktos" }
+	sets.weapons.DualLeadenRanged = { main ="Rostam", sub = "Tauret", range = "Molybdosis" }
 	sets.weapons.DualLeadenMelee = { main = "Naegling", sub = "Atoyac", range = "Molybdosis" }
 	sets.weapons.DualAeolian = { main = "Rostam", sub = "Tauret", range = "Ataktos" }
-	sets.weapons.DualLeadenMeleeAcc = { main = "Naegling", sub = "Blurred Knife +1", range = "Molybdosis"}
+	sets.weapons.DualLeadenMeleeAcc = { main = "Naegling", sub = "Blurred Knife +1", range = "Molybdosis" }
 	sets.weapons.DualRanged = { main = "Rostam", sub = "Kustawi +1", range = "Molybdosis" }
 
 	-- Engaged sets
