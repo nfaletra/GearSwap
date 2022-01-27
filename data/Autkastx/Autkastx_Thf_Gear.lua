@@ -330,7 +330,7 @@ function init_gear_sets()
 
 	sets.engaged.DT =
 	{
-		ammo = "Aurgelmir Orb"
+		ammo = "Aurgelmir Orb",
 		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
 		body = "Pillager's Vest +2", hands = "Malignance Gloves", ring1 = "Petrov Ring", ring2 = "Moonbeam Ring",
 		back = gear.toutatis_tp, waist = "Winduffet Belt +1", legs = "Samnuha Tights", feet = "Plun. Poulaines +3"
@@ -338,7 +338,7 @@ function init_gear_sets()
 
 	sets.engaged.Acc.DT =
 	{
-		ammo = "Aurgelmir Orb"
+		ammo = "Aurgelmir Orb",
 		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
 		body = "Pillager's Vest +2", hands = "Malignance Gloves", ring1 = "Petrov Ring", ring2 = "Moonbeam Ring",
 		back = gear.toutatis_tp, waist = "Winduffet Belt +1", legs = "Samnuha Tights", feet = "Plun. Poulaines +3"
@@ -399,8 +399,6 @@ function check_trust()
 	end
 	return false
 end
-
-state.Weapons:options('Aeneas','Aeolian','Savage','AccSavage','AccAeneas','ProcWeapons','Evisceration','Throwing','SwordThrowing','Bow')
 
 autows_list = {
 	['Aeneas']="Rudra's Storm",['Aeolian']='Aeolian Edge',['Savage']='Savage Blade',['AccSavage']='Savage Blade',

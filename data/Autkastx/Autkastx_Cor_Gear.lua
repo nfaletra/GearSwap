@@ -10,7 +10,7 @@ function user_job_setup()
 	state.Weapons:options('Default', 'Ranged', 'Savage', 'Evisceration', 'DualWeapons', 'DualSavageWeapons', 'DualEvisceration', 'DualLeadenRanged', 'DualLeadenMelee', 'DualAeolian', 'DualLeadenMeleeAcc', 'DualRanged', 'DualProcWeapons', 'None')
 	state.CompensatorMode:options('Never', '300', '1000', 'Always')
 
-	gear.RAbullet = "Orichalc. Bullet"
+	gear.RAbullet = "Divine Bullet"
 	gear.WSbullet = "Orichalc. Bullet"
 	gear.MAbullet = "Orichalc. Bullet" --For MAB WS, do not put single-use bullets here.
 	gear.QDbullet = "Orichalc. Bullet"
@@ -37,9 +37,6 @@ function user_job_setup()
 	send_command('bind ^@!\\\\ gs c toggle LuzafRing')
 	send_command('bind @f7 gs c toggle RngHelper')
 
-	send_command('bind !r gs c weapons DualSavageWeapons;gs c update')
-	send_command('bind ^q gs c weapons DualAeolian;gs c update')
-	send_command('bind !q gs c weapons DualLeadenRanged;gs c update')
 	send_command('bind @pause roller roll')
 
 	select_default_macro_book()
@@ -246,7 +243,7 @@ function init_gear_sets()
 		ammo = gear.RAbullet,
 		head = "Ikenga's Hat", neck = "Iskur Gorget", ear1 = "Enervating Earring", ear2 = "Telos Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Ilabrat Ring", ring2 = "Dingir Ring",
-		back = gear.camulus_range_tp, waist = "Yemaya Belt", legs = "Ikenga's Trousers", feet = "Malignance Boots"
+		back = gear.camulus_range_tp, waist = "Eschan Stone", legs = "Ikenga's Trousers", feet = "Malignance Boots"
 	}
 
 	sets.buff['Triple Shot'] = { body = "Chasseur's Frac +1" }

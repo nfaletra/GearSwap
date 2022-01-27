@@ -59,7 +59,7 @@ function job_setup()
 
 	state.CurrentStep = M{['description']='Current Step', 'Box Step', 'Quickstep'}
 	
-	state.AutoEmblem = M(true, 'Auto Emblem')
+	state.AutoEmblem = M(false, 'Auto Emblem')
 	state.AutoCover = M(false, 'Auto Cover')
 	state.AutoMajesty = M(true, 'Auto Majesty')
 	
