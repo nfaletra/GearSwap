@@ -10,6 +10,9 @@ function user_job_setup()
 	state.Weapons:options('Aeneas','LowBuff')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWEarrings','DWMax'}
 
+	state.DanceStance:options('Saber Dance', 'Fan Dance', 'None')
+	state.AutoSambaMode:options('Haste Samba', 'Drain Samba III', 'Aspir Samba', 'None')
+
 	gear.stp_jse_back = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
 	gear.wsd_jse_back = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	
