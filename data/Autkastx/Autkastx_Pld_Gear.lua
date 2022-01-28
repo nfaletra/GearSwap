@@ -227,7 +227,6 @@ function init_gear_sets()
 		body = "Shab. Cuirass +1", hands = "Regal Gauntlets", ring1 = "Stikini Ring", ring2 = "Stikini Ring",
 		back = "Moonbeam Cape", waist = "Olympus Sash", legs = "Carmine Cuisses +1", feet = "Carmine Greaves +1"
 	}
-
 	sets.midcast['Enhancing Magic'].SIRD =
 	{
 		ammo = "Staunch Tathlum",
@@ -253,8 +252,13 @@ function init_gear_sets()
 		head = "Souv. Schaller +1", neck = "Moonbeam Necklace",
 		waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
 	})
-
 	sets.Phalanx_Received = sets.midcast.Phalanx
+
+	sets.midcast['Enlight II'] = sets.midcast['Enhancing Magic']
+	sets.midcast['Enlight II'].SIRD = sets.midcast['Enhancing Magic'].SIRD
+
+	sets.midcast['Banishga'] = sets.Enmity
+	sets.midcast['Banishga'].SIRD = sets.Enmity.SIRD
 	--------------------------------------
 	-- Idle/resting/defense/etc sets
 	--------------------------------------
@@ -433,8 +437,8 @@ function init_gear_sets()
 	sets.engaged.DD =
 	{
 		sub = "Blurred Shield +1", ammo = "Aurgelmir Orb",
-		head = "Sakpata's Helm", neck = "Combatant's Torque", ear1 = "Cessance Earring", ear2 = "Brutal Earring",
-		body = "Sakpata's Breastplate", hands = "Acro Gauntlets", ring1 = "Chirich Ring", ring2 = "Chirich Ring",
+		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Telos Earring", ear2 = "Brutal Earring",
+		body = "Sakpata's Breastplate", hands = "Acro Gauntlets", ring1 = "Petrov Ring", ring2 = "Regal Ring",
 		back = gear.rudianos_tp, waist = "Sailfi Belt +1", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
 	}
 
