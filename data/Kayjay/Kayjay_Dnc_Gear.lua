@@ -45,7 +45,7 @@ function init_gear_sets()
 	sets.DWMax = { ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Adhemar Jacket +1",hands="Floral Gauntlets",waist="Shetal Stone"}
 	
 	-- Weapons sets
-	sets.weapons.Aeneas = {main="Aeneas",sub="Taming Sari"}
+	sets.weapons.Aeneas = {main="Enchufla",sub="Polyhymnia"}
 	sets.weapons.LowBuff = {main="Aeneas",sub="Blurred Knife +1"}
 	
 	-- Precast Sets
