@@ -71,7 +71,8 @@ function job_setup()
 				cureTarget = windower.ffxi.get_mob_by_id(tonumber(cmdParams[2]))
 			else
 				cureTarget = table.concat(cmdParams, ' ', 2)
-				cureTarget = get_closest_mob_by_name(cureTarget) 
+				cureTarget = windower.ffxi.get_mob_by_target(cureTarget) 
+				if not cureTarget.name then cureTarget = get_mob_byName(cureTarget) end
 				if not cureTarget.name then cureTarget = player.target end
 				if not cureTarget.name then cureTarget = player end
 			end

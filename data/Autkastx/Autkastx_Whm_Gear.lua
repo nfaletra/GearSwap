@@ -352,7 +352,7 @@ function init_gear_sets()
 		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Homiliary",
 		head = "Inyanga Tiara +2", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
 		body = "Theo. Bliaut +3", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
-		back = "Alaunus's Cape", waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = "Inyan. Crackows +2"
+		back = "Alaunus's Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
 	}
 
 	sets.idle.PDT = set_combine(sets.idle, { ammo = "Staunch Tathlum" })
