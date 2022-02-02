@@ -56,7 +56,7 @@ function init_gear_sets()
 	sets.Ambush = {}
 
 	-- Weapons sets
-	sets.weapons.Aeneas = { main = "Aeneas", sub = "Shijo" }
+	sets.weapons.Aeneas = { main = "Aeneas", sub = "Gleti's Knife" }
 	sets.weapons.Aeolian = { main = "Malevolence", sub = "Malevolence" }
 	sets.weapons.Savage = { main = "Naegling", sub = "Shijo" }
 	sets.weapons.ProcWeapons = { main = "Blurred Knife +1", sub = "Atoyac" }
@@ -270,7 +270,7 @@ function init_gear_sets()
 	{
 		ammo="Staunch Tathlum",
 		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Etiolation Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Petrov Ring", ring2 = "Defending Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Defending Ring",
 		back = gear.toutatis_tp, waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 	sets.idle.Sphere = set_combine(sets.idle, { body = "Mekosu. Harness" })
@@ -315,7 +315,7 @@ function init_gear_sets()
 	{
 		ammo = "Aurgelmir Orb",
 		head = "Adhemar Bonnet +1", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Pillager's Vest +2", hands = "Adhemar Wrist. +1", ring1 = "Petrov Ring", ring2 = "Epona's Ring",
+		body = "Pillager's Vest +2", hands = "Adhemar Wrist. +1", ring1 = "Gere Ring", ring2 = "Epona's Ring",
 		back = gear.toutatis_tp, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = "Plun. Poulaines +3"
 	}
 
@@ -323,7 +323,7 @@ function init_gear_sets()
 	{
 		ammo = "Yamarang",
 		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Pillager's Vest +2", hands = "Adhemar Wrist. +1", ring1 = "Petrov Ring", ring2 = "Regal Ring",
+		body = "Pillager's Vest +2", hands = "Adhemar Wrist. +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.toutatis_tp, waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Plun. Poulaines +3"
 	}
 
@@ -331,15 +331,15 @@ function init_gear_sets()
 	{
 		ammo = "Aurgelmir Orb",
 		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Pillager's Vest +2", hands = "Malignance Gloves", ring1 = "Petrov Ring", ring2 = "Moonbeam Ring",
-		back = gear.toutatis_tp, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = "Plun. Poulaines +3"
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Moonbeam Ring",
+		back = gear.toutatis_tp, waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.engaged.Acc.DT =
 	{
 		ammo = "Aurgelmir Orb",
 		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Pillager's Vest +2", hands = "Malignance Gloves", ring1 = "Petrov Ring", ring2 = "Moonbeam Ring",
+		body = "Pillager's Vest +2", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Moonbeam Ring",
 		back = gear.toutatis_tp, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = "Plun. Poulaines +3"
 	}
 end
