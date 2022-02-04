@@ -214,9 +214,9 @@ function init_gear_sets()
 
 	-- Idle sets
 	sets.idle = {
-		head="Espial Cap",neck="Defiant Collar",ear1="Spike Earring",ear2="Suppanomimi",
-		body="Espial Gambison",hands="Espial Bracers",ring1="Rajas Ring",ring2="Ecphoria Ring",
-		back="Senuna's Mantle",waist="Mrc.Cpt. Belt",legs="Feast Hose",feet="Espial Socks"
+		head="Skormoth Mask",neck="Defiant Collar",ear1="Kemas Earring",ear2="Suppanomimi",
+		body="Rawhide Vest",hands="Espial Bracers",ring1="Rajas Ring",ring2="Keen Ring",
+		back="Atheling Mantle",waist="Mrc.Cpt. Belt",legs="Feast Hose",feet="Espial Socks"
 	}
 
 	sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
@@ -253,9 +253,9 @@ function init_gear_sets()
 
 	-- Normal melee group
 	sets.engaged = {
-		head="Espial Cap",neck="Defiant Collar",ear1="Spike Earring",ear2="Suppanomimi",
-		body="Espial Gambison",hands="Espial Bracers",ring1="Rajas Ring",ring2="Ecphoria Ring",
-		back="Senuna's Mantle",waist="Mrc.Cpt. Belt",legs="Feast Hose",feet="Espial Socks"
+		head="Skormoth Mask",neck="Defiant Collar",ear1="Kemas Earring",ear2="Suppanomimi",
+		body="Rawhide Vest",hands="Espial Bracers",ring1="Rajas Ring",ring2="Keen Ring",
+		back="Atheling Mantle",waist="Mrc.Cpt. Belt",legs="Feast Hose",feet="Espial Socks"
 	}
 		
 	sets.engaged.DTLite = {

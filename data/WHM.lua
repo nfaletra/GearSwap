@@ -71,10 +71,13 @@ function job_setup()
 				cureTarget = windower.ffxi.get_mob_by_id(tonumber(cmdParams[2]))
 			else
 				cureTarget = table.concat(cmdParams, ' ', 2)
-				cureTarget = windower.ffxi.get_mob_by_target(cureTarget) 
-				if not cureTarget.name then cureTarget = get_mob_byName(cureTarget) end
-				if not cureTarget.name then cureTarget = player.target end
-				if not cureTarget.name then cureTarget = player end
+				cureTarget = windower.ffxi.get_mob_by_target(cureTarget)
+				if not cureTarget then cureTarget = get_mob_byName(cureTarget) end
+				if not cureTarget then cureTarget = player.target end
+				if not cureTarget then cureTarget = player end
+
+				-- Probably tried to use a macro to heal a party member that doesn't exist
+				if not cureTarget then return end
 			end
 		elseif player.target.type == "SELF" or player.target.type == 'MONSTER' or player.target.type == 'NONE' then
 			cureTarget = player

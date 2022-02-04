@@ -270,7 +270,7 @@ function init_gear_sets()
 	{
 		ammo = "Aurgelmir Orb",
 		head = "Adhemar Bonnet +1", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Brutal Earring",
-		body = "Ken. Samue", hands = "Adhemar Wrist. +1", ring1 = "Niqmaddu Ring", ring2 = "Epona's Ring",
+		body = "Ken. Samue", hands = "Adhemar Wrist. +1", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Hes. Hose +3", feet = "Anch. Gaiters +3"
 	}
 	sets.engaged.Acc = set_combine(sets.engaged,

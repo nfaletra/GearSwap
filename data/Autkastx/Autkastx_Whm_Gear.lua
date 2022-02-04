@@ -316,7 +316,7 @@ function init_gear_sets()
 	sets.midcast['Enfeebling Magic'] =
 	{
 		main = "Daybreak", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
-		head = "Theophany Cap +2", neck = "Erra Pendant", ear1 = "Regal Earring", ear2 = "Malignance Earring",
+		head = "Theophany Cap +3", neck = "Erra Pendant", ear1 = "Regal Earring", ear2 = "Malignance Earring",
 		body = "Theo. Bliaut +3", hands = "Theophany Mitts +3", ring1 = "Kishar Ring", ring2 = "Stikini Ring +1",
 		waist = "Luminary Sash", legs="Inyanga Shalwar +2", feet = "Theo. Duckbills +3"
 	}

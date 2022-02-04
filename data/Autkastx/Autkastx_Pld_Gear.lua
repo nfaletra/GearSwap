@@ -280,7 +280,7 @@ function init_gear_sets()
 		sub = "Priwen", ammo = "Staunch Tathlum",
 		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Foresti Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Reverence Leggings +3"
+		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Rev. Leggings +3"
 	}
 
 	-- Brilliance / Srivatsa
@@ -289,7 +289,7 @@ function init_gear_sets()
 		sub = "Srivatsa", ammo = "Staunch Tathlum",
 		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Foresti Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Reverence Leggings +3"
+		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Rev. Leggings +3"
 	}
 
 	-- MEva/Lower content block
@@ -325,7 +325,7 @@ function init_gear_sets()
 		sub = "Ochain", ammo = "Staunch Tathlum",
 		head = "Chev. Armet +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.rudianos_shield, waist = "Flume Belt +1", legs = "Chev. Cuisses +1", feet = "Reverence Leggings +3"
+		back = gear.rudianos_shield, waist = "Flume Belt +1", legs = "Chev. Cuisses +1", feet = "Rev. Leggings +3"
 	}
 
 	sets.idle.DD =
@@ -386,7 +386,7 @@ function init_gear_sets()
 		sub = "Priwen", ammo = "Staunch Tathlum",
 		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Foresti Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Reverence Leggings +3"
+		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Rev. Leggings +3"
 	}
 
 	-- Brilliance / Srivatsa
@@ -395,7 +395,7 @@ function init_gear_sets()
 		sub = "Srivatsa", ammo = "Staunch Tathlum",
 		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Foresti Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Reverence Leggings +3"
+		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Rev. Leggings +3"
 	}
 
 	-- MEva/Lower content block
@@ -431,7 +431,7 @@ function init_gear_sets()
 		sub = "Ochain", ammo = "Staunch Tathlum",
 		head = "Chev. Armet +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.rudianos_shield, waist = "Flume Belt +1", legs = "Chev. Cuisses +1", feet = "Reverence Leggings +3"
+		back = gear.rudianos_shield, waist = "Flume Belt +1", legs = "Chev. Cuisses +1", feet = "Rev. Leggings +3"
 	}
 
 	sets.engaged.DD =
