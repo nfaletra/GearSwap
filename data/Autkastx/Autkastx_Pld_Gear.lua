@@ -184,7 +184,6 @@ function init_gear_sets()
 	sets.midcast.Stun.SIRD = set_combine(sets.Enmity.SIRD, {})
 	sets.midcast['Blue Magic'] = set_combine(sets.Enmity, {})
 	sets.midcast['Blue Magic'].SIRD = set_combine(sets.Enmity.SIRD, {})
-	sets.midcast.Cocoon = set_combine(sets.Enmity.SIRD, {})
 
 	sets.midcast.Cure =
 	{
@@ -256,6 +255,9 @@ function init_gear_sets()
 
 	sets.midcast['Enlight II'] = sets.midcast['Enhancing Magic']
 	sets.midcast['Enlight II'].SIRD = sets.midcast['Enhancing Magic'].SIRD
+
+	sets.midcast.Cocoon = sets.midcast['Enhancing Magic']
+	sets.midcast.Cocoon.SIRD = sets.midcast['Enhancing Magic'].SIRD
 
 	sets.midcast['Banishga'] = sets.Enmity
 	sets.midcast['Banishga'].SIRD = sets.Enmity.SIRD
