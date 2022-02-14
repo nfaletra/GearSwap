@@ -183,14 +183,14 @@ function init_gear_sets()
 	{
 		ammo = gear.MAbullet,
 		head = "Pixie Hairpin +1", neck = "Comm. Charm +2", ear1 = "Friomisi Earring",ear2="Moonshade Earring",
-		body = "Lanun Frac +3", hands = "Carmine Fin. Ga. +1", ring1 = "Archon Ring", ring2 = "Dingir Ring",
+		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Dingir Ring",
 		back = gear.camulus_leaden, waist = "Anrin Obi", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
 	sets.precast.WS['Aeolian Edge'] =
 	{
 		head = "Nyame Helm", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Laksa. Frac +1", hands = "Carmine Fin. Ga. +1", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
+		body = "Laksa. Frac +1", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
 		back = gear.camulus_leaden, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
@@ -198,7 +198,7 @@ function init_gear_sets()
 	{
 		ammo = gear.MAbullet,
 		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
-		body = "Lanun Frac +3", hands = "Carmine Fin. Ga. +1", ring1 = "Regal Ring", ring2 = "Dingir Ring",
+		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Dingir Ring",
 		back = gear.camulus_wsd, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
