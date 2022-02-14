@@ -55,7 +55,7 @@ function init_gear_sets()
 	sets.precast.JA['Triple Shot'] = { body = "Chasseur's Frac +1" }
 	sets.precast.JA['Snake Eye'] = { legs = "Lanun Trews +1" }
 	sets.precast.JA['Wild Card'] = { feet = "Lanun Bottes +3" }
-	sets.precast.JA['Random Deal'] = { body = "Lanun Frac +1" }
+	sets.precast.JA['Random Deal'] = { body = "Lanun Frac +3" }
 	sets.precast.FoldDoubleBust = { hands = "Lanun Gants +1" }
 
 	sets.precast.CorsairRoll =
@@ -85,7 +85,7 @@ function init_gear_sets()
 	{
 		ammo = gear.QDbullet,
 		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
-		body = "Lanun Frac +1", hands = "Carmine Fin. Ga. +1", ring1 = "Dingir Ring", ring2 = "Fenrir Ring +1",
+		body = "Lanun Frac +3", hands = "Carmine Fin. Ga. +1", ring1 = "Dingir Ring", ring2 = "Fenrir Ring +1",
 		back = gear.camulus_leaden, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +2"
 	}
 
@@ -183,7 +183,7 @@ function init_gear_sets()
 	{
 		ammo = gear.MAbullet,
 		head = "Pixie Hairpin +1", neck = "Comm. Charm +2", ear1 = "Friomisi Earring",ear2="Moonshade Earring",
-		body = "Lanun Frac +1", hands = "Carmine Fin. Ga. +1", ring1 = "Regal Ring", ring2 = "Dingir Ring",
+		body = "Lanun Frac +3", hands = "Carmine Fin. Ga. +1", ring1 = "Archon Ring", ring2 = "Dingir Ring",
 		back = gear.camulus_leaden, waist = "Anrin Obi", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
@@ -198,7 +198,7 @@ function init_gear_sets()
 	{
 		ammo = gear.MAbullet,
 		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
-		body = "Lanun Frac +1", hands = "Carmine Fin. Ga. +1", ring1 = "Regal Ring", ring2 = "Dingir Ring",
+		body = "Lanun Frac +3", hands = "Carmine Fin. Ga. +1", ring1 = "Regal Ring", ring2 = "Dingir Ring",
 		back = gear.camulus_wsd, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
@@ -265,7 +265,7 @@ function init_gear_sets()
 		ammo = gear.RAbullet,
 		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
-		back= gear.camulus_snapshot, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
+		back= gear.camulus_melee_tp, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.idle.PDT =
@@ -273,7 +273,7 @@ function init_gear_sets()
 		ammo = gear.RAbullet,
 		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
-		back= gear.camulus_snapshot, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
+		back= gear.camulus_melee_tp, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.idle.Refresh =
@@ -281,7 +281,7 @@ function init_gear_sets()
 		ammo = gear.RAbullet,
 		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
-		back= gear.camulus_snapshot, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
+		back= gear.camulus_melee_tp, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	-- Defense sets
@@ -290,7 +290,7 @@ function init_gear_sets()
 		ammo = gear.RAbullet,
 		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Shadow Ring",
-		back= gear.camulus_snapshot, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
+		back= gear.camulus_melee_tp, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.defense.MDT =
@@ -298,7 +298,7 @@ function init_gear_sets()
 		ammo = gear.RAbullet,
 		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Shadow Ring",
-		back= gear.camulus_snapshot, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
+		back= gear.camulus_melee_tp, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.defense.MEVA =
@@ -306,7 +306,7 @@ function init_gear_sets()
 		ammo = gear.RAbullet,
 		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Shadow Ring",
-		back= gear.camulus_snapshot, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
+		back= gear.camulus_melee_tp, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.Kiting = { legs = "Carmine Cuisses +1" }
