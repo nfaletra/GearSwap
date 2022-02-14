@@ -6,10 +6,10 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.IdleMode:options('Normal', 'DT')
+	state.IdleMode:options('Normal', 'DT', 'Evasion')
 	state.Weapons:options('Godhands', 'Staff', 'Club', 'ProcStaff', 'ProcClub', 'ProcSword', 'ProcGreatSword', 'ProcScythe', 'ProcPolearm', 'ProcGreatKatana', 'Barehanded')
 
-	state.ExtraMeleeMode = M{['description'] = 'Extra Melee Mode', 'None'}
+	state.ExtraMeleeMode = M{['description'] = 'Extra Melee Mode', 'None', 'Staff'}
 
 	update_melee_groups()
 	
@@ -50,7 +50,7 @@ function init_gear_sets()
 	{
 		head = "Genmei Kabuto", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Anch. Cyclas +1", hands = "Hes. Gloves +3", ring1 = "Niqmaddu Ring", ring2 = "Regal Ring",
-		legs = "Tatenashi Haidate +1", feet = "Anch. Gaiters +3"
+		legs = "Tatena. Haidate +1", feet = "Anch. Gaiters +3"
 	}
 
 	-- Waltz set (chr and vit)
@@ -210,8 +210,24 @@ function init_gear_sets()
 	sets.idle =
 	{
 		ammo = "Staunch Tathlum",
-		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Etiolation Earring",
-		body = "Hes. Cyclas +3", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
+		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
+		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
+		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
+	}
+
+	sets.idle.DT =
+	{
+		ammo = "Staunch Tathlum",
+		head = "Nyame Helm", neck = "Mnk. Nodowa +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
+		body = "Mpaca's Doublet", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
+		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Nyame Sollerets"
+	}
+
+	sets.idle.Evasion =
+	{
+		ammo = "Staunch Tathlum",
+		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -220,14 +236,6 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum",
 		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Etiolation Earring",
 		body = "Hes. Cyclas +3", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
-	}
-
-	sets.idle.PDT =
-	{
-		ammo = "Staunch Tathlum",
-		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2",ear1 = "Sherida Earring", ear2 = "Etiolation Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -302,6 +310,15 @@ function init_gear_sets()
 	-- Hundred Fists/Impetus melee set mods
 	sets.engaged.HF = set_combine(sets.engaged, {})
 	sets.engaged.Acc.HF = set_combine(sets.engaged.Acc, {})
+
+	-- Extra Melee Modes
+	sets.Staff =
+	{
+		ammo = "Aurgelmir Orb",
+		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Brutal Earring",
+		body = "Ken. Samue", hands = "Adhemar Wrist. +1", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
+		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Tatena. Haidate +1", feet = "Mpaca's Boots"
+	}
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {}

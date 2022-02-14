@@ -910,23 +910,16 @@ end
 -- Variables it sets: classes.Daytime, and classes.DuskToDawn.  They are set to true
 
 function item_available(item)
-	if player.inventory[item] or player.wardrobe[item] or player.wardrobe2[item] or player.wardrobe3[item] or player.wardrobe4[item] or player.satchel[item] then
-		return true
-	else
-		return false
-	end
+	return player.inventory[item] or player.satchel[item] or player.sack[item] or player.case[item] or
+			player.wardrobe[item] or player.wardrobe2[item] or player.wardrobe3[item] or player.wardrobe4[item] or
+			player.wardrobe5[item] or player.wardrobe6[item] or player.wardrobe7[item] or player.wardrobe8[item]
 end
 
 function item_owned(item)
-	if player.inventory[item] or player.wardrobe[item] or player.wardrobe2[item] or player.wardrobe3[item] or player.wardrobe4[item] or player.safe[item] or player.safe2[item] or player.storage[item] or player.locker[item] or player.satchel[item] or player.sack[item] or player.case[item] then
-		return true
-	else
-		return false
-	end
+	return item_available(item) or player.safe[item] or player.safe2[item] or player.storage[item] or player.locker[item]
 end
 
 function check_disable(spell, spellMap, eventArgs)
-
 	if player.hp == 0 then
 		add_to_chat(123,'Abort: You are dead.')
 		eventArgs.cancel = true
@@ -954,7 +947,6 @@ function check_disable(spell, spellMap, eventArgs)
 end
 
 function silent_check_disable()
-
 	if buffactive.terror or buffactive.petrification or buffactive.sleep or buffactive.Lullaby or buffactive.stun then
 		return true
 	else
@@ -1667,7 +1659,7 @@ function is_party_member(playerid)
 end
 
 function get_usable_item(name)--returns time that you can use the item again
-	for _,n in pairs({"inventory","wardrobe","wardrobe2","wardrobe3","wardrobe4","satchel"}) do
+	for _,n in pairs({"inventory","wardrobe","wardrobe2","wardrobe3","wardrobe4","wardrobe5","wardrobe6","wardrobe7","wardrobe8","satchel"}) do
         for _,v in pairs(gearswap.items[n]) do
             if type(v) == "table" and v.id ~= 0 and res.items[v.id].english:lower() == name:lower() then
                 return extdata.decode(v)
@@ -2008,16 +2000,17 @@ function is_nuke(spell, spellMap)
 end
 
 function ammo_left()
-
 	local InventoryAmmo = ((player.inventory[player.equipment.ammo] or {}).count or 0)
 	local WardrobeAmmo = ((player.wardrobe[player.equipment.ammo] or {}).count or 0)
 	local Wardrobe2Ammo = ((player.wardrobe2[player.equipment.ammo] or {}).count or 0)
 	local Wardrobe3Ammo = ((player.wardrobe3[player.equipment.ammo] or {}).count or 0)
 	local Wardrobe4Ammo = ((player.wardrobe4[player.equipment.ammo] or {}).count or 0)
-		
-	local AmmoLeft = InventoryAmmo + WardrobeAmmo + Wardrobe2Ammo + Wardrobe3Ammo + Wardrobe4Ammo 
-		
-	return AmmoLeft	
+	local Wardrobe5Ammo = ((player.wardrobe5[player.equipment.ammo] or {}).count or 0)
+	local Wardrobe6Ammo = ((player.wardrobe6[player.equipment.ammo] or {}).count or 0)
+	local Wardrobe7Ammo = ((player.wardrobe7[player.equipment.ammo] or {}).count or 0)
+	local Wardrobe8Ammo = ((player.wardrobe8[player.equipment.ammo] or {}).count or 0)
+
+	return InventoryAmmo + WardrobeAmmo + Wardrobe2Ammo + Wardrobe3Ammo + Wardrobe4Ammo + Wardrobe5Ammo + Wardrobe6Ammo + Wardrobe7Ammo + Wardrobe8Ammo
 end
 
  --Equip command but accepts the set name as a string to work around inability to use equip() in raw events.
@@ -2153,11 +2146,11 @@ end
 function count_available_ammo(ammo_name)
 	local ammo_count = 0
 	
-    for _,n in pairs({"inventory","wardrobe","wardrobe2","wardrobe3","wardrobe4",}) do
+	for _,n in pairs({"inventory","wardrobe","wardrobe2","wardrobe3","wardrobe4","wardrobe5","wardrobe6","wardrobe7","wardrobe8"}) do
 		if player[n][ammo_name] then
 			ammo_count = ammo_count + player[n][ammo_name].count
 		end
-    end
+	end
 
 	return ammo_count
 end
@@ -2165,11 +2158,11 @@ end
 function count_total_ammo(ammo_name)
 	local ammo_count = 0
 	
-    for _,n in pairs({"inventory","wardrobe","wardrobe2","wardrobe3","wardrobe4","satchel","sack","case"}) do
+	for _,n in pairs({"inventory","satchel","sack","case","wardrobe","wardrobe2","wardrobe3","wardrobe4","wardrobe5","wardrobe6","wardrobe7","wardrobe8"}) do
 		if player[n][ammo_name] then
 			ammo_count = ammo_count + player[n][ammo_name].count
 		end
-    end
+	end
 
 	return ammo_count
 end
