@@ -160,7 +160,7 @@ function init_gear_sets()
 		ammo = "Knobkierre",
 		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
 		body = "Ken. Samue", hands = "Anchor. Gloves +3", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.segomo_wsd, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Anchor. Gaiters +3"
+		back = gear.segomo_wsd, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Anch. Gaiters +3"
 	}
 	sets.precast.WS["Dragon Kick"].Acc = set_combine(sets.precast.WS["Dragon Kick"], sets.precast.WSAcc)
 
@@ -169,7 +169,7 @@ function init_gear_sets()
 		ammo = "Knobkierre",
 		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
 		body = "Ken. Samue", hands = gear.herculean_ta_hands, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.segomo_wsd, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Anchor. Gaiters +3"
+		back = gear.segomo_wsd, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Anch. Gaiters +3"
 	}
 	sets.precast.WS["Tornado Kick"].Acc = set_combine(sets.precast.WS["Tornado Kick"], sets.precast.WSAcc)
 
