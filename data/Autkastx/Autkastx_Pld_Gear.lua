@@ -13,7 +13,7 @@ function user_job_setup()
 	
 	state.ExtraDefenseMode = M{ ['description'] = 'Extra Defense Mode', 'None', 'MP', 'Twilight' }
 	
-	gear.ruidanos_fc = "Rudianos's Mantle" --{ name="Rudianos's Mantle", augments={'HP+60','"Fast Cast"+10',}}
+	gear.rudianos_fc = { name = "Rudianos's Mantle", augments = { 'HP+60', '"Fast Cast"+10' } }
 	gear.rudianos_tp = "Rudianos's Mantle" --{ name = "Rudianos's Mantle", augments={ 'HP+60','Accuracy+20 Attack+20','HP+20','"Store TP"+10','Phys. dmg. taken-10%' }}
 	gear.rudianos_wsd = "Rudianos's Mantle" -- { name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 	gear.rudianos_enmity = "Ruianos's Mantle" -- { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Phys. dmg. taken-10%',}}

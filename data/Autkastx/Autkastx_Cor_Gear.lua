@@ -20,7 +20,7 @@ function user_job_setup()
 	gear.camulus_snapshot = {name="Camulus's Mantle",augments={'"Snapshot"+10',}}
 	gear.camulus_melee_tp = { name = "Camulus's Mantle", augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' }}
 	gear.camulus_wsd = {name="Camulus's Mantle",augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
-	gear.camulus_leaden = { name = "Camulus's Mantle", augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+5', 'Weapon skill damage +10%', 'Mag. Evasion+15' }}
+	gear.camulus_leaden = { name = "Camulus's Mantle", augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%', 'Mag. Evasion+15' }}
 	gear.camulus_savage = {name="Camulus's Mantle",augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 
 	-- Additional local binds
@@ -168,9 +168,9 @@ function init_gear_sets()
 	sets.precast.WS['Last Stand'] =
 	{
 		ammo = gear.WSbullet,
-		head = "Lanun Tricorne +1", neck = "Fotia Gorget", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
-		body = "Meg. Cuirie +2", hands = "Meg. Gloves +2", ring1 = "Regal Ring", ring2 = "Dingir Ring",
-		back = gear.camulus_wsd, waist = "Fotia Belt", legs = "Meg. Chausses +2", feet = "Lanun Bottes +3"
+		head = "Malignance Chapeau", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Enervating Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Regal Ring", ring2 = "Dingir Ring",
+		back = gear.camulus_wsd, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.precast.WS['Detonator'] = sets.precast.WS['Last Stand']
@@ -182,7 +182,7 @@ function init_gear_sets()
 	sets.precast.WS['Leaden Salute'] =
 	{
 		ammo = gear.MAbullet,
-		head = "Pixie Hairpin +1", neck = "Comm. Charm +2", ear1 = "Friomisi Earring",ear2="Moonshade Earring",
+		head = "Pixie Hairpin +1", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Dingir Ring",
 		back = gear.camulus_leaden, waist = "Anrin Obi", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
@@ -324,7 +324,7 @@ function init_gear_sets()
 	sets.weapons.DualLeadenRanged = { main ="Rostam", sub = "Kustawi +1", range = "Molybdosis" }
 	sets.weapons.DualLeadenMelee = { main = "Naegling", sub = "Tauret", range = "Molybdosis" }
 	sets.weapons.DualAeolian = { main = "Rostam", sub = "Tauret", range = "Ataktos" }
-	sets.weapons.DualLeadenMeleeAcc = { main = "Naegling", sub = "Gleti's Knife", range = "Molybdosis" }
+	sets.weapons.DualLeadenMeleeAcc = { main = "Naegling", sub = "Kustawi +1", range = "Molybdosis" }
 	sets.weapons.DualRanged = { main = "Rostam", sub = "Kustawi +1", range = "Molybdosis" }
 
 	-- Engaged sets

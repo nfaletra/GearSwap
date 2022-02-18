@@ -89,7 +89,7 @@ function init_gear_sets()
 		body = "Mochi. Chainmail +3",
 		feet = "Hattori Kyahan +1"
 	})
-	sets.precast.FC.Shadows = set_combine(sets.precast.FC.Utsusemi, {ammo="Staunch Tathlum +1",ring1="Prolix Ring"})
+	sets.precast.FC.Shadows = set_combine(sets.precast.FC.Utsusemi, {ammo="Staunch Tathlum",ring1="Prolix Ring"})
 
 	-- Snapshot for ranged
 	sets.precast.RA = {}
@@ -111,6 +111,13 @@ function init_gear_sets()
 		head = "Ynglinga Sallet", neck = "Moonbeam Nodowa", ear1 = "Mache Earring +1", ear2 = "Telos Earring",
 		body = "Mummu Jacket +2", hands = "Mummu Wrists +2", ring1 = "Ramuh Ring +1", ring2 = "Ramuh Ring +1",
 		back = gear.andartia_tp, waist = "Olseni Belt", legs = "Mummu Kecks +2", feet = "Malignance Boots"
+	}
+
+	sets.precast.WS['Savage Blade'] =
+	{
+		head = "Mpaca's Cap", ear2 = "Moonshade Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		waist = "Sailfi Belt +1", legs = "Hiza. Hizayoroi +2", feet = "Nyame Sollerets"
 	}
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -216,7 +223,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle =
 	{
-		ammo = "Staunch Tathlum +1",
+		ammo = "Staunch Tathlum",
 		head = "Nyame Helm", neck = "Ninja Nodowa", ear1 = "Eabani Earring", ear2 = "Etiolation Earring",
 		body = "Mpaca's Doublet", hands = "Nyame Gauntlets", ring1 = "Defending Ring", ring2 = "Warden's Ring",
 		back = gear.andartia_tp, waist = "Carrier's Sash", legs = "Mpaca's Hose", feet = "Nyame Sollerets"

@@ -58,11 +58,11 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Aeneas = { main = "Aeneas", sub = "Gleti's Knife" }
 	sets.weapons.Aeolian = { main = "Malevolence", sub = "Malevolence" }
-	sets.weapons.Savage = { main = "Naegling", sub = "Shijo" }
+	sets.weapons.Savage = { main = "Naegling", sub = "Gleti's Knife" }
 	sets.weapons.ProcWeapons = { main = "Blurred Knife +1", sub = "Atoyac" }
-	sets.weapons.Evisceration = { main = "Tauret", sub = "Shijo" }
-	sets.weapons.Throwing = { main = "Aeneas", sub = "Shijo", range = "Raider's Bmrng.", ammo = empty }
-	sets.weapons.SwordThrowing = { main = "Naegling", sub = "Shijo", range = "Raider's Bmrng.", ammo = empty }
+	sets.weapons.Evisceration = { main = "Tauret", sub = "Gleti's Knife" }
+	sets.weapons.Throwing = { main = "Aeneas", sub = "Gleti's Knife", range = "Raider's Bmrng.", ammo = empty }
+	sets.weapons.SwordThrowing = { main = "Naegling", sub = "Gleti's Knife", range = "Raider's Bmrng.", ammo = empty }
 	sets.weapons.Bow = { main = "Aeneas", sub = "Kustawi +1", range = "Kaja Bow", ammo = "Chapuli Arrow" }
 
 	-- Actions we want to use to tag TH.
@@ -177,14 +177,14 @@ function init_gear_sets()
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Odr Earring",
 		body = "Abnoba Kaftan", hands = "Mummu Wrists +2",
-		waist = "Fotia Belt", legs = "Pill. Culottes +2", feet = "Mummu Gamash. +2",
+		waist = "Fotia Belt", legs = "Pill. Culottes +2", feet = "Mummu Gamash. +2"
 	})
 	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS.Acc, {})
 
 	sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS, {
-		ear1="Ishvara Earring",
-		body="Adhemar Jacket +1",
-		waist="Sailfi Belt +1"
+		ear1 = "Ishvara Earring",
+		body = "Adhemar Jacket +1", ring1 = "Rufescent Ring",
+		waist = "Sailfi Belt +1"
 	})
 	sets.precast.WS["Savage Blade"].Acc = set_combine(sets.precast.WS.Acc, {})
 	sets.precast.WS["Savage Blade"].SA = set_combine(sets.precast.WS["Savage Blade"], {})

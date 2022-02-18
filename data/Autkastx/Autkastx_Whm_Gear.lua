@@ -251,19 +251,19 @@ function init_gear_sets()
 	{
 		main = "Gada", sub = "Ammurapi Shield",
 		head = "Befouled Crown",
-		hands = "Inyan. Dastanas +2",
+		body = "Telchine Chas.", hands = "Inyan. Dastanas +2",
 		back = "Perimede Cape", waist = "Olympus Sash", legs = "Clr. Pantaln. +2", feet = "Theo. Duckbills +3"
 	}
 
 	sets.midcast['Enhancing Magic'].Duration = set_combine(sets.midcast['Enhancing Magic'],
 	{
-		waist = "Embla Sash", feet = "Theo. Duckbills +3"
+		waist = "Embla Sash",
 	})
 
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'].Duration, { waist = "Siegel Sash" })
 	sets.midcast.Auspice = set_combine(sets.midcast['Enhancing Magic'].Duration, {})
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'].Duration, { head = "Chrionic Hat" })
-	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'].Duration, 
+	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'].Duration,
 	{
 		main = "Bolelabunga",
 		head = "Inyanga Tiara +2",

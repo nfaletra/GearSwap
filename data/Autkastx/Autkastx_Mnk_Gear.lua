@@ -336,7 +336,7 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Godhands = { main = "Godhands" }
 	sets.weapons.Barehanded = { main = empty }
-	sets.weapons.Staff = { main = "Gozuki Mezuki", sub = "Bloodrain Strap" }
+	sets.weapons.Staff = { main = "Malignance Pole", sub = "Bloodrain Strap" }
 	sets.weapons.ProcStaff = { main = "Chatoyant Staff", sub = "Bloodrain Strap" }
 	sets.weapons.ProcClub = { main = "Mafic Cudgel" }
 	sets.weapons.ProcSword = { main = "Ark Sword" }
