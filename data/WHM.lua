@@ -181,7 +181,7 @@ function job_pretarget(spell, spellMap, eventArgs)
 end
 
 function job_precast(spell, spellMap, eventArgs)
-	if spell.english == 'Arise' and player.sub_job == 'SCH' then
+	if spell.english == 'Arise' and player.sub_job == 'SCH' and state.Buff['Light Arts'] and not state.Buff['SJ Restriction'] then
 		if not buffactive['Celerity'] then
 			eventArgs.cancel = true
 			windower.chat.input('/ja Celerity <me>')
