@@ -97,7 +97,7 @@ function init_gear_sets()
 	sets.precast.JA['Conspirator'] = {} 
 	sets.precast.JA['Steal'] = {}
 	sets.precast.JA['Mug'] = {}
-	sets.precast.JA['Despoil'] = { feet = "Skulk. Poulaines +1" }
+	sets.precast.JA['Despoil'] = { legs = "Raider's Culottes +1", feet = "Skulk. Poulaines +1" }
 	sets.precast.JA['Perfect Dodge'] = { hands = "Asn. Armlets +2" }
 	sets.precast.JA['Feint'] = {}
 
@@ -136,9 +136,9 @@ function init_gear_sets()
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS =
 	{
-		ammo = "Falcon Eye",
+		ammo = "Seeth. Bomblet +1",
 		head = "Pill. Bonnet +2", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Meg. Gloves +2", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		body = "Plunderer's Vest +3", hands = "Meg. Gloves +2", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
 		back = gear.toutatis_wsd, feet = "Plun. Poulaines +3",
 	}
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
@@ -176,7 +176,7 @@ function init_gear_sets()
 	{
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Odr Earring",
-		body = "Abnoba Kaftan", hands = "Mummu Wrists +2",
+		hands = "Adhemar Wrist. +1",
 		waist = "Fotia Belt", legs = "Pill. Culottes +2", feet = "Mummu Gamash. +2"
 	})
 	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS.Acc, {})
@@ -203,22 +203,22 @@ function init_gear_sets()
 	{
 		head = "Pill. Bonnet +3", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Enervating Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Apate Ring", ring2 = "Regal Ring",
-		back = gear.wsd_jse_back, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.toutatis_wsd, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.precast.WS['Empyreal Arrow'] =
 	{
 		head = "Pill. Bonnet +3", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Enervating Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Apate Ring", ring2 = "Regal Ring",
-		back = gear.wsd_jse_back, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.toutatis_wsd, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.precast.WS['Aeolian Edge'] =
 	{
 		ammo = "Seeth. Bomblet +1",
-		head = gear.herculean_nuke_head, neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
+		head = "Nyame Helm", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Shiva Ring +1",
-		back = gear.wsd_jse_back, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = gear.herculean_nuke_feet
+		back = gear.toutatis_wsd, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
@@ -268,10 +268,10 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle =
 	{
-		ammo="Staunch Tathlum",
+		ammo = "Staunch Tathlum",
 		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Etiolation Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Defending Ring",
-		back = gear.toutatis_tp, waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 	sets.idle.Sphere = set_combine(sets.idle, { body = "Mekosu. Harness" })
 
@@ -316,7 +316,7 @@ function init_gear_sets()
 		ammo = "Aurgelmir Orb",
 		head = "Adhemar Bonnet +1", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
 		body = "Pillager's Vest +2", hands = "Adhemar Wrist. +1", ring1 = "Gere Ring", ring2 = "Epona's Ring",
-		back = gear.toutatis_tp, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = "Plun. Poulaines +3"
+		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Samnuha Tights", feet = "Plun. Poulaines +3"
 	}
 
 	sets.engaged.Acc =
@@ -324,7 +324,7 @@ function init_gear_sets()
 		ammo = "Yamarang",
 		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
 		body = "Pillager's Vest +2", hands = "Adhemar Wrist. +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
-		back = gear.toutatis_tp, waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Plun. Poulaines +3"
+		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Plun. Poulaines +3"
 	}
 
 	sets.engaged.DT =
@@ -332,15 +332,15 @@ function init_gear_sets()
 		ammo = "Aurgelmir Orb",
 		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Moonbeam Ring",
-		back = gear.toutatis_tp, waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.engaged.Acc.DT =
 	{
 		ammo = "Aurgelmir Orb",
 		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Pillager's Vest +2", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Moonbeam Ring",
-		back = gear.toutatis_tp, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = "Plun. Poulaines +3"
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Moonbeam Ring",
+		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Plun. Poulaines +3"
 	}
 end
 
