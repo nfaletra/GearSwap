@@ -137,7 +137,7 @@ function init_gear_sets()
 	sets.precast.WS =
 	{
 		ammo = "Seeth. Bomblet +1",
-		head = "Pill. Bonnet +2", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
+		head = "Plun. Bonnet +3", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
 		body = "Plunderer's Vest +3", hands = "Meg. Gloves +2", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
 		back = gear.toutatis_wsd, feet = "Plun. Poulaines +3",
 	}
@@ -149,7 +149,7 @@ function init_gear_sets()
 	sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"],
 	{
 		ammo = "Yetshila",
-		ear1 = "Odr Earring",
+		head = "Pill. Bonnet +2", ear1 = "Odr Earring",
 		legs = "Pill. Culottes +2"
 	})
 	sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"], {})
@@ -181,15 +181,19 @@ function init_gear_sets()
 	})
 	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS.Acc, {})
 
-	sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS, {
+	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS,
+	{
+		neck = "Fotia Gorget",
+		waist = "Fotia Belt", legs = "Meg. Chausses +2"
+	})
+
+	sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS,
+	{
 		ear1 = "Ishvara Earring",
 		body = "Adhemar Jacket +1", ring1 = "Rufescent Ring",
 		waist = "Sailfi Belt +1"
 	})
 	sets.precast.WS["Savage Blade"].Acc = set_combine(sets.precast.WS.Acc, {})
-	sets.precast.WS["Savage Blade"].SA = set_combine(sets.precast.WS["Savage Blade"], {})
-	sets.precast.WS["Savage Blade"].TA = set_combine(sets.precast.WS["Savage Blade"], {})
-	sets.precast.WS["Savage Blade"].SATA = set_combine(sets.precast.WS["Savage Blade"], {})
 
 	sets.precast.WS.Proc =
 	{

@@ -161,7 +161,7 @@ function init_gear_sets()
 	sets.precast.WS['Savage Blade'] =
 	{
 		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
-		body = "Laksa. Frac +1", hands = "Meg. Gloves +2", ring1 = "Regal Ring", ring2 = "Rufescent Ring",
+		body = "Laksa. Frac +2", hands = "Meg. Gloves +2", ring1 = "Regal Ring", ring2 = "Rufescent Ring",
 		back = gear.camulus_savage, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet="Lanun Bottes +3"
 	}
 
@@ -169,7 +169,7 @@ function init_gear_sets()
 	{
 		ammo = gear.WSbullet,
 		head = "Malignance Chapeau", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Enervating Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Regal Ring", ring2 = "Dingir Ring",
+		body = "Laksa. Frac +2", hands = "Malignance Gloves", ring1 = "Regal Ring", ring2 = "Dingir Ring",
 		back = gear.camulus_wsd, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 

@@ -2,13 +2,18 @@
 --Have a Normal/HQ/NQ state
 --Watch for gained buffs containing Imagery, if it does, jump to the correct Crafting Mode
 --Add Gathering Sets
---[[
-sets.Fishing = {range="Ebisu Fishing Rod",neck="Fisher's Torque",body="Fisherman's Smock",hands="Fsh. Gloves",ring1="Noddy Ring",ring2=="Puffin Ring",waist="Fisher's Rope",legs="Fisherman's Hose",feet="Waders"}
+
+sets.crafting = {ring1="Craftkeeper's Ring",ring2="Artificer's Ring",back="Shaper's Shawl"}
+
+sets.crafting.Fishing =
+{
+	range = "S.H. Fishing Rod", ammo = "Insect Ball"
+}
+
 sets.Chocobo = {main="Chocobo Wand",head="Egg Helm",neck="Chocobo Torque",body="Blue Race Silks",hands="Chocobo Gloves",waist="Chocobo Rope",legs="Chocobo Hose",feet="Chocobo Boots"}
 sets.Chocobo.skill = {body="S. Blue Race Silks"}
 sets.Chocobo.personal = {body="Red Race Silks"}
 sets.Chocobo.game = {body="Black Race Silks"}
-sets.crafting = {ring1="Craftkeeper's Ring",ring2="Artificer's Ring",back="Shaper's Shawl"}
 sets.crafting.HQ = {ring2="Craftmaster's Ring"}
 sets.crafting.Alchemy = {main="Caduceus",sub="Brewer's Escutcheon",neck="Alchemst. Torque",body="Alchemist's Smock"}
 sets.crafting.Alchemy.NQ = {ring1="Alchemist's Ring"}
@@ -29,7 +34,8 @@ sets.crafting.Woodworking.NQ = {ring1="Carpenter's Ring"}
 sets.crafting.Synergy = {}
 
 --Specific items for crafting you may want to use organizer to collect.
-sets.items = {
+sets.items =
+{
 	item1="",
 	item2="",
 	item3="",
@@ -40,5 +46,4 @@ sets.items = {
 	item8="",
 	item9="",
 	item10="",
-	}
-]]
+}
