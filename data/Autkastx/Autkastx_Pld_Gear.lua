@@ -52,28 +52,29 @@ function init_gear_sets()
 	{
 		ammo = "Sapience Orb",
 		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Souv. Cuirass +1", hands = "Macabre Gaunt. +1", ring1 = "Apeile Ring +1", ring2 = "Apeile Ring",
+		body = "Souv. Cuirass +1", hands = "Cab. Gauntlets +3", ring1 = "Apeile Ring +1", ring2 = "Apeile Ring",
 		back = gear.rudianos_shield, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Souv. Schuhs +1"
 	}
 
 	sets.Enmity.SIRD = set_combine(sets.Enmity,
 	{
 		ammo = "Staunch Tathlum",
-		head = "Souv. Schaller +1", neck = "Moonbeam Necklace",
+		head = "Souv. Schaller +1",
+		hands = "Regal Gauntlets",
 		waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
 	})
 
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Invincible'] = set_combine(sets.Enmity, { legs = "Cab. Breeches +1" })
+	sets.precast.JA['Invincible'] = set_combine(sets.Enmity, { legs = "Cab. Breeches +3" })
 	sets.precast.JA['Holy Circle'] = set_combine(sets.Enmity, { feet = "Rev. Leggings +3" })
 	sets.precast.JA['Sentinel'] = set_combine(sets.Enmity, { feet = "Cab. Leggings +1" })
 	sets.precast.JA['Rampart'] = set_combine(sets.Enmity, {}) --head="Valor Coronet" (Also Vit?)
-	sets.precast.JA['Fealty'] = set_combine(sets.Enmity, { body = "Cab. Surcoat +1" })
+	sets.precast.JA['Fealty'] = set_combine(sets.Enmity, { body = "Cab. Surcoat +3" })
 	sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, { feet = "Chev. Sabatons +1" })
-	sets.precast.JA['Cover'] = set_combine(sets.Enmity, { body = "Cab. Surcoat +1" }) --head="Rev. Coronet +1",
+	sets.precast.JA['Cover'] = set_combine(sets.Enmity, { body = "Cab. Surcoat +3" }) --head="Rev. Coronet +1",
 
 	-- add mnd for Chivalry
-	sets.precast.JA['Chivalry'] = {}
+	sets.precast.JA['Chivalry'] = set_combine(sets.Enmity, { hands = "Cab. Gauntlets +3" })
 
 	sets.precast.JA['Shield Bash'] = set_combine(sets.Enmity, { hands = "Cab. Gauntlets +3" })
 	sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
@@ -102,7 +103,7 @@ function init_gear_sets()
 	{
 		ammo = "Sapience Orb",
 		head = "Carmine Mask +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Rev. Surcoat +3", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Gelatinous Ring +1",
+		body = "Rev. Surcoat +2", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_fc, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Odyssean Greaves"
 	}
 
@@ -188,20 +189,14 @@ function init_gear_sets()
 	sets.midcast.Cure =
 	{
 		ammo = "Staunch Tathlum",
-		head = "Souv. Schaller +1", neck = "Moonbeam Necklace", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Souv. Cuirass +1", hands = "Macabre Gaunt. +1", ring1 = "Eiwhaz Ring", ring2 = "Gelatinous Ring +1",
+		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
+		body = "Souv. Cuirass +1", hands = "Macabre Gaunt. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_cure, waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
 	}
-	sets.midcast.Cure.SIRD = set_combine(sets.midcast.Cure, {})
+	sets.midcast.Cure.SIRD = set_combine(sets.midcast.Cure, { hands = "Regal Gauntlets" })
 
-	sets.Self_Healing =
-	{
-		ammo = "Staunch Tathlum",
-		head = "Souv. Schaller +1", neck = "Moonbeam Necklace", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Souv. Cuirass +1", hands = "Macabre Gaunt. +1", ring1 = "Eiwhaz Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.rudianos_cure, waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
-	}
-	sets.Self_Healing.SIRD = set_combine(sets.Self_Healing, {})
+	sets.Self_Healing = set_combine(sets.midcast.Cure, {})
+	sets.Self_Healing.SIRD = set_combine(sets.Self_Healing, { hands = "Regal Gauntlets" })
 
 	sets.midcast.Reprisal =
 	{
@@ -212,7 +207,6 @@ function init_gear_sets()
 	}
 	sets.midcast.Reprisal.SIRD = set_combine(sets.midcast.Reprisal,
 	{
-		neck = "Moonbeam Necklace",
 		waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
 	})
 
@@ -222,14 +216,14 @@ function init_gear_sets()
 	sets.midcast['Enhancing Magic'] =
 	{
 		ammo = "Sapience Orb",
-		head = "Carmine Mask +1", neck = "Incanter's Torque", ear1 = "Mimir Earring", ear2 = "Andoaa Earring",
+		head = "Carmine Mask +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Shab. Cuirass +1", hands = "Regal Gauntlets", ring1 = "Stikini Ring", ring2 = "Stikini Ring",
 		back = "Moonbeam Cape", waist = "Olympus Sash", legs = "Carmine Cuisses +1", feet = "Carmine Greaves +1"
 	}
 	sets.midcast['Enhancing Magic'].SIRD =
 	{
 		ammo = "Staunch Tathlum",
-		head = "Souv. Schaller +1", neck = "Moonbeam Necklace", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
+		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Reverence Surcoat +2", hands = "Regal Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
 		back = "Moonbeam Cape", waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
 	}

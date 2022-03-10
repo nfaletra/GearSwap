@@ -133,7 +133,7 @@ function init_gear_sets()
 		back = gear.camulus_snapshot, waist = "Impulse Belt", legs = "Adhemar Kecks +1", feet = "Meg. Jam. +2"
 	}
 
-	sets.precast.RA.Flurry = set_combine(sets.precast.RA, { body = "Laksa. Frac +1" })
+	sets.precast.RA.Flurry = set_combine(sets.precast.RA, { body = "Laksa. Frac +3" })
 	sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry, { hands = "Carmine Fin. Ga. +1", feet = "Pursuer's Gaiters" })
 
 	-- Weaponskill sets
@@ -153,15 +153,15 @@ function init_gear_sets()
 
 	sets.precast.WS['Evisceration'] =
 	{
-		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Odr Earring", ear2 = "Moonshade Earring",
-		body = "Mummu Jacket +2", hands = "Mummu Wrists +2", ring1 = "Regal Ring", ring2 = "Mummu Ring",
-		back = gear.camulus_melee_tp, waist = "Fotia Belt", legs = "Samnuha Tights", feet = "Mummu Gamash. +2"
+		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Odr Earring", ear2 = "Ishvara Earring",
+		body = "Mummu Jacket +2", hands = "Adhemar Wrist. +1", ring1 = "Regal Ring", ring2 = "Mummu Ring",
+		back = gear.camulus_melee_tp, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Mummu Gamash. +2"
 	}
 
 	sets.precast.WS['Savage Blade'] =
 	{
 		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
-		body = "Laksa. Frac +2", hands = "Meg. Gloves +2", ring1 = "Regal Ring", ring2 = "Rufescent Ring",
+		body = "Laksa. Frac +3", hands = "Meg. Gloves +2", ring1 = "Regal Ring", ring2 = "Rufescent Ring",
 		back = gear.camulus_savage, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet="Lanun Bottes +3"
 	}
 
@@ -169,7 +169,7 @@ function init_gear_sets()
 	{
 		ammo = gear.WSbullet,
 		head = "Malignance Chapeau", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Enervating Earring",
-		body = "Laksa. Frac +2", hands = "Malignance Gloves", ring1 = "Regal Ring", ring2 = "Dingir Ring",
+		body = "Laksa. Frac +3", hands = "Malignance Gloves", ring1 = "Regal Ring", ring2 = "Dingir Ring",
 		back = gear.camulus_wsd, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -190,7 +190,7 @@ function init_gear_sets()
 	sets.precast.WS['Aeolian Edge'] =
 	{
 		head = "Nyame Helm", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Laksa. Frac +1", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
+		body = "Lanun Frac +3", hands = "Carmine Fin. Ga. +1", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
 		back = gear.camulus_leaden, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
@@ -242,9 +242,9 @@ function init_gear_sets()
 	sets.midcast.RA =
 	{
 		ammo = gear.RAbullet,
-		head = "Ikenga's Hat", neck = "Iskur Gorget", ear1 = "Enervating Earring", ear2 = "Telos Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Ilabrat Ring", ring2 = "Dingir Ring",
-		back = gear.camulus_range_tp, waist = "Impulse Belt", legs = "Ikenga's Trousers", feet = "Malignance Boots"
+		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Enervating Earring", ear2 = "Telos Earring",
+		body = "Laksa. Frac +3", hands = "Malignance Gloves", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		back = gear.camulus_range_tp, waist = "Impulse Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.buff['Triple Shot'] = { body = "Chasseur's Frac +1" }

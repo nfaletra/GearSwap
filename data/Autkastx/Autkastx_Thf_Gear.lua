@@ -38,7 +38,7 @@ function init_gear_sets()
 	--------------------------------------
 	-- Special sets (required by rules)
 	--------------------------------------
-	sets.TreasureHunter = { hands = "Asn. Armlets +2", feet = "Skulk. Poulaines +1" }
+	sets.TreasureHunter = { hands = "Plun. Armlets +2", feet = "Skulk. Poulaines +1" }
 	sets.Kiting = { feet = "Trotter Boots" }
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
@@ -98,7 +98,7 @@ function init_gear_sets()
 	sets.precast.JA['Steal'] = {}
 	sets.precast.JA['Mug'] = {}
 	sets.precast.JA['Despoil'] = { legs = "Raider's Culottes +1", feet = "Skulk. Poulaines +1" }
-	sets.precast.JA['Perfect Dodge'] = { hands = "Asn. Armlets +2" }
+	sets.precast.JA['Perfect Dodge'] = { hands = "Plun. Armlets +2" }
 	sets.precast.JA['Feint'] = {}
 
 	sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
