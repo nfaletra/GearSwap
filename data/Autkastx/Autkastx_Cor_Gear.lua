@@ -204,13 +204,15 @@ function init_gear_sets()
 
 	sets.precast.WS['Hot Shot'] = sets.precast.WS['Wildfire']
 
-		--Because omen skillchains.
+	--Because omen skillchains.
 	sets.precast.WS['Burning Blade'] =
 	{
 		head = "Meghanada Visor +2", neck = "Loricate Torque +1", ear1 = "Genmei Earring", ear2 = "Sanare Earring",
 		body = "Meg. Cuirie +2", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Dark Ring",
 		back = "Moonlight Cape", waist = "Flume Belt +1", legs = "Meg. Chausses +2", feet = "Meg. Jam. +2"
 	}
+
+	sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS['Leaden Salute'], {})
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {}

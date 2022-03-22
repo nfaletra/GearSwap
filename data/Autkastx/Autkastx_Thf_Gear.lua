@@ -2,7 +2,7 @@
 function user_job_setup()
 	-- Options: Override default values
 	state.OffenseMode:options('Normal', 'Acc')
-	state.HybridMode:options('Normal', 'DT')
+	state.HybridMode:options('Normal', 'DT', 'Cait')
 	state.RangedMode:options('Normal', 'Acc')
 	state.WeaponskillMode:options('Match', 'Normal', 'Acc', 'Proc')
 	state.IdleMode:options('Normal', 'Sphere')
@@ -322,7 +322,6 @@ function init_gear_sets()
 		body = "Pillager's Vest +2", hands = "Adhemar Wrist. +1", ring1 = "Gere Ring", ring2 = "Epona's Ring",
 		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Samnuha Tights", feet = "Plun. Poulaines +3"
 	}
-
 	sets.engaged.Acc =
 	{
 		ammo = "Yamarang",
@@ -338,14 +337,16 @@ function init_gear_sets()
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Moonbeam Ring",
 		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
+	sets.engaged.Acc.DT = set_combine(sets.engaged.DT, { feet = "Plun. Poulaines +3" })
 
-	sets.engaged.Acc.DT =
+	sets.engaged.Cait =
 	{
-		ammo = "Aurgelmir Orb",
-		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Moonbeam Ring",
-		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Plun. Poulaines +3"
+		ammo = "Falcon Eye",
+		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Eabani Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Epona's Ring",
+		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
+	sets.engaged.Acc.Cat = set_combine(sets.engaged.Cait, {})
 end
 
 -- Select default macro book on initial load or subjob change.

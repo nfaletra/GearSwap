@@ -1,15 +1,15 @@
 function user_job_setup()
 	-- Options: Override default values
 	state.OffenseMode:options('Normal')
-	state.HybridMode:options('Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Ochain', 'DD', 'DW')
+	state.HybridMode:options('Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Ochain', 'DD', 'DW', 'Staff')
 	state.WeaponskillMode:options('Match', 'Normal', 'Acc')
 	state.CastingMode:options('SIRD', 'Normal')
 	state.Passive:options('None', 'AbsorbMP')
 	state.PhysicalDefenseMode:options('Normal')
 	state.MagicalDefenseMode:options('Normal')
 	state.ResistDefenseMode:options('Normal')
-	state.IdleMode:options('Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Ochain', 'DD', 'DW')
-	state.Weapons:options('Excalibur', 'Caballarius', 'Malignance', 'Naegling')
+	state.IdleMode:options('Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Ochain', 'DD', 'DW', 'Staff')
+	state.Weapons:options('Excalibur', 'Caballarius', 'Malignance', 'Naegling', 'Staff')
 	
 	state.ExtraDefenseMode = M{ ['description'] = 'Extra Defense Mode', 'None', 'MP', 'Twilight' }
 	
@@ -17,7 +17,7 @@ function user_job_setup()
 	gear.rudianos_tp = "Rudianos's Mantle" --{ name = "Rudianos's Mantle", augments={ 'HP+60','Accuracy+20 Attack+20','HP+20','"Store TP"+10','Phys. dmg. taken-10%' }}
 	gear.rudianos_wsd = "Rudianos's Mantle" -- { name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 	gear.rudianos_enmity = "Ruianos's Mantle" -- { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Phys. dmg. taken-10%',}}
-	gear.rudianos_shield = { name = "Rudianos's Mantle", augments = { 'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Chance of successful block +5' }}
+	gear.rudianos_shield = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'Chance of successful block +5' } }
 	gear.rudianos_counter = "Rudianos's Mantle" -- { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
 
 	-- Additional local binds
@@ -340,6 +340,14 @@ function init_gear_sets()
 		back = gear.rudianos_tp, waist = "Sailfi Belt +1", legs = "Sakpata's Cuisses", feet = "Flamma Gambieras +2"
 	}
 
+	sets.idle.Staff =
+	{
+		ammo = "Coiste Bodhar",
+		head = "Flam. Zuchetto +2", neck = "Carnal Torque", ear1 = "Brutal Earring", ear2 = "Telos Earring",
+		body = "Hjarrandi Breast.", hands = "Sakpata's Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Flamma Ring",
+		back = gear.rudianos_shield, waist = "Sailfi Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
+	}
+
 	sets.Kiting = { legs = "Carmine Cuisses +1" }
 
 	sets.latent_refresh = { waist = "Fucho-no-obi" }
@@ -365,6 +373,7 @@ function init_gear_sets()
 	sets.weapons.Caballarius = { main = "Caballarius Sword" }
 	sets.weapons.Malignance = { main = "Malignance Sword" }
 	sets.weapons.Naegling = { main = "Naegling" }
+	sets.weapons.Staff = { main = "Malignance Pole", sub = "Bloodrain Strap" }
 
 	-- I don't use defense sets
 	sets.defense.Normal = {}
@@ -446,6 +455,14 @@ function init_gear_sets()
 		back = gear.rudianos_tp, waist = "Sailfi Belt +1", legs = "Sakpata's Cuisses", feet = "Flamma Gambieras +2"
 	}
 
+	sets.engaged.Staff =
+	{
+		ammo = "Coiste Bodhar",
+		head = "Flam. Zuchetto +2", neck = "Carnal Torque", ear1 = "Brutal Earring", ear2 = "Telos Earring",
+		body = "Hjarrandi Breast.", hands = "Sakpata's Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Flamma Ring",
+		back = gear.rudianos_shield, waist = "Sailfi Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
+	}
+
 	--------------------------------------
 	-- Custom buff sets
 	--------------------------------------
@@ -462,4 +479,11 @@ end
 
 function user_job_lockstyle()
 	windower.chat.input('/lockstyleset 006')
+end
+
+function user_job_state_change(stateField, newValue, oldValue)
+	if stateField == "Hybrid Mode" then
+		-- Update Idle Mode along with HybridMode
+		state.IdleMode:set(newValue)
+	end
 end
