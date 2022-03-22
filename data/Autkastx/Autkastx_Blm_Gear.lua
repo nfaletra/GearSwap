@@ -264,15 +264,18 @@ function init_gear_sets()
 		head="Befouled Crown",neck="Chrys. Torque",ear1="Ethereal Earring",ear2="Sanare Earring",
 		body="Jhakri Robe +2",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
 		back="Umbra Cape",waist="Fucho-no-obi",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet}
-    
 
-    -- Idle sets
-    
-    -- Normal refresh idle set
-    sets.idle = {main="Mpaca's Staff",sub="Umbra Strap",ammo="Staunch Tathlum +1",
-		head="Befouled Crown",neck="Loricate Torque +1",ear1="Ethereal Earring",ear2="Etiolation Earring",
-		body="Jhakri Robe +2",hands=gear.merlinic_refresh_hands,ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Umbra Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet}
+
+	-- Idle sets
+
+	-- Normal refresh idle set
+	sets.idle =
+	{
+		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum",
+		head = "Befouled Crown", neck = "Twilight Torque",ear1="Lugalbanda Earring", ear2 = "Etiolation Earring",
+		body = "Supay Weskit", hands = "Nyame Gauntlets", ring1 = "Defending Ring", ring2 = "Metamor. Ring +1",
+		back = "Umbra Cape", waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = "Nyame Sollerets"
+	}
 
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.PDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
