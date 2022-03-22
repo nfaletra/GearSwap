@@ -242,12 +242,43 @@ function init_gear_sets()
 
 	sets.precast.WS['Seraph Blade'] =
 	{
+		ammo = "Seething Bomblet +1",
+		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Acumen Ring", ring2 = "Dingir Ring",
+		back = gear.andartia_tp, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
-    sets.precast.WS['Aeolian Edge'] = {ammo="Ghastly Tathlum +1",
-        head="Dampening Tam",neck="Baetyl Pendant",ear1="Friomisi Earring",ear2="Crematio Earring",
-        body="Adhemar Jacket +1",hands="Adhemar Wrist. +1",ring1="Shiva Ring +1",ring2="Metamor. Ring +1",
-        back="Toro Cape",waist="Chaac Belt",legs="Nyame Flanchard",feet="Malignance Boots"}
+	sets.precast.WS['Flat Blade'] =
+	{
+		ammo = "Yamarang",
+		head = "Malignance Chapeau", neck = "Ninja Nodowa", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Etana Ring", ring2 = "Regal Ring",
+		back = gear.andartia_tp, waist = "Eschan Stone", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
+
+	sets.precast.WS['Vorpal Blade'] =
+	{
+		ammo = "Yetshila",
+		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
+		body = "Ken. Samue", hands = "Ryuo Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		back = gear.andartia_tp, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots
+	}
+
+	sets.precast.WS['Evisceration'] =
+	{
+		ammo = "Yetshila",
+		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
+		body = "Ken. Samue", hands = "Ryuo Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		back = gear.andartia_tp, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
+	}
+
+	sets.precast.WS['Aeolian Edge'] =
+	{
+		ammo = "Seething Bomblet +1",
+		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Acumen Ring", ring2 = "Dingir Ring",
+		back = gear.andartia_tp, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+	}
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {}
