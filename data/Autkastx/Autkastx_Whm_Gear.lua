@@ -178,7 +178,7 @@ function init_gear_sets()
 	{
 		main = "Chatoyant Staff", sub = "Bugard Strap +1", ammo = "Pemphredo Tathlum",
 		head = "Ebers Cap +1", neck = "Cleric's Torque", ear1 = "Nourish. Earring +1", ear2 = "Mendi. Earring",
-		body = "Theo Bliaut +3", hands = "Theophany Mitts +3", ring1 = "Janniston Ring", ring2 = "Lebeche Ring",
+		body = "Theo. Bliaut +3", hands = "Theophany Mitts +3", ring1 = "Janniston Ring", ring2 = "Lebeche Ring",
 		back = "Alaunus's Cape", waist = "Hachirin-no-Obi", legs = "Ebers Pant. +1", feet = "Vanya Clogs"
 	}
 	sets.midcast.LightWeatherCure = set_combine(sets.midcast.Cure, { waist = "Hachirin-no-Obi", back = "Twilight Cape" })
@@ -398,8 +398,8 @@ function init_gear_sets()
 	{
 		ammo = "Amar Cluster",
 		head = "Aya. Zucchetto +2", neck = "Lissome Necklace", ear1 = "Telos Earring" , ear2 = "Brutal Earring",
-		body = "Ayanmo Corazza +2", hands = "Aya. Manopolas +2", ring1 = "Petrov Ring", ring2 = "Ilabrat Ring",
-		back = "Alaunus's Cape", waist = "Windbuffet Belt", legs = "Aya. Cosciales +2", feet = "Aya. Gambieras +2"
+		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Petrov Ring", ring2 = "Ilabrat Ring",
+		back = "Alaunus's Cape", waist = "Windbuffet Belt +1", legs = "Aya. Cosciales +2", feet = "Aya. Gambieras +2"
 	}
 	sets.engaged.Acc = set_combine(sets.engaged, { ear2 = "Mache Earring +1" })
 

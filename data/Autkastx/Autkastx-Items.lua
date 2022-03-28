@@ -73,4 +73,5 @@ gear.valorous_magical_pet_legs = { name="Valor. Hose",augments={'Pet: "Mag.Atk.B
 gear.valorous_magical_pet_feet = {name="Valorous Greaves",augments={'Pet: "Mag.Atk.Bns."+29','Pet: "Dbl.Atk."+1 Pet: Crit.hit rate +1','Pet: INT+9','Pet: Accuracy+1 Pet: Rng. Acc.+1','Pet: Attack+4 Pet: Rng.Atk.+4',}}
 gear.valorous_wsd_feet = {name="Valorous Greaves",augments={'Accuracy+25','Weapon skill damage +4%','STR+5',}}
 
-gear.adhemar_body_d = { name = "Adhemar Jacket +1", augments = { 'HP+105', '"Fast Cast"+10', 'Magic dmg. taken -4' } }
+gear.adhemar_body_b = { name="Adhemar Jacket +1", augments = { 'STR+12', 'DEX+12', 'Attack+20' } }
+gear.adhemar_body_d = { name="Adhemar Jacket +1", augments = { 'HP+105', '"Fast Cast"+10', 'Magic dmg. taken -4' } }

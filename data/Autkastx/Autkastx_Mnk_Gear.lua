@@ -105,7 +105,7 @@ function init_gear_sets()
 	{
 		ammo = "Knobkierre",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
-		body = "Adhemar Jacket +1", hands = "Mpaca's Gloves", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
+		body = gear.adhemar_body_b, hands = "Mpaca's Gloves", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Tatena. Haidate +1", feet = gear.herculean_ta_feet
 	}
 	sets.precast.WS["Raging Fists"].Acc = set_combine(sets.precast.WS["Raging Fists"], sets.precast.WSAcc)
@@ -114,7 +114,7 @@ function init_gear_sets()
 	{
 		ammo = "Knobkierre",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
-		body = "Adhemar Jacket +1", hands = gear.herculean_ta_hands, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
+		body = gear.adhemar_body_b, hands = gear.herculean_ta_hands, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.segomo_wsd, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = gear.herculean_ta_feet
 	}
 	sets.precast.WS["Howling Fist"].Acc = set_combine(sets.precast.WS["Howling Fist"], sets.precast.WSAcc)

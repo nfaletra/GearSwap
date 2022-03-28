@@ -147,7 +147,7 @@ function init_gear_sets()
 	sets.precast.WS['Requiescat'] =
 	{
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Moonshade Earring",
-		body = "Adhemar Jacket +1", hands  = "Meg. Gloves +2", ring1 = "Regal Ring", ring2 = "Rufescent Ring",
+		body = gear.adhemar_body_b, hands  = "Meg. Gloves +2", ring1 = "Regal Ring", ring2 = "Rufescent Ring",
 		back = gear.camulus_savage, waist = "Fotia Belt", legs = "Meg. Chausses +2", feet = gear.herculean_ta_feet
 	}
 
