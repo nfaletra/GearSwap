@@ -170,7 +170,7 @@ function init_gear_sets()
 		ammo = gear.WSbullet,
 		head = "Malignance Chapeau", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Enervating Earring",
 		body = "Laksa. Frac +3", hands = "Malignance Gloves", ring1 = "Regal Ring", ring2 = "Dingir Ring",
-		back = gear.camulus_wsd, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.camulus_leaden, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.precast.WS['Detonator'] = sets.precast.WS['Last Stand']
@@ -199,7 +199,7 @@ function init_gear_sets()
 		ammo = gear.MAbullet,
 		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
 		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Dingir Ring",
-		back = gear.camulus_wsd, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
+		back = gear.camulus_leaden, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
 	sets.precast.WS['Hot Shot'] = sets.precast.WS['Wildfire']
@@ -244,9 +244,9 @@ function init_gear_sets()
 	sets.midcast.RA =
 	{
 		ammo = gear.RAbullet,
-		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Enervating Earring", ear2 = "Telos Earring",
+		head = "Ikenga's Hat", neck = "Iskur Gorget", ear1 = "Enervating Earring", ear2 = "Telos Earring",
 		body = "Laksa. Frac +3", hands = "Malignance Gloves", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
-		back = gear.camulus_range_tp, waist = "Impulse Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.camulus_range_tp, waist = "Impulse Belt", legs = "Ikenga's Trousers", feet = "Malignance Boots"
 	}
 
 	sets.buff['Triple Shot'] = { body = "Chasseur's Frac +1" }

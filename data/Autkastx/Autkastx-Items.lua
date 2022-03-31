@@ -38,7 +38,7 @@ gear.herculean_wsd_body = {name="Herculean Vest",augments={'Accuracy+11','Weapon
 gear.herculean_wsd_legs = {name="Herculean Trousers",augments={'Weapon skill damage +5%','DEX+8','Accuracy+13','Attack+14',}}
 gear.herculean_acc_feet = {name="Herculean Boots",augments={'Accuracy+25 Attack+25','Crit. hit damage +1%','DEX+10','Accuracy+14','Attack+1',}}
 gear.herculean_ta_feet = { name = "Herculean Boots", augments = { 'STR+10','AGI+2','Quadruple Attack +2','Accuracy+20 Attack+20','Mag. Acc.+2 "Mag.Atk.Bns."+2' }}
-gear.herculean_crit_feet = { name = "Herculean Boots", augments = { 'Crit. hit damage +2%','Accuracy+10','Accuracy+18 Attack+18','Mag. Acc.+9 "Mag.Atk.Bns."+9' }}
+gear.herculean_crit_feet = { name = "Herculean Boots", augments = { 'Crit. hit damage +2%','Accuracy+10','Accuracy+18 Attack+18','Mag. Acc.+9 "Mag.Atk.Bns."+9' } }
 gear.herculean_refresh_feet = {name="Herculean Boots",augments={'CHR+2','MND+6','"Refresh"+2','Accuracy+7 Attack+7',}}
 gear.herculean_wsd_feet = {name="Herculean Boots",augments={'Accuracy+23 Attack+23','Weapon skill damage +5%','DEX+10','Accuracy+10','Attack+1',}}
 gear.herculean_waltz_feet = {name="Herculean Boots",augments={'Attack+10','"Waltz" potency +10%','AGI+4','Accuracy+9',}}

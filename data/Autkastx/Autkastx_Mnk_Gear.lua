@@ -20,8 +20,9 @@ function user_job_setup()
 	send_command('bind @` gs c cycle SkillchainMode')
 
 	-- Job Gear
-	gear.segomo_tp = { name="Segomo's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%' }}
-	gear.segomo_wsd = { name = "Segomo's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%' }}
+	gear.Segomo = {}
+	gear.Segomo.TP = { name = "Segomo's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%' } }
+	gear.Segomo.STR_DA = { name = "Segomo's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } }
 
 	select_default_macro_book()
 end
@@ -64,7 +65,7 @@ function init_gear_sets()
 		ammo = "Falcon Eye",
 		head = "Malignance Chapeau", ear1 = "Mache Earring +1", ear2 = "Telos Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves",
-		back = gear.segomo_tp, legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Segomo.TP, legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.precast.Flourish1 =
@@ -72,7 +73,7 @@ function init_gear_sets()
 		ammo = "Falcon Eye",
 		head = "Malignance Chapeau", ear1 = "Mache Earring +1", ear2 = "Telos Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves",
-		back = gear.segomo_tp, legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Segomo.TP, legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	-- Fast cast sets for spells
@@ -96,26 +97,26 @@ function init_gear_sets()
 		ammo = "Knobkierre",
 		head = "Hes. Crown +3", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
 		body = "Ken. Samue", hands = "Anchor. Gloves +3", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.segomo_wsd, waist = "Moonbow Belt", legs = "Hiza. Hizayoroi +2", feet=gear.herculean_ta_feet
+		back = gear.Segomo.STR_DA, waist = "Moonbow Belt", legs = "Hiza. Hizayoroi +2", feet=gear.herculean_ta_feet
 	}
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
 
 	-- Specific weaponskill sets.
 	sets.precast.WS['Raging Fists'] =
 	{
-		ammo = "Knobkierre",
-		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
-		body = gear.adhemar_body_b, hands = "Mpaca's Gloves", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Tatena. Haidate +1", feet = gear.herculean_ta_feet
+		ammo = "Coiste Bodhar",
+		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
+		body = gear.adhemar_body_b, hands = "Adhemar Wrist. +1", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
+		back = gear.Segomo.STR_DA, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = gear.herculean_ta_feet
 	}
 	sets.precast.WS["Raging Fists"].Acc = set_combine(sets.precast.WS["Raging Fists"], sets.precast.WSAcc)
 
 	sets.precast.WS['Howling Fist'] =
 	{
 		ammo = "Knobkierre",
-		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
+		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
 		body = gear.adhemar_body_b, hands = gear.herculean_ta_hands, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.segomo_wsd, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = gear.herculean_ta_feet
+		back = gear.Segomo.STR_DA, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = gear.herculean_ta_feet
 	}
 	sets.precast.WS["Howling Fist"].Acc = set_combine(sets.precast.WS["Howling Fist"], sets.precast.WSAcc)
 
@@ -124,7 +125,7 @@ function init_gear_sets()
 		ammo = "Knobkierre",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Odr Earring",
 		body = "Mpaca's Doublet", hands = "Hes. Gloves +3", ring1 = "Niqmaddu Ring", ring2 = "Regal Ring",
-		back = gear.segomo_wsd, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Hes. Gaiters +3"
+		back = gear.Segomo.STR_DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Hes. Gaiters +3"
 	}
 	sets.precast.WS["Asuran Fists"].Acc = set_combine(sets.precast.WS["Asuran Fists"], sets.precast.WSAcc)
 
@@ -133,43 +134,43 @@ function init_gear_sets()
 		ammo = "Knobkierre",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
 		body = "Ken. Samue", hands = "Ryuo Tekko +1", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.segomo_tp, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
+		back = gear.Segomo.STR_DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 	sets.precast.WS["Ascetic's Fury"].Acc = set_combine(sets.precast.WS["Ascetic's Fury"], sets.precast.WSAcc)
 
 	sets.precast.WS["Victory Smite"] =
 	{
-		ammo = "Knobkierre",
-		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Odr Earring",
+		ammo = "Coiste Bodhar",
+		head = "Adhemar Bonnet +1", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Odr Earring",
 		body = "Ken. Samue", hands = "Ryuo Tekko +1", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
+		back = gear.Segomo.STR_DA, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = gear.herculean_crit_feet
 	}
 	sets.precast.WS["Victory Smite"].Acc = set_combine(sets.precast.WS["Victory Smite"], sets.precast.WSAcc)
 
 	sets.precast.WS['Shijin Spiral'] =
 	{
-		ammo = "Knobkierre",
-		head = "Malignance Chapeau", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Mache Earring +1",
-		body = "Ken. Samue", hands = "Mpaca's Gloves", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Malignance Boots"
+		ammo = "Aurgelmir Orb",
+		head = "Ken. Jinpachi", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Mache Earring +1",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
+		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Tatena. Haidate +1", feet = gear.herculean_ta_feet
 	}
 	sets.precast.WS["Shijin Spiral"].Acc = set_combine(sets.precast.WS["Shijin Spiral"], sets.precast.WSAcc)
 
 	sets.precast.WS['Dragon Kick'] =
 	{
-		ammo = "Knobkierre",
+		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
 		body = "Ken. Samue", hands = "Anchor. Gloves +3", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.segomo_wsd, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Anch. Gaiters +3"
+		back = gear.Segomo.STR_DA, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Anch. Gaiters +3"
 	}
 	sets.precast.WS["Dragon Kick"].Acc = set_combine(sets.precast.WS["Dragon Kick"], sets.precast.WSAcc)
 
 	sets.precast.WS['Tornado Kick'] =
 	{
-		ammo = "Knobkierre",
+		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
 		body = "Ken. Samue", hands = gear.herculean_ta_hands, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.segomo_wsd, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Anch. Gaiters +3"
+		back = gear.Segomo.STR_DA, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Anch. Gaiters +3"
 	}
 	sets.precast.WS["Tornado Kick"].Acc = set_combine(sets.precast.WS["Tornado Kick"], sets.precast.WSAcc)
 
@@ -179,11 +180,20 @@ function init_gear_sets()
 	sets.precast.WS['Cataclysm'] =
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Nyame Helm", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets",
-		back = gear.segomo_wsd, legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		head = "Pixie Hairpin +1", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Metamor. Ring +1",
+		back = gear.Segomo.STR_DA, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Cataclysm'].Acc = set_combine(sets.precast.WS['Cataclysm'], sets.precast.WSAcc)
+
+	sets.precast.WS['Shell Crusher'] =
+	{
+		ammo = "Pemphredo Tathluma",
+		head = "Malignance Chapeau", neck = "Fotia Gorget", ear1 = "Digni. Earring", ear2 = "Crep. Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Stikini Ring +1", ring2 = "Metamor. Ring +1",
+		back = gear.Segomo.TP, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
+	sets.precast.WS['Shell Crusher'] = set_combine(sets.precast.WS['Shell Crusher'], sets.precast.WSAcc)
 	
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = { ear1 = "Sherida Earring", ear2 = "Brutal Earring" }
@@ -212,7 +222,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum",
 		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
+		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
 	sets.idle.DT =
@@ -220,7 +230,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum",
 		head = "Nyame Helm", neck = "Mnk. Nodowa +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Mpaca's Doublet", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Nyame Sollerets"
+		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Nyame Sollerets"
 	}
 
 	sets.idle.Evasion =
@@ -228,7 +238,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum",
 		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.idle.Weak =
@@ -236,7 +246,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum",
 		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Etiolation Earring",
 		body = "Hes. Cyclas +3", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	-- Defense sets
@@ -245,7 +255,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum",
 		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2",ear1 = "Sherida Earring", ear2 = "Etiolation Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.defense.MDT =
@@ -253,7 +263,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum",
 		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2",ear1 = "Sherida Earring", ear2 = "Etiolation Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 		
 	sets.defense.MEVA =
@@ -261,7 +271,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum",
 		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2",ear1 = "Sherida Earring", ear2 = "Etiolation Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.Kiting = { feet="Hermes' Sandals" }
@@ -276,15 +286,13 @@ function init_gear_sets()
 	-- Normal melee sets
 	sets.engaged =
 	{
-		ammo = "Aurgelmir Orb",
-		head = "Adhemar Bonnet +1", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Brutal Earring",
-		body = "Ken. Samue", hands = "Adhemar Wrist. +1", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Hes. Hose +3", feet = "Anch. Gaiters +3"
+		ammo = "Coiste Bodhar",
+		head = "Ken. Jinpachi", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
+		body = "Mpaca's Doublet", hands = "Mpaca's Gloves", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
+		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Malignance Boots"
 	}
 	sets.engaged.Acc = set_combine(sets.engaged,
 	{
-		ammo = "Falcon Eye",
-		head = "Ken. Jinpachi", ear2 = "Telos Earring",
 		hands = "Ken. Tekko",
 		legs = "Ken. Hakama", feet = "Ken. Sune-Ate"
 	})
@@ -294,7 +302,7 @@ function init_gear_sets()
 	{
 		head = "Malignance Chapeau", ear2 = "Odnowa Earring +1",
 		body = "Mpaca's Doublet", hands = "Malignance Gloves",
-		legs = "Mpaca's Hose", feet = "Malignance Boots"
+		legs = "Mpaca's Hose", feet = "Ken. Sune-Ate"
 	})
 	sets.engaged.Acc.DT = set_combine(sets.engaged.DT, {})
 
@@ -303,7 +311,7 @@ function init_gear_sets()
 		ammo = "Amar Cluster",
 		ear2 = "Cryptic Earring",
 		body = "Mpaca's Doublet", ring2 = "Defending Ring",
-		legs = "Anch. Hose +3", feet = "Hes. Gaiters +3"
+		legs = "Anch. Hose +3", feet = "Malignance Boots
 	})
 	sets.engaged.Acc.Counter = set_combine(sets.engaged.Counter, {})
 
@@ -317,7 +325,7 @@ function init_gear_sets()
 		ammo = "Aurgelmir Orb",
 		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Brutal Earring",
 		body = "Ken. Samue", hands = "Adhemar Wrist. +1", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.segomo_tp, waist = "Moonbow Belt", legs = "Tatena. Haidate +1", feet = "Mpaca's Boots"
+		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Tatena. Haidate +1", feet = "Mpaca's Boots"
 	}
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
