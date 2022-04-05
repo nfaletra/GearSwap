@@ -38,7 +38,7 @@ function init_gear_sets()
 	--------------------------------------
 	-- Special sets (required by rules)
 	--------------------------------------
-	sets.TreasureHunter = { hands = "Plun. Armlets +2", feet = "Skulk. Poulaines +1" }
+	sets.TreasureHunter = { hands = "Plun. Armlets +3", feet = "Skulk. Poulaines +1" }
 	sets.Kiting = { feet = "Trotter Boots" }
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
@@ -51,7 +51,7 @@ function init_gear_sets()
 	sets.Knockback = {}
 	sets.Suppa = { ear1 = "Sherida Earring", ear2 = "Suppanomimi" }
 	sets.DWEarrings = { ear1 = "Eabani Earring", ear2 = "Suppanomimi" }
-	sets.DWMax = { ear1 = "Eabani Earring", ear2 = "Suppanomimi", body = gear.adhemar_body_b, hands = "Floral Gauntlets", waist = "Reiki Yotai" }
+	sets.DWMax = { ear1 = "Eabani Earring", ear2 = "Suppanomimi", body = gear.adhemar.body.b, hands = "Floral Gauntlets", waist = "Reiki Yotai" }
 	sets.Parry = {}
 	sets.Ambush = {}
 
@@ -98,7 +98,7 @@ function init_gear_sets()
 	sets.precast.JA['Steal'] = {}
 	sets.precast.JA['Mug'] = {}
 	sets.precast.JA['Despoil'] = { legs = "Raider's Culottes +1", feet = "Skulk. Poulaines +1" }
-	sets.precast.JA['Perfect Dodge'] = { hands = "Plun. Armlets +2" }
+	sets.precast.JA['Perfect Dodge'] = { hands = "Plun. Armlets +3" }
 	sets.precast.JA['Feint'] = {}
 
 	sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
@@ -177,8 +177,8 @@ function init_gear_sets()
 	{
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Odr Earring", ear2 = "Moonshade Earring",
-		body = "Plunderer's Vest +3", hands = "Adhemar Wrist. +1", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
-		back = gear.toutatis_wsd, waist = "Fotia Belt", legs = "Pill. Culottes +2", feet = "Mummu Gamash. +2"
+		body = "Plunderer's Vest +3", hands = gear.adhemar.hands.b, ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		back = gear.toutatis_wsd, waist = "Fotia Belt", legs = "Pill. Culottes +2", feet = "Adhe. Gamashes +1"
 	}
 	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS.Acc, {})
 
@@ -191,7 +191,7 @@ function init_gear_sets()
 	sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS,
 	{
 		ear1 = "Ishvara Earring",
-		body = gear.adhemar_body_b, ring1 = "Rufescent Ring",
+		body = gear.adhemar.body.b, ring1 = "Rufescent Ring",
 		waist = "Sailfi Belt +1"
 	})
 	sets.precast.WS["Savage Blade"].Acc = set_combine(sets.precast.WS.Acc, {})
@@ -307,7 +307,7 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum",
 		head = "Malignance Chapeau", neck = "Warder's Charm +1", ear1 = "Odnowa Earring +1", ear2 = "Etiolation Earring",
-		body = gear.adhemar_body_b, hands = "Malignance Gloves", ring1 = "Vengeful Ring", ring2 = "Purity Ring",
+		body = gear.adhemar.body.b, hands = "Malignance Gloves", ring1 = "Vengeful Ring", ring2 = "Purity Ring",
 		back = "Mujin Mantle", waist = "Engraved Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -320,14 +320,14 @@ function init_gear_sets()
 	{
 		ammo = "Aurgelmir Orb",
 		head = "Adhemar Bonnet +1", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Pillager's Vest +3", hands = "Adhemar Wrist. +1", ring1 = "Gere Ring", ring2 = "Epona's Ring",
+		body = "Pillager's Vest +3", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Epona's Ring",
 		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Samnuha Tights", feet = "Plun. Poulaines +3"
 	}
 	sets.engaged.Acc =
 	{
 		ammo = "Yamarang",
 		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Pillager's Vest +3", hands = "Adhemar Wrist. +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Pillager's Vest +3", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Plun. Poulaines +3"
 	}
 

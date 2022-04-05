@@ -106,7 +106,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
-		body = gear.adhemar_body_b, hands = "Adhemar Wrist. +1", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
+		body = gear.adhemar.body.b, hands = gear.adhemar.hands.b, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.Segomo.STR_DA, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = gear.herculean_ta_feet
 	}
 	sets.precast.WS["Raging Fists"].Acc = set_combine(sets.precast.WS["Raging Fists"], sets.precast.WSAcc)
@@ -115,7 +115,7 @@ function init_gear_sets()
 	{
 		ammo = "Knobkierre",
 		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
-		body = gear.adhemar_body_b, hands = gear.herculean_ta_hands, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
+		body = gear.adhemar.body.b, hands = gear.herculean_ta_hands, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.Segomo.STR_DA, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = gear.herculean_ta_feet
 	}
 	sets.precast.WS["Howling Fist"].Acc = set_combine(sets.precast.WS["Howling Fist"], sets.precast.WSAcc)
@@ -286,13 +286,14 @@ function init_gear_sets()
 	-- Normal melee sets
 	sets.engaged =
 	{
-		ammo = "Coiste Bodhar",
-		head = "Ken. Jinpachi", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Mpaca's Doublet", hands = "Mpaca's Gloves", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Malignance Boots"
+		ammo = "Aurgelmir Orb",
+		head = "Adhemar Bonnet +1", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
+		body = "Ken. Samue", hands = gear.adhemar.hands.a, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
+		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Hes. Hose +3", feet = "Anch. Gaiters +3"
 	}
 	sets.engaged.Acc = set_combine(sets.engaged,
 	{
+		head = "Ken. Jinpachi",
 		hands = "Ken. Tekko",
 		legs = "Ken. Hakama", feet = "Ken. Sune-Ate"
 	})
@@ -300,18 +301,22 @@ function init_gear_sets()
 	-- Hybrid sets
 	sets.engaged.DT = set_combine(sets.engaged,
 	{
-		head = "Malignance Chapeau", ear2 = "Odnowa Earring +1",
-		body = "Mpaca's Doublet", hands = "Malignance Gloves",
-		legs = "Mpaca's Hose", feet = "Ken. Sune-Ate"
+		head = "Ken. Jinpachi",
+		body = "Mpaca's Doublet", hands = "Mpaca's Gloves",
+		legs = "Mpaca's Hose", feet = "Malignance Boots"
 	})
-	sets.engaged.Acc.DT = set_combine(sets.engaged.DT, {})
+	sets.engaged.Acc.DT = set_combine(sets.engaged.DT,
+	{
+		head = "Malignance Chapeau", ear2 = "Odnowa Earring +1",
+		hands = "Malignance Gloves",
+	})
 
 	sets.engaged.Counter = set_combine(sets.engaged,
 	{
 		ammo = "Amar Cluster",
 		ear2 = "Cryptic Earring",
 		body = "Mpaca's Doublet", ring2 = "Defending Ring",
-		legs = "Anch. Hose +3", feet = "Malignance Boots
+		legs = "Anch. Hose +3", feet = "Malignance Boots"
 	})
 	sets.engaged.Acc.Counter = set_combine(sets.engaged.Counter, {})
 
@@ -324,13 +329,13 @@ function init_gear_sets()
 	{
 		ammo = "Aurgelmir Orb",
 		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Brutal Earring",
-		body = "Ken. Samue", hands = "Adhemar Wrist. +1", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
+		body = "Ken. Samue", hands = gear.adhemar.hands.a, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Tatena. Haidate +1", feet = "Mpaca's Boots"
 	}
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {}
-	sets.buff.Impetus = { body="Bhikku Cyclas +1" }
+	sets.buff.Impetus = { ammo = "Coiste Bodhar", body="Bhikku Cyclas +1" }
 	sets.buff.Footwork = {}
 	sets.buff.Boost = { waist = "Ask Sash" }
 

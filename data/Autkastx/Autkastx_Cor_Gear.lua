@@ -147,14 +147,14 @@ function init_gear_sets()
 	sets.precast.WS['Requiescat'] =
 	{
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Moonshade Earring",
-		body = gear.adhemar_body_b, hands  = "Meg. Gloves +2", ring1 = "Regal Ring", ring2 = "Rufescent Ring",
+		body = gear.adhemar.body.b, hands  = "Meg. Gloves +2", ring1 = "Regal Ring", ring2 = "Rufescent Ring",
 		back = gear.camulus_savage, waist = "Fotia Belt", legs = "Meg. Chausses +2", feet = gear.herculean_ta_feet
 	}
 
 	sets.precast.WS['Evisceration'] =
 	{
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Odr Earring", ear2 = "Ishvara Earring",
-		body = "Mummu Jacket +2", hands = "Adhemar Wrist. +1", ring1 = "Regal Ring", ring2 = "Mummu Ring",
+		body = "Mummu Jacket +2", hands = gear.adhemar.hands.b, ring1 = "Regal Ring", ring2 = "Mummu Ring",
 		back = gear.camulus_melee_tp, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Mummu Gamash. +2"
 	}
 
@@ -340,14 +340,14 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		head = "Adhemar Bonnet +1", neck = "Iskur Gorget", ear1 = "Telos Earring", ear2 = "Brutal Earring",
-		body = "Meg. Cuirie +2", hands = "Adhemar Wrist. +1", ring1 = "Petrov Ring", ring2 = "Epona's Ring",
+		body = "Meg. Cuirie +2", hands = gear.adhemar.hands.a, ring1 = "Petrov Ring", ring2 = "Epona's Ring",
 		back = gear.camulus_melee_tp, waist = "Reiki Yotai", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
 	}
 
 	sets.engaged.Acc =
 	{
 		head = "Adhemar Bonnet +1", neck = "Iskur Gorget", ear1 = "Telos Earring", ear2 = "Brutal Earring",
-		body = "Meg. Cuirie +2", hands = "Adhemar Wrist. +1", ring1 = "Petrov Ring", ring2 = "Epona's Ring",
+		body = "Meg. Cuirie +2", hands = gear.adhemar.hands.a, ring1 = "Petrov Ring", ring2 = "Epona's Ring",
 		back = gear.camulus_melee_tp, waist = "Reiki Yotai", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
 	}
 

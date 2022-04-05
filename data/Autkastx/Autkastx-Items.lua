@@ -37,8 +37,8 @@ gear.herculean_waltz_body = {name="Herculean Vest",augments={'Attack+26','"Waltz
 gear.herculean_wsd_body = {name="Herculean Vest",augments={'Accuracy+11','Weapon skill damage +5%','DEX+7',}}
 gear.herculean_wsd_legs = {name="Herculean Trousers",augments={'Weapon skill damage +5%','DEX+8','Accuracy+13','Attack+14',}}
 gear.herculean_acc_feet = {name="Herculean Boots",augments={'Accuracy+25 Attack+25','Crit. hit damage +1%','DEX+10','Accuracy+14','Attack+1',}}
-gear.herculean_ta_feet = { name = "Herculean Boots", augments = { 'STR+10','AGI+2','Quadruple Attack +2','Accuracy+20 Attack+20','Mag. Acc.+2 "Mag.Atk.Bns."+2' }}
-gear.herculean_crit_feet = { name = "Herculean Boots", augments = { 'Crit. hit damage +2%','Accuracy+10','Accuracy+18 Attack+18','Mag. Acc.+9 "Mag.Atk.Bns."+9' } }
+gear.herculean_ta_feet = { name = "Herculean Boots", augments = { 'Attack+20', '"Triple Atk."+4', 'CHR+3', 'Accuracy+2' } }
+gear.herculean_crit_feet = { name = "Herculean Boots", augments = { 'Accuracy+27', 'Crit. hit damage +4%', 'Attack+9' } }
 gear.herculean_refresh_feet = {name="Herculean Boots",augments={'CHR+2','MND+6','"Refresh"+2','Accuracy+7 Attack+7',}}
 gear.herculean_wsd_feet = {name="Herculean Boots",augments={'Accuracy+23 Attack+23','Weapon skill damage +5%','DEX+10','Accuracy+10','Attack+1',}}
 gear.herculean_waltz_feet = {name="Herculean Boots",augments={'Attack+10','"Waltz" potency +10%','AGI+4','Accuracy+9',}}
@@ -73,5 +73,15 @@ gear.valorous_magical_pet_legs = { name="Valor. Hose",augments={'Pet: "Mag.Atk.B
 gear.valorous_magical_pet_feet = {name="Valorous Greaves",augments={'Pet: "Mag.Atk.Bns."+29','Pet: "Dbl.Atk."+1 Pet: Crit.hit rate +1','Pet: INT+9','Pet: Accuracy+1 Pet: Rng. Acc.+1','Pet: Attack+4 Pet: Rng.Atk.+4',}}
 gear.valorous_wsd_feet = {name="Valorous Greaves",augments={'Accuracy+25','Weapon skill damage +4%','STR+5',}}
 
-gear.adhemar_body_b = { name="Adhemar Jacket +1", augments = { 'STR+12', 'DEX+12', 'Attack+20' } }
-gear.adhemar_body_d = { name="Adhemar Jacket +1", augments = { 'HP+105', '"Fast Cast"+10', 'Magic dmg. taken -4' } }
+-- Adhemar gear
+gear.adhemar = {}
+
+-- Bodies
+gear.adhemar.body = {}
+gear.adhemar.body.b = { name = "Adhemar Jacket +1", augments = { 'STR+12', 'DEX+12', 'Attack+20' } }
+gear.adhemar.body.d = { name = "Adhemar Jacket +1", augments = { 'HP+105', '"Fast Cast"+10', 'Magic dmg. taken -4' } }
+
+-- Hands
+gear.adhemar.hands = {}
+gear.adhemar.hands.a = { name = "Adhemar Wrist. +1", augments = { 'DEX+12', 'AGI+12', 'Accuracy+20' } }
+gear.adhemar.hands.b = { name = "Adhemar Wrist. +1", augments = { 'STR+12', 'DEX+12', 'Attack+20' } }
