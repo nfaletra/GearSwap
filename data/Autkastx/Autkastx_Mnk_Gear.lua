@@ -286,10 +286,10 @@ function init_gear_sets()
 	-- Normal melee sets
 	sets.engaged =
 	{
-		ammo = "Aurgelmir Orb",
-		head = "Adhemar Bonnet +1", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Ken. Samue", hands = gear.adhemar.hands.a, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Hes. Hose +3", feet = "Anch. Gaiters +3"
+		ammo = "Coiste Bodhar",
+		head = "Ken. Jinpachi", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Schere Earring",
+		body = "Mpaca's Doublet", hands = "Mpaca's Gloves", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
+		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Malignance Boots"
 	}
 	sets.engaged.Acc = set_combine(sets.engaged,
 	{
@@ -301,15 +301,11 @@ function init_gear_sets()
 	-- Hybrid sets
 	sets.engaged.DT = set_combine(sets.engaged,
 	{
-		head = "Ken. Jinpachi",
-		body = "Mpaca's Doublet", hands = "Mpaca's Gloves",
-		legs = "Mpaca's Hose", feet = "Malignance Boots"
+		head = "Maligance Chapeau", ear2 = "Odnowa Earring +1",
+		hands = "Malignance Gloves", ring2 = "Defending Ring",
+		legs = "Mpaca's Hose", feet = "Ken. Sune-Ate"
 	})
-	sets.engaged.Acc.DT = set_combine(sets.engaged.DT,
-	{
-		head = "Malignance Chapeau", ear2 = "Odnowa Earring +1",
-		hands = "Malignance Gloves",
-	})
+	sets.engaged.Acc.DT = set_combine(sets.engaged.DT, {})
 
 	sets.engaged.Counter = set_combine(sets.engaged,
 	{
