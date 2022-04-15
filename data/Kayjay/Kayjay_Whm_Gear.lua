@@ -51,26 +51,36 @@ function init_gear_sets()
 	
     -- Precast Sets
 
-    -- Fast cast sets for spells
-    sets.precast.FC = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",ammo="Impatiens",
-		head="Bunzi's Hat",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
-		body="Inyanga Jubbah +2",hands="Gende. Gages +1",ring1="Kishar Ring",ring2="Lebeche Ring",
-		back="Perimede Cape",waist="Witful Belt",legs="Aya. Cosciales +2",feet="Regal Pumps +1"}
-		
-    sets.precast.FC.DT = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",ammo="Impatiens",
-		head="Bunzi's Hat",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
-		body="Inyanga Jubbah +2",hands="Gende. Gages +1",ring1="Kishar Ring",ring2="Lebeche Ring",
-		back="Perimede Cape",waist="Witful Belt",legs="Aya. Cosciales +2",feet="Regal Pumps +1"}
+	-- Fast cast sets for spells
+	sets.precast.FC =
+	{
+		ammo = "Incantor Stone",
+		head = "Bunzi's Hat", neck = "Voltsurge Torque", ear1 = "Enchntr. Earring +1", ear2 = "Malignance Earring",
+		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Lebeche Ring",
+		back = "Perimede Cape", waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Regal Pumps +1"
+	}
 
-    sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
-	
-    sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {})
+	sets.precast.FC.DT =
+	{
+		ammo = "Incantor Stone",
+		head = "Bunzi's Hat", neck = "Voltsurge Torque", ear1 = "Enchntr. Earring +1", ear2 = "Malignance Earring",
+		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Lebeche Ring",
+		back = "Perimede Cape", waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Regal Pumps +1"
+	}
 
-    sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {legs="Ebers Pant. +1"})
+	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
-    sets.precast.FC.StatusRemoval = sets.precast.FC['Healing Magic']
-	
-    sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {feet="Vanya Clogs"})
+	sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {})
+
+	sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, { legs = "Ebers Pant. +1" })
+
+	sets.precast.FC.StatusRemoval = sets.precast.FC['Healing Magic']
+
+	sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'],
+	{
+		main = "Queller's Rod", sub = "Sors Shield",
+		feet = "Vanya Clogs"
+	})
 
     sets.precast.FC.Curaga = sets.precast.FC.Cure
 
@@ -246,11 +256,14 @@ function init_gear_sets()
 		
 	sets.midcast.Erase = set_combine(sets.midcast.StatusRemoval, {neck="Cleric's Torque"})
 
-    -- 110 total Enhancing Magic Skill; caps even without Light Arts
-	sets.midcast['Enhancing Magic'] = {main=gear.gada_enhancing_club,sub="Ammurapi Shield",ammo="Hasty Pinion +1",
-		head="Telchine Cap",neck="Incanter's Torque",ear1="Andoaa Earring",ear2="Gifted Earring",
-		body="Telchine Chas.",hands="Telchine Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Perimede Cape",waist="Embla Sash",legs="Telchine Braconi",feet="Theo. Duckbills +3"}
+	-- 110 total Enhancing Magic Skill; caps even without Light Arts
+	sets.midcast['Enhancing Magic'] =
+	{
+		main = gear.gada_enhancing_club, sub = "Ammurapi Shield", ammo = "Hasty Pinion +1",
+		head = "Telchine Cap", neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "Gifted Earring",
+		body = "Telchine Chas.", hands = "Telchine Gloves", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
+		back = "Mending Cape", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Theo. Duckbills +3"
+	}
 
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",legs="Shedir Seraweels"})
 
@@ -258,17 +271,20 @@ function init_gear_sets()
 
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], {main="Vadose Rod",sub="Ammurapi Shield",hands="Regal Cuffs",waist="Emphatikos Rope",legs="Shedir Seraweels"})
 
-	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {hands="Ebers Mitts +1",legs="Th. Pant. +3",})
+	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], { head = "Inyanga Tiara +2", hands = "Ebers Mitts +1", legs = "Th. Pant. +3" }) 
 	
 	sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {ring2="Sheltered Ring",feet="Piety Duckbills +1",ear1="Gifted Earring",waist="Sekhmet Corset"})
 	sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'], {ring2="Sheltered Ring",feet="Piety Duckbills +1",ear1="Gifted Earring",waist="Sekhmet Corset"})
 	sets.midcast.Shell = set_combine(sets.midcast['Enhancing Magic'], {ring2="Sheltered Ring",legs="Piety Pantaln. +1",ear1="Gifted Earring",waist="Sekhmet Corset"})
 	sets.midcast.Shellra = set_combine(sets.midcast['Enhancing Magic'], {ring2="Sheltered Ring",legs="Piety Pantaln. +1",ear1="Gifted Earring",waist="Sekhmet Corset"})
-	
-	sets.midcast.BarElement = {main="Beneficus",sub="Ammurapi Shield",ammo="Staunch Tathlum +1",
-		head="Ebers Cap +1",neck="Incanter's Torque",ear1="Andoaa Earring",ear2="Gifted Earring",
-		body="Ebers Bliaut +1",hands="Ebers Mitts +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Alaunus's Cape",waist="Olympus Sash",legs="Piety Pantaln. +1",feet="Ebers Duckbills +1"}
+
+	sets.midcast.BarElement =
+	{
+		main = "Beneficus", sub = "Ammurapi Shield", ammo = "Staunch Tathlum +1",
+		head="Ebers Cap +1", neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "Gifted Earring",
+		body = "Ebers Bliaut +1", hands = "Ebers Mitts +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
+		back = "Alaunus's Cape", waist = "Olympus Sash", legs = "Piety Pantaln. +1", feet = "Ebers Duckbills +1"
+	}
 
 	sets.midcast.Impact = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head=empty,neck="Erra Pendant",ear1="Regal Earring",ear2="Digni. Earring",
@@ -355,31 +371,43 @@ function init_gear_sets()
 	sets.midcast.MndEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {back="Alaunus's Cape"})
 	sets.midcast.MndEnfeebles.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {back="Alaunus's Cape"})
 
-    -- Sets to return to when not performing an action.
+	-- Sets to return to when not performing an action.
 
-    -- Resting sets
-	sets.resting = {main="Chatoyant Staff",sub="Oneiros Grip",ammo="Homiliary",
-		head="Befouled Crown",neck="Chrys. Torque",ear1="Etiolation Earring",ear2="Ethereal Earring",
-		body="Ebers Bliaut +1",hands=gear.chironic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
-		back="Umbra Cape",waist="Fucho-no-obi",legs="Assid. Pants +1",feet=gear.chironic_refresh_feet}
+	-- Resting sets
+	sets.resting =
+	{
+		main = "Chatoyant Staff", sub = "Oneiros Grip", ammo = "Homiliary",
+		head = "Inyanga Tiara +2", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Ethereal Earring",
+		body = "Annoint. Kalasiris", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Stikini Ring +1",
+		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
+	}
 
-    -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-	sets.idle = {main="Mpaca's Staff",sub="Umbra Strap",ammo="Homiliary",
-		head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
-		body="Witching Robe",hands=gear.chironic_refresh_hands,ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Moonlight Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=gear.chironic_refresh_feet}
+	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
+	sets.idle =
+	{
+		main = "Queller Rod", sub = "Sors Shield", ammo = "Homiliary",
+		head = "Inyanga Tiara +2", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Ethereal Earring",
+		body = "Annoint. Kalasiris", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Stikini Ring +1",
+		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
+	}
 
-	sets.idle.PDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Homiliary",
-		head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
-		body="Witching Robe",hands=gear.chironic_refresh_hands,ring1="Defending Ring",ring2="Stikini Ring +1",
-		back="Moonlight Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=gear.chironic_refresh_feet}
-		
-	sets.idle.MDT = {main="Daybreak",sub="Ammurapi Shield",ammo="Homiliary",
-		head="Nyame Helm",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
-		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
-		back="Moonlight Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+	sets.idle.PDT =
+	{
+		main = "Queller Rod", sub = "Sors Shield", ammo = "Homiliary",
+		head = "Inyanga Tiara +2", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Ethereal Earring",
+		body = "Annoint. Kalasiris", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Stikini Ring +1",
+		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
+	}
 
-    -- Defense sets
+	sets.idle.MDT =
+	{
+		main = "Queller Rod", sub = "Sors Shield", ammo = "Homiliary",
+		head = "Inyanga Tiara +2", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Ethereal Earring",
+		body = "Annoint. Kalasiris", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Stikini Ring +1",
+		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
+	}
+
+	-- Defense sets
 
 	sets.defense.PDT = {main="Mafic Cudgel",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
@@ -443,6 +471,10 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
 	set_macro_page(3, 6)
+end
+
+function user_job_lockstyle()
+	windower.chat.input('/lockstyleset 002')
 end
 
 autows_list = {['DualWeapons']='Realmrazer',['MeleeWeapons']='Realmrazer'}

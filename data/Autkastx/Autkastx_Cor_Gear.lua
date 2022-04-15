@@ -7,21 +7,21 @@ function user_job_setup()
 	state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	state.HybridMode:options('Normal', 'DT')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
-	state.Weapons:options('Default', 'Ranged', 'Savage', 'Evisceration', 'DualWeapons', 'DualSavageWeapons', 'DualEvisceration', 'DualLeadenRanged', 'DualLeadenMelee', 'DualAeolian', 'DualLeadenMeleeAcc', 'DualRanged', 'DualProcWeapons', 'None')
+	state.Weapons:options('Default', 'Ranged', 'Savage', 'Evisceration', 'DualWeapons', 'DualSavage', 'DualEvisceration', 'DualLeadenRanged', 'DualLeadenMelee', 'DualAeolian', 'DualLeadenMeleeAcc', 'DualRanged', 'DualProcWeapons', 'None')
 	state.CompensatorMode:options('Never', '300', '1000', 'Always')
 
-	gear.RAbullet = "Decimating Bullet"
-	gear.WSbullet = "Decimating Bullet"
+	gear.RAbullet = "Chrono Bullet"
+	gear.WSbullet = "Chrono Bullet"
 	gear.MAbullet = "Orichalc. Bullet" --For MAB WS, do not put single-use bullets here.
 	gear.QDbullet = "Orichalc. Bullet"
 	options.ammo_warning_limit = 5
 
-	gear.camulus_range_tp = {name="Camulus's Mantle",augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10',}}
+	gear.camulus_range_tp = { name="Camulus's Mantle", augments = { 'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Mag. Evasion+15' } }
 	gear.camulus_snapshot = {name="Camulus's Mantle",augments={'"Snapshot"+10',}}
-	gear.camulus_melee_tp = { name = "Camulus's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' }}
-	gear.camulus_wsd = {name="Camulus's Mantle",augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
-	gear.camulus_leaden = { name = "Camulus's Mantle", augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%', 'Mag. Evasion+15' }}
-	gear.camulus_savage = { name = "Camulus's Mantle", augments = { 'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Mag. Evasion+15' } }
+	gear.camulus_melee_tp = { name = "Camulus's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } }
+	gear.camulus_wsd = { name="Camulus's Mantle", augments = { 'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Weapon skill damage +10%', 'Mag. Evasion+15' } }
+	gear.camulus_leaden = { name = "Camulus's Mantle", augments = { 'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%', 'Mag. Evasion+15' }}
+	gear.camulus_savage = { name = "Camulus's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Mag. Evasion+15' } }
 
 	-- Additional local binds
 	send_command('bind ^` gs c cycle ElementalMode')
@@ -170,7 +170,7 @@ function init_gear_sets()
 		ammo = gear.WSbullet,
 		head = "Malignance Chapeau", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Enervating Earring",
 		body = "Laksa. Frac +3", hands = "Malignance Gloves", ring1 = "Regal Ring", ring2 = "Dingir Ring",
-		back = gear.camulus_leaden, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.camulus_wsd, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.precast.WS['Detonator'] = sets.precast.WS['Last Stand']
@@ -199,7 +199,7 @@ function init_gear_sets()
 		ammo = gear.MAbullet,
 		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
 		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Dingir Ring",
-		back = gear.camulus_leaden, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
+		back = gear.camulus_wsd, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
 	sets.precast.WS['Hot Shot'] = sets.precast.WS['Wildfire']
@@ -316,18 +316,18 @@ function init_gear_sets()
 	sets.DWMax = { ear1 = "Dudgeon Earring", ear2 = "Heartseeker Earring", body = "Adhemar Jacket +1", hands = "Floral Gauntlets", waist = "Reiki Yotai"}
 
 	-- Weapons sets
-	sets.weapons.Default = { main = "Tauret", sub = "Nusku Shield", range = "Molybdosis" }
-	sets.weapons.Ranged = { main = "Kustawi +1", sub = "Nusku Shield", range = "Molybdosis" }
+	sets.weapons.Default = { main = "Tauret", sub = "Nusku Shield", range = "Fomalhaut" }
+	sets.weapons.Ranged = { main = "Kustawi +1", sub = "Nusku Shield", range = "Fomalhaut" }
 	sets.weapons.Savage = { main = "Naegling", sub = "Nusku Shield", range = "Ataktos" }
 	sets.weapons.Evisceration = { main = "Tauret", sub = "Nusku Shield", range = "Ataktos" }
-	sets.weapons.DualWeapons = { main = "Tauret", sub = "Gleti's Knife", range = "Molybdosis" }
-	sets.weapons.DualSavageWeapons = { main = "Naegling", sub = "Gleti's Knife", range = "Ataktos" }
+	sets.weapons.DualWeapons = { main = "Tauret", sub = "Gleti's Knife", range = "Fomalhaut" }
+	sets.weapons.DualSavage = { main = "Naegling", sub = "Gleti's Knife", range = "Ataktos" }
 	sets.weapons.DualEvisceration = { main = "Tauret", sub = "Gleti's Knife", range = "Ataktos" }
-	sets.weapons.DualLeadenRanged = { main ="Rostam", sub = "Kustawi +1", range = "Molybdosis" }
-	sets.weapons.DualLeadenMelee = { main = "Naegling", sub = "Tauret", range = "Molybdosis" }
+	sets.weapons.DualLeadenRanged = { main ="Rostam", sub = "Kustawi +1", range = "Fomalhaut" }
+	sets.weapons.DualLeadenMelee = { main = "Naegling", sub = "Tauret", range = "Fomalhaut" }
 	sets.weapons.DualAeolian = { main = "Rostam", sub = "Tauret", range = "Ataktos" }
-	sets.weapons.DualLeadenMeleeAcc = { main = "Naegling", sub = "Kustawi +1", range = "Molybdosis" }
-	sets.weapons.DualRanged = { main = "Rostam", sub = "Kustawi +1", range = "Molybdosis" }
+	sets.weapons.DualLeadenMeleeAcc = { main = "Naegling", sub = "Kustawi +1", range = "Fomalhaut" }
+	sets.weapons.DualRanged = { main = "Rostam", sub = "Kustawi +1", range = "Fomalhaut" }
 
 	-- Engaged sets
 

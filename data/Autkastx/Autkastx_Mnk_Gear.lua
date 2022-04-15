@@ -1,7 +1,7 @@
 function user_job_setup()
 	-- Options: Override default values
 	state.OffenseMode:options('Normal', 'Acc')
-	state.WeaponskillMode:options('Match', 'Normal', 'Acc')
+	state.WeaponskillMode:options('Match', 'Normal', 'AttackCapped', 'Proc')
 	state.HybridMode:options('Normal', 'DT', 'Counter')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
@@ -23,6 +23,7 @@ function user_job_setup()
 	gear.Segomo = {}
 	gear.Segomo.TP = { name = "Segomo's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%' } }
 	gear.Segomo.STR_DA = { name = "Segomo's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } }
+	gear.Segomo.INT_WDS = { name = "Segomo's Mantle", augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } }
 
 	select_default_macro_book()
 end
@@ -94,31 +95,33 @@ function init_gear_sets()
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS =
 	{
-		ammo = "Knobkierre",
-		head = "Hes. Crown +3", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
-		body = "Ken. Samue", hands = "Anchor. Gloves +3", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.Segomo.STR_DA, waist = "Moonbow Belt", legs = "Hiza. Hizayoroi +2", feet=gear.herculean_ta_feet
-	}
-	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
-
-	-- Specific weaponskill sets.
-	sets.precast.WS['Raging Fists'] =
-	{
 		ammo = "Coiste Bodhar",
-		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
+		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
 		body = gear.adhemar.body.b, hands = gear.adhemar.hands.b, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.Segomo.STR_DA, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = gear.herculean_ta_feet
 	}
-	sets.precast.WS["Raging Fists"].Acc = set_combine(sets.precast.WS["Raging Fists"], sets.precast.WSAcc)
-
-	sets.precast.WS['Howling Fist'] =
+	sets.precast.WS.AttackCapped = set_combine(sets.precast.WS,
 	{
-		ammo = "Knobkierre",
-		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
-		body = gear.adhemar.body.b, hands = gear.herculean_ta_hands, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
+		ammo = "Crepuscular Pebble",
+		neck = "Mnk. Nodowa +2",
+		body = "Malignance Tabard"
+	})
+
+	-- Specific weaponskill sets.
+	sets.precast.WS['Raging Fists'] = set_combine(sets.precast.WS,
+	{
+		ammo = "Coiste Bodhar",
+		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
+		body = gear.adhemar.body.b, hands = gear.adhemar.hands.b, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.Segomo.STR_DA, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = gear.herculean_ta_feet
-	}
-	sets.precast.WS["Howling Fist"].Acc = set_combine(sets.precast.WS["Howling Fist"], sets.precast.WSAcc)
+	})
+	sets.precast.WS["Raging Fists"].AttackCapped = set_combine(sets.precast.WS['Raging Fists'], sets.precast.WS.AttackCapped)
+
+	sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS,
+	{
+		body = "Ken. Samue", hands = gear.herculean_ta_hands,
+	})
+	sets.precast.WS['Howling Fist'].AttackCapped = set_combine(sets.precast.WS['Howling Fist'], sets.precast.WS.AttackCapped)
 
 	sets.precast.WS['Asuran Fists'] =
 	{
@@ -182,7 +185,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Pixie Hairpin +1", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Metamor. Ring +1",
-		back = gear.Segomo.STR_DA, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Segomo.INT_WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Cataclysm'].Acc = set_combine(sets.precast.WS['Cataclysm'], sets.precast.WSAcc)
 
@@ -191,7 +194,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathluma",
 		head = "Malignance Chapeau", neck = "Fotia Gorget", ear1 = "Digni. Earring", ear2 = "Crep. Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Stikini Ring +1", ring2 = "Metamor. Ring +1",
-		back = gear.Segomo.TP, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Segomo.INT_WSD, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 	sets.precast.WS['Shell Crusher'] = set_combine(sets.precast.WS['Shell Crusher'], sets.precast.WSAcc)
 	
@@ -291,21 +294,16 @@ function init_gear_sets()
 		body = "Mpaca's Doublet", hands = "Mpaca's Gloves", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Malignance Boots"
 	}
-	sets.engaged.Acc = set_combine(sets.engaged,
-	{
-		head = "Ken. Jinpachi",
-		hands = "Ken. Tekko",
-		legs = "Ken. Hakama", feet = "Ken. Sune-Ate"
-	})
+	sets.engaged.Acc = set_combine(sets.engaged, { ear2 = "Telos Earring" })
 
 	-- Hybrid sets
 	sets.engaged.DT = set_combine(sets.engaged,
 	{
-		head = "Maligance Chapeau", ear2 = "Odnowa Earring +1",
-		hands = "Malignance Gloves", ring2 = "Defending Ring",
+		head = "Malignance Chapeau", ear2 = "Odnowa Earring +1",
+		hands = "Malignance Gloves",
 		legs = "Mpaca's Hose", feet = "Ken. Sune-Ate"
 	})
-	sets.engaged.Acc.DT = set_combine(sets.engaged.DT, {})
+	sets.engaged.Acc.DT = set_combine(sets.engaged.DT, { ear2 = "Telos Earring" })
 
 	sets.engaged.Counter = set_combine(sets.engaged,
 	{
@@ -345,7 +343,7 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Godhands = { main = "Godhands" }
 	sets.weapons.Barehanded = { main = empty }
-	sets.weapons.Staff = { main = "Malignance Pole", sub = "Bloodrain Strap" }
+	sets.weapons.Staff = { main = "Xoanon", sub = "Bloodrain Strap" }
 	sets.weapons.ProcStaff = { main = "Chatoyant Staff", sub = "Bloodrain Strap" }
 	sets.weapons.ProcClub = { main = "Mafic Cudgel" }
 	sets.weapons.ProcSword = { main = "Ark Sword" }

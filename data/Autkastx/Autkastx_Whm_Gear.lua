@@ -106,7 +106,7 @@ function init_gear_sets()
 	sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'],
 	{
 		main = "Queller Rod", sub = "Sors Shield",
-		ear1="Mendi. Earring",
+		ear1 = "Mendi. Earring",
 	})
 
 	sets.precast.FC.Curaga = sets.precast.FC.Cure

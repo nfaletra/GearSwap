@@ -112,25 +112,4 @@ for _, v in pairs(gearswap.res.items) do
 	end
 end
 
--- Strategem Variables
-MaxStrategems = 0
-StrategemRecast = 120
-if player.main_job == 'SCH' then
-	MaxStrategems = 5
-
-	-- >550 JP reduces strategem recast
-	if windower.ffxi.get_player().job_points.sch.jp_spent >= 550 then
-		StrategemRecast = 33
-	else
-		StrategemRecast = 48
-	end
-elseif player.sub_job == 'SCH' then
-	-- SCH subjob gains an extra strategem at ML5
-	if windower.ffxi.get_player().mlvl >= 5 then
-		MaxStrategems = 3
-	else
-		MaxStrategems = 2
-	end
-end
-
-MaxStrategemTime = math.max(0, MaxStrategems - 1) * StrategemRecast
+PriorityPlayers = {}

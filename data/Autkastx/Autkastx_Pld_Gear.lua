@@ -1,20 +1,20 @@
 function user_job_setup()
 	-- Options: Override default values
 	state.OffenseMode:options('Normal')
-	state.HybridMode:options('Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Ochain', 'DD', 'DW', 'Staff')
+	state.HybridMode:options('Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Ochain', 'DD', 'DW', 'TwoHanded')
 	state.WeaponskillMode:options('Match', 'Normal', 'Acc')
 	state.CastingMode:options('SIRD', 'Normal')
 	state.Passive:options('None', 'AbsorbMP')
 	state.PhysicalDefenseMode:options('Normal')
 	state.MagicalDefenseMode:options('Normal')
 	state.ResistDefenseMode:options('Normal')
-	state.IdleMode:options('Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Ochain', 'DD', 'DW', 'Staff')
-	state.Weapons:options('Excalibur', 'Caballarius', 'Malignance', 'Naegling', 'Staff')
+	state.IdleMode:options('Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Ochain', 'DD', 'DW', 'TwoHanded')
+	state.Weapons:options('Excalibur', 'Caballarius', 'Malignance', 'Naegling', 'Staff', 'GS', 'DualWeapons', 'DualNaegling')
 	
 	state.ExtraDefenseMode = M{ ['description'] = 'Extra Defense Mode', 'None', 'MP', 'Twilight' }
 	
 	gear.rudianos_fc = { name = "Rudianos's Mantle", augments = { 'HP+60', '"Fast Cast"+10' } }
-	gear.rudianos_tp = "Rudianos's Mantle" --{ name = "Rudianos's Mantle", augments={ 'HP+60','Accuracy+20 Attack+20','HP+20','"Store TP"+10','Phys. dmg. taken-10%' }}
+	gear.rudianos_tp = { name = "Rudianos's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } }
 	gear.rudianos_wsd = "Rudianos's Mantle" -- { name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 	gear.rudianos_enmity = "Ruianos's Mantle" -- { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Phys. dmg. taken-10%',}}
 	gear.rudianos_shield = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'Chance of successful block +5' } }
@@ -121,7 +121,13 @@ function init_gear_sets()
 
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
-	sets.precast.WS = {}
+	sets.precast.WS =
+	{
+		ammo = "Amar Cluster",
+		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
+		body = "Nyame Mail", hands = "Odyssean Gauntlets", ring1 = "Regal Ring", ring2 = "Rufescent Ring",
+		back = gear.rudianos_wsd, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+	}
 	sets.precast.WS.Acc = {}
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -138,15 +144,15 @@ function init_gear_sets()
 		ammo = "Aurgelmir Orb",
 		head = "Flamma Zuchetto +2", neck = "Fotia Gorget", ear1 = "Mache Earring +1", ear2 = "Moonshade Earring",
 		body = "Hjarrandi Breastplate", hands = "Flamma Manopolas +2", 	ring1 = "Regal Ring", ring2 = "Hetairoi Ring",
-		back = gear.rudianos_wsd, waist = "Fotia Belt", legs = "Lustratio Subligar +1", feet = "Valorous Greaves"
+		back = gear.rudianos_wsd, waist = "Fotia Belt", legs = "Lustratio Subligar +1", feet = "Nyame Sollerets"
 	})
 
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Amar Cluster",
 		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Odyssean Gauntlets", ring1 = "Regal Ring", ring2 = "Rufescent Ring",
-		back = gear.rudianos_wsd, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Valorous Greaves"
+		body = "Nyame Mail", hands = "Odyssean Gauntlets", ring1 = "Rufescent Ring", ring2 = "Regal Ring",
+		back = gear.rudianos_wsd, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	})
 
 	sets.precast.WS['Flat Blade'] = {}
@@ -334,18 +340,18 @@ function init_gear_sets()
 
 	sets.idle.DW =
 	{
-		ammo = "Aurgelmir Orb",
-		head = "Flamma Zucchetto +2", neck = "Vim Torque +1", ear1 = "Suppanomimi", ear2 = "Eabani Earring",
-		body = "Dagon Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Petrov Ring", ring2 = "Hetairoi Ring",
-		back = gear.rudianos_tp, waist = "Sailfi Belt +1", legs = "Sakpata's Cuisses", feet = "Flamma Gambieras +2"
+		ammo = "Coiste Bodhar",
+		head = "Flamma Zucchetto +2", neck = "Lissome Necklace", ear1 = "Suppanomimi", ear2 = "Eabani Earring",
+		body = "Dagon Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Petrov Ring", ring2 = "Regal Ring",
+		back = gear.rudianos_tp, waist = "Reiki Yotai", legs = "Sakpata's Cuisses", feet = "Flamma Gambieras +2"
 	}
 
-	sets.idle.Staff =
+	sets.idle.TwoHanded =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flam. Zuchetto +2", neck = "Carnal Torque", ear1 = "Brutal Earring", ear2 = "Telos Earring",
+		head = "Flam. Zuchetto +2", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Telos Earring",
 		body = "Hjarrandi Breast.", hands = "Sakpata's Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Flamma Ring",
-		back = gear.rudianos_shield, waist = "Sailfi Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
+		back = gear.rudianos_tp, waist = "Sailfi Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
 	}
 
 	sets.Kiting = { legs = "Carmine Cuisses +1" }
@@ -374,6 +380,9 @@ function init_gear_sets()
 	sets.weapons.Malignance = { main = "Malignance Sword" }
 	sets.weapons.Naegling = { main = "Naegling" }
 	sets.weapons.Staff = { main = "Malignance Pole", sub = "Bloodrain Strap" }
+	sets.weapons.GS = { main = "Montante +1", sub = "Bloodrain Strap " }
+	sets.weapons.DualWeapons = { main = "Excalibur", sub = "Malevolence" }
+	sets.weapons.DualNaegling = { main = "Naegling", sub = "Malevolence" }
 
 	-- I don't use defense sets
 	sets.defense.Normal = {}
@@ -449,18 +458,18 @@ function init_gear_sets()
 
 	sets.engaged.DW =
 	{
-		ammo = "Aurgelmir Orb",
-		head = "Flamma Zucchetto +2", neck = "Vim Torque +1", ear1 = "Suppanomimi", ear2 = "Eabani Earring",
+		ammo = "Coiste Bodhar",
+		head = "Flamma Zucchetto +2", neck = "Lissome Necklace", ear1 = "Suppanomimi", ear2 = "Eabani Earring",
 		body = "Dagon Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Petrov Ring", ring2 = "Regal Ring",
-		back = gear.rudianos_tp, waist = "Sailfi Belt +1", legs = "Sakpata's Cuisses", feet = "Flamma Gambieras +2"
+		back = gear.rudianos_tp, waist = "Reiki Yotai", legs = "Sakpata's Cuisses", feet = "Flamma Gambieras +2"
 	}
 
-	sets.engaged.Staff =
+	sets.engaged.TwoHanded =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flam. Zuchetto +2", neck = "Carnal Torque", ear1 = "Brutal Earring", ear2 = "Telos Earring",
+		head = "Flam. Zuchetto +2", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Telos Earring",
 		body = "Hjarrandi Breast.", hands = "Sakpata's Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Flamma Ring",
-		back = gear.rudianos_shield, waist = "Sailfi Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
+		back = gear.rudianos_tp, waist = "Windbuffet Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
 	}
 
 	--------------------------------------
