@@ -10,7 +10,7 @@ function user_job_setup()
 	state.Weapons:options('Aeneas','LowBuff')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWEarrings','DWMax'}
 
-	gear.stp_jse_back = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
+	gear.senuna_tp = { name = "Senuna's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } }
 	gear.wsd_jse_back = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	
 	-- Additional local binds
@@ -210,10 +210,12 @@ function init_gear_sets()
 	sets.ExtraRegen = {}
 
 	-- Idle sets
-	sets.idle = {
-		head="Skormoth Mask",neck="Defiant Collar",ear1="Kemas Earring",ear2="Suppanomimi",
-		body="Rawhide Vest",hands="Espial Bracers",ring1="Rajas Ring",ring2="Keen Ring",
-		back="Atheling Mantle",waist="Mrc.Cpt. Belt",legs="Feast Hose",feet="Espial Socks"
+	sets.idle =
+	{
+		ammo = "Charis Feather",
+		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Kemas Earring", ear2 = "Suppanomimi",
+		body = "Rawhide Vest", hands = "Espial Bracers", ring1 = "Rajas Ring", ring2 = "Keen Ring",
+		back = gear.senuna_tp, waist = "Mrc.Cpt. Belt", legs = "Feast Hose", feet = "Espial Socks"
 	}
 
 	sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
@@ -249,12 +251,14 @@ function init_gear_sets()
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
 	-- Normal melee group
-	sets.engaged = {
-		head="Skormoth Mask",neck="Defiant Collar",ear1="Kemas Earring",ear2="Suppanomimi",
-		body="Rawhide Vest",hands="Espial Bracers",ring1="Rajas Ring",ring2="Keen Ring",
-		back="Atheling Mantle",waist="Mrc.Cpt. Belt",legs="Feast Hose",feet="Espial Socks"
+	sets.engaged =
+	{
+		ammo = "Charis Feather",
+		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Kemas Earring", ear2 = "Suppanomimi",
+		body = "Rawhide Vest", hands = "Espial Bracers", ring1 = "Rajas Ring", ring2 = "Keen Ring",
+		back = gear.senuna_tp, waist = "Mrc.Cpt. Belt", legs = "Feast Hose", feet = "Espial Socks"
 	}
-		
+
 	sets.engaged.DTLite = {
 		ammo="Yamarang",
 		head="Dampening Tam",neck="Loricate Torque +1",ear1="Brutal Earring",ear2="Sherida Earring",
