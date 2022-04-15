@@ -213,7 +213,7 @@ function init_gear_sets()
 	sets.idle =
 	{
 		ammo = "Charis Feather",
-		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Kemas Earring", ear2 = "Suppanomimi",
+		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
 		body = "Rawhide Vest", hands = "Espial Bracers", ring1 = "Rajas Ring", ring2 = "Keen Ring",
 		back = gear.senuna_tp, waist = "Mrc.Cpt. Belt", legs = "Feast Hose", feet = "Espial Socks"
 	}
@@ -254,7 +254,7 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		ammo = "Charis Feather",
-		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Kemas Earring", ear2 = "Suppanomimi",
+		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
 		body = "Rawhide Vest", hands = "Espial Bracers", ring1 = "Rajas Ring", ring2 = "Keen Ring",
 		back = gear.senuna_tp, waist = "Mrc.Cpt. Belt", legs = "Feast Hose", feet = "Espial Socks"
 	}
