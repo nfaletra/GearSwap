@@ -99,7 +99,7 @@ function init_gear_sets()
 	sets.precast.JA['Mug'] = {}
 	sets.precast.JA['Despoil'] = { legs = "Raider's Culottes +1", feet = "Skulk. Poulaines +1" }
 	sets.precast.JA['Perfect Dodge'] = { hands = "Plun. Armlets +3" }
-	sets.precast.JA['Feint'] = {}
+	sets.precast.JA['Feint'] = { legs = "Plun. Culottes +3" }
 
 	sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
 	sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
@@ -149,14 +149,14 @@ function init_gear_sets()
 		ammo = "Seeth. Bomblet +1",
 		head = "Plun. Bonnet +3", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
 		body = "Plunderer's Vest +3", hands = "Meg. Gloves +2", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
-		back = gear.toutatis_wsd, waist = "Kentarch Belt +1", legs = "Nyame Flanchard", feet = "Plun. Poulaines +3"
+		back = gear.toutatis_wsd, waist = "Kentarch Belt +1", legs = "Plun. Culottes +3", feet = "Plun. Poulaines +3"
 	}
 	sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS.Acc, {})
 	sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"],
 	{
 		ammo = "Yetshila +1",
 		head = "Pill. Bonnet +2", ear1 = "Odr Earring",
-		legs = "Pill. Culottes +2", feet = "Nyame Sollerets"
+		feet = "Nyame Sollerets"
 	})
 	sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].SA, {})
 	sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].SA, {})
@@ -167,8 +167,14 @@ function init_gear_sets()
 	sets.precast.WS["Mandalic Stab"].TA = set_combine(sets.precast.WS["Rudra's Storm"].SA, {})
 	sets.precast.WS["Mandalic Stab"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].SA, {})
 
-	sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {})
-	sets.precast.WS["Shark Bite"].Acc = set_combine(sets.precast.WS.Acc, {})
+	sets.precast.WS["Shark Bite"] =
+	{
+		ammo = "Seeth. Bomblet +1",
+		head = "Nyame Helm", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
+		body = "Plunderer's Vest +3", hands = "Meg. Gloves +2", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		back = gear.toutatis_wsd, waist = "Grunfeld Rope", legs = "Plun. Culottes +3", feet = "Nyame Sollerets"
+	}
+	sets.precast.WS["Shark Bite"].Acc = set_combine(sets.precast.WS["Shark Bite"], {})
 	sets.precast.WS["Shark Bite"].SA = set_combine(sets.precast.WS["Shark Bite"], {})
 	sets.precast.WS["Shark Bite"].TA = set_combine(sets.precast.WS["Shark Bite"], {})
 	sets.precast.WS["Shark Bite"].SATA = set_combine(sets.precast.WS["Shark Bite"], {})

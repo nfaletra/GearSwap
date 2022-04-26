@@ -134,7 +134,7 @@ function init_gear_sets()
 	}
 
 	sets.precast.RA.Flurry = set_combine(sets.precast.RA, { body = "Laksa. Frac +3" })
-	sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry, { hands = "Carmine Fin. Ga. +1", feet = "Pursuer's Gaiters" })
+	sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry, { hands = "Carmine Fin. Ga. +1" })
 
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined

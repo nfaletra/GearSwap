@@ -103,7 +103,7 @@ function init_gear_sets()
 	{
 		ammo = "Sapience Orb",
 		head = "Carmine Mask +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Rev. Surcoat +2", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Gelatinous Ring +1",
+		body = "Rev. Surcoat +3", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_fc, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Odyssean Greaves"
 	}
 
@@ -208,7 +208,7 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum",
 		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
-		body = "Reverence Surcoat +2", hands = "Regal Gauntlets", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
+		body = "Rev. Surcoat +3", hands = "Regal Gauntlets", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
 		back = gear.rudianos_fc, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Souv. Schuhs +1"
 	}
 	sets.midcast.Reprisal.SIRD = set_combine(sets.midcast.Reprisal,
@@ -230,7 +230,7 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum",
 		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Reverence Surcoat +2", hands = "Regal Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
+		body = "Rev. Surcoat +3", hands = "Regal Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
 		back = "Moonbeam Cape", waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
 	}
 
@@ -308,7 +308,7 @@ function init_gear_sets()
 	{
 		sub = "Aegis", ammo = "Staunch Tathlum",
 		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Reverence Surcoat +2", hands = "Sakpata's Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
+		body = "Rev. Surcoat +3", hands = "Sakpata's Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_counter, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
 	}
 
@@ -317,7 +317,7 @@ function init_gear_sets()
 	{
 		sub = "Aegis", ammo = "Staunch Tathlum",
 		head = "Sakpata's Helm", neck = "Unmoving Collar", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Reverence Surcoat +2", hands = "Sakpata's Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
+		body = "Rev. Surcoat +3", hands = "Sakpata's Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_counter, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
 	}
 
@@ -334,7 +334,7 @@ function init_gear_sets()
 	{
 		sub = "Blurred Shield +1", ammo = "Aurgelmir Orb",
 		head = "Sakpata's Helm", neck = "Combatant's Torque", ear1 = "Cessance Earring", ear2 = "Brutal Earring",
-		body = "Sakpata's Breastplate", hands = "Acro Gauntlets", ring1 = "Chirich Ring", ring2 = "Chirich Ring",
+		body = "Sakpata's Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Chirich Ring", ring2 = "Chirich Ring",
 		back = gear.rudianos_tp, waist = "Sailfi Belt +1", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
 	}
 
@@ -426,7 +426,7 @@ function init_gear_sets()
 	{
 		sub = "Aegis", ammo = "Staunch Tathlum",
 		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Reverence Surcoat +2", hands = "Sakpata's Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
+		body = "Rev. Surcoat +3", hands = "Sakpata's Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_counter, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
 	}
 
@@ -452,7 +452,7 @@ function init_gear_sets()
 	{
 		sub = "Blurred Shield +1", ammo = "Aurgelmir Orb",
 		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Telos Earring", ear2 = "Brutal Earring",
-		body = "Sakpata's Breastplate", hands = "Acro Gauntlets", ring1 = "Petrov Ring", ring2 = "Regal Ring",
+		body = "Sakpata's Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Petrov Ring", ring2 = "Regal Ring",
 		back = gear.rudianos_tp, waist = "Sailfi Belt +1", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
 	}
 
