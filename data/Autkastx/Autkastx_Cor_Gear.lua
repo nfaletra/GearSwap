@@ -7,7 +7,7 @@ function user_job_setup()
 	state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	state.HybridMode:options('Normal', 'DT')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
-	state.Weapons:options('Default', 'Ranged', 'Savage', 'Evisceration', 'DualWeapons', 'DualSavage', 'DualEvisceration', 'DualLeadenRanged', 'DualLeadenMelee', 'DualAeolian', 'DualLeadenMeleeAcc', 'DualRanged', 'DualProcWeapons', 'None')
+	state.Weapons:options('Default', 'Ranged', 'Crit', 'Savage', 'Evisceration', 'DualWeapons', 'DualSavage', 'DualEvisceration', 'DualLeadenRanged', 'DualLeadenMelee', 'DualAeolian', 'DualLeadenMeleeAcc', 'DualRanged', 'DualProcWeapons', 'None')
 	state.CompensatorMode:options('Never', '300', '1000', 'Always')
 
 	gear.RAbullet = "Chrono Bullet"
@@ -318,6 +318,7 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Default = { main = "Tauret", sub = "Nusku Shield", range = "Fomalhaut" }
 	sets.weapons.Ranged = { main = "Kustawi +1", sub = "Nusku Shield", range = "Fomalhaut" }
+	sets.weapons.Crit = { main = "Gleti's Knife", sub = "Nusku Shield", range = "Fomalhaut" }
 	sets.weapons.Savage = { main = "Naegling", sub = "Nusku Shield", range = "Ataktos" }
 	sets.weapons.Evisceration = { main = "Tauret", sub = "Nusku Shield", range = "Ataktos" }
 	sets.weapons.DualWeapons = { main = "Tauret", sub = "Gleti's Knife", range = "Fomalhaut" }

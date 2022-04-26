@@ -356,7 +356,7 @@ function init_include()
 		naughty_list = {'lua ','gearswap',' gs ','file','windower','plugin','addon','program','hack','bot ','bots ','botting','easyfarm'}
 		
 		windower.raw_register_event('outgoing chunk', function(id, data, modified, injected, blocked)
-			if id == 0x0B6 and res.servers[windower.ffxi.get_info().server].en == 'Asura' then
+			if id == 0x0B6 and res.servers[windower.ffxi.get_info().server] and res.servers[windower.ffxi.get_info().server].en == 'Asura' then
                 local p = packets.parse('outgoing',data)
                 if p['Target Name'] == 'Selindrile' then
 					for i in pairs(naughty_list) do 
