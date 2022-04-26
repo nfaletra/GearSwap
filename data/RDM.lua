@@ -522,14 +522,13 @@ function job_tick()
 	return false
 end
 
-function check_arts()	
+function check_arts()
 	if buffup ~= '' or (not data.areas.cities:contains(world.area) and ((state.AutoArts.value and player.in_combat) or state.AutoBuffMode.value ~= 'Off')) then
 
- 		local abil_recasts = windower.ffxi.get_ability_recasts()	
+		local abil_recasts = windower.ffxi.get_ability_recasts()	
 
- 		if not buffactive.Composure then	
-			local abil_recasts = windower.ffxi.get_ability_recasts()	
-			if abil_recasts[50] < latency then	
+		if not buffactive.Composure then
+			if abil_recasts[50] and abil_recasts[50] < latency then	
 				tickdelay = os.clock() + 1.1
 				windower.chat.input('/ja "Composure" <me>')	
 				return true	

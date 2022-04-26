@@ -495,11 +495,11 @@ function check_stance()
 		
 		local abil_recasts = windower.ffxi.get_ability_recasts()
 
-		if state.Stance.value == 'Innin' and not state.Buff.Yonin and abil_recasts[147] < latency then
+		if state.Stance.value == 'Innin' and not state.Buff.Yonin and abil_recasts[147] and abil_recasts[147] < latency then
 			windower.chat.input('/ja "Innin" <me>')
 			tickdelay = os.clock() + 1.1
 			return true
-		elseif state.Stance.value == 'Yonin' and not state.Buff.Innin and abil_recasts[146] < latency then
+		elseif state.Stance.value == 'Yonin' and not state.Buff.Innin and abil_recasts[146] and abil_recasts[146] < latency then
 			windower.chat.input('/ja "Yonin" <me>')
 			tickdelay = os.clock() + 1.1
 			return true
