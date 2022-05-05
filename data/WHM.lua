@@ -191,7 +191,7 @@ function job_precast(spell, spellMap, eventArgs)
 	elseif spell.action_type == 'Magic' then
 		if spellMap == 'StatusRemoval' and not (spell.english == "Erase" or spell.english == "Esuna" or spell.english == "Sacrifice") then
 			local abil_recasts = windower.ffxi.get_ability_recasts()
-			if abil_recasts[32] < latency and not silent_check_amnesia() and state.AutoCaress.value then
+			if abil_recasts[32] and abil_recasts[32] < latency and not silent_check_amnesia() and state.AutoCaress.value then
 				eventArgs.cancel = true
 				windower.chat.input('/ja "Divine Caress" <me>')
 				windower.chat.input:schedule(1, '/ma "'..spell.english..'" '..spell.target.raw..'')
@@ -200,7 +200,7 @@ function job_precast(spell, spellMap, eventArgs)
 		end
 	elseif spell.type == 'JobAbility' then
 		local abil_recasts = windower.ffxi.get_ability_recasts()
-		if spell.english == 'Devotion' and state.BlockLowDevotion.value and abil_recasts[28] < latency and player.hpp < 50 then
+		if spell.english == 'Devotion' and state.BlockLowDevotion.value and abil_recasts[28] and abil_recasts[28] < latency and player.hpp < 50 then
 			eventArgs.cancel = true
 			add_to_chat(123,'Abort: Blocking Devotion under 50% HP to prevent inefficient use.')
 		end

@@ -258,32 +258,32 @@ function refine_waltz(spell, spellMap, eventArgs)
 			eventArgs.cancel = true
 			return true
 		elseif missingHP < 200 then
-			if abil_recasts[217] < latency then
+			if abil_recasts[217] and abil_recasts[217] < latency then
 				newWaltz = 'Curing Waltz'
 				waltzID = 190
-			elseif abil_recasts[186] < latency then
+			elseif abil_recasts[186] and abil_recasts[186] < latency then
 				newWaltz = 'Curing Waltz II'
 				waltzID = 191
 			end
 		elseif missingHP < 600 then
-			if abil_recasts[186] < latency then
+			if abil_recasts[186] and abil_recasts[186] < latency then
 				newWaltz = 'Curing Waltz II'
 				waltzID = 191
-			elseif abil_recasts[187] < latency then
+			elseif abil_recasts[187] and abil_recasts[187] < latency then
 				newWaltz = 'Curing Waltz III'
 				waltzID = 192
-			elseif abil_recasts[217] < latency then
+			elseif abil_recasts[217] and abil_recasts[217] < latency then
 				newWaltz = 'Curing Waltz'
 				waltzID = 190
 			end
 		elseif missingHP < 1100 then
-			if abil_recasts[187] < latency then
+			if abil_recasts[187] and abil_recasts[187] < latency then
 				newWaltz = 'Curing Waltz III'
 				waltzID = 192
-			elseif abil_recasts[188] < latency then	
+			elseif abil_recasts[188] and abil_recasts[188] < latency then	
 				newWaltz = 'Curing Waltz IV'
 				waltzID = 193
-			elseif abil_recasts[186] < latency then
+			elseif abil_recasts[186] and abil_recasts[186] < latency then
 				newWaltz = 'Curing Waltz II'
 				waltzID = 191
 			end
@@ -293,24 +293,24 @@ function refine_waltz(spell, spellMap, eventArgs)
 			windower.chat.input:schedule(.5,'/ja "Curing Waltz III" '..spell.target.raw..'')
 			return true
 		elseif missingHP < 1500 then
-			if abil_recasts[188] < latency then	
+			if abil_recasts[188] and abil_recasts[188] < latency then	
 				newWaltz = 'Curing Waltz IV'
 				waltzID = 193
-			elseif abil_recasts[189] < latency then	
+			elseif abil_recasts[189] and abil_recasts[189] < latency then	
 				newWaltz = 'Curing Waltz V'
 				waltzID = 311
-			elseif abil_recasts[187] < latency then
+			elseif abil_recasts[187] and abil_recasts[187] < latency then
 				newWaltz = 'Curing Waltz III'
 				waltzID = 192
 			end
 		else
-			if abil_recasts[189] < latency then	
+			if abil_recasts[189] and abil_recasts[189] < latency then	
 				newWaltz = 'Curing Waltz V'
 				waltzID = 311
-			elseif abil_recasts[188] < latency then	
+			elseif abil_recasts[188] and abil_recasts[188] < latency then	
 				newWaltz = 'Curing Waltz IV'
 				waltzID = 193
-			elseif abil_recasts[187] < latency then
+			elseif abil_recasts[187] and abil_recasts[187] < latency then
 				newWaltz = 'Curing Waltz III'
 				waltzID = 192
 			end
@@ -323,26 +323,26 @@ function refine_waltz(spell, spellMap, eventArgs)
 			eventArgs.cancel = true
 			return true
 		elseif missingHP < 150 then
-			if abil_recasts[217] < latency then
+			if abil_recasts[217] and abil_recasts[217] < latency then
 				newWaltz = 'Curing Waltz'
 				waltzID = 190
-			elseif abil_recasts[186] < latency then
+			elseif abil_recasts[186] and abil_recasts[186] < latency then
 				newWaltz = 'Curing Waltz II'
 				waltzID = 191
 			end
 		elseif missingHP < 300 then
-			if abil_recasts[186] < latency then
+			if abil_recasts[186] and abil_recasts[186] < latency then
 				newWaltz = 'Curing Waltz II'
 				waltzID = 191
-			elseif abil_recasts[187] < latency then
+			elseif abil_recasts[187] and abil_recasts[187] < latency then
 				newWaltz = 'Curing Waltz III'
 				waltzID = 192
 			end
 		else
-			if abil_recasts[187] < latency then
+			if abil_recasts[187] and abil_recasts[187] < latency then
 				newWaltz = 'Curing Waltz III'
 				waltzID = 192
-			elseif abil_recasts[186] < latency then
+			elseif abil_recasts[186] and abil_recasts[186] < latency then
 				newWaltz = 'Curing Waltz II'
 				waltzID = 191
 			end
