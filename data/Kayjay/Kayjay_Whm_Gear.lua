@@ -33,6 +33,31 @@ function user_job_setup()
 	send_command('bind @\\\\ input /ma "Shellra V" <me>')
 	send_command('bind !\\\\ input /ma "Reraise IV" <me>')
 
+	-- Smartcure binds
+	-- Party - Ctrl + FKey
+	send_command('bind ^f1 gs c smartcure p0')
+	send_command('bind ^f2 gs c smartcure p1')
+	send_command('bind ^f3 gs c smartcure p2')
+	send_command('bind ^f4 gs c smartcure p3')
+	send_command('bind ^f5 gs c smartcure p4')
+	send_command('bind ^f6 gs c smartcure p5')
+
+	-- Top alliance - Alt + FKey
+	send_command('bind !f1 gs c smartcure a10')
+	send_command('bind !f2 gs c smartcure a11')
+	send_command('bind !f3 gs c smartcure a12')
+	send_command('bind !f4 gs c smartcure a13')
+	send_command('bind !f5 gs c smartcure a14')
+	send_command('bind !f6 gs c smartcure a15')
+
+	-- Bottom alliance - WindowsKey + FKey
+	send_command('bind @f1 gs c smartcure a20')
+	send_command('bind @f2 gs c smartcure a21')
+	send_command('bind @f3 gs c smartcure a22')
+	send_command('bind @f4 gs c smartcure a23')
+	send_command('bind @f5 gs c smartcure a24')
+	send_command('bind @f6 gs c smartcure a25')
+
     select_default_macro_book()
 end
 

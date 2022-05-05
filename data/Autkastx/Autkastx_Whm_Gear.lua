@@ -140,7 +140,15 @@ function init_gear_sets()
 	{
 		neck = "Fotia Gorget", ear1 = "Telos Earring",
 		body = "Piety Bliaut +3", hands = "Piety Mitts +3", ring1 = "Petrov Ring",
-		back = "Alaunus's Cape", waist = "Fotia Belt", feet = "Piety Duckbills +3"
+		back = "Alaunus's Cape", waist = "Fotia Belt", legs = "Piety Pantaln. +3", feet = "Piety Duckbills +3"
+	})
+
+	sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS,
+	{
+		ammo = "Amar Cluster",
+		ear1 = "Telos Earring", ear2 = "Regal Earring",
+		body = "Piety Bliaut +3", hands = "Piety Mitts +3", ring1 = "Rufescent Ring",
+		waist = "Fotia Belt", legs = "Piety Pantaln. +3", feet = "Piety Duckbills +3"
 	})
 
 	sets.MaxTP = { ear1="Telos Earring", ear2="Brutal Earring" }
@@ -177,7 +185,7 @@ function init_gear_sets()
 	sets.midcast.Cure =
 	{
 		main = "Chatoyant Staff", sub = "Bugard Strap +1", ammo = "Pemphredo Tathlum",
-		head = "Ebers Cap +1", neck = "Cleric's Torque", ear1 = "Nourish. Earring +1", ear2 = "Mendi. Earring",
+		head = "Kaykaus Mitra +1", neck = "Cleric's Torque", ear1 = "Nourish. Earring +1", ear2 = "Mendi. Earring",
 		body = "Theo. Bliaut +3", hands = "Theophany Mitts +3", ring1 = "Janniston Ring", ring2 = "Lebeche Ring",
 		back = "Alaunus's Cape", waist = "Hachirin-no-Obi", legs = "Ebers Pant. +1", feet = "Vanya Clogs"
 	}
@@ -252,7 +260,7 @@ function init_gear_sets()
 		main = "Gada", sub = "Ammurapi Shield",
 		head = "Befouled Crown",
 		body = "Telchine Chas.", hands = "Inyan. Dastanas +2",
-		back = "Perimede Cape", waist = "Olympus Sash", legs = "Clr. Pantaln. +2", feet = "Theo. Duckbills +3"
+		back = "Perimede Cape", waist = "Olympus Sash", legs = "Piety Pantaln. +3", feet = "Theo. Duckbills +3"
 	}
 
 	sets.midcast['Enhancing Magic'].Duration = set_combine(sets.midcast['Enhancing Magic'],
@@ -281,6 +289,7 @@ function init_gear_sets()
 		main = "Beneficus",
 		head = "Ebers Cap +1",
 		body = "Ebers Bliaut +1",
+		legs = "Piety Pantaln. +3"
 	})
 
 	sets.midcast['Elemental Magic'] =

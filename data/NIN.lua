@@ -366,11 +366,11 @@ function job_self_command(commandArgs, eventArgs)
 			local abil_recasts = windower.ffxi.get_ability_recasts()
 			local spell_recasts = windower.ffxi.get_spell_recasts()
 			
-			if (state.HybridMode.value ~= 'Normal' or state.DefenseMode.value ~= 'None')  and buffactive['Souleater'] then
+			if (state.HybridMode.value ~= 'Normal' or state.DefenseMode.value ~= 'None') and buffactive['Souleater'] then
 				send_command('cancel souleater')
 			end
 			
-			if (state.HybridMode.value ~= 'Normal' or state.DefenseMode.value ~= 'None')  and buffactive['Last Resort'] then
+			if (state.HybridMode.value ~= 'Normal' or state.DefenseMode.value ~= 'None') and buffactive['Last Resort'] then
 				send_command('cancel last resort')
 			end
 			
@@ -473,7 +473,7 @@ function handle_elemental(cmdParams)
 			end
 		end
 		add_to_chat(123,'Abort: All '..data.elements.nuke_of[state.ElementalMode.value]..' nukes on cooldown or or not enough MP.')
-	elseif S{'San','Ni','Ichi'}:contains(command) then
+	elseif S{'san','ni','ichi'}:contains(command) then
 		windower.chat.input('/ma "'..data.elements.ninjutsu_nuke_of[state.ElementalMode.value]..': '..command..'" '..target..'')
 	elseif command == 'proc' then
 		windower.chat.input('/ma "'..data.elements.ninjutsu_nuke_of[state.ElementalMode.value]..': Ni" '..target..'')
