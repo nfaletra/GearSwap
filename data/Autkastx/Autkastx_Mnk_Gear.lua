@@ -2,12 +2,12 @@ function user_job_setup()
 	-- Options: Override default values
 	state.OffenseMode:options('Normal', 'Acc')
 	state.WeaponskillMode:options('Match', 'Normal', 'AttackCap', 'Proc')
-	state.HybridMode:options('Normal', 'Mpaca', 'DT', 'Counter')
+	state.HybridMode:options('Normal', 'DT', 'Counter')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'DT', 'Evasion')
-	state.Weapons:options('Godhands', 'Staff', 'Club', 'ProcStaff', 'ProcClub', 'ProcSword', 'ProcGreatSword', 'ProcScythe', 'ProcPolearm', 'ProcGreatKatana', 'Barehanded')
+	state.Weapons:options('Godhands', 'Staff', 'Club', 'ProcStaff', 'Barehanded')
 
 	state.ExtraMeleeMode = M{['description'] = 'Extra Melee Mode', 'None', 'Schere', 'Staff'}
 
@@ -287,30 +287,20 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged, {})
 
 	-- Hybrid sets
-	sets.engaged.Mpaca =
+	sets.engaged.DT = set_combine(sets.engaged,
 	{
-		ammo = "Coiste Bodhar",
-		head = "Ken. Jinpachi", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Mpaca's Doublet", hands = "Mpaca's Gloves", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Malignance Boots"
-	}
-	sets.engaged.Acc.Mpaca = set_combine(sets.engaged.Mpaca, {})
-
-	sets.engaged.DT =
-	{
-		ammo = "Coiste Bodhar",
-		head = "Ken. Jinpachi", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Ken. Sune-Ate"
-	}
+		head = "Malignance CHapeau", ear2 = "Odnowa Earring +1",
+		body = "Mpaca's Doublet", hands = "Malignance Gloves",
+		legs = "Mpaca's Hose", feet = "Malignance Boots"
+	})
 	sets.engaged.Acc.DT = set_combine(sets.engaged.DT, {})
 
 	sets.engaged.Counter = set_combine(sets.engaged,
 	{
 		ammo = "Amar Cluster",
-		ear2 = "Cryptic Earring",
-		body = "Mpaca's Doublet", ring2 = "Defending Ring",
-		legs = "Anch. Hose +3", feet = "Malignance Boots"
+		head = "Malignance Chapeau", neck = "Bathy Choker +1", ear2 = "Cryptic Earring",
+		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring2 = "Defending Ring",
+		legs = "Anch. Hose +3", feet = "Nyame Sollerets"
 	})
 	sets.engaged.Acc.Counter = set_combine(sets.engaged.Counter, {})
 
@@ -323,8 +313,8 @@ function init_gear_sets()
 	sets.Staff =
 	{
 		ammo = "Aurgelmir Orb",
-		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Brutal Earring",
-		body = "Ken. Samue", hands = gear.adhemar.hands.a, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
+		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Telos Earring",
+		body = "Malignance Tabard", hands = gear.adhemar.hands.a, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Tatena. Haidate +1", feet = "Mpaca's Boots"
 	}
 
@@ -343,15 +333,10 @@ function init_gear_sets()
 
 	-- Weapons sets
 	sets.weapons.Godhands = { main = "Godhands" }
-	sets.weapons.Barehanded = { main = empty }
+	sets.weapons.Club = { main = "Mafic Cudgel" }
 	sets.weapons.Staff = { main = "Xoanon", sub = "Bloodrain Strap" }
 	sets.weapons.ProcStaff = { main = "Chatoyant Staff", sub = "Bloodrain Strap" }
-	sets.weapons.ProcClub = { main = "Mafic Cudgel" }
-	sets.weapons.ProcSword = { main = "Ark Sword" }
-	sets.weapons.ProcGreatSword = { main = "Lament", sub = "Bloodrain Strap" }
-	sets.weapons.ProcScythe = { main = "Ark Scythe", sub = "Bloodrain Strap" }
-	sets.weapons.ProcPolearm = { main = "Pitchfork +1", sub = "Bloodrain Strap" }
-	sets.weapons.ProcGreatKatana = { main = "Hardwood Katana", sub = "Bloodrain Strap" }
+	sets.weapons.Barehanded = { main = empty }
 end
 
 -- Select default macro book on initial load or subjob change.

@@ -82,7 +82,7 @@ function init_gear_sets()
 	sets.precast.FC =
 	{
 		main = "C. Palug Hammer", sub = "Chanter's Shield", ammo = "Impatiens",
-		head = "Vanya Hood", neck = "Cleric's Torque", ear1 = "Loquac. Earring", ear2 = "Malignance Earring",
+		head = "Vanya Hood", neck = "Clr. Torque +2", ear1 = "Loquac. Earring", ear2 = "Malignance Earring",
 		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Lebeche Ring",
 		back = "Perimede Cape", waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Regal Pumps +1"
 	}
@@ -90,7 +90,7 @@ function init_gear_sets()
 	sets.precast.FC.DT =
 	{
 		main = "C. Palug Hammer", sub = "Chanter's Shield", ammo = "Impatiens",
-		head = "Bunzi's Hat", neck = "Cleric's Torque", ear1 = "Loquac. Earring", ear2 = "Malignance Earring",
+		head = "Bunzi's Hat", neck = "Clr. Torque +2", ear1 = "Loquac. Earring", ear2 = "Malignance Earring",
 		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Lebeche Ring",
 		back = "Perimede Cape", waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Regal Pumps +1"
 	}
@@ -119,6 +119,7 @@ function init_gear_sets()
 
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Benediction = { body = "Piety Bliaut +3" }
+	sets.precast.JA.Devotion = { head = "Piety Cap +3" }
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = { body = "Piety Bliaut +3" }
@@ -129,7 +130,7 @@ function init_gear_sets()
 	sets.precast.WS =
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Nyame Helm", neck = "Cleric's Torque", ear1 = "Ishvara earring", ear2 = "Moonshade Earring",
+		head = "Nyame Helm", neck = "Clr. Torque +2", ear1 = "Ishvara earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Ilabrat Ring",
 		back = "Alaunus's Cape", waist = "Luminary Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
@@ -138,7 +139,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS,
 	{
-		neck = "Fotia Gorget", ear1 = "Telos Earring",
+		head = "Piety Cap +3", neck = "Fotia Gorget", ear1 = "Telos Earring",
 		body = "Piety Bliaut +3", hands = "Piety Mitts +3", ring1 = "Petrov Ring",
 		back = "Alaunus's Cape", waist = "Fotia Belt", legs = "Piety Pantaln. +3", feet = "Piety Duckbills +3"
 	})
@@ -146,8 +147,8 @@ function init_gear_sets()
 	sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Amar Cluster",
-		ear1 = "Telos Earring", ear2 = "Regal Earring",
-		body = "Piety Bliaut +3", hands = "Piety Mitts +3", ring1 = "Rufescent Ring",
+		head = "Piety Cap +3", ear1 = "Telos Earring", ear2 = "Regal Earring",
+		body = "Piety Bliaut +3", hands = "Piety Mitts +3", ring2 = "Rufescent Ring",
 		waist = "Fotia Belt", legs = "Piety Pantaln. +3", feet = "Piety Duckbills +3"
 	})
 
@@ -185,7 +186,7 @@ function init_gear_sets()
 	sets.midcast.Cure =
 	{
 		main = "Chatoyant Staff", sub = "Bugard Strap +1", ammo = "Pemphredo Tathlum",
-		head = "Kaykaus Mitra +1", neck = "Cleric's Torque", ear1 = "Nourish. Earring +1", ear2 = "Mendi. Earring",
+		head = "Kaykaus Mitra +1", neck = "Clr. Torque +2", ear1 = "Nourish. Earring +1", ear2 = "Mendi. Earring",
 		body = "Theo. Bliaut +3", hands = "Theophany Mitts +3", ring1 = "Janniston Ring", ring2 = "Lebeche Ring",
 		back = "Alaunus's Cape", waist = "Hachirin-no-Obi", legs = "Ebers Pant. +1", feet = "Vanya Clogs"
 	}
@@ -206,7 +207,7 @@ function init_gear_sets()
 	sets.midcast.MeleeCure =
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Ebers Cap +1", neck = "Cleric's Torque", ear1 = "Nourish. Earring +1", ear2 = "Mendi. Earring",
+		head = "Ebers Cap +1", neck = "Clr. Torque +2", ear1 = "Nourish. Earring +1", ear2 = "Mendi. Earring",
 		body = "Ebers Bliaut +1", hands = "Theophany Mitts +3", ring1 = "Janniston Ring", ring2 = "Lebeche Ring",
 		back = "Alaunus's Cape", waist = "Hachirin-no-Obi", legs = "Ebers Pant. +1", feet = "Vanya Clogs"
 	}
@@ -252,7 +253,7 @@ function init_gear_sets()
 		head = "Ebers Cap +1",
 	}
 
-	sets.midcast.Erase = set_combine(sets.midcast.StatusRemoval, { neck="Cleric's Torque" })
+	sets.midcast.Erase = set_combine(sets.midcast.StatusRemoval, { neck="Clr. Torque +2" })
 
 	-- 110 total Enhancing Magic Skill; caps even without Light Arts
 	sets.midcast['Enhancing Magic'] =
@@ -269,13 +270,13 @@ function init_gear_sets()
 	})
 
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'].Duration, { waist = "Siegel Sash" })
-	sets.midcast.Auspice = set_combine(sets.midcast['Enhancing Magic'].Duration, {})
+	sets.midcast.Auspice = set_combine(sets.midcast['Enhancing Magic'].Duration, { feet = "Eber Duckbills +1" })
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'].Duration, { head = "Chrionic Hat" })
 	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'].Duration,
 	{
 		main = "Bolelabunga",
 		head = "Inyanga Tiara +2",
-		body = "Piety Bliaut +3",
+		body = "Piety Bliaut +3", hands = "Eber Mitts +1",
 		legs = "Th. Pant. +3"
 	})
 
@@ -295,8 +296,8 @@ function init_gear_sets()
 	sets.midcast['Elemental Magic'] =
 	{
 		main = "Daybreak", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
-		ear1 = "Regal Earring", ear2 = "Malignance Earring",
-		ring1 = "Metamor. Ring +1"
+		neck = "Baetyl Pendant", ear1 = "Regal Earring", ear2 = "Malignance Earring",
+		ring1 = "Metamor. Ring +1", ring2 = "Freke Ring",
 	}
 	sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {})
 	
@@ -306,7 +307,7 @@ function init_gear_sets()
 		waist = "Luminary Sash"
 	})
 		
-	sets.midcast.Holy = set_combine(sets.midcast['Divine Magic'], {})
+	sets.midcast.Holy = set_combine(sets.midcast['Divine Magic'], { feet = "Piety Duckbills +3" })
 
 	sets.midcast['Dark Magic'] =
 	{

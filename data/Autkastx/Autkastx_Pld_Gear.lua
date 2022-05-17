@@ -9,7 +9,7 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('Normal')
 	state.ResistDefenseMode:options('Normal')
 	state.IdleMode:options('Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Ochain', 'DD', 'DW', 'TwoHanded')
-	state.Weapons:options('Excalibur', 'Caballarius', 'Malignance', 'Brilliance', 'Naegling', 'Staff', 'GS', 'DualWeapons', 'DualNaegling')
+	state.Weapons:options('Excalibur', 'Caballarius', 'Sakpata', 'Brilliance', 'Naegling', 'Staff', 'GS', 'DualWeapons', 'DualNaegling')
 	
 	state.ExtraDefenseMode = M{ ['description'] = 'Extra Defense Mode', 'None', 'MP', 'Twilight' }
 	
@@ -51,7 +51,7 @@ function init_gear_sets()
 	sets.Enmity =
 	{
 		ammo = "Sapience Orb",
-		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
+		head = "Loess Barbuta +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Souv. Cuirass +1", hands = "Cab. Gauntlets +3", ring1 = "Apeile Ring +1", ring2 = "Apeile Ring",
 		back = gear.rudianos_shield, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Souv. Schuhs +1"
 	}
@@ -59,6 +59,7 @@ function init_gear_sets()
 	sets.Enmity.SIRD = set_combine(sets.Enmity,
 	{
 		ammo = "Staunch Tathlum",
+		head = "Souv. Schaller +1",
 		hands = "Regal Gauntlets",
 		waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
 	})
@@ -376,7 +377,7 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Excalibur = { main = "Excalibur" }
 	sets.weapons.Caballarius = { main = "Caballarius Sword" }
-	sets.weapons.Malignance = { main = "Malignance Sword" }
+	sets.weapons.Sakpata = { main = "Sakpata's Sword" }
 	sets.weapons.Brilliance = { main = "Brilliance" }
 	sets.weapons.Naegling = { main = "Naegling" }
 	sets.weapons.Staff = { main = "Malignance Pole", sub = "Bloodrain Strap" }

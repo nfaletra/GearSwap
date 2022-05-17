@@ -106,11 +106,6 @@ end
 
 function job_post_precast(spell, spellMap, eventArgs)
 	if spell.type == 'WeaponSkill' then
-		if (spell.english == 'Aeolian Edge' or spell.english == 'Cyclone') and state.TreasureMode.value ~= 'None' then
-			equip(sets.TreasureHunter)
-			return
-		end
-
 		local WSset = standardize_set(get_precast_set(spell, spellMap))
 		local wsacc = check_ws_acc()
 		
@@ -133,12 +128,11 @@ function job_post_precast(spell, spellMap, eventArgs)
 		end
 	end
 
-	if spell.english == 'Sneak Attack' or spell.english == 'Trick Attack' or spell.type == 'WeaponSkill' then
+	if spell.english == 'Sneak Attack' or spell.english == 'Trick Attack' then
 		if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
 			equip(sets.TreasureHunter)
 		end
 	end
-	
 end
 
 function job_post_midcast(spell, spellMap, eventArgs)

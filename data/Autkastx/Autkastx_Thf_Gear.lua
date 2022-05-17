@@ -184,21 +184,24 @@ function init_gear_sets()
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Odr Earring", ear2 = "Moonshade Earring",
 		body = "Plunderer's Vest +3", hands = gear.adhemar.hands.b, ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
-		back = gear.toutatis_wsd, waist = "Fotia Belt", legs = "Pill. Culottes +2", feet = "Adhe. Gamashes +1"
+		back = gear.toutatis_wsd, waist = "Fotia Belt", legs = "Pill. Culottes +3", feet = "Adhe. Gamashes +1"
 	}
 	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS.Acc, {})
 
 	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS,
 	{
 		ammo = "C. Palug Stone",
-		
+		head = "Plun. Bonnet +3", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Brutal Earring",
+		body = "Plunderer's Vest +3", hands = "Meg. Gloves +2", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		back = gear.toutatis_wsd, waist = "Fotia Belt", legs = "Meg. Chausses +2", feet = "Plun. Poulaines +3"
 	})
 
 	sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS,
 	{
-		ear1 = "Ishvara Earring",
-		body = gear.adhemar.body.b, ring1 = "Rufescent Ring",
-		waist = "Sailfi Belt +1"
+		ammo = "Seeth. Bomblet +1",
+		head = "Pill. Bonnet +2", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
+		body = "Nyame Mail", hands = "Nyame Guantlets", ring1 = "Rufescent Ring", ring2 = "Regal Ring",
+		back = gear.toutatis_wsd, waist = "Sailfi Belt +1", legs = "Plun. Culottes +3", feet = "Nyame Sollerets"
 	})
 	sets.precast.WS["Savage Blade"].Acc = set_combine(sets.precast.WS.Acc, {})
 
@@ -227,12 +230,10 @@ function init_gear_sets()
 	sets.precast.WS['Aeolian Edge'] =
 	{
 		ammo = "Seeth. Bomblet +1",
-		head = "Nyame Helm", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Shiva Ring +1",
+		head = "Nyame Helm", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
 		back = gear.toutatis_wsd, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
-
-	sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = { ear1 = "Sherida Earring", ear2 = "Ishvara Earring" }
@@ -259,6 +260,13 @@ function init_gear_sets()
 	sets.midcast['Bio II'] = set_combine(sets.midcast.FastRecast, sets.TreasureHunter)
 	sets.midcast.Poisonga = set_combine(sets.midcast.FastRecast, sets.TreasureHunter)
 	sets.midcast.Sleepga = set_combine(sets.midcast.FastRecast, sets.TreasureHunter)
+
+	sets.midcast['Absorb-TP'] = set_combine(sets.midcast.FastRecast,
+	{
+		head = "Malignance Chapeau", neck = "Deceiver's Torque", ear1 = "Crep. Earring", ear2 = "Hermetic Earring",
+		body = "Maligance Tabard", hands = "Malignance Gloves", ring1 = "Evanescence Ring", ring2 = "Etana Ring",
+		waist = "Eschan Stone", legs = "Malignance Tights", feet = "Malignance Boots"
+	})
 
 	-- Ranged gear
 
@@ -342,13 +350,13 @@ function init_gear_sets()
 		ammo = "Aurgelmir Orb",
 		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
 		body = "Pillager's Vest +3", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Moonbeam Ring",
-		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Pill. Culottes +2", feet = "Plun. Poulaines +3"
+		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Pill. Culottes +3", feet = "Plun. Poulaines +3"
 	}
 	sets.engaged.Acc.DT = set_combine(sets.engaged.DT, {})
 
 	sets.engaged.Cait =
 	{
-		ammo = "Falcon Eye",
+		ammo = "Coiste Bodhar",
 		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Eabani Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Epona's Ring",
 		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"

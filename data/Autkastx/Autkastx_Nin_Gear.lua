@@ -395,7 +395,7 @@ function init_gear_sets()
 	sets.midcast.ElementalNinjutsu =
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
+		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Hermetic Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Acumen Ring", ring2 = "Dingir Ring",
 		back = gear.andartia_tp, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Mochi. Kyahan +3"
 	}
@@ -406,7 +406,7 @@ function init_gear_sets()
 	sets.MagicBurst =
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Static Earring", ear2 = "Crematio Earring",
+		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Static Earring", ear2 = "Hermetic Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Locus Ring", ring2 = "Mujin Band",
 		back = gear.andartia_tp, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Mochi. Kyahan +3"
 	}
