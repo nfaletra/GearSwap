@@ -607,15 +607,15 @@ function init_gear_sets()
 	sets.weapons.GKT = { main = "Kaja Tachi", sub = "Bloodrain Strap" }
 	sets.weapons.Karambit = { main = "Karambit" }
 	sets.weapons.Trial = { main = "Uzura +1", sub = "Gleti's Knife" }
-	sets.weapons.ProcDagger = { main = "Chicken Knife II", sub = empty }
-	sets.weapons.ProcSword = { main = "Ark Sword", sub = empty }
-	sets.weapons.ProcGreatSword = { main = "Lament", sub = empty }
+	sets.weapons.ProcDagger = { main = "Ceremonial Dagger", sub = empty }
+	sets.weapons.ProcSword = { main = "Twinned Blade", sub = empty }
+	sets.weapons.ProcGreatSword = { main = "Ophidian Sword", sub = empty }
 	sets.weapons.ProcScythe = { main = "Ark Scythe", sub = empty }
-	sets.weapons.ProcPolearm = { main = "Pitchfork +1", sub = empty }
-	sets.weapons.ProcGreatKatana = { main = "Hardwood Katana", sub = empty }
-	sets.weapons.ProcKatana = { main = "Kanaria", sub = empty }
-	sets.weapons.ProcClub = { main = "Dream Bell +1", sub = empty }
-	sets.weapons.ProcStaff = { main = "Chatoyant Staff", sub = empty }
+	sets.weapons.ProcPolearm = { main = "Iapetus", sub = empty }
+	sets.weapons.ProcGreatKatana = { main = "Mutsunokami", sub = empty }
+	sets.weapons.ProcKatana = { main = "Debahocho", sub = empty }
+	sets.weapons.ProcClub = { main = "Thunder Hammer", sub = empty }
+	sets.weapons.ProcStaff = { main = "Ram Staff", sub = empty }
 end
 
 -- Select default macro book on initial load or subjob change.

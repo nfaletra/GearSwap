@@ -2,7 +2,7 @@
 function user_job_setup()
 	-- Options: Override default values
 	state.OffenseMode:options('Normal', 'Acc')
-	state.HybridMode:options('Normal', 'DT', 'Cait')
+	state.HybridMode:options('Normal', 'DTLite', 'DTFull', 'MEVA', 'Evasion', 'Cait')
 	state.RangedMode:options('Normal', 'Acc')
 	state.WeaponskillMode:options('Match', 'Normal', 'Acc', 'Proc')
 	state.IdleMode:options('Normal', 'Sphere')
@@ -345,14 +345,37 @@ function init_gear_sets()
 		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Plun. Poulaines +3"
 	}
 
-	sets.engaged.DT =
+	sets.engaged.DTLite =
 	{
 		ammo = "Aurgelmir Orb",
 		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
 		body = "Pillager's Vest +3", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Moonbeam Ring",
 		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Pill. Culottes +3", feet = "Plun. Poulaines +3"
 	}
-	sets.engaged.Acc.DT = set_combine(sets.engaged.DT, {})
+
+	sets.engaged.DTFull =
+	{
+		ammo = "Staunch Tathlum",
+		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Odnowa Earring +1",
+		body = "Pillager's Vest +3", hands = "Malignance Gloves", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
+		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Plun. Poulaines +3"
+	}
+
+	sets.engaged.MEVA =
+	{
+		ammo = "Yamarang",
+		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Serida Earring", ear2 = "Suppanomimi",
+		body = "Pillager's Vest +3", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Moonbeam Ring",
+		back = gear.toutatis_tp, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
+
+	sets.engaged.Evasion =
+	{
+		ammo = "Yamarang",
+		head = "Malignance Chapeau", neck = "Asn Gorget +2", ear1 = "Sherida Earring", ear2 = "Eabani Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Petrov Ring",
+		back = gear.toutatis_tp, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
 
 	sets.engaged.Cait =
 	{
