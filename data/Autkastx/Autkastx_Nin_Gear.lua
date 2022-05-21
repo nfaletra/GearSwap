@@ -1,7 +1,7 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_job_setup()
 	state.OffenseMode:options('Normal', 'Tank', 'H2H', 'GKT')
-	state.HybridMode:options('Normal', 'DT', 'Evasion', 'Subtle Blow')
+	state.HybridMode:options('Normal', 'DT', 'Evasion', 'Subtle Blow', 'Proc')
 	state.RangedMode:options('Normal', 'Acc')
 	state.WeaponskillMode:options('Match', 'Normal', 'Proc')
 	state.CastingMode:options('Normal', 'Proc', 'Resistant')
@@ -575,6 +575,8 @@ function init_gear_sets()
 		waist = "Windbuffet Belt +1"
 	})
 
+	sets.engaged.Proc = set_combine(sets.engaged, { ammo = "Staunch Tathlum" })
+
 	--------------------------------------
 	-- Custom buff sets
 	--------------------------------------
@@ -610,7 +612,7 @@ function init_gear_sets()
 	sets.weapons.ProcDagger = { main = "Ceremonial Dagger", sub = empty }
 	sets.weapons.ProcSword = { main = "Twinned Blade", sub = empty }
 	sets.weapons.ProcGreatSword = { main = "Ophidian Sword", sub = empty }
-	sets.weapons.ProcScythe = { main = "Ark Scythe", sub = empty }
+	sets.weapons.ProcScythe = { main = "Hoe", sub = empty }
 	sets.weapons.ProcPolearm = { main = "Iapetus", sub = empty }
 	sets.weapons.ProcGreatKatana = { main = "Mutsunokami", sub = empty }
 	sets.weapons.ProcKatana = { main = "Debahocho", sub = empty }
