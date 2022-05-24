@@ -215,7 +215,7 @@ function init_gear_sets()
 		ammo = "Charis Feather",
 		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
 		body = "Rawhide Vest", hands = "Espial Bracers", ring1 = "Rajas Ring", ring2 = "Keen Ring",
-		back = gear.senuna_tp, waist = "Mrc.Cpt. Belt", legs = "Feast Hose", feet = "Espial Socks"
+		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Feast Hose", feet = "Horos Toe Shoes +1"
 	}
 
 	sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
@@ -256,7 +256,7 @@ function init_gear_sets()
 		ammo = "Charis Feather",
 		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
 		body = "Rawhide Vest", hands = "Espial Bracers", ring1 = "Rajas Ring", ring2 = "Keen Ring",
-		back = gear.senuna_tp, waist = "Mrc.Cpt. Belt", legs = "Feast Hose", feet = "Espial Socks"
+		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Feast Hose", feet = "Horos Toe Shoes +1"
 	}
 
 	sets.engaged.DTLite = {
@@ -269,7 +269,7 @@ function init_gear_sets()
 	sets.engaged.Acc = {
 		head="Espial Cap",neck="Chivalrous Chain",ear1="Spike Earring",ear2="Suppanomimi",
 		body="Espial Gambison",hands="Espial Bracers",ring1="Ecphoria Ring",ring2="Jaeger Ring",
-		back="Amemet Mantle +1",waist="Mrc.Cpt. Belt",legs="Espial Hose",feet="Espial Socks"
+		back="Amemet Mantle +1",waist="Windbuffet Belt +1",legs="Espial Hose",feet="Espial Socks"
 	}
 
 	sets.engaged.PDT = {
