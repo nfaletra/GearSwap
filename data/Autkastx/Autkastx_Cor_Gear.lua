@@ -56,14 +56,14 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 
 	sets.precast.JA['Triple Shot'] = { body = "Chasseur's Frac +1" }
-	sets.precast.JA['Snake Eye'] = { legs = "Lanun Trews +1" }
+	sets.precast.JA['Snake Eye'] = { legs = "Lanun Trews +3" }
 	sets.precast.JA['Wild Card'] = { feet = "Lanun Bottes +3" }
 	sets.precast.JA['Random Deal'] = { body = "Lanun Frac +3" }
-	sets.precast.FoldDoubleBust = { hands = "Lanun Gants +1" }
+	sets.precast.FoldDoubleBust = { hands = "Lanun Gants +3" }
 
 	sets.precast.CorsairRoll =
 	{
-		head = "Lanun Tricorne +1", neck = "Regal Necklace", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
+		head = "Lanun Tricorne +3", neck = "Regal Necklace", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Chasseur's Gants +1", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.Camulus.Snapshot, waist = "Flume Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
@@ -131,8 +131,8 @@ function init_gear_sets()
 	sets.precast.RA =
 	{
 		ammo = gear.RAbullet,
-		head = "Chass. Tricorne +1",
-		body  = "Oshosi Vest +1", hands = "Lanun Gants +1",
+		head = "Chass. Tricorne +1", neck = "Comm. Charm +2",
+		body  = "Oshosi Vest +1", hands = "Lanun Gants +3",
 		back = gear.Camulus.Snapshot, waist = "Impulse Belt", legs = "Adhemar Kecks +1", feet = "Meg. Jam. +2"
 	}
 
@@ -171,9 +171,9 @@ function init_gear_sets()
 	sets.precast.WS['Last Stand'] =
 	{
 		ammo = gear.WSbullet,
-		head = "Malignance Chapeau", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Enervating Earring",
-		body = "Laksa. Frac +3", hands = "Malignance Gloves", ring1 = "Regal Ring", ring2 = "Dingir Ring",
-		back = gear.Camulus.WSD, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+		head = "Lanun Tricorne +3", neck = "Fotia Gorget", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
+		body = "Laksa. Frac +3", hands = "Meg. Gloves +2", ring1 = "Regal Ring", ring2 = "Dingir Ring",
+		back = gear.Camulus.WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
 	sets.precast.WS['Detonator'] = sets.precast.WS['Last Stand']
@@ -201,7 +201,7 @@ function init_gear_sets()
 	{
 		ammo = gear.MAbullet,
 		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
-		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Dingir Ring",
+		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Ilabrat Ring", ring2 = "Dingir Ring",
 		back = gear.Camulus.WSD, waist = "Svelt. Gouriz +1", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
@@ -248,7 +248,7 @@ function init_gear_sets()
 	{
 		ammo = gear.RAbullet,
 		head = "Ikenga's Hat", neck = "Iskur Gorget", ear1 = "Enervating Earring", ear2 = "Telos Earring",
-		body = "Laksa. Frac +3", hands = "Malignance Gloves", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Ilabrat Ring", ring2 = "Dingir Ring",
 		back = gear.Camulus.Ranged, waist = "Impulse Belt", legs = "Ikenga's Trousers", feet = "Malignance Boots"
 	}
 
@@ -320,18 +320,17 @@ function init_gear_sets()
 	sets.DWMax = { ear1 = "Dudgeon Earring", ear2 = "Heartseeker Earring", body = "Adhemar Jacket +1", hands = "Floral Gauntlets", waist = "Reiki Yotai"}
 
 	-- Weapons sets
-	sets.weapons.Default = { main = "Tauret", sub = "Nusku Shield", range = "Fomalhaut" }
-	sets.weapons.Ranged = { main = "Kustawi +1", sub = "Nusku Shield", range = "Fomalhaut" }
+	sets.weapons.Default = { main = "Rostam", sub = "Nusku Shield", range = "Fomalhaut" }
+	sets.weapons.Ranged = { main = "Rostam", sub = "Nusku Shield", range = "Fomalhaut" }
 	sets.weapons.Crit = { main = "Gleti's Knife", sub = "Nusku Shield", range = "Fomalhaut" }
 	sets.weapons.Savage = { main = "Naegling", sub = "Nusku Shield", range = "Ataktos" }
 	sets.weapons.Evisceration = { main = "Tauret", sub = "Nusku Shield", range = "Ataktos" }
-	sets.weapons.DualWeapons = { main = "Tauret", sub = "Gleti's Knife", range = "Fomalhaut" }
-	sets.weapons.DualSavage = { main = "Naegling", sub = "Gleti's Knife", range = "Ataktos" }
+	sets.weapons.DualWeapons = { main = "Rostam", sub = "Gleti's Knife", range = "Fomalhaut" }
+	sets.weapons.DualSavage = { main = "Naegling", sub = "Rostam", range = "Ataktos" }
 	sets.weapons.DualEvisceration = { main = "Tauret", sub = "Gleti's Knife", range = "Ataktos" }
 	sets.weapons.DualLeadenRanged = { main ="Rostam", sub = "Kustawi +1", range = "Fomalhaut" }
-	sets.weapons.DualLeadenMelee = { main = "Naegling", sub = "Tauret", range = "Fomalhaut" }
+	sets.weapons.DualLeadenMelee = { main = "Rostam", sub = "Tauret", range = "Fomalhaut" }
 	sets.weapons.DualAeolian = { main = "Rostam", sub = "Tauret", range = "Ataktos" }
-	sets.weapons.DualLeadenMeleeAcc = { main = "Naegling", sub = "Kustawi +1", range = "Fomalhaut" }
 	sets.weapons.DualRanged = { main = "Rostam", sub = "Kustawi +1", range = "Fomalhaut" }
 
 	-- Engaged sets

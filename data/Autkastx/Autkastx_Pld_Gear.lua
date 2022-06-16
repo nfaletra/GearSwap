@@ -317,7 +317,7 @@ function init_gear_sets()
 	{
 		sub = "Aegis", ammo = "Staunch Tathlum",
 		head = "Sakpata's Helm", neck = "Unmoving Collar", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Rev. Surcoat +3", hands = "Sakpata's Gauntlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
+		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_counter, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
 	}
 
@@ -436,7 +436,7 @@ function init_gear_sets()
 	{
 		sub = "Aegis", ammo = "Staunch Tathlum",
 		head = "Sakpata's Helm", neck = "Unmoving Collar", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Sacro Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
+		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_counter, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
 	}
 

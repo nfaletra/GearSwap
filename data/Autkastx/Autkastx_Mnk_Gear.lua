@@ -7,7 +7,7 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'DT', 'Evasion')
-	state.Weapons:options('Godhands', 'Staff', 'Club', 'ProcStaff', 'Barehanded')
+	state.Weapons:options('Godhands', 'Verethragna', 'Staff', 'Club', 'ProcStaff', 'Barehanded')
 
 	state.ExtraMeleeMode = M{['description'] = 'Extra Melee Mode', 'None', 'Schere', 'Staff'}
 
@@ -20,10 +20,13 @@ function user_job_setup()
 	send_command('bind @` gs c cycle SkillchainMode')
 
 	-- Job Gear
-	gear.Segomo = {}
-	gear.Segomo.TP = { name = "Segomo's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%' } }
-	gear.Segomo.STR_DA = { name = "Segomo's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } }
-	gear.Segomo.INT_WDS = { name = "Segomo's Mantle", augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } }
+	gear.Segomo =
+	{
+		TP = { name = "Segomo's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%' } },
+		STR_DA = { name = "Segomo's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } },
+		INT_WSD = { name = "Segomo's Mantle", augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } },
+		VIT_WSD = { name = "Segomo's Mantle", augments = { 'VIT+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } }
+	}
 
 	select_default_macro_book()
 end
@@ -106,8 +109,8 @@ function init_gear_sets()
 
 	sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS,
 	{
-		body = "Ken. Samue", hands = "Nyame Gauntlets",
-		feet = "Nyame Sollerets"
+		body = "Ken. Samue +1", hands = "Nyame Gauntlets",
+		back = gear.Segomo.VIT_WSD, feet = "Nyame Sollerets"
 	})
 
 	sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS,
@@ -141,7 +144,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Tornado Kick'] = set_combine(sets.precast.WS,
 	{
-		back = gear.Segomo.STR_DA,feet = "Anch. Gaiters +3"
+		back = gear.Segomo.VIT_WSD, feet = "Anch. Gaiters +3"
 	})
 
 	sets.precast.WS['Dragon Kick'] = set_combine(sets.precast.WS['Tornado Kick'], {})
@@ -273,7 +276,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Adhemar Bonnet +1", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Ken. Samue", hands = gear.adhemar.hands.a, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
+		body = "Ken. Samue +1", hands = gear.adhemar.hands.a, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Hes. Hose +3", feet = "Anch. Gaiters +3"
 	}
 	sets.engaged.Acc = set_combine(sets.engaged, {})
@@ -325,6 +328,7 @@ function init_gear_sets()
 
 	-- Weapons sets
 	sets.weapons.Godhands = { main = "Godhands" }
+	sets.weapons.Verethragna = { main = "Verethragna" }
 	sets.weapons.Club = { main = "Mafic Cudgel" }
 	sets.weapons.Staff = { main = "Xoanon", sub = "Bloodrain Strap" }
 	sets.weapons.ProcStaff = { main = "Chatoyant Staff", sub = "Bloodrain Strap" }

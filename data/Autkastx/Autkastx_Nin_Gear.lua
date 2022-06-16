@@ -9,7 +9,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Naegling', 'NaeglingAcc', 'HeishiPhys', 'HeishiMag', 'Magic', 'Tauret', 'GKT', 'Karambit', 'Trial', 'ProcDagger', 'ProcSword', 'ProcGreatSword', 'ProcScythe', 'ProcPolearm', 'ProcGreatKatana', 'ProcKatana', 'ProcClub', 'ProcStaff')
+	state.Weapons:options('Naegling', 'NaeglingAcc', 'HeishiPhys', 'HeishiMag', 'Magic', 'Tauret', 'GKT', 'Karambit', 'ProcDagger', 'ProcSword', 'ProcGreatSword', 'ProcScythe', 'ProcPolearm', 'ProcGreatKatana', 'ProcKatana', 'ProcClub', 'ProcStaff')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'Haste40', 'Haste35', 'Haste30', 'Haste25', 'Haste20', 'Haste15', 'Haste10' }
 
 	gear.andartia_tp = { name="Andartia's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', '"Dbl.Atk."+10' } }
@@ -113,7 +113,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Ken. Samue", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.andartia_tp, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
@@ -137,7 +137,7 @@ function init_gear_sets()
 	{
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Ninja Nodowa +2", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Ken. Samue", hands = "Ryuo Tekko +1", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		body = "Ken. Samue +1", hands = "Ryuo Tekko +1", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
 		back = gear.andartia_tp, waist = "Svelt. Gouriz +1", legs = "Mochi. Hakama +3", feet = "Mpaca's Boots"
 	}
 
@@ -145,7 +145,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Mache Earring +1",
-		body = "Ken. Samue", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.andartia_tp, waist = "Fotia Belt", legs = "Samnuha Tights", feet = "Mpaca's Boots"
 	}
 
@@ -193,7 +193,7 @@ function init_gear_sets()
 	{
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Ken. Samue", hands = "Ryuo Tekko +1", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		body = "Ken. Samue +1", hands = "Ryuo Tekko +1", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
 		back = gear.andartia_tp, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
@@ -257,7 +257,7 @@ function init_gear_sets()
 	{
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Ken. Samue", hands = "Ryuo Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Ken. Samue +1", hands = "Ryuo Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.andartia_tp, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
@@ -265,7 +265,7 @@ function init_gear_sets()
 	{
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Ken. Samue", hands = "Ryuo Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Ken. Samue +1", hands = "Ryuo Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.andartia_tp, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
@@ -289,7 +289,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
-		body = "Ken. Samue", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.andartia_tp, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
@@ -297,7 +297,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
-		body = "Ken. Samue", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.andartia_tp, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
@@ -478,7 +478,7 @@ function init_gear_sets()
 	{
 		ammo = "Happo Shuriken",
 		head = "Dampening Tam", neck = "Ninja Nodowa +2", ear1 = "Brutal Earring", ear2 = "Telos Earring",
-		body = "Ken. Samue", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Epona's Ring",
+		body = "Ken. Samue +1", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Epona's Ring",
 		back = gear.andartia_tp, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = "Ken. Sune-Ate"
 	}
 	sets.engaged.Tank = set_combine(sets.engaged,
@@ -608,8 +608,7 @@ function init_gear_sets()
 	sets.weapons.Tauret = { main = "Tauret", sub = "Kunimitsu" }
 	sets.weapons.GKT = { main = "Kaja Tachi", sub = "Bloodrain Strap" }
 	sets.weapons.Karambit = { main = "Karambit" }
-	sets.weapons.Trial = { main = "Uzura +1", sub = "Gleti's Knife" }
-	sets.weapons.ProcDagger = { main = "Ceremonial Dagger", sub = empty }
+	sets.weapons.ProcDagger = { main = "Ceremonial Dagger", sub = "Debahocho" }
 	sets.weapons.ProcSword = { main = "Twinned Blade", sub = empty }
 	sets.weapons.ProcGreatSword = { main = "Ophidian Sword", sub = empty }
 	sets.weapons.ProcScythe = { main = "Hoe", sub = empty }

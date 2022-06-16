@@ -17,7 +17,7 @@ function user_job_setup()
 	gear.Toutatis =
 	{
 		TP = { name = "Toutatis's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', '"Store TP"+10', 'Damage taken-5%' } },
-		WSD = { name = "Toutatis's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'DEX+5', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } }
+		WSD = { name = "Toutatis's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } }
 	}
 
 	-- Additional local binds
