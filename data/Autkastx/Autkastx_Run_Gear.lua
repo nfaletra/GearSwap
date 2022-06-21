@@ -1,14 +1,14 @@
 function user_job_setup()
 
-	state.OffenseMode:options('Normal','Acc')
-	state.HybridMode:options('Normal', 'Tank')
-	state.WeaponskillMode:options('Match','Normal','Acc')
+	state.OffenseMode:options('Normal')
+	state.HybridMode:options('Normal', 'Tank', 'MEVA', 'Hybrid')
+	state.WeaponskillMode:options('Match', 'Normal')
 	state.CastingMode:options('SIRD','Normal')
 	state.PhysicalDefenseMode:options('PDT_HP','PDT')
 	state.MagicalDefenseMode:options('MDT_HP','MDT')
 	state.ResistDefenseMode:options('MEVA','MEVA_HP')
-	state.IdleMode:options('Tank', 'KiteTank')
-	state.Weapons:options('Aettir', 'Trial', 'Lionheart', 'DualWeapons')
+	state.IdleMode:options('Normal', 'Evasion')
+	state.Weapons:options('Aettir', 'Evasion', 'Lycurgos', 'Naegling')
 	
 	state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP'}
 
@@ -33,7 +33,6 @@ function user_job_setup()
 	send_command('bind @f8 gs c toggle AutoTankMode')
 	send_command('bind @f10 gs c toggle TankAutoDefense')
 	send_command('bind ^@!` gs c cycle SkillchainMode')
-	send_command('bind !r gs c weapons Lionheart;gs c update')
 	
 	select_default_macro_book()
 end
@@ -210,10 +209,13 @@ function init_gear_sets()
 		back="Moonlight Cape",waist="Flume Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"
 	}
 
-	sets.midcast.FastRecast.SIRD = {main="Aettir",sub="Utu Grip",ammo="Staunch Tathlum +1",
+	sets.midcast.FastRecast.SIRD =
+	{
+		ammo="Staunch Tathlum +1",
 		head="Agwu's Cap",neck="Moonlight Necklace",ear1="Genmei Earring",ear2="Trux Earring",
 		body=gear.taeon_phalanx_body,hands="Rawhide Gloves",ring1="Defending Ring",ring2="Moonlight Ring",
-		back=gear.enmity_jse_back,waist="Audumbla Sash",legs="Carmine Cuisses +1",feet="Nyame Sollerets"}
+		back=gear.enmity_jse_back,waist="Audumbla Sash",legs="Carmine Cuisses +1",feet="Nyame Sollerets"
+	}
 
 	sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.FastRecast,
 	{
@@ -274,18 +276,20 @@ function init_gear_sets()
 	sets.idle =
 	{
 		ammo = "Staunch Tathlum",
-		head = "Meghanada Visor +2", neck = "Twilight Torque", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
-		body = "Nyame Mail", hands = "Aya. Manopolas +2", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
-		back = "Evasionist's Cape", waist = "Windbuffet Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		head = "Nyame Helm", neck = "Twilight Torque", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
+		back = "Ogma's Cape", waist = "Flume Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
-	sets.idle.Sphere = set_combine(sets.idle, { body = "Mekosu. Harness" })
+	sets.idle.Evasion =
+	{
+		ammo = "Yamarang",
+		head = "Nyame Helm", neck = "Bathy Choker +1", ear1 = "Eabani Earring", ear2 = "Infused Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Ilabrat Ring", ring2 = "Vengeful Ring",
+		back = "Ogma's Cape", waist = "Kasiri Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+	}
 
-	sets.idle.Tank = set_combine(sets.idle, {})
-
-	sets.idle.KiteTank = set_combine(sets.idle.Tank, { legs = "Carmine Cuisses +1" })
-
-	sets.Kiting = { legs="Carmine Cuisses +1" }
+	sets.Kiting = { legs = "Carmine Cuisses +1" }
 
 	sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.latent_refresh_grip = {sub="Oneiros Grip"}
@@ -299,9 +303,9 @@ function init_gear_sets()
 
 	-- Weapons sets
 	sets.weapons.Aettir = { main = "Aettir", sub = "Utu Grip" }
-	sets.weapons.Trial = { main = "Trial Blade", sub = "Utu Grip" }
-	sets.weapons.Lionheart = {main = "Lionheart", sub = "Utu Grip" }
-	sets.weapons.DualWeapons = { main = "Firangi", sub = "Reikiko" }
+	sets.weapons.Evasion = { main = "Soulcleaver", sub = "Kypayopl" }
+	sets.weapons.Lycurgos = {main = "Lycurgos", sub = "Utu Grip" }
+	sets.weapons.Naegling = { main = "Naegling", sub = "Malignance Sword" }
 	
 	-- Defense Sets
 	
@@ -357,27 +361,27 @@ function init_gear_sets()
 	--------------------------------------
 	sets.engaged =
 	{
-		ammo = "Yamarang",
-		head = "Aya. Zucchetto +2", neck = "Defiant Collar", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Nyame Mail", hands = gear.adhemar.hands.a, ring1 = "Defending Ring", ring2 = "Moonbeam Ring",
-		back = "Evasionist's Cape", waist = "Sailfi Belt +1", legs = "Meg. Chausses +2", feet = "Nyame Sollerets"
+		ammo = "Coiste Bodhar",
+		head = "Adhemar Bonnet +1", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Telos Earring",
+		body = gear.adhemar.body.b, hands = gear.adhemar.hands.a, ring1 = "Niqmaddu Ring", ring2 = "Epona's Ring",
+		back = "Ogma's Cape", waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
 	}
-	sets.engaged.Acc = set_combine(sets.engaged, {})
-
-	sets.engaged.DTLite = set_combine(sets.engaged, {})
-	sets.engaged.Acc.DTLite = set_combine(sets.engaged.DTLite, {})
 
 	sets.engaged.Tank =
 	{
 		ammo = "Staunch Tathlum",
-		head = "Meghanada Visor +2", neck = "Twilight Torque", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
-		body = "Nyame Mail", hands = "Aya. Manopolas +2", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
-		back = "Evasionist's Cape", waist = "Windbuffet Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		head = "Nyame Helm", neck = "Futhark Torque +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
+		body = "Nyame Mail", hands = "Turms Mittens +1", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
+		back = "Ogma's Cape", waist = "Engraved Belt", legs = "Nyame Flanchard", feet = "Turms Leggings +1"
 	}
-	sets.engaged.Acc.Tank = set_combine(sets.engaged.Tank, {})
 
-	sets.engaged.Tank_HP = set_combine(sets.engaged, {})
-	sets.engaged.Acc.Tank_HP = set_combine(sets.engaged.Tank_HP, {})
+	sets.engaged.MEVA =
+	{
+		ammo = "Stanch Tathlum",
+		head = "Nyame Helm", neck = "Futhark Torque +2", ear1 = "Sanare Earring", ear2 = "Odnowa Earring +1",
+		body = "Runeist's Coat +3", hands = "Nyame Gauntlets", ring1 = "Shadow Ring", ring2 = "Vengeful Ring",
+		back = "Ogma's Cape", waist = "Engraved Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+	}
 
 	--------------------------------------
 	-- Custom buff sets
