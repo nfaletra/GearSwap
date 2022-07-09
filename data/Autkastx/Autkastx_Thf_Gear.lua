@@ -9,7 +9,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Aeneas', 'Aeolian', 'Savage', 'ProcWeapons', 'Evisceration', 'Throwing', 'SwordThrowing', 'Bow')
+	state.Weapons:options('Aeneas', 'Aeolian', 'Savage', 'Evisceration', 'Karambit', 'Throwing', 'SwordThrowing', 'Bow')
 
 	state.ExtraMeleeMode = M{ ['description'] = 'Extra Melee Mode', 'None', 'Suppa', 'DWMax', 'Parry'}
 	state.AmbushMode = M(false, 'Ambush Mode')
@@ -62,8 +62,8 @@ function init_gear_sets()
 	sets.weapons.Aeneas = { main = "Aeneas", sub = "Gleti's Knife" }
 	sets.weapons.Aeolian = { main = "Malevolence", sub = "Malevolence" }
 	sets.weapons.Savage = { main = "Naegling", sub = "Gleti's Knife" }
-	sets.weapons.ProcWeapons = { main = "Blurred Knife +1", sub = "Atoyac" }
 	sets.weapons.Evisceration = { main = "Tauret", sub = "Gleti's Knife" }
+	sets.weapons.Karambit = { main = "Karambit" }
 	sets.weapons.Throwing = { main = "Aeneas", sub = "Gleti's Knife", range = "Raider's Bmrng.", ammo = empty }
 	sets.weapons.SwordThrowing = { main = "Naegling", sub = "Gleti's Knife", range = "Raider's Bmrng.", ammo = empty }
 	sets.weapons.Bow = { main = "Aeneas", sub = "Kustawi +1", range = "Kaja Bow", ammo = "Chapuli Arrow" }
@@ -141,7 +141,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Plun. Bonnet +3", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
-		body = "Plunderer's Vest +3", hands = "Meg. Gloves +2", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		body = "Plunderer's Vest +3", hands = "Nyame Gloves", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
 		back = gear.Toutatis.WSD, waist = "Kentarch Belt +1", legs = "Nyame Flanchard", feet = "Plun. Poulaines +3"
 	}
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
@@ -151,14 +151,14 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Plun. Bonnet +3", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
-		body = "Plunderer's Vest +3", hands = "Meg. Gloves +2", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		body = "Plunderer's Vest +3", hands = "Nyame Gloves", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
 		back = gear.Toutatis.WSD, waist = "Kentarch Belt +1", legs = "Plun. Culottes +3", feet = "Plun. Poulaines +3"
 	}
 	sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS.Acc, {})
 	sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"],
 	{
 		ammo = "Yetshila +1",
-		head = "Pill. Bonnet +2", ear1 = "Odr Earring",
+		head = "Pill. Bonnet +3", ear1 = "Odr Earring",
 		feet = "Nyame Sollerets"
 	})
 	sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].SA, {})
@@ -174,7 +174,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Nyame Helm", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
-		body = "Plunderer's Vest +3", hands = "Meg. Gloves +2", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		body = "Plunderer's Vest +3", hands = "Nyame Gloves", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
 		back = gear.Toutatis.WSD, waist = "Grunfeld Rope", legs = "Plun. Culottes +3", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS["Shark Bite"].Acc = set_combine(sets.precast.WS["Shark Bite"], {})
@@ -195,14 +195,14 @@ function init_gear_sets()
 	{
 		ammo = "C. Palug Stone",
 		head = "Plun. Bonnet +3", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Brutal Earring",
-		body = "Plunderer's Vest +3", hands = "Meg. Gloves +2", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		body = "Plunderer's Vest +3", hands = "Nyame Gloves", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
 		back = gear.Toutatis.WSD, waist = "Fotia Belt", legs = "Meg. Chausses +2", feet = "Plun. Poulaines +3"
 	})
 
 	sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS,
 	{
 		ammo = "Seeth. Bomblet +1",
-		head = "Pill. Bonnet +2", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
+		head = "Pill. Bonnet +3", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Guantlets", ring1 = "Rufescent Ring", ring2 = "Regal Ring",
 		back = gear.Toutatis.WSD, waist = "Sailfi Belt +1", legs = "Plun. Culottes +3", feet = "Nyame Sollerets"
 	})

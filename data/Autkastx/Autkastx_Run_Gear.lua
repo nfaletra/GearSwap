@@ -230,7 +230,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast =
 	{
 		ammo = "Staunch Tathlum",
-		head = "Runeist's Cap +3", neck = "Futhark Torque +3", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
+		head = "Runeist's Cap +3", neck = "Futhark Torque +2", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Defending Ring", ring2 = "Kishar Ring",
 		back = "Ogma's Cape", waist = "Engraved Belt", legs = "Agwu's Slops", feet = "Nyame Sollerets"
 	}
@@ -238,46 +238,51 @@ function init_gear_sets()
 	sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.FastRecast,
 	{
 		ammo = "Staunch Tathlum",
-		head = "Erilaz Galea +1", neck = "Incanter's Torque", ear1 = "Mimir Earring",
-		hands = "Regal Gauntlets", ring2 = "Eihwaz Ring",
-		back = "Ogma's Cape", waist = "Olympus Sash", legs = "Futhark Trousers +3"
+		head = "Erilaz Galea +1", neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "Odnowa Earring +1"
+		body = "Manasa Chasuble", hands = "Runeist's Mitons +3", ring1 = "Moonbeam Ring", ring2 = "Stikini Ring +1",
+		back = "Ogma's Cape", waist = "Flume Belt +1", legs = "Futhark Trousers +3", feet = "Erilaz Greaves +1"
 	})
 
-	sets.midcast['Enhancing Magic'].Duration = set_combine(sets.midcast['Enhancing Magic'],
-	{
-		
-	})
+	sets.midcast['Enhancing Magic'].Duration = set_combine(sets.midcast['Enhancing Magic'], { hands = "Regal Gauntlets" })
 
 	sets.midcast['Enhancing Magic'].SIRD = set_combine(sets.midcast['Enhancing Magic'], {})
 
-	sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'],
+	sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'].Duration,
 	{
-		head="Futhark Bandeau +1",
-		body=gear.taeon_phalanx_body,hands=gear.herculean_phalanx_hands,
-		legs="Carmine Cuisses +1",feet=gear.herculean_nuke_feet
+		head = "Carmine Mask +1",
+		body = "Nyame Mail",
+		back = "Moonlight Cape", waist = "Fume Belt +1", legs = "Carmine Cuisses +1",
 	})
 
-	sets.midcast['Phalanx'].SIRD = set_combine(sets.midcast.FastRecast.SIRD,{main="Deacon Sword",sub="Chanter's Shield",head="Futhark Bandeau +1",back="Moonlight Cape",})
+	sets.midcast['Temper'] = set_combine(sets.midcast['Enhancing Magic'], {})
+	sets.midcast['Crusade'] = set_combine(sets.midcast['Enhancing Magic'],
+	{
+		neck = "Futhark Torque +2", ear1 = "Etiolation Earring",
+		body = "Nyame Mail", hands = "Regal Gauntlets", ring2 = "Defending Ring",
+		feet = "Nyame Sollerets"
+	})
 
-	sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'],{head="Rune. Bandeau +3",neck="Sacro Gorget"}) 
-	sets.midcast['Refresh'] = set_combine(sets.midcast['Enhancing Magic'],{head="Erilaz Galea +1"}) 
-	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {ear2="Earthcry Earring",waist="Siegel Sash"})
+	sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'],
+	{
+		head = "Futhark Bandeau +3",
+		body = "Taeon Tabard", hands = "Taeon Gloves",
+		legs = "Taeon Tights", feet = "Taeon Boots"
+	})
+
+	sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'], { head="Rune. Bandeau +3", neck = "Sacro Gorget" }) 
+	sets.midcast['Refresh'] = set_combine(sets.midcast['Enhancing Magic'], {}) 
+	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], { ear2="Earthcry Earring", waist = "Siegel Sash" })
 	sets.midcast.Flash = set_combine(sets.Enmity, {})
-	sets.midcast.Flash.DT = set_combine(sets.Enmity.DT, {})
 	sets.midcast.Foil = set_combine(sets.Enmity, {})
-	sets.midcast.Foil.DT = set_combine(sets.Enmity.DT, {})
 	sets.midcast.Stun = set_combine(sets.Enmity, {})
-	sets.midcast.Stun.DT = set_combine(sets.Enmity.DT, {})
 	sets.midcast.Jettatura = set_combine(sets.Enmity, {})
-	sets.midcast.Jettatura.DT = set_combine(sets.Enmity.DT, {})
 	sets.midcast['Blue Magic'] = set_combine(sets.Enmity, {})
-	sets.midcast['Blue Magic'].DT = set_combine(sets.Enmity.DT, {})
 	sets.midcast['Blue Magic'].SIRD = set_combine(sets.Enmity.SIRD, {})
 
 	sets.midcast.Cure =
 	{
-		ammo="Staunch Tathlum +1",
-		head="Carmine Mask +1",neck="Sacro Gorget",ear1="Mendi. Earring",ear2="Roundel Earring",
+		ammo = "Staunch Tathlum +1",
+		head = "Carmine Mask +1", neck = "Sacro Gorget",ear1="Mendi. Earring",ear2="Roundel Earring",
 		body="Vrikodara Jupon",hands="Buremte Gloves",ring1="Lebeche Ring",ring2="Janniston Ring",
 		back="Tempered Cape +1",waist="Luminary Sash",legs="Carmine Cuisses +1",feet="Skaoi Boots"
 	}

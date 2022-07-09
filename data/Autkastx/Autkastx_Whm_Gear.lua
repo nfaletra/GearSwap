@@ -4,7 +4,7 @@ function user_job_setup()
 
 	state.OffenseMode:options('Normal', 'Acc')
 	state.CastingMode:options('Normal','Resistant', 'SIRD', 'DT')
-	state.IdleMode:options('Normal', 'PDT', 'MDT')
+	state.IdleMode:options('Normal', 'MEVA')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
@@ -259,14 +259,16 @@ function init_gear_sets()
 	sets.midcast['Enhancing Magic'] =
 	{
 		main = "Gada", sub = "Ammurapi Shield",
-		head = "Befouled Crown",
-		body = "Telchine Chas.", hands = "Inyan. Dastanas +2",
-		back = "Perimede Cape", waist = "Olympus Sash", legs = "Piety Pantaln. +3", feet = "Theo. Duckbills +3"
+		head = "Befouled Crown", ear2 = "Andoaa Earring",
+		body = "Telchine Chas.", hands = "Inyan. Dastanas +2", ring1 = "Stikini Ring +1",
+		back = "Perimede Cape", waist = "Olympus Sash", legs = "Piety Pantaln. +3", feet = "Ebers Duckbills +1"
 	}
 
 	sets.midcast['Enhancing Magic'].Duration = set_combine(sets.midcast['Enhancing Magic'],
 	{
-		waist = "Embla Sash",
+		head = "Telchine Cap",
+		hands = "Telchine Gloves",
+		waist = "Embla Sash", legs = "Telchine Braconi", feet = "Theo. Duckbills +3"
 	})
 
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'].Duration, { waist = "Siegel Sash" })
@@ -289,8 +291,8 @@ function init_gear_sets()
 	{
 		main = "Beneficus",
 		head = "Ebers Cap +1",
-		body = "Ebers Bliaut +1",
-		legs = "Piety Pantaln. +3"
+		body = "Ebers Bliaut +1", hands = "Ebers Mitts +1",
+		legs = "Piety Pantaln. +3", feet = "Ebers Duckbills +1"
 	})
 
 	sets.midcast['Elemental Magic'] =
@@ -365,8 +367,13 @@ function init_gear_sets()
 		back = "Alaunus's Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
 	}
 
-	sets.idle.PDT = set_combine(sets.idle, { ammo = "Staunch Tathlum" })
-	sets.idle.MDT = set_combine(sets.idle.PDT, {})
+	sets.idle.MEVA = set_combine(sets.idle,
+	{
+		ammo = "Staunch Tathlum",
+		head = "Bunzi's Hat", neck = "Warder's Charm +1",
+		body = "Bunzi's Robe", hands = "Bunzi's Gloves",
+		legs = "Bunzi's Pants", feet = "Bunzi's Sabots"
+	})
 
 	-- Resting sets
 	sets.resting = set_combine(sets.idle, { main = "Chatoyant Staff" })

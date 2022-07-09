@@ -178,48 +178,34 @@ function init_gear_sets()
 	
 	sets.idle =
 	{
-		ammo="Staunch Tathlum +1",
-		head = "Nyame Helm", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
-		body = "Mpaca's Doublet", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = "Atheling Mantle", waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Mpaca's Boots"
+		ammo = "Staunch Tathlum",
+		head = "Nyame Helm", neck = "Twilight Torque", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Warden's Ring", ring2 = "Gelatinous Ring +1",
+		back = "Atheling Mantle", waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
-		
-    sets.idle.Weak = {ammo="Staunch Tathlum +1",
-        head="Twilight Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body="Twilight Mail",hands="Sakonji Kote +1",ring1="Defending Ring",ring2="Dark Ring",
-        back="Moonlight Cape",waist="Flume Belt +1",legs="Flamma Dirs +2",feet="Danzo Sune-ate"}
-		
+
 	sets.DayIdle = {}
 	sets.NightIdle = {}
-    
-    -- Defense sets
-    sets.defense.PDT = {ammo="Staunch Tathlum +1",
-        head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body="Nyame Mail",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Patricius Ring",
-        back="Moonlight Cape",waist="Ioskeha Belt",legs="Wakido Haidate +3",feet="Nyame Sollerets"}
 
-    sets.defense.MDT = {ammo="Staunch Tathlum +1",
-        head="Nyame Helm",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Moonlight Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
-		
-    sets.defense.MEVA = {ammo="Staunch Tathlum +1",
-        head="Nyame Helm",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Moonlight Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+	-- Defense sets
+	sets.defense.PDT = {}
 
-    -- Engaged sets
+	sets.defense.MDT = {}
 
-    -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
-    -- sets if more refined versions aren't defined.
-    -- If you create a set with both offense and defense modes, the offense mode should be first.
-    -- EG: sets.engaged.Dagger.Accuracy.Evasion
-    
-    -- Normal melee group
-    -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
+	sets.defense.MEVA = {}
+
+	-- Engaged sets
+
+	-- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
+	-- sets if more refined versions aren't defined.
+	-- If you create a set with both offense and defense modes, the offense mode should be first.
+	-- EG: sets.engaged.Dagger.Accuracy.Evasion
+
+	-- Normal melee group
+	-- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
 	sets.engaged =
 	{
-		ammo = "Aurgelmir Orb",
+		ammo = "Coiste Bodhar",
 		head = "Flam. Zucchetto +2", neck = "Lissome Necklace", ear1 = "Brutal Earring", ear2 = "Telos Earring",
 		body = "Flamma Korazin +2", hands = "Flam. Manopolas +2", ring1 = "Niqmaddu Ring",ring2 = "Chirich Ring +1",
 		back = "Atheling Mantle" , waist = "Sailfi Belt +1", legs = "Tatena. Haidate +1", feet = "Flam. Gambieras +2"

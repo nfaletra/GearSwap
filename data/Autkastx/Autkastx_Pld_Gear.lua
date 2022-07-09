@@ -71,7 +71,7 @@ function init_gear_sets()
 	sets.precast.JA['Rampart'] = set_combine(sets.Enmity, {}) --head="Valor Coronet" (Also Vit?)
 	sets.precast.JA['Fealty'] = set_combine(sets.Enmity, { body = "Cab. Surcoat +3" })
 	sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, { feet = "Chev. Sabatons +1" })
-	sets.precast.JA['Cover'] = set_combine(sets.Enmity, { body = "Cab. Surcoat +3" }) --head="Rev. Coronet +1",
+	sets.precast.JA['Cover'] = set_combine(sets.Enmity, { head = "Rev. Coronet +2", body = "Cab. Surcoat +3" })
 
 	-- add mnd for Chivalry
 	sets.precast.JA['Chivalry'] = set_combine(sets.Enmity, { hands = "Cab. Gauntlets +3" })

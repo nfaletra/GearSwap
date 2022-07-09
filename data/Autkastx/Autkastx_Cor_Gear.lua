@@ -187,7 +187,7 @@ function init_gear_sets()
 		ammo = gear.MAbullet,
 		head = "Pixie Hairpin +1", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Dingir Ring",
-		back = gear.Camulus.Leaden, waist = "Anrin Obi", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
+		back = gear.Camulus.Leaden, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
 	sets.precast.WS['Aeolian Edge'] =
@@ -202,10 +202,16 @@ function init_gear_sets()
 		ammo = gear.MAbullet,
 		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
 		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Ilabrat Ring", ring2 = "Dingir Ring",
-		back = gear.Camulus.WSD, waist = "Svelt. Gouriz +1", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
+		back = gear.Camulus.WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
-	sets.precast.WS['Hot Shot'] = sets.precast.WS['Wildfire']
+	sets.precast.WS['Hot Shot'] = set_combine(sets.precast.WS['Wildfire'],
+	{
+		ammo = gear.WSbullet,
+		ear2 = "Moonshade Earring",
+		body = "Nyame Mail",
+		waist = "Fotia Belt"
+	})
 
 	--Because omen skillchains.
 	sets.precast.WS['Burning Blade'] =
