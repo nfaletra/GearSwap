@@ -17,9 +17,8 @@ function user_job_setup()
 	gear.da_jse_back = {name="Ogma's cape",augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
 
 	-- Additional local binds
-	send_command('bind !` gs c SubJobEnmity')
-	send_command('bind @` gs c cycle RuneElement')
-	send_command('bind ^` gs c RuneElement')
+	send_command('bind ^` gs c cycle RuneElement')
+	send_command('bind !` gs c RuneElement')
 	send_command('bind @pause gs c toggle AutoRuneMode')
 	send_command('bind ^delete input /ja "Provoke" <stnpc>')
 	send_command('bind !delete input /ma "Cure IV" <stal>')
