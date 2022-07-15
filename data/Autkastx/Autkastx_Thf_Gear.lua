@@ -93,8 +93,8 @@ function init_gear_sets()
 	--------------------------------------
 
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Collaborator'] = {}
-	sets.precast.JA['Accomplice'] = {}
+	sets.precast.JA['Collaborator'] = { head = "Skulker's Bonnet +1" }
+	sets.precast.JA['Accomplice'] = { head = "Skulker's Bonnet +1" }
 	sets.precast.JA['Flee'] = {}
 	sets.precast.JA['Hide'] = { body = "Pillager's Vest +3" }
 	sets.precast.JA['Conspirator'] = {} 
@@ -211,9 +211,9 @@ function init_gear_sets()
 	sets.precast.WS.Proc =
 	{
 		ammo = "Yamarang",
-		head = "Malignance Chapeau", neck = "Voltsurge Torque", ear1 = "Digni. Earring", ear2 = "Heartseeker Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Varar Ring +1", ring2 = "Varar Ring +1",
-		back = "Ground. Mantle +1", waist = "Olseni Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+		head = "Malignance Chapeau",
+		body = "Malignance Tabard", hands = "Malignance Gloves",
+		legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.precast.WS['Last Stand'] =
@@ -309,7 +309,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum",
 		head = "Malignance Chapeau", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Etiolation Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
-		back = "Shadow Mantle", waist = "Flume Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = "Shadow Mantle", waist = "Flume Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.defense.MDT =
@@ -375,7 +375,7 @@ function init_gear_sets()
 	sets.engaged.Evasion =
 	{
 		ammo = "Yamarang",
-		head = "Malignance Chapeau", neck = "Asn Gorget +2", ear1 = "Sherida Earring", ear2 = "Eabani Earring",
+		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Eabani Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Petrov Ring",
 		back = gear.Toutatis.TP, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
 	}

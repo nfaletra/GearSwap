@@ -16,7 +16,7 @@ function user_job_setup()
 	{
 		DA = { name = "Andartia's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', '"Dbl.Atk."+10' } },
 		STR_WSD = { name = "Andartia's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%' } },
-		MAB = { name= " Andartia's Mantle", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+5', '"Mag.Atk.Bns."+10' } },
+		MAB = { name= "Andartia's Mantle", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+5', '"Mag.Atk.Bns."+10' } },
 	}
 
 	send_command('bind ^` gs c cycle ElementalMode')
@@ -82,7 +82,7 @@ function init_gear_sets()
 		ammo = "Sapience Orb",
 		head = gear.herculean_fc_head, neck = "Orunmila's Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = gear.adhemar.body.d, hands = "Leyline Gloves", ring1 = "Rahab Ring", ring2 = "Kishar Ring",
-		back = gear.Andartia.DA, waist = "Flume Belt +1"
+		back = gear.Andartia.DA, waist = "Flume Belt"
 	}
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC,
@@ -155,7 +155,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Blade: Chi'] =
 	{
-		ammo = "Seething Bomblet +1",
+		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
@@ -163,7 +163,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Blade: To'] =
 	{
-		ammo = "Seething Bomblet +1",
+		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
@@ -171,7 +171,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Blade: Teki'] =
 	{
-		ammo = "Seething Bomblet +1",
+		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
@@ -179,7 +179,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Blade: Ei'] =
 	{
-		ammo = "Seething Bomblet +1",
+		ammo = "Seeth. Bomblet +1",
 		head = "Pixie Hairpin +1", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Dingir Ring",
 		back = gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
@@ -187,7 +187,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Blade: Yu'] =
 	{
-		ammo = "Seething Bomblet +1",
+		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Acumen Ring", ring2 = "Dingir Ring",
 		back =gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
@@ -227,7 +227,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Sanguine Blade'] =
 	{
-		ammo = "Seething Bomblet +1",
+		ammo = "Seeth. Bomblet +1",
 		head = "Pixie Hairpin +1", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Dingir Ring",
 		back = gear.Andartia.DA, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
@@ -235,7 +235,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Red Lotus Blade'] =
 	{
-		ammo = "Seeting Bomblet +1",
+		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Acumen Ring", ring2 = "Dingir Ring",
 		back = gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
@@ -243,7 +243,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Seraph Blade'] =
 	{
-		ammo = "Seething Bomblet +1",
+		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Acumen Ring", ring2 = "Dingir Ring",
 		back =gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
@@ -275,7 +275,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Aeolian Edge'] =
 	{
-		ammo = "Seething Bomblet +1",
+		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Acumen Ring", ring2 = "Dingir Ring",
 		back = gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
@@ -331,7 +331,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Tachi: Jinpu'] =
 	{
-		ammo = "Seething Bomblet +1",
+		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hastuburi +3", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
@@ -355,7 +355,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Tachi: Kagero'] =
 	{
-		ammo = "Seething Bomblet +1",
+		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
@@ -363,7 +363,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Tachi: Koki'] =
 	{
-		ammo = "Seething Bomblet +1",
+		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Gorget", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
@@ -393,7 +393,7 @@ function init_gear_sets()
 		ammo = "Sapience Orb",
 		head = gear.herculean_fc_head, neck = "Orunmila's Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = gear.adhemar.body.d, hands = "Leyline Gloves", ring1 = "Rahab Ring", ring2 = "Kishar Ring",
-		waist = "Flume Belt +1"
+		waist = "Flume Belt"
 	}
 
 	sets.midcast.ElementalNinjutsu =
@@ -601,7 +601,7 @@ function init_gear_sets()
 	sets.Haste15 = { head = "Ryuo Somen +1", ear1 = "Eabani Earring", body = "Mochi. Chainmail +3", waist = "Reiki Yotai", legs = "Hachiya Hakama +3" }
 	sets.Haste10 = { head = "Ryuo Somen +1", ear1 = "Eabani Earring", body = "Mochi. Chainmail +3", waist = "Reiki Yotai", legs = "Mochi. Hakama +3" }
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
-	sets.Skillchain = { legs = "Ryuo Hakama" }
+	sets.Skillchain = {}
 
 	-- Weapons sets
 	sets.weapons.Naegling = { main = "Naegling", sub = "Hitaki" }
@@ -613,14 +613,14 @@ function init_gear_sets()
 	sets.weapons.GKT = { main = "Kaja Tachi", sub = "Bloodrain Strap" }
 	sets.weapons.Karambit = { main = "Karambit" }
 	sets.weapons.ProcDagger = { main = "Ceremonial Dagger", sub = "Debahocho" }
-	sets.weapons.ProcSword = { main = "Twinned Blade", sub = empty }
-	sets.weapons.ProcGreatSword = { main = "Ophidian Sword", sub = empty }
-	sets.weapons.ProcScythe = { main = "Hoe", sub = empty }
-	sets.weapons.ProcPolearm = { main = "Iapetus", sub = empty }
-	sets.weapons.ProcGreatKatana = { main = "Mutsunokami", sub = empty }
-	sets.weapons.ProcKatana = { main = "Debahocho", sub = empty }
-	sets.weapons.ProcClub = { main = "Thunder Hammer", sub = empty }
-	sets.weapons.ProcStaff = { main = "Ram Staff", sub = empty }
+	sets.weapons.ProcSword = { main = "Twinned Blade", sub = "Debahocho" }
+	sets.weapons.ProcGreatSword = { main = "Ophidian Sword", sub = "Bloodrain Strap" }
+	sets.weapons.ProcScythe = { main = "Hoe", sub = "Bloodrain Strap" }
+	sets.weapons.ProcPolearm = { main = "Iapetus", sub = "Bloodrain Strap" }
+	sets.weapons.ProcGreatKatana = { main = "Mutsunokami", sub = "Bloodrain Strap" }
+	sets.weapons.ProcKatana = { main = "Debahocho", sub = "Ceremonial Dagger" }
+	sets.weapons.ProcClub = { main = "Thunder Hammer", sub = "Ceremonial Dagger" }
+	sets.weapons.ProcStaff = { main = "Ram Staff", sub = "Bloodrain Strap" }
 end
 
 -- Select default macro book on initial load or subjob change.

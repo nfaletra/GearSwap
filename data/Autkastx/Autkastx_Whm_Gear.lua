@@ -82,7 +82,7 @@ function init_gear_sets()
 	sets.precast.FC =
 	{
 		main = "C. Palug Hammer", sub = "Chanter's Shield", ammo = "Impatiens",
-		head = "Vanya Hood", neck = "Clr. Torque +2", ear1 = "Loquac. Earring", ear2 = "Malignance Earring",
+		head = "Bunzi's Hat", neck = "Clr. Torque +2", ear1 = "Loquac. Earring", ear2 = "Malignance Earring",
 		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Lebeche Ring",
 		back = "Perimede Cape", waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Regal Pumps +1"
 	}

@@ -9,7 +9,7 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('Normal')
 	state.ResistDefenseMode:options('Normal')
 	state.IdleMode:options('Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Ochain', 'DD', 'DW', 'TwoHanded')
-	state.Weapons:options('Excalibur', 'Caballarius', 'Sakpata', 'Brilliance', 'Naegling', 'Staff', 'GS', 'DualWeapons', 'DualNaegling')
+	state.Weapons:options('Excalibur', 'Caballarius', 'Sakpata', 'Brilliance', 'Naegling', 'Staff', "ShiningOne", 'GS', 'DualWeapons', 'DualNaegling')
 	
 	state.ExtraDefenseMode = M{ ['description'] = 'Extra Defense Mode', 'None', 'MP', 'Twilight' }
 	
@@ -173,6 +173,14 @@ function init_gear_sets()
 		back = gear.rudianos_shield, waist = "Fotia Belt", legs = "Souv. Diechlings +1", feet = "Eschite Greaves"
 	}
 
+	sets.precast.WS['Impulse Drive'] =
+	{
+		ammo = "Coiste Bodhar",
+		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
+		body = "Dagon Breastplate", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Rufescent Ring",
+		back = gear.rudianos_wsd, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Sulevia's Leggings +2"
+	}
+
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = { ear2 = "Brutal Earring" }
 	sets.AccMaxTP = { ear2 = "Telos Earring" }
@@ -327,7 +335,7 @@ function init_gear_sets()
 		sub = "Ochain", ammo = "Staunch Tathlum",
 		head = "Chev. Armet +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
-		back = gear.rudianos_shield, waist = "Flume Belt +1", legs = "Chev. Cuisses +1", feet = "Rev. Leggings +3"
+		back = gear.rudianos_shield, waist = "Flume Belt", legs = "Chev. Cuisses +1", feet = "Rev. Leggings +3"
 	}
 
 	sets.idle.DD =
@@ -349,7 +357,7 @@ function init_gear_sets()
 	sets.idle.TwoHanded =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flam. Zuchetto +2", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Telos Earring",
+		head = "Flam. Zucchetto +2", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Telos Earring",
 		body = "Hjarrandi Breast.", hands = "Sakpata's Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Flamma Ring",
 		back = gear.rudianos_tp, waist = "Sailfi Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
 	}
@@ -381,6 +389,7 @@ function init_gear_sets()
 	sets.weapons.Brilliance = { main = "Brilliance" }
 	sets.weapons.Naegling = { main = "Naegling" }
 	sets.weapons.Staff = { main = "Malignance Pole", sub = "Bloodrain Strap" }
+	sets.weapons.ShiningOne = { main = "Shining One", sub = "Bloodrain Strap" }
 	sets.weapons.GS = { main = "Montante +1", sub = "Bloodrain Strap " }
 	sets.weapons.DualWeapons = { main = "Excalibur", sub = "Malevolence" }
 	sets.weapons.DualNaegling = { main = "Naegling", sub = "Malevolence" }
@@ -446,7 +455,7 @@ function init_gear_sets()
 		sub = "Ochain", ammo = "Staunch Tathlum",
 		head = "Chev. Armet +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
-		back = gear.rudianos_shield, waist = "Flume Belt +1", legs = "Chev. Cuisses +1", feet = "Rev. Leggings +3"
+		back = gear.rudianos_shield, waist = "Flume Belt", legs = "Chev. Cuisses +1", feet = "Rev. Leggings +3"
 	}
 
 	sets.engaged.DD =
