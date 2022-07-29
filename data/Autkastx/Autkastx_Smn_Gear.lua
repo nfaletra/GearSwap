@@ -1,16 +1,14 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar.
 function user_job_setup()
-    state.OffenseMode:options('Normal','Acc')
-    state.CastingMode:options('Normal','Resistant','OccultAcumen')
-    state.IdleMode:options('Normal','PDT')
-	state.Weapons:options('None','Gridarvor','Khatvanga')
+	state.OffenseMode:options('Normal', 'Acc')
+	state.CastingMode:options('Normal', 'Resistant', 'OccultAcumen')
+	state.IdleMode:options('Normal', 'PDT')
+	state.Weapons:options('None', 'Gridarvor', 'Khatvanga')
 
-    gear.perp_staff = {name="Gridarvor"}
-	
-	gear.magic_jse_back = {name="Campestres's Cape",augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10',}}
+	gear.magic_jse_back = { name = "Campestres's Cape",augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10',}}
 	gear.phys_jse_back = {name="Campestres's Cape",augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Haste+10',}}
 	
-    send_command('bind !` input /ja "Release" <me>')
+	send_command('bind !` input /ja "Release" <me>')
 	send_command('bind @` gs c cycle MagicBurst')
 	send_command('bind ^` gs c toggle PactSpamMode')
 	send_command('bind !pause gs c toggle AutoSubMode') --Automatically uses sublimation.
@@ -38,17 +36,20 @@ function init_gear_sets()
 
     sets.precast.JA['Mana Cede'] = {hands="Beck. Bracers +1"}
 
-    -- Pact delay reduction gear
-    sets.precast.BloodPactWard = {main="Espiritus",sub="Vox Grip",ammo="Sancus Sachet +1",
-		head="Beckoner's Horn +1",neck="Incanter's Torque",ear1="Andoaa Earring",ear2="Lodurr Earring",
-        body="Baayami Robe",hands="Baayami Cuffs",ring1="Evoker's Ring",ring2="Stikini Ring +1",
-        back="Conveyance Cape",waist="Kobo Obi",legs="Baayami Slops",feet="Baayami Sabots"}
-		
-    sets.precast.BloodPactRage = sets.precast.BloodPactWard
+	-- Pact delay reduction gear
+	sets.precast.BloodPactWard =
+	{
+		main = "Espiritus", sub = "Vox Grip", ammo = "Seraphicaller",
+		head = "Beckoner's Horn +1", neck = "Melic Torque", ear1 = "C. Palug Earring", ear2 = "Evans Earring",
+		body = "Glyphic Doublet +1", hands = "Glyphic Bracers +1", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
+		back = "Conveyance Cape", waist = "Kobo Obi", legs = "Glyphic Spats +1", feet = "Glyph. Pigaches +1"
+	}
 
-    -- Fast cast sets for spells
-    
-    sets.precast.FC = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",ammo="Impatiens",
+	sets.precast.BloodPactRage = sets.precast.BloodPactWard
+
+	-- Fast cast sets for spells
+
+	sets.precast.FC = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",ammo="Impatiens",
 		head="Amalric Coif +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
 		body="Inyanga Jubbah +2",hands="Volte Gloves",ring1="Kishar Ring",ring2="Lebeche Ring",
 		back="Perimede Cape",waist="Witful Belt",legs="Psycloth Lappas",feet="Regal Pumps +1"}
@@ -237,129 +238,153 @@ function init_gear_sets()
     --------------------------------------
     
     -- Resting sets
-    sets.resting = {main="Mpaca's Staff",sub="Umbra Strap",ammo="Staunch Tathlum +1",
-        head="Beckoner's Horn +1",neck="Loricate Torque +1",ear1="C. Palug Earring",ear2="Ethereal Earring",
-        body="Shomonjijoe +1",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Sheltered Ring",
-        back="Umbra Cape",waist="Fucho-no-obi",legs="Assid. Pants +1",feet="Baayami Sabots"}
-    
-    -- Idle sets
-    sets.idle = {main="Mpaca's Staff",sub="Umbra Strap",ammo="Staunch Tathlum +1",
-        head="Convoker's Horn +3",neck="Loricate Torque +1",ear1="C. Palug Earring",ear2="Ethereal Earring",
-        body="Shomonjijoe +1",hands=gear.merlinic_refresh_hands,ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back="Umbra Cape",waist="Regal Belt",legs="Assid. Pants +1",feet="Baayami Sabots"}
+    sets.resting =
+	{
+		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum",
+		head = "Inyanga Tiara +2", neck = "Twilight Torque", ear1 = "C. Palug Earring", ear2 = "Ethereal Earring",
+		body = "Shomonjijoe +1", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Stikini Ring +1",
+		back = "Campestres's Cape", waist = "Regal Belt", legs = "Assid. Pants +1", feet = "Inyan. Crackows +2"
+	}
 
-    sets.idle.PDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
-        head="Convoker's Horn +3",neck="Loricate Torque +1",ear1="C. Palug Earring",ear2="Ethereal Earring",
-        body="Shomonjijoe +1",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
-        back="Moonlight Cape",waist="Regal Belt",legs="Assid. Pants +1",feet="Baayami Sabots"}
-		
-    -- perp costs:
-    -- spirits: 7
-    -- carby: 11 (5 with mitts)
-    -- fenrir: 13
-    -- others: 15
-    -- avatar's favor: -4/tick
-    
-    -- Max useful -perp gear is 1 less than the perp cost (can't be reduced below 1)
-    -- Aim for -14 perp, and refresh in other slots.
-    
-    -- Can make due without either the head or the body, and use +refresh items in those slots.
-    
-    sets.idle.Avatar = {main="Gridarvor",sub="Umbra Strap",ammo="Sancus Sachet +1",
-        head="Beckoner's Horn +1",neck="Caller's Pendant",ear1="C. Palug Earring",ear2="Evans Earring",
-        body="Shomonjijoe +1",hands=gear.merlinic_refresh_hands,ring1="Evoker's Ring",ring2="Stikini Ring +1",
-        back="Moonlight Cape",waist="Lucidity Sash",legs="Assid. Pants +1",feet="Convo. Pigaches +3"}
-		
-    sets.idle.PDT.Avatar = {main="Malignance Pole",sub="Umbra Strap",ammo="Sancus Sachet +1",
-        head="Beckoner's Horn +1",neck="Loricate Torque +1",ear1="C. Palug Earring",ear2="Evans Earring",
-        body="Shomonjijoe +1",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
-        back="Moonlight Cape",waist="Regal Belt",legs="Assid. Pants +1",feet="Convo. Pigaches +3"}
+	-- Idle sets
+	sets.idle =
+	{
+		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum",
+		head = "Inyanga Tiara +2", neck = "Twilight Torque", ear1 = "C. Palug Earring", ear2 = "Ethereal Earring",
+		body = "Shomonjijoe +1", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Stikini Ring +1",
+		back = "Campestres's Cape", waist = "Regal Belt", legs = "Assid. Pants +1", feet = "Inyan. Crackows +2"
+	}
 
-    sets.idle.Spirit = {main="Gridarvor",sub="Umbra Strap",ammo="Sancus Sachet +1",
-        head="Convoker's Horn +3",neck="Caller's Pendant",ear1="C. Palug Earring",ear2="Ethereal Earring",
-        body="Shomonjijoe +1",hands=gear.merlinic_refresh_hands,ring1="Evoker's Ring",ring2="Stikini Ring +1",
-        back="Conveyance Cape",waist="Lucidity Sash",legs="Assid. Pants +1",feet="Convo. Pigaches +3"}
-		
-    sets.idle.PDT.Spirit = {main="Malignance Pole",sub="Umbra Strap",ammo="Sancus Sachet +1",
-        head="Convoker's Horn +3",neck="Loricate Torque +1",ear1="C. Palug Earring",ear2="Evans Earring",
-        body="Shomonjijoe +1",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
-        back="Umbra Cape",waist="Lucidity Sash",legs="Assid. Pants +1",feet="Battlecast Gaiters"}
-		
+	sets.idle.PDT =
+	{
+		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum",
+		head = "Inyanga Tiara +2", neck = "Twilight Torque", ear1 = "C. Palug Earring", ear2 = "Ethereal Earring",
+		body = "Shomonjijoe +1", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Stikini Ring +1",
+		back = "Campestres's Cape", waist = "Regal Belt", legs = "Assid. Pants +1", feet = "Inyan. Crackows +2"
+	}
+
+	-- perp costs:
+	-- spirits: 7
+	-- carby: 11 (5 with mitts)
+	-- fenrir: 13
+	-- others: 15
+	-- avatar's favor: -4/tick
+
+	-- Max useful -perp gear is 1 less than the perp cost (can't be reduced below 1)
+	-- Aim for -14 perp, and refresh in other slots.
+
+	-- Can make due without either the head or the body, and use +refresh items in those slots.
+
+	sets.idle.Avatar =
+	{
+		main = "Gridarvor", sub = "Elan Strap +1", ammo = "Seraphicaller",
+		head = "Beckoner's Horn +1", neck = "Caller's Pendant", ear1 = "C. Palug Earring", ear2 = "Evans Earring",
+		body = "Shomonjijoe +1", hands = "Asteria Mitts +1", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
+		back = "Campestres's Cape", waist = "Lucidity Sash", legs = "Assid. Pants +1", feet = "Apogee Pumps +1"
+	}
+
+	sets.idle.PDT.Avatar =
+	{
+		main = "Gridarvor", sub = "Elan Strap +1", ammo = "Seraphicaller",
+		head = "Beckoner's Horn +1", neck = "Caller's Pendant", ear1 = "C. Palug Earring", ear2 = "Evans Earring",
+		body = "Shomonjijoe +1", hands = "Asteria Mitts +1", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
+		back = "Campestres's Cape", waist = "Lucidity Sash", legs = "Assid. Pants +1", feet = "Apogee Pumps +1"
+	}
+
+	sets.idle.Spirit =
+	{
+		main = "Gridarvor", sub = "Elan Strap +1", ammo = "Seraphicaller",
+		head = "Beckoner's Horn +1", neck = "Caller's Pendant", ear1 = "C. Palug Earring", ear2 = "Evans Earring",
+		body = "Shomonjijoe +1", hands = "Asteria Mitts +1", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
+		back = "Campestres's Cape", waist = "Lucidity Sash", legs = "Assid. Pants +1", feet = "Apogee Pumps +1"
+	}
+
+	sets.idle.PDT.Spirit =
+	{
+		main = "Gridarvor", sub = "Elan Strap +1", ammo = "Seraphicaller",
+		head = "Beckoner's Horn +1", neck = "Caller's Pendant", ear1 = "C. Palug Earring", ear2 = "Evans Earring",
+		body = "Shomonjijoe +1", hands = "Asteria Mitts +1", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
+		back = "Campestres's Cape", waist = "Lucidity Sash", legs = "Assid. Pants +1", feet = "Apogee Pumps +1"
+	}
+
 	--Favor always up and head is best in slot idle so no specific items here at the moment.
-    sets.idle.Avatar.Favor = {}
-    sets.idle.Avatar.Engaged = {}
+	sets.idle.Avatar.Favor = {}
+	sets.idle.Avatar.Engaged = {}
 	
 	sets.idle.Avatar.Engaged.Carbuncle = {}
 	sets.idle.Avatar.Engaged['Cait Sith'] = {}
-        
-    sets.perp = {}
-    -- Caller's Bracer's halve the perp cost after other costs are accounted for.
-    -- Using -10 (Gridavor, ring, Conv.feet), standard avatars would then cost 5, halved to 2.
-    -- We can then use Hagondes Coat and end up with the same net MP cost, but significantly better defense.
-    -- Weather is the same, but we can also use the latent on the pendant to negate the last point lost.
-    sets.perp.Day = {}
-    sets.perp.Weather = {}
-	
+
+	sets.perp = {}
+	-- Caller's Bracer's halve the perp cost after other costs are accounted for.
+	-- Using -10 (Gridavor, ring, Conv.feet), standard avatars would then cost 5, halved to 2.
+	-- We can then use Hagondes Coat and end up with the same net MP cost, but significantly better defense.
+	-- Weather is the same, but we can also use the latent on the pendant to negate the last point lost.
+	sets.perp.Day = {}
+	sets.perp.Weather = {}
+
 	sets.perp.Carbuncle = {}
-    sets.perp.Diabolos = {}
-    sets.perp.Alexander = sets.midcast.Pet.BloodPactWard
+	sets.perp.Diabolos = {}
+	sets.perp.Alexander = sets.midcast.Pet.BloodPactWard
 
 	-- Not really used anymore, was for the days of specific staves for specific avatars.
-    sets.perp.staff_and_grip = {}
-    
-    -- Defense sets
-    sets.defense.PDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Sancus Sachet +1",
-        head="Beckoner's Horn +1",neck="Loricate Torque +1",ear1="Handler's Earring +1",ear2="Enmerkar Earring",
-        body="Shomonjijoe +1",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
-        back="Moonlight Cape",waist="Regal Belt",legs="Assid. Pants +1",feet="Baayami Sabots"}
+	sets.perp.staff_and_grip = {}
 
-    sets.defense.MDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Sancus Sachet +1",
-        head="Beckoner's Horn +1",neck="Loricate Torque +1",ear1="Handler's Earring +1",ear2="Enmerkar Earring",
-        body="Shomonjijoe +1",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
-        back="Moonlight Cape",waist="Regal Belt",legs="Assid. Pants +1",feet="Baayami Sabots"}
+	-- Defense sets
+	sets.defense.PDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Sancus Sachet +1",
+		head="Beckoner's Horn +1",neck="Loricate Torque +1",ear1="Handler's Earring +1",ear2="Enmerkar Earring",
+		body="Shomonjijoe +1",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
+		back="Moonlight Cape",waist="Regal Belt",legs="Assid. Pants +1",feet="Baayami Sabots"}
 
-    sets.defense.MEVA = {main="Malignance Pole",sub="Enki Strap",ammo="Sancus Sachet +1",
-        head="Amalric Coif +1",neck="Warder's Charm +1",ear1="Lugalbanda Earring",ear2="Sanare Earring",
+	sets.defense.MDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Sancus Sachet +1",
+		head="Beckoner's Horn +1",neck="Loricate Torque +1",ear1="Handler's Earring +1",ear2="Enmerkar Earring",
+		body="Shomonjijoe +1",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
+		back="Moonlight Cape",waist="Regal Belt",legs="Assid. Pants +1",feet="Baayami Sabots"}
+
+	sets.defense.MEVA = {main="Malignance Pole",sub="Enki Strap",ammo="Sancus Sachet +1",
+		head="Amalric Coif +1",neck="Warder's Charm +1",ear1="Lugalbanda Earring",ear2="Sanare Earring",
 		body="Inyanga Jubbah +2",hands="Telchine Gloves",ring1="Vengeful Ring",Ring2="Purity Ring",
-        back="Aurist's Cape +1",waist="Luminary Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
-		
-    sets.Kiting = {feet="Herald's Gaiters"}
-    sets.latent_refresh = {waist="Fucho-no-obi"}
-	sets.latent_refresh_grip = {sub="Oneiros Grip"}
-	sets.TPEat = {neck="Chrys. Torque"}
+		back="Aurist's Cape +1",waist="Luminary Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
+
+	sets.Kiting = { feet = "Herald's Gaiters" }
+	sets.latent_refresh = { waist = "Fucho-no-obi" }
+	sets.latent_refresh_grip = { sub = "Oneiros Grip" }
+	sets.TPEat = { neck = "Chrys. Torque" }
 	sets.DayIdle = {}
 	sets.NightIdle = {}
 
 	sets.HPDown = {head="Apogee Crown +1",ear1="Mendicant's Earring",ear2="Evans Earring",
 		body="Seidr Cotehardie",hands="Hieros Mittens",ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
 		back="Swith Cape +1",legs="Apogee Slacks +1",feet="Apogee Pumps +1"}
-	
+
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
-	sets.buff.Sleep = {neck="Sacrifice Torque"}
+	sets.buff.Sleep = { neck = "Sacrifice Torque" }
 
 	-- Weapons sets
-	sets.weapons.Gridarvor = {main="Gridarvor", sub="Elan Strap +1"}
-	sets.weapons.Khatvanga = {main="Khatvanga",sub="Bloodrain Strap"}
+	sets.weapons.Gridarvor = { main="Gridarvor", sub="Elan Strap +1" }
+	sets.weapons.Khatvanga = { main = "Khatvanga", sub = "Bloodrain Strap" }
 
-    sets.buff.Sublimation = {waist="Embla Sash"}
-    sets.buff.DTSublimation = {waist="Embla Sash"}
-    --------------------------------------
-    -- Engaged sets
-    --------------------------------------
-    
-    -- Normal melee group
-    sets.engaged = {main="Gridarvor",sub="Bloodrain Strap",ammo="Sancus Sachet +1",
-        head="Beckoner's Horn +1",neck="Shulmanu Collar",ear1="Digni. Earring",ear2="Telos Earring",
-        body="Con. Doublet +3",hands="Gazu Bracelet +1",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-        back=gear.phys_jse_back,waist="Olseni Belt",legs="Assid. Pants +1",feet="Convo. Pigaches +3"}
+	sets.buff.Sublimation = { waist = "Embla Sash" }
+	sets.buff.DTSublimation = { waist = "Embla Sash" }
+	--------------------------------------
+	-- Engaged sets
+	--------------------------------------
+
+	-- Normal melee group
+	sets.engaged =
+	{
+		main = "Gridarvor", sub = "Bloodrain Strap", ammo = "Seraphicaller",
+		head = "Beckoner's Horn +1", neck = "Shulmanu Collar", ear1 = "Digni. Earring", ear2 = "Telos Earring",
+		body = "Con. Doublet +3", hands = "Gazu Bracelet +1", ring1 = "Ramuh Ring +1", ring2 = "Ramuh Ring +1",
+		back = "Campestres's Cape", waist = "Olseni Belt", legs = "Assid. Pants +1", feet = "Convo. Pigaches +3"
+	}
 end
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book(reset)
-    if reset == 'reset' then
-        -- lost pet, or tried to use pact when pet is gone
-    end
-    
-    -- Default macro set/book
-    set_macro_page(4, 17)
+	if reset == 'reset' then
+		-- lost pet, or tried to use pact when pet is gone
+	end
+
+	-- Default macro set/book
+	set_macro_page(1, 17)
 end

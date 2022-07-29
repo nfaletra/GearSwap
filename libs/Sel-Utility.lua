@@ -2192,7 +2192,7 @@ function check_rune()
 		elseif not player.in_combat then
 			return false
 			
-		elseif not buffactive['Pflug'] and abil_recasts[59] < latency then
+		--[[elseif not buffactive['Pflug'] and abil_recasts[59] < latency then
 			windower.chat.input('/ja "Pflug" <me>')
 			tickdelay = os.clock() + 1.8
 			return true
@@ -2213,7 +2213,7 @@ function check_rune()
 				windower.chat.input('/ja "Vallation" <me>')
 				tickdelay = os.clock() + 2.5
 				return true
-			end
+			end]]
 		end
 	end
 	

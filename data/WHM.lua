@@ -127,17 +127,25 @@ function job_setup()
 				else
 					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
 				end
-			elseif missingHP < 1200 then
+			elseif missingHP < 800 then
 				if spell_recasts[3] < spell_latency then
 					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
 				elseif spell_recasts[4] < spell_latency then
 					windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
+				else
+					add_to_chat(123, 'Abort: Appropriate cures are on cooldown.')
+				end
+			elseif missingHP < 1500 then
+				if spell_recasts[4] < spell_latency then
+					windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
+				elseif spell_recasts[3] < spell_latency then
+					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
 				elseif spell_recasts[5] < spell_latency then
 					windower.chat.input('/ma "Cure V" '..cureTarget.id..'')
 				else
 					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
 				end
-			elseif missingHP < 2000 then
+			elseif missingHP < 2500 then
 				if spell_recasts[5] < spell_latency then
 					windower.chat.input('/ma "Cure V" '..cureTarget.id..'')
 				elseif spell_recasts[4] < spell_latency then

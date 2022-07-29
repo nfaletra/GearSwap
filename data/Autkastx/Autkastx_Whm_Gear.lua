@@ -4,7 +4,7 @@ function user_job_setup()
 
 	state.OffenseMode:options('Normal', 'Acc')
 	state.CastingMode:options('Normal','Resistant', 'SIRD', 'DT')
-	state.IdleMode:options('Normal', 'MEVA')
+	state.IdleMode:options('Normal', 'PDT', 'MEVA')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
@@ -24,7 +24,7 @@ function user_job_setup()
 	send_command('bind @` gs c cycle MagicBurstMode')
 	send_command('bind ^@!` gs c toggle AutoCaress')
 	send_command('bind ^backspace input /ja "Sacrosanctity" <me>')
-	send_command('bind @backspace input /ma "Aurora Storm" <me>')
+	send_command('bind @backspace input /ma "Aurorastorm" <me>')
 	send_command('bind !pause gs c toggle AutoSubMode') --Automatically uses sublimation.
 	send_command('bind !backspace input /ja "Accession" <me>')
 	send_command('bind != input /ja "Sublimation" <me>')
@@ -367,13 +367,21 @@ function init_gear_sets()
 		back = "Alaunus's Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
 	}
 
-	sets.idle.MEVA = set_combine(sets.idle,
+	sets.idle.PDT =
 	{
-		ammo = "Staunch Tathlum",
-		head = "Bunzi's Hat", neck = "Warder's Charm +1",
-		body = "Bunzi's Robe", hands = "Bunzi's Gloves",
-		legs = "Bunzi's Pants", feet = "Bunzi's Sabots"
-	})
+		main = "Daybreak", sub = "Genmei Shield", ammo = "Staunch Tathlum",
+		head = "Nyame Helm", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Genmei Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
+		back = "Alaunus's Cape", waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+	}
+
+	sets.idle.MEVA =
+	{
+		main = "Daybreak", sub = "Genmei Shield", ammo = "Staunch Tathlum",
+		head = "Bunzi's Hat", neck = "Warder's Charm +1", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
+		body = "Bunzi's Robe", hands = "Bunzi's Gloves", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
+		back = "Alaunus's Cape", waist = "Carrier's Sash", legs = "Bunzi's Pants", feet = "Bunzi's Sabots"
+	}
 
 	-- Resting sets
 	sets.resting = set_combine(sets.idle, { main = "Chatoyant Staff" })

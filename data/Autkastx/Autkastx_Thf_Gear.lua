@@ -267,7 +267,7 @@ function init_gear_sets()
 	sets.midcast['Absorb-TP'] = set_combine(sets.midcast.FastRecast,
 	{
 		head = "Malignance Chapeau", neck = "Deceiver's Torque", ear1 = "Crep. Earring", ear2 = "Hermetic Earring",
-		body = "Maligance Tabard", hands = "Malignance Gloves", ring1 = "Evanescence Ring", ring2 = "Etana Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Evanescence Ring", ring2 = "Etana Ring",
 		waist = "Eschan Stone", legs = "Malignance Tights", feet = "Malignance Boots"
 	})
 
@@ -302,32 +302,6 @@ function init_gear_sets()
 	sets.DayIdle = {}
 	sets.NightIdle = {}
 	sets.ExtraRegen = { hands = "Turms Mittens +1" }
-
-	-- Defense sets
-	sets.defense.PDT =
-	{
-		ammo = "Staunch Tathlum",
-		head = "Malignance Chapeau", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Etiolation Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
-		back = "Shadow Mantle", waist = "Flume Belt", legs = "Malignance Tights", feet = "Malignance Boots"
-	}
-
-	sets.defense.MDT =
-	{
-		ammo = "Staunch Tathlum",
-		head = "Malignance Chapeau", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Etiolation Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Shadow Ring",
-		back = "Engulfer Cape +1", waist = "Engraved Belt", legs = "Malignance Tights", feet = "Malignance Boots"
-	}
-
-	sets.defense.MEVA =
-	{
-		ammo = "Staunch Tathlum",
-		head = "Malignance Chapeau", neck = "Warder's Charm +1", ear1 = "Odnowa Earring +1", ear2 = "Etiolation Earring",
-		body = gear.adhemar.body.b, hands = "Malignance Gloves", ring1 = "Vengeful Ring", ring2 = "Purity Ring",
-		back = "Mujin Mantle", waist = "Engraved Belt", legs = "Malignance Tights", feet = "Malignance Boots"
-	}
-
 
 	--------------------------------------
 	-- Melee sets
@@ -367,7 +341,7 @@ function init_gear_sets()
 	sets.engaged.MEVA =
 	{
 		ammo = "Yamarang",
-		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Serida Earring", ear2 = "Suppanomimi",
+		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Suppanomimi",
 		body = "Pillager's Vest +3", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Moonbeam Ring",
 		back = gear.Toutatis.TP, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
 	}

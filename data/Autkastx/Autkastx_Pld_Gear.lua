@@ -67,7 +67,7 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Invincible'] = set_combine(sets.Enmity, { legs = "Cab. Breeches +3" })
 	sets.precast.JA['Holy Circle'] = set_combine(sets.Enmity, { feet = "Rev. Leggings +3" })
-	sets.precast.JA['Sentinel'] = set_combine(sets.Enmity, { feet = "Cab. Leggings +1" })
+	sets.precast.JA['Sentinel'] = set_combine(sets.Enmity, { feet = "Cab. Leggings +3" })
 	sets.precast.JA['Rampart'] = set_combine(sets.Enmity, {}) --head="Valor Coronet" (Also Vit?)
 	sets.precast.JA['Fealty'] = set_combine(sets.Enmity, { body = "Cab. Surcoat +3" })
 	sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, { feet = "Chev. Sabatons +1" })
@@ -231,14 +231,14 @@ function init_gear_sets()
 	{
 		ammo = "Sapience Orb",
 		head = "Carmine Mask +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Shab. Cuirass +1", hands = "Regal Gauntlets", ring1 = "Stikini Ring", ring2 = "Stikini Ring",
+		body = "Shab. Cuirass +1", hands = "Regal Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring",
 		back = "Moonbeam Cape", waist = "Olympus Sash", legs = "Carmine Cuisses +1", feet = "Carmine Greaves +1"
 	}
 	sets.midcast['Enhancing Magic'].SIRD =
 	{
 		ammo = "Staunch Tathlum",
 		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Rev. Surcoat +3", hands = "Regal Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
+		body = "Rev. Surcoat +3", hands = "Regal Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Stikini Ring +1",
 		back = "Moonbeam Cape", waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
 	}
 
