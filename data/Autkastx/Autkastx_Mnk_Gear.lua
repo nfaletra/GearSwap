@@ -2,14 +2,14 @@ function user_job_setup()
 	-- Options: Override default values
 	state.OffenseMode:options('Normal', 'Acc')
 	state.WeaponskillMode:options('Match', 'Normal', 'Proc')
-	state.HybridMode:options('Normal', 'DT', 'Counter')
+	state.HybridMode:options('Normal', 'DT', 'Counter', 'Subtle Blow')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'DT', 'Evasion')
 	state.Weapons:options('Godhands', 'Verethragna', 'Staff', 'Club', 'ProcStaff', 'Barehanded')
 
-	state.ExtraMeleeMode = M{['description'] = 'Extra Melee Mode', 'None', 'Schere', 'Staff'}
+	state.ExtraMeleeMode = M{['description'] = 'Extra Melee Mode', 'None', 'Schere', 'Warder', 'Staff'}
 
 	update_melee_groups()
 	
@@ -288,7 +288,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Adhemar Bonnet +1", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
 		body = "Ken. Samue +1", hands = gear.adhemar.hands.a, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Hes. Hose +3", feet = "Anch. Gaiters +3"
+		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Bhikku Hose +2", feet = "Anch. Gaiters +3"
 	}
 	sets.engaged.Acc = set_combine(sets.engaged, {})
 
@@ -297,7 +297,7 @@ function init_gear_sets()
 	{
 		head = "Malignance CHapeau", ear2 = "Odnowa Earring +1",
 		body = "Mpaca's Doublet", hands = "Malignance Gloves",
-		legs = "Mpaca's Hose", feet = "Malignance Boots"
+		feet = "Malignance Boots"
 	})
 	sets.engaged.Acc.DT = set_combine(sets.engaged.DT, {})
 
@@ -310,12 +310,22 @@ function init_gear_sets()
 	})
 	sets.engaged.Acc.Counter = set_combine(sets.engaged.Counter, {})
 
+	sets.engaged['Subtle Blow'] =
+	{
+		ammo = "Coiste Bodhar",
+		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Odnowa Earring +1",
+		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
+		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Mpaca's Hose", feet = "Malignance Boots"
+	}
+	sets.engaged['Subtle Blow'].Acc = set_combine(sets.engaged['Subtle Blow'], {})
+
 	-- Hundred Fists/Impetus melee set mods
 	sets.engaged.HF = set_combine(sets.engaged, {})
 	sets.engaged.Acc.HF = set_combine(sets.engaged.Acc, {})
 
 	-- Extra Melee Modes
 	sets.Schere = { ear2 = "Schere Earring" }
+	sets.Warder = { neck = "Warder's Charm +1" }
 	sets.Staff =
 	{
 		ammo = "Aurgelmir Orb",
@@ -326,7 +336,7 @@ function init_gear_sets()
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {}
-	sets.buff.Impetus = { body = "Bhikku Cyclas +1" }
+	sets.buff.Impetus = { body = "Bhikku Cyclas +2" }
 	sets.buff.Footwork = { feet = "Anch. Gaiters +3" }
 	sets.buff.Boost = { waist = "Ask Sash" }
 

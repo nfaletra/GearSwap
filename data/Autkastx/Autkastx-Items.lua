@@ -85,3 +85,18 @@ gear.adhemar.body.d = { name = "Adhemar Jacket +1", augments = { 'HP+105', '"Fas
 gear.adhemar.hands = {}
 gear.adhemar.hands.a = { name = "Adhemar Wrist. +1", augments = { 'DEX+12', 'AGI+12', 'Accuracy+20' } }
 gear.adhemar.hands.b = { name = "Adhemar Wrist. +1", augments = { 'STR+12', 'DEX+12', 'Attack+20' } }
+
+-- Apogee Gear
+gear.apogee = {}
+
+-- Bodies
+gear.apogee.body = {}
+gear.apogee.body.a = { name = "Apo. Dalmatica +1", augments = { 'MP+80', 'Pet: "Mag.Atk.Bns."+35', 'Blood Pact Dmg.+8' } }
+
+-- Legs
+gear.apogee.legs = {}
+gear.apogee.legs.a = { name = "Apogee Slacks +1", augments = { 'MP+80', 'Pet: "Mag.Atk.Bns."+35', 'Blood Pact Dmg.+8' } }
+
+-- Feet
+gear.apogee.feet = {}
+gear.apogee.feet.a = { name = "Apogee Pumps +1", augments = { 'MP+80', 'Pet: "Mag.Atk.Bns."+35', 'Blood Pact Dmg.+8' } }

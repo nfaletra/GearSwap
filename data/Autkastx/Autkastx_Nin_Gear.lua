@@ -71,7 +71,7 @@ function init_gear_sets()
 		ammo = "Togakushi Shuriken",
 		head = "Dampening Tam", neck = "Ninja Nodowa +2", ear1 = "Mache Earring +1", ear2 = "Telos Earring",
 		body = "Mummu Jacket +2", hands = gear.adhemar.hands.a, ring1 = "Ramuh Ring +1", ring2 = "Ramuh Ring +1",
-		back = "Andartia's Mantle", waist = "Olseni Belt", legs = "Mummu Kecks +2", feet = "Malignance Boots"
+		back = gear.Andartia.DA, waist = "Olseni Belt", legs = "Mummu Kecks +2", feet = "Malignance Boots"
 	}
 
 	sets.precast.Flourish1 = {}
@@ -82,7 +82,7 @@ function init_gear_sets()
 		ammo = "Sapience Orb",
 		head = gear.herculean_fc_head, neck = "Orunmila's Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = gear.adhemar.body.d, hands = "Leyline Gloves", ring1 = "Rahab Ring", ring2 = "Kishar Ring",
-		back = gear.Andartia.DA, waist = "Flume Belt"
+		back = gear.Andartia.DA, waist = "Flume Belt +1"
 	}
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC,
@@ -393,7 +393,7 @@ function init_gear_sets()
 		ammo = "Sapience Orb",
 		head = gear.herculean_fc_head, neck = "Orunmila's Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = gear.adhemar.body.d, hands = "Leyline Gloves", ring1 = "Rahab Ring", ring2 = "Kishar Ring",
-		waist = "Flume Belt"
+		waist = "Flume Belt +1"
 	}
 
 	sets.midcast.ElementalNinjutsu =
@@ -431,7 +431,7 @@ function init_gear_sets()
 		back = gear.Andartia.MAB, waist = "Cimmerian Sash", feet = "Mochi. Kyahan +3"
 	}
 
-	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, { back = "Andartia's Mantle", feet = "Hattori Kyahan +1" })
+	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, { back = gear.Andartia.DA, feet = "Hattori Kyahan +1" })
 
 	sets.midcast.RA =
 	{
@@ -610,7 +610,7 @@ function init_gear_sets()
 	sets.weapons.HeishiMag = { main = "Heishi Shorinken", sub = "Kunimitsu" }
 	sets.weapons.Magic = { main = "Kaja Katana", sub = "Kunimitsu" }
 	sets.weapons.Tauret = { main = "Tauret", sub = "Kunimitsu" }
-	sets.weapons.GKT = { main = "Kaja Tachi", sub = "Bloodrain Strap" }
+	sets.weapons.GKT = { main = "Hachimonji", sub = "Bloodrain Strap" }
 	sets.weapons.Karambit = { main = "Karambit" }
 	sets.weapons.ProcDagger = { main = "Ceremonial Dagger", sub = "Debahocho" }
 	sets.weapons.ProcSword = { main = "Twinned Blade", sub = "Debahocho" }

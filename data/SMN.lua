@@ -457,8 +457,32 @@ function job_customize_idle_set(idleSet)
 			end
         end
     end
-   
-    return idleSet
+
+	--[[function customize_idle_set(idleSet)
+		if pet.isvalid then
+			if pet.element == world.day_element then
+					idleSet = set_combine(idleSet, sets.perp.Day)
+			end
+			if pet.element == world.weather_element then
+					idleSet = set_combine(idleSet, sets.perp.Weather)
+			end
+			if sets.perp[pet.name] then
+					idleSet = set_combine(idleSet, sets.perp[pet.name])
+			end
+			if state.Buff["Avatar's Favor"] and avatars:contains(pet.name) then
+				if state.IdleMode == 'DT' then
+					idleSet = sets.idle.DT.Avatar.Melee
+				else
+					idleSet = set_combine(idleSet, sets.idle.Avatar.Favor)
+				end
+			end
+			if pet.status == 'Engaged' then
+				idleSet = set_combine(idleSet, sets.idle.Avatar.Melee)
+			end                         
+		end]]
+	   
+
+	return idleSet
 end
 
 -- Called by the 'update' self-command, for common needs.

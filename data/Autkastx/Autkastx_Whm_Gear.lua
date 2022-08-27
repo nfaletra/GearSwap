@@ -5,18 +5,12 @@ function user_job_setup()
 	state.OffenseMode:options('Normal', 'Acc')
 	state.CastingMode:options('Normal','Resistant', 'SIRD', 'DT')
 	state.IdleMode:options('Normal', 'PDT', 'MEVA')
+	state.HybridMode:options('None', 'Dual Wield')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None', 'DualWeapons', 'MeleeWeapons')
+	state.Weapons:options('None', 'Maxentius', 'Daybreak', 'DualMaxentius', 'DualDaybreak')
 	state.WeaponskillMode:options('Normal')
-
-	gear.obi_cure_waist = "Austerity Belt +1"
-	gear.obi_cure_back = "Alaunus's Cape"
-
-	gear.obi_nuke_waist = "Sekhmet Corset"
-	gear.obi_high_nuke_waist = "Yamabuki-no-Obi"
-	gear.obi_nuke_back = "Toro Cape"
 
 	-- Additional local binds
 	send_command('bind ^` input /ma "Arise" <t>')
@@ -70,8 +64,10 @@ function init_gear_sets()
 	--------------------------------------
 
 	-- Weapons sets
-	sets.weapons.MeleeWeapons = { main = "Maxentius", sub = "Ammurapi Shield" }
-	sets.weapons.DualWeapons = { main = "Maxentius", sub = "C. Palug Hammer" }
+	sets.weapons.Maxentius = { main = "Maxentius", sub = "Genmei Shield" }
+	sets.weapons.Daybreak = { main = "Daybreak", sub = "Genmei Shield" }
+	sets.weapons.DualMaxentius = { main = "Maxentius", sub = "C. Palug Hammer" }
+	sets.weapons.DualDaybreak = { main = "Daybreak", sub = "C. Palug Hammer" }
 	
 	sets.buff.Sublimation = { waist = "Embla Sash" }
 	sets.buff.DTSublimation = { waist = "Embla Sash" }
@@ -131,7 +127,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Nyame Helm", neck = "Clr. Torque +2", ear1 = "Ishvara earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Ilabrat Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Rufescent Ring",
 		back = "Alaunus's Cape", waist = "Luminary Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -147,9 +143,20 @@ function init_gear_sets()
 	sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Amar Cluster",
-		head = "Piety Cap +3", ear1 = "Telos Earring", ear2 = "Regal Earring",
+		head = "Piety Cap +3", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Regal Earring",
 		body = "Piety Bliaut +3", hands = "Piety Mitts +3", ring2 = "Rufescent Ring",
 		waist = "Fotia Belt", legs = "Piety Pantaln. +3", feet = "Piety Duckbills +3"
+	})
+
+	sets.precast.WS['Mystic Boon'] = set_combine(sets.precast.WS,
+	{
+		ear1 = "Regal Earring"
+	})
+
+	sets.precast.WS['Seraph Strike'] = set_combine(sets.precast.WS,
+	{
+		ammo = "Crepuscular Pebble",
+		ear1 = "Regal Earring"
 	})
 
 	sets.MaxTP = { ear1="Telos Earring", ear2="Brutal Earring" }
@@ -188,7 +195,7 @@ function init_gear_sets()
 		main = "Queller Rod", sub = "Sors Shield", ammo = "Pemphredo Tathlum",
 		head = "Kaykaus Mitra +1", neck = "Clr. Torque +2", ear1 = "Nourish. Earring +1", ear2 = "Mendi. Earring",
 		body = "Theo. Bliaut +3", hands = "Theophany Mitts +3", ring1 = "Janniston Ring", ring2 = "Lebeche Ring",
-		back = "Alaunus's Cape", waist = "Hachirin-no-Obi", legs = "Ebers Pant. +1", feet = "Vanya Clogs"
+		back = "Alaunus's Cape", waist = "Hachirin-no-Obi", legs = "Ebers Pant. +2", feet = "Vanya Clogs"
 	}
 	sets.midcast.LightWeatherCure = set_combine(sets.midcast.Cure, { waist = "Hachirin-no-Obi", back = "Twilight Cape" })
 	sets.midcast.LightDayCure = set_combine(sets.midcast.Cure, { waist = "Hachirin-no-Obi", back = "Twilight Cape" })
@@ -209,7 +216,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Ebers Cap +1", neck = "Clr. Torque +2", ear1 = "Nourish. Earring +1", ear2 = "Mendi. Earring",
 		body = "Ebers Bliaut +1", hands = "Theophany Mitts +3", ring1 = "Janniston Ring", ring2 = "Lebeche Ring",
-		back = "Alaunus's Cape", waist = "Hachirin-no-Obi", legs = "Ebers Pant. +1", feet = "Vanya Clogs"
+		back = "Alaunus's Cape", waist = "Hachirin-no-Obi", legs = "Ebers Pant. +2", feet = "Vanya Clogs"
 	}
 
 	sets.midcast.MeleeCureSolace = set_combine(sets.midcast.MeleeCure, { body = "Ebers Bliaut +1" })
@@ -423,31 +430,16 @@ function init_gear_sets()
 	{
 		ammo = "Amar Cluster",
 		head = "Aya. Zucchetto +2", neck = "Lissome Necklace", ear1 = "Telos Earring" , ear2 = "Brutal Earring",
-		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Petrov Ring", ring2 = "Ilabrat Ring",
+		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Petrov Ring", ring2 = "Chirich Ring +1",
 		back = "Alaunus's Cape", waist = "Windbuffet Belt +1", legs = "Aya. Cosciales +2", feet = "Aya. Gambieras +2"
 	}
-	sets.engaged.Acc = set_combine(sets.engaged, { ear2 = "Mache Earring +1" })
+	sets.engaged.Acc = set_combine(sets.engaged, {})
 
-	sets.engaged.DW = set_combine(sets.engaged, { ear1 = "Suppanomimi", ear2 = "Eabani Earring" })
-	sets.engaged.DW.Acc = set_combine(sets.engaged.DW, {})
+	sets.engaged['Dual Wield'] = set_combine(sets.engaged, { ear1 = "Suppanomimi", ear2 = "Eabani Earring" })
+	sets.engaged['Dual Wield'].Acc = set_combine(sets.engaged.DW, {})
 
 	-- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
 	sets.buff['Divine Caress'] = { hands = "Ebers Mitts +1", back = "Mending Cape" }
-
-	sets.HPDown =
-	{
-		head="Pixie Hairpin +1",ear1="Mendicant's Earring",ear2="Evans Earring",
-		body="Zendik Robe",hands="Hieros Mittens",ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
-		back="Swith Cape +1",waist="Carrier's Sash",legs="Shedir Seraweels",feet=""
-	}
-
-	sets.HPCure =
-	{
-		main="Queller Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head="Nyame Helm",neck="Nodens Gorget",ear1="Etiolation Earring",ear2="Ethereal Earring",
-		body="Kaykaus Bliaut",hands="Kaykaus Cuffs",ring1="Kunaji Ring",ring2="Meridian Ring",
-		back="Alaunus's Cape",waist="Eschan Stone",legs="Ebers Pant. +1",feet="Kaykaus Boots"
-	}
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 

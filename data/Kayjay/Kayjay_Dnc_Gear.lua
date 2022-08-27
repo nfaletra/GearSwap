@@ -212,7 +212,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle =
 	{
-		ammo = "Charis Feather",
+		ammo = "Hasty Pinion +1",
 		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
 		body = "Rawhide Vest", hands = "Espial Bracers", ring1 = "Rajas Ring", ring2 = "Keen Ring",
 		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Feast Hose", feet = "Horos Toe Shoes +1"
@@ -253,7 +253,7 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged =
 	{
-		ammo = "Charis Feather",
+		ammo = "Hasty Pinion +1",
 		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
 		body = "Rawhide Vest", hands = "Espial Bracers", ring1 = "Rajas Ring", ring2 = "Keen Ring",
 		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Feast Hose", feet = "Horos Toe Shoes +1"
