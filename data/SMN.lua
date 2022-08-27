@@ -92,17 +92,17 @@ end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
-
-    state.Buff["Avatar's Favor"] = buffactive["Avatar's Favor"] or false
-    state.Buff["Astral Conduit"] = buffactive["Astral Conduit"] or false
+	state.Buff["Avatar's Favor"] = buffactive["Avatar's Favor"] or false
+	state.Buff["Astral Conduit"] = buffactive["Astral Conduit"] or false
 	state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
 
-    avatars = S{"Carbuncle", "Fenrir", "Diabolos", "Ifrit", "Titan", "Leviathan", "Garuda", "Shiva", "Ramuh", "Odin", "Alexander", "Cait Sith", "Siren"}
-    spirits = S{"LightSpirit", "DarkSpirit", "FireSpirit", "EarthSpirit", "WaterSpirit", "AirSpirit", "IceSpirit", "ThunderSpirit"}
+	avatars = S{"Carbuncle", "Fenrir", "Diabolos", "Ifrit", "Titan", "Leviathan", "Garuda", "Shiva", "Ramuh", "Odin", "Alexander", "Cait Sith", "Siren"}
+	avatar_recasts = { ['Carbuncle'] = 296, ['Fenrir'] = 297, ['Diabolos'] = 304, ['Ifrit'] = 298, ['Titan'] = 299, ['Leviathan'] = 300, ['Garuda'] = 301, ['Shiva'] = 302, ['Ramuh'] = 303, ['Cait Sith'] = 307, ['Siren'] = 355 }
+	spirits = S{"LightSpirit", "DarkSpirit", "FireSpirit", "EarthSpirit", "WaterSpirit", "AirSpirit", "IceSpirit", "ThunderSpirit"}
 	spirit_of = {['Light']="Light Spirit", ['Dark']="Dark Spirit", ['Fire']="Fire Spirit", ['Earth']="Earth Spirit",
-        ['Water']="Water Spirit", ['Wind']="Air Spirit", ['Ice']="Ice Spirit", ['Lightning']="Thunder Spirit"}
+		['Water']="Water Spirit", ['Wind']="Air Spirit", ['Ice']="Ice Spirit", ['Lightning']="Thunder Spirit"}
 
-    magicalRagePacts = S{
+	magicalRagePacts = S{
 		'Inferno','Earthen Fury','Tidal Wave','Aerial Blast','Diamond Dust','Judgment Bolt','Searing Light','Howling Moon','Ruinous Omen','Clarsach Call','Impact',
 		'Fire II','Stone II','Water II','Aero II','Blizzard II','Thunder II',
 		'Fire IV','Stone IV','Water IV','Aero IV','Blizzard IV','Thunder IV',
@@ -132,11 +132,11 @@ function job_setup()
     pacts.bp70 = {['Ifrit']='Flaming Crush', ['Shiva']='Rush', ['Garuda']='Predator Claws', ['Titan']='Mountain Buster',
 		['Ramuh']='Chaotic Strike', ['Leviathan']='Spinning Dive', ['Carbuncle']='Meteorite', ['Fenrir']='Eclipse Bite',
 		['Diabolos']='Nether Blast',['Cait Sith']='Regal Scratch'}
-    pacts.bp75 = {['Ifrit']='Meteor Strike', ['Shiva']='Heavenly Strike', ['Garuda']='Wind Blade', ['Titan']='Geocrush',
+	pacts.bp75 = {['Ifrit']='Meteor Strike', ['Shiva']='Heavenly Strike', ['Garuda']='Wind Blade', ['Titan']='Geocrush',
 		['Ramuh']='Thunderstorm', ['Leviathan']='Grand Fall', ['Carbuncle']='Holy Mist', ['Fenrir']='Lunar Bay',
 		['Diabolos']='Night Terror', ['Cait Sith']='Level ? Holy'}
 	pacts.bp99 = {['Ifrit']='Conflag Strike',['Titan']='Crag Throw',['Ramuh']='Volt Strike', ['Siren']='Hysteric Assault'}
-    pacts.astralflow = {['Ifrit']='Inferno', ['Shiva']='Diamond Dust', ['Garuda']='Aerial Blast', ['Titan']='Earthen Fury',
+	pacts.astralflow = {['Ifrit']='Inferno', ['Shiva']='Diamond Dust', ['Garuda']='Aerial Blast', ['Titan']='Earthen Fury',
 		['Ramuh']='Judgment Bolt', ['Leviathan']='Tidal Wave', ['Carbuncle']='Searing Light', ['Fenrir']='Howling Moon',
 		['Diabolos']='Ruinous Omen', ['Cait Sith']="Altana's Favor"}
 	
@@ -153,7 +153,13 @@ function job_setup()
 	state.PactSpamMode = M(false, 'Pact Spam Mode')
 	state.AutoFavor = M(true, 'Auto Favor')
 	state.AutoConvert = M(true, 'Auto Convert')
-	
+
+	autosummon = nil
+	autorage = nil
+	autoward = nil
+
+	buffmap = { ['Crimson Howl'] = 'Warcry' }
+
 	autows = 'Spirit Taker'
 	autofood = 'Akamochi'
 	
@@ -510,19 +516,19 @@ end
 
 -- Called for custom player commands.
 function job_self_command(commandArgs, eventArgs)
-    if commandArgs[1]:lower() == 'petweather' then
-        handle_petweather()
-        eventArgs.handled = true
-    elseif commandArgs[1]:lower() == 'siphon' then
-        handle_siphoning()
-        eventArgs.handled = true
-    elseif commandArgs[1]:lower() == 'pact' then
-        handle_pacts(commandArgs)
-        eventArgs.handled = true
+	if commandArgs[1]:lower() == 'petweather' then
+		handle_petweather()
+		eventArgs.handled = true
+	elseif commandArgs[1]:lower() == 'siphon' then
+		handle_siphoning()
+		eventArgs.handled = true
+	elseif commandArgs[1]:lower() == 'pact' then
+		handle_pacts(commandArgs)
+		eventArgs.handled = true
 	elseif commandArgs[1]:lower() == 'elemental' then
 		handle_elemental(commandArgs)
 		eventArgs.handled = true			
-    elseif commandArgs[1]:lower() == 'conduitlock' then
+	elseif commandArgs[1]:lower() == 'conduitlock' then
 		if ConduitLock == true then
 			ConduitLock = false
 			add_to_chat(122, "Astral Conduit no longer locks gear.")
@@ -530,7 +536,26 @@ function job_self_command(commandArgs, eventArgs)
 			ConduitLock = true
 			add_to_chat(122, "Astral Conduit now locks gear.")
 		end
-    end
+	elseif commandArgs[1]:lower() == 'autosummon' then
+		if avatars:contains(commandArgs[2]:ucfirst()) then
+			autosummon = commandArgs[2]:ucfirst()
+			add_to_chat(122, "AutoSummon set to: "..autosummon)
+		else
+			add_to_chat(122, "Invalid avatar")
+		end
+	elseif commandArgs[1]:lower() == 'autoward' then
+		autoward = commandArgs[2]
+		if commandArgs[3] then
+			autoward = autoward.." "..commandArgs[3]
+		end
+		add_to_chat(122, "AutoWard set to: "..autoward)
+	elseif commandArgs[1]:lower() == 'autorage' then
+		autorage = commandArgs[2]
+		if commandArgs[3] then
+			autorage = autorage.." "..commandArgs[3]
+		end
+		add_to_chat(122, "AutoRage set to: "..autorage)
+	end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -804,6 +829,9 @@ function job_tick()
 	if check_favor() then return true end
 	if check_buff() then return true end
 	if check_buffup() then return true end
+	if check_summon() then return true end
+	if check_ward() then return true end
+	if check_rage() then return true end
 	return false
 end
 
@@ -944,6 +972,69 @@ function check_buffup()
 	else
 		return false
 	end
+end
+
+function check_summon()
+	if data.areas.cities:contains(world.area) then
+		return false
+	end
+
+	if autosummon and not pet.isvalid then
+		local spell_recasts = windower.ffxi.get_spell_recasts()
+		if spell_recasts[avatar_recasts[autosummon]] < spell_latency then
+			windower.chat.input('/ma "'..autosummon..'" <me>')
+			tickdelay = os.clock() + 2
+			return true
+		end
+	end
+
+	return false
+end
+
+function check_ward()
+	if data.areas.cities:contains(world.area) then
+		return false
+	end
+
+	if not pet.isvalid then
+		return false
+	end
+
+	if autoward and buffmap[autoward] and not buffactive[buffmap[autoward]] then
+		local abil_recasts = windower.ffxi.get_ability_recasts()
+		if abil_recasts[174] < latency then
+			windower.chat.input('/pet "'..autoward..'" <me>')
+			tickdelay = os.clock() + 1.1
+			return true
+		end
+	end
+
+	return false
+end
+
+function check_rage()
+	if data.areas.cities:contains(world.area) then
+		return false
+	end
+
+	if not pet.isvalid then
+		return false
+	end
+
+	if pet.status ~= 'Engaged' then
+		return false
+	end
+
+	if autorage then
+		local abil_recasts = windower.ffxi.get_ability_recasts()
+		if abil_recasts[173] < latency then
+			windower.chat.input('/pet "'..autorage..'"')
+			tickdelay = os.clock() + 1.1
+			return true
+		end
+	end
+
+	return false
 end
 
 buff_spell_lists = {
