@@ -333,7 +333,7 @@ function init_gear_sets()
 	sets.idle.Ochain =
 	{
 		sub = "Ochain", ammo = "Staunch Tathlum +1",
-		head = "Chev. Armet +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
+		head = "Chev. Armet +2", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_shield, waist = "Flume Belt", legs = "Chev. Cuisses +1", feet = "Rev. Leggings +3"
 	}
@@ -408,7 +408,7 @@ function init_gear_sets()
 	sets.engaged.Perfect =
 	{
 		sub = "Priwen", ammo = "Staunch Tathlum +1",
-		head = "Chev. Armet +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
+		head = "Chev. Armet +2", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Rev. Leggings +3"
 	}
@@ -417,7 +417,7 @@ function init_gear_sets()
 	sets.engaged.Perfect2 =
 	{
 		sub = "Srivatsa", ammo = "Staunch Tathlum +1",
-		head = "Chev. Armet +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
+		head = "Chev. Armet +2", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Rev. Leggings +3"
 	}
@@ -453,7 +453,7 @@ function init_gear_sets()
 	sets.engaged.Ochain =
 	{
 		sub = "Ochain", ammo = "Staunch Tathlum +1",
-		head = "Chev. Armet +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
+		head = "Chev. Armet +2", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_shield, waist = "Flume Belt", legs = "Chev. Cuisses +1", feet = "Rev. Leggings +3"
 	}
