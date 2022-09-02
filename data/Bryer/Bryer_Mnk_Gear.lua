@@ -205,7 +205,7 @@ function init_gear_sets()
 	-- Midcast Sets
 	sets.midcast.FastRecast =
 	{
-		ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum +1",
 		head=gear.herculean_fc_head, ear1 = "Loquac. Earring",
 		hands = "Leyline Gloves",
 		legs = "Limbo Trousers"
@@ -222,7 +222,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle =
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
@@ -230,7 +230,7 @@ function init_gear_sets()
 
 	sets.idle.DT =
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Mnk. Nodowa +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Mpaca's Doublet", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Mpaca's Hose", feet = "Nyame Sollerets"
@@ -238,7 +238,7 @@ function init_gear_sets()
 
 	sets.idle.Evasion =
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
@@ -246,7 +246,7 @@ function init_gear_sets()
 
 	sets.idle.Weak =
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Etiolation Earring",
 		body = "Hes. Cyclas +3", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
@@ -255,7 +255,7 @@ function init_gear_sets()
 	-- Defense sets
 	sets.defense.PDT =
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2",ear1 = "Sherida Earring", ear2 = "Etiolation Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
@@ -263,7 +263,7 @@ function init_gear_sets()
 
 	sets.defense.MDT =
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2",ear1 = "Sherida Earring", ear2 = "Etiolation Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"
@@ -271,7 +271,7 @@ function init_gear_sets()
 		
 	sets.defense.MEVA =
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2",ear1 = "Sherida Earring", ear2 = "Etiolation Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt", legs = "Malignance Tights", feet = "Malignance Boots"

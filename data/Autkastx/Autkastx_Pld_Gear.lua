@@ -58,7 +58,7 @@ function init_gear_sets()
 
 	sets.Enmity.SIRD = set_combine(sets.Enmity,
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Souv. Schaller +1",
 		hands = "Regal Gauntlets",
 		waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
@@ -202,7 +202,7 @@ function init_gear_sets()
 
 	sets.midcast.Cure =
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Souv. Cuirass +1", hands = "Macabre Gaunt. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_cure, waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
@@ -214,7 +214,7 @@ function init_gear_sets()
 
 	sets.midcast.Reprisal =
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
 		body = "Rev. Surcoat +3", hands = "Regal Gauntlets", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
 		back = gear.rudianos_fc, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Souv. Schuhs +1"
@@ -236,7 +236,7 @@ function init_gear_sets()
 	}
 	sets.midcast['Enhancing Magic'].SIRD =
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Rev. Surcoat +3", hands = "Regal Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Stikini Ring +1",
 		back = "Moonbeam Cape", waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
@@ -249,7 +249,7 @@ function init_gear_sets()
 	
 	sets.midcast.Phalanx = set_combine(sets.midcast['Enhancing Magic'],
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Odyssean Helm", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Odyssean Chestplate", hands = "Souv. Handsch. +1", ring1 = "Stikini Ring", ring2 = "Stikini Ring",
 		back = "Weard Mantle", waist = "Creed Baudrier", legs = "Sakpata's Cuisses", feet = "Souveran Schuhs +1"
@@ -287,25 +287,25 @@ function init_gear_sets()
 	-- Excalibur R15 / Priwen - Capped block
 	sets.idle.Perfect =
 	{
-		sub = "Priwen", ammo = "Staunch Tathlum",
-		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Foresti Earring", ear2 = "Odnowa Earring +1",
-		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
+		sub = "Priwen", ammo = "Staunch Tathlum +1",
+		head = "Chev. Armet +2", neck = "Unmoving Collar +1", ear1 = "Foresti Earring", ear2 = "Odnowa Earring +1",
+		body = "Sakpata's Breastplate", hands = "Sakpata's Guantlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Rev. Leggings +3"
 	}
 
 	-- Brilliance / Srivatsa
 	sets.idle.Perfect2 =
 	{
-		sub = "Srivatsa", ammo = "Staunch Tathlum",
-		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Foresti Earring", ear2 = "Odnowa Earring +1",
-		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
+		sub = "Srivatsa", ammo = "Staunch Tathlum +1",
+		head = "Chev. Armet +2", neck = "Unmoving Collar +1", ear1 = "Foresti Earring", ear2 = "Odnowa Earring +1",
+		body = "Sakpata's Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Rev. Leggings +3"
 	}
 
 	-- MEva/Lower content block
 	sets.idle.Priwen =
 	{
-		sub = "Priwen", ammo = "Staunch Tathlum",
+		sub = "Priwen", ammo = "Staunch Tathlum +1",
 		head = "Sakpata's Helm", neck = "Unmoving Collar", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Macabre Gaunt. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
@@ -314,7 +314,7 @@ function init_gear_sets()
 	-- MDT
 	sets.idle.Aegis =
 	{
-		sub = "Aegis", ammo = "Staunch Tathlum",
+		sub = "Aegis", ammo = "Staunch Tathlum +1",
 		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Rev. Surcoat +3", hands = "Sakpata's Gauntlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_counter, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
@@ -323,7 +323,7 @@ function init_gear_sets()
 	-- Brilliance or Sakpata Sword - Highest Magic Protection
 	sets.idle.MEvaAegis =
 	{
-		sub = "Aegis", ammo = "Staunch Tathlum",
+		sub = "Aegis", ammo = "Staunch Tathlum +1",
 		head = "Sakpata's Helm", neck = "Unmoving Collar", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_counter, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
@@ -332,7 +332,7 @@ function init_gear_sets()
 	-- MP Restore
 	sets.idle.Ochain =
 	{
-		sub = "Ochain", ammo = "Staunch Tathlum",
+		sub = "Ochain", ammo = "Staunch Tathlum +1",
 		head = "Chev. Armet +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_shield, waist = "Flume Belt", legs = "Chev. Cuisses +1", feet = "Rev. Leggings +3"
@@ -407,25 +407,25 @@ function init_gear_sets()
 	-- Excalibur R15 / Priwen - Capped block
 	sets.engaged.Perfect =
 	{
-		sub = "Priwen", ammo = "Staunch Tathlum",
-		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Foresti Earring", ear2 = "Odnowa Earring +1",
-		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
+		sub = "Priwen", ammo = "Staunch Tathlum +1",
+		head = "Chev. Armet +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
+		body = "Sakpata's Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Rev. Leggings +3"
 	}
 
 	-- Brilliance / Srivatsa
 	sets.engaged.Perfect2 =
 	{
-		sub = "Srivatsa", ammo = "Staunch Tathlum",
-		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Foresti Earring", ear2 = "Odnowa Earring +1",
-		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
+		sub = "Srivatsa", ammo = "Staunch Tathlum +1",
+		head = "Chev. Armet +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
+		body = "Sakpata's Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Rev. Leggings +3"
 	}
 
 	-- MEva/Lower content block
 	sets.engaged.Priwen =
 	{
-		sub = "Priwen", ammo = "Staunch Tathlum",
+		sub = "Priwen", ammo = "Staunch Tathlum +1",
 		head = "Sakpata's Helm", neck = "Unmoving Collar", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Macabre Gaunt. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
@@ -434,7 +434,7 @@ function init_gear_sets()
 	-- MDT
 	sets.engaged.Aegis =
 	{
-		sub = "Aegis", ammo = "Staunch Tathlum",
+		sub = "Aegis", ammo = "Staunch Tathlum +1",
 		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Rev. Surcoat +3", hands = "Sakpata's Gauntlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_counter, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
@@ -443,16 +443,16 @@ function init_gear_sets()
 	-- Brilliance or Sakpata Sword - Highest Magic Protection
 	sets.engaged.MEvaAegis =
 	{
-		sub = "Aegis", ammo = "Staunch Tathlum",
+		sub = "Aegis", ammo = "Staunch Tathlum +1",
 		head = "Sakpata's Helm", neck = "Unmoving Collar", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
+		body = "Sacro Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_counter, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
 	}
 
 	-- MP Restore
 	sets.engaged.Ochain =
 	{
-		sub = "Ochain", ammo = "Staunch Tathlum",
+		sub = "Ochain", ammo = "Staunch Tathlum +1",
 		head = "Chev. Armet +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_shield, waist = "Flume Belt", legs = "Chev. Cuisses +1", feet = "Rev. Leggings +3"

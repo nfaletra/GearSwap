@@ -178,7 +178,7 @@ function init_gear_sets()
 	
 	sets.idle =
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Twilight Torque", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Warden's Ring", ring2 = "Gelatinous Ring +1",
 		back = "Atheling Mantle", waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"

@@ -355,7 +355,7 @@ function init_gear_sets()
 		back = "Alaunus's Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
 	}
 
-	sets.idle.PDT = set_combine(sets.idle, { ammo = "Staunch Tathlum" })
+	sets.idle.PDT = set_combine(sets.idle, { ammo = "Staunch Tathlum +1" })
 	sets.idle.MDT = set_combine(sets.idle.PDT, {})
 
 	-- Resting sets

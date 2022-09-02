@@ -64,7 +64,7 @@ function init_gear_sets()
 	sets.precast.CorsairRoll =
 	{
 		head = "Lanun Tricorne +3", neck = "Regal Necklace", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
-		body = "Malignance Tabard", hands = "Chasseur's Gants +1", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
+		body = "Malignance Tabard", hands = "Chasseur's Gants +2", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.Camulus.Snapshot, waist = "Flume Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -74,7 +74,7 @@ function init_gear_sets()
 	sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, { feet = "Chass. Bottes +1" })
 	sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, { head = "Chass. Tricorne +1" })
 	sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, { body = "Chasseur's Frac +1" })
-	sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, { hands = "Chasseur's Gants +1" })
+	sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, { hands = "Chasseur's Gants +2" })
 
 	sets.precast.CorsairShot =
 	{

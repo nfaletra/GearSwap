@@ -90,7 +90,7 @@ function init_gear_sets()
 		neck = "Magoraga Beads",
 		body = "Mochi. Chainmail +3",
 	})
-	sets.precast.FC.Shadows = set_combine(sets.precast.FC.Utsusemi, {ammo="Staunch Tathlum",ring1="Prolix Ring"})
+	sets.precast.FC.Shadows = set_combine(sets.precast.FC.Utsusemi, {ammo="Staunch Tathlum +1",ring1="Prolix Ring"})
 
 	-- Snapshot for ranged
 	sets.precast.RA = {}
@@ -450,7 +450,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle =
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Ninja Nodowa +2", ear1 = "Eabani Earring", ear2 = "Etiolation Earring",
 		body = "Mpaca's Doublet", hands = "Nyame Gauntlets", ring1 = "Warden's Ring", ring2 = "Defending Ring",
 		back = gear.Andartia.DA, waist = "Carrier's Sash", legs = "Mpaca's Hose", feet = "Nyame Sollerets"
@@ -579,7 +579,7 @@ function init_gear_sets()
 		waist = "Windbuffet Belt +1"
 	})
 
-	sets.engaged.Proc = set_combine(sets.engaged, { ammo = "Staunch Tathlum" })
+	sets.engaged.Proc = set_combine(sets.engaged, { ammo = "Staunch Tathlum +1" })
 
 	--------------------------------------
 	-- Custom buff sets
@@ -587,7 +587,7 @@ function init_gear_sets()
 
 	sets.buff.Migawari = {} -- body = "Hattori Ningi +1"
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
-	sets.buff.Futae = {}
+	sets.buff.Futae = { hands = "Hattori Tekko +1" }
 	sets.buff.Yonin = { legs = "Hattori Hakama +1" }
 	sets.buff.Innin = {} --head = "Hattori Zukin +1"
 

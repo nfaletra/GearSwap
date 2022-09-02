@@ -215,23 +215,23 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Ebers Cap +1", neck = "Clr. Torque +2", ear1 = "Nourish. Earring +1", ear2 = "Mendi. Earring",
-		body = "Ebers Bliaut +1", hands = "Theophany Mitts +3", ring1 = "Janniston Ring", ring2 = "Lebeche Ring",
+		body = "Ebers Bliaut +2", hands = "Theophany Mitts +3", ring1 = "Janniston Ring", ring2 = "Lebeche Ring",
 		back = "Alaunus's Cape", waist = "Hachirin-no-Obi", legs = "Ebers Pant. +2", feet = "Vanya Clogs"
 	}
 
-	sets.midcast.MeleeCureSolace = set_combine(sets.midcast.MeleeCure, { body = "Ebers Bliaut +1" })
+	sets.midcast.MeleeCureSolace = set_combine(sets.midcast.MeleeCure, { body = "Ebers Bliaut +2" })
 	sets.midcast.MeleeLightWeatherCure = set_combine(sets.midcast.MeleeCure, { waist = "Hachirin-no-Obi" })
-	sets.midcast.MeleeLightWeatherCureSolace = set_combine(sets.midcast.MeleeCure, { body = "Ebers Bliaut +1", waist = "Hachirin-no-Obi" })
-	sets.midcast.MeleeLightDayCureSolace = set_combine(sets.midcast.MeleeCure, { body = "Ebers Bliaut +1", waist = "Hachirin-no-Obi" })
+	sets.midcast.MeleeLightWeatherCureSolace = set_combine(sets.midcast.MeleeCure, { body = "Ebers Bliaut +2", waist = "Hachirin-no-Obi" })
+	sets.midcast.MeleeLightDayCureSolace = set_combine(sets.midcast.MeleeCure, { body = "Ebers Bliaut +2", waist = "Hachirin-no-Obi" })
 	sets.midcast.MeleeLightDayCure = set_combine(sets.midcast.MeleeCure, { waist = "Hachirin-no-Obi" })
 	sets.midcast.MeleeCuraga = set_combine(sets.midcast.MeleeCure, {})
 	sets.midcast.MeleeLightWeatherCuraga = set_combine(sets.midcast.MeleeCure, { waist = "Hachirin-no-Obi" })
 	sets.midcast.MeleeLightDayCuraga = set_combine(sets.midcast.MeleeCure, { waist = "Hachirin-no-Obi" })
 
-	sets.midcast.CureSolace.DT = set_combine(sets.midcast.Cure.DT, { body = "Ebers Bliaut +1" })
+	sets.midcast.CureSolace.DT = set_combine(sets.midcast.Cure.DT, { body = "Ebers Bliaut +2" })
 	sets.midcast.LightWeatherCure.DT = set_combine(sets.midcast.Cure.DT, { waist = "Hachirin-no-Obi" })
-	sets.midcast.LightWeatherCureSolace.DT = set_combine(sets.midcast.Cure.DT, { body = "Ebers Bliaut +1", waist = "Hachirin-no-Obi" })
-	sets.midcast.LightDayCureSolace.DT = set_combine(sets.midcast.Cure.DT, { body = "Ebers Bliaut +1", waist = "Hachirin-no-Obi" })
+	sets.midcast.LightWeatherCureSolace.DT = set_combine(sets.midcast.Cure.DT, { body = "Ebers Bliaut +2", waist = "Hachirin-no-Obi" })
+	sets.midcast.LightDayCureSolace.DT = set_combine(sets.midcast.Cure.DT, { body = "Ebers Bliaut +2", waist = "Hachirin-no-Obi" })
 	sets.midcast.LightDayCure.DT = set_combine(sets.midcast.Cure.DT, { waist = "Hachirin-no-Obi" })
 	sets.midcast.Curaga.DT = set_combine(sets.midcast.Cure.DT, {})
 	sets.midcast.LightWeatherCuraga.DT = set_combine(sets.midcast.Cure.DT, { waist = "Hachirin-no-Obi" })
@@ -376,7 +376,7 @@ function init_gear_sets()
 
 	sets.idle.PDT =
 	{
-		main = "Daybreak", sub = "Genmei Shield", ammo = "Staunch Tathlum",
+		main = "Daybreak", sub = "Genmei Shield", ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Genmei Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
 		back = "Alaunus's Cape", waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
@@ -384,7 +384,7 @@ function init_gear_sets()
 
 	sets.idle.MEVA =
 	{
-		main = "Daybreak", sub = "Genmei Shield", ammo = "Staunch Tathlum",
+		main = "Daybreak", sub = "Genmei Shield", ammo = "Staunch Tathlum +1",
 		head = "Bunzi's Hat", neck = "Warder's Charm +1", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
 		body = "Bunzi's Robe", hands = "Bunzi's Gloves", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
 		back = "Alaunus's Cape", waist = "Carrier's Sash", legs = "Bunzi's Pants", feet = "Bunzi's Sabots"

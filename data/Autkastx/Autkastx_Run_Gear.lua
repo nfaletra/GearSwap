@@ -95,7 +95,7 @@ function init_gear_sets()
 	-- Pulse sets, different stats for different rune modes, stat aligned.
 	sets.precast.JA['Vivacious Pulse'] =
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Erilaz Galea +1", neck = "Incanter's Torqie", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Stikini Ring +1",
 		back = gear.Ogma.Idle, waist = "Engraved Belt", legs = "Runeist's Trouser +3", feet = "Nyame Sollerets"
@@ -194,7 +194,7 @@ function init_gear_sets()
 	--------------------------------------
 	sets.SIRD = -- 95% SIRD
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Agwu's Cap", neck = "Moonlight Necklace",
 		hands = "Regal Gauntlets",
 		gear.Ogma.Idle, waist = "Rumination Sash", legs = "Carmine Cuisses +1", feet = "Taeon Boots"
@@ -202,7 +202,7 @@ function init_gear_sets()
 
 	sets.midcast.FastRecast =
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Runeist's Cap +3", neck = "Futhark Torque +2", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Defending Ring", ring2 = "Kishar Ring",
 		waist = "Engraved Belt", legs = "Agwu's Slops", feet = "Nyame Sollerets"
@@ -262,7 +262,7 @@ function init_gear_sets()
 
 	sets.midcast.Cure =
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Runeist Bandeau +1", neck = "Sacro Gorget", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Nyame Mail", hands = "Agwu's Gages", ring1 = "Defending Ring", ring2 = "Janniston Ring",
 		back = gear.Ogma.Idle, waist = "Luminary Sash", legs = "Agwu's Slops", feet = "Nyame Sollerets"
@@ -285,7 +285,7 @@ function init_gear_sets()
 
 	sets.idle =
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Futhark Torque +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Runeist Coat +1", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.Ogma.Idle, waist = "Engraved Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
@@ -398,7 +398,7 @@ function init_gear_sets()
 	}
 	sets.engaged.Tank.DT = set_combine(sets.engaged.Tank,
 	{
-		ammo = "Staunch Tathlum",
+		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", ear1 = "Eabani Earring", ar2 = "Odnowa Earring +1",
 		body = "Runeist Coat +1", hands = "Nyame Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.Ogma.Parry, waist = "Engraved Belt", legs = "Nyame Flanchard", feet = "Turms Leggings +1"

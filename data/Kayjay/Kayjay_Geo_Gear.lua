@@ -263,11 +263,14 @@ function init_gear_sets()
 
 	-- Idle sets
 
-	sets.idle = {main="Mpaca's Staff",sub="Umbra Strap",ammo="Staunch Tathlum +1",
-		head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
-		body="Jhakri Robe +2",hands=gear.merlinic_refresh_hands,ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Umbra Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet}
-		
+	sets.idle =
+	{
+		main = "Daybreak", sub = "Genmei Shield", ammo = "Staunch Tathlum +1",
+		head = "Befouled Crown", neck = "Twilight Torque", ear1 = "Genmei Earring", ear2 = "Ethereal Earring",
+		body = "Jhakri Robe +2", hands = "Bagua Mitaines +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
+		back = "Umbra Cape", waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = gear.merlinic_refresh_feet
+	}
+
 	sets.idle.PDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
 		body="Jhakri Robe +2",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
@@ -286,8 +289,8 @@ function init_gear_sets()
 
 	-- .Indi sets are for when an Indi-spell is active.
 	sets.idle.Indi = set_combine(sets.idle, {})
-	sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {}) 
-	sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {}) 
+	sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {})
+	sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {})
 	sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {})
 
 	sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",

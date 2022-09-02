@@ -1021,7 +1021,7 @@ function check_rage()
 		return false
 	end
 
-	if pet.status ~= 'Engaged' then
+	if pet.status ~= 'Engaged' and player.status ~= 'Engaged' then
 		return false
 	end
 
