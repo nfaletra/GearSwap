@@ -36,6 +36,13 @@ function init_gear_sets()
 	--------------------------------------
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 
+	sets.DI =
+	{
+		head = "Heidrek Mask",
+		body = "Heidrek Harness", hands = "Heidrek Gloves",
+		legs = "Heidrek Brais", feet = "Heidrek Boots"
+	}
+
 	-- Extra Melee sets.  Apply these on top of melee sets.
 	sets.Suppa = { ear1="Spike Earring", ear2="Suppanomimi" }
 	sets.DWEarrings = { ear1="Dudgeon Earring", ear2="Heartseeker Earring" }
