@@ -1097,6 +1097,10 @@ function default_post_precast(spell, spellMap, eventArgs)
 			if sets.Reive and buffactive['Reive Mark'] and sets.Reive.neck == "Ygnas's Resolve +1" then
 				equip(sets.Reive)
 			end
+
+			if sets.DI and buffactive['Elvorseal'] then
+				equip(sets.DI)
+			end
 			
 			if state.WeaponskillMode.value == 'Proc' and not (sets.precast.WS[spell.english] and sets.precast.WS[spell.english].Proc) and sets.precast.WS.Proc then
 				equip(sets.precast.WS.Proc)
