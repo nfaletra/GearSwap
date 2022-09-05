@@ -1199,7 +1199,7 @@ function default_post_midcast(spell, spellMap, eventArgs)
 				equip(sets.Reive)
 			end
 		end
-		
+
 		if state.TreasureMode.value ~= 'None' and spell.target.type == 'MONSTER' and not info.tagged_mobs[spell.target.id] then
 			equip(sets.TreasureHunter)
 		end
@@ -1601,6 +1601,10 @@ function get_idle_set(petStatus)
         idleSet = set_combine(idleSet, sets.Reive)
     end
 
+	if sets.DI and buffactive['Elvorseal'] then
+		idleSet = set_combine(idleset, sets.DI)
+	end
+
     if user_customize_idle_set then
         idleSet = user_customize_idle_set(idleSet)
     end
@@ -1752,6 +1756,10 @@ function get_melee_set()
 	if buffactive['Reive Mark'] and sets.Reive then
         meleeSet = set_combine(meleeSet, sets.Reive)
     end
+
+	if buffactive['Elvorseal'] and sets.DI then
+		meleeset = set_combine(meleeSet, sets.DI)
+	end
 	
 	if (buffactive.sleep or buffactive.Lullaby) and sets.buff.Sleep then
         meleeSet = set_combine(meleeSet, sets.buff.Sleep)
