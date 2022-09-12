@@ -240,14 +240,6 @@ function init_gear_sets()
 		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
-	sets.idle.Weak =
-	{
-		ammo = "Staunch Tathlum +1",
-		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Etiolation Earring",
-		body = "Hes. Cyclas +3", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
-	}
-
 	-- Defense sets
 	sets.defense.PDT =
 	{

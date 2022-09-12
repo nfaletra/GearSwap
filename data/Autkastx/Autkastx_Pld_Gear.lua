@@ -358,7 +358,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Flam. Zucchetto +2", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Telos Earring",
-		body = "Hjarrandi Breast.", hands = "Sakpata's Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Flamma Ring",
+		body = "Hjarrandi Breast.", hands = "Sakpata's Gauntlets", ring1 = "Moonlight Ring", ring2 = "Flamma Ring",
 		back = gear.rudianos_tp, waist = "Sailfi Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
 	}
 
@@ -478,7 +478,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Flam. Zuchetto +2", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Telos Earring",
-		body = "Hjarrandi Breast.", hands = "Sakpata's Gauntlets", ring1 = "Moonbeam Ring", ring2 = "Flamma Ring",
+		body = "Hjarrandi Breast.", hands = "Sakpata's Gauntlets", ring1 = "Moonlight Ring", ring2 = "Flamma Ring",
 		back = gear.rudianos_tp, waist = "Windbuffet Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
 	}
 

@@ -1762,7 +1762,7 @@ function get_melee_set()
     end
 
 	if buffactive['Elvorseal'] and sets.DI then
-		meleeset = set_combine(meleeSet, sets.DI)
+		meleeSet = set_combine(meleeSet, sets.DI)
 	end
 	
 	if (buffactive.sleep or buffactive.Lullaby) and sets.buff.Sleep then
