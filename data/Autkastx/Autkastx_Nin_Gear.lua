@@ -9,14 +9,14 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Naegling', 'NaeglingAcc', 'HeishiPhys', 'HeishiMag', 'Magic', 'Tauret', 'GKT', 'Karambit', 'ProcDagger', 'ProcSword', 'ProcGreatSword', 'ProcScythe', 'ProcPolearm', 'ProcGreatKatana', 'ProcKatana', 'ProcClub', 'ProcStaff')
+	state.Weapons:options('Naegling', 'NaeglingAcc', 'Kikoku', 'HeishiPhys', 'HeishiMag', 'Magic', 'Tauret', 'GKT', 'Karambit', 'ProcDagger', 'ProcSword', 'ProcGreatSword', 'ProcScythe', 'ProcPolearm', 'ProcGreatKatana', 'ProcKatana', 'ProcClub', 'ProcStaff')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'Haste40', 'Haste35', 'Haste30', 'Haste25', 'Haste20', 'Haste15', 'Haste10' }
 
 	gear.Andartia =
 	{
-		DA = { name = "Andartia's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', '"Dbl.Atk."+10' } },
-		STR_WSD = { name = "Andartia's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%' } },
-		MAB = { name= "Andartia's Mantle", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+5', '"Mag.Atk.Bns."+10' } },
+		DA = { name = "Andartia's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } },
+		STR_WSD = { name = "Andartia's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } },
+		MAB = { name= "Andartia's Mantle", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10' } },
 	}
 
 	send_command('bind ^` gs c cycle ElementalMode')
@@ -99,7 +99,7 @@ function init_gear_sets()
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS =
 	{
-		ammo = "Knobkierre",
+		ammo = "Voluspa Tathlum",
 		head = "Mpaca's Cap", neck = "Rep. Plat. Medal", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
@@ -113,17 +113,25 @@ function init_gear_sets()
 		back = gear.Andartia.DA, waist = "Olseni Belt", legs = "Mummu Kecks +2", feet = "Malignance Boots"
 	}
 
+	sets.precast.WS['Blade: Metsu'] =
+	{
+		ammo = "Voluspa Tathlum",
+		head = "Nyame Helm", neck = "Ninja Nodowa +2", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		back = gear.Andartia.DA, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
+	}
+
 	sets.precast.WS['Blade: Shun'] =
 	{
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
 		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Regal Ring",
-		back =gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
+		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
 	sets.precast.WS['Blade: Ten'] =
 	{
-		ammo = "Knobkierre",
+		ammo = "Voluspa Tathlum",
 		head = "Mpaca's Cap", neck = "Ninja Nodowa +2", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
@@ -131,7 +139,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Blade: Kamu'] =
 	{
-		ammo = "Knobkierre",
+		ammo = "Voluspa Tathlum",
 		head = "Hachiya Hatsu. +3", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Ishvara Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
@@ -219,7 +227,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Savage Blade'] =
 	{
-		ammo = "Knobkierre",
+		ammo = "Voluspa Tathlum",
 		head = "Mpaca's Cap", neck = "Rep. Plat. Medal", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
@@ -283,7 +291,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Asuran Fists'] =
 	{
-		ammo = "Knobkierre",
+		ammo = "Voluspa Tathlum",
 		head = "Hachiya Hatsu. +3", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Telos Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
@@ -315,7 +323,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Spinning Attack'] =
 	{
-		ammo = "Knobkierre",
+		ammo = "Voluspa Tathlum",
 		head = "Mpaca's Cap", neck = "Rep. Plat. Medal", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
@@ -323,7 +331,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Tachi: Kasha'] =
 	{
-		ammo = "Knobkierre",
+		ammo = "Voluspa Tathlum",
 		head = "Mpaca's Cap", neck = "Rep. Plat. Medal", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
@@ -332,7 +340,7 @@ function init_gear_sets()
 	sets.precast.WS['Tachi: Jinpu'] =
 	{
 		ammo = "Seeth. Bomblet +1",
-		head = "Mochi. Hastuburi +3", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
+		head = "Mochi. Hatsuburi +3", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
@@ -371,7 +379,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Tachi: Enpi'] =
 	{
-		ammo = "Knobkierre",
+		ammo = "Voluspa Tathlum",
 		head = "Mpaca's Cap", neck = "Rep. Plat. Medal", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
@@ -426,8 +434,8 @@ function init_gear_sets()
 	sets.midcast.NinjutsuBuff =
 	{
 		ammo = "Sapience Orb",
-		head = "Hachiya Hatsu. +3", neck = "Incanter's Torque", ear1 = "Hnoss earring", ear2 = "Stealth Earring",
-		body = gear.adhemar.body.d, hands = "Leyline Gloves", ring1 = "Stikini Ring", ring2 = "Stikini Ring",
+		head = "Hachiya Hatsu. +3", neck = "Henic Torque", ear1 = "Hnoss earring", ear2 = "Stealth Earring",
+		body = gear.adhemar.body.d, hands = "Leyline Gloves", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring",
 		back = gear.Andartia.MAB, waist = "Cimmerian Sash", feet = "Mochi. Kyahan +3"
 	}
 
@@ -596,9 +604,9 @@ function init_gear_sets()
 	sets.Haste40 = { waist = "Reiki Yotai" }
 	sets.Haste35 = { waist = "Reiki Yotai", feet = "Hiza. Sune-Ate +2" }
 	sets.Haste30 = { head = "Ryuo Somen +1", ear1 = "Eabani Earring", waist = "Reiki Yotai" }
-	sets.Haste25 = { head = "Ryuo Somen +1", body = "Mochi. Chainmail +3", legs = "Hachiya Hakama +3" }
-	sets.Haste20 = { head = "Ryuo Somen +1", ear1 = "Eabani Earring", body = "Mochi. Chainmail +3", legs = "Hachiya Hakama +3" }
-	sets.Haste15 = { head = "Ryuo Somen +1", ear1 = "Eabani Earring", body = "Mochi. Chainmail +3", waist = "Reiki Yotai", legs = "Hachiya Hakama +3" }
+	sets.Haste25 = { head = "Ryuo Somen +1", body = "Mochi. Chainmail +3", legs = "Hachiya Hakama +2" }
+	sets.Haste20 = { head = "Ryuo Somen +1", ear1 = "Eabani Earring", body = "Mochi. Chainmail +3", legs = "Hachiya Hakama +2" }
+	sets.Haste15 = { head = "Ryuo Somen +1", ear1 = "Eabani Earring", body = "Mochi. Chainmail +3", waist = "Reiki Yotai", legs = "Hachiya Hakama +2" }
 	sets.Haste10 = { head = "Ryuo Somen +1", ear1 = "Eabani Earring", body = "Mochi. Chainmail +3", waist = "Reiki Yotai", legs = "Mochi. Hakama +3" }
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	sets.Skillchain = {}
@@ -606,6 +614,7 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Naegling = { main = "Naegling", sub = "Hitaki" }
 	sets.weapons.NaeglingAcc = { main = "Naegling", sub = "Kunimitsu" }
+	sets.weapons.Kikoku = { main = "Kikoku", sub = "Kunimitsu" }
 	sets.weapons.HeishiPhys = { main = "Heishi Shorinken", sub = "Gleti's Knife" }
 	sets.weapons.HeishiMag = { main = "Heishi Shorinken", sub = "Kunimitsu" }
 	sets.weapons.Magic = { main = "Kaja Katana", sub = "Kunimitsu" }
