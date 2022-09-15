@@ -70,3 +70,25 @@ gear.valorous_physical_pet_legs = {name="Valor. Hose",augments={'Pet: Attack+29 
 gear.valorous_magical_pet_legs = { name="Valor. Hose",augments={'Pet: "Mag.Atk.Bns."+28','Pet: "Regen"+3','Pet: INT+13','Pet: Attack+2 Pet: Rng.Atk.+2',}}
 gear.valorous_magical_pet_feet = {name="Valorous Greaves",augments={'Pet: "Mag.Atk.Bns."+29','Pet: "Dbl.Atk."+1 Pet: Crit.hit rate +1','Pet: INT+9','Pet: Accuracy+1 Pet: Rng. Acc.+1','Pet: Attack+4 Pet: Rng.Atk.+4',}}
 gear.valorous_wsd_feet = {name="Valorous Greaves",augments={'Accuracy+25','Weapon skill damage +4%','STR+5',}}
+
+gear.telchine = {}
+gear.telchine.head =
+{
+	enhancing = { name = "Telchine Cap", augments = { 'Mag. Evasion+14', '"Conserve MP"+5', 'Enh. Mag. eff. dur. +8' } }
+}
+gear.telchine.body =
+{
+	enhancing = { name = "Telchine Chas.", augments = {'Mag. Evasion+19', '"Conserve MP"+3', 'Enh. Mag. eff. dur. +10' } }
+}
+gear.telchine.hands =
+{
+	enhancing = { name = "Telchine Gloves", augments = { 'Mag. Evasion+17', '"Conserve MP"+4', 'Enh. Mag. eff. dur. +9' } }
+}
+gear.telchine.legs =
+{
+	enhancing = { name = "Telchine Braconi", augments = { 'Mag. Evasion+23', '"Conserve MP"+4', 'Enh. Mag. eff. dur. +9' } }
+}
+gear.telchine.feet =
+{
+	enhancing = { name = "Telchine Pigaches", augments = { 'Mag. Evasion+18', '"Conserve MP"+4', 'Enh. Mag. eff. dur. +8' } }
+}

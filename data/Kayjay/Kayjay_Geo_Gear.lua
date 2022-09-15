@@ -105,10 +105,13 @@ function init_gear_sets()
 		body="Zendik Robe",hands="Volte Gloves",ring1="Kishar Ring",ring2="Prolix Ring",
 		back="Lifestream Cape",waist="Witful Belt",legs="Geo. Pants +1",feet="Regal Pumps +1"}
 
-	sets.midcast.Geomancy = {main="Solstice",sub="Genmei Shield",range="Dunna",
-		head="Vanya Hood",neck="Incanter's Torque",ear1="Gifted Earring",ear2="Malignance Earring",
-		body="Vedic Coat",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Dark Ring",
-		back="Solemnity Cape",waist="Austerity Belt +1",legs="Vanya Slops",feet="Medium's Sabots"}
+	sets.midcast.Geomancy =
+	{
+		main = "Solstice", sub = "Genmei Shield", range = "Dunna",
+		head = "Vanya Hood", neck = "Incanter's Torque", ear1 = "Gifted Earring",ear2 = "Malignance Earring",
+		body = "Vedic Coat", hands = "Geo. Mitaines", ring1 = "Defending Ring", ring2 = "Dark Ring",
+		back = "Solemnity Cape", waist = "Austerity Belt +1", legs = "Vanya Slops", feet = "Medium's Sabots"
+	}
 
 
 	--Extra Indi duration as long as you can keep your 900 skill cap.
@@ -233,10 +236,13 @@ function init_gear_sets()
 	
 	sets.midcast['Divine Magic'] = set_combine(sets.midcast['Enfeebling Magic'], {ring1="Stikini Ring +1"})
 		
-	sets.midcast['Enhancing Magic'] = {main=gear.gada_enhancing_club,sub="Ammurapi Shield",ammo="Hasty Pinion +1",
-		head="Telchine Cap",neck="Incanter's Torque",ear1="Andoaa Earring",ear2="Gifted Earring",
-		body="Telchine Chas.",hands="Telchine Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Perimede Cape",waist="Embla Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
+	sets.midcast['Enhancing Magic'] =
+	{
+		main = "Gada", sub = "Ammurapi Shield", ammo = "Hasty Pinion +1",
+		head = gear.telchine.head.enhanncing, neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "Gifted Earring",
+		body = gear.telchine.body.enhancing, hands = gear.telchine.hands.enhancing, ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
+		back = "Perimede Cape", waist = "Embla Sash", legs = gear.telchine.legs.enhancing, feet = gear.telchine.feet.enhancing
+	}
 		
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",legs="Shedir Seraweels"})
 	
@@ -244,7 +250,11 @@ function init_gear_sets()
 	
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], {main="Vadose Rod",sub="Genmei Shield",head="Amalric Coif +1",hands="Regal Cuffs",waist="Emphatikos Rope",legs="Shedir Seraweels"})
 	
-	sets.midcast.BarElement = set_combine(sets.precast.FC['Enhancing Magic'], {legs="Shedir Seraweels"})
+	sets.midcast.BarElement = set_combine(sets.precast.FC['Enhancing Magic'],
+	{
+		head = "Befouled Crown",
+		legs = "Shedir Seraweels", feet = "Regal Pumps +1"
+	})
 	
 	sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {ring2="Sheltered Ring",ear1="Gifted Earring",ear2="Malignance Earring",waist="Sekhmet Corset"})
 	sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'], {ring2="Sheltered Ring",ear1="Gifted Earring",ear2="Malignance Earring",waist="Sekhmet Corset"})
@@ -265,10 +275,10 @@ function init_gear_sets()
 
 	sets.idle =
 	{
-		main = "Daybreak", sub = "Genmei Shield", ammo = "Staunch Tathlum +1",
+		main = "Gada", sub = "Genmei Shield", ammo = "Staunch Tathlum +1",
 		head = "Befouled Crown", neck = "Twilight Torque", ear1 = "Genmei Earring", ear2 = "Ethereal Earring",
 		body = "Jhakri Robe +2", hands = "Bagua Mitaines +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
-		back = "Umbra Cape", waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = gear.merlinic_refresh_feet
+		back = "Nantosuelta's Cape", waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = gear.merlinic_refresh_feet
 	}
 
 	sets.idle.PDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
@@ -277,10 +287,11 @@ function init_gear_sets()
 		back="Shadow Mantle",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Mallquis Clogs +2"}
 
 	-- .Pet sets are for when Luopan is present.
-	sets.idle.Pet = {main="Sucellus",sub="Genmei Shield",range="Dunna",
+	sets.idle.Pet = {
+		main = "Solstice",sub="Genmei Shield",range="Dunna",
 		head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Handler's Earring",ear2="Handler's Earring +1",
 		body="Jhakri Robe +2",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Dark Ring",
-		back=gear.idle_jse_back,waist="Isa Belt",legs="Psycloth Lappas",feet="Bagua Sandals +1"}
+		back = "Nantosuelta's Cape",waist="Isa Belt",legs="Psycloth Lappas",feet="Bagua Sandals +1"}
 
 	sets.idle.PDT.Pet = {main="Malignance Pole",sub="Umbra Strap",range="Dunna",
 		head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Handler's Earring",ear2="Handler's Earring +1",
