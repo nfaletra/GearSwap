@@ -12,22 +12,64 @@
 -- If < 3 party members are below cure threshold, prioritize cures by lowest HPP (TODO: weight by hpp, missing hp, job, weakened)
 ----------------------------------------------------------------------------------
 function user_setup()
-	state.AutoCureMode = M{'Off','Party','Ally'}
-	state.AllianceCureMode = M{'Off','Top','Bottom','All'}
+	state.AutoCureMode = M{ 'Off', 'Party', 'Ally' }
+	state.AllianceCureMode = M{ 'Off', 'Top', 'Bottom', 'All' }
 
 	-- Maximum hp percent for cures
-	curethreshold = 70
+	cure_threshold = 70
+	user_tick_delay = 1 / 30 -- 30 fps
+	user_last_tick = os.clock()
+
+	cures =
+	L{
+		'Cure',
+		'Cure II',
+		'Cure III',
+		'Cure IV',
+		'Cure V',
+	}
+
+	curagas =
+	L{
+		'Curaga',
+		'Curaga II',
+		'Curaga III',
+		'Curaga IV',
+	}
+end
+
+function user_self_command(commandArgs, eventArgs)
+	if commandArgs[1]:lower() == 'curethreshold' then
+		cure_threshold = tonumber(commandArgs[2])
+		add_to_chat(122, "Cure Threshold set to: "..cure_threshold.."%.")
+		eventArgs.handled = true
+	elseif commandArgs[1]:lower() == 'tickdelay' then
+		user_tick_delay = tonumber(commandArgs[2])
+		add_to_chat(122, "Tick Delay set to: "..user_tick_delay..".")
+		eventArgs.handled = true
+	end
 end
 
 function user_tick()
 	if state.AutoCureMode.value == 'Off' then return false end
 
+	if (os.clock() - user_last_tick) < user_tick_delay then return false end
+	user_last_tick = os.clock()
+
 	-- Store off party members that need healing
-	local SortedParty = {}
-	local PlayersCurrentHP = {}
-	for _, v in pairs(alliance[1]) do
+	local SortedParty = T{}
+	local PlayersCurrentHP = L{}
+	local players = table.copy(alliance[1])
+	if state.AllianceCureMode.value == 'Top' or state.AllianceCureMode.value == 'All' then
+		table.insert(players, table.copy(alliance[2])
+	end
+	if state.AllianceCureMode.value == 'Bottom' or state.AllianceCureMode.value == 'All' then
+		table.insert(players, table.copy(alliance[3])
+	end
+
+	for _, v in pairs(players) do
 		if type(v) == 'table' then
-			if v.hpp <= curethreshold then
+			if v.hpp <= cure_threshold then
 				table.insert(SortedParty, v)
 				PlayersCurrentHP[v.name] = v.hp / (v.hpp / 100) - v.hp
 			end
@@ -35,69 +77,74 @@ function user_tick()
 	end
 
 	-- If >= 3 targets need healing, see if they're all in range of a curaga
-	local canCuraga = false
-	if table.getn(SortedParty) >= 3 then
+	if #SortedParty >= 3 then
 		-- Find the centroid of the players
 		local Centroid = Vector3()
+		local healCount = 0
 		for _, v in pairs(SortedParty) do
-			Centroid = Centroid + Vector3(v.x, v.y, v.z)
-		end
-		
-		-- Divide by number of players needing heals to get the average position
-		Centroid = Centroid / healCount
-
-		-- Use the player closest to the average position as our cure target
-		local cureTarget = nil
-		local closestDistSq = 75 * 75 -- Use a large-ish number for our max distance. Anything outside 50 yalms isn't loaded anyway.
-		for _, v in pairs(SortedParty) do
-			local ToCentroid = Centroid - Vector3(v.x, v.y, v.z)
-			local distSq = ToCentroid:SizeSq()
-			if distSq < closestDistSq then
-				closestDistSq = distSq
-				cureTarget = v
+			if v.in_party then
+				Centroid = Centroid + Vector3(v.x, v.y, v.z)
+				healCount = healCount + 1
 			end
 		end
 
-		-- If at least 2 other players are in range of our cure target, we can use a curaga
-		if cureTarget then
-			local PlayersInRange = {}
-			local lowestHP = 0
+		-- Divide by number of players needing heals to get the average position
+		if healCount >= 1 then
+			Centroid = Centroid / healCount
+
+			-- Use the player closest to the average position as our cure target
+			local cureTarget = nil
+			local closestDistSq = 5000 -- Use a large-ish number for our max distance. Anything outside 50 yalms isn't loaded anyway.
 			for _, v in pairs(SortedParty) do
-				if cureTarget ~= v then
-					local ToPlayer = Vector3(v.x, v.y, v.z) - Vector3(cureTarget.x, cureTarget.y, cureTarget.z)
-					if ToPlayer:SizeSq() <= (15 * 15) then -- Curaga AoE Range (is this in resources somewhere?)
-						table.insert(PlayersInRange, v)
-						if PlayersCurrentHP[v.name] < lowestHP then
-							lowestHP = PlayersCurrentHP[v.name]
-						end
+				if v.in_party then
+					local ToCentroid = Centroid - Vector3(v.x, v.y, v.z)
+					local distSq = ToCentroid:SizeSq()
+					if distSq < closestDistSq then
+						closestDistSq = distSq
+						cureTarget = v
 					end
 				end
 			end
 
-			canCuraga = table.getn(PlayersInRange) >= 2
+			-- If at least 2 other players are in range of our cure target, we can use a curaga
+			if cureTarget then
+				local playersInRange = 0
+				local lowestHP = 10000 -- Start at an impossible amount of hp
+				for _, v in pairs(SortedParty) do
+					if v.in_party then
+						if cureTarget ~= v then
+							local ToPlayer = Vector3(v.x, v.y, v.z) - Vector3(cureTarget.x, cureTarget.y, cureTarget.z)
+							if ToPlayer:SizeSq() <= math.pow(15, 2) then
+								playersInRange = playersInRange + 1
+								if PlayersCurrentHP[v.name] < lowestHP then
+									lowestHP = PlayersCurrentHP[v.name]
+								end
+							end
+						end
+					end
+				end
+
+				if playersInRange >= 2 then
+					do_cure(cureTarget, lowestHP, true)
+					return true
+				end
+			end
 		end
 	end
 
-	if canCuraga then
-		add_cure(cureTarget, lowestHP, canCuraga)
-	else
-		-- Queue up cures for everyone
-		for _, v in pairs(SortedParty) do
-			add_cure(v, PlayersMissingHP[v.name])
+	-- Cure lowest hp party member
+	local cureTarget = nil
+	local lowestHP = 10000 -- Start at an impossible amount of hp
+	for _, v in pairs(SortedParty) do
+		if PlayersCurrentHP[v.name] < lowestHP then
+			lowestHP = PlayersCurrentHP[v.name]
+			cureTarget = v
 		end
 	end
 
-	local playerDebuffs = {}
-
-	-- Attempt to heal other alliance parties
-	if state.AllianceCureMode.value == 'Top' or state.AllianceCureMode.value == 'All' then
-		for k, v in pairs(alliance[2]) do
-		end
-	end
-
-	if state.AllianceCureMode.value == 'Bottom' or state.AllianceCureMode.value == 'All' then
-		for k, v in pairs(alliance[3]) do
-		end
+	if cureTarget then
+		do_cure(cureTarget, lowestHP)
+		return true
 	end
 
 	-- return false to allow more tick functions to run
@@ -107,48 +154,50 @@ end
 function party_buff_change(affectedPlayer, buffName, gain)
 end
 
-function add_cure(cureTarget, missingHP, useCuraga)
+function do_cure(cureTarget, missingHP, useCuraga)
+	local cureTier = 1
+	local spell_recasts = windower.ffxi.get_spell_recasts()
 	if missingHP < 250 then -- Prioritize Tier 1
-		if spell_recasts[1] < spell_latency then
-			-- Add Cure to stack for target
-		elseif spell_recasts[2] < spell_latency then
-			-- Add Cure II to stack for target
+		if spell_recasts[2] and spell_recasts[2] < spell_latency then
+			cureTier = 2
 		end
 	elseif missingHP < 400 then -- Prioritize Tier 2
-		if spell_recasts[2] < spell_latency then
-			-- Add Cure II to stack for target
-		elseif spell_recasts[3] < spell_latency then
-			-- Add Cure III to stack for target
-		elseif spell_recasts[1] < spell_latency then
-			-- Add Cure to stack for target
+		if spell_recasts[2] and spell_recasts[2] < spell_latency then
+			cureTier = 2
+		elseif spell_recasts[3] and spell_recasts[3] < spell_latency then
+			cureTier = 3
 		end
 	elseif missingHP < 1200 then -- Prioritize Tier 3
-		if spell_recasts[3] < spell_latency then
-			-- Add Cure III to stack for target
-		elseif spell_recasts[4] < spell_latency then
-			-- Add Cure IV to stack for target
-		elseif spell_recasts[5] < spell_latency then
-			-- Add Cure V to stack for target
+		if spell_recasts[3] and  spell_recasts[3] < spell_latency then
+			cureTier = 3
+		elseif spell_recasts[4] and spell_recasts[4] < spell_latency then
+			cureTier = 4
+		elseif spell_recasts[5] and spell_recasts[5] < spell_latency then
+			cureTier = 5
+		else
+			cureTier = 2
 		end
 	elseif missingHP < 2000 then -- Prioritize Tier 5
-		if spell_recasts[5] < spell_latency then
-			-- Add Cure V to stack for target
-		elseif spell_recasts[4] < spell_latency then
-			-- Add Cure IV to stack for target
-		elseif spell_recasts[6] < spell_latency then
-			-- Add Cure VI to stack for target
-		elseif spell_recasts[3] < spell_latency then
-			-- Add Cure III to stack for target
+		if spell_recasts[4] and spell_recasts[4] < spell_latency then
+			cureTier = 4
+		elseif spell_recasts[5] and spell_recasts[5] < spell_latency then
+			cureTier = 5
+		elseif spell_recasts[3] and spell_recasts[3] < spell_latency then
+			cureTier = 3
 		end
 	else
-		if spell_recasts[6] < spell_latency then
-			-- Add Cure VI to stack for target
-		elseif spell_recasts[5] < spell_latency then
-			-- Add Cure V to stack for target
-		elseif spell_recasts[4] < spell_latency then
-			-- Add Cure IV to stack for target
-		elseif spell_recasts[3] < spell_latency then
-			-- Add Cure III to stack for target
+		if spell_recasts[5] and spell_recasts[5] < spell_latency then
+			cureTier = 5
+		elseif spell_recasts[4] and spell_recasts[4] < spell_latency then
+			cureTier = 4
+		elseif spell_recasts[3] and spell_recasts[3] < spell_latency then
+			cureTier = 3
 		end
+	end
+
+	if useCuraga then
+		windower.chat.input('/ma "'..curagas[math.max(1, cureTier - 1)]..'" '..cureTarget.name)
+	else
+		windower.chat.input('/ma "'..cures[cureTier]..'" '..cureTarget.name)
 	end
 end
