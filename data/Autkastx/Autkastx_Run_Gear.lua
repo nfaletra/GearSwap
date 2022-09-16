@@ -45,7 +45,7 @@ function init_gear_sets()
 		ammo = "Sapience Orb",
 		head = "Halitus Helm", neck = "Moonbeam Necklace", ear1 = "Cryptic Earring", ear2 = "Odnowa Earring +1",
 		body = "Emet Harness +1", hands = "Kurys Gloves", ring1 = "Supershear Ring", ring2 = "Eihwaz Ring",
-		back = gear.Ogma.Idle, waist = "Kasiri Belt", legs = "Eri. Leg Guards +1", feet = "Erilaz Greaves +1"
+		back = gear.Ogma.Idle, waist = "Kasiri Belt", legs = "Eri. Leg Guards +2", feet = "Erilaz Greaves +2"
 	}
 
 	--------------------------------------
@@ -193,12 +193,12 @@ function init_gear_sets()
 	--------------------------------------
 	-- Midcast sets
 	--------------------------------------
-	sets.SIRD = -- 95% SIRD
+	sets.SIRD = -- 100% SIRD
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Agwu's Cap", neck = "Moonlight Necklace",
+		head = "Erilaz Galea +2", neck = "Moonlight Necklace",
 		hands = "Regal Gauntlets",
-		gear.Ogma.FC, waist = "Rumination Sash", legs = "Carmine Cuisses +1", feet = "Taeon Boots"
+		gear.Ogma.FC, waist = "Rumination Sash", legs = "Carmine Cuisses +1", feet = "Taeon Boots" -- 9%
 	}
 
 	sets.midcast.FastRecast =
@@ -213,7 +213,7 @@ function init_gear_sets()
 	{
 		head = "Erilaz Galea +1", neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "Odnowa Earring +1",
 		hands = "Runeist's Mitons +3", ring1 = "Moonbeam Ring", ring2 = "Stikini Ring +1",
-		waist = "Flume Belt", legs = "Futhark Trousers +1", feet = "Erilaz Greaves +1"
+		waist = "Flume Belt", legs = "Futhark Trousers +1", feet = "Erilaz Greaves +2"
 	})
 	sets.midcast['Enhancing Magic'].Duration = set_combine(sets.midcast['Enhancing Magic'], { hands = "Regal Gauntlets" })
 	sets.midcast['Enhancing Magic'].SIRD = set_combine(sets.midcast['Enhancing Magic'].Duration, sets.SIRD, {})
@@ -339,7 +339,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Futhark Torque +2", ear1 = "Cryptic Earring", ear2 = "Odnowa Earring +1",
 		body = "Erilaz Surcoat +2", hands = "Turms Mittens +1", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.Ogma.Parry, waist = "Engraved Belt", legs = "Eri. Leg Guards +1", feet = "Erilaz Greaves +1"
+		back = gear.Ogma.Parry, waist = "Engraved Belt", legs = "Eri. Leg Guards +2", feet = "Erilaz Greaves +2"
 	}
 
 	sets.engaged.MEVA =
@@ -347,7 +347,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Warder's Charm +1", ear1 = "Erilaz Earring", ear2 = "Odnowa Earring +1",
 		body = "Runeist Coat +1", hands = "Nyame Gauntlets", ring1 = "Shadow Ring", ring2 = "Moonlight Ring",
-		back = gear.Ogma.Parry, waist = "Engraved Belt", legs = "Eri. Leg Guard +1", feet = "Erilaz Greaves +1"
+		back = gear.Ogma.Parry, waist = "Engraved Belt", legs = "Eri. Leg Guard +2", feet = "Erilaz Greaves +2"
 	}
 
 	sets.engaged.Hybrid =

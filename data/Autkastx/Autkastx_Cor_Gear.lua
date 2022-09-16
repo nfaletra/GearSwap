@@ -55,7 +55,7 @@ function init_gear_sets()
 
 	-- Precast sets to enhance JAs
 
-	sets.precast.JA['Triple Shot'] = { body = "Chasseur's Frac +1" }
+	sets.precast.JA['Triple Shot'] = { body = "Chasseur's Frac +2" }
 	sets.precast.JA['Snake Eye'] = { legs = "Lanun Trews +3" }
 	sets.precast.JA['Wild Card'] = { feet = "Lanun Bottes +3" }
 	sets.precast.JA['Random Deal'] = { body = "Lanun Frac +3" }
@@ -71,9 +71,9 @@ function init_gear_sets()
 	sets.precast.LuzafRing = { ring2 = "Luzaf's Ring" }
 
 	sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, { legs = "Chas. Culottes +1" })
-	sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, { feet = "Chass. Bottes +1" })
+	sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, { feet = "Chass. Bottes +2" })
 	sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, { head = "Chass. Tricorne +1" })
-	sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, { body = "Chasseur's Frac +1" })
+	sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, { body = "Chasseur's Frac +2" })
 	sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, { hands = "Chasseur's Gants +2" })
 
 	sets.precast.CorsairShot =
@@ -94,7 +94,7 @@ function init_gear_sets()
 
 	sets.precast.CorsairShot.Proc = set_combine(sets.precast.CorsairShot.Damage,
 	{
-		feet = "Chass. Bottes +1"
+		feet = "Chass. Bottes +2"
 	})
 
 	sets.precast.CorsairShot['Light Shot'] =
@@ -258,7 +258,7 @@ function init_gear_sets()
 		back = gear.Camulus.Ranged, waist = "Yemaya Belt", legs = "Ikenga's Trousers", feet = "Malignance Boots"
 	}
 
-	sets.buff['Triple Shot'] = { body = "Chasseur's Frac +1" }
+	sets.buff['Triple Shot'] = { body = "Chasseur's Frac +2" }
 
 	-- Sets to return to when not performing an action.
 

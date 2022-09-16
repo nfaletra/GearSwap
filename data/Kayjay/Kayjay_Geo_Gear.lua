@@ -1,30 +1,23 @@
 function user_job_setup()
-
 	-- Options: Override default values
-    state.OffenseMode:options('Normal')
+	state.OffenseMode:options('Normal')
 	state.CastingMode:options('Normal', 'Resistant', 'Fodder', 'Proc')
-    state.IdleMode:options('Normal','PDT')
+	state.IdleMode:options('Normal','PDT')
 	state.PhysicalDefenseMode:options('PDT', 'NukeLock', 'GeoLock', 'PetPDT')
 	state.MagicalDefenseMode:options('MDT', 'NukeLock')
 	state.ResistDefenseMode:options('MEVA')
 	state.Weapons:options('None','Maxentius','DualWeapons')
 
-	gear.nuke_jse_back = {name="Nantosuelta's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
-	gear.idle_jse_back = {name="Nantosuelta's Cape",augments={'HP+60','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10'}}
-	
-	gear.obi_cure_back = "Tempered Cape +1"
-	gear.obi_cure_waist = "Witful Belt"
+	gear.Nantosuelta =
+	{
+		Idle = { name = "Nantosuelta's Cape", augments = { 'MP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity-10', 'Phys. dmg. taken-10%' } },
+		Pet = { name = "Nantosuelta's Cape", augments = { 'MP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Pet: "Regen"+5' } },
+	}
 
-	gear.obi_low_nuke_back = gear.nuke_jse_back
-	gear.obi_low_nuke_waist = "Sekhmet Corset"
-
-	gear.obi_high_nuke_back = gear.nuke_jse_back
-	gear.obi_high_nuke_waist = "Refoccilation Stone"
-	
 	autoindi = "Fury"
 	autogeo = "None"
 	autoentrust = "None"
-	
+
 	-- Additional local binds
 	send_command('bind ^` gs c cycle ElementalMode')
 	send_command('bind !` input /ja "Full Circle" <me>')
@@ -36,9 +29,9 @@ function user_job_setup()
 	send_command('bind @backspace input /ma "Sleep II" <t>')
 	send_command('bind ^delete input /ma "Aspir III" <t>')
 	send_command('bind @delete input /ma "Sleep" <t>')
-	
+
 	indi_duration = 290
-	
+
 	select_default_macro_book()
 end
 
@@ -278,25 +271,25 @@ function init_gear_sets()
 		main = "Gada", sub = "Genmei Shield", ammo = "Staunch Tathlum +1",
 		head = "Befouled Crown", neck = "Twilight Torque", ear1 = "Genmei Earring", ear2 = "Ethereal Earring",
 		body = "Jhakri Robe +2", hands = "Bagua Mitaines +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
-		back = "Nantosuelta's Cape", waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = gear.merlinic_refresh_feet
+		back = gear.Nantosuelta.Idle, waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = gear.merlinic_refresh_feet
 	}
 
 	sets.idle.PDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
 		body="Jhakri Robe +2",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
-		back="Shadow Mantle",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Mallquis Clogs +2"}
+		back = gear.Nantosuelta.Idle,waist="Carrier's Sash",legs="Nyame Flanchard",feet="Mallquis Clogs +2"}
 
 	-- .Pet sets are for when Luopan is present.
 	sets.idle.Pet = {
 		main = "Solstice",sub="Genmei Shield",range="Dunna",
 		head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Handler's Earring",ear2="Handler's Earring +1",
 		body="Jhakri Robe +2",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Dark Ring",
-		back = "Nantosuelta's Cape",waist="Isa Belt",legs="Psycloth Lappas",feet="Bagua Sandals +1"}
+		back = gear.Nantosuelta.Pet,waist="Isa Belt",legs="Psycloth Lappas",feet="Bagua Sandals +1"}
 
 	sets.idle.PDT.Pet = {main="Malignance Pole",sub="Umbra Strap",range="Dunna",
 		head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Handler's Earring",ear2="Handler's Earring +1",
 		body="Jhakri Robe +2",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Dark Ring",
-		back=gear.idle_jse_back,waist="Isa Belt",legs="Nyame Flanchard",feet="Bagua Sandals +1"}
+		back = gear.Nantosuelta.Pet,waist="Isa Belt",legs="Nyame Flanchard",feet="Bagua Sandals +1"}
 
 	-- .Indi sets are for when an Indi-spell is active.
 	sets.idle.Indi = set_combine(sets.idle, {})

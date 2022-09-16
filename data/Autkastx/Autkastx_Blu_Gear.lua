@@ -91,10 +91,13 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 
-	sets.precast.FC = {main="Vampirism",sub="Sakpata's Sword",ammo="Impatiens",
-		head="Carmine Mask +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
-		body="Luhlaza Jubbah +3",hands="Leyline Gloves",ring1="Kishar Ring",ring2="Lebeche Ring",
-		back="Perimede Cape",waist="Witful Belt",legs="Psycloth Lappas",feet="Carmine Greaves +1"}
+	sets.precast.FC =
+	{
+		main = "Sakpata's Sword", ammo = "Impatiens",
+		head = "Carmine Mask +1", neck = "Voltsurge Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
+		body = "Luhlaza Jubbah +3", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Lebeche Ring",
+		back = "Perimede Cape", waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Carmine Greaves +1"
+	}
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {body="Passion Jacket"})
 
@@ -429,10 +432,13 @@ function init_gear_sets()
 			      back="Bleating Mantle",waist="Flume Belt +1",legs="Lengo Pants",feet=gear.herculean_refresh_feet}
 
 	-- Idle sets
-	sets.idle = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-			      head="Rawhide Mask",neck="Loricate Torque +1",ear1="Etiolation Earring", ear2="Ethereal Earring",
-			      body="Jhakri Robe +2",hands=gear.herculean_refresh_hands,ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-			      back="Umbra Cape",waist="Flume Belt +1",legs="Lengo Pants",feet=gear.herculean_refresh_feet}
+	sets.idle =
+	{
+		ammo="Staunch Tathlum +1",
+		head = "Nyame Helm",neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Ethereal Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
+		back = "Kumbira Cape", waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+	}
 
 	sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
 
@@ -461,7 +467,7 @@ function init_gear_sets()
 
 	sets.defense.NukeLock = sets.midcast['Blue Magic'].Magical
 
-	sets.Kiting = {legs="Carmine Cuisses +1"}
+	sets.Kiting = { legs = "Carmine Cuisses +1" }
 
     -- Extra Melee sets.  Apply these on top of melee sets.
     sets.Knockback = {}

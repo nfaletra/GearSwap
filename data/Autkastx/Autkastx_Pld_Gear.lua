@@ -14,11 +14,11 @@ function user_job_setup()
 	state.ExtraDefenseMode = M{ ['description'] = 'Extra Defense Mode', 'None', 'MP', 'Twilight' }
 	
 	gear.rudianos_fc = { name = "Rudianos's Mantle", augments = { 'HP+60', '"Fast Cast"+10' } }
-	gear.rudianos_tp = { name = "Rudianos's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } }
+	gear.rudianos_tp = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%' } }
 	gear.rudianos_wsd = "Rudianos's Mantle" -- { name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
-	gear.rudianos_enmity = "Ruianos's Mantle" -- { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Phys. dmg. taken-10%',}}
+	gear.rudianos_enmity = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', 'Enmity+10', 'Phys. dmg. taken-10%' } }
 	gear.rudianos_shield = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'Chance of successful block +5' } }
-	gear.rudianos_counter = "Rudianos's Mantle" -- { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
+	gear.rudianos_counter = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'System: 1 ID: 640 Val: 4' } }
 
 	-- Additional local binds
 	send_command('bind !` gs c SubJobEnmity')
@@ -53,7 +53,7 @@ function init_gear_sets()
 		ammo = "Sapience Orb",
 		head = "Loess Barbuta +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Souv. Cuirass +1", hands = "Cab. Gauntlets +3", ring1 = "Apeile Ring +1", ring2 = "Apeile Ring",
-		back = gear.rudianos_shield, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Souv. Schuhs +1"
+		back = gear.rudianos_enmity, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Souv. Schuhs +1"
 	}
 
 	sets.Enmity.SIRD = set_combine(sets.Enmity,
@@ -170,7 +170,7 @@ function init_gear_sets()
 		ammo = "Sapience Orb",
 		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Trux Earring", ear2 = "Moonshade Earring",
 		body = "Souv. Cuirass +1", hands = "Cab. Gauntlets +3", ring1 = "Apeile Ring +1", ring2 = "Apeile Ring",
-		back = gear.rudianos_shield, waist = "Fotia Belt", legs = "Souv. Diechlings +1", feet = "Eschite Greaves"
+		back = gear.rudianos_enmity, waist = "Fotia Belt", legs = "Souv. Diechlings +1", feet = "Eschite Greaves"
 	}
 
 	sets.precast.WS['Impulse Drive'] =
@@ -335,7 +335,7 @@ function init_gear_sets()
 		sub = "Ochain", ammo = "Staunch Tathlum +1",
 		head = "Chev. Armet +2", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
-		back = gear.rudianos_shield, waist = "Flume Belt", legs = "Chev. Cuisses +1", feet = "Rev. Leggings +3"
+		back = gear.rudianos_enmity, waist = "Flume Belt", legs = "Chev. Cuisses +1", feet = "Rev. Leggings +3"
 	}
 
 	sets.idle.DD =
@@ -455,7 +455,7 @@ function init_gear_sets()
 		sub = "Ochain", ammo = "Staunch Tathlum +1",
 		head = "Chev. Armet +2", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
-		back = gear.rudianos_shield, waist = "Flume Belt", legs = "Chev. Cuisses +1", feet = "Rev. Leggings +3"
+		back = gear.rudianos_enmity, waist = "Flume Belt", legs = "Chev. Cuisses +1", feet = "Rev. Leggings +3"
 	}
 
 	sets.engaged.DD =
