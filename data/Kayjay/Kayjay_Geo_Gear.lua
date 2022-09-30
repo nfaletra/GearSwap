@@ -270,7 +270,7 @@ function init_gear_sets()
 	{
 		main = "Gada", sub = "Genmei Shield", ammo = "Staunch Tathlum +1",
 		head = "Befouled Crown", neck = "Twilight Torque", ear1 = "Genmei Earring", ear2 = "Ethereal Earring",
-		body = "Jhakri Robe +2", hands = "Bagua Mitaines +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
+		body = "Geomancy Tunic", hands = "Geomancy Mitaines", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = gear.Nantosuelta.Idle, waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = gear.merlinic_refresh_feet
 	}
 
@@ -325,7 +325,7 @@ function init_gear_sets()
 	
 	sets.defense.GeoLock = sets.midcast.Geomancy.Indi
 
-	sets.Kiting = {feet="Herald's Gaiters"}
+	sets.Kiting = { feet = "Geomancy Sandals" }
 	sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.latent_refresh_grip = {sub="Oneiros Grip"}
 	sets.TPEat = {neck="Chrys. Torque"}

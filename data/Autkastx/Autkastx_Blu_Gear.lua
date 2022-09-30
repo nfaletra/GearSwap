@@ -435,9 +435,9 @@ function init_gear_sets()
 	sets.idle =
 	{
 		ammo="Staunch Tathlum +1",
-		head = "Nyame Helm",neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Ethereal Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
-		back = "Kumbira Cape", waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		head = "Malignance Chapeau",neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Ethereal Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
+		back = "Kumbira Cape", waist = "Carrier's Sash", legs = "Malignance Hose", feet = "Malignance Boots"
 	}
 
 	sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})

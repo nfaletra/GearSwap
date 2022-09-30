@@ -53,15 +53,15 @@ function init_gear_sets()
 		ammo = "Sapience Orb",
 		head = "Loess Barbuta +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Souv. Cuirass +1", hands = "Cab. Gauntlets +3", ring1 = "Apeile Ring +1", ring2 = "Apeile Ring",
-		back = gear.rudianos_enmity, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Souv. Schuhs +1"
+		back = gear.rudianos_enmity, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Sakpata's Leggings"
 	}
 
 	sets.Enmity.SIRD = set_combine(sets.Enmity,
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Souv. Schaller +1",
-		hands = "Regal Gauntlets",
-		waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
+		body = "Chev. Cuirass +2", hands = "Regal Gauntlets",
+		waist = "Rumination Sash", legs = "Founder's Hose",
 	})
 
 	-- Precast sets to enhance JAs
@@ -194,9 +194,9 @@ function init_gear_sets()
 	sets.midcast.FastRecast.DT = set_combine(sets.midcast.FastRecast, {})
 
 	sets.midcast.Flash = set_combine(sets.Enmity, { head = "Carmine Mask +1" })
-	sets.midcast.Flash.SIRD = set_combine(sets.Enmity.SIRD, {})
+	sets.midcast.Flash.SIRD = set_combine(sets.midcast.Flash, sets.Enmity.SIRD, {})
 	sets.midcast.Stun = set_combine(sets.Enmity, { head = "Carmine Mask +1" })
-	sets.midcast.Stun.SIRD = set_combine(sets.Enmity.SIRD, {})
+	sets.midcast.Stun.SIRD = set_combine(sets.midcast.Stun, sets.Enmity.SIRD, {})
 	sets.midcast['Blue Magic'] = set_combine(sets.Enmity, {})
 	sets.midcast['Blue Magic'].SIRD = set_combine(sets.Enmity.SIRD, {})
 
@@ -251,12 +251,12 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Odyssean Helm", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Odyssean Chestplate", hands = "Souv. Handsch. +1", ring1 = "Stikini Ring", ring2 = "Stikini Ring",
+		body = "Odyssean Chestplate", hands = "Souv. Handsch. +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = "Weard Mantle", waist = "Creed Baudrier", legs = "Sakpata's Cuisses", feet = "Souveran Schuhs +1"
 	})
 	sets.midcast.Phalanx.SIRD = set_combine(sets.midcast.Phalanx,
 	{
-		head = "Souv. Schaller +1", neck = "Moonbeam Necklace",
+		head = "Souv. Schaller +1", neck = "Moonlight Necklace",
 		waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
 	})
 	sets.Phalanx_Received = sets.midcast.Phalanx
@@ -289,7 +289,7 @@ function init_gear_sets()
 	{
 		sub = "Priwen", ammo = "Staunch Tathlum +1",
 		head = "Chev. Armet +2", neck = "Unmoving Collar +1", ear1 = "Foresti Earring", ear2 = "Odnowa Earring +1",
-		body = "Sakpata's Breastplate", hands = "Sakpata's Guantlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
+		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Rev. Leggings +3"
 	}
 
@@ -298,8 +298,8 @@ function init_gear_sets()
 	{
 		sub = "Srivatsa", ammo = "Staunch Tathlum +1",
 		head = "Chev. Armet +2", neck = "Unmoving Collar +1", ear1 = "Foresti Earring", ear2 = "Odnowa Earring +1",
-		body = "Sakpata's Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Apeile Ring +1", ring2 = "Gelatinous Ring +1",
-		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Rev. Leggings +3"
+		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Apeile Ring +1", ring2 = "Moonlight Ring",
+		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Chev. Cuisses +2", feet = "Rev. Leggings +3"
 	}
 
 	-- MEva/Lower content block
@@ -358,7 +358,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Flam. Zucchetto +2", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Telos Earring",
-		body = "Hjarrandi Breast.", hands = "Sakpata's Gauntlets", ring1 = "Moonlight Ring", ring2 = "Flamma Ring",
+		body = "Hjarrandi Breast.", hands = "Sakpata's Gauntlets", ring1 = "Flamma Ring", ring2 = "Moonlight Ring",
 		back = gear.rudianos_tp, waist = "Sailfi Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
 	}
 

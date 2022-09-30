@@ -9,7 +9,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Naegling', 'NaeglingAcc', 'Kikoku', 'HeishiPhys', 'HeishiMag', 'Magic', 'Tauret', 'GKT', 'Karambit', 'ProcDagger', 'ProcSword', 'ProcGreatSword', 'ProcScythe', 'ProcPolearm', 'ProcGreatKatana', 'ProcKatana', 'ProcClub', 'ProcStaff')
+	state.Weapons:options('Naegling', 'NaeglingAcc', 'Kikoku', 'HeishiPhys', 'HeishiMag', 'Magic', 'Tauret', 'GKT', 'Karambit', 'Tank', 'ProcDagger', 'ProcSword', 'ProcGreatSword', 'ProcScythe', 'ProcPolearm', 'ProcGreatKatana', 'ProcKatana', 'ProcClub', 'ProcStaff')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'Haste40', 'Haste35', 'Haste30', 'Haste25', 'Haste20', 'Haste15', 'Haste10' }
 
 	gear.Andartia =
@@ -491,7 +491,7 @@ function init_gear_sets()
 		ammo = "Happo Shuriken",
 		head = "Dampening Tam", neck = "Ninja Nodowa +2", ear1 = "Brutal Earring", ear2 = "Telos Earring",
 		body = "Ken. Samue +1", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Epona's Ring",
-		back = gear.Andartia.DA, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = "Ken. Sune-Ate"
+		back = gear.Andartia.DA, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = "Mpaca's Boots"
 	}
 	sets.engaged.Tank = set_combine(sets.engaged,
 	{
@@ -515,7 +515,7 @@ function init_gear_sets()
 		ammo = "Happo Shuriken",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Brutal Earring", ear2 = "Telos Earring",
 		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Defending Ring",
-		back = gear.Andartia.DA, waist = "Carrier's Sash", legs = "Mpaca's Hose", feet = "Malignance Boots"
+		back = gear.Andartia.DA, waist = "Engraved Belt", legs = "Mpaca's Hose", feet = "Malignance Boots"
 	}
 	sets.engaged.Tank.DT = set_combine(sets.engaged.DT,
 	{
@@ -621,6 +621,7 @@ function init_gear_sets()
 	sets.weapons.Tauret = { main = "Tauret", sub = "Kunimitsu" }
 	sets.weapons.GKT = { main = "Hachimonji", sub = "Bloodrain Strap" }
 	sets.weapons.Karambit = { main = "Karambit" }
+	sets.weapons.Tank = { main = "Fudo Masamune", sub = "Tsuru" }
 	sets.weapons.ProcDagger = { main = "Ceremonial Dagger", sub = "Debahocho" }
 	sets.weapons.ProcSword = { main = "Twinned Blade", sub = "Debahocho" }
 	sets.weapons.ProcGreatSword = { main = "Ophidian Sword", sub = "Bloodrain Strap" }

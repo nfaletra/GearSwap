@@ -60,7 +60,7 @@ function init_gear_sets()
 
 	sets.precast.FC =
 	{
-		main = "Mpaca's Staff", sub = "Umbra Strap",
+		main = "Grioavolr", sub = "Umbra Strap",
 		head = "Bunzi's Hat", neck = "Orunmila's Torque", ear1 = "Loquac. Earring", ear2 = "Malignance Earring",
 		body = "Inyanga Jubbah +2", hands = "Telchine Gloves", ring1 = "Kishar Ring", ring2 = "Lebeche Ring",
 		back = gear.Campestres.Magic, waist = "Witful Belt", legs = "Psycloth Lappas", feet = "Regal Pumps +1"
@@ -90,11 +90,14 @@ function init_gear_sets()
     -- Midcast sets
     --------------------------------------
 
-    sets.midcast.FastRecast = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",ammo="Hasty Pinion +1",
-		head="Amalric Coif +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
+	sets.midcast.FastRecast =
+	{
+		main = "Grioavolr", sub = "Clerisy Strap +1",
+		head = "Bunzi's Hat", neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
 		body="Inyanga Jubbah +2",hands="Volte Gloves",ring1="Kishar Ring",ring2="Prolix Ring",
-		back="Swith Cape +1",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps +1"}
-	
+		back="Swith Cape +1",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps +1"
+	}
+
     sets.midcast.Cure = {main=gear.gada_healing_club,sub="Sors Shield",ammo="Hasty Pinion +1",
         head="Vanya Hood",neck="Incanter's Torque",ear1="Mendicant's Earring",ear2="Gifted Earring",
         body="Vrikodara Jupon",hands="Telchine Gloves",ring1="Janniston Ring",ring2="Menelaus's Ring",
@@ -200,16 +203,16 @@ function init_gear_sets()
 	sets.midcast.Pet.BloodPactWard =
 	{
 		main = "Espiritus", sub = "Vox Grip", ammo = "Epitaph",
-		head = "Beckoner's Horn +2", neck = "Melic Torque", ear1 = "Lodurr Earring", ear2 = "C. Palug Earring",
+		head = "Baayami Hat", neck = "Melic Torque", ear1 = "Lodurr Earring", ear2 = "C. Palug Earring",
 		body = "Baayami Doublet", hands = "Baayami Cuffs", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
-		back = gear.Campestres.Magic ,waist = "Kobo Obi", legs = "Baayami Slops", feet = "Baayami Sabots"
+		back = "Conveyance Cape", waist = "Kobo Obi", legs = "Baayami Slops", feet = "Baayami Sabots"
 	}
 
 	sets.midcast.Pet['Wind\'s Blessing'] = set_combine(sets.midcast.Pet.BloodPactWard,
 	{
 		neck = "Smn. Collar +2",
 		body = "Shomonjijoe +1",
-		legs = "Assid. Pants +1"
+		back = gear.Campestres.Magic, legs = "Assid. Pants +1"
 	})
 
 	sets.midcast.Pet.DebuffBloodPactWard =
@@ -217,7 +220,7 @@ function init_gear_sets()
 		main = "Espiritus", sub = "Vox Grip", ammo = "Epitaph",
 		head = "Convoker's Horn +2", neck = "Smn. Collar +2", ear1 = "Lugalbanda Earring", ear2 = "Enmerkar Earring",
 		body = "Con. Doublet +2", hands = "Merlinic Dastanas", ring1 = "Evoker's Ring", ring2 = "C. Palug Ring",
-		back = gear.Campestres.Magic, waist = "Incarnation Sash", legs = "Tali'ah Sera. +2", feet = "Convo. Pigaches +3"
+		back = gear.Campestres.Magic, waist = "Incarnation Sash", legs = "Convo. Spats +2", feet = "Convo. Pigaches +2"
 	}
 
 	sets.midcast.Pet.DebuffBloodPactWard.Acc = sets.midcast.Pet.DebuffBloodPactWard
