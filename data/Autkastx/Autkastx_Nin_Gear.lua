@@ -41,7 +41,7 @@ function init_gear_sets()
 		ammo = "Date Shuriken",
 		head = "Dampening Tam", neck = "Unmoving Collar +1", ear1 = "Cryptic Earring", ear2 = "Trux Earring",
 		body = "Emet Harness +1", hands = "Kurys Gloves", ring1 = "Vengeful Ring", ring2 = "Supershear Ring",
-		back = gear.Andartia.DA, waist = "Trance Belt", legs = "Zoar Subligar +1", feet = "Mochi. Kyahan +3"
+		back = gear.Andartia.DA, waist = "Trance Belt", legs = "Zoar Subligar +1", feet = "Mochi. Kyahan +3"         
 	}
 
 	-- Precast sets to enhance JAs
@@ -56,10 +56,6 @@ function init_gear_sets()
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz =
 	{
-		ammo = "Yamarang",
-		head = "Mummu Bonnet +2", neck = "Unmoving Collar +1", ear1 = "Enchntr. Earring +1", ear2 = "Handler's Earring +1",
-		body = gear.herculean_waltz_body, hands = gear.herculean_waltz_hands, ring1 = "Valseur's Ring", ring2 = "Defending Ring",
-		back = "Moonlight Cape", waist = "Chaac Belt", legs = "Dashing Subligar", feet = gear.herculean_waltz_feet
 	}
 
 	-- Don't need any special gear for Healing Waltz.
@@ -68,10 +64,6 @@ function init_gear_sets()
 	-- Set for acc on steps, since Yonin drops acc a fair bit
 	sets.precast.Step =
 	{
-		ammo = "Togakushi Shuriken",
-		head = "Dampening Tam", neck = "Ninja Nodowa +2", ear1 = "Mache Earring +1", ear2 = "Telos Earring",
-		body = "Mummu Jacket +2", hands = gear.adhemar.hands.a, ring1 = "Ramuh Ring +1", ring2 = "Ramuh Ring +1",
-		back = gear.Andartia.DA, waist = "Olseni Belt", legs = "Mummu Kecks +2", feet = "Malignance Boots"
 	}
 
 	sets.precast.Flourish1 = {}
@@ -90,7 +82,7 @@ function init_gear_sets()
 		neck = "Magoraga Beads",
 		body = "Mochi. Chainmail +3",
 	})
-	sets.precast.FC.Shadows = set_combine(sets.precast.FC.Utsusemi, {ammo="Staunch Tathlum +1",ring1="Prolix Ring"})
+	sets.precast.FC.Shadows = set_combine(sets.precast.FC.Utsusemi, {})
 
 	-- Snapshot for ranged
 	sets.precast.RA = {}
@@ -107,10 +99,10 @@ function init_gear_sets()
 
 	sets.precast.WS.Proc =
 	{
-		ammo = "Togakushi Shuriken",
-		head = "Ynglinga Sallet", neck = "Moonbeam Nodowa", ear1 = "Mache Earring +1", ear2 = "Telos Earring",
-		body = "Mummu Jacket +2", hands = "Mummu Wrists +2", ring1 = "Ramuh Ring +1", ring2 = "Ramuh Ring +1",
-		back = gear.Andartia.DA, waist = "Olseni Belt", legs = "Mummu Kecks +2", feet = "Malignance Boots"
+		ammo = "Happo Shuriken",
+		head = "Mummu Bonnet +2", neck = "Lissome Necklace", ear1 = "Mache Earring +1", ear2 = "Telos Earring",
+		body = "Mummu Jacket +2", hands = "Mummu Wrists +2", ring1 = "Etana Ring", ring2 = "Rufescent Ring",
+		back = gear.Andartia.DA, waist = "Engraved Belt", legs = "Mummu Kecks +2", feet = "Malignance Boots"
 	}
 
 	sets.precast.WS['Blade: Metsu'] =
@@ -118,7 +110,7 @@ function init_gear_sets()
 		ammo = "Voluspa Tathlum",
 		head = "Nyame Helm", neck = "Ninja Nodowa +2", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
-		back = gear.Andartia.DA, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
+		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['Blade: Shun'] =
@@ -427,7 +419,7 @@ function init_gear_sets()
 	{
 		ammo = "Yamarang",
 		head = "Hachiya Hatsu. +3", neck = "Sanctity Necklace", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Stikini Ring", ring2 = "Regal Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Stikini Ring +1", ring2 = "Regal Ring",
 		back = gear.Andartia.MAB, waist = "Eschan Stone", legs = "Malignance Tights", feet = "Mochi. Kyahan +3"
 	}
 
@@ -435,7 +427,7 @@ function init_gear_sets()
 	{
 		ammo = "Sapience Orb",
 		head = "Hachiya Hatsu. +3", neck = "Henic Torque", ear1 = "Hnoss earring", ear2 = "Stealth Earring",
-		body = gear.adhemar.body.d, hands = "Leyline Gloves", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring",
+		body = gear.adhemar.body.d, hands = "Leyline Gloves", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = gear.Andartia.MAB, waist = "Cimmerian Sash", feet = "Mochi. Kyahan +3"
 	}
 
@@ -464,7 +456,7 @@ function init_gear_sets()
 		back = gear.Andartia.DA, waist = "Carrier's Sash", legs = "Mpaca's Hose", feet = "Nyame Sollerets"
 	}
 
-	sets.idle.Sphere = set_combine(sets.idle, { body = "Mekosu. Harness" })
+	sets.idle.Sphere = set_combine(sets.idle, {})
 
 	sets.defense.PDT = {}
 	sets.defense.MDT = {}
@@ -514,7 +506,7 @@ function init_gear_sets()
 	{
 		ammo = "Happo Shuriken",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Brutal Earring", ear2 = "Telos Earring",
-		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Defending Ring",
+		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Epona's Ring", ring2 = "Defending Ring",
 		back = gear.Andartia.DA, waist = "Engraved Belt", legs = "Mpaca's Hose", feet = "Malignance Boots"
 	}
 	sets.engaged.Tank.DT = set_combine(sets.engaged.DT,
@@ -617,7 +609,7 @@ function init_gear_sets()
 	sets.weapons.Kikoku = { main = "Kikoku", sub = "Kunimitsu" }
 	sets.weapons.HeishiPhys = { main = "Heishi Shorinken", sub = "Gleti's Knife" }
 	sets.weapons.HeishiMag = { main = "Heishi Shorinken", sub = "Kunimitsu" }
-	sets.weapons.Magic = { main = "Kaja Katana", sub = "Kunimitsu" }
+	sets.weapons.Magic = { main = "Gokotai", sub = "Kunimitsu" }
 	sets.weapons.Tauret = { main = "Tauret", sub = "Kunimitsu" }
 	sets.weapons.GKT = { main = "Hachimonji", sub = "Bloodrain Strap" }
 	sets.weapons.Karambit = { main = "Karambit" }

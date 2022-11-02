@@ -1,7 +1,7 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_job_setup()
 	state.OffenseMode:options('Normal', 'Acc')
-	state.RangedMode:options('Normal', 'Acc')
+	state.RangedMode:options('Normal', 'Crit')
 	state.WeaponskillMode:options('Match', 'Normal', 'Acc', 'Proc')
 	state.CastingMode:options('Normal', 'Fodder', 'Proc')
 	state.IdleMode:options('Normal', 'PDT', 'Refresh')
@@ -64,17 +64,17 @@ function init_gear_sets()
 	sets.precast.CorsairRoll =
 	{
 		head = "Lanun Tricorne +3", neck = "Regal Necklace", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
-		body = "Malignance Tabard", hands = "Chasseur's Gants +2", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
+		body = "Malignance Tabard", hands = "Chasseur's Gants +3", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.Camulus.Snapshot, waist = "Flume Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.precast.LuzafRing = { ring2 = "Luzaf's Ring" }
 
-	sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, { legs = "Chas. Culottes +1" })
+	sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, { legs = "Chas. Culottes +2" })
 	sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, { feet = "Chass. Bottes +2" })
-	sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, { head = "Chass. Tricorne +1" })
+	sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, { head = "Chass. Tricorne +2" })
 	sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, { body = "Chasseur's Frac +2" })
-	sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, { hands = "Chasseur's Gants +2" })
+	sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, { hands = "Chasseur's Gants +3" })
 
 	sets.precast.CorsairShot =
 	{
@@ -100,7 +100,7 @@ function init_gear_sets()
 	sets.precast.CorsairShot['Light Shot'] =
 	{
 		ammo = gear.QDbullet,
-		head = "Laksa. Tricorne +1", neck= "Comm. Charm +2", ear1 = "Digni. Earring", ear2 = "Telos Earring",
+		head = "Laksa. Tricorne +2", neck= "Comm. Charm +2", ear1 = "Digni. Earring", ear2 = "Telos Earring",
 		body = "Malignance Tabard", hands = "Laksa. Gants +1", ring1 = "Metamor. Ring +1", ring2 = "Regal Ring",
 		back = gear.Camulus.Leaden, waist = "Eschan Stone", legs = "Malignance Tights", feet = "Laksa. Bottes +2"
 	}
@@ -131,7 +131,7 @@ function init_gear_sets()
 	sets.precast.RA =
 	{
 		ammo = gear.RAbullet,
-		head = "Chass. Tricorne +1", neck = "Comm. Charm +2",
+		head = "Chass. Tricorne +2", neck = "Comm. Charm +2",
 		body  = "Oshosi Vest +1", hands = "Lanun Gants +3",
 		back = gear.Camulus.Snapshot, waist = "Yemaya Belt", legs = "Adhemar Kecks +1", feet = "Meg. Jam. +2"
 	}
@@ -150,7 +150,7 @@ function init_gear_sets()
 	sets.precast.WS['Requiescat'] =
 	{
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Moonshade Earring",
-		body = gear.adhemar.body.b, hands  = "Nyame GauntletsF", ring1 = "Regal Ring", ring2 = "Rufescent Ring",
+		body = gear.adhemar.body.b, hands  = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Rufescent Ring",
 		back = gear.Camulus.Savage, waist = "Fotia Belt", legs = "Meg. Chausses +2", feet = gear.herculean_ta_feet
 	}
 
@@ -163,8 +163,8 @@ function init_gear_sets()
 
 	sets.precast.WS['Savage Blade'] =
 	{
-		head = "Nyame Helm", neck = "Rep. Plat. Medal", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
-		body = "Laksa. Frac +3", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Rufescent Ring",
+		head = "Nyame Helm", neck = "Bathy Choker +1", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
+		body = "Laksa. Frac +3", hands = "Chasseur's Gants +3", ring1 = "Regal Ring", ring2 = "Chirich Ring +1",
 		back = gear.Camulus.Savage, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet="Lanun Bottes +3"
 	}
 
@@ -172,7 +172,7 @@ function init_gear_sets()
 	{
 		ammo = gear.WSbullet,
 		head = "Lanun Tricorne +3", neck = "Fotia Gorget", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
-		body = "Laksa. Frac +3", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Dingir Ring",
+		body = "Laksa. Frac +3", hands = "Chasseur's Gants +3", ring1 = "Regal Ring", ring2 = "Dingir Ring",
 		back = gear.Camulus.WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
@@ -193,7 +193,7 @@ function init_gear_sets()
 	sets.precast.WS['Aeolian Edge'] =
 	{
 		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Lanun Frac +3", hands = "Carmine Fin. Ga. +1", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
+		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
 		back = gear.Camulus.Leaden, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
@@ -255,10 +255,15 @@ function init_gear_sets()
 		ammo = gear.RAbullet,
 		head = "Ikenga's Hat", neck = "Iskur Gorget", ear1 = "Enervating Earring", ear2 = "Telos Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Ilabrat Ring", ring2 = "Dingir Ring",
-		back = gear.Camulus.Ranged, waist = "Yemaya Belt", legs = "Ikenga's Trousers", feet = "Malignance Boots"
+		back = gear.Camulus.Ranged, waist = "Yemaya Belt", legs = "Chas. Culottes +2", feet = "Malignance Boots"
 	}
 
-	sets.buff['Triple Shot'] = { body = "Chasseur's Frac +2" }
+	sets.midcast.RA.Crit =
+	{
+
+	}
+
+	sets.buff['Triple Shot'] = { body = "Chasseur's Frac +2", hands = "Lanun Gants +3" }
 
 	-- Sets to return to when not performing an action.
 
@@ -365,7 +370,7 @@ function init_gear_sets()
 	{
 		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Telos Earring", ear2 = "Brutal Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Petrov Ring", ring2 = "Epona's Ring",
-		back = gear.Camulus.Melee, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Camulus.Melee, waist = "Reiki Yotai", legs = "Chas. Culottes +2", feet = "Malignance Boots"
 	}
 
 	sets.engaged.Acc.DT =

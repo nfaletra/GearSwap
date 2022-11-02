@@ -51,7 +51,7 @@ end
 
 -- ToString
 function vector_metatable:__tostring()
-	reutrn "[X: "..self.x..", Y: "..self.y..", Z: "..self.z.."]"
+	return "[X: "..self.x..", Y: "..self.y..", Z: "..self.z.."]"
 end
 
 -- Vector Add

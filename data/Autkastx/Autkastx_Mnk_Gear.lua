@@ -9,7 +9,7 @@ function user_job_setup()
 	state.IdleMode:options('Normal', 'DT', 'Evasion')
 	state.Weapons:options('Godhands', 'Verethragna', 'Staff', 'Club', 'ProcStaff', 'Barehanded')
 
-	state.ExtraMeleeMode = M{['description'] = 'Extra Melee Mode', 'None', 'Schere', 'Warder', 'Staff'}
+	state.ExtraMeleeMode = M{['description'] = 'Extra Melee Mode', 'None', 'Schere', 'Mache', 'Warder', 'Staff'}
 
 	update_melee_groups()
 	
@@ -107,26 +107,24 @@ function init_gear_sets()
 	-- Specific weaponskill sets.
 	sets.precast.WS['Victory Smite'] = set_combine(sets.precast.WS,
 	{
-		ammo = "Coiste Bodhar",
-		head = "Adhemar Bonnet +1", neck = "Mnk. Nodowa +2", ear2 = "Schere Earring",
-		body = "Mpaca's Doublet", hands = "Ryuo Tekko +1",
+		head = "Adhemar Bonnet +1", neck = "Mnk. Nodowa +2", ear2 = "Odr Earring",
+		body = "Ken. Samue +1", hands = "Ryuo Tekko +1",
 		back = gear.Segomo.STR_DA, legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	})
 
 	sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS,
 	{
-		ammo = "Coiste Bodhar",
-		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2",
-		body = "Ken. Samue +1",
-		back = gear.Segomo.VIT_WSD, legs = "Mpaca's Hose"
+		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Schere Earring",
+		body = "Tatena. Harama. +1", hands = gear.herculean_ta_hands,
+		back = gear.Segomo.STR_DA, legs = "Mpaca's Hose", feet = gear.herculean_ta_feet
 	})
 
 	sets.precast.WS['Raging Fists'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2",
-		body = "Mpaca's Doublet", hands = "Mpaca's Gloves",
-		back = gear.Segomo.STR_DA, legs = "Mpaca's Hose", feet = "Mpaca's Boots"
+		body = gear.adhemar.body.b, hands = gear.adhemar.hands.b,
+		back = gear.Segomo.STR_DA, legs = "Mpaca's Hose", feet = gear.herculean_ta_feet
 	})
 
 	sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS,
@@ -139,10 +137,10 @@ function init_gear_sets()
 
 	sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS,
 	{
-		ammo = "Voluspa Tathlum",
-		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear2 = "Mache Earring +1",
-		body = "Mpaca's Doublet", hands = "Mpaca's Gloves",
-		back = gear.Segomo.TP, legs = "Mpaca's Hose", feet = "Mpaca's Boots"
+		ammo = "Aurgelmir Orb",
+		head = "Malignance Chapeau", ear2 = "Mache Earring +1",
+		body = "Malignance Tabard", hands = "Malignance Gloves",
+		back = gear.Segomo.TP, legs = "Hes. Hose +3", feet = gear.herculean_ta_feet
 	})
 
 	sets.precast.WS['Ascetic\'s Fury'] = set_combine(sets.precast.WS,
@@ -157,8 +155,8 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2",
-		body = "Mpaca's Doublet", hands = "Mpaca's Gloves",
-		back = gear.Segomo.VIT_WSD, legs = "Mpaca's Hose", feet = "Anch. Gaiters +3"
+		body = "Tatena. Harama. +1", hands = gear.herculean_ta_hands,
+		back = gear.Segomo.STR_DA, legs = "Mpaca's Hose", feet = "Anch. Gaiters +3"
 	})
 
 	sets.precast.WS['Dragon Kick'] = set_combine(sets.precast.WS['Tornado Kick'], {})
@@ -166,9 +164,9 @@ function init_gear_sets()
 	sets.precast.WS['Shoulder Tackle'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Voluspa Tathlum",
-		head = "Malignance Chapeau", neck = "Sanctity Necklace", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
+		head = "Malignance Chapeau", neck = "Sanctity Necklace", ear1 = "Crep. Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Metamor. Ring +1", ring2 = "Etana Ring",
-		back = gear.Segomo.TP, waist = "Acuity Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Segomo.INT_WSD, waist = "Acuity Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	})
 
 	sets.precast.WS['Retribution'] = set_combine(sets.precast.WS,
@@ -181,29 +179,29 @@ function init_gear_sets()
 	sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Pixie Hairpin +1", neck = "Sanctity Necklace", ear1 = "Friomisi Earring",
+		head = "Pixie Hairpin +1", neck = "Sibyl Scarf", ear1 = "Friomisi Earring",
 		ring1 = "Metamor. Ring +1", ring2 = "Archon Ring",
-		back = gear.Segomo.INT_WSD, waist = "Acuity Belt +1", legs = "Mpaca's Hose"
+		back = gear.Segomo.INT_WSD, waist = "Acuity Belt +1",
 	})
 
 	sets.precast.WS['Shell Crusher'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Voluspa Tathlum",
-		head = "Mpaca's Cap", neck = "Sanctity Necklace", ear1 = "Crep. Earring",
+		head = "Mpaca's Cap", neck = "Moonlight Necklace", ear1 = "Crep. Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Metamor. Ring +1", ring2 = "Etana Ring",
-		back = gear.Segomo.STR_DA, waist = "Acuity Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Segomo.INT_WSD, waist = "Acuity Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	})
 	
 	-- Swap to these on Moonshade using WS if at 3000 TP
-	sets.MaxTP = { ear1 = "Sherida Earring", ear2 = "Brutal Earring" }
-	sets.AccMaxTP = { ear1 = "Sherida Earring", ear2 = "Brutal Earring" }
+	sets.MaxTP = { ear2 = "Brutal Earring" }
+	sets.AccMaxTP = { ear2 = "Brutal Earring" }
 	
 	-- Midcast Sets
 	sets.midcast.FastRecast =
 	{
-		ammo="Staunch Tathlum +1",
-		head=gear.herculean_fc_head, ear1 = "Loquac. Earring",
-		hands = "Leyline Gloves",
+		ammo = "Staunch Tathlum +1",
+		head = gear.herculean_fc_head, ear1 = "Loquac. Earring",
+		body = gear.adhemar.body.d, hands = "Leyline Gloves",
 		legs = "Limbo Trousers"
 	}
 
@@ -213,7 +211,7 @@ function init_gear_sets()
 	-- Sets to return to when not performing an action.
 
 	-- Resting sets
-	sets.resting = { body="Hes. Cyclas +3" }
+	sets.resting = { body = "Hes. Cyclas +3" }
 
 	-- Idle sets
 	sets.idle =
@@ -317,6 +315,7 @@ function init_gear_sets()
 
 	-- Extra Melee Modes
 	sets.Schere = { ear2 = "Schere Earring" }
+	sets.Mache = { ear2 = "Mache Earring +1" }
 	sets.Warder = { neck = "Warder's Charm +1" }
 	sets.Staff =
 	{
@@ -329,6 +328,7 @@ function init_gear_sets()
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {}
 	sets.buff.Impetus = { body = "Bhikku Cyclas +2" }
+	sets.buff.ImpetusWS = set_combine(sets.buff.Impetus, { ammo = "Coiste Bodhar", ear2 = "Schere Earring" })
 	sets.buff.Footwork = { feet = "Anch. Gaiters +3" }
 	sets.buff.Boost = { waist = "Ask Sash" }
 

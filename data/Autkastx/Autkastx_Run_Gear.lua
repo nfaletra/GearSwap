@@ -59,7 +59,7 @@ function init_gear_sets()
 	sets.precast.JA['Odyllic Subterfuge'] = set_combine(sets.Enmity, {})
 	sets.precast.JA['Vallation'] = set_combine(sets.Enmity, { body = "Runeist Coat +1", legs = "Futhark Trousers +3" })
 	sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
-	sets.precast.JA['Swordplay'] = set_combine(sets.Enmity, { hands = "Futhark Mitons +2" })
+	sets.precast.JA['Swordplay'] = set_combine(sets.Enmity, { hands = "Futhark Mitons +3" })
 	sets.precast.JA['Gambit'] = set_combine(sets.Enmity, { hands = "Runeist Mitons +1" })
 	sets.precast.JA['Rayke'] = set_combine(sets.Enmity, { feet = "Futhark Boots +3" })
 	sets.precast.JA['Battuta'] = set_combine(sets.Enmity, { head = "Fu. Bandeau +3" })

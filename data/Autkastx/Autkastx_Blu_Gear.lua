@@ -436,7 +436,7 @@ function init_gear_sets()
 	{
 		ammo="Staunch Tathlum +1",
 		head = "Malignance Chapeau",neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Ethereal Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = "Kumbira Cape", waist = "Carrier's Sash", legs = "Malignance Hose", feet = "Malignance Boots"
 	}
 
@@ -492,7 +492,7 @@ function init_gear_sets()
 
 	sets.engaged = {main="Tizona",sub="Almace",ammo="Aurgelmir Orb +1",
 			    head="Dampening Tam",neck="Mirage Stole +2",ear1="Cessance Earring",ear2="Brutal Earring",
-			    body="Adhemar Jacket +1",hands="Adhemar Wrist. +1",ring1="Epona's Ring",ring2="Petrov Ring",
+			    body="Adhemar Jacket +1",hands="Adhemar Wrist. +1",ring1="Epona's Ring",ring2="Hetairoi Ring",
 			    back=gear.da_jse_back,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_ta_feet}
 
 	sets.engaged.AM = {main="Tizona",sub="Almace",ammo="Aurgelmir Orb +1",
