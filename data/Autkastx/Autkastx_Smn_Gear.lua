@@ -244,8 +244,8 @@ function init_gear_sets()
 	{
 		main = "Grioavolr", sub = "Elan Strap +1", ammo = "Epitaph",
 		head = "C. Palug Crown", neck = "Smn. Collar +2", ear1 = "Lugalbanda Earring", ear2 = "Gelos Earring",
-		body = "Beckoner's Doublet +2", hands = "Merlinic Dastanas", ring1 = "Varar Ring +1", ring2 = "Varar Ring +1",
-		back = gear.Campestres.Magic, waist = "Regal Belt", legs = "Enticer's Pants", feet = "Convo. Pigaches +2"
+		body = "Apogee Dalmatica +1", hands = "Merlinic Dastanas", ring1 = "Varar Ring +1", ring2 = "Varar Ring +1",
+		back = gear.Campestres.Magic, waist = "Regal Belt", legs = "Enticer's Pants", feet = gear.apogee.feet.a
 	}
 
 	sets.midcast.Pet.MagicalBloodPactRage.Acc = set_combine(sets.midcast.Pet.MagicalBloodPactRage,

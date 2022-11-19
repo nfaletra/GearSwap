@@ -7,7 +7,7 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'DT', 'Evasion')
-	state.Weapons:options('Godhands', 'Verethragna', 'Staff', 'Club', 'ProcStaff', 'Barehanded')
+	state.Weapons:options('Godhands', 'Verethragna', 'Karambit', 'Staff', 'Club', 'ProcStaff', 'Barehanded')
 
 	state.ExtraMeleeMode = M{['description'] = 'Extra Melee Mode', 'None', 'Schere', 'Mache', 'Warder', 'Staff'}
 
@@ -25,7 +25,7 @@ function user_job_setup()
 		TP = { name = "Segomo's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%' } },
 		STR_DA = { name = "Segomo's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } },
 		INT_WSD = { name = "Segomo's Mantle", augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } },
-		VIT_WSD = { name = "Segomo's Mantle", augments = { 'VIT+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } }
+		VIT_WSD = { name = "Segomo's Mantle", augments = { 'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } }
 	}
 
 	select_default_macro_book()
@@ -55,7 +55,7 @@ function init_gear_sets()
 	{
 		head = "Genmei Kabuto", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Anch. Cyclas +1", hands = "Hes. Gloves +3", ring1 = "Niqmaddu Ring", ring2 = "Regal Ring",
-		legs = "Tatena. Haidate +1", feet = "Anch. Gaiters +3"
+		back = gear.Segomo.VIT_WSD, legs = "Tatena. Haidate +1", feet = "Anch. Gaiters +3"
 	}
 
 	-- Waltz set (chr and vit)
@@ -130,7 +130,7 @@ function init_gear_sets()
 	sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Coiste Bodhar",
-		head = "Hes. Crown +3", neck = "Fotia Gorget", ear2 = "Schere Earring",
+		head = "Hes. Crown +3", neck = "Fotia Gorget", ear2 = "Thrud Earring",
 		body = "Hes. Cyclas +3", hands = "Hes. Gloves +3", ring2 = "Regal Ring",
 		back = gear.Segomo.VIT_WSD, waist = "Fotia Belt", legs = "Hes. Hose +3", feet = "Hes. Gaiters +3"
 	})
@@ -278,7 +278,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Adhemar Bonnet +1", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Telos Earring",
 		body = "Ken. Samue +1", hands = gear.adhemar.hands.a, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
-		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Bhikku Hose +2", feet = "Anch. Gaiters +3"
+		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Bhikku Hose +3", feet = "Anch. Gaiters +3"
 	}
 	sets.engaged.Acc = set_combine(sets.engaged, {})
 
@@ -342,6 +342,7 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Godhands = { main = "Godhands" }
 	sets.weapons.Verethragna = { main = "Verethragna" }
+	sets.weapons.Karambit = { main = "Karambit" }
 	sets.weapons.Club = { main = "Mafic Cudgel" }
 	sets.weapons.Staff = { main = "Xoanon", sub = "Bloodrain Strap" }
 	sets.weapons.ProcStaff = { main = "Chatoyant Staff", sub = "Bloodrain Strap" }
