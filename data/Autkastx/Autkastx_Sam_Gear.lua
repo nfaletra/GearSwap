@@ -38,7 +38,7 @@ function init_gear_sets()
 	sets.precast.JA['Sengikori'] = {feet="Kas. Sune-Ate +1"}
 
     sets.precast.Step = {
-        head="Flam. Zucchetto +2",neck="Moonbeam Nodowa",ear1="Mache Earring +1",ear2="Telos Earring",
+        head="Flam. Zucchetto +2",neck="Moonbeam Nodowa",ear1="Telos Earring",ear2="Mache Earring +1",
         body="Sakonji Domaru +3",hands="Flam. Manopolas +2",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
         back=gear.stp_jse_back,waist="Olseni Belt",legs="Wakido Haidate +3",feet="Wakido Sune-Ate +3"}
     sets.precast.JA['Violent Flourish'] = {ammo="Pemphredo Tathlum",
@@ -72,7 +72,7 @@ function init_gear_sets()
 	}
 
 	sets.precast.WS.Proc = {ammo="Hasty Pinion +1",
-        head="Flam. Zucchetto +2",neck="Moonbeam Nodowa",ear1="Mache Earring +1",ear2="Telos Earring",
+        head="Flam. Zucchetto +2",neck="Moonbeam Nodowa",ear1="Telos Earring",ear2="Mache Earring +1",
         body="Tartarus Platemail",hands="Flam. Manopolas +2",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
         back=gear.stp_jse_back,waist="Olseni Belt",legs="Wakido Haidate +3",feet="Flam. Gambieras +2"}
 	
@@ -139,12 +139,12 @@ function init_gear_sets()
 	sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {})
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
-	sets.MaxTP = {ear1="Thrud Earring",ear2="Lugra Earring +1",}
-	sets.AccMaxTP = {ear1="Mache Earring +1",ear2="Telos Earring"}
-	sets.AccDayMaxTPWSEars = {ear1="Mache Earring +1",ear2="Telos Earring"}
-	sets.DayMaxTPWSEars = {ear1="Thrud Earring",ear2="Brutal Earring",}
-	sets.AccDayWSEars = {ear1="Mache Earring +1",ear2="Telos Earring"}
-	sets.DayWSEars = {ear1="Thrud Earring",ear2="Moonshade Earring",}
+	sets.MaxTP = {ear1="Thrud Earring",ear2="Lugra Earring +1"}
+	sets.AccMaxTP = {ear1="Telos Earring",ear2="Mache Earring +1"}
+	sets.AccDayMaxTPWSEars = {ear1="Telos Earring",ear2="Mache Earring +1"}
+	sets.DayMaxTPWSEars = {ear1="Thrud Earring",ear2="Brutal Earring"}
+	sets.AccDayWSEars = {ear1="Telos Earring",ear2="Mache Earring +1"}
+	sets.DayWSEars = {ear1="Thrud Earring",ear2="Moonshade Earring"}
 
 	-- Midcast Sets
     sets.midcast.FastRecast = {
@@ -215,14 +215,14 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flam. Zucchetto +2", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Telos Earring",
+		head = "Flam. Zucchetto +2", neck = "Sam. Nodowa +2", ear1 = "Telos Earring", ear2 = "Kasuga Earring +1",
 		body = "Tatena. Harama. +1", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring", ring2 = "Chirich Ring +1",
 		back = "Atheling Mantle" , waist = "Sailfi Belt +1", legs = "Tatena. Haidate +1", feet = "Ryuo Sune-Ate +1"
 	}
 	sets.engaged.Acc =
 	{
 		ammo = "Aurgelmir Orb",
-		head = "Ken. Jinpachi", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Telos Earring",
+		head = "Ken. Jinpachi", neck = "Sam. Nodowa +2", ear1 = "Telos Earring", ear2 = "Kasuga Earring +1",
 		body = "Tatena. Harama. +1", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring",ring2 = "Chirich Ring +1",
 		back = "Atheling Mantle" , waist = "Ioskeha Belt +1", legs = "Tatena. Haidate +1", feet = "Flam. Gambieras +2"
 	}
@@ -230,7 +230,7 @@ function init_gear_sets()
 	sets.engaged.Hybrid =
 	{
 		ammo = "Coiste Bodhar",
-		head = "FLam. Zucchetto +2", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Telos Earring",
+		head = "FLam. Zucchetto +2", neck = "Sam. Nodowa +2", ear1 = "Telos Earring", ear2 = "Kasuga Earring +1",
 		body = "Mpaca's Doublet", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = "Atheling Mantle", waist = "Ioskeha Belt +1", legs = "Mpaca's Hose" , feet = "Ryuo Sune-Ate +1"
 	}
@@ -238,7 +238,7 @@ function init_gear_sets()
 	sets.engaged.PDT =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Mpaca's Cap", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Telos Earring",
+		head = "Mpaca's Cap", neck = "Sam. Nodowa +2", ear1 = "Telos Earring", ear2 = "Kasuga Earring +1",
 		body = "Mpaca's Doublet", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = "Atheling Mantle", waist = "Ioskeha Belt +1", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
@@ -247,7 +247,7 @@ function init_gear_sets()
 	sets.engaged.MDT =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Nyame Helm", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Telos Earring",
+		head = "Nyame Helm", neck = "Sam. Nodowa +2", ear1 = "Telos Earring", ear2 = "Kasuga Earring +1",
 		body = "Nyame Mail", hands = "Flam. Manopolas +2", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = "Atheling Mantle", waist = "Ioskeha Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets",
 	}
@@ -256,7 +256,7 @@ function init_gear_sets()
 	sets.engaged.MEVA =
 	{
 		ammo = "Staunch Tathlum +1",
-		helm = "Nyame Helm", neck = "Warder's Charm +1", ear1 = "Schere Earring", ear2 = "Eabani Earring",
+		helm = "Nyame Helm", neck = "Warder's Charm +1", ear1 = "Telos Earring", ear2 = "Eabani Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = "Atheling Mantle", waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets",
 	}

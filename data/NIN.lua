@@ -83,10 +83,10 @@ function job_filtered_action(spell, eventArgs)
 end
 
 function job_pretarget(spell, spellMap, eventArgs)
-    if spell.action_type == 'Ranged Attack' and (player.equipment.ammo == 'Togakushi Shuriken' or player.equipment.ammo == 'Happo Shuriken') then
+    if spell.action_type == 'Ranged Attack' and (player.equipment.ammo == 'Togakushi Shuriken' or player.equipment.ammo == 'Seki Shuriken') then
 		cancel_spell()
 		add_to_chat(123,'Abort: Don\'t throw your good ammo!')
-    elseif spell.english == 'Sange' and (player.equipment.ammo == 'Togakushi Shuriken' or player.equipment.ammo == 'Happo Shuriken') then
+    elseif spell.english == 'Sange' and (player.equipment.ammo == 'Togakushi Shuriken' or player.equipment.ammo == 'Seki Shuriken') then
 		cancel_spell()
 		add_to_chat(123,'Abort: Don\'t throw your good ammo!')
     end

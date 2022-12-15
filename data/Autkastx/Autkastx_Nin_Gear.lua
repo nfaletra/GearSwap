@@ -41,7 +41,7 @@ function init_gear_sets()
 		ammo = "Date Shuriken",
 		head = "Dampening Tam", neck = "Unmoving Collar +1", ear1 = "Cryptic Earring", ear2 = "Trux Earring",
 		body = "Emet Harness +1", hands = "Kurys Gloves", ring1 = "Vengeful Ring", ring2 = "Supershear Ring",
-		back = gear.Andartia.DA, waist = "Trance Belt", legs = "Zoar Subligar +1", feet = "Mochi. Kyahan +3"         
+		back = gear.Andartia.DA, waist = "Trance Belt", legs = "Zoar Subligar +1", feet = "Mochi. Kyahan +3"
 	}
 
 	-- Precast sets to enhance JAs
@@ -99,7 +99,7 @@ function init_gear_sets()
 
 	sets.precast.WS.Proc =
 	{
-		ammo = "Happo Shuriken",
+		ammo = "Seki Shuriken",
 		head = "Mummu Bonnet +2", neck = "Lissome Necklace", ear1 = "Mache Earring +1", ear2 = "Telos Earring",
 		body = "Mummu Jacket +2", hands = "Mummu Wrists +2", ring1 = "Etana Ring", ring2 = "Rufescent Ring",
 		back = gear.Andartia.DA, waist = "Engraved Belt", legs = "Mummu Kecks +2", feet = "Malignance Boots"
@@ -189,7 +189,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Acumen Ring", ring2 = "Dingir Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
 		back =gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -237,7 +237,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Acumen Ring", ring2 = "Dingir Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
 		back = gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -245,7 +245,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Acumen Ring", ring2 = "Dingir Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
 		back =gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -277,7 +277,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Acumen Ring", ring2 = "Dingir Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
 		back = gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -400,7 +400,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Hermetic Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Acumen Ring", ring2 = "Dingir Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
 		back = gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Mochi. Kyahan +3"
 	}
 
@@ -480,7 +480,7 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged =
 	{
-		ammo = "Happo Shuriken",
+		ammo = "Seki Shuriken",
 		head = "Dampening Tam", neck = "Ninja Nodowa +2", ear1 = "Brutal Earring", ear2 = "Telos Earring",
 		body = "Ken. Samue +1", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Epona's Ring",
 		back = gear.Andartia.DA, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = "Mpaca's Boots"
@@ -504,7 +504,7 @@ function init_gear_sets()
 
 	sets.engaged.DT =
 	{
-		ammo = "Happo Shuriken",
+		ammo = "Seki Shuriken",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Brutal Earring", ear2 = "Telos Earring",
 		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Epona's Ring", ring2 = "Defending Ring",
 		back = gear.Andartia.DA, waist = "Engraved Belt", legs = "Mpaca's Hose", feet = "Malignance Boots"
@@ -529,7 +529,7 @@ function init_gear_sets()
 
 	sets.engaged.Evasion =
 	{
-		ammo = "Happo Shuriken",
+		ammo = "Seki Shuriken",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Brutal Earring", ear2 = "Telos Earring",
 		body = "Mpaca's Doublet", hands = gear.adhemar.hands.a, ring1 = "Vengeful Ring", ring2 = "Ilabrat Ring",
 		back = gear.Andartia.DA, waist = "Sailfi Belt +1", legs = "Mpaca's Hose", feet = "Malignance Boots"
@@ -556,7 +556,7 @@ function init_gear_sets()
 
 	sets.engaged['Subtle Blow'] =
 	{
-		ammo = "Happo Shuriken",
+		ammo = "Seki Shuriken",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Brutal Earring", ear2 = "Telos Earring",
 		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Chirich Ring +1",
 		back = gear.Andartia.DA, waist = "Carrier's Sash", legs = "Mpaca's Hose", feet = "Malignance Boots"
@@ -595,11 +595,11 @@ function init_gear_sets()
 	sets.Knockback = {}
 	sets.Haste40 = { waist = "Reiki Yotai" }
 	sets.Haste35 = { waist = "Reiki Yotai", feet = "Hiza. Sune-Ate +2" }
-	sets.Haste30 = { head = "Ryuo Somen +1", ear1 = "Eabani Earring", waist = "Reiki Yotai" }
-	sets.Haste25 = { head = "Ryuo Somen +1", body = "Mochi. Chainmail +3", legs = "Hachiya Hakama +2" }
-	sets.Haste20 = { head = "Ryuo Somen +1", ear1 = "Eabani Earring", body = "Mochi. Chainmail +3", legs = "Hachiya Hakama +2" }
-	sets.Haste15 = { head = "Ryuo Somen +1", ear1 = "Eabani Earring", body = "Mochi. Chainmail +3", waist = "Reiki Yotai", legs = "Hachiya Hakama +2" }
-	sets.Haste10 = { head = "Ryuo Somen +1", ear1 = "Eabani Earring", body = "Mochi. Chainmail +3", waist = "Reiki Yotai", legs = "Mochi. Hakama +3" }
+	sets.Haste30 = { head = "Hattori Zukin +2", ear1 = "Eabani Earring", waist = "Reiki Yotai" }
+	sets.Haste25 = { head = "Hattori Zukin +2", body = "Mochi. Chainmail +3", legs = "Hachiya Hakama +2" }
+	sets.Haste20 = { head = "Hattori Zukin +2", ear1 = "Eabani Earring", body = "Mochi. Chainmail +3", legs = "Hachiya Hakama +2" }
+	sets.Haste15 = { head = "Hattori Zukin +2", ear1 = "Eabani Earring", body = "Mochi. Chainmail +3", waist = "Reiki Yotai", legs = "Hachiya Hakama +2" }
+	sets.Haste10 = { head = "Hattori Zukin +2", ear1 = "Eabani Earring", body = "Mochi. Chainmail +3", waist = "Reiki Yotai", legs = "Mochi. Hakama +3" }
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	sets.Skillchain = {}
 

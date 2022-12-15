@@ -57,6 +57,7 @@ function job_setup()
 	state.Buff['Hundred Fists'] = buffactive['Hundred Fists'] or false
 	state.Buff['Impetus'] = buffactive['Impetus'] or false
 	state.Buff['Boost'] = buffactive['Boost'] or false
+	state.Buff['Counterstance'] = buffactive['Counterstance'] or false
 	
 	state.AutoBoost = M(false, 'Auto Boost Mode')
 	
@@ -155,6 +156,9 @@ end
 
 -- Modify the default melee set after it was constructed.
 function job_customize_melee_set(meleeSet)
+	if state.Buff['Counterstance'] then
+		meleeSet = set_combine(meleeSet, sets.buff.Counterstance)
+	end
 	
 	if state.OffenseMode.value ~= 'FullAcc' then
 		if state.Buff['Impetus'] then
@@ -164,7 +168,7 @@ function job_customize_melee_set(meleeSet)
 			meleeSet = set_combine(meleeSet, sets.buff.Footwork)
 		end
 	end
-	
+
 	if state.Buff['Boost'] then
 		meleeSet = set_combine(meleeSet, sets.buff.Boost)
 	end
