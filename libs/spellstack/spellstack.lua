@@ -86,13 +86,13 @@ function GetWeaponskillFromName(wsName)
 	return WeaponskillMap[wsName]
 end
 
-function GetCurePriority(hp)
-	hp = 100 - tonumber(hp)
-	if hp == 0 or hp > 99 then
+function GetCurePriority(hpp)
+	hpp = 100 - tonumber(hpp)
+	if hpp == 0 or hpp > 99 then
 		return 0
 	end
 
-	return 0.0007 * math.pow(hp, 4) + 0.0028 * math.pow(hp, 3) - 0.707 * math.pow(hp, 2) + 2.7944 * hp + 97.323
+	return 0.0007 * math.pow(hpp, 4) + 0.0028 * math.pow(hpp, 3) - 0.707 * math.pow(hpp, 2) + 2.7944 * hpp + 97.323
 end
 
 function AddSpellToStack(spellToAdd, spellTarget, options)

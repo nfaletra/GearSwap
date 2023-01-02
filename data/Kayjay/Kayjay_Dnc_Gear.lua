@@ -219,7 +219,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle =
 	{
-		ammo = "Hasty Pinion +1",
+		ammo = "Aurgelmir Orb",
 		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
 		body = "Rawhide Vest", hands = "Espial Bracers", ring1 = "Rajas Ring", ring2 = "Keen Ring",
 		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Feast Hose", feet = "Horos Toe Shoes +1"
@@ -248,7 +248,7 @@ function init_gear_sets()
 		body="Adhemar Jacket +1",hands="Leyline Gloves",ring1="Vengeful Ring",ring2="Purity Ring",
 		back="Mujin Mantle",waist="Engraved Belt",legs="Meg. Chausses +2",feet="Ahosi Leggings"}
 
-	sets.Kiting = {feet="Skd. Jambeaux +1"}
+	sets.Kiting = { ring2 = "Shneddick Ring" }
 
 	-- Engaged sets
 
@@ -260,7 +260,7 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged =
 	{
-		ammo = "Hasty Pinion +1",
+		ammo = "Aurgelmir Orb",
 		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
 		body = "Rawhide Vest", hands = "Espial Bracers", ring1 = "Rajas Ring", ring2 = "Keen Ring",
 		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Feast Hose", feet = "Horos Toe Shoes +1"
