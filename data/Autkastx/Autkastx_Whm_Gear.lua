@@ -271,7 +271,7 @@ function init_gear_sets()
 	sets.midcast.Cursna =
 	{
 		main = "Gada", sub = "Thuellaic Ecu +1",
-		head = "Vanya Hood", neck = "Malison Medal", ear1 = "Meili Earring", ear2 = "Ebers Earring",
+		head = "Vanya Hood", neck = "Malison Medallion", ear1 = "Meili Earring", ear2 = "Ebers Earring",
 		body = "Ebers Bliaut +2", hands = "Fanatic Gloves", ring1 = "Haoma's Ring", ring2 = "Haoma's Ring",
 		back = "Alaunus's Cape", legs = "Th. Pant. +3", feet = "Vanya Clogs"
 	}

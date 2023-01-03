@@ -65,7 +65,7 @@ function init_gear_sets()
 
 	-- Precast Sets
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Azure Lore'] = { hands = "Luh. Bazubands +1" }
+	sets.precast.JA['Azure Lore'] = { hands = "Luh. Bazubands +2" }
 
 	-- Waltz set (chr and vit)
     sets.precast.Waltz = {ammo="Staunch Tathlum +1",
@@ -95,12 +95,12 @@ function init_gear_sets()
 		ammo = "Sapience Orb",
 		head = "Carmine Mask +1", neck = "Baetyl Pendant", ear1 = "Loquac. Earring", ear2 = "Etiolation Earring",
 		body = gear.adhemar.body.d, hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Gelatinous Ring +1",
-		back = "Fi Follet Cape +1", waist = "Witful Belt", legs = "Nyame Flanchard", feet = "Carmine Greaves +1"
+		back = "Fi Follet Cape +1", waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Carmine Greaves +1"
 	}
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { body = "Passion Jacket" })
 
-	sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, { body = "Hashishin Mintan +2" })
+	sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, { body = "Hashishin Mintan +2", legs = "Nyame Flanchard" })
 
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
@@ -224,8 +224,8 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].Magical.SIRD =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Nyame Helm", neck = "Loricate Torque +1",
-		hands = "Rawhide Gloves",
+		head = "Nyame Helm", neck = "Loricate Torque +1", ear1 = "Magnetic Earring",
+		body = "Nyame Mail", hands = "Rawhide Gloves", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
 		waist = "Rumination Sash", legs = "Assim. Shalwar +3", feet = "Amalric Nails +1"
 	}
 
@@ -378,7 +378,7 @@ function init_gear_sets()
 	sets.NightIdle = {}
 
 	-- Gear for learning spells: +skill and AF hands.
-	sets.Learning = { hands = "Magus Bazubands" }
+	sets.Learning = { hands = "Assim. Bazu. +1" }
 
 	-- Resting sets
 	sets.resting = {}

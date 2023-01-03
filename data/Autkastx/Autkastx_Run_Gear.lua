@@ -8,7 +8,7 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('MDT_HP','MDT')
 	state.ResistDefenseMode:options('MEVA','MEVA_HP')
 	state.IdleMode:options('Normal', 'Evasion')
-	state.Weapons:options('Aettir', 'Montante', 'Evasion', 'Lycurgos', 'Naegling')
+	state.Weapons:options('Aettir', 'Lionheart', 'Evasion', 'Lycurgos', 'Naegling')
 	
 	state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP'}
 
@@ -315,7 +315,7 @@ function init_gear_sets()
 
 	-- Weapons sets
 	sets.weapons.Aettir = { main = "Aettir", sub = "Utu Grip" }
-	sets.weapons.Montante = { main = "Montante +1", sub = "Utu Grip" }
+	sets.weapons.Lionheart = { main = "Lionheart", sub = "Utu Grip" }
 	sets.weapons.Evasion = { main = "Soulcleaver", sub = "Kupayopl" }
 	sets.weapons.Lycurgos = {main = "Lycurgos", sub = "Utu Grip" }
 	sets.weapons.Naegling = { main = "Naegling", sub = "Malignance Sword" }

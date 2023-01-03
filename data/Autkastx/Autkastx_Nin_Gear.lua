@@ -108,8 +108,8 @@ function init_gear_sets()
 	sets.precast.WS['Blade: Metsu'] =
 	{
 		ammo = "Voluspa Tathlum",
-		head = "Nyame Helm", neck = "Ninja Nodowa +2", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		head = "Hachiya Hatsu. +3", neck = "Ninja Nodowa +2", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Ilabrat Ring", ring2 = "Epaminondas's Ring Ring",
 		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
 	}
 
@@ -117,7 +117,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Epaminondas's Ring Ring",
 		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
@@ -125,7 +125,7 @@ function init_gear_sets()
 	{
 		ammo = "Voluspa Tathlum",
 		head = "Mpaca's Cap", neck = "Ninja Nodowa +2", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
 	}
 
@@ -133,7 +133,7 @@ function init_gear_sets()
 	{
 		ammo = "Voluspa Tathlum",
 		head = "Hachiya Hatsu. +3", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Ishvara Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
 	}
 
@@ -148,8 +148,8 @@ function init_gear_sets()
 	sets.precast.WS['Blade: Ku'] =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Mache Earring +1",
-		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Regal Ring",
+		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Mache Earring +1",
+		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Epona's Ring",
 		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Samnuha Tights", feet = "Mpaca's Boots"
 	}
 
@@ -221,7 +221,7 @@ function init_gear_sets()
 	{
 		ammo = "Voluspa Tathlum",
 		head = "Mpaca's Cap", neck = "Rep. Plat. Medal", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
 	}
 
