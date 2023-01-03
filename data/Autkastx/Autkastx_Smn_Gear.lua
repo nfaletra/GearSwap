@@ -121,7 +121,7 @@ function init_gear_sets()
 	{
 		main = "Malignance Pole", sub = "Umbra Strap", ammo = "Epitaph",
 		head = "Beckoner's Horn +2", neck = "Melic Torque", ear1 = "Andoaa Earring", ear2 = "Lodurr Earring",
-		body = "Glyphic Doublet +1", hands = "Glyphic Bracers +1", ring1 = "Stikini Ring +1", ring2= "Stikini Ring +1",
+		body = "Baayami Robe", hands = "Glyphic Bracers +1", ring1 = "Stikini Ring +1", ring2= "Stikini Ring +1",
 		back = gear.Campestres.Magic, waist = "Emphatikos Rope", legs = "Assid. Pants +1", feet = "Glyph. Pigaches +1"
 	}
 

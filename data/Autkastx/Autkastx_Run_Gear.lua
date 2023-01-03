@@ -85,7 +85,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Agwu's Cap", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Hermetic Earring",
-		body = "Nyame Mail", hands = "Leyline Gloves", ring1 = "Shiva Ring +1", ring2 = "Metamor. Ring +1",
+		body = "Agwu's Robe", hands = "Leyline Gloves", ring1 = "Shiva Ring +1", ring2 = "Metamor. Ring +1",
 		back = "Evasionist's Cape", waist = "Eschan Stone", legs = "Agwu's Slops", feet = "Adhemar Gamashes +1"
 	}
 	sets.precast.JA['Swipe'] = sets.precast.JA['Lunge']
@@ -173,7 +173,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Agwu's Cap", neck = "Sanctity Necklace", ear1 = "Digni. Earring", ear2 = "Crep. Earring",
-		body = "Agwu's Robe", hands = "Agwu's Gages", ring1 = "Etana Ring", ring2 = "Metamor. Ring +1",
+		body = "Erilaz Surcoat +2", hands = "Agwu's Gages", ring1 = "Etana Ring", ring2 = "Metamor. Ring +1",
 		back = gear.Ogma.Idle, waist = "Eschan Stone", legs = "Agwu's Slops", feet = "Agwu's Pigaches"
 	}
 
@@ -310,7 +310,7 @@ function init_gear_sets()
 
 	-- Extra defense sets.  Apply these on top of melee or defense sets.
 	sets.Knockback = {}
-	sets.MP = { ear2 = "Ethereal Earring", body = "Erilaz Surcoat +1", waist = "Flume Belt +1"}
+	sets.MP = { ear2 = "Ethereal Earring", body = "Erilaz Surcoat +2", waist = "Flume Belt +1"}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 
 	-- Weapons sets

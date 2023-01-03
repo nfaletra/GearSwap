@@ -177,7 +177,7 @@ function init_gear_sets()
 	{
 		ammo = gear.WSbullet,
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Odr Earring", ear2 = "Moonshade Earring",
-		body = "Meg. Cuirie +2", hands = "Chasseur's Gants +3", ring1 = "Ilabrat Ring", ring2 = "Epona's Ring",
+		body = "Mummu Jacket +2", hands = "Chasseur's Gants +3", ring1 = "Ilabrat Ring", ring2 = "Epona's Ring",
 		back = gear.Camulus.Melee, waist = "Fotia Belt", legs = "Meg. Chausses +2", feet = "Mummu Gamash. +2"
 	}
 
@@ -231,7 +231,7 @@ function init_gear_sets()
 	sets.precast.WS['Burning Blade'] =
 	{
 		head = "Meghanada Visor +2", neck = "Twilight Torque", ear1 = "Genmei Earring", ear2 = "Crep. Earring",
-		body = "Meg. Cuirie +2", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Regal Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Regal Ring",
 		back = "Moonlight Cape", waist = "Flume Belt", legs = "Meg. Chausses +2", feet = "Meg. Jam. +2"
 	}
 
@@ -274,7 +274,11 @@ function init_gear_sets()
 
 	}
 
-	sets.buff['Triple Shot'] = { body = "Chasseur's Frac +2", hands = "Lanun Gants +3" }
+	sets.buff['Triple Shot'] =
+	{
+		body = "Chasseur's Frac +2", hands = "Lanun Gants +3"
+		legs = "Osh. Trousers +1",
+	}
 
 	-- Sets to return to when not performing an action.
 
@@ -366,14 +370,14 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		head = "Adhemar Bonnet +1", neck = "Iskur Gorget", ear1 = "Telos Earring", ear2 = "Brutal Earring",
-		body = "Meg. Cuirie +2", hands = gear.adhemar.hands.a, ring1 = "Petrov Ring", ring2 = "Epona's Ring",
+		body = gear.adhemar.body.b, hands = gear.adhemar.hands.a, ring1 = "Petrov Ring", ring2 = "Epona's Ring",
 		back = gear.Camulus.Melee, waist = "Reiki Yotai", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
 	}
 
 	sets.engaged.Acc =
 	{
 		head = "Adhemar Bonnet +1", neck = "Iskur Gorget", ear1 = "Telos Earring", ear2 = "Brutal Earring",
-		body = "Meg. Cuirie +2", hands = gear.adhemar.hands.a, ring1 = "Petrov Ring", ring2 = "Epona's Ring",
+		body = gear.adhemar.body.b, hands = gear.adhemar.hands.a, ring1 = "Petrov Ring", ring2 = "Epona's Ring",
 		back = gear.Camulus.Melee, waist = "Reiki Yotai", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
 	}
 

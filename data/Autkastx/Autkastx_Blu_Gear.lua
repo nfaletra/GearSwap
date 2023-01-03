@@ -309,9 +309,9 @@ function init_gear_sets()
 
 	sets.midcast['Blue Magic'].AoEHealing = set_combine(sets.midcast['Blue Magic'].Healing,
 	{
-		ammo = "Crepuscular Pebble",
+		ammo = "Staunch Tathlum +1",
 		ring2 = "Kunaji Ring",
-		waist = "Gishdubar Sash", legs = "Telchine Braconi"
+		back = "Moonlight Cape", waist = "Kasiri Belt", legs = "Telchine Braconi"
 	})
 	
 	sets.midcast['Blue Magic'].SkillBasedBuff =

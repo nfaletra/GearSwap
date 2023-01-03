@@ -154,14 +154,14 @@ function init_gear_sets()
 	{
 		ammo = "Aurgelmir Orb",
 		head = "Flamma Zucchetto +2", neck = "Fotia Gorget", ear1 = "Mache Earring +1", ear2 = "Moonshade Earring",
-		body = "Hjarrandi Breastplate", hands = "Flamma Manopolas +2", 	ring1 = "Regal Ring", ring2 = "Hetairoi Ring",
+		body = "Hjarrandi Breast.", hands = "Flamma Manopolas +2", 	ring1 = "Regal Ring", ring2 = "Hetairoi Ring",
 		back = gear.rudianos_wsd, waist = "Fotia Belt", legs = "Lustratio Subligar +1", feet = "Nyame Sollerets"
 	})
 
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS,
 	{
 		head = "Nyame Helm", neck = "Kgt. Beads +2", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Odyssean Gauntlets", ring1 = "Rufescent Ring", ring2 = "Regal Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Rufescent Ring", ring2 = "Regal Ring",
 		back = gear.rudianos_wsd, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	})
 
@@ -330,7 +330,7 @@ function init_gear_sets()
 	{
 		sub = "Aegis", ammo = "Staunch Tathlum +1",
 		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
+		body = "Sacro Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_counter, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
 	}
 

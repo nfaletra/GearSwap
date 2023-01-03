@@ -152,7 +152,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Seraph Strike'] = set_combine(sets.precast.WS,
 	{
-		ammo = "Crepuscular Pebble",
+		ammo = "Ghastly Tathlum +1",
 		ear1 = "Regal Earring"
 	})
 
