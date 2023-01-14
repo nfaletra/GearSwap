@@ -8,7 +8,7 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('MDT_HP','MDT')
 	state.ResistDefenseMode:options('MEVA','MEVA_HP')
 	state.IdleMode:options('Normal', 'Evasion')
-	state.Weapons:options('Aettir', 'Lionheart', 'Evasion', 'Lycurgos', 'Naegling')
+	state.Weapons:options('Aettir', 'Lionheart', 'Lycurgos', 'Evasion', 'Naegling')
 	
 	state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP'}
 
@@ -57,7 +57,7 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Elemental Sforzo'] = set_combine(sets.Enmity, { body = "Futhark Coat +3" })
 	sets.precast.JA['Odyllic Subterfuge'] = set_combine(sets.Enmity, {})
-	sets.precast.JA['Vallation'] = set_combine(sets.Enmity, { body = "Runeist Coat +1", legs = "Futhark Trousers +3" })
+	sets.precast.JA['Vallation'] = set_combine(sets.Enmity, { body = "Runeist Coat +2", legs = "Futhark Trousers +3" })
 	sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
 	sets.precast.JA['Swordplay'] = set_combine(sets.Enmity, { hands = "Futhark Mitons +3" })
 	sets.precast.JA['Gambit'] = set_combine(sets.Enmity, { hands = "Runeist Mitons +1" })
@@ -75,9 +75,8 @@ function init_gear_sets()
 
 	sets.precast.JA['One For All'] =
 	{
-		ammo = "Falcon Eye",
-		head = "Runeist Bandeau +1", neck = "Futhark Torque +2", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
-		body = "Runeist Coat +1", hands = "Runeist Mitons +1", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
+		head = "Rune. Bandeau +2", neck = "Futhark Torque +2", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
+		body = "Runeist Coat +2", hands = "Runeist Mitons +1", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
 		back = "Moonlight Cape", waist = "Kasiri Belt", legs = "Futhark Trousers +3", feet = "Carmine Greaves +1"
 	}
 
@@ -97,7 +96,7 @@ function init_gear_sets()
 	sets.precast.JA['Vivacious Pulse'] =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Erilaz Galea +2", neck = "Melic Torque", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
+		head = "Erilaz Galea +2", neck = "Incanter's Torque", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Moonlight Ring", ring2 = "Stikini Ring +1",
 		back = gear.Ogma.Idle, waist = "Engraved Belt", legs = "Runeist Trousers +1", feet = "Nyame Sollerets"
 	}
@@ -127,7 +126,7 @@ function init_gear_sets()
 	sets.precast.FC =
 	{
 		ammo = "Sapience Orb",
-		head = "Runeist Bandeau +1", neck = "Baetyl Pendant", ear1 = "Loquac. Earring", ear2 = "Etiolation Earring",
+		head = "Rune. Bandeau +2", neck = "Baetyl Pendant", ear1 = "Loquac. Earring", ear2 = "Etiolation Earring",
 		body = gear.adhemar.body.d, hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.Ogma.FC, waist = "Kasiri Belt", legs = "Agwu's Slops", feet = "Carmine Greaves +1"
 	}
@@ -157,7 +156,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Resolution'] = set_combine(sets.precast.WS,
 	{
-		ammo = "Crepuscular Pebble",
+		ammo = "Coiste Bodhar",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget",
 		body = gear.adhemar.body.b, hands = gear.adhemar.hands.b, ring2 = "Epona's Ring",
 		back = gear.Ogma.Idle, waist = "Fotia Belt", legs = "Samnuha Tights", feet = "Lustratio Leggings +1"
@@ -197,7 +196,7 @@ function init_gear_sets()
 	sets.SIRD = -- 100% SIRD
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Erilaz Galea +2", neck = "Moonlight Necklace",
+		head = "Erilaz Galea +2", neck = "Moonlight Necklace", ear1 = "Magnetic Earring",
 		hands = "Regal Gauntlets",
 		gear.Ogma.FC, waist = "Rumination Sash", legs = "Carmine Cuisses +1", feet = "Taeon Boots" -- 9%
 	}
@@ -205,14 +204,14 @@ function init_gear_sets()
 	sets.midcast.FastRecast =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Runeist Bandeau +1", neck = "Futhark Torque +2", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
+		head = "Rune. Bandeau +2", neck = "Futhark Torque +2", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Defending Ring", ring2 = "Kishar Ring",
 		back = gear.Ogma.FC, waist = "Engraved Belt", legs = "Agwu's Slops", feet = "Nyame Sollerets"
 	}
 
 	sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.FastRecast,
 	{
-		head = "Erilaz Galea +2", neck = "Melic Torque", ear1 = "Andoaa Earring", ear2 = "Odnowa Earring +1",
+		head = "Erilaz Galea +2", neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "Odnowa Earring +1",
 		hands = "Runeist Mitons +1", ring1 = "Moonlight Ring", ring2 = "Stikini Ring +1",
 		waist = "Flume Belt +1", legs = "Futhark Trousers +3", feet = "Erilaz Greaves +2"
 	})
@@ -246,7 +245,7 @@ function init_gear_sets()
 	})
 	sets.midcast['Phalanx'].SIRD = set_combine(sets.midcast['Phalanx'], sets.SIRD, {})
 
-	sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'].Duration, { head = "Runeist Bandeau +1", neck = "Sacro Gorget" })
+	sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'].Duration, { head = "Rune. Bandeau +2", neck = "Sacro Gorget" })
 	sets.midcast['Regen'].SIRD = set_combine(sets.midcast['Regen'], sets.SIRD, {})
 
 	sets.midcast['Refresh'] = set_combine(sets.midcast['Enhancing Magic'].Duration, { waist = "Gishdubar Sash" })
@@ -265,7 +264,7 @@ function init_gear_sets()
 	sets.midcast.Cure =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Runeist Bandeau +1", neck = "Sacro Gorget", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
+		head = "Rune. Bandeau +2", neck = "Sacro Gorget", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
 		body = "Nyame Mail", hands = "Agwu's Gages", ring1 = "Defending Ring", ring2 = "Janniston Ring",
 		back = gear.Ogma.FC, waist = "Luminary Sash", legs = "Agwu's Slops", feet = "Nyame Sollerets"
 	}
@@ -289,7 +288,7 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Futhark Torque +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
-		body = "Runeist Coat +1", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Gelatinous Ring +1",
+		body = "Runeist Coat +2", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.Ogma.Idle, waist = "Engraved Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -310,14 +309,14 @@ function init_gear_sets()
 
 	-- Extra defense sets.  Apply these on top of melee or defense sets.
 	sets.Knockback = {}
-	sets.MP = { ear2 = "Ethereal Earring", body = "Erilaz Surcoat +2", waist = "Flume Belt +1"}
+	sets.MP = { body = "Erilaz Surcoat +2", waist = "Flume Belt +1"}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 
 	-- Weapons sets
 	sets.weapons.Aettir = { main = "Aettir", sub = "Utu Grip" }
 	sets.weapons.Lionheart = { main = "Lionheart", sub = "Utu Grip" }
-	sets.weapons.Evasion = { main = "Soulcleaver", sub = "Kupayopl" }
 	sets.weapons.Lycurgos = {main = "Lycurgos", sub = "Utu Grip" }
+	sets.weapons.Evasion = { main = "Soulcleaver", sub = "Kupayopl" }
 	sets.weapons.Naegling = { main = "Naegling", sub = "Malignance Sword" }
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
@@ -355,7 +354,7 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Futhark Torque +2", ear1 = "Erilaz Earring", ear2 = "Odnowa Earring +1",
-		body = "Runeist Coat +1", hands = "Nyame Gauntlets", ring1 = "Shadow Ring", ring2 = "Moonlight Ring",
+		body = "Runeist Coat +2", hands = "Nyame Gauntlets", ring1 = "Shadow Ring", ring2 = "Moonlight Ring",
 		back = gear.Ogma.Parry, waist = "Engraved Belt", legs = "Eri. Leg Guards +2", feet = "Erilaz Greaves +2"
 	}
 
@@ -363,10 +362,10 @@ function init_gear_sets()
 	-- Custom buff sets
 	--------------------------------------
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
-	sets.buff.Sleep = { head = "Frenzy Sallet" }
+	sets.buff.Sleep = { }
 	sets.buff.Battuta = { hands = "Turms Mittens +1" }
 	sets.buff.Embolden = { back = "Evasionist's Cape" }
-	sets.buff.Pflug = { feet = "Runeist Bottes +1" }
+	sets.buff.Pflug = { feet = "Runeist Bottes +2" }
 	sets.buff.Embolden = { back = "Evasionist's Cape" }
 end
 

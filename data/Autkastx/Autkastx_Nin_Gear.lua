@@ -100,7 +100,7 @@ function init_gear_sets()
 	sets.precast.WS.Proc =
 	{
 		ammo = "Seki Shuriken",
-		head = "Mummu Bonnet +2", neck = "Lissome Necklace", ear1 = "Mache Earring +1", ear2 = "Telos Earring",
+		head = "Mummu Bonnet +2", neck = "Combatant's Torque", ear1 = "Mache Earring +1", ear2 = "Telos Earring",
 		body = "Mummu Jacket +2", hands = "Mummu Wrists +2", ring1 = "Etana Ring", ring2 = "Rufescent Ring",
 		back = gear.Andartia.DA, waist = "Engraved Belt", legs = "Mummu Kecks +2", feet = "Malignance Boots"
 	}
@@ -399,7 +399,7 @@ function init_gear_sets()
 	sets.midcast.ElementalNinjutsu =
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Hermetic Earring",
+		head = "Mochi. Hatsuburi +3", neck = "Sanctity Necklace", ear1 = "Friomisi Earring", ear2 = "Hermetic Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
 		back = gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Mochi. Kyahan +3"
 	}
@@ -410,7 +410,7 @@ function init_gear_sets()
 	sets.MagicBurst =
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Static Earring", ear2 = "Hermetic Earring",
+		head = "Mochi. Hatsuburi +3", neck = "Sanctity Necklace", ear1 = "Static Earring", ear2 = "Hermetic Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Locus Ring", ring2 = "Mujin Band",
 		back = gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Mochi. Kyahan +3"
 	}
@@ -426,7 +426,7 @@ function init_gear_sets()
 	sets.midcast.NinjutsuBuff =
 	{
 		ammo = "Sapience Orb",
-		head = "Hachiya Hatsu. +3", neck = "Henic Torque", ear1 = "Hnoss earring", ear2 = "Stealth Earring",
+		head = "Hachiya Hatsu. +3", neck = "Incanter's Torque", ear1 = "Hnoss earring", ear2 = "Stealth Earring",
 		body = gear.adhemar.body.d, hands = "Leyline Gloves", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = gear.Andartia.MAB, waist = "Cimmerian Sash", feet = "Mochi. Kyahan +3"
 	}
@@ -452,7 +452,7 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Ninja Nodowa +2", ear1 = "Eabani Earring", ear2 = "Etiolation Earring",
-		body = "Mpaca's Doublet", hands = "Nyame Gauntlets", ring1 = "Warden's Ring", ring2 = "Defending Ring",
+		body = "Mpaca's Doublet", hands = "Nyame Gauntlets", ring1 = "Shadow Ring", ring2 = "Defending Ring",
 		back = gear.Andartia.DA, waist = "Carrier's Sash", legs = "Mpaca's Hose", feet = "Nyame Sollerets"
 	}
 

@@ -267,7 +267,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Malignance Chapeau", neck = "Sanctity Necklace", ear1 = "Crep. Earring", ear2 = "Hermetic Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Vertigo Ring", ring2 = "Etana Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Etana Ring", ring2 = "Metamor. Ring +1",
 		waist = "Eschan Stone", legs = "Malignance Tights", feet = "Malignance Boots"
 	})
 

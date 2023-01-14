@@ -38,7 +38,7 @@ function init_gear_sets()
 	sets.precast.JA['Elemental Siphon'] =
 	{
 		main = "Chatoyant Staff", sub = "Vox Grip", ammo = "Esper Stone +1",
-		head = "Convoker's Horn +2", neck = "Melic Torque", ear1 = "Andoaa Earring", ear2 = "C. Palug Earring",
+		head = "Convoker's Horn +2", neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "C. Palug Earring",
 		body = "Telchine Chasuble", hands = "Baayami Cuffs +1", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
 		back = "Conveyance Cape", waist = "Kobo Obi", legs = "Telchine Braconi", feet = "Beck. Pigaches +1"
 	}
@@ -49,7 +49,7 @@ function init_gear_sets()
 	sets.precast.BloodPactWard =
 	{
 		main = "Espiritus", sub = "Vox Grip", ammo = "Sancus Sachet +1",
-		head = "Beckoner's Horn +2", neck = "Melic Torque", ear1 = "Lodurr Earring", ear2 = "C. Palug Earring",
+		head = "Beckoner's Horn +2", neck = "Incanter's Torque", ear1 = "Lodurr Earring", ear2 = "C. Palug Earring",
 		body = "Baayami Robe", hands = "Baayami Cuffs +1", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
 		back = "Conveyance Cape", waist = "Kobo Obi", legs = "Baayami Slops", feet = "Baayami Sabots"
 	}
@@ -103,7 +103,7 @@ function init_gear_sets()
 	sets.midcast.Cure =
 	{
 		main = "Gada", sub = "Sors Shield", ammo = "Pemphredo Tathlum",
-		head = "Vanya Hood", neck = "Henic Torque", ear1 = "Mendi. Earring", ear2 = "Malignance Earring",
+		head = "Vanya Hood", neck = "Incanter's Torque", ear1 = "Mendi. Earring", ear2 = "Malignance Earring",
 		body = "Vedic Coat", hands = "Telchine Gloves" ,ring1 = "Lebeche Ring", ring2 = "Stikini Ring +1",
 		back = "Pahtli Cape", waist = "Luminary Sash", legs = "Assiduity Pants +1", feet = "Vanya Clogs"
 	}
@@ -120,7 +120,7 @@ function init_gear_sets()
 	sets.midcast['Summoning Magic'] =
 	{
 		main = "Malignance Pole", sub = "Umbra Strap", ammo = "Epitaph",
-		head = "Beckoner's Horn +2", neck = "Melic Torque", ear1 = "Andoaa Earring", ear2 = "Lodurr Earring",
+		head = "Beckoner's Horn +2", neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "Lodurr Earring",
 		body = "Baayami Robe", hands = "Glyphic Bracers +1", ring1 = "Stikini Ring +1", ring2= "Stikini Ring +1",
 		back = gear.Campestres.Magic, waist = "Emphatikos Rope", legs = "Assid. Pants +1", feet = "Glyph. Pigaches +1"
 	}
@@ -193,7 +193,7 @@ function init_gear_sets()
 	sets.midcast['Enhancing Magic'] =
 	{
 		main= "Gada", sub = "Ammurapi Shield", ammo = "Hasty Pinion +1",
-		head = "Telchine Cap", neck = "Melic Torque", ear1 = "Andoaa Earring", ear2 = "Gifted Earring",
+		head = "Telchine Cap", neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "Gifted Earring",
 		body = "Telchine Chas.", hands = "Telchine Gloves", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = "Perimede Cape", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Telchine Pigaches"
 	}
@@ -208,7 +208,7 @@ function init_gear_sets()
 	sets.midcast.Pet.BloodPactWard =
 	{
 		main = "Espiritus", sub = "Vox Grip", ammo = "Epitaph",
-		head = "Baayami Hat", neck = "Melic Torque", ear1 = "Lodurr Earring", ear2 = "C. Palug Earring",
+		head = "Baayami Hat", neck = "Incanter's Torque", ear1 = "Lodurr Earring", ear2 = "C. Palug Earring",
 		body = "Baayami Robe", hands = "Baayami Cuffs +1", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
 		back = "Conveyance Cape", waist = "Kobo Obi", legs = "Baayami Slops", feet = "Baayami Sabots"
 	}
@@ -292,7 +292,7 @@ function init_gear_sets()
     sets.resting =
 	{
 		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
-		head = "Beckoner's Horn +2", neck = "Twilight Torque", ear1 = "C. Palug Earring", ear2 = "Eabani Earring",
+		head = "Beckoner's Horn +2", neck = "Smn. Collar +2", ear1 = "C. Palug Earring", ear2 = "Eabani Earring",
 		body = "Shomonjijoe +1", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
 		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = "Inyan. Crackows +2"
 	}
@@ -301,7 +301,7 @@ function init_gear_sets()
 	sets.idle =
 	{
 		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
-		head = "Beckoner's Horn +2", neck = "Twilight Torque", ear1 = "C. Palug Earring", ear2 = "Eabani Earring",
+		head = "Beckoner's Horn +2", neck = "Smn. Collar +2", ear1 = "C. Palug Earring", ear2 = "Eabani Earring",
 		body = "Shomonjijoe +1", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Stikini Ring +1",
 		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
 	}

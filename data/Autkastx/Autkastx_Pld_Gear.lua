@@ -9,7 +9,7 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('Normal')
 	state.ResistDefenseMode:options('Normal')
 	state.IdleMode:options('Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Ochain', 'DD', 'DW', 'TwoHanded')
-	state.Weapons:options('Excalibur', 'Sakpata', 'Brilliance', 'Naegling', 'Staff', "ShiningOne", 'GS', 'DualWeapons', 'DualNaegling')
+	state.Weapons:options('Excalibur', 'Sakpata', 'Naegling', 'Staff', "ShiningOne", 'GS', 'DualWeapons', 'DualNaegling')
 	
 	state.ExtraDefenseMode = M{ ['description'] = 'Extra Defense Mode', 'None', 'MP', 'Twilight' }
 	
@@ -354,7 +354,7 @@ function init_gear_sets()
 	sets.idle.DW =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flam. Zucchetto +2", neck = "Lissome Necklace", ear1 = "Suppanomimi", ear2 = "Eabani Earring",
+		head = "Flam. Zucchetto +2", neck = "Combatant's Torque", ear1 = "Suppanomimi", ear2 = "Eabani Earring",
 		body = "Dagon Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Petrov Ring", ring2 = "Hetairoi Ring",
 		back = gear.rudianos_tp, waist = "Reiki Yotai", legs = "Sakpata's Cuisses", feet = "Flamma Gambieras +2"
 	}
@@ -362,7 +362,7 @@ function init_gear_sets()
 	sets.idle.TwoHanded =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flam. Zucchetto +2", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Telos Earring",
+		head = "Flam. Zucchetto +2", neck = "Combatant's Torque", ear1 = "Brutal Earring", ear2 = "Telos Earring",
 		body = "Hjarrandi Breast.", hands = "Sakpata's Gauntlets", ring1 = "Flamma Ring", ring2 = "Hetairoi Ring",
 		back = gear.rudianos_tp, waist = "Sailfi Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
 	}
@@ -390,7 +390,6 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Excalibur = { main = "Excalibur" }
 	sets.weapons.Sakpata = { main = "Sakpata's Sword" }
-	sets.weapons.Brilliance = { main = "Brilliance" }
 	sets.weapons.Naegling = { main = "Naegling" }
 	sets.weapons.Staff = { main = "Malignance Pole", sub = "Bloodrain Strap" }
 	sets.weapons.ShiningOne = { main = "Shining One", sub = "Bloodrain Strap" }
@@ -437,7 +436,7 @@ function init_gear_sets()
 	sets.engaged.DW =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flamma Zucchetto +2", neck = "Lissome Necklace", ear1 = "Suppanomimi", ear2 = "Eabani Earring",
+		head = "Flamma Zucchetto +2", neck = "Combatant's Torque", ear1 = "Suppanomimi", ear2 = "Eabani Earring",
 		body = "Dagon Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Petrov Ring", ring2 = "Hetairoi Ring",
 		back = gear.rudianos_tp, waist = "Reiki Yotai", legs = "Sakpata's Cuisses", feet = "Flamma Gambieras +2"
 	}
@@ -445,7 +444,7 @@ function init_gear_sets()
 	sets.engaged.TwoHanded =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flam. Zucchetto +2", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Telos Earring",
+		head = "Flam. Zucchetto +2", neck = "Combatant's Torque", ear1 = "Brutal Earring", ear2 = "Telos Earring",
 		body = "Hjarrandi Breast.", hands = "Sakpata's Gauntlets", ring1 = "Flamma Ring", ring2 = "Hetairoi Ring",
 		back = gear.rudianos_tp, waist = "Windbuffet Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
 	}

@@ -8,7 +8,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None', 'Naegbron', 'Maxentius', 'Naegzan', 'Magic', 'Trial')
+	state.Weapons:options('None', 'Naegling', 'NaeglingAcc', 'Maxentius', 'Magic', 'Trial')
 
 	state.ExtraMeleeMode = M{ ['description'] = 'Extra Melee Mode', 'None'}
 
@@ -17,6 +17,8 @@ function user_job_setup()
 		TP = { name = "Rosmerta's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } },
 		WSD = { name = "Rosmerta's Cape", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } },
 		Magic = { name = "Rosmerta's Cape", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Magic Damage +5', '"Mag.Atk.Bns."+10', 'Mag. Evasion+15' } },
+		Evasion = { name = "Rosmerta's Cape", augments = { 'AGI+20', 'Eva.+20 /Mag. Eva.+20', '"Fast Cast"+10', 'Evasion+15' } },
+		Cure = { name = "Rosmerta's Cape", augments = { 'MND+20', 'Eva.+20 /Mag. Eva.+20', '"Cure" potency +10%', 'Damage taken-5%' } },
 	}
 
 	autows = 'Expiacion'
@@ -46,47 +48,47 @@ function init_gear_sets()
 	-- Start defining the sets
 	--------------------------------------
 
-	sets.buff['Burst Affinity'] = { feet = "Hashi. Basmak +2" }
-	sets.buff['Chain Affinity'] = { head = "Hashishin Kavuk +2", feet = "Assim. Charuqs +3" }
-	sets.buff.Convergence = {head="Luh. Keffiyeh +3"}
-	sets.buff.Diffusion = {feet="Luhlaza Charuqs +3"}
+	sets.buff['Burst Affinity'] = { feet = "Hashi. Basmak +1" }
+	sets.buff['Chain Affinity'] = { head = "Hashishin Kavuk +2", feet = "Assim. Charuqs +1" }
+	sets.buff.Convergence = { head = "Luh. Keffiyeh +1" }
+	sets.buff.Diffusion = { feet = "Luhlaza Charuqs +2" }
 	sets.buff.Enchainment = {}
-	sets.buff.Efflux = { back = gear.Rosmerta.WSD, legs = "Hashishin Tayt +2" }
+	sets.buff.Efflux = { back = gear.Rosmerta.WSD, legs = "Hashishin Tayt +1" }
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 
-	sets.HPDown = {head="Pixie Hairpin +1",neck="Loricate Torque +1",ear1="Mendicant's Earring",ear2="Evans Earring",
-		body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
-		back="Swith Cape +1",waist="Flume Belt +1",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
-		
-	sets.HPCure = {main="Bunzi's Rod",sub="Nibiru Cudgel",ammo="Pemphredo Tathlum",
-		head="Carmine Mask +1",neck="Incanter's Torque",ear1="Etiolation Earring",ear2="Mendi. Earring",
-		body="Vrikodara Jupon",hands="Telchine Gloves",ring1="Janniston Ring",ring2="Menelaus's Ring",
-		back="Moonlight Cape",waist="Carrier's Sash",legs="Carmine Cuisses +1",feet="Medium's Sabots"}
+	sets.HPDown = {}
+	sets.HPCure = {}
 
 	-- Precast Sets
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Azure Lore'] = { hands = "Luh. Bazubands +2" }
 
 	-- Waltz set (chr and vit)
-    sets.precast.Waltz = {ammo="Staunch Tathlum +1",
-        head="Carmine Mask +1",neck="Unmoving Collar +1",ear1="Enchntr. Earring +1",ear2="Handler's Earring +1",
-        body=gear.herculean_waltz_body,hands=gear.herculean_waltz_hands,ring1="Defending Ring",ring2="Valseur's Ring",
-        back="Moonlight Cape",waist="Chaac Belt",legs="Dashing Subligar",feet=gear.herculean_waltz_feet}
-	
-	sets.Self_Waltz = {body="Passion Jacket",ring1="Asklepian Ring"}
+	sets.precast.Waltz =
+	{
+		ammo = "Staunch Tathlum +1",
+		head="Carmine Mask +1", neck="Unmoving Collar +1",
+		back="Moonlight Cape"
+	}
+
+	sets.Self_Waltz = { body="Passion Jacket" }
 
 	-- Don't need any special gear for Healing Waltz.
 	sets.precast.Waltz['Healing Waltz'] = {}
 
-	sets.precast.Step = {ammo="Falcon Eye",
-					head="Carmine Mask +1",neck="Mirage Stole +2",ear1="Regal Earring",ear2="Telos Earring",
-					body="Assim. Jubbah +3",hands="Assim. Bazu. +3",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-					back=gear.da_jse_back,waist="Olseni Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
+	sets.precast.Step =
+	{
+		head = "Malignance Chapeau", neck = "Mirage Stole +2", ear1 = "Regal Earring", ear2 = "Telos Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves",
+		back = gear.Rosmerta.TP, legs = "Malignance Tights", feet = "Malignance Boots"
+	}
 
-	sets.precast.Flourish1 = {ammo="Falcon Eye",
-			       head="Malignance Chapeau",neck="Mirage Stole +2",ear1="Regal Earring",ear2="Digni. Earring",
-                   body="Malignance Tabard",hands="Malignance Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-			       back="Cornflower Cape",waist="Olseni Belt",legs="Malignance Tights",feet="Malignance Boots"}
+	sets.precast.Flourish1 =
+	{
+		head = "Malignance Chapeau",neck = "Mirage Stole +2", ear1 = "Regal Earring", ear2 = "Telos Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
+		back = "Cornflower Cape", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
 
 	-- Fast cast sets for spells
 
@@ -95,12 +97,12 @@ function init_gear_sets()
 		ammo = "Sapience Orb",
 		head = "Carmine Mask +1", neck = "Baetyl Pendant", ear1 = "Loquac. Earring", ear2 = "Etiolation Earring",
 		body = gear.adhemar.body.d, hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Gelatinous Ring +1",
-		back = "Fi Follet Cape +1", waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Carmine Greaves +1"
+		back = gear.Rosmerta.Evasion, waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Carmine Greaves +1"
 	}
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { body = "Passion Jacket" })
 
-	sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, { body = "Hashishin Mintan +2", legs = "Nyame Flanchard" })
+	sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, { body = "Hashishin Mintan +3", legs = "Nyame Flanchard" })
 
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
@@ -116,7 +118,7 @@ function init_gear_sets()
 	{
 		ammo = "Oshasha's Treatise",
 		head = "Nyame Helm", neck = "Mirage Stole +2", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Shukuyu Ring", ring2 = "Rufescent Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Epaminondas's Ring", ring2 = "Rufescent Ring",
 		back = gear.Rosmerta.WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS['Expiacion'], {})
@@ -135,17 +137,17 @@ function init_gear_sets()
 	sets.precast.WS['Requiescat'] =
 	{
 		ammo = "Oshasha's Treatise",
-		head = "Luh. Keffiyeh +3", neck = "Fotia Gorget", ear1 = "Regal Earring", ear2 = "Brutal Earring",
-		body = "Luhlaza Jubbah +3", hands = gear.adhemar.hands.b, ring1 = "Epona's Ring", ring2 = "Rufescent Ring",
-		back = gear.Rosmerta.Magic, waist = "Fotia Belt", legs = "Luhlaza Shalwar +3", feet = "Luhlaza Charuqs +3"
+		head = "Luh. Keffiyeh +1", neck = "Fotia Gorget", ear1 = "Regal Earring", ear2 = "Brutal Earring",
+		body = "Luhlaza Jubbah +1", hands = gear.adhemar.hands.b, ring1 = "Epona's Ring", ring2 = "Rufescent Ring",
+		back = gear.Rosmerta.Magic, waist = "Fotia Belt", legs = "Luhlaza Shalwar +1", feet = "Luhlaza Charuqs +2"
 	}
 
 	sets.precast.WS['Realmrazer'] =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Luh. Keffiyeh +3", neck = "Fotia Gorget", ear1 = "Regal Earring", ear2 = "Telos Earring",
-		body = "Hashishin Mintan +2", hands = "Hashishin Bazubands +2", ring1 = "Metamor. Ring +1", ring2 = "Rufescent Ring",
-		back = gear.Rosmerta.WSD, waist = "Fotia Belt", legs = "Hashishin Tayt +2", feet = "Hashishin Basmak +2"
+		head = "Luh. Keffiyeh +1", neck = "Fotia Gorget", ear1 = "Regal Earring", ear2 = "Telos Earring",
+		body = "Hashishin Mintan +3", hands = "Hashi. Bazu. +1", ring1 = "Metamor. Ring +1", ring2 = "Rufescent Ring",
+		back = gear.Rosmerta.WSD, waist = "Fotia Belt", legs = "Hashishin Tayt +1", feet = "Hashi. Basmak +1"
 	}
 
 	sets.precast.WS['Black Halo'] =
@@ -169,7 +171,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Pixie Hairpin +1", neck = "Baetyl Pendant", ear1 = "Regal Earring", ear2 = "Friomisi Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Shiva Ring +1",
-		back = gear.Rosmerta.Magic, waist = "Sacro Cord", legs = "Luhlaza Shalwar +3", feet = "Nyame Sollerets"
+		back = gear.Rosmerta.Magic, waist = "Sacro Cord", legs = "Luhlaza Shalwar +1", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['Seraph Blade'] =
@@ -181,16 +183,16 @@ function init_gear_sets()
 	}
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
-	sets.MaxTP = {ear1="Cessance Earring",ear2="Brutal Earring"}
-	sets.AccMaxTP = {ear1="Regal Earring",ear2="Telos Earring"}
+	sets.MaxTP = { ear2 = "Brutal Earring" }
+	sets.AccMaxTP = { ear2 = "Telos Earring" }
 
 	-- Midcast Sets
 	sets.midcast.FastRecast =
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Carmine Mask +1", neck = "Mirage Stole +2", ear1 = "Regal Earring", ear2 = "Digni. Earring",
-		body = "Luhlaza Jubbah +3", hands = "Hashishin Bazubands +2", ring1 = "Kishar Ring", ring2 = "Metamor. Ring +1",
-		back = "Aurist's Cape +1", waist = "Witful Belt", legs = "Assim. Shalwar +3", feet = "Luhlaza Charuqs +3"
+		body = "Luhlaza Jubbah +1", hands = "Hashi. Bazu. +1", ring1 = "Kishar Ring", ring2 = "Metamor. Ring +1",
+		back = gear.Rosmerta.Evasion, waist = "Witful Belt", legs = "Assim. Shalwar +2", feet = "Luhlaza Charuqs +2"
 	}
 
 	sets.midcast['Blue Magic'] = {}
@@ -199,9 +201,9 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].Physical =
 	{
 		ammo = "Aurgelmir Orb",
-		head = "Luh. Kaffiyeh +3", neck = "Mirage Stole +2", ear1 = "Odnowa Earring +1", ear2 = "Telos Earring",
-		body = "Assim. Jubbah +3", hands = gear.adhemar.hands.b, ring1 = "Ifrit Ring +1", ring2 = "Shukuyu Ring",
-		back = gear.Rosmerta.WSD, waist = "Sailfi Belt +1", legs = "Gleti's Breeches", feet = "Luhlaza Charuqs +3"
+		head = "Luh. Keffiyeh +1", neck = "Mirage Stole +2", ear1 = "Odnowa Earring +1", ear2 = "Telos Earring",
+		body = "Assim. Jubbah +1", hands = gear.adhemar.hands.b, ring1 = "Ifrit Ring +1", ring2 = "Shukuyu Ring",
+		back = gear.Rosmerta.WSD, waist = "Sailfi Belt +1", legs = "Gleti's Breeches", feet = "Luhlaza Charuqs +2"
 	}
 	sets.midcast['Blue Magic'].PhysicalStr = set_combine(sets.midcast['Blue Magic'].Physical, {})
 	sets.midcast['Blue Magic'].PhysicalDex = set_combine(sets.midcast['Blue Magic'].Physical, {})
@@ -217,16 +219,22 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = empty, neck = "Baetyl Pendant", ear1 = "Regal Earring", ear2 = "Friomisi Earring",
-		body = "Cohort Cloak +1", hands = "Hashishin Bazubands +2", ring1 = "Metamor. Ring +1", ring2 = "Shiva Ring +1",
-		back = gear.Rosmerta.Magic, waist = "Sacro Cord", legs = "Luhlaza Shalwar +3", feet = "Amalric Nails +1"
+		body = "Cohort Cloak +1", hands = "Hashi. Bazu. +1", ring1 = "Metamor. Ring +1", ring2 = "Shiva Ring +1",
+		back = gear.Rosmerta.Magic, waist = "Sacro Cord", legs = "Luhlaza Shalwar +1", feet = "Amalric Nails +1"
 	}
+
+	sets.midcast['Blue Magic']['Tenebral Crush'] = set_combine(sets.midcast['Blue Magic'].Magical,
+	{
+		head = "Pixie Hairpin +1",
+		body = "Amalric Doublet +1", ring2 = "Archon Ring",
+	})
 
 	sets.midcast['Blue Magic'].Magical.SIRD =
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Loricate Torque +1", ear1 = "Magnetic Earring",
 		body = "Nyame Mail", hands = "Rawhide Gloves", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
-		waist = "Rumination Sash", legs = "Assim. Shalwar +3", feet = "Amalric Nails +1"
+		back = "Fi Follet Cape +1", waist = "Rumination Sash", legs = "Assim. Shalwar +2", feet = "Amalric Nails +1"
 	}
 
 	sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, { ring2 = "Stikini Ring +1" })
@@ -237,9 +245,9 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].MagicAccuracy =
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Assim. Keffiyeh +3", neck = "Mirage Stole +2", ear1 = "Regal Earring", ear2 = "Hermetic Earring",
-		body = "Hashshin Mintan +2", hands = "Hashishin Bazubands +2", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
-		back = "Aurist's Cape +1", waist = "Sacro Cord", legs = "Assim. Shalwar +3", feet = "Hashishin Basmak +2"
+		head = "Assim. Keffiyeh +1", neck = "Mirage Stole +2", ear1 = "Regal Earring", ear2 = "Hermetic Earring",
+		body = "Hashishin Mintan +3", hands = "Hashi. Bazu. +1", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
+		back = "Aurist's Cape +1", waist = "Sacro Cord", legs = "Assim. Shalwar +2", feet = "Hashi. Basmak +1"
 	}
 
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Blue Magic'].MagicAccuracy,
@@ -248,78 +256,72 @@ function init_gear_sets()
 		body = "Cohort Cloak +1", hands = "Regal Cuffs", ring1 = "Kishar Ring"
 	})
 
-	sets.midcast['Dark Magic'] = {ammo="Pemphredo Tathlum",
-		head="Jhakri Coronal +2",neck="Erra Pendant",ear1="Regal Earring",ear2="Digni. Earring",
-		body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
-		back=gear.nuke_jse_back,waist="Acuity Belt +1",legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}
+	sets.midcast['Dark Magic'] = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {})
 
-	sets.midcast['Divine Magic'] = {ammo="Pemphredo Tathlum",
-		head="Jhakri Coronal +2",neck="Incanter's Torque",ear1="Regal Earring",ear2="Digni. Earring",
-		body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
-		back=gear.nuke_jse_back,waist="Luminary Sash",legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}
+	sets.midcast['Divine Magic'] = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {})
 
-	sets.midcast['Elemental Magic'] = {ammo="Ghastly Tathlum +1",
-		head="Jhakri Coronal +2",neck="Baetyl Pendant",ear1="Regal Earring",ear2="Friomisi Earring",
-		body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
-		back=gear.nuke_jse_back,waist=gear.ElementalObi,legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}
-
-	sets.midcast['Elemental Magic'].Resistant = {ammo="Pemphredo Tathlum",
-		head="Jhakri Coronal +2",neck="Mirage Stole +2",ear1="Regal Earring",ear2="Friomisi Earring",
-		body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
-		back=gear.nuke_jse_back,waist="Yamabuki-no-Obi",legs="Luhlaza Shalwar +3",feet="Jhakri Pigaches +2"}
+	sets.midcast['Elemental Magic'] = set_combine(sets.midcast['Blue Magic'].Magical, {})
+	sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {})
 
 	sets.midcast.Helix = sets.midcast['Elemental Magic']
 
 	sets.element.Dark = { head = "Pixie Hairpin +1", ring2 = "Archon Ring" }
-	sets.element.Light = { head = "Assim. Keffiyeh +3", hands = "Hashishin Bazubands +2" }
+	sets.element.Light = { head = "Assim. Keffiyeh +1", hands = "Hashi. Bazu. +1" }
 
-	sets.midcast.Cure = {ammo="Staunch Tathlum +1",
-		head="Nyame Helm",neck="Loricate Torque +1",ear1="Regal Earring",ear2="Mendi. Earring",
-		body="Vrikodara Jupon",hands="Telchine Gloves",ring1="Janniston Ring",ring2="Menelaus's Ring",
-		back="Moonlight Cape",waist="Luminary Sash",legs="Nyame Flanchard",feet="Medium's Sabots"}
+	sets.midcast.Cure =
+	{
+		ammo = "Staunch Tathlum +1",
+		head = "Nyame Helm", neck = "Loricate Torque +1", ear1 = "Regal Earring", ear2 = "Mendi. Earring",
+		body = "Vrikodara Jupon", hands = "Telchine Gloves", ring1 = "Janniston Ring", ring2 = "Menelaus's Ring",
+		back = gear.Rosmerta.Cure, waist = "Luminary Sash", legs = "Nyame Flanchard", feet = "Medium's Sabots"
+	}
 
-	sets.midcast.Cursna =  set_combine(sets.midcast.Cure, {neck="Debilis Medallion",hands="Hieros Mittens",
-		back="Oretan. Cape +1",ring1="Haoma's Ring",ring2="Menelaus's Ring",waist="Witful Belt"})
+	sets.midcast.Cursna =  set_combine(sets.midcast.Cure,
+	{
+		neck = "Malison Medallion",
+		ring1 = "Haoma's Ring", ring2 = "Haoma's Ring",
+		waist = "Witful Belt"
+	})
 
 	-- Breath Spells --
-
-	sets.midcast['Blue Magic'].Breath = {ammo="Mavi Tathlum",
-		head="Luh. Keffiyeh +3",neck="Mirage Stole +2",ear1="Regal Earring",ear2="Digni. Earring",
-		body="Assim. Jubbah +3",hands="Luh. Bazubands +1",ring1="Kunaji Ring",ring2="Meridian Ring",
-		back="Cornflower Cape",legs="Hashishin Tayt +1",feet="Luhlaza Charuqs +3"}
+	sets.midcast['Blue Magic'].Breath =
+	{
+		ammo = "Mavi Tathlum",
+		head = "Luh. Keffiyeh +1", neck = "Mirage Stole +2", ear1 = "Regal Earring", ear2 = "Digni. Earring",
+		body = "Assim. Jubbah +1", hands = "Luh. Bazubands +2", ring1 = "Kunaji Ring", ring2 = "Meridian Ring",
+		back = "Cornflower Cape", legs = "Hashishin Tayt +1", feet = "Luhlaza Charuqs +2"
+	}
 
 	-- Physical Added Effect Spells most notably "Stun" spells --
-
 	sets.midcast['Blue Magic'].Stun =
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Carmine Mask +1", neck = "Mirage Stole +2", ear1 = "Regal Earring", ear2 = "Digni. Earring",
-		body = "Luhlaza Jubbah +3", hands = "Leyline Gloves", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
-		back = "Aurist's Cape +1", waist = "Sacro Cord", legs = "Luhlaza Shalwar +3", feet = "Luhlaza Charuqs +3"
+		body = "Luhlaza Jubbah +1", hands = "Leyline Gloves", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
+		back = "Aurist's Cape +1", waist = "Sacro Cord", legs = "Luhlaza Shalwar +1", feet = "Luhlaza Charuqs +2"
 	}
 
 	-- Other Specific Spells --
 	sets.midcast['Blue Magic'].Healing =
 	{
-		ammo = "Staunch Tathlum +1",
+		ammo = "Pemphredo Tathlum",
 		head = "Nyame Helm", neck = "Phalaina Locket", ear1 = "Mendicant's Earring", ear2 = "Regal Earring",
 		body = "Vrikodara Jupon", hands = "Telchine Gloves", ring1 = "Mephitas's Ring +1", ring2 = "Stikini Ring +1",
-		back = gear.Rosmerta.TP, waist = "Luminary Sash", legs = "Hashishin Tayt +2", feet = "Medium's Sabots"
+		back = gear.Rosmerta.Cure, waist = "Luminary Sash", legs = "Hashishin Tayt +1", feet = "Medium's Sabots"
 	}
 
 	sets.midcast['Blue Magic'].AoEHealing = set_combine(sets.midcast['Blue Magic'].Healing,
 	{
-		ammo = "Staunch Tathlum +1",
 		ring2 = "Kunaji Ring",
-		back = "Moonlight Cape", waist = "Kasiri Belt", legs = "Telchine Braconi"
+		waist = "Gishdubar Sash", legs = "Telchine Braconi"
 	})
 	
 	sets.midcast['Blue Magic'].SkillBasedBuff =
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Luh. Keffiyeh +3", neck = "Mirage Stole +2", ear1 = "Loquac. Earring", ear2 = "Etiolation Earring",
-		body = "Assim. Jubbah +3", hands = "Rawhide Gloves", ring1 = "Kishar Ring", ring2 = "Stikini Ring +1",
-		back = "Cornflower Cape", waist = "Witful Belt", legs = "Hashishin Tayt +2", feet = "Luhlaza Charuqs +3"
+		head = "Luh. Keffiyeh +1", neck = "Mirage Stole +2", ear1 = "Loquac. Earring", ear2 = "Etiolation Earring",
+		body = "Assim. Jubbah +1", hands = "Rawhide Gloves", ring1 = "Kishar Ring", ring2 = "Stikini Ring +1",
+		back = "Cornflower Cape", waist = "Witful Belt", legs = "Hashishin Tayt +1", feet = "Luhlaza Charuqs +2"
 	}
 
 	sets.midcast['Blue Magic'].Buff =
@@ -339,20 +341,20 @@ function init_gear_sets()
 	sets.midcast['Blue Magic']['Occultation'] = set_combine(sets.midcast['Blue Magic'].SkillBasedBuff,
 	{
 		ammo = "Sapience Orb",
-		neck = "Deceiver's Torque",
-		hands = "Hashishin Bazuands +2", ring2 = "Mephitas's Ring +1",
+		neck = "Incanter's Torque",
+		hands = "Hashishin Bazubands +2", ring1 = "Mephitas's Ring +1",
 		feet = "Carmine Greaves +1"
 	})
 
 	sets.midcast['Enhancing Magic'] = set_combine(sets.midcast['Blue Magic'].Buff,
 	{
-		head = "Telchine Cap", neck = "Melic Torque", ear1 = "Andoaa Earring",
+		head = "Telchine Cap", neck = "Incanter's Torque", ear1 = "Andoaa Earring",
 		body = "Telchine Chas.", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = "Fi Follet Cape +1", legs = "Carmine Cuisses +1"
 	})
 
 	sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], { head = "Amalric Coif +1" })
-	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], { ear2 = "Earthcry Earring", waist = "Siegel Sash", legs = "Shedir Seraweels" })
+	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], { waist = "Siegel Sash" })
 
 	sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], { ring2 = "Sheltered Ring" })
 	sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'], { ring2 = "Sheltered Ring" })
@@ -372,8 +374,8 @@ function init_gear_sets()
 
 	-- Sets to return to when not performing an action.
 
-	sets.latent_refresh = {waist="Fucho-no-obi"}
-	sets.latent_refresh_grip = {sub="Oneiros Grip"}
+	sets.latent_refresh = {}
+	sets.latent_refresh_grip = {}
 	sets.DayIdle = {}
 	sets.NightIdle = {}
 
@@ -388,7 +390,7 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Etiolation Earring",
-		body = "Hashishin Mintan +2", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
+		body = "Hashishin Mintan +3", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
 		back = gear.Rosmerta.TP, waist = "Flume Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -397,14 +399,14 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Bathy Choker +1", ear1 = "Infused Earring", ear2 = "Eabani Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
-		back = gear.Rosmerta.TP, waist = "Kasiri Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Rosmerta.Evasion, waist = "Kasiri Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.Kiting = { legs = "Carmine Cuisses +1" }
 
 	-- Extra Melee sets.  Apply these on top of melee sets.
 	sets.Knockback = {}
-	sets.MP = { waist="Flume Belt +1", ear1="Suppanomimi", ear2="Ethereal Earring" }
+	sets.MP = { waist = "Flume Belt +1", ear1 = "Suppanomimi", ear2 = "Ethereal Earring" }
     sets.MP_Knockback = {}
 	sets.SuppaBrutal = {}
 	sets.DWEarrings = {}
@@ -412,11 +414,11 @@ function init_gear_sets()
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 
 	-- Weapons sets
-	sets.weapons.Naegbron = { main = "Naegling", sub = "Thibron" }
-	sets.weapons.Maxentius = { main = "Maxentius", sub = "Zantetsuken" }
-	sets.weapons.Naegzan = { main = "Naegling", sub = "Zantetsuken" }
-	sets.weapons.Magic = { main = "Bunzi's Rod", sub = "Maxentius" }
-	sets.weapons.Trial = { main = "Wightslayer", sub = "Zantetsuken" }
+	sets.weapons.Naegling = { main = "Naegling", sub = "Thibron" }
+	sets.weapons.NaeglingAcc = { main = "Naegling", sub = "Sakpata's Sword" }
+	sets.weapons.Maxentius = { main = "Maxentius", sub = "Sakpata's Sword" }
+	sets.weapons.Magic = { main = "Maxentius", sub = "Bunzi's Rod" }
+	sets.weapons.Trial = { main = "Wightslayer", sub = "Sakpata's Sword" }
 
 	-- Engaged sets
 
@@ -438,10 +440,9 @@ function init_gear_sets()
 	}
 	sets.engaged.Acc.DT = set_combine(sets.engaged.DT, {})
 
-	sets.Self_Healing = {waist="Gishdubar Sash"}
-	sets.Cure_Received = {neck="Phalaina Locket",hands="Buremte Gloves",ring2="Kunaji Ring",waist="Gishdubar Sash"}
-	sets.Self_Refresh = {back="Grapevine Cape",waist="Gishdubar Sash"}
-	sets.MagicBurst = {body="Samnuha Coat",hands="Amalric Gages +1",legs="Assim. Shalwar +3",ring1="Mujin Band",ring2="Locus Ring"}
+	sets.Self_Healing = { waist = "Gishdubar Sash" }
+	sets.Cure_Received = { waist = "Gishdubar Sash" }
+	sets.Self_Refresh = { waist = "Gishdubar Sash" }
 	sets.Phalanx_Received = {hands=gear.herculean_phalanx_hands,feet=gear.herculean_nuke_feet}
 end
 

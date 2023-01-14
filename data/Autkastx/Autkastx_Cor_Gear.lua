@@ -65,7 +65,7 @@ function init_gear_sets()
 	{
 		head = "Lanun Tricorne +3", neck = "Regal Necklace", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Chasseur's Gants +3", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.Camulus.Snapshot, waist = "Flume Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Camulus.Snapshot, waist = "Flume Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.precast.LuzafRing = { ring2 = "Luzaf's Ring" }
@@ -81,7 +81,7 @@ function init_gear_sets()
 		ammo = gear.QDbullet,
 		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Friomisi Earring", ear2 = "Telos Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Dingir Ring", ring2 = "Regal Ring",
-		back = gear.Camulus.Ranged, waist = "Svelt. Gouriz +1", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Camulus.Ranged, waist = "Svelt. Gouriz +1", legs = "Chas. Culottes +2", feet = "Malignance Boots"
 	}
 
 	sets.precast.CorsairShot.Damage =
@@ -89,20 +89,19 @@ function init_gear_sets()
 		ammo = gear.QDbullet,
 		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
 		body = "Lanun Frac +3", hands = "Carmine Fin. Ga. +1", ring1 = "Dingir Ring", ring2 = "Regal Ring",
-		back = gear.Camulus.Leaden, waist = "Svelt. Gouriz +1", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
+		back = gear.Camulus.Leaden, waist = "Svelt. Gouriz +1", legs = "Chas. Culottes +2", feet = "Chass. Bottes +2"
 	}
 
 	sets.precast.CorsairShot.Proc = set_combine(sets.precast.CorsairShot.Damage,
 	{
-		feet = "Chass. Bottes +2"
 	})
 
 	sets.precast.CorsairShot['Light Shot'] =
 	{
 		ammo = gear.QDbullet,
 		head = "Laksa. Tricorne +2", neck= "Comm. Charm +2", ear1 = "Crep. Earring", ear2 = "Telos Earring",
-		body = "Malignance Tabard", hands = "Laksa. Gants +1", ring1 = "Stikini Ring +1", ring2 = "Regal Ring",
-		back = gear.Camulus.Leaden, waist = "Eschan Stone", legs = "Malignance Tights", feet = "Laksa. Bottes +2"
+		body = "Chasseur's Frac +2", hands = "Malignance Gloves", ring1 = "Stikini Ring +1", ring2 = "Regal Ring",
+		back = gear.Camulus.Leaden, waist = "Eschan Stone", legs = "Chas. Culottes +2", feet = "Laksa. Bottes +2" 
 	}
 
 	sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], {})
@@ -223,7 +222,7 @@ function init_gear_sets()
 	{
 		ammo = gear.WSbullet,
 		ear2 = "Moonshade Earring",
-		body = "Laksa. Frac +3", ring1 = "Regal Ring"
+		body = "Laksa. Frac +3", ring1 = "Regal Ring",
 		cape = gear.Camulus.WSD, waist = "Fotia Belt",
 	})
 
@@ -269,15 +268,17 @@ function init_gear_sets()
 		back = gear.Camulus.Ranged, waist = "Yemaya Belt", legs = "Chas. Culottes +2", feet = "Malignance Boots"
 	}
 
-	sets.midcast.RA.Crit =
+	sets.midcast.RA.Crit = set_combine(sets.midcast.RA,
 	{
-
-	}
+		head = "Meghanada Visor +2", ear1 = "Odr Earring",
+		body = "Meg. Cuirie +2", hands = "Mummu Wrists +2", ring1 = "Mummu Ring",
+		waist = "K. Kachina Belt +1", legs = "Darraigner's Brais", feet = "Osh. Leggings +1"
+	})
 
 	sets.buff['Triple Shot'] =
 	{
-		body = "Chasseur's Frac +2", hands = "Lanun Gants +3"
-		legs = "Osh. Trousers +1",
+		body = "Chasseur's Frac +2", hands = "Lanun Gants +3",
+		legs = "Osh. Trousers +1", feet = "Osh. Leggings +1"
 	}
 
 	-- Sets to return to when not performing an action.
