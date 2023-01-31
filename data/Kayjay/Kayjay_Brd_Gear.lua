@@ -259,7 +259,7 @@ function init_gear_sets()
 		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
 		back="Moonlight Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
-	sets.Kiting = {feet="Fili Cothurnes +1"}
+	sets.Kiting = { ring2 = "Shneddick Ring" }
 	sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.latent_refresh_grip = {sub="Oneiros Grip"}
 	sets.TPEat = {neck="Chrys. Torque"}

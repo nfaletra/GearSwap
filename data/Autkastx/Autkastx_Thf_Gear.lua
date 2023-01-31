@@ -48,7 +48,7 @@ function init_gear_sets()
 	sets.buff.Sleep = {}
 
 	sets.buff['Sneak Attack'] = {}
-	sets.buff['Trick Attack'] = { hands = "Pill. Armlets +2" }
+	sets.buff['Trick Attack'] = { hands = "Pill. Armlets +3" }
 
 	-- Extra Melee sets.  Apply these on top of melee sets.
 	sets.Knockback = {}

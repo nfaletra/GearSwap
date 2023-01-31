@@ -96,7 +96,7 @@ function init_gear_sets()
 	sets.precast.JA['Vivacious Pulse'] =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Erilaz Galea +2", neck = "Incanter's Torque", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
+		head = "Erilaz Galea +3", neck = "Incanter's Torque", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Moonlight Ring", ring2 = "Stikini Ring +1",
 		back = gear.Ogma.Idle, waist = "Engraved Belt", legs = "Runeist Trousers +1", feet = "Nyame Sollerets"
 	}
@@ -193,10 +193,10 @@ function init_gear_sets()
 	--------------------------------------
 	-- Midcast sets
 	--------------------------------------
-	sets.SIRD = -- 100% SIRD
+	sets.SIRD = -- 105% SIRD
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Erilaz Galea +2", neck = "Moonlight Necklace", ear1 = "Magnetic Earring",
+		head = "Erilaz Galea +3", neck = "Moonlight Necklace", ear1 = "Magnetic Earring",
 		hands = "Regal Gauntlets",
 		gear.Ogma.FC, waist = "Rumination Sash", legs = "Carmine Cuisses +1", feet = "Taeon Boots" -- 9%
 	}
@@ -211,7 +211,7 @@ function init_gear_sets()
 
 	sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.FastRecast,
 	{
-		head = "Erilaz Galea +2", neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "Odnowa Earring +1",
+		head = "Erilaz Galea +3", neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "Odnowa Earring +1",
 		hands = "Runeist Mitons +1", ring1 = "Moonlight Ring", ring2 = "Stikini Ring +1",
 		waist = "Flume Belt +1", legs = "Futhark Trousers +3", feet = "Erilaz Greaves +2"
 	})

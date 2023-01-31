@@ -1293,13 +1293,14 @@ function check_nuke()
 end
 
 function check_samba()
-	if not (buffactive['Haste Samba'] or buffactive['Drain Samba'] or buffactive['Aspir Samba']) and windower.ffxi.get_ability_recasts()[216] and windower.ffxi.get_ability_recasts()[216] < latency and state.AutoSambaMode.value ~= 'Off' and player.tp > 400 then
-		windower.chat.input('/ja "'..state.AutoSambaMode.value..'" <me>')
-		tickdelay = os.clock() + 1.8
-		return true
-	else
-		return false
+	if player.status == 'Engaged' then
+		if not (buffactive['Haste Samba'] or buffactive['Drain Samba'] or buffactive['Aspir Samba']) and windower.ffxi.get_ability_recasts()[216] and windower.ffxi.get_ability_recasts()[216] < latency and state.AutoSambaMode.value ~= 'Off' and player.tp > 400 then
+			windower.chat.input('/ja "'..state.AutoSambaMode.value..'" <me>')
+			tickdelay = os.clock() + 1.8
+			return true
+		end
 	end
+	return false
 end
 
 function check_sub()

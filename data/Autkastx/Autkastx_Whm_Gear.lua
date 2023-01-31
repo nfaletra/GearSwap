@@ -74,7 +74,7 @@ function init_gear_sets()
 	
 	sets.buff.Sublimation = { waist = "Embla Sash" }
 	sets.buff.DTSublimation = { waist = "Embla Sash" }
-	
+
 	-- Precast Sets
 
 	-- Fast cast sets for spells
@@ -193,18 +193,18 @@ function init_gear_sets()
 		main = "Raetic Rod +1", sub = "Thuellaic Ecu +1", ammo = "Pemphredo Tathlum",
 		head = "Kaykaus Mitra +1", neck = "Clr. Torque +2", ear1 = "Glorious Earring", ear2 = "Magnetic Earring",
 		body = "Theo. Bliaut +3", hands = "Theophany Mitts +3", ring1 = "Mephitas's Ring +1", ring2 = "Defending Ring",
-		back = "Alaunus's Cape", waist = "Hachirin-no-Obi", legs = "Ebers Pant. +3", feet = "Kaykaus Boots +1"
+		back = "Alaunus's Cape", waist = "Luminary Sash", legs = "Ebers Pant. +3", feet = "Kaykaus Boots +1"
 	}
-	sets.midcast.LightWeatherCure = set_combine(sets.midcast.Cure, {})
-	sets.midcast.LightDayCure = set_combine(sets.midcast.Cure, {})
+	sets.midcast.LightWeatherCure = set_combine(sets.midcast.Cure, { waist = "Hachirin-no-obi" })
+	sets.midcast.LightDayCure = set_combine(sets.midcast.Cure, { waist = "Hachirin-no-obi" })
 		
 	sets.midcast.CureSolace = set_combine(sets.midcast.Cure, { body = "Ebers Bliaut +2" })
-	sets.midcast.LightWeatherCureSolace = set_combine(sets.midcast.CureSolace, {})
-	sets.midcast.LightDayCureSolace = set_combine(sets.midcast.CureSolace, {})
+	sets.midcast.LightWeatherCureSolace = set_combine(sets.midcast.CureSolace, sets.midcast.LightWeatherCure, {})
+	sets.midcast.LightDayCureSolace = set_combine(sets.midcast.CureSolace, sets.midcast.LightDayCure, {})
 
 	sets.midcast.Curaga = set_combine(sets.midcast.Cure, { back = "Twilight Cape" })
-	sets.midcast.LightWeatherCuraga = set_combine(sets.midcast.Curaga, {})
-	sets.midcast.LightDayCuraga = set_combine(sets.midcast.Curaga, {})
+	sets.midcast.LightWeatherCuraga = set_combine(sets.midcast.Curaga, { waist = "Hachirin-no-obi" })
+	sets.midcast.LightDayCuraga = set_combine(sets.midcast.Curaga, { waist = "Hachirin-no-obi" })
 
 	sets.midcast.Cure.DT = set_combine(sets.midcast.Cure, {})
 
@@ -214,7 +214,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Kaykaus Mitra +1", neck = "Clr. Torque +2", ear1 = "Glorious Earring", ear2 = "Magnetic Earring",
 		body = "Theo. Bliaut +3", hands = "Theophany Mitts +3", ring1 = "Mephitas's Ring +1", ring2 = "Defending Ring",
-		back = "Alaunus's Cape", waist = "Hachirin-no-Obi", legs = "Ebers Pant. +3", feet = "Kaykaus Boots +1"
+		back = "Alaunus's Cape", waist = "Luminary Sash", legs = "Ebers Pant. +3", feet = "Kaykaus Boots +1"
 	}
 
 	sets.midcast.MeleeCureSolace = set_combine(sets.midcast.MeleeCure, sets.midcast.CureSolace, {})
@@ -356,7 +356,7 @@ function init_gear_sets()
 	sets.idle =
 	{
 		main = "Daybreak", sub = "Genmei Shield", ammo = "Homiliary",
-		head = "Nyame", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
+		head = "Inyanga Tiara +2", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
 		body = "Ebers Bliaut +2", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
 		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
 	}

@@ -82,7 +82,7 @@ function init_gear_sets()
 	sets.precast.FC =
 	{
 		ammo = "Incantor Stone",
-		head = "Bunzi's Hat", neck = "Clr. Torque +2", ear1 = "Enchntr. Earring +1", ear2 = "Malignance Earring",
+		head = "Vanya Hood", neck = "Clr. Torque +2", ear1 = "Loquac. Earring", ear2 = "Malignance Earring",
 		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Lebeche Ring",
 		back = "Perimede Cape", waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Regal Pumps +1"
 	}
@@ -90,7 +90,7 @@ function init_gear_sets()
 	sets.precast.FC.DT =
 	{
 		ammo = "Incantor Stone",
-		head = "Bunzi's Hat", neck = "Voltsurge Torque", ear1 = "Enchntr. Earring +1", ear2 = "Malignance Earring",
+		head = "Vanya Hood", neck = "Clr. Torque +2", ear1 = "Loquac. Earring", ear2 = "Malignance Earring",
 		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Lebeche Ring",
 		back = "Perimede Cape", waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Regal Pumps +1"
 	}
@@ -106,6 +106,7 @@ function init_gear_sets()
 	sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'],
 	{
 		main = "Queller's Rod", sub = "Sors Shield",
+		ear2 = "Mendi. Earring",
 		feet = "Vanya Clogs"
 	})
 
@@ -187,62 +188,35 @@ function init_gear_sets()
 
 	sets.midcast['Full Cure'] = sets.midcast.FastRecast
 	
-	sets.midcast.Cure = {main="Queller Rod",sub="Sors Shield",ammo="Pemphredo Tathlum",
-		head="Gende. Caubeen +1",neck="Clr. Torque +2",ear1="Regal Earring",ear2="Glorious Earring",
-		body="Theo. Bliaut +2",hands="Theophany Mitts +3",ring1="Janniston Ring",ring2="Menelaus's Ring",
-		back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pant. +1",feet="Vanya Clogs"}
+	sets.midcast.Cure =
+	{
+		main = "Queller Rod", sub = "Sors Shield", ammo = "Pemphredo Tathlum",
+		head = "Kaykaus Mitra +1", neck = "Clr. Torque +2", ear1 = "Nourish. Earring +1", ear2 = "Mendi. Earring",
+		body = "Theo. Bliaut +2", hands = "Theophany Mitts +3", ring1 = "Janniston Ring", ring2 = "Mephitas's Ring +1",
+		back = "Alaunus's Cape", waist = "Luminary Sash", legs = "Ebers Pant. +1", feet = "Kaykaus Boots +1"
+	}
 		
-	sets.midcast.CureSolace = {main="Queller Rod",sub="Sors Shield",ammo="Pemphredo Tathlum",
-		head="Gende. Caubeen +1",neck="Clr. Torque +2",ear1="Regal Earring",ear2="Glorious Earring",
-		body="Ebers Bliaut +1",hands="Theophany Mitts +3",ring1="Janniston Ring",ring2="Menelaus's Ring",
-		back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pant. +1",feet="Vanya Clogs"}
+	sets.midcast.CureSolace = set_combine(sets.midcast.Cure, { body = "Ebers Bliaut +1" })
+	sets.midcast.LightWeatherCure = set_combine(sets.midcast.Cure, { back = "Twilight Cape", waist = "Hachirin-no-Obi" })
+	sets.midcast.LightWeatherCureSolace = set_combine(sets.midcast.CureSolace, sets.midcast.LightWeatherCure, {})
+	sets.midcast.LightDayCure = set_combine(sets.midcast.LightWeatherCure, {})
+	sets.midcast.LightDayCureSolace = set_combine(sets.midcast.CureSolace, sets.midcast.LightDayCure, {})
 
-	sets.midcast.LightWeatherCure = {main="Chatoyant Staff",sub="Curatio Grip",ammo="Esper Stone +1",
-		head="Gende. Caubeen +1",neck="Clr. Torque +2",ear1="Nourish. Earring +1",ear2="Glorious Earring",
-		body="Kaykaus Bliaut",hands="Theophany Mitts +3",ring1="Janniston Ring",ring2="Lebeche Ring",
-		back="Twilight Cape",waist="Hachirin-no-Obi",legs="Ebers Pant. +1",feet="Vanya Clogs"}
+	sets.midcast.Curaga = set_combine(sets.midcast.Cure, {})
+	sets.midcast.LightWeatherCuraga = set_combine(sets.midcast.Curaga, sets.midcast.LightWeatherCure, {})
+	sets.midcast.LightDayCuraga = set_combine(sets.midcast.LightWeatherCuraga, {})
 
-	sets.midcast.LightWeatherCureSolace = {main="Chatoyant Staff",sub="Curatio Grip",ammo="Esper Stone +1",
-		head="Gende. Caubeen +1",neck="Clr. Torque +2",ear1="Regal Earring",ear2="Glorious Earring",
-		body="Ebers Bliaut +1",hands="Theophany Mitts +3",ring1="Janniston Ring",ring2="Lebeche Ring",
-		back="Alaunus's Cape",waist="Hachirin-no-Obi",legs="Ebers Pant. +1",feet="Vanya Clogs"}
-		
-	sets.midcast.LightDayCureSolace = {main="Queller Rod",sub="Sors Shield",ammo="Pemphredo Tathlum",
-		head="Gende. Caubeen +1",neck="Clr. Torque +2",ear1="Regal Earring",ear2="Glorious Earring",
-		body="Ebers Bliaut +1",hands="Theophany Mitts +3",ring1="Janniston Ring",ring2="Menelaus's Ring",
-		back="Alaunus's Cape",waist="Hachirin-no-Obi",legs="Ebers Pant. +1",feet="Vanya Clogs"}
+	sets.midcast.Cure.DT = sets.midcast.Cure
 
-	sets.midcast.LightDayCure = {main="Queller Rod",sub="Sors Shield",ammo="Pemphredo Tathlum",
-		head="Gende. Caubeen +1",neck="Clr. Torque +2",ear1="Nourish. Earring +1",ear2="Glorious Earring",
-		body="Theo. Bliaut +2",hands="Theophany Mitts +3",ring1="Janniston Ring",ring2="Menelaus's Ring",
-		back="Twilight Cape",waist="Hachirin-no-Obi",legs="Ebers Pant. +1",feet="Vanya Clogs"}
-
-	sets.midcast.Curaga = {main="Queller Rod",sub="Sors Shield",ammo="Pemphredo Tathlum",
-		head="Gende. Caubeen +1",neck="Clr. Torque +2",ear1="Regal Earring",ear2="Glorious Earring",
-		body="Theo. Bliaut +2",hands="Theophany Mitts +3",ring1="Janniston Ring",ring2="Menelaus's Ring",
-		back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pant. +1",feet="Vanya Clogs"}
-		
-	sets.midcast.LightWeatherCuraga = {main="Chatoyant Staff",sub="Curatio Grip",ammo="Esper Stone +1",
-		head="Gende. Caubeen +1",neck="Clr. Torque +2",ear1="Nourish. Earring +1",ear2="Glorious Earring",
-		body="Kaykaus Bliaut",hands="Theophany Mitts +3",ring1="Janniston Ring",ring2="Lebeche Ring",
-		back="Twilight Cape",waist="Hachirin-no-Obi",legs="Ebers Pant. +1",feet="Vanya Clogs"}
-		
-	sets.midcast.LightDayCuraga = {main="Queller Rod",sub="Sors Shield",ammo="Pemphredo Tathlum",
-		head="Gende. Caubeen +1",neck="Clr. Torque +2",ear1="Nourish. Earring +1",ear2="Glorious Earring",
-		body="Theo. Bliaut +2",hands="Theophany Mitts +3",ring1="Janniston Ring",ring2="Menelaus's Ring",
-		back="Twilight Cape",waist="Hachirin-no-Obi",legs="Ebers Pant. +1",feet="Vanya Clogs"}
-
-	sets.midcast.Cure.DT = {main="Queller Rod",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head="Gende. Caubeen +1",neck="Loricate Torque +1",ear1="Nourish. Earring +1",ear2="Glorious Earring",
-		body="Nyame Mail",hands="Theophany Mitts +3",ring1="Defending Ring",ring2="Janniston Ring",
-		back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pant. +1",feet="Nyame Sollerets"}
-		
 	--Melee Curesets are used whenever your Weapons state is set to anything but None.
-	sets.midcast.MeleeCure = {ammo="Pemphredo Tathlum",
-		head="Gende. Caubeen +1",neck="Clr. Torque +2",ear1="Regal Earring",ear2="Glorious Earring",
-		body="Theo. Bliaut +2",hands="Kaykaus Cuffs",ring1="Janniston Ring",ring2="Lebeche Ring",
-		back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pant. +1",feet="Vanya Clogs"}
-		
+	sets.midcast.MeleeCure =
+	{
+		ammo = "Pemphredo Tathlum",
+		head = "Kaykaus Mitra +1", neck = "Clr. Torque +2", ear1 = "Nourish. Earring +1", ear2 = "Mendi. Earring",
+		body = "Theo. Bliaut +2", hands = "Theophany Mitts +3", ring1 = "Janniston Ring", ring2 = "Mephitas's Ring +1",
+		back = "Alaunus's Cape", waist = "Luminary Sash", legs = "Ebers Pant. +1", feet = "Kaykaus Boots +1"
+	}
+
 	sets.midcast.MeleeCureSolace = set_combine(sets.midcast.MeleeCure, {body="Ebers Bliaut +1"})
 	sets.midcast.MeleeLightWeatherCure = set_combine(sets.midcast.MeleeCure, {waist="Hachirin-no-Obi"})
 	sets.midcast.MeleeLightWeatherCureSolace = set_combine(sets.midcast.MeleeCure, {body="Ebers Bliaut +1",waist="Hachirin-no-Obi"})
