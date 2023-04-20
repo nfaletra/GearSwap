@@ -58,6 +58,16 @@ function init_gear_sets()
 	sets.HPDown = {}
 	sets.HPCure = {}
 
+	sets.Enmity =
+	{
+		ammo = "Sapience Orb",
+		body = "Emet Harness", neck = "Unmoving Collar +1", ring1 = "Eihwaz Ring",
+		legs = "Zoar Subligar",
+	}
+
+	sets.precast.JA['Provoke'] = sets.Enmity
+	sets.precast.JA['Vallation'] = sets.Enmity
+
 	-- Precast Sets
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Azure Lore'] = { hands = "Luh. Bazubands +3" }
@@ -217,8 +227,8 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].Magical =
 	{
 		ammo = "Pemphredo Tathlum",
-		head = empty, neck = "Baetyl Pendant", ear1 = "Regal Earring", ear2 = "Friomisi Earring",
-		body = "Cohort Cloak +1", hands = "Hashi. Bazu. +1", ring1 = "Metamor. Ring +1", ring2 = "Shiva Ring +1",
+		head = "Hashishin Kavuk +2", neck = "Baetyl Pendant", ear1 = "Regal Earring", ear2 = "Friomisi Earring",
+		body = "Hashishin Mintan +3", hands = "Hashi. Bazu. +1", ring1 = "Metamor. Ring +1", ring2 = "Shiva Ring +1",
 		back = gear.Rosmerta.Magic, waist = "Sacro Cord", legs = "Luhlaza Shalwar +3", feet = "Amalric Nails +1"
 	}
 
@@ -244,7 +254,7 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].MagicAccuracy =
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Assim. Keffiyeh +2", neck = "Mirage Stole +2", ear1 = "Regal Earring", ear2 = "Hermetic Earring",
+		head = "Hashishin Kavuk +2", neck = "Mirage Stole +2", ear1 = "Regal Earring", ear2 = "Hermetic Earring",
 		body = "Hashishin Mintan +3", hands = "Hashi. Bazu. +1", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
 		back = "Aurist's Cape +1", waist = "Sacro Cord", legs = "Assim. Shalwar +2", feet = "Hashi. Basmak +1"
 	}

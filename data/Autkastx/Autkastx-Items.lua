@@ -4,13 +4,12 @@ sets.Sheltered = {ring2="Sheltered Ring"}
 sets.Capacity = { back = "Mecisto. Mantle" }
 
 sets.buff.Doom = { neck = "Nicander's Necklace", waist = "Gishdubar Sash", ring1 = "Purity Ring", ring2 = "Saida Ring" }
-sets.TreasureHunter = {head="Wh. Rarab Cap +1",waist="Chaac Belt"}
+sets.TreasureHunter = { head = "Wh. Rarab Cap +1", waist = "Chaac Belt", legs = "Volte Hose" }
 
 sets.precast.Item['Hallowed Water'] = {}
 sets.precast.Item['Holy Water'] = {}
 
---Augmented items that you'll use among multiple jobs.
-
+-- Oseem Augment Gear
 gear.gada_enhancing_club = {name="Gada",augments={'Enh. Mag. eff. dur. +6','STR+3','Mag. Acc.+8','"Mag.Atk.Bns."+17','DMG:+7',}}
 gear.gada_healing_club = {name="Gada",augments={'"Cure" potency +9%','Mag. Acc.+11','"Mag.Atk.Bns."+13','DMG:+3',}}
 gear.grioavolr_nuke_staff = {name="Grioavolr",augments={'Magic burst dmg.+8%','MP+61','Mag. Acc.+16','"Mag.Atk.Bns."+30','Magic Damage +7',}}
@@ -73,6 +72,7 @@ gear.valorous_magical_pet_legs = { name="Valor. Hose",augments={'Pet: "Mag.Atk.B
 gear.valorous_magical_pet_feet = {name="Valorous Greaves",augments={'Pet: "Mag.Atk.Bns."+29','Pet: "Dbl.Atk."+1 Pet: Crit.hit rate +1','Pet: INT+9','Pet: Accuracy+1 Pet: Rng. Acc.+1','Pet: Attack+4 Pet: Rng.Atk.+4',}}
 gear.valorous_wsd_feet = {name="Valorous Greaves",augments={'Accuracy+25','Weapon skill damage +4%','STR+5',}}
 
+-- Abjuration Gear
 -- Adhemar gear
 gear.adhemar = {}
 
@@ -98,3 +98,10 @@ gear.apogee.legs.d = { name = "Apogee Slacks +1", augments = { 'Pet: STR+20', 'B
 gear.apogee.feet = {}
 gear.apogee.feet.a = { name = "Apogee Pumps +1", augments = { 'MP+80', 'Pet: "Mag.Atk.Bns."+35', 'Blood Pact Dmg.+8' } }
 gear.apogee.feet.b = { name = "Apogee Pumps +1", augments = { 'MP+80', 'Pet: Attack+35', 'Blood Pact Dmg.+8' } }
+
+-- Alluvion Skirmish Armor
+gear.telchine = {}
+
+-- Hands
+gear.telchine.hands = {}
+gear.telchine.hands.enhancing = { name = "Telchine Gloves", augments = { 'Mag. Evasion+19', '"Conserve MP"+4', 'Enh. Mag. eff. dur. +10' } }

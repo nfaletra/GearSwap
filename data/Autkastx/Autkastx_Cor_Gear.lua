@@ -79,7 +79,7 @@ function init_gear_sets()
 	sets.precast.CorsairShot =
 	{
 		ammo = gear.QDbullet,
-		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Friomisi Earring", ear2 = "Telos Earring",
+		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Dingir Ring", ring2 = "Regal Ring",
 		back = gear.Camulus.Ranged, waist = "Svelt. Gouriz +1", legs = "Chas. Culottes +2", feet = "Malignance Boots"
 	}
@@ -99,7 +99,7 @@ function init_gear_sets()
 	sets.precast.CorsairShot['Light Shot'] =
 	{
 		ammo = gear.QDbullet,
-		head = "Laksa. Tricorne +2", neck= "Comm. Charm +2", ear1 = "Crep. Earring", ear2 = "Telos Earring",
+		head = "Laksa. Tricorne +2", neck= "Comm. Charm +2", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
 		body = "Chasseur's Frac +2", hands = "Malignance Gloves", ring1 = "Stikini Ring +1", ring2 = "Regal Ring",
 		back = gear.Camulus.Leaden, waist = "Eschan Stone", legs = "Chas. Culottes +2", feet = "Laksa. Bottes +2" 
 	}

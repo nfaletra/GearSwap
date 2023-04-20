@@ -123,7 +123,7 @@ function init_gear_sets()
 	sets.precast.WS['Shijin Spiral'] =
 	{
 		ammo = "Aurgelmir Orb",
-		head = "Ken. Jinpachi", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Mache Earring +1",
+		head = "Ken. Jinpachi +1", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Mache Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Mpaca's Hose", feet = gear.herculean_ta_feet
 	}
@@ -139,7 +139,7 @@ function init_gear_sets()
 	sets.precast.WS['Tornado Kick'] =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
+		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Moonshade Earring", ear2 = "Schere Earring",
 		body = "Tatena. Harama. +1", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.Segomo.STR_DA, waist = "Moonbow Belt +1", legs = "Mpaca's Hose", feet = "Anch. Gaiters +3"
 	}

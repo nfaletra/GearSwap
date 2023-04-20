@@ -125,26 +125,26 @@ function init_gear_sets()
 		back = gear.Campestres.Magic, waist = "Emphatikos Rope", legs = "Assid. Pants +1", feet = "Glyph. Pigaches +1"
 	}
 
-	sets.midcast['Elemental Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-        head="Bunzi's Hat",neck="Baetyl Pendant",ear1="Crematio Earring",ear2="Friomisi Earring",
-        body=gear.merlinic_nuke_body,hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Freke Ring",
-		back="Toro Cape",waist="Sekhmet Corset",legs="Merlinic Shalwar",feet="Amalric Nails +1"}
-		
-	sets.midcast['Elemental Magic'].Resistant = {main="Daybreak",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-        head="Bunzi's Hat",neck="Baetyl Pendant",ear1="Crematio Earring",ear2="Friomisi Earring",
-        body=gear.merlinic_nuke_body,hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Freke Ring",
-		back="Toro Cape",waist="Sekhmet Corset",legs="Merlinic Shalwar",feet="Amalric Nails +1"}
-		
+	sets.midcast['Elemental Magic'] =
+	{
+		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
+		head = "Bunzi's Hat", neck = "Baetyl Pendant", ear1 = "Crematio Earring", ear2 = "Friomisi Earring",
+		body = gear.merlinic_nuke_body, hands = "Amalric Gages +1", ring1 = "Shiva Ring +1", ring2 = "Freke Ring",
+		back = "Toro Cape", waist = "Sekhmet Corset", legs = "Merlinic Shalwar", feet = "Amalric Nails +1"
+	}
+
     sets.midcast['Elemental Magic'].OccultAcumen = {main="Khatvanga",sub="Bloodrain Strap",ammo="Seraphicz Ampulla",
         head=gear.merlinic_nuke_head,neck="Combatant's Torque",ear1="Dedition Earring",ear2="Telos Earring",
         body=gear.merlinic_occult_body,hands=gear.merlinic_occult_hands,ring1="Rajas Ring",ring2="Petrov Ring",
         back="Toro Cape",waist="Oneiros Rope",legs="Perdition Slops",feet=gear.merlinic_occult_feet}
 		
-	sets.midcast.Impact = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head=empty,neck="Erra Pendant",ear1="Enchntr. Earring +1",ear2="Gwati Earring",
-		body="Twilight Cloak",hands="Regal Cuffs",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
-		back="Toro Cape",waist="Acuity Belt +1",legs="Merlinic Shalwar",feet=gear.merlinic_aspir_feet}
-		
+	sets.midcast.Impact =
+	{
+		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
+		head = empty,neck = "Erra Pendant", ear1 = "Enchntr. Earring +1", ear2 = "Gwati Earring",
+		body = "Twilight Cloak", hands = "Regal Cuffs", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
+		back = "Toro Cape", waist = "Acuity Belt +1", legs = "Merlinic Shalwar", feet = gear.merlinic_aspir_feet
+	}
 	sets.midcast.Impact.OccultAcumen = set_combine(sets.midcast['Elemental Magic'].OccultAcumen, {head=empty,body="Twilight Cloak"})
 
     sets.midcast['Divine Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
@@ -292,7 +292,7 @@ function init_gear_sets()
     sets.resting =
 	{
 		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
-		head = "Beckoner's Horn +2", neck = "Smn. Collar +2", ear1 = "C. Palug Earring", ear2 = "Eabani Earring",
+		head = "Beckoner's Horn +2", neck = "Smn. Collar +2", ear1 = "Eabani Earring", ear2 = "Beck. Earring +1",
 		body = "Shomonjijoe +1", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
 		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = "Inyan. Crackows +2"
 	}
@@ -301,7 +301,7 @@ function init_gear_sets()
 	sets.idle =
 	{
 		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
-		head = "Beckoner's Horn +2", neck = "Smn. Collar +2", ear1 = "C. Palug Earring", ear2 = "Eabani Earring",
+		head = "Beckoner's Horn +2", neck = "Smn. Collar +2", ear1 = "Eabani Earring", ear2 = "Beck. Earring +1",
 		body = "Shomonjijoe +1", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Stikini Ring +1",
 		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
 	}
@@ -309,7 +309,7 @@ function init_gear_sets()
 	sets.idle.PDT =
 	{
 		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
-		head = "Beckoner's Horn +2", neck = "Warder's Charm +1", ear1 = "C. Palug Earring", ear2 = "Eabani Earring",
+		head = "Beckoner's Horn +2", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Beck. Earring +1",
 		body = "Shomonjijoe +1", hands = "Bunzi's Gloves", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
 		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = "Inyan. Crackows +2"
 	}
@@ -329,7 +329,7 @@ function init_gear_sets()
 	sets.idle.Avatar =
 	{
 		main = "Gridarvor", sub = "Elan Strap +1", ammo = "Epitaph",
-		head = "Beckoner's Horn +2", neck = "Caller's Pendant", ear1 = "C. Palug Earring", ear2 = "Evans Earring",
+		head = "Beckoner's Horn +2", neck = "Caller's Pendant", ear1 = "Evans Earring", ear2 = "Beck. Earring +1",
 		body = "Beck. Doublet +2", hands = "Asteria Mitts +1", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
 		back = gear.Campestres.Idle, waist = "Lucidity Sash", legs = "Assid. Pants +1", feet = "Baayami Sabots"
 	}
@@ -337,7 +337,7 @@ function init_gear_sets()
 	sets.idle.PDT.Avatar =
 	{
 		main = "Gridarvor", sub = "Elan Strap +1", ammo = "Epitaph",
-		head = "Beckoner's Horn +2", neck = "Caller's Pendant", ear1 = "C. Palug Earring", ear2 = "Evans Earring",
+		head = "Beckoner's Horn +2", neck = "Caller's Pendant", ear1 = "Evans Earring", ear2 = "Beck. Earring +1",
 		body = "Beck. Doublet +2", hands = "Bunzi's Gloves", ring1 = "Evoker's Ring", ring2 = "Defending Ring",
 		back = gear.Campestres.Idle, waist = "Lucidity Sash", legs = "Assid. Pants +1", feet = "Baayami Sabots"
 	}
@@ -345,7 +345,7 @@ function init_gear_sets()
 	sets.idle.Spirit =
 	{
 		main = "Gridarvor", sub = "Elan Strap +1", ammo = "Epitaph",
-		head = "Convoker's Horn +2", neck = "Caller's Pendant", ear1 = "C. Palug Earring", ear2 = "Evans Earring",
+		head = "Convoker's Horn +2", neck = "Caller's Pendant", ear1 = "Evans Earring", ear2 = "C. Palug Earring",
 		body = "Shomonjijoe +1", hands = "Bunzi's Gloves", ring1 = "Evoker's Ring", ring2 = "Defending Ring",
 		back = gear.Campestres.Idle, waist = "Lucidity Sash", legs = "Assid. Pants +1", feet = "Baayami Sabots"
 	}
@@ -353,7 +353,7 @@ function init_gear_sets()
 	sets.idle.PDT.Spirit =
 	{
 		main = "Gridarvor", sub = "Elan Strap +1", ammo = "Epitaph",
-		head = "Convoker's Horn +2", neck = "Caller's Pendant", ear1 = "C. Palug Earring", ear2 = "Evans Earring",
+		head = "Convoker's Horn +2", neck = "Caller's Pendant", ear1 = "Evans Earring", ear2 = "C. Palug Earring",
 		body = "Shomonjijoe +1", hands = "Bunzi's Gloves", ring1 = "Evoker's Ring", ring2 = "Defending Ring",
 		back = gear.Campestres.Idle, waist = "Lucidity Sash", legs = "Assid. Pants +1", feet = "Baayami Sabots"
 	}
@@ -387,16 +387,14 @@ function init_gear_sets()
 	sets.DayIdle = {}
 	sets.NightIdle = {}
 
-	sets.HPDown = {head="Apogee Crown +1",ear1="Mendicant's Earring",ear2="Evans Earring",
-		body="Seidr Cotehardie",hands="Hieros Mittens",ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
-		back="Swith Cape +1",legs="Apogee Slacks +1",feet="Apogee Pumps +1"}
+	sets.HPDown = {}
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = { neck = "Sacrifice Torque" }
 
 	-- Weapons sets
 	sets.weapons.Gridarvor = { main = "Gridarvor", sub = "Elan Strap +1" }
-	sets.weapons.Khatvanga = { main = "Xoanon", sub = "Bloodrain Strap" }
+	sets.weapons.Khatvanga = { main = "Khatvanga", sub = "Bloodrain Strap" }
 
 	sets.buff.Sublimation = { waist = "Embla Sash" }
 	sets.buff.DTSublimation = { waist = "Embla Sash" }
@@ -407,8 +405,8 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged = set_combine(sets.idle.Avatar,
 	{
-		body = "Tali'ah Manteel +2", hands = "Bunzi's Gloves", ear2 = "Telos Earring",
-		waist = "Windbuffet Belt +1", legs = "Tali'ah Sera. +2", feet = "Tali'ah Crackows +2"
+		hands = "Bunzi's Gloves", ear2 = "Telos Earring",
+		waist = "Cornelia's Belt", legs = "Tali'ah Sera. +2", feet = "Tali'ah Crackows +2"
 	})
 end
 

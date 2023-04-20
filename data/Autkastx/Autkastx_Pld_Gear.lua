@@ -303,7 +303,7 @@ function init_gear_sets()
 	sets.idle.Perfect =
 	{
 		sub = "Priwen", ammo = "Staunch Tathlum +1",
-		head = "Chev. Armet +2", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Chev. Earring +1",
+		head = "Chev. Armet +3", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Chev. Earring +1",
 		body = "Sakpata's Breastplate", hands = "Macabre Gauntlets +1", ring1 = "Eihwaz Ring", ring2 = "Shadow Ring",
 		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Chev. Cuisses +2", feet = "Rev. Leggings +3"
 	}
@@ -312,7 +312,7 @@ function init_gear_sets()
 	sets.idle.Perfect2 =
 	{
 		sub = "Srivatsa", ammo = "Staunch Tathlum +1",
-		head = "Chev. Armet +2", neck = "Combatant's Torque", ear1 = "Foresti Earring", ear2 = "Chev. Earring +1",
+		head = "Chev. Armet +3", neck = "Combatant's Torque", ear1 = "Foresti Earring", ear2 = "Chev. Earring +1",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Eihwaz Ring", ring2 = "Moonlight Ring",
 		back = gear.rudianos_shield, waist = "Carrier's Sash", legs = "Chev. Cuisses +2", feet = "Rev. Leggings +3"
 	}
@@ -348,7 +348,7 @@ function init_gear_sets()
 	sets.idle.Ochain =
 	{
 		sub = "Ochain", ammo = "Staunch Tathlum +1",
-		head = "Chev. Armet +2", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
+		head = "Chev. Armet +3", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.rudianos_enmity, waist = "Flume Belt +1", legs = "Chev. Cuisses +2", feet = "Rev. Leggings +3"
 	}
@@ -358,7 +358,7 @@ function init_gear_sets()
 		sub = "Blurred Shield +1", ammo = "Coiste Bodhar",
 		head = "Flam. Zucchetto +2", neck = "Vim Torque +1", ear1 = "Telos Earring", ear2 = "Brutal Earring",
 		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Petrov Ring", ring2 = "Chirich Ring +1",
-		back = gear.rudianos_tp, waist = "Sailfi Belt +1", legs = "Odyssean Cuisses", feet = "Flamma Gambieras +2"
+		back = gear.rudianos_tp, waist = "Sailfi Belt +1", legs = "Odyssean Cuisses", feet = "Flam. Gambieras +2"
 	}
 
 	sets.idle.DW =
@@ -366,7 +366,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Flam. Zucchetto +2", neck = "Vim Torque +1", ear1 = "Suppanomimi", ear2 = "Eabani Earring",
 		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Petrov Ring", ring2 = "Chirich Ring +1",
-		back = gear.rudianos_tp, waist = "Sailfi Belt +1", legs = "Odyssean Cuisses", feet = "Flamma Gambieras +2"
+		back = gear.rudianos_tp, waist = "Sailfi Belt +1", legs = "Odyssean Cuisses", feet = "Flam. Gambieras +2"
 	}
 
 	sets.idle.TwoHanded =
@@ -445,7 +445,7 @@ function init_gear_sets()
 	-- Custom buff sets
 	--------------------------------------
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
-	sets.buff.Sleep = { neck = "Vim Torque" }
+	sets.buff.Sleep = { neck = "Vim Torque +1" }
 	sets.buff.Cover = { body = "Cab. Surcoat +3" }
 end
 

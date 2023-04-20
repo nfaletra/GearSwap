@@ -222,7 +222,7 @@ function init_gear_sets()
 	sets.engaged.Acc =
 	{
 		ammo = "Aurgelmir Orb",
-		head = "Ken. Jinpachi", neck = "Sam. Nodowa +2", ear1 = "Telos Earring", ear2 = "Kasuga Earring +1",
+		head = "Ken. Jinpachi +1", neck = "Sam. Nodowa +2", ear1 = "Telos Earring", ear2 = "Kasuga Earring +1",
 		body = "Tatena. Harama. +1", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring",ring2 = "Chirich Ring +1",
 		back = "Atheling Mantle" , waist = "Ioskeha Belt +1", legs = "Tatena. Haidate +1", feet = "Flam. Gambieras +2"
 	}
@@ -230,7 +230,7 @@ function init_gear_sets()
 	sets.engaged.Hybrid =
 	{
 		ammo = "Coiste Bodhar",
-		head = "FLam. Zucchetto +2", neck = "Sam. Nodowa +2", ear1 = "Telos Earring", ear2 = "Kasuga Earring +1",
+		head = "Flam. Zucchetto +2", neck = "Sam. Nodowa +2", ear1 = "Telos Earring", ear2 = "Kasuga Earring +1",
 		body = "Mpaca's Doublet", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = "Atheling Mantle", waist = "Ioskeha Belt +1", legs = "Mpaca's Hose" , feet = "Ryuo Sune-Ate +1"
 	}

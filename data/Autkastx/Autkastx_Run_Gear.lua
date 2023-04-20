@@ -57,7 +57,7 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Elemental Sforzo'] = set_combine(sets.Enmity, { body = "Futhark Coat +3" })
 	sets.precast.JA['Odyllic Subterfuge'] = set_combine(sets.Enmity, {})
-	sets.precast.JA['Vallation'] = set_combine(sets.Enmity, { body = "Runeist Coat +2", legs = "Futhark Trousers +3" })
+	sets.precast.JA['Vallation'] = set_combine(sets.Enmity, { body = "Runeist Coat +3", legs = "Futhark Trousers +3" })
 	sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
 	sets.precast.JA['Swordplay'] = set_combine(sets.Enmity, { hands = "Futhark Mitons +3" })
 	sets.precast.JA['Gambit'] = set_combine(sets.Enmity, { hands = "Runeist Mitons +1" })
@@ -76,7 +76,7 @@ function init_gear_sets()
 	sets.precast.JA['One For All'] =
 	{
 		head = "Rune. Bandeau +2", neck = "Futhark Torque +2", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
-		body = "Runeist Coat +2", hands = "Runeist Mitons +1", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
+		body = "Runeist Coat +3", hands = "Runeist Mitons +1", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
 		back = "Moonlight Cape", waist = "Kasiri Belt", legs = "Futhark Trousers +3", feet = "Carmine Greaves +1"
 	}
 
@@ -193,7 +193,7 @@ function init_gear_sets()
 	--------------------------------------
 	-- Midcast sets
 	--------------------------------------
-	sets.SIRD = -- 105% SIRD
+	sets.SIRD = -- 108% SIRD
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Erilaz Galea +3", neck = "Moonlight Necklace", ear1 = "Magnetic Earring",
@@ -226,6 +226,9 @@ function init_gear_sets()
 	})
 	sets.midcast.BarElement.SIRD = set_combine(sets.midcast.BarElement, sets.SIRD, {})
 
+	sets.midcast['Foil'] = set_combine(sets.midcast['Enhancing Magic'].Duration, {})
+	sets.midcast['Foil'].SIRD = set_combine(sets.midcast['Foil'], sets.SIRD, {})
+
 	sets.midcast['Temper'] = set_combine(sets.midcast['Enhancing Magic'].Duration, {})
 	sets.midcast['Temper'].SIRD = set_combine(sets.midcast['Temper'], sets.SIRD, {})
 
@@ -253,6 +256,15 @@ function init_gear_sets()
 
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'].Duration, { ear2 = "Earthcry Earring", waist = "Siegel Sash" })
 	sets.midcast.Stoneskin.SIRD = set_combine(sets.midcast.Stoneskin, sets.SIRD, {})
+
+	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.FastRecast,
+	{
+		ammo = "Pemphredo Tathlum",
+		head = "Agwu's Cap", neck = "Futhark Torque +2", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
+		body = "Nyame Mail", hands = "Agwu's Gages", ring1 = "Defending Ring", ring2 = "Metamor. Ring +1",
+		back = gear.Ogma.Idle, waist = "Acuity Belt +1", legs = "Agwu's Slops", feet = "Agwu's Pigaches"
+	})
+	sets.midcast['Enfeebling Magic'].SIRD = set_combine(sets.midcast['Enfeebling Magic'], sets.SIRD, {})
 
 	sets.midcast.Flash = set_combine(sets.Enmity, {})
 	sets.midcast.Foil = set_combine(sets.Enmity, {})
@@ -288,7 +300,7 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Futhark Torque +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
-		body = "Runeist Coat +2", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Gelatinous Ring +1",
+		body = "Runeist Coat +3", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.Ogma.Idle, waist = "Engraved Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -354,7 +366,7 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Futhark Torque +2", ear1 = "Erilaz Earring", ear2 = "Odnowa Earring +1",
-		body = "Runeist Coat +2", hands = "Nyame Gauntlets", ring1 = "Shadow Ring", ring2 = "Moonlight Ring",
+		body = "Runeist Coat +3", hands = "Nyame Gauntlets", ring1 = "Shadow Ring", ring2 = "Moonlight Ring",
 		back = gear.Ogma.Parry, waist = "Engraved Belt", legs = "Eri. Leg Guards +2", feet = "Erilaz Greaves +2"
 	}
 
