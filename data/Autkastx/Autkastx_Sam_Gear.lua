@@ -1,14 +1,14 @@
 -- Setup vars that are user-dependent.
 function user_job_setup()
-	state.OffenseMode:options('Normal', 'Acc')
-	state.HybridMode:options('Normal', 'Hybrid', 'PDT', 'MDT', 'MEVA')
+	state.OffenseMode:options('Normal')
+	state.HybridMode:options('Normal', 'Hybrid', 'MEVA')
 	state.WeaponskillMode:options('Match', 'Normal', 'Acc', 'Proc')
 	state.RangedMode:options('Normal', 'Acc')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal')
-	state.Weapons:options('Dojikiri', 'Shining One', 'ProcWeapon', 'Bow')
+	state.Weapons:options('Dojikiri', 'Shining One', 'Sword', 'ProcWeapon')
 
 	gear.ws_jse_back = {name="Smertrios's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	gear.stp_jse_back = {name="Smertrios's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10',}}
@@ -31,39 +31,25 @@ function init_gear_sets()
 
 	-- Precast Sets
 	-- Precast sets to enhance JAs
-	sets.precast.JA.Meditate = {head="Wakido Kabuto +3",hands="Sakonji Kote +1",back=gear.ws_jse_back}
-	sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto +3"}
-	sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote +1"}
-	sets.precast.JA['Sekkanoki'] = {hands="Kasuga Kote +1"}
-	sets.precast.JA['Sengikori'] = {feet="Kas. Sune-Ate +1"}
+	sets.precast.JA.Meditate = { head = "Wakido Kabuto +3", hands = "Sakonji Kote +3", back = gear.ws_jse_back }
+	sets.precast.JA['Warding Circle'] = { head = "Wakido Kabuto +3" }
+	sets.precast.JA['Blade Bash'] = { hands = "Sakonji Kote +3" }
+	sets.precast.JA['Sekkanoki'] = { hands = "Kasuga Kote +1" }
+	sets.precast.JA['Sengikori'] = { feet = "Kas. Sune-Ate +1" }
 
-    sets.precast.Step = {
-        head="Flam. Zucchetto +2",neck="Moonbeam Nodowa",ear1="Telos Earring",ear2="Mache Earring +1",
-        body="Sakonji Domaru +3",hands="Flam. Manopolas +2",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-        back=gear.stp_jse_back,waist="Olseni Belt",legs="Wakido Haidate +3",feet="Wakido Sune-Ate +3"}
-    sets.precast.JA['Violent Flourish'] = {ammo="Pemphredo Tathlum",
-        head="Flam. Zucchetto +2",neck="Sanctity Necklace",ear1="Digni. Earring",ear2="Moonshade Earring",
-        body="Flamma Korazin +2",hands="Flam. Manopolas +2",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-        back=gear.ws_jse_back,waist="Eschan Stone",legs="Flamma Dirs +2",feet="Flam. Gambieras +2"}
+	-- Fast cast sets for spells
+	sets.precast.FC =
+	{
+		neck = "Voltsurge Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
+		body = "Sacro Breastplate", hands = "Leyline Gloves", ring1 = "Lebeche Ring", ring2 = "Prolix Ring"
+	}
 
-	-- Waltz set (chr and vit)
-	sets.precast.Waltz = {
-		head="Flam. Zucchetto +2",neck="Unmoving Collar +1",ear1="Handler's Earring +1",ear2="Handler's Earring",
-        body="Tartarus Platemail",hands="Flam. Manopolas +2",ring1="Asklepian Ring",ring2="Valseur's Ring",
-        back="Moonlight Cape",waist="Chaac Belt",legs="Wakido Haidate +3",feet="Sak. Sune-Ate +1"}
-        
-    -- Don't need any special gear for Healing Waltz.
-    sets.precast.Waltz['Healing Waltz'] = {}
+	-- Ranged snapshot gear
+	sets.precast.RA = {}
 
-    -- Fast cast sets for spells
-    sets.precast.FC = {neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",hands="Leyline Gloves",body="Sacro Breastplate",ring1="Lebeche Ring",ring2="Prolix Ring"}
-	   
-    -- Ranged snapshot gear
-    sets.precast.RA = {}
-	   
-    -- Weaponskill sets
-    -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS =
+	-- Weaponskill sets
+	-- Default set for any weaponskill that isn't any more specifically defined
+	sets.precast.WS =
 	{
 		ammo = "Knobkierrie",
 		head = "Mpaca's Cap", neck = "Sam. Nodowa +2", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
@@ -112,7 +98,7 @@ function init_gear_sets()
 	{
 		ammo = "Knobkierrie",
 		head = "Nyame  Helm", neck = "Sam. Nodowa +2", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Regal Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Medada's Ring",
 		back = "Atheling Mantle", waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -215,67 +201,42 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flam. Zucchetto +2", neck = "Sam. Nodowa +2", ear1 = "Telos Earring", ear2 = "Kasuga Earring +1",
+		head = "Flam. Zucchetto +2", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Kasuga Earring +1",
 		body = "Tatena. Harama. +1", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring", ring2 = "Chirich Ring +1",
-		back = "Atheling Mantle" , waist = "Sailfi Belt +1", legs = "Tatena. Haidate +1", feet = "Ryuo Sune-Ate +1"
-	}
-	sets.engaged.Acc =
-	{
-		ammo = "Aurgelmir Orb",
-		head = "Ken. Jinpachi +1", neck = "Sam. Nodowa +2", ear1 = "Telos Earring", ear2 = "Kasuga Earring +1",
-		body = "Tatena. Harama. +1", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring",ring2 = "Chirich Ring +1",
-		back = "Atheling Mantle" , waist = "Ioskeha Belt +1", legs = "Tatena. Haidate +1", feet = "Flam. Gambieras +2"
+		back = "Atheling Mantle", waist = "Ioskeha Belt +1", legs = "Tatena. Haidate +1", feet = "Tatena. Sune-Ate +1"
 	}
 	
 	sets.engaged.Hybrid =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flam. Zucchetto +2", neck = "Sam. Nodowa +2", ear1 = "Telos Earring", ear2 = "Kasuga Earring +1",
+		head = "Flam. Zucchetto +2", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Kasuga Earring +1",
 		body = "Mpaca's Doublet", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = "Atheling Mantle", waist = "Ioskeha Belt +1", legs = "Mpaca's Hose" , feet = "Ryuo Sune-Ate +1"
+		back = "Atheling Mantle", waist = "Ioskeha Belt +1", legs = "Mpaca's Hose" , feet = "Tatena. Sune-Ate +1"
 	}
-
-	sets.engaged.PDT =
-	{
-		ammo = "Coiste Bodhar",
-		head = "Mpaca's Cap", neck = "Sam. Nodowa +2", ear1 = "Telos Earring", ear2 = "Kasuga Earring +1",
-		body = "Mpaca's Doublet", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = "Atheling Mantle", waist = "Ioskeha Belt +1", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
-	}
-	sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, {})
-
-	sets.engaged.MDT =
-	{
-		ammo = "Coiste Bodhar",
-		head = "Nyame Helm", neck = "Sam. Nodowa +2", ear1 = "Telos Earring", ear2 = "Kasuga Earring +1",
-		body = "Nyame Mail", hands = "Flam. Manopolas +2", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = "Atheling Mantle", waist = "Ioskeha Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets",
-	}
-	sets.engaged.Acc.MDT = set_combine(sets.engaged.MDT, {})
 
 	sets.engaged.MEVA =
 	{
 		ammo = "Staunch Tathlum +1",
-		helm = "Nyame Helm", neck = "Warder's Charm +1", ear1 = "Telos Earring", ear2 = "Eabani Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = "Atheling Mantle", waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets",
+		helm = "Nyame Helm", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Kasuga Earring +1",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Chirich Ring +1",
+		back = "Atheling Mantle", waist = "Ioskeha Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets",
 	}
-	sets.engaged.Acc.MEVA = set_combine(sets.engaged.MEVA, {})
+
 	-- Weapons sets
-	sets.weapons.Dojikiri = { main = "Hachimonji", sub = "Utu Grip" }
+	sets.weapons.Dojikiri = { main = "Dojikiri Yasutsuna", sub = "Utu Grip" }
 	sets.weapons['Shining One'] = { main = "Shining One", sub = "Utu Grip" }
-	sets.weapons.ProcWeapon = { main="Norifusa +1", sub = "Bloodrain Strap" }
-	sets.weapons.Bow = { main = "Norifusa +1", sub = "Utu Grip", range = "Cibitshavore", ammo = "Eminent Arrow" }
+	sets.weapons.Sword = { main = "Twinned Blade", sub = empty }
+	sets.weapons.ProcWeapon = { main = "Soboro Sukehiro", sub = "Utu Grip" }
 	
 	-- Buff sets
 	sets.Cure_Received = {hands="Buremte Gloves",waist="Gishdubar Sash",legs="Flamma Dirs +2"}
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {neck="Vim Torque +1"}
-	sets.buff.Hasso = { hands = "Wakido Kote +1" }
+	sets.buff.Hasso = { hands = "Wakido Kote +2" }
 	sets.buff['Third Eye'] = {} --legs="Sakonji Haidate +3"
-    sets.buff.Sekkanoki = {hands="Kasuga Kote +1"}
-    sets.buff.Sengikori = {feet="Kas. Sune-Ate +1"}
-    sets.buff['Meikyo Shisui'] = {feet="Sak. Sune-Ate +1"}
+	sets.buff.Sekkanoki = {hands="Kasuga Kote +1"}
+	sets.buff.Sengikori = {feet="Kas. Sune-Ate +1"}
+	sets.buff['Meikyo Shisui'] = {feet="Sak. Sune-Ate +1"}
 end
 
 -- Select default macro book on initial load or subjob change.

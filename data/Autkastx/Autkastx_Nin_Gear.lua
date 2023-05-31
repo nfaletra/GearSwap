@@ -109,7 +109,7 @@ function init_gear_sets()
 	{
 		ammo = "Voluspa Tathlum",
 		head = "Hachiya Hatsu. +3", neck = "Ninja Nodowa +2", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Ilabrat Ring", ring2 = "Epaminondas's Ring Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Ilabrat Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
 	}
 
@@ -117,7 +117,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Epaminondas's Ring Ring",
+		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
@@ -157,7 +157,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -165,7 +165,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -173,7 +173,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -181,7 +181,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Pixie Hairpin +1", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Dingir Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -189,7 +189,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back =gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -229,7 +229,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Pixie Hairpin +1", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Dingir Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -237,7 +237,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back = gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -245,7 +245,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back =gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -253,7 +253,7 @@ function init_gear_sets()
 	{
 		ammo = "Yamarang",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Etana Ring", ring2 = "Regal Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Etana Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Eschan Stone", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -277,7 +277,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back = gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -309,7 +309,7 @@ function init_gear_sets()
 	{
 		ammo = "Yamarang",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Etana Ring", ring2 = "Regal Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Etana Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Eschan Stone", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -333,7 +333,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -341,7 +341,7 @@ function init_gear_sets()
 	{
 		ammo = "Yamarang",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Etana Ring", ring2 = "Regal Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Etana Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Eschan Stone", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -349,7 +349,7 @@ function init_gear_sets()
 	{
 		ammo = "Yamarang",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Etana Ring", ring2 = "Regal Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Etana Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Eschan Stone", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -357,7 +357,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -365,7 +365,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Mochi. Hatsuburi +3", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Gorget", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -400,7 +400,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Mochi. Hatsuburi +3", neck = "Sanctity Necklace", ear1 = "Friomisi Earring", ear2 = "Hermetic Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back = gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Mochi. Kyahan +3"
 	}
 
