@@ -290,7 +290,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Bhikku Crown +2", neck = "Bathy Choker +1", ear1 = "Sherida Earring", ear2 = "Bhikku Earring +1",
 		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = gear.Segomo.Counter, waist = "Moonbow Belt +1", legs = "Anch. Hose +3", feet = "Bhikku Gaiters +2"
+		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Anch. Hose +3", feet = "Bhikku Gaiters +2"
 	}
 	sets.engaged.Acc.Counter = set_combine(sets.engaged.Counter, {})
 

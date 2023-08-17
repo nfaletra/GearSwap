@@ -120,7 +120,7 @@ function init_gear_sets()
 	{
 		head = "Carmine Mask +1", neck = "Baetyl Pendant", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = "Dread Jupon", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Lebeche Ring",
-		back = "Moonlight Cape", waist = "Flume Belt", legs = "Rawhide Trousers", feet = "Carmine Greaves +1"
+		back = "Moonlight Cape", waist = "Flume Belt +1", legs = "Rawhide Trousers", feet = "Carmine Greaves +1"
 	}
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck = "Magoraga Beads", body = "Passion Jacket" })
@@ -231,7 +231,7 @@ function init_gear_sets()
 	{
 		head = "Meghanada Visor +2", neck = "Twilight Torque", ear1 = "Genmei Earring", ear2 = "Crep. Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Regal Ring",
-		back = "Moonlight Cape", waist = "Flume Belt", legs = "Meg. Chausses +2", feet = "Meg. Jam. +2"
+		back = "Moonlight Cape", waist = "Flume Belt +1", legs = "Meg. Chausses +2", feet = "Meg. Jam. +2"
 	}
 
 	sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS['Leaden Salute'],
@@ -250,7 +250,7 @@ function init_gear_sets()
 	{
 		head = "Carmine Mask +1", neck= "Baetyl Pendant", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = "Dread Jupon", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Lebeche Ring",
-		back = "Moonlight Cape", waist = "Flume Belt", legs = "Rawhide Trousers", feet = "Carmine Greaves +1"
+		back = "Moonlight Cape", waist = "Flume Belt +1", legs = "Rawhide Trousers", feet = "Carmine Greaves +1"
 	}
 
 	sets.Self_Healing = { waist = "Gishdubar Sash" }

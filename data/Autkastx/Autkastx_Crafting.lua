@@ -5,7 +5,7 @@
 
 sets.crafting = {} -- {ring1="Craftkeeper's Ring",ring2="Artificer's Ring",back="Shaper's Shawl"}
 
-sets.crafting.Fishing = {} -- { range = "S.H. Fishing Rod", ammo = "Insect Ball" }
+sets.crafting.Fishing = {range = "Halcyon Rod", ammo = "Insect Ball" }
 
 sets.Chocobo = {} -- {main="Chocobo Wand",head="Egg Helm",neck="Chocobo Torque",body="Blue Race Silks",hands="Chocobo Gloves",waist="Chocobo Rope",legs="Chocobo Hose",feet="Chocobo Boots"}
 sets.Chocobo.skill = {} -- {body="S. Blue Race Silks"}

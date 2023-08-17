@@ -61,7 +61,7 @@ function init_gear_sets()
 	sets.Enmity =
 	{
 		ammo = "Sapience Orb",
-		body = "Emet Harness", neck = "Unmoving Collar +1", ring1 = "Eihwaz Ring",
+		body = "Emet Harness +1", neck = "Unmoving Collar +1", ring1 = "Eihwaz Ring",
 		legs = "Zoar Subligar",
 	}
 
@@ -427,7 +427,7 @@ function init_gear_sets()
 	sets.weapons.NaeglingAcc = { main = "Naegling", sub = "Sakpata's Sword" }
 	sets.weapons.Maxentius = { main = "Maxentius", sub = "Sakpata's Sword" }
 	sets.weapons.Magic = { main = "Maxentius", sub = "Bunzi's Rod" }
-	sets.weapons.Trial = { main = "Machaera +1", sub = "Sakpata's Sword" }
+	sets.weapons.Trial = { main = "Machaera +2", sub = "Sakpata's Sword" }
 
 	-- Engaged sets
 
@@ -452,27 +452,13 @@ function init_gear_sets()
 	sets.Self_Healing = { waist = "Gishdubar Sash" }
 	sets.Cure_Received = { waist = "Gishdubar Sash" }
 	sets.Self_Refresh = { waist = "Gishdubar Sash" }
-	sets.Phalanx_Received = {hands=gear.herculean_phalanx_hands,feet=gear.herculean_nuke_feet}
+	sets.Phalanx_Received = {}
 end
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
 	-- Default macro set/book
-	if player.sub_job == 'DNC' then
-		set_macro_page(4, 2)
-	elseif player.sub_job == 'NIN' then
-		set_macro_page(5, 2)
-	elseif player.sub_job == 'WAR' then
-		set_macro_page(7, 2)
-	elseif player.sub_job == 'RUN' then
-		set_macro_page(3, 2)
-	elseif player.sub_job == 'THF' then
-		set_macro_page(2, 2)
-	elseif player.sub_job == 'RDM' then
-		set_macro_page(1, 2)
-	else
-		set_macro_page(6, 2)
-	end
+	set_macro_page(6, 2)
 end
 
 function user_job_lockstyle()

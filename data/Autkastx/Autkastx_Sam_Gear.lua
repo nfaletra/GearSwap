@@ -53,7 +53,7 @@ function init_gear_sets()
 	{
 		ammo = "Knobkierrie",
 		head = "Mpaca's Cap", neck = "Sam. Nodowa +2", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Regal Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Epaminondas's Ring",
 		back = "Atheling Mantle", waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -82,7 +82,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Mpaca's Cap", neck = "Sanctity Necklace", ear1 = "Digni. Earring", ear2 = "Crep. Earring",
-		body = "Mpaca's Doublet", hands = "Mpaca's Gloves", ring1 = "Stikini Ring +1",ring2 = "Metamor. Ring +1",
+		body = "Mpaca's Doublet", hands = "Mpaca's Gloves", ring1 = "Medada's Ring",ring2 = "Metamor. Ring +1",
 		back = "Atheling Mantle", waist = "Eschan Stone", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
@@ -90,15 +90,15 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Mpaca's Cap", neck = "Sanctity Necklace", ear1 = "Digni. Earring", ear2 = "Crep. Earring",
-		body = "Mpaca's Doublet", hands = "Mpaca's Gloves", ring1 = "Stikini Ring +1",ring2 = "Metamor. Ring +1",
+		body = "Mpaca's Doublet", hands = "Mpaca's Gloves", ring1 = "Medada's Ring",ring2 = "Metamor. Ring +1",
 		back = "Atheling Mantle", waist = "Eschan Stone", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
 	sets.precast.WS['Tachi: Jinpu'] =
 	{
 		ammo = "Knobkierrie",
-		head = "Nyame  Helm", neck = "Sam. Nodowa +2", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Medada's Ring",
+		head = "Nyame Helm", neck = "Sam. Nodowa +2", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Medada's Ring", ring2 = "Epaminondas's Ring",
 		back = "Atheling Mantle", waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 

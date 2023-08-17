@@ -190,10 +190,10 @@ function init_gear_sets()
 	
 	sets.midcast.Cure =
 	{
-		main = "Queller Rod", sub = "Sors Shield", ammo = "Pemphredo Tathlum",
-		head = "Kaykaus Mitra +1", neck = "Clr. Torque +2", ear1 = "Nourish. Earring +1", ear2 = "Mendi. Earring",
-		body = "Theo. Bliaut +2", hands = "Theophany Mitts +3", ring1 = "Janniston Ring", ring2 = "Mephitas's Ring +1",
-		back = "Alaunus's Cape", waist = "Luminary Sash", legs = "Ebers Pant. +1", feet = "Kaykaus Boots +1"
+		main = "Queller Rod", sub = "Sors Shield", ammo = "Staunch Tathlum +1",
+		head = "Vanya Hood", neck = "Clr. Torque +2", ear1 = "Nourish. Earring +1", ear2 = "Mendi. Earring",
+		body = "Ebers Bliaut +1", hands = "Weath. Cuffs +1", ring1 = "Prolix Ring", ring2 = "Mephitas's Ring +1",
+		back = "Fi Follet Cape", waist = "Austerity Belt", legs = "Ebers Pant. +1", feet = "Vanya Clogs"
 	}
 		
 	sets.midcast.CureSolace = set_combine(sets.midcast.Cure, { body = "Ebers Bliaut +1" })

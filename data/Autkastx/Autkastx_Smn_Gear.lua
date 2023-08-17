@@ -225,7 +225,7 @@ function init_gear_sets()
 		main = "Espiritus", sub = "Vox Grip", ammo = "Epitaph",
 		head = "Convoker's Horn +2", neck = "Smn. Collar +2", ear1 = "Lugalbanda Earring", ear2 = "Enmerkar Earring",
 		body = "Con. Doublet +3", hands = "Convo. Bracers +2", ring1 = "Evoker's Ring", ring2 = "C. Palug Ring",
-		back = gear.Campestres.Magic, waist = "Regal Belt", legs = "Convo. Spats +2", feet = "Convo. Pigaches +2"
+		back = gear.Campestres.Magic, waist = "Regal Belt", legs = "Convo. Spats +2", feet = "Convo. Pigaches +3"
 	}
 
 	sets.midcast.Pet.DebuffBloodPactWard.Acc = sets.midcast.Pet.DebuffBloodPactWard
@@ -238,7 +238,7 @@ function init_gear_sets()
 		back = gear.Campestres.Idle, waist = "Incarnation Sash", legs = gear.apogee.legs.d, feet = gear.apogee.feet.b
 	}
 
-	sets.midcast.Pet.PhysicalBloodPactRage.Acc = { feet = "Convo. Pigaches +2" }
+	sets.midcast.Pet.PhysicalBloodPactRage.Acc = { feet = "Convo. Pigaches +3" }
 
 	sets.midcast.Pet.MagicalBloodPactRage =
 	{

@@ -84,6 +84,9 @@ function job_setup()
 
     state.Buff['Sublimation: Activated'] = buffactive['Sublimation: Activated'] or false
 	state.Buff['Enlightenment'] = buffactive['Enlightenment'] or false
+	state.Buff.Hasso = buffactive.Hasso or false
+    state.Buff.Seigan = buffactive.Seigan or false
+	state.Stance = M{['description']='Stance','Hasso','Seigan','None'}
 	
     update_active_stratagems()
 	
@@ -92,7 +95,115 @@ function job_setup()
 	autows = 'Realmrazer'
 	autofood = 'Pear Crepe'
 	
-	init_job_states({"Capacity","AutoRuneMode","AutoTrustMode","AutoNukeMode","AutoWSMode","AutoShadowMode","AutoFoodMode","AutoStunMode","AutoDefenseMode",},{"AutoBuffMode","Weapons","OffenseMode","WeaponskillMode","IdleMode","Passive","RuneElement","RecoverMode","ElementalMode","CastingMode","TreasureMode",})
+	init_job_states({"Capacity","AutoRuneMode","AutoTrustMode","AutoNukeMode","AutoWSMode","AutoShadowMode","AutoFoodMode","AutoStunMode","AutoDefenseMode",},{"AutoBuffMode","AutoSambaMode","Weapons","OffenseMode","WeaponskillMode","Stance","IdleMode","Passive","RuneElement","RecoverMode","ElementalMode","CastingMode","TreasureMode",})
+
+	function handle_smartcure(cmdParams)
+		if cmdParams[2] then
+			if tonumber(cmdParams[2]) then
+				cureTarget = windower.ffxi.get_mob_by_id(tonumber(cmdParams[2]))
+			else
+				cureTarget = table.concat(cmdParams, ' ', 2)
+				cureTarget = windower.ffxi.get_mob_by_target(cureTarget)
+				if not cureTarget or not cureTarget.name then cureTarget = player.target end
+				if not cureTarget or not cureTarget.name then cureTarget = player end
+			end
+		elseif player.target.type == "SELF" or player.target.type == 'MONSTER' or player.target.type == 'NONE' then
+			cureTarget = player
+		else
+			cureTarget = player.target
+		end
+
+		if cureTarget.status == 2 or cureTarget.status == 3 then
+			windower.chat.input('/ma "Arise" '..cureTarget..'')
+			return
+		end
+		
+		local missingHP = nil
+		local spell_recasts = windower.ffxi.get_spell_recasts()
+
+		if cureTarget.type == 'MONSTER' then
+			if silent_can_use(4) and spell_recasts[4] < spell_latency then
+				windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
+			elseif spell_recasts[3] < spell_latency then
+				windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
+			elseif spell_recasts[2] < spell_latency then
+				windower.chat.input('/ma "Cure II" '..cureTarget.id..'')
+			else
+				add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
+			end
+		elseif cureTarget.in_alliance then
+			cureTarget.hp = find_player_in_alliance(cureTarget.name).hp
+			local est_max_hp = cureTarget.hp / (cureTarget.hpp / 100)
+			missingHP = math.floor(est_max_hp - cureTarget.hp)
+		else
+			local est_current_hp = 2000 * (cureTarget.hpp / 100)
+			missingHP = math.floor(2000 - est_current_hp)
+		end
+
+		if missingHP then
+			if missingHP < 250 then
+				if spell_recasts[1] < spell_latency then
+					windower.chat.input('/ma "Cure" '..cureTarget.id..'')
+				elseif spell_recasts[2] < spell_latency then
+					windower.chat.input('/ma "Cure II" '..cureTarget.id..'')
+				else
+					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
+				end
+			elseif missingHP < 400 then
+				if spell_recasts[2] < spell_latency then
+					windower.chat.input('/ma "Cure II" '..cureTarget.id..'')
+				elseif spell_recasts[3] < spell_latency then
+					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
+				elseif spell_recasts[1] < spell_latency then
+					windower.chat.input('/ma "Cure" '..cureTarget.id..'')
+				else
+					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
+				end
+			elseif missingHP < 800 then
+				if spell_recasts[3] < spell_latency then
+					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
+				elseif spell_recasts[4] < spell_latency then
+					windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
+				else
+					add_to_chat(123, 'Abort: Appropriate cures are on cooldown.')
+				end
+			elseif missingHP < 1200 then
+				if spell_recasts[4] < spell_latency then
+					windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
+				elseif spell_recasts[3] < spell_latency then
+					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
+				elseif spell_recasts[5] < spell_latency then
+					windower.chat.input('/ma "Cure V" '..cureTarget.id..'')
+				else
+					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
+				end
+			elseif missingHP < 1500 then
+				if spell_recasts[5] < spell_latency then
+					windower.chat.input('/ma "Cure V" '..cureTarget.id..'')
+				elseif spell_recasts[4] < spell_latency then
+					windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
+				elseif spell_recasts[6] < spell_latency then
+					windower.chat.input('/ma "Cure VI" '..cureTarget.id..'')
+				elseif spell_recasts[3] < spell_latency then
+					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
+				else
+					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
+				end
+			else
+				if spell_recasts[6] < spell_latency then
+					windower.chat.input('/ma "Cure VI" '..cureTarget.id..'')
+				elseif spell_recasts[5] < spell_latency then
+					windower.chat.input('/ma "Cure V" '..cureTarget.id..'')
+				elseif spell_recasts[4] < spell_latency then
+					windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
+				elseif spell_recasts[3] < spell_latency then
+					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
+				else
+					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
+				end
+			end
+		end
+	end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -311,6 +422,10 @@ end
 function job_update(cmdParams, eventArgs)
     update_active_stratagems()
     update_sublimation()
+
+	if player.sub_job ~= 'SAM' and state.Stance.value ~= "None" then
+		state.Stance:set("None")
+	end	
 end
 
 -- Function to display the current relevant user state when doing an update.
@@ -329,6 +444,9 @@ function job_self_command(commandArgs, eventArgs)
     if commandArgs[1]:lower() == 'scholar' then
         handle_stratagems(commandArgs)
         eventArgs.handled = true
+	elseif commandArgs[1]:lower() == 'smartcure' then
+		handle_smartcure(commandArgs)
+		eventArgs.handled = true
     elseif commandArgs[1]:lower() == 'elemental' then
         handle_elemental(commandArgs)
         eventArgs.handled = true
@@ -514,31 +632,19 @@ function handle_elemental(cmdParams)
 				windower.chat.input:schedule(1.3,'/ma "Stone" <t>')
 				windower.chat.input:schedule(5.6,'/ja "Immanence" <me>')
 				windower.chat.input:schedule(6.9,'/p '..auto_translate('Liquefaction')..' -<t>- MB: '..auto_translate('Fire')..' <scall21> CLOSE!')
-				if windower.ffxi.get_spell_recasts()[281] < (spell_latency + 6) then
-					windower.chat.input:schedule(6.9,'/ma "Pyrohelix" <t>')
-				else
-					windower.chat.input:schedule(6.9,'/ma "Fire" <t>')
-				end
+				windower.chat.input:schedule(6.9,'/ma "Fire" <t>')
 			elseif state.ElementalMode.value == 'Wind' then
 				windower.chat.input('/p '..auto_translate('Detonation')..' -<t>- MB: '..auto_translate('wind')..' <scall21> OPEN!')
 				windower.chat.input:schedule(1.3,'/ma "Stone" <t>')
 				windower.chat.input:schedule(5.6,'/ja "Immanence" <me>')
 				windower.chat.input:schedule(6.9,'/p '..auto_translate('Detonation')..' -<t>- MB: '..auto_translate('wind')..' <scall21> CLOSE!')
-				if windower.ffxi.get_spell_recasts()[280] < (spell_latency + 6) then
-					windower.chat.input:schedule(6.9,'/ma "Anemohelix" <t>')
-				else
-					windower.chat.input:schedule(6.9,'/ma "Aero" <t>')
-				end
+				windower.chat.input:schedule(6.9,'/ma "Aero" <t>')
 			elseif state.ElementalMode.value == 'Lightning' then
 				windower.chat.input('/p '..auto_translate('Impaction')..' -<t>- MB: '..auto_translate('Thunder')..' <scall21> OPEN!')
 				windower.chat.input:schedule(1.3,'/ma "Water" <t>')
 				windower.chat.input:schedule(5.6,'/ja "Immanence" <me>')
 				windower.chat.input:schedule(6.9,'/p '..auto_translate('Impaction')..' -<t>- MB: '..auto_translate('Thunder')..' <scall21> CLOSE!')
-				if windower.ffxi.get_spell_recasts()[283] < (spell_latency + 6) then
-					windower.chat.input:schedule(6.9,'/ma "Ionohelix" <t>')
-				else
-					windower.chat.input:schedule(6.9,'/ma "Thunder" <t>')
-				end
+				windower.chat.input:schedule(6.9,'/ma "Thunder" <t>')
 			elseif state.ElementalMode.value == 'Light' then
 				local spell_recasts = windower.ffxi.get_spell_recasts()
 				if spell_recasts[284] > spell_latency or spell_recasts[285] > spell_latency + 7 then
@@ -555,31 +661,19 @@ function handle_elemental(cmdParams)
 				windower.chat.input:schedule(1.3,'/ma "Fire" <t>')
 				windower.chat.input:schedule(5.6,'/ja "Immanence" <me>')
 				windower.chat.input:schedule(6.9,'/p '..auto_translate('Scission')..' -<t>- MB: '..auto_translate('earth')..' <scall21> CLOSE!')
-				if windower.ffxi.get_spell_recasts()[278] < (spell_latency + 6) then
-					windower.chat.input:schedule(6.9,'/ma "Geohelix" <t>')
-				else
-					windower.chat.input:schedule(6.9,'/ma "Stone" <t>')
-				end
+				windower.chat.input:schedule(6.9,'/ma "Stone" <t>')
 			elseif state.ElementalMode.value == 'Ice' then
 				windower.chat.input('/p '..auto_translate('Induration')..' -<t>- MB: '..auto_translate('ice')..' <scall21> OPEN!')
 				windower.chat.input:schedule(1.3,'/ma "Water" <t>')
 				windower.chat.input:schedule(5.6,'/ja "Immanence" <me>')
 				windower.chat.input:schedule(6.9,'/p '..auto_translate('Induration')..' -<t>- MB: '..auto_translate('ice')..' <scall21> CLOSE!')
-				if windower.ffxi.get_spell_recasts()[282] < (spell_latency + 6) then
-					windower.chat.input:schedule(6.9,'/ma "Cryohelix" <t>')
-				else
-					windower.chat.input:schedule(6.9,'/ma "Blizzard" <t>')
-				end
+				windower.chat.input:schedule(6.9,'/ma "Blizzard" <t>')
 			elseif state.ElementalMode.value == 'Water' then
 				windower.chat.input('/p '..auto_translate('Reverberation')..' -<t>- MB: '..auto_translate('Water')..' <scall21> OPEN!')
 				windower.chat.input:schedule(1.3,'/ma "Stone" <t>')
 				windower.chat.input:schedule(5.6,'/ja "Immanence" <me>')
 				windower.chat.input:schedule(6.9,'/p '..auto_translate('Reverberation')..' -<t>- MB: '..auto_translate('Water')..' <scall21> CLOSE!')
-				if windower.ffxi.get_spell_recasts()[279] < (spell_latency + 6) then
-					windower.chat.input:schedule(6.9,'/ma "Hydrohelix" <t>')
-				else
-					windower.chat.input:schedule(6.9,'/ma "Water" <t>')
-				end
+				windower.chat.input:schedule(6.9,'/ma "Water" <t>')
 			elseif state.ElementalMode.value == 'Dark' then
 				if windower.ffxi.get_spell_recasts()[284] > (spell_latency + 6) then
 					add_to_chat(123,'Abort: Noctohelix on cooldown.')
@@ -615,21 +709,13 @@ function handle_elemental(cmdParams)
 				windower.chat.input:schedule(1.3,'/ma "Fire" <t>')
 				windower.chat.input:schedule(5.6,'/ja "Immanence" <me>')
 				windower.chat.input:schedule(6.9,'/p '..auto_translate('Fusion')..' -<t>- MB: '..auto_translate('Fire')..' '..auto_translate('Light')..' <scall21> CLOSE!')
-				if windower.ffxi.get_spell_recasts()[283] < (spell_latency + 6) then
-					windower.chat.input:schedule(6.9,'/ma "Ionohelix" <t>')
-				else
-					windower.chat.input:schedule(6.9,'/ma "Thunder" <t>')
-				end
+				windower.chat.input:schedule(6.9,'/ma "Thunder" <t>')
 			elseif state.ElementalMode.value == 'Wind' or state.ElementalMode.value == 'Lightning' then
 				windower.chat.input('/p '..auto_translate('Fragmentation')..' -<t>- MB: '..auto_translate('wind')..' '..auto_translate('Thunder')..' <scall21> OPEN!')
 				windower.chat.input:schedule(1.3,'/ma "Blizzard" <t>')
 				windower.chat.input:schedule(5.6,'/ja "Immanence" <me>')
 				windower.chat.input:schedule(6.9,'/p '..auto_translate('Fragmentation')..' -<t>- MB: '..auto_translate('wind')..' '..auto_translate('Thunder')..' <scall21> CLOSE!')
-				if windower.ffxi.get_spell_recasts()[279] < (spell_latency + 6) then
-					windower.chat.input:schedule(6.9,'/ma "Hydrohelix" <t>')
-				else
-					windower.chat.input:schedule(6.9,'/ma "Water" <t>')
-				end
+				windower.chat.input:schedule(6.9,'/ma "Water" <t>')
 			elseif state.ElementalMode.value == 'Earth' or state.ElementalMode.value == 'Dark' then
 				if windower.ffxi.get_spell_recasts()[284] > (spell_latency + 6) then
 					add_to_chat(123,'Abort: Noctohelix on cooldown.')
@@ -648,11 +734,7 @@ function handle_elemental(cmdParams)
 					windower.chat.input:schedule(1.3,'/ma "Luminohelix" <t>')
 					windower.chat.input:schedule(6.6,'/ja "Immanence" <me>')
 					windower.chat.input:schedule(7.9,'/p '..auto_translate('Distortion')..' -<t>- MB: '..auto_translate('ice')..' '..auto_translate('Water')..' <scall21> CLOSE!')
-					if windower.ffxi.get_spell_recasts()[278] < (spell_latency + 6) then
-						windower.chat.input:schedule(7.9,'/ma "Geohelix" <t>')
-					else
-						windower.chat.input:schedule(7.9,'/ma "Stone" <t>')
-					end
+					windower.chat.input:schedule(7.9,'/ma "Stone" <t>')
 				end
 			else
 				add_to_chat(123,'Abort: '..state.ElementalMode.value..' is not an Elemental Mode with a skillchain1 command!')
@@ -951,6 +1033,7 @@ function job_tick()
 	if check_arts() then return true end
 	if check_buff() then return true end
 	if check_buffup() then return true end
+	if check_hasso() then return true end
 	return false
 end
 
@@ -1016,6 +1099,27 @@ function check_buffup()
 		return false
 	end
 end
+
+function check_hasso()
+	if player.sub_job == 'SAM' and player.status == 'Engaged' and not (state.Stance.value == 'None' or state.Buff.Hasso or state.Buff.Seigan or state.Buff['SJ Restriction'] or main_weapon_is_one_handed() or silent_check_amnesia()) then
+			
+			local abil_recasts = windower.ffxi.get_ability_recasts()
+			
+			if state.Stance.value == 'Hasso' and abil_recasts[138] < latency then
+				windower.chat.input('/ja "Hasso" <me>')
+				tickdelay = os.clock() + 1.1
+				return true
+			elseif state.Stance.value == 'Seigan' and abil_recasts[139] < latency then
+				windower.chat.input('/ja "Seigan" <me>')
+				tickdelay = os.clock() + 1.1
+				return true
+			else
+				return false
+			end
+		end
+	
+		return false
+	end
 
 buff_spell_lists = {
 	Auto = {--Options for When are: Always, Engaged, Idle, OutOfCombat, Combat

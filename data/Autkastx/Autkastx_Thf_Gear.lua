@@ -9,7 +9,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Aeneas', 'Aeolian', 'Gandring', 'Savage', 'Evisceration', 'Karambit', 'Throwing', 'SwordThrowing', 'Bow')
+	state.Weapons:options('Aeneas', 'Gandring', 'Savage', 'Evisceration', 'Karambit', 'Throwing', 'SwordThrowing', 'Bow')
 
 	state.ExtraMeleeMode = M{ ['description'] = 'Extra Melee Mode', 'None', 'Suppa', 'DWMax', 'Parry'}
 	state.AmbushMode = M(false, 'Ambush Mode')
@@ -60,8 +60,7 @@ function init_gear_sets()
 
 	-- Weapons sets
 	sets.weapons.Aeneas = { main = "Aeneas", sub = "Gleti's Knife" }
-	sets.weapons.Aeolian = { main = "Malevolence", sub = "Malevolence" }
-	sets.weapons.Gandring = { main = "Gandring", sub = "Gleti's Knife" }
+	sets.weapons.Gandring = { main = "Gandring", sub = "Malevolence" }
 	sets.weapons.Savage = { main = "Naegling", sub = "Gleti's Knife" }
 	sets.weapons.Evisceration = { main = "Tauret", sub = "Gleti's Knife" }
 	sets.weapons.Karambit = { main = "Karambit" }

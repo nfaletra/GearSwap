@@ -48,7 +48,7 @@ function init_gear_sets()
 	sets.precast.JA['Life Cycle'] = { body = "Geo. Tunic +1", back = gear.Nantosuelta.Pet }
 	sets.precast.JA['Radial Arcana'] = { feet = "Bagua Sandals +3" }
 	sets.precast.JA['Mending Halation'] = { legs = "Bagua Pants +3" }
-	sets.precast.JA['Full Circle'] = { head = "Azimuth Hood +2", hands = "Bagua Mitaines +2" }
+	sets.precast.JA['Full Circle'] = { head = "Azimuth Hood +2", hands = "Bagua Mitaines +3" }
 	sets.precast.JA['Concentric Pulse'] = { head = "Bagua Galero +3" }
 	
 	-- Indi Duration in slots that would normally have skill here to make entrust more efficient.
@@ -69,7 +69,7 @@ function init_gear_sets()
 
 	sets.precast.FC.Geomancy = set_combine(sets.precast.FC, {})
 	
-    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, { hands = "Bagua Mitaines +2" })
+    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, { hands = "Bagua Mitaines +3" })
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, { waist = "Siegel Sash" })
 
