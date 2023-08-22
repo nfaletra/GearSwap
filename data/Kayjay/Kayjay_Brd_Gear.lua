@@ -10,7 +10,7 @@ function user_job_setup()
 	gear.magic_jse_back = {name="Intarabus's Cape",augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10','Damage taken-5%',}}
 
 	-- Adjust this if using the Terpander (new +song instrument)
-	info.ExtraSongInstrument = "Blurred Harp +1"
+	info.ExtraSongInstrument = "Terpander"
 	-- How many extra songs we can keep from Daurdabla/Terpander
 	info.ExtraSongs = 1
 	
@@ -208,7 +208,7 @@ function init_gear_sets()
 	{
 		range = "Linos",
 		head = "Aya. Zucchetto +1", neck = "Bard's Charm +2", ear1 = "Suppanomimi", ear2 = "Brutal Earring",
-		body = "Ayanmo Corazza +1", hands = "Aya. Manopolas +1", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
+		body = "Ayanmo Corazza +2", hands = "Aya. Manopolas +1", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
 		back = gear.melee_jse_back, waist = "Reiki Yotai", legs = "Aya. Cosciales +2", feet = "Aya. Gambieras +1"
 	}
 end

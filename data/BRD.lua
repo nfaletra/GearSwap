@@ -87,6 +87,79 @@ function job_setup()
 
 	update_melee_groups()
 	init_job_states({"Capacity","AutoRuneMode","AutoTrustMode","AutoNukeMode","AutoWSMode","AutoShadowMode","AutoFoodMode","AutoStunMode","AutoDefenseMode","AutoSongMode",},{"AutoBuffMode","AutoSambaMode","Weapons","OffenseMode","WeaponskillMode","IdleMode","Passive","RuneElement","ExtraSongsMode","CastingMode","TreasureMode",})
+
+	SongMap =
+	T{
+		march = { --[["Honor March", ]]"Victory March", "Advancing March" },
+		prelude = { "Hunter's Prelude", "Archer's Prelude" },
+		mambo = { "Dragonfoe Mambo", "Sheepfoe Mambo" },
+		lcarol = { "Light Carol II", "Light Carol" },
+		lcarol1 = { "Light Carol" },
+		dcarol = { "Dark Carol II", "Dark Carol" },
+		dcarol1 = { "Dark Carol" },
+		fcarol = { "Fire Carol II", "Fire Carol" },
+		fcarol1 = { "Fire Carol" },
+		scarol = { "Earth Carol II", "Earth Carol" },
+		scarol1 = { "Earth Carol" },
+		wcarol = { "Water Carol II", "Water Carol" },
+		wcarol1 = { "Water Carol" },
+		acarol = { "Wind Carol II", "Wind Carol" },
+		acarol1 = { "Wind Carol" },
+		bcarol = { "Ice Carol II", "Ice Carol" },
+		bcarol1 = { "Ice Carol" },
+		tcarol = { "Lightning Carol II", "Lightning Carol" },
+		tcarol1 = { "Lightning Carol" },
+		mad = { "Blade Madrigal", "Sword Madrigal" },
+		scherzo = { "Sentinel's Scherzo" },
+		min = { "Valor Minuet V", "Valor Minuet IV", "Valor Minuet III", "Valor Minuet II", "Valor Minuet" },
+		ballad = { "Mage's Ballad III", "Mage's Ballad II", "Mage's Ballad" },
+		minne = { "Knight's Minne V", "Knight's Minne IV", "Knight's Minne III", "Knight's Minne II", "Knight's Minne" },
+		paeon = { "Army's Paeon VI", "Army's Paeon V", "Army's Paeon IV", "Army's Paeon III", "Army's Paeon II", "Army's Paeon" },
+		hymnus = { "Goddess's Hymnus" },
+		mazurka = { "Chocobo Mazurka" },
+		str = { "Herculean Etude", "Sinewy Etude" },
+		dex = { "Uncanny Etude", "Dextrous Etude" },
+		vit = { "Vital Etude", "Vivacious Etude" },
+		agi = { "Swift Etude", "Quick Etude" },
+		int = { "Sage Etude", "Learned Etude" },
+		mnd = { "Logical Etude", "Spirited Etude" },
+		chr = { "Bewitching Etude", "Enchanting Etude" },
+		dirge = { "Adventurer's Dirge" },
+		sirvente = { "Foe Sirvente" }
+	}
+
+	BuffMap =
+	T{
+		["Honor March"] = 'March', ["Victory March"] = 'March', ["Advancing March"] = 'March',
+		["Hunter's Prelude"] = 'Prelude', ["Archer's Prelude"] = 'Prelude',
+		["Dragonfoe Mambo"] = 'Mambo', ["Sheepfoe Mambo"] = 'Mambo',
+		["Light Carol"] = 'Carol', ["Light Carol II"] = 'Carol', ["Dark Carol"] = 'Carol', ["Dark Carol II"] = 'Carol',
+		["Fire Carol"] = 'Carol', ["Fire Carol II"] = 'Carol', ["Earth Carol II"] = 'Carol', ["Earth Carol II"] = 'Carol',
+		["Water Carol"] = 'Carol', ["Water Carol II"] = 'Carol', ["Wind Carol"] = 'Carol', ["Wind Carol II"] = 'Carol',
+		["Ice Carol"] = 'Carol', ["Ice Carol II"] = 'Carol', ["Lightning Carol"] = 'Carol', ["Lightning Carol II"] = 'Carol',
+		["Blade Madrigal"] = 'Madrigal', ["Sword Madrigal"] = 'Madrigal',
+		["Sentinel's Scherzo"] = 'Scherzo',
+		["Valor Minuet V"] = 'Minuet', ["Valor Minuet IV"] = 'Minuet', ["Valor Minuet III"] = 'Minuet', ["Valor Minuet II"] = 'Minuet', ["Valor Minuet"] = 'Minuet',
+		["Mage's Ballad III"] = 'Ballad', ["Mage's Ballad II"] = 'Ballad', ["Mage's Ballad"] = 'Ballad',
+		["Knight's Minne V"] = 'Minne', ["Knight's Minne IV"] = 'Minne', ["Knight's Minne III"] = 'Minne', ["Knight's Minne II"] = 'Minne', ["Knight's Minne"] = 'Minne',
+		["Army's Paeon VI"] = 'Paeon', ["Army's Paeon V"] = 'Paeon', ["Army's Paeon IV"] = 'Paeon', ["Army's Paeon III"] = 'Paeon', ["Army's Paeon II"] = 'Paeon', ["Army's Paeon"] = 'Paeon',
+		["Goddess's Hymnus"] = 'Hymnus',
+		["Chocobo Mazurka"] = 'Mazurka',
+		["Herculean Etude"] = 'Etude', ["Sinewy Etude"] = 'Etude', ["Uncanny Etude"] = 'Etude', ["Dextrous Etude"] = 'Etude',
+		["Vital Etude"] = 'Etude', ["Vivacious Etude"] = 'Etude', ["Swift Etude"] = 'Etude', ["Quick Etude"] = 'Etude',
+		["Sage Etude"] = 'Etude', ["Learned Etude"] = 'Etude', ["Logical Etude"] = 'Etude', ["Spirited Etude"] = 'Etude',
+		["Betwitching Etude"] = 'Etude', ["Enchanting Etude"] = 'Etude',
+		["Adventurer's Dirge"] = 'Dirge',
+		["Foe Sirvente"] = 'Sirvente'
+	}
+
+	TotalSongs = 2
+	SingDummies = false
+	DummySung = false
+	Singing = false
+	SongIndex = 1
+	SongCount = 0
+	Songs = T{}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -395,7 +468,10 @@ end
 
     -- Allow jobs to override this code
 function job_self_command(commandArgs, eventArgs)
-
+	if commandArgs[1]:lower() == 'sing' then
+		handle_songs(commandArgs)
+		eventArgs.handled = true
+	end
 end
 
 function job_tick()
@@ -406,25 +482,25 @@ function job_tick()
 end
 
 function check_song()
-	if state.AutoSongMode.value then
-		if not buffactive.march then
-			windower.chat.input('/ma "Advancing March" <me>')
-			tickdelay = os.clock() + 2
-			return true
-		elseif not buffactive.minuet then
-			windower.chat.input('/ma "Valor Minuet V" <me>')
-			tickdelay = os.clock() + 2
-			return true
-		elseif not buffactive.madrigal then
-			windower.send_command('gs c set ExtraSongsMode FullLength;input /ma "Sword Madrigal" <me>')
-			tickdelay = os.clock() + 2
-			return true
+	if not Singing then return false end
+
+	if SingDummies and not DummySung then
+		if not DummySung then
+			windower.send_command('gs c set ExtraSongMode Dummy')
+			DummySung = true
 		else
-			return false
+			DummySung = false
 		end
-	else
-		return false
 	end
+
+	windower.chat.input('/so "'..Songs[SongIndex]..'" <me>')
+	tickdelay = os.clock() + 2
+	if not DummySung then
+		SongIndex = SongIndex + 1
+	end
+
+	Singing = SongIndex > #Songs or SongIndex > TotalSongs
+	return true
 end
 
 function check_buff()
@@ -471,6 +547,114 @@ function check_buffup()
 		return false
 	else
 		return false
+	end
+end
+
+function handle_songs(cmdParams)
+	if not cmdParams[2] then
+		add_to_chat(123, 'Error: No songs given.')
+		return
+	end
+
+	print("commands: "..tostring(#cmdParams))
+
+	TotalSongs = 2 + info.ExtraSongs
+
+	-- Track how many of each buff type we want so we can check for dummy songs
+	-- NOTE: 
+	local buffCounts =
+	T{
+		march = 0,
+		prelude = 0,
+		mambo = 0,
+		carol = 0,
+		madrigal = 0,
+		scherzo = 0,
+		minuet = 0,
+		ballad = 0,
+		minne = 0,
+		paeon = 0,
+		hymnus = 0,
+		mazurka = 0,
+		etude = 0
+	}
+
+	-- Parse song commands
+	table.empty(Songs)
+	local do1HR = false
+	local doJA = false
+	for i = 2, #cmdParams, 1 do
+		if cmdParams[i]:lower() == '1hr' then
+			do1HR = true
+		elseif cmdParams[i]:lower() == 'ja' then
+			doJA = true
+		else
+			parse_song(Songs, cmdParams[i], buffCounts)
+		end
+	end
+
+	if #Songs < 1 then return end
+
+	local abil_recasts = windower.ffxi.get_ability_recasts()
+	tickdelay = os.clock() + 1.1
+	if do1HR then
+		if abil_recasts[0] < latency and abil_recasts[254] < latency then
+			windower.chat.input('/ja "Soul Voice" <me>')
+			windower.chat.input:schedule(1, '/ja "Clarion Call" <me>')
+			TotalSongs = TotalSongs + 1
+			tickdelay = tickdelay + 1.1
+		end
+	else
+		do1HR = false
+	end
+	if doJA then
+		local offset = do1HR and 2 or 0
+		if abil_recasts[109] < latency and abil_recasts[110] < latency then
+			windower.chat.input:schedule(offset, '/ja Nightingale <me>')
+			windower.chat.input:schedule(1 + offset, '/ja Troubador <me>')
+			tickdelay = tickdelay + 2.2
+		end
+		if abil_recasts[48] < latency then
+			windower.chat.input:schedule(2 + offset, '/ja Marcato <me>')
+			tickdelay = tickdelay + 1.1
+		end
+	end
+
+	-- Determine if dummy songs are needed
+	SingDummies = false
+	DummySung = false
+	if alliance[1] then
+		for _, partyMember in pairs(alliance[1]) do
+			if type(partyMember) == 'table' and partyMember.name ~= nil and type(partyMember.mob) == 'table' and
+				partyMember.mob.distance ~= nil and partyMember.mob.distance ~= 0.089004568755627 and
+				partyMember.mob.distance < 100 and partyMember.buffactive ~= nil
+			then
+				for buff, count in pairs(buffCounts) do
+					if partyMember.buffactive[buff] == nil or partyMember.buffactive[buff] < count then
+						SingDummies = true
+						break
+					end
+				end
+			end
+			if SingDummies then break end 
+		end
+	end
+
+	Singing = true
+	SongIndex = 1
+	SongCount = 0
+end
+
+function parse_song(songs, command, counts)
+	if not SongMap:contains(command) then return end
+
+	for _, v in ipairs(SongMap[command]) do
+		if not songs:contains(v) then
+			print("Adding Song: "..v)
+			songs:append(v)
+			counts[v] = counts[v] + 1
+			break
+		end
 	end
 end
 

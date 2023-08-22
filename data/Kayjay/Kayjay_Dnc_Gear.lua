@@ -221,8 +221,8 @@ function init_gear_sets()
 	{
 		ammo = "Aurgelmir Orb",
 		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
-		body = "Rawhide Vest", hands = "Espial Bracers", ring1 = "Rajas Ring", ring2 = "Keen Ring",
-		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Feast Hose", feet = "Horos Toe Shoes +1"
+		body = "Meg. Cuirie +2", hands = "Espial Bracers", ring1 = "Rajas Ring", ring2 = "Keen Ring",
+		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Meg. Chausses +2", feet = "Horos Toe Shoes +1"
 	}
 
 	sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
@@ -262,8 +262,8 @@ function init_gear_sets()
 	{
 		ammo = "Aurgelmir Orb",
 		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
-		body = "Rawhide Vest", hands = "Espial Bracers", ring1 = "Rajas Ring", ring2 = "Keen Ring",
-		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Feast Hose", feet = "Horos Toe Shoes +1"
+		body = "Meg. Cuirie +2", hands = "Espial Bracers", ring1 = "Rajas Ring", ring2 = "Keen Ring",
+		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Meg. Chausses +2", feet = "Horos Toe Shoes +1"
 	}
 
 	sets.engaged.DTLite = {
