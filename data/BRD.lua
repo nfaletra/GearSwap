@@ -154,12 +154,8 @@ function job_setup()
 	}
 
 	TotalSongs = 2
-	SingDummies = false
-	DummySung = false
-	Singing = false
-	SongIndex = 1
-	SongCount = 0
 	Songs = T{}
+	NextAutoSong = 0
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -475,31 +471,18 @@ function job_self_command(commandArgs, eventArgs)
 end
 
 function job_tick()
-	if check_song() then return true end
+	if check_auto_song() then return true end
 	if check_buff() then return true end
 	if check_buffup() then return true end
 	return false
 end
 
-function check_song()
-	if not Singing then return false end
+function check_auto_song()
+	if not state.AutoSongMode.value then return false end
+	if os.clock() < NextAutoSong then return false end
 
-	if SingDummies and not DummySung then
-		if not DummySung then
-			windower.send_command('gs c set ExtraSongMode Dummy')
-			DummySung = true
-		else
-			DummySung = false
-		end
-	end
-
-	windower.chat.input('/so "'..Songs[SongIndex]..'" <me>')
-	tickdelay = os.clock() + 2
-	if not DummySung then
-		SongIndex = SongIndex + 1
-	end
-
-	Singing = SongIndex > #Songs or SongIndex > TotalSongs
+	windower.send_command('gs c sing '..info.AutoSongs)
+	NextAutoSong = os.clock() + info.AutoSongDelay
 	return true
 end
 
@@ -552,7 +535,7 @@ end
 
 function handle_songs(cmdParams)
 	if not cmdParams[2] then
-		add_to_chat(123, 'Error: No songs given.')
+		add_to_chat(123, "Error: No songs given.")
 		return
 	end
 
@@ -564,98 +547,124 @@ function handle_songs(cmdParams)
 	-- NOTE: 
 	local buffCounts =
 	T{
-		march = 0,
-		prelude = 0,
-		mambo = 0,
-		carol = 0,
-		madrigal = 0,
-		scherzo = 0,
-		minuet = 0,
-		ballad = 0,
-		minne = 0,
-		paeon = 0,
-		hymnus = 0,
-		mazurka = 0,
-		etude = 0
+		March = 0,
+		Prelude = 0,
+		Mambo = 0,
+		Carol = 0,
+		Madrigal = 0,
+		Scherzo = 0,
+		Minuet = 0,
+		Ballad = 0,
+		Minne = 0,
+		Paeon = 0,
+		Hymnus = 0,
+		Mazurka = 0,
+		Etude = 0
 	}
 
-	-- Parse song commands
-	table.empty(Songs)
+	-- Reset tracking variables
+	table.clear(Songs)
+	local SingDummies = false
+	local numSongs = 0
 	local do1HR = false
 	local doJA = false
+	
+	-- Parse song commands
 	for i = 2, #cmdParams, 1 do
 		if cmdParams[i]:lower() == '1hr' then
 			do1HR = true
 		elseif cmdParams[i]:lower() == 'ja' then
 			doJA = true
 		else
-			parse_song(Songs, cmdParams[i], buffCounts)
+			if parse_song(Songs, cmdParams[i], buffCounts) then
+				numSongs = numSongs + 1
+			else
+				print("Error: Failed to parse song")
+			end
 		end
 	end
 
-	if #Songs < 1 then return end
+	if #Songs < 1 then
+		add_to_chat(123, "Error: No songs given.")
+		return
+	end
 
-	local abil_recasts = windower.ffxi.get_ability_recasts()
-	tickdelay = os.clock() + 1.1
-	if do1HR then
-		if abil_recasts[0] < latency and abil_recasts[254] < latency then
-			windower.chat.input('/ja "Soul Voice" <me>')
-			windower.chat.input:schedule(1, '/ja "Clarion Call" <me>')
+	if doJA and not buffactive['encumberance'] and
+				not buffactive['paralysis'] and
+				not buffactive['amnesia'] and
+				not buffactive['impairment'] and
+				IsAbilityReady('Troubadour') and
+				IsAbilityReady('Nightingale')
+	then
+		if do1HR and
+			IsAbilityReady('Soul Voice') and
+			IsAbilityReady('Clarion Call')
+		then
 			TotalSongs = TotalSongs + 1
-			tickdelay = tickdelay + 1.1
-		end
-	else
-		do1HR = false
-	end
-	if doJA then
-		local offset = do1HR and 2 or 0
-		if abil_recasts[109] < latency and abil_recasts[110] < latency then
-			windower.chat.input:schedule(offset, '/ja Nightingale <me>')
-			windower.chat.input:schedule(1 + offset, '/ja Troubador <me>')
-			tickdelay = tickdelay + 2.2
-		end
-		if abil_recasts[48] < latency then
-			windower.chat.input:schedule(2 + offset, '/ja Marcato <me>')
-			tickdelay = tickdelay + 1.1
+			AddToStack(GetAbilityFromName('Troubador'), player.name, { fixedOrder = true })
+			AddToStack(GetAbilityFromName('Nightingale'), player.name, { fixedOrder = true })
+			AddToStack(GetAbilityFromName('Soul Voice'), player.name, { fixedOrder = true })
+			AddToStack(GetAbilityFromName('Clarion Call'), player.name, { fixedOrder = true })
+		elseif IsAbilityReady('Marcato') then
+			AddToStack(GetAbilityFromName('Troubador'), player.name, { fixedOrder = true })
+			AddToStack(GetAbilityFromName('Nightingale'), player.name, { fixedOrder = true })
+			AddToStack(GetAbilityFromName('Marcato'), player.name, { fixedOrder = true })
 		end
 	end
 
 	-- Determine if dummy songs are needed
-	SingDummies = false
-	DummySung = false
-	if alliance[1] then
-		for _, partyMember in pairs(alliance[1]) do
-			if type(partyMember) == 'table' and partyMember.name ~= nil and type(partyMember.mob) == 'table' and
-				partyMember.mob.distance ~= nil and partyMember.mob.distance ~= 0.089004568755627 and
-				partyMember.mob.distance < 100 and partyMember.buffactive ~= nil
-			then
-				for buff, count in pairs(buffCounts) do
-					if partyMember.buffactive[buff] == nil or partyMember.buffactive[buff] < count then
-						SingDummies = true
-						break
+	if numSongs > 2 then
+		if alliance[1] then
+			for _, partyMember in pairs(alliance[1]) do
+				if type(partyMember) == 'table' and partyMember.name ~= nil and type(partyMember.mob) == 'table' and
+					partyMember.mob.distance ~= nil and partyMember.mob.distance ~= 0.089004568755627 and
+					partyMember.mob.distance < 100 and partyMember.buffactive ~= nil
+				then
+					for buff, count in pairs(buffCounts) do
+						if partyMember.buffactive[buff] == nil or partyMember.buffactive[buff] < count then
+							SingDummies = true
+							break
+						end
 					end
 				end
+				if SingDummies then
+					break
+				end
 			end
-			if SingDummies then break end 
 		end
 	end
 
-	Singing = true
-	SongIndex = 1
-	SongCount = 0
+	local dummyToggle = function()
+		windower.send_command('gs c set ExtraSongsMode Dummy')
+	end
+	local dummyReset = function()
+		windower.send_command('gs c reset ExtraSongsMode')
+	end
+
+	for i = 1, numSongs do
+		if i > 2 and SingDummies then
+			-- Add the song with dummy toggle
+			AddToStack(GetSpellFromName(Songs[i]), player.name, { partyCheck = true, precastCheck = dummyToggle, aftercast = dummyReset })
+		end
+
+		AddToStack(GetSpellFromName(Songs[i]), player.name, { partyCheck = true })
+	end
 end
 
 function parse_song(songs, command, counts)
-	if not SongMap:contains(command) then return end
+	if not SongMap:containskey(command) then
+		return false
+	end
 
 	for _, v in ipairs(SongMap[command]) do
 		if not songs:contains(v) then
-			print("Adding Song: "..v)
 			songs:append(v)
-			counts[v] = counts[v] + 1
-			break
+			counts[BuffMap[v]] = counts[BuffMap[v]] + 1
+			return true
 		end
 	end
+
+	return false
 end
 
 buff_spell_lists = {
