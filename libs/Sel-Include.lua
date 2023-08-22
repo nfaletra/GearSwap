@@ -454,6 +454,9 @@ function init_include()
 	
 	-- Load generic items into sets and determine settings after checking what is owned as needed.
 	include('Sel-GlobalItems')
+
+	-- Load Action Stack
+	include('ActionStack')
 end
 
 -- Function to perform actions on new targets.
@@ -689,7 +692,9 @@ function global_unload()
 	
 	if clear_job_states then
 		clear_job_states()
-	end		
+	end
+
+	ActionStack_on_unload()
 end
 
 -------------------------------------------------------------------------------------------------------------------
