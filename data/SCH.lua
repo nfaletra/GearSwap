@@ -167,34 +167,8 @@ function job_setup()
 				else
 					add_to_chat(123, 'Abort: Appropriate cures are on cooldown.')
 				end
-			elseif missingHP < 1200 then
-				if spell_recasts[4] < spell_latency then
-					windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
-				elseif spell_recasts[3] < spell_latency then
-					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
-				elseif spell_recasts[5] < spell_latency then
-					windower.chat.input('/ma "Cure V" '..cureTarget.id..'')
-				else
-					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
-				end
-			elseif missingHP < 1500 then
-				if spell_recasts[5] < spell_latency then
-					windower.chat.input('/ma "Cure V" '..cureTarget.id..'')
-				elseif spell_recasts[4] < spell_latency then
-					windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
-				elseif spell_recasts[6] < spell_latency then
-					windower.chat.input('/ma "Cure VI" '..cureTarget.id..'')
-				elseif spell_recasts[3] < spell_latency then
-					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
-				else
-					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
-				end
 			else
-				if spell_recasts[6] < spell_latency then
-					windower.chat.input('/ma "Cure VI" '..cureTarget.id..'')
-				elseif spell_recasts[5] < spell_latency then
-					windower.chat.input('/ma "Cure V" '..cureTarget.id..'')
-				elseif spell_recasts[4] < spell_latency then
+				if spell_recasts[4] < spell_latency then
 					windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
 				elseif spell_recasts[3] < spell_latency then
 					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
