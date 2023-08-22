@@ -64,7 +64,7 @@ function init_gear_sets()
 		main = "Cath Palug Hammer", sub = "Genmei Shield", range = "Dunna",
 		head = "Merlinic Hood", neck = "Twilight Torque", ear1 = "Loquac. Earring", ear2 = "Malignance Earring",
 		body = "Agwu's Robe", hands = "Agwu's Gages", ring1 = "Kishar Ring", ring2 = "Lebeche Ring",
-		back = "Perimede Cape", waist = "Witful Belt", legs = "Geo. Pants +1", feet = "Amalric Nails +1"
+		back = "Perimede Cape", waist = "Witful Belt", legs = "Geo. Pants +1", feet = gear.amalric.feet.a
 	}
 
 	sets.precast.FC.Geomancy = set_combine(sets.precast.FC, {})

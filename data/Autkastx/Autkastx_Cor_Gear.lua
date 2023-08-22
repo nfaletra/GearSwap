@@ -157,9 +157,9 @@ function init_gear_sets()
 	sets.precast.WS['Savage Blade'] =
 	{
 		ammo = gear.WSbullet,
-		head = "Nyame Helm", neck = "Bathy Choker +1", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
+		head = "Nyame Helm", neck = "Rep. Plat. Medal", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
 		body = "Laksa. Frac +3", hands = "Chasseur's Gants +3", ring1 = "Regal Ring", ring2 = "Epaminondas's Ring",
-		back = gear.Camulus.Savage, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet="Lanun Bottes +3"
+		back = gear.Camulus.Savage, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
 	sets.precast.WS['Seraph Blade'] =

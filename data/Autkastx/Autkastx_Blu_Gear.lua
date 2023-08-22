@@ -8,7 +8,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None', 'Naegling', 'NaeglingAcc', 'Maxentius', 'Magic', 'Trial')
+	state.Weapons:options('None', 'Naegling', 'NaeglingAcc', 'Maxentius', 'Magic')
 
 	state.ExtraMeleeMode = M{ ['description'] = 'Extra Melee Mode', 'None'}
 
@@ -229,7 +229,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Hashishin Kavuk +2", neck = "Baetyl Pendant", ear1 = "Regal Earring", ear2 = "Friomisi Earring",
 		body = "Hashishin Mintan +3", hands = "Hashi. Bazu. +1", ring1 = "Metamor. Ring +1", ring2 = "Shiva Ring +1",
-		back = gear.Rosmerta.Magic, waist = "Sacro Cord", legs = "Luhlaza Shalwar +3", feet = "Amalric Nails +1"
+		back = gear.Rosmerta.Magic, waist = "Sacro Cord", legs = "Luhlaza Shalwar +3", feet = gear.amalric.feet.d
 	}
 
 	sets.midcast['Blue Magic']['Tenebral Crush'] = set_combine(sets.midcast['Blue Magic'].Magical,
@@ -243,7 +243,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Loricate Torque +1", ear1 = "Magnetic Earring",
 		body = "Nyame Mail", hands = "Rawhide Gloves", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
-		back = "Fi Follet Cape +1", waist = "Rumination Sash", legs = "Assim. Shalwar +2", feet = "Amalric Nails +1"
+		back = "Fi Follet Cape +1", waist = "Rumination Sash", legs = "Assim. Shalwar +2", feet = gear.amalric.feet.d
 	}
 
 	sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, { ring2 = "Stikini Ring +1" })
@@ -425,9 +425,8 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Naegling = { main = "Naegling", sub = "Thibron" }
 	sets.weapons.NaeglingAcc = { main = "Naegling", sub = "Sakpata's Sword" }
-	sets.weapons.Maxentius = { main = "Maxentius", sub = "Sakpata's Sword" }
+	sets.weapons.Maxentius = { main = "Maxentius", sub = "Thibron" }
 	sets.weapons.Magic = { main = "Maxentius", sub = "Bunzi's Rod" }
-	sets.weapons.Trial = { main = "Machaera +2", sub = "Sakpata's Sword" }
 
 	-- Engaged sets
 

@@ -130,7 +130,7 @@ function init_gear_sets()
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
 		head = "Bunzi's Hat", neck = "Baetyl Pendant", ear1 = "Crematio Earring", ear2 = "Friomisi Earring",
 		body = gear.merlinic_nuke_body, hands = "Amalric Gages +1", ring1 = "Shiva Ring +1", ring2 = "Freke Ring",
-		back = "Toro Cape", waist = "Sekhmet Corset", legs = "Merlinic Shalwar", feet = "Amalric Nails +1"
+		back = "Toro Cape", waist = "Sekhmet Corset", legs = "Merlinic Shalwar", feet = gear.amalric.feet.d
 	}
 
     sets.midcast['Elemental Magic'].OccultAcumen = {main="Khatvanga",sub="Bloodrain Strap",ammo="Seraphicz Ampulla",
@@ -150,7 +150,7 @@ function init_gear_sets()
     sets.midcast['Divine Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
         head=gear.merlinic_nuke_head,neck="Baetyl Pendant",ear1="Crematio Earring",ear2="Friomisi Earring",
         body=gear.merlinic_nuke_body,hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Freke Ring",
-		back="Toro Cape",waist="Sekhmet Corset",legs="Merlinic Shalwar",feet="Amalric Nails +1"}
+		back="Toro Cape",waist="Sekhmet Corset",legs="Merlinic Shalwar",feet = gear.amalric.feet.d}
 		
     sets.midcast['Dark Magic'] = {main="Rubicundity",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
         head=gear.merlinic_nuke_head,neck="Incanter's Torque",ear1="Digni. Earring",ear2="Gwati Earring",

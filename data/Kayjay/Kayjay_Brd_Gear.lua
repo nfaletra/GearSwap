@@ -13,6 +13,12 @@ function user_job_setup()
 	info.ExtraSongInstrument = "Terpander"
 	-- How many extra songs we can keep from Daurdabla/Terpander
 	info.ExtraSongs = 1
+	-- How long to wait between singing
+	info.SongDelay = 15
+	-- Auto Songs to sing
+	info.AutoSongs = 'march march min'
+	-- How long to wait between auto singing
+	info.AutoSongDelay = 210 -- 3:30 min
 	
 	-- Set this to false if you don't want to use custom timers.
 	state.UseCustomTimers = M(false, 'Use Custom Timers')

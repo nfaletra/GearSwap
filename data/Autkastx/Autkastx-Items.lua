@@ -99,6 +99,14 @@ gear.apogee.feet = {}
 gear.apogee.feet.a = { name = "Apogee Pumps +1", augments = { 'MP+80', 'Pet: "Mag.Atk.Bns."+35', 'Blood Pact Dmg.+8' } }
 gear.apogee.feet.b = { name = "Apogee Pumps +1", augments = { 'MP+80', 'Pet: Attack+35', 'Blood Pact Dmg.+8' } }
 
+-- Amalric Gear
+gear.amalric = {}
+
+-- Feet
+gear.amalric.feet = {}
+gear.amalric.feet.a = { name = "Amalric Nails +1", augments = { 'MP+80', 'Mag. Acc.+20', '"Mag.Atk.Bns."+20' } }
+gear.amalric.feet.d = { name = "Amalric Nails +1", augments = { 'Mag. Acc.+20', '"Mag.Atk.Bns."+20', '"Conserve MP"+7' } }
+
 -- Alluvion Skirmish Armor
 gear.telchine = {}
 
