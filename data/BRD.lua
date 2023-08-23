@@ -539,8 +539,6 @@ function handle_songs(cmdParams)
 		return
 	end
 
-	print("commands: "..tostring(#cmdParams))
-
 	TotalSongs = 2 + info.ExtraSongs
 
 	-- Track how many of each buff type we want so we can check for dummy songs
@@ -579,7 +577,7 @@ function handle_songs(cmdParams)
 			if parse_song(Songs, cmdParams[i], buffCounts) then
 				numSongs = numSongs + 1
 			else
-				print("Error: Failed to parse song")
+				add_to_chat(123, "Error: Failed to parse song")
 			end
 		end
 	end
@@ -636,15 +634,17 @@ function handle_songs(cmdParams)
 
 	local dummyToggle = function()
 		windower.send_command('gs c set ExtraSongsMode Dummy')
+		return true
 	end
 	local dummyReset = function()
 		windower.send_command('gs c reset ExtraSongsMode')
+		return true
 	end
 
 	for i = 1, numSongs do
 		if i > 2 and SingDummies then
 			-- Add the song with dummy toggle
-			AddToStack(GetSpellFromName(Songs[i]), player.name, { partyCheck = true, precastCheck = dummyToggle, aftercast = dummyReset })
+			AddToStack(GetSpellFromName(Songs[i]), player.name, { partyCheck = true, dummySong = true, precastCheck = dummyToggle, aftercast = dummyReset })
 		end
 
 		AddToStack(GetSpellFromName(Songs[i]), player.name, { partyCheck = true })

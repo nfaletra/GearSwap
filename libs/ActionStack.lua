@@ -1,7 +1,7 @@
 -- Setup the Action Stack output window
 windower.text.create('StackOutput')
-windower.text.set_bg_color('StackOutput', 0.5, 1, 1, 1)
-windower.text.set_color('StackOutput', 1, 1, 1, 1)
+windower.text.set_bg_color('StackOutput', 255, 0, 0, 0)
+windower.text.set_color('StackOutput', 255, 255, 255, 255)
 windower.text.set_font('StackOutput', 'fixedsys', 'consolas', 'courier new', 'monospace')
 windower.text.set_font_size('StackOutput', 10)
 windower.text.set_text('StackOutput', '')
@@ -17,6 +17,7 @@ local AllyStatusHeals = false
 local IgnoreBuffWear = false
 local LastRemovedSpell = {}
 local OutputMaxLines = 10
+local LastValue = 0
 
 -- Cure Thresholds
 local Curaga2Threshold = 400
@@ -364,7 +365,7 @@ end
 
 function CheckPlayerForBuff(playerName, buffTable)
 	local playerBuffs = GetPlayerBuffsFromAlliance(playerName)
-	if playerBuffs.empty() then return false end
+	if not playerBuffs then return false end
 
 	for _, v in pairs(buffTable) do
 		if playerBuffs[v] then
@@ -380,7 +381,7 @@ function IsSpellTargetingCharmedPlayer(spell)
 		return false
 	end
 
-	return CheckPlayerForBuff(spell.target, 'charm')
+	return CheckPlayerForBuff(spell.target, { 'charm' })
 end
 
 function CureProcess()
@@ -430,13 +431,13 @@ function CureProcess()
 			end
 
 			-- Paranoid checking for a valid party member
-			if type(v.mob) == 'table' and v.mob.distance and v.mob.x and v.mob.y and not CheckPlayerForBuff(v.name, 'charm') then
+			if type(v.mob) == 'table' and v.mob.distance and v.mob.x and v.mob.y and not CheckPlayerForBuff(v.name, { 'charm' }) then
 				if k:sub(1, 1) == 'p' then -- Checks that the player is in the same party
 					if CurablePlayers[v.name] and v.hp > 0 and v.mob.distance < 420 and v.mob.distance ~= 0.089004568755627 then
 						-- Checking for access to curaga spells
 						if player.main_job == 'WHM' or player.sub_job == 'WHM' then
 							for kk, vv in pairs(PartyData) do
-								if type(vv) == 'table' and kk:sub(1, 1) == 'p' and vv.mob.x and vv.mob.y and CheckPlayerForBuff(vv.name, 'charm') then
+								if type(vv) == 'table' and kk:sub(1, 1) == 'p' and vv.mob.x and vv.mob.y and CheckPlayerForBuff(vv.name, { 'charm' }) then
 									x = tonumber(v.mob.x) - tonumber(vv.mob.x)
 									y = tonumber(v.mob.y) - tonumber(vv.mob.y)
 
@@ -485,7 +486,7 @@ function CureProcess()
 					if v.hp > 0 and v.healNeeded > Cure3Threshold and v.mob.distance < 420 then
 						local curePriority = GetCurePriority(v.hpp)
 						if curePriority * v.healNeeded > biggestCureWeight then
-							biggestCureWeight = curePriority * v.healNeeded * PlayerPrioities[v.name]
+							biggestCureWeight = curePriority * v.healNeeded * PlayerPriorities[v.name]
 							biggestCureIndex = K
 						end
 					end
@@ -499,7 +500,7 @@ function CureProcess()
 					if v.hp > 0 and v.healNeeded > Cure3Threshold and v.mob.distance < 420 then
 						local curePriority = GetCurePriority(v.hpp)
 						if curePriority * v.healNeeded > biggestCureWeight then
-							biggestCureWeight = curePriority * v.healNeeded * PlayerPrioities[v.name]
+							biggestCureWeight = curePriority * v.healNeeded * PlayerPriorities[v.name]
 							biggestCureIndex = k
 						end
 					end
@@ -595,7 +596,7 @@ end
 function GetDelayFromAction(action)
 	if action.type == 'Misc' then
 		return math.ceil((RangedDelay / 106) * CastSpeed)
-	elseif action.type == 'JobAbility' or spell.type == 'PetCommand' or spell.type == 'Scholar' or not spell.cast_time then
+	elseif action.type == 'JobAbility' or action.type == 'PetCommand' or action.type == 'Scholar' or not action.cast_time then
 		return 0.5
 	elseif action.english == 'Stoneskin' then
 		return math.ceil(10 * CastSpeed)
@@ -607,6 +608,7 @@ end
 function ActionStackTick()
 	if #ActionStack == 0 then
 		ShowArrayContents()
+		return false
 	end
 
 	-- Update the Action Stack Window
@@ -623,7 +625,8 @@ function ActionStackTick()
 				skillchainName = '',
 				skillchainStep = 0,
 				pianissimo = false,
-				fixedOrder = false
+				fixedOrder = false,
+				dummySong = false,
 			}
 		end
 
@@ -697,7 +700,7 @@ function ActionStackTick()
 						elseif CheckRange(ActionStack[i].target, true) then
 							windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 							tickdelay = os.clock() + nextTick
-							ActionStack[i].failCount = ActionStack[i].failCount +1
+							ActionStack[i].failCount = ActionStack[i].failCount + 1
 							break
 						end
 					end
@@ -844,6 +847,8 @@ function ActionStackTick()
 	end
 
 	ShowArrayContents()
+
+	return true
 end
 
 function CheckRaisable(playerName)
@@ -977,6 +982,7 @@ function AddToStack(action, actionTarget, options)
 	options.fixedOrder = options.fixedOrder or false
 	options.precastCheck = options.precastCheck or function() return true end
 	options.aftercast = options.aftercast or function() return true end
+	options.dummySong = options.dummySong or false
 	
 	options.hasTargetID = tonumber(options.target) ~= nil or options.target == 'bt'
 
@@ -1002,7 +1008,8 @@ function GetActionStackAction(action, options)
 		precastCheck = options.precastCheck,
 		aftercast = options.aftercast,
 		addedAt = os.clock(),
-		importance = options.importance
+		importance = options.importance,
+		dummySong = options.dummySong
 	}
 end
 
@@ -1015,8 +1022,8 @@ function GetNewStack(action, options)
 	if action.cast_time then
 	end
 
-	if PlayerPrioities[options.target] then
-		options.importance = options.importance * PlayerPrioities[options.target]
+	if PlayerPriorities[options.target] then
+		options.importance = options.importance * PlayerPriorities[options.target]
 	end
 
 	if #ActionStack > 0 then
@@ -1048,7 +1055,7 @@ function ShouldInsertNewAction(existingAction, newImportance)
 	return existingAction.importance < newImportance
 end
 
-function eepExistingAction(existingAction, newAction, options)
+function KeepExistingAction(existingAction, newAction, options)
 	if type(existingAction) ~= 'table' then return false end
 
 	if newAction.prefix == '/weaponskill' and existingAction.spell.prefix == '/weaponskill' then
@@ -1059,11 +1066,15 @@ function eepExistingAction(existingAction, newAction, options)
 		return true
 	end
 
-	if existingAction.spell.prefix ~= newAction.spell.prefix then
+	if existingAction.spell.prefix ~= newAction.prefix then
 		return true
 	end
 
-	if existingAction.spell.id ~= newAction.spell.id then
+	if existingAction.spell.id ~= newAction.id then
+		return true
+	end
+
+	if existingAction.spell.prefix == '/song' and existingAction.dummySong ~= newAction.dummySong then
 		return true
 	end
 
@@ -1081,7 +1092,9 @@ function RebuildArray(actionToRemove, target)
 					((ActionStack[i].spell.category and actionToRemove.category and ActionStack[i].spell.category == actionToRemove.category) or
 					(ActionStack[i].spell.prefix == actionToRemove.prefix and ActionStack[i].spell.id == actionToRemove.id and ActionStack[i].target == target))
 				then
-					if ActionStack[i].spell.type and ActionStack[i].spell.type == 'Scholar' then
+					if (ActionStack[i].spell.type and ActionStack[i].spell.type == 'Scholar') or
+						(ActionStack[i].spell.prefix == '/song' and ActionStack[i].dummySong)
+					then
 						removedActionOnce = true
 					end
 					table.reassign(LastRemovedSpell, ActionStack[i])
@@ -1142,6 +1155,70 @@ function CheckAoERange(playerName)
 	end
 
 	return false
+end
+
+function user_aftercast(spell, spellMap, eventArgs)
+	if spell.interrupted or spell.action_type == 'Interruption' then
+		if #ActionStack > 0 then
+			eventArgs.handled = true
+			local targetId = tostring(spell.target.id)
+			for i = 1, #ActionStack, 1 do
+				if spell.english == ActionStack[i].spell.en and
+					(ActionStack[i].target == 't' or
+					ActionStack[i].target == 'bt' or
+					targetId == tostring(ActionStack[i].target) or
+					spell.target.name == ActionStack[i].target or
+					(ActionStack[i].target == 'self' and spell.target.name == player.name) or
+					(ActionStack[i].target == player.name and spell.target.name == 'Luopan'))
+				then
+					tickdelay = os.clock() + 0.1
+
+					ShowArrayContents()
+					break
+				end
+			end
+		end
+	else
+		if spell.value and spell.type == 'CorsairRoll' then
+			LastValue = tonumber(spell.value)
+		end
+
+		if #ActionStack > 0 then
+			eventArgs.handled = true
+			local targetId = tostring(spell.target.id)
+			for i = 1, #ActionStack, 1 do
+				if spell.english == ActionStack[i].spell.en and
+					(ActionStack[i].target == 't' or
+					ActionStack[i].target == 'bt' or
+					targetId == tostring(ActionStack[i].target) or
+					spell.target.name == ActionStack[i].target or
+					(ActionStack[i].target == 'self' and spell.target.name == player.name) or
+					(ActionStack[i].target == player.name and spell.target.name == 'Luopan'))
+				then
+					-- Aftercast callback
+					ActionStack[i].aftercast()
+
+					if spell.type == 'Misc' then
+						tickdelay = os.clock() + 1.5
+					elseif not spell.cast_time or spell.type == 'JobAbility' or spell.type == 'Scholar' or spell.type == 'Item' or spell.type == 'PetCommand' or (spell.type == 'CorsairRoll' and ActionStack[i].spell.en == 'Double-Up') then
+						tickdelay = os.clock() + 0.8
+					elseif ActionStack[i].dummySong then
+						tickdelay = os.clock() + 8
+					else
+						tickdelay = os.clock() + 2.5
+					end
+
+					RebuildArray(ActionStack[i].spell, ActionStack[i].target)
+					ShowArrayContents()
+					break
+				elseif spell.type == 'CorsairRoll' and ActionStack[i].spell.en == 'Double-Up' then
+					RebuildArray(ActionStack[i].spell, ActionStack[i].target)
+					ShowArrayContents()
+					break
+				end
+			end
+		end
+	end
 end
 
 windower.raw_register_event("action", function(act)

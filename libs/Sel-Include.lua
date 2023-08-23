@@ -432,6 +432,9 @@ function init_include()
 				if extra_user_tick() then return end
 			end
 			
+			if ActionStackTick then
+				if ActionStackTick() then return end
+			end
 		end
 
 		tickdelay = os.clock() + .5
