@@ -11,7 +11,7 @@ windower.text.set_location('StackOutput', 500, 500)
 
 -- Some default variables
 local CurablePlayers = {}
-local PlayerPrioities = {}
+local PlayerPriorities = {}
 local AllianceHeal = false
 local AllyStatusHeals = false
 local IgnoreBuffWear = false
@@ -32,6 +32,32 @@ local Cure6Threshold = 1400
 local CastSpeed = 1.0
 local RangedDelay = 168
 local AutoStrat = true
+
+local Distances =
+{
+	[2] = 4 * 4,
+	[3] = 5 * 5,
+	[4] = 6.2 * 6.2,
+	[5] = 7.5 * 7.5,
+	[6] = 7.8 * 7.8,
+	[7] = 8.8 * 8.8,
+	[8] = 11 * 11,
+	[9] = 13 * 13,
+	[10] = 15 * 15,
+	[11] = 16.6 * 16.6,
+	[12] = 21 * 21
+}
+
+-- Helper functions
+function GetSpellFromName(spellName)
+	for i, v in pairs(gearswap.res.spells) do
+		if v.en and v.en == spellName then
+			return v
+		end
+	end
+
+	return nil
+end
 
 local NaSpellMap =
 {
@@ -62,7 +88,7 @@ local Eraseables =
 T{
 	'elegy', 'requiem', 'bind', 'weight', 'bio', 'dia', 'slow', 'max hp down', 'max mp down',
 	'str down', 'dex down', 'vit down', 'agi down', 'int down', 'mnd down', 'chr down',
-	'attack down', 'accuracy down', 'defense down', 'magic def. down', 'magic atk. down', 'evasion down', 'magic acc. down' 'magic evasion down',
+	'attack down', 'accuracy down', 'defense down', 'magic def. down', 'magic atk. down', 'evasion down', 'magic acc. down', 'magic evasion down',
 	'burn', 'frost', 'choke', 'rasp', 'shock', 'drown'
 }
 
@@ -73,23 +99,28 @@ end
 LastStatus['Sacrifice'] = 0
 LastStatus['Erase'] = 0
 
-function ActionStack_on_unload()
+local MaxStratagems = 2
+local StratagemRecast = 120
+
+if player.main_job == 'SCH' then
+	MaxStratagems = 5
+	local schJPData = windower.ffxi.get_player().job_points.sch.jp_spent
+	if schJPData >= 550 then
+		StratagemRecast = 33
+	else
+		StratagemRecast = 48
+	end
+elseif player.sub_job == 'SCH' and player.sub_job_level >= 50 then
+	MaxStratagems = 3
+	StratagemRecast = 80
+end
+
+function user_unload()
 	windower.text.delete('StackOutput')
 end
 
 local ActionStack = T{}
 local PartyData = windower.ffxi.get_party()
-
--- Helper functions
-function GetSpellFromName(spellName)
-	for i, v in pairs(gearswap.res.spells) do
-		if v.en and v.en == spellName then
-			return v
-		end
-	end
-
-	return nil
-end
 
 function IsSpellReady(spellName)
 	local spellRecasts = windower.ffxi.get_spell_recasts()
@@ -121,6 +152,78 @@ function GetWSFromName(wsName)
 	end
 
 	return nil
+end
+
+function CountStratagemsReady()
+	if AutoStrat and GetAbilityFromName['Addendum: White'] then
+		local recastTime = windower.ffxi.get_ability_recasts()[GetAbilityFromName['Addendum: White'].recast_id]
+		if recastTime > MaxStratagemTime then
+			return 0
+		else
+			return MaxStratagems - math.ceil(recastTime / StratagemRecast)
+		end
+
+		return 0
+	end
+end
+
+function IsStratagemReady(stratagemName)
+	local stratagem = GetAbilityFromName(stratagemName)
+	if stratagem and windower.ffxi.get_ability_recasts()[stratagem.recast_id] <= MaxStratagemTime then
+		return true
+	end
+
+	return false
+end
+
+function CheckTargetExists(action, actionTarget)
+	local mob = nil
+
+	if actionTarget == 't' then
+		mob = windower.ffxi.get_mob_by_target('t')
+	else
+		mob = windower.ffxi.get_mob_by_id(actionTarget)
+	end
+
+	if not mob or type(mob) ~= 'table' or not mob.distance then
+		return false
+	end
+
+	if action and action.range then
+		if Distances[action.range] and mob.distance > Distances[action.range] then
+			return false
+		end
+	end
+
+	if mob.distance == 0.089004568755627 then
+		return false
+	end
+
+	if mob.hpp == 0 then
+		return false
+	end
+
+	if not mob.valid_target then
+		return false
+	end
+
+	if mob.in_party then
+		return false
+	end
+
+	if mob.in_alliance then
+		return false
+	end
+
+	if not mob.is_npc then
+		return false
+	end
+
+	if mob.charmed then
+		return false
+	end
+
+	return true
 end
 
 function GetCurePriority(hp)
@@ -229,7 +332,7 @@ function PartyBuffChange(affectedPlayer, buffName, gain)
 			if player.main_job == 'WHM' and CheckAoERange(affectedPlayer.name) then
 				AddToBack(GetSpellFromName('Shellra V'), player.name, { partyCheck = true })
 			else
-				AddToBack(GetSpellFromName('Shell V'), affectedPlayer.name, { party check = true })
+				AddToBack(GetSpellFromName('Shell V'), affectedPlayer.name, { partyCheck = true })
 			end
 		end
 
@@ -333,7 +436,7 @@ function CureProcess()
 						-- Checking for access to curaga spells
 						if player.main_job == 'WHM' or player.sub_job == 'WHM' then
 							for kk, vv in pairs(PartyData) do
-								if type(vv) == 'table' and and ii:sub(1, 1) == 'p' and vv.mob.x and vv.mob.y and CheckPlayerForBuff(vv.name, 'charm') then
+								if type(vv) == 'table' and kk:sub(1, 1) == 'p' and vv.mob.x and vv.mob.y and CheckPlayerForBuff(vv.name, 'charm') then
 									x = tonumber(v.mob.x) - tonumber(vv.mob.x)
 									y = tonumber(v.mob.y) - tonumber(vv.mob.y)
 
@@ -342,7 +445,7 @@ function CureProcess()
 										if vv.hp > 0 then
 											vv.healNeeded = vv.hp / (vv.hpp / 100) - vv.hp
 										else
-											vv..healNeeded = 0
+											vv.healNeeded = 0
 										end
 									end
 
@@ -490,11 +593,11 @@ function CureProcess()
 end
 
 function GetDelayFromAction(action)
-	if action.type = 'Misc' then
+	if action.type == 'Misc' then
 		return math.ceil((RangedDelay / 106) * CastSpeed)
 	elseif action.type == 'JobAbility' or spell.type == 'PetCommand' or spell.type == 'Scholar' or not spell.cast_time then
 		return 0.5
-	elseif action.english == 'Stoneskin then
+	elseif action.english == 'Stoneskin' then
 		return math.ceil(10 * CastSpeed)
 	end
 
@@ -544,14 +647,14 @@ function ActionStackTick()
 						ActionStack[i].failCount = ActionStack[i].failCount + 1
 					elseif tonumber(ActionStack[i].target) then
 						if CheckTargetExists(ActionStack[i].spell, ActionStack[i].target) then
-							windower.chat.input('/item "'..ActionStack[i].spell.end..'" '..ActionStack[i].target..'')
+							windower.chat.input('/item "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 							tickdelay = os.clock() + ActionStack[i].spell.cast_time + 0.75
 						else
 							ActionStack[i].failCount = 31
 							add_to_chat(55, 'Target '..ActionStack[i].target..' was determined as invalid')
 						end
 					elseif ActionStack[i].target == player.name or CheckRange(ActionStack[i].target, ActionStack[i].partyCheck) then
-						windower.chat.input('/item "'..ActionStack[i].spell.en..'" '..ActionStack[i].target..'')
+						windower.chat.input('/item "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 						tickdelay = os.clock() + ActionStack.spell.cast_time + 0.75
 					else
 						ActionStack[i].failCount = 31
@@ -584,7 +687,7 @@ function ActionStackTick()
 							break
 						elseif tonumber(ActionStack[i].target) then
 							if CheckTargetExists(ActionStack[i].spell, ActionStack[i].target) then
-								windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" '..ActionStack[i].target..)
+								windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 								tickdelay = os.clock() + nextTick
 								ActionStack[i].failCount = ActionStack[i].failCount + 1
 								break
@@ -654,7 +757,7 @@ function ActionStackTick()
 								windower.chat.input('/p Starting '..ActionStack[i].skillchainName)
 							end
 
-							windower.chat.input(..ActionStack[i].spell/prefix..' "'..ActionStack[i].spell.en..'" <t>')
+							windower.chat.input(ActionStack[i].spell/prefix..' "'..ActionStack[i].spell.en..'" <t>')
 							tickdelay = os.clock() + nextTick
 							ActionStack[i].failCount = ActionStack[i].failCount + 1
 							break
@@ -664,7 +767,7 @@ function ActionStackTick()
 							else
 								windower.chat.input('/p Closing '..AcitonStack[i].skillchainName)
 							end
-							windower.chat.input('/p '..CountStrategemsReady()..' strats remaining.')
+							windower.chat.input('/p '..CountStratagemsReady()..' strats remaining.')
 							windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" <t>')
 							tickdelay = os.clock() + nextTick
 							ActionStack[i].failCount = ActionStack[i].failCount + 1
@@ -674,7 +777,7 @@ function ActionStackTick()
 							tickdelay = os.clock() + nextTick
 							ActionStack[i].failCount = ActionStack[i].failCount + 1
 							break
-						enn
+						end
 					elseif ActionStack[i].target == 'bt' then
 						windower.chat.input('input '..ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" <bt>')
 						tickdelay = os.clock() + nextTick
@@ -694,7 +797,7 @@ function ActionStackTick()
 							elseif ActionStack[i].skillchainStep == 2 then
 								if targetMob and targetMob.name then
 									windower.chat.input('/p Closing '..ActionStack[i].skillchainName..' on '..targetMob.name)
-									windower.chat.input('/p '..CountStrategemsReady()..' strats remaining.')
+									windower.chat.input('/p '..CountStratagemsReady()..' strats remaining.')
 									windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 									tickdelay = os.clock() + nextTick
 								end
@@ -926,7 +1029,7 @@ function GetNewStack(action, options)
 
 			if KeepExistingAction(ActionStack[i], action, options) then
 				newStack[newStackIndex] = {}
-				table.reassign[newStack[newStackIndex], ActionStack[i])
+				table.reassign(newStack[newStackIndex], ActionStack[i])
 				newStackIndex = newStackIndex + 1
 			end
 		end
@@ -1047,7 +1150,7 @@ windower.raw_register_event("action", function(act)
 			local targetId = tostring(act.targets[1].id)
 			for i = 1, #ActionStack, 1 do
 				if ActionStack[i].spell.category and act['param'] == ActionStack[i].spell.id and
-					(ActionStack[i].target = 't' or ActionStack[i].target == 'bt' or
+					(ActionStack[i].target == 't' or ActionStack[i].target == 'bt' or
 					targetId == tostring(ActionStack[i].target) or
 					(ActionStack[i].target == player.name and player.id == targetId))
 				then

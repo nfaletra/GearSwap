@@ -693,8 +693,6 @@ function global_unload()
 	if clear_job_states then
 		clear_job_states()
 	end
-
-	ActionStack_on_unload()
 end
 
 -------------------------------------------------------------------------------------------------------------------
