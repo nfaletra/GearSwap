@@ -12,12 +12,11 @@ windower.text.set_location('StackOutput', 500, 500)
 -- Some default variables
 local CurablePlayers = {}
 local PlayerPriorities = {}
-local AllianceHeal = false
-local AllyStatusHeals = false
 local IgnoreBuffWear = false
 local LastRemovedSpell = {}
 local OutputMaxLines = 10
 local LastValue = 0
+local HealerID = 0
 
 -- Cure Thresholds
 local Curaga2Threshold = 400
@@ -230,7 +229,7 @@ end
 function GetCurePriority(hp)
 	hp = 100 - tonumber(hp)
 	local priority = 0
-	if hp == 0 or hp > 99 then
+	if hp == 0 or hp > 85 then
 		priority = 0
 	else
 		priority = (0.0007 * hp * hp * hp * hp) + (0.0028 * hp * hp * hp) + (0.707 * hp * hp) + (2.7944 * hp) + 97.323
@@ -254,13 +253,11 @@ function PartyDistances()
 						PlayerPriorities[v.name] = 1
 					end
 
-					if AllyStatusHeals or (not AllyStatusHeals and ai == 1) then
-						if type(v.mob) == 'table' then
-							if not v.mob.distance then
-								local x = tonumber(v.mob.x) - tonumber(player.mob.x)
-								local y = tonumber(v.mob.y) - tonumber(player.mob.y)
-								v.mob.distance = math.sqrt(x * x + y * y)
-							end
+					if type(v.mob) == 'table' then
+						if not v.mob.distance then
+							local x = tonumber(v.mob.x) - tonumber(player.mob.x)
+							local y = tonumber(v.mob.y) - tonumber(player.mob.y)
+							v.mob.distance = math.sqrt(x * x + y * y)
 						end
 					end
 				end
@@ -280,7 +277,8 @@ function ShouldBuff()
 	return S{ 'WHM', 'SCH', 'RDM' }:contains(player.main_job)
 end
 
-function PartyBuffChange(affectedPlayer, buffName, gain)
+function party_buff_change(affectedPlayer, buffName, gain)
+	if state.StatusCureMode.value ~= 'Off' then return false end
 	if not affectedPlayer.buffactive or affectedPlayer.buffactive.charm then
 		return false
 	end
@@ -288,7 +286,7 @@ function PartyBuffChange(affectedPlayer, buffName, gain)
 	buffName = buffName:lower()
 	if gain and CanStatusHeal() then
 		if NaSpellMap[buffName] and os.clock() - LastStatus[buffName] > 15 then
-			AddByPriority(NaSpellMap[buffName], affectedPlayer.name,
+			AddToStack(NaSpellMap[buffName], affectedPlayer.name,
 			{
 				partyCheck = true,
 				precastCheck = function(this)
@@ -312,10 +310,10 @@ function PartyBuffChange(affectedPlayer, buffName, gain)
 		end
 
 		if player.main_job == 'WHM' and erasesNeeded > 1 and os.clock() - LastStatus['Sacrifice'] > 15 then
-			AddByPriority(GetSpellFromName('Sacrifice'), affectedPlayer.name, { partyCheck = true })
+			AddToStack(GetSpellFromName('Sacrifice'), affectedPlayer.name, { partyCheck = true })
 			LastStatus['Sacrifice'] = os.clock()
 		elseif erasesNeeded >= 1 and os.clock() - LastStatus['Erase'] > 15 then
-			AddByPriority(GetSpellFromName('Erase'), affectedPlayer.name, { partyCheck = true })
+			AddToStack(GetSpellFromName('Erase'), affectedPlayer.name, { partyCheck = true })
 			LastStatus['Erase'] = os.clock()
 		end
 	elseif not gain and affectedPlayer.hp > 0 and CanStatusHeal() and NaSpellMap[buffName] then
@@ -323,25 +321,25 @@ function PartyBuffChange(affectedPlayer, buffName, gain)
 	elseif not gain and not buffactive['weakness'] and not IgnoreBuffWear and affectedPlayer.hp > 0 and ShouldBuff() then
 		if buffName == 'protect' then
 			if player.main_job == 'WHM' and CheckAoERange(affectedPlayer.name) then
-				AddToBack(GetSpellFromName('Protectra V'), player.name, { partyCheck = true })
+				AddToStack(GetSpellFromName('Protectra V'), player.name, { partyCheck = true })
 			else
-				AddToBack(GetSpellFromName('Protect V'), affectedPlayer.name, { partyCheck = true })
+				AddToStack(GetSpellFromName('Protect V'), affectedPlayer.name, { partyCheck = true })
 			end
 		end
 
 		if buffName == 'shell' then
 			if player.main_job == 'WHM' and CheckAoERange(affectedPlayer.name) then
-				AddToBack(GetSpellFromName('Shellra V'), player.name, { partyCheck = true })
+				AddToStack(GetSpellFromName('Shellra V'), player.name, { partyCheck = true })
 			else
-				AddToBack(GetSpellFromName('Shell V'), affectedPlayer.name, { partyCheck = true })
+				AddToStack(GetSpellFromName('Shell V'), affectedPlayer.name, { partyCheck = true })
 			end
 		end
 
 		if buffName == 'haste' then
 			if player.main_job == 'RDM' then
-				AddByPriority(GetSpellFromName('Haste II'), affectedPlayer.name, { partyCheck = true })
+				AddToStack(GetSpellFromName('Haste II'), affectedPlayer.name, { partyCheck = true })
 			else
-				AddByPriority(GetSpellFromName('Haste'), affectedPlayer.name, { partyCheck = true })
+				AddToStack(GetSpellFromName('Haste'), affectedPlayer.name, { partyCheck = true })
 			end
 		end
 	end
@@ -367,6 +365,8 @@ function CheckPlayerForBuff(playerName, buffTable)
 	local playerBuffs = GetPlayerBuffsFromAlliance(playerName)
 	if not playerBuffs then return false end
 
+	if type(buffTable) ~= 'table' then buffTable = { buffTable } end
+
 	for _, v in pairs(buffTable) do
 		if playerBuffs[v] then
 			return true
@@ -381,7 +381,7 @@ function IsSpellTargetingCharmedPlayer(spell)
 		return false
 	end
 
-	return CheckPlayerForBuff(spell.target, { 'charm' })
+	return CheckPlayerForBuff(spell.target, 'charm')
 end
 
 function CureProcess()
@@ -396,6 +396,9 @@ function CureProcess()
 	-- Calculate missing hp
 	for k, v in pairs(PartyData) do
 		if type(v) == 'table' then
+			if v.name == player.name then
+				HealerID = k
+			end
 			if v.hp and v.hp > 0 then
 				v.healNeeded = v.hp / (v.hpp / 100) - v.hp
 			end
@@ -412,32 +415,31 @@ function CureProcess()
 			local curagaCount = 0
 
 			-- Fix missing distances
-			if v.name == player.name then
+			if k == HealerID then
 				if type(v.mob) == 'table' then
 					v.mob.distance = 0.1
 				else
 					v.mob = T{}
 					v.mob.distance = 0.1
 				end
-				
 			else
 				if type(v.mob) == 'table' then
 					if v.mob.distance then
-						local x = tonumber(v.mob.x) - tonumber(player.mob.x)
-						local y = tonumber(v.mob.y) - tonumber(player.mob.y)
+						local x = tonumber(v.mob.x) - tonumber(PartyData[HealerID].mob.x)
+						local y = tonumber(v.mob.y) - tonumber(PartyData[HealerID].mob.y)
 						v.mob.distance = math.sqrt(x * x + y * y)
 					end
 				end
 			end
 
 			-- Paranoid checking for a valid party member
-			if type(v.mob) == 'table' and v.mob.distance and v.mob.x and v.mob.y and not CheckPlayerForBuff(v.name, { 'charm' }) then
+			if type(v.mob) == 'table' and v.mob.distance and v.mob.x and v.mob.y and not CheckPlayerForBuff(v.name, 'charm') then
 				if k:sub(1, 1) == 'p' then -- Checks that the player is in the same party
 					if CurablePlayers[v.name] and v.hp > 0 and v.mob.distance < 420 and v.mob.distance ~= 0.089004568755627 then
 						-- Checking for access to curaga spells
 						if player.main_job == 'WHM' or player.sub_job == 'WHM' then
 							for kk, vv in pairs(PartyData) do
-								if type(vv) == 'table' and kk:sub(1, 1) == 'p' and vv.mob.x and vv.mob.y and CheckPlayerForBuff(vv.name, { 'charm' }) then
+								if type(vv) == 'table' and type(vv.mob) == 'table' and kk:sub(1, 1) == 'p' and vv.mob.x and vv.mob.y and CheckPlayerForBuff(vv.name, 'charm') then
 									x = tonumber(v.mob.x) - tonumber(vv.mob.x)
 									y = tonumber(v.mob.y) - tonumber(vv.mob.y)
 
@@ -487,10 +489,10 @@ function CureProcess()
 						local curePriority = GetCurePriority(v.hpp)
 						if curePriority * v.healNeeded > biggestCureWeight then
 							biggestCureWeight = curePriority * v.healNeeded * PlayerPriorities[v.name]
-							biggestCureIndex = K
+							biggestCureIndex = k
 						end
 					end
-				elseif AllianceHeal then
+				elseif state.AutoCureMode.value == 'Ally' then
 					if not v.healNeeded and v.hp > 0 then
 						v.healNeeded = v.hp / (v.hpp / 100) - v.hp
 					else
@@ -591,6 +593,8 @@ function CureProcess()
 			end
 		end
 	end
+
+	return false
 end
 
 function GetDelayFromAction(action)
@@ -605,11 +609,20 @@ function GetDelayFromAction(action)
 	return math.ceil(action.cast_time * CastSpeed)
 end
 
-function ActionStackTick()
+function user_tick()
+	PartyData = windower.ffxi.get_party()
+	PartyDistances()
+
+	return false
+end
+
+function extra_user_tick()
 	if #ActionStack == 0 then
 		ShowArrayContents()
 		return false
 	end
+
+	local result = false
 
 	-- Update the Action Stack Window
 	for i = 1, #ActionStack, 1 do
@@ -644,14 +657,17 @@ function ActionStackTick()
 						windower.chat.input('/item "'..ActionStack[i].spell.en..'" <t>')
 						tickdelay = os.clock() + ActionStack[i].spell.cast_time + 0.75
 						ActionStack[i].failCount = ActionStack[i].failCount + 1
+						result = true
 					elseif ActionStack[i].target == 'bt' then
 						windower.chat.input('/item "'..ActionStack[i].spell.en..'" <bt>')
 						tickdelay = os.clock() + ActionStack[i].spell.cast_time + 0.75
 						ActionStack[i].failCount = ActionStack[i].failCount + 1
+						result = true
 					elseif tonumber(ActionStack[i].target) then
 						if CheckTargetExists(ActionStack[i].spell, ActionStack[i].target) then
 							windower.chat.input('/item "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 							tickdelay = os.clock() + ActionStack[i].spell.cast_time + 0.75
+							result = true
 						else
 							ActionStack[i].failCount = 31
 							add_to_chat(55, 'Target '..ActionStack[i].target..' was determined as invalid')
@@ -659,6 +675,7 @@ function ActionStackTick()
 					elseif ActionStack[i].target == player.name or CheckRange(ActionStack[i].target, ActionStack[i].partyCheck) then
 						windower.chat.input('/item "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 						tickdelay = os.clock() + ActionStack.spell.cast_time + 0.75
+						result = true
 					else
 						ActionStack[i].failCount = 31
 						add_to_chat(55, 'Unable to use '..ActionStack[i].spell.en..', failed 30 attempts')
@@ -671,29 +688,32 @@ function ActionStackTick()
 					windower.chat.input('/ra')
 					tickdelay = os.clock() + nextTime
 					ActionStack[i].failCount = ActionStack[i].failCount + 1
+					result = true
 					break
 				elseif ActionStack[i].spell.prefix == '/song' then
 					if ActionStack[i].pianissimo and not buffactive['pianissimo'] then
 						windower.chat.input('/ja "Pianissimo" <me>')
 						tickdelay = os.clock() + 0.5
+						result = true
 						break
 					else
 						if ActionStack[i].target == 'self' or (ActionStack[i].target == player.name and CheckRange(ActionStack[i].target, true)) then
 							windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" <me>')
 							tickdelay = os.clock() + nextTick
 							ActionStack[i].failCount = ActionStack[i].failCount + 1
+							result = true
 							break
 						elseif ActionStack[i].target == 'bt' then
 							windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" <bt>')
 							tickdelay = os.clock() + nextTick
 							ActionStack[i].failCount = ActionStack[i].failCount + 1
-							break
+							result = true
 						elseif tonumber(ActionStack[i].target) then
 							if CheckTargetExists(ActionStack[i].spell, ActionStack[i].target) then
 								windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 								tickdelay = os.clock() + nextTick
 								ActionStack[i].failCount = ActionStack[i].failCount + 1
-								break
+								result = true
 							else
 								ActionStack[i].failCount = 31
 							end
@@ -701,6 +721,7 @@ function ActionStackTick()
 							windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 							tickdelay = os.clock() + nextTick
 							ActionStack[i].failCount = ActionStack[i].failCount + 1
+							result = true
 							break
 						end
 					end
@@ -709,6 +730,7 @@ function ActionStackTick()
 						windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 						tickdelay = os.clock() + nextTick
 						ActionStack[i].failCount = ActionStack[i].failCount + 1
+						result = true
 						break
 					else
 						ActionStack[i].failCount = 31
@@ -718,18 +740,19 @@ function ActionStackTick()
 						windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" <t>')
 						tickdelay = os.clock() + nextTick
 						ActionStack[i].failCount = ActionStack[i].failCount + 1
+						result = true
 						break
 					elseif ActionStack[i].target == 'bt' then
 						windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en'" <bt>')
 						tickdelay = os.clock() + nextTick
 						ActionStack[i].failCount = ActionStack[i].failCount + 1
-						break
+						result = true
 					elseif tonumber(ActionStack[i].target) then
 						if CheckTargetExists(ActionStack[i].spell, ActionStack[i].target) then
 							windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 							tickdelay = os.clock() + nextTick
 							ActionStack[i].failCount = ActionStack[i].failCount + 1
-							break
+							result = true
 						else
 							ActionStack[i].failCount = 31
 						end
@@ -737,6 +760,7 @@ function ActionStackTick()
 						windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 						tickdelay = os.clock() + nextTick
 						ActionStack[i].failCount = ActionStack[i].failCount + 1
+						result = true
 						break
 					else
 						ActionStack[i].failCount = 31
@@ -747,6 +771,7 @@ function ActionStackTick()
 						windower.chat.input('/ja "'..ActionStack[i].withStratagem..'" <me>')
 						tickdelay = os.clock() + 0.5
 						ActionStack[i].failCount = ActionStack[i].failCount + 1
+						result = true
 					end
 					break
 				else
@@ -763,6 +788,7 @@ function ActionStackTick()
 							windower.chat.input(ActionStack[i].spell/prefix..' "'..ActionStack[i].spell.en..'" <t>')
 							tickdelay = os.clock() + nextTick
 							ActionStack[i].failCount = ActionStack[i].failCount + 1
+							result = true
 							break
 						elseif ActionStack[i].skillchainStep == 2 then
 							if targetMob and targetMob.name then
@@ -774,17 +800,20 @@ function ActionStackTick()
 							windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" <t>')
 							tickdelay = os.clock() + nextTick
 							ActionStack[i].failCount = ActionStack[i].failCount + 1
+							result = true
 							break
 						else
 							windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" <t>')
 							tickdelay = os.clock() + nextTick
 							ActionStack[i].failCount = ActionStack[i].failCount + 1
+							result = true
 							break
 						end
 					elseif ActionStack[i].target == 'bt' then
 						windower.chat.input('input '..ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" <bt>')
 						tickdelay = os.clock() + nextTick
 						ActionStack[i].failCount = ActionStack[i]
+						result = true
 						break
 					elseif tonumber(ActionStack[i].target) then
 						if CheckTargetExists(ActionStack[i].spell, ActionStack[i].target) then
@@ -794,6 +823,7 @@ function ActionStackTick()
 									windower.chat.input('/p Starting '..ActionStack[i].skillchainName..' on '..targetMob.name)
 									windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 									tickdelay = os.clock() + nextTick
+									result = true
 								end
 								ActionStack[i].failCount = ActionStack[i].failCount + 1
 								break
@@ -803,6 +833,7 @@ function ActionStackTick()
 									windower.chat.input('/p '..CountStratagemsReady()..' strats remaining.')
 									windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 									tickdelay = os.clock() + nextTick
+									result = true
 								end
 								ActionStack[i].failCount = ActionStack[i].failCount + 1
 								break
@@ -810,8 +841,11 @@ function ActionStackTick()
 								windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 								tickdelay = os.clock + nextTick
 								ActionStack[i].failCount = ActionStack[i].failCount + 1
+								result = true
 								break
 							end
+
+							break
 						else
 							ActionStack[i].failCount = 31
 							windower.add_to_chat(55, 'Target '..ActionStack[i].target..' was determined invalid')
@@ -822,6 +856,7 @@ function ActionStackTick()
 								windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 								tickdelay = os.clock() + nextTick
 								ActionStack[i].failCount = ActionStack[i].failCount + 1
+								result = true
 								break
 							else
 								ActionStack[i].failCount = 31
@@ -830,6 +865,7 @@ function ActionStackTick()
 							windower.chat.input(ActionStack[i].spell.prefix..' "'..ActionStack[i].spell.en..'" '..ActionStack[i].target)
 							tickdelay = os.clock() + nextTick
 							ActionStack[i].failCount = ActionStack[i].failCount + 1
+							result = true
 							break
 						end
 					else
@@ -848,7 +884,7 @@ function ActionStackTick()
 
 	ShowArrayContents()
 
-	return true
+	return result
 end
 
 function CheckRaisable(playerName)
@@ -873,7 +909,7 @@ end
 function CheckRange(playerName, partyOnly)
 	for k, v in pairs(PartyData) do
 		if type(v) == 'table' then
-			if (AllyStatusHeals and not partyOnly) or (PartyOnly and k:sub(1, 1) == 'p') or (not AllyStatusHeals and k:sub(1, 1) == 'p') then
+			if not partyOnly or (partyOnly and k:sub(1, 1) == 'p') then
 				if v.name and v.name == playerName and v.hp > 0 then
 					return type(v.mob) == 'table' and v.mob.distance and v.mob.distance < 420 and v.mob.distance ~= 0.089004568755627
 				end
@@ -951,6 +987,32 @@ function CanHandleAction(action)
 	end
 
 	return false
+end
+
+function ClearCures()
+	if type(ActionStack) == 'table' then
+		local tempStack = T{}
+		local j = 1
+		for i = 1, #ActionStack, 1 do
+			if type(ActionStack[i]) == 'table' then
+				if ActionStack[i].spell.id > 11 or ActionStack[i].spell.id == 7 then
+					tempStack[j] = {}
+					table.reassign(tempStack[j], ActionStack[i])
+					j = j + 1
+				end
+			end
+		end
+		table.clear(ActionStack)
+		table.reassign(ActionStack, tempStack)
+	end
+end
+
+function ClearActionStack()
+	if #ActionStack >= 1 then
+		table.clear(ActionStack)
+	end
+
+	ShowArrayContents()
 end
 
 function AddToStack(action, actionTarget, options)
@@ -1084,7 +1146,7 @@ end
 function RebuildArray(actionToRemove, target)
 	if type(ActionStack) == 'table' then
 		local tempStack = T{}
-		j = 1
+		local j = 1
 		removedActionOnce = false
 		for i = 1, #ActionStack, 1 do
 			if type(ActionStack[i])== 'table' then
@@ -1115,7 +1177,7 @@ function ShowArrayContents()
 	local outputString = ''
 	if type(ActionStack) == 'table' and #ActionStack > 0 then
 		outputString = 'Pos Spell                Target        Tries\n'
-		j = #ActionStack
+		local j = #ActionStack
 		if j > OutputMaxLines then
 			j = OutputMaxLines
 		end
@@ -1187,7 +1249,7 @@ function user_aftercast(spell, spellMap, eventArgs)
 			eventArgs.handled = true
 			local targetId = tostring(spell.target.id)
 			for i = 1, #ActionStack, 1 do
-				if spell.english == ActionStack[i].spell.en and
+				if spell.english == ActionStack[i].spell.english and
 					(ActionStack[i].target == 't' or
 					ActionStack[i].target == 'bt' or
 					targetId == tostring(ActionStack[i].target) or
@@ -1213,6 +1275,7 @@ function user_aftercast(spell, spellMap, eventArgs)
 					break
 				elseif spell.type == 'CorsairRoll' and ActionStack[i].spell.en == 'Double-Up' then
 					RebuildArray(ActionStack[i].spell, ActionStack[i].target)
+					tickdelay = os.clock() + 0.8
 					ShowArrayContents()
 					break
 				end
@@ -1237,6 +1300,16 @@ windower.raw_register_event("action", function(act)
 					break
 				end
 			end
+		end
+	end
+end)
+
+windower.raw_register_event("chat message", function(message, sender, mode, gm)
+	if not process_chat_message then return end
+
+	if mode == 3 or mode == 4 then
+		if type(message) == 'string' then
+			process_chat_message(message, sender)
 		end
 	end
 end)

@@ -599,12 +599,12 @@ function handle_songs(cmdParams)
 			IsAbilityReady('Clarion Call')
 		then
 			TotalSongs = TotalSongs + 1
-			AddToStack(GetAbilityFromName('Troubador'), player.name, { fixedOrder = true })
+			AddToStack(GetAbilityFromName('Troubadour'), player.name, { fixedOrder = true })
 			AddToStack(GetAbilityFromName('Nightingale'), player.name, { fixedOrder = true })
 			AddToStack(GetAbilityFromName('Soul Voice'), player.name, { fixedOrder = true })
 			AddToStack(GetAbilityFromName('Clarion Call'), player.name, { fixedOrder = true })
 		elseif IsAbilityReady('Marcato') then
-			AddToStack(GetAbilityFromName('Troubador'), player.name, { fixedOrder = true })
+			AddToStack(GetAbilityFromName('Troubadour'), player.name, { fixedOrder = true })
 			AddToStack(GetAbilityFromName('Nightingale'), player.name, { fixedOrder = true })
 			AddToStack(GetAbilityFromName('Marcato'), player.name, { fixedOrder = true })
 		end

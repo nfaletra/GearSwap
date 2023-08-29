@@ -6,7 +6,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.IdleMode:options('Normal', 'DT', 'Evasion')
+	state.IdleMode:options('Normal', 'DT', 'Evasion', 'Refresh')
 	state.Weapons:options('Godhands', 'Verethragna', 'Spharai', 'Karambit', 'Varga', 'Staff', 'Club', 'ProcStaff', 'Barehanded')
 
 	state.ExtraMeleeMode = M{['description'] = 'Extra Melee Mode', 'None', 'Mache', 'Warder', 'Staff'}
@@ -233,6 +233,11 @@ function init_gear_sets()
 		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
+	sets.idle.Refresh = set_combine(sets.idle,
+	{
+		ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1"
+	})
+
 	-- Defense sets
 	sets.defense.PDT =
 	{
@@ -276,7 +281,6 @@ function init_gear_sets()
 		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Bhikku Hose +3", feet = "Anch. Gaiters +3"
 	}
 	sets.engaged.Acc = set_combine(sets.engaged, {})
-
 	-- Hybrid sets
 	sets.engaged.DT = set_combine(sets.engaged,
 	{

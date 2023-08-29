@@ -4,7 +4,10 @@ function user_job_setup()
     state.CastingMode:options('Normal','Resistant','Proc','OccultAcumen','9k')
     state.IdleMode:options('Normal', 'PDT', 'MDT')
 	state.HybridMode:options('Normal','Dual Wield')
-	state.Weapons:options('None','Khatvanga','Maxentius','Daybreak','DualMaxentius','DualDaybreak')
+	state.Weapons:options('None','Musa','Khatvanga','Maxentius','Daybreak','DualMaxentius','DualDaybreak')
+
+	state.AutoCureMode:options('Off', 'Party', 'Ally')
+	state.StatusCureMode:options('Party', 'Ally', 'Off')
 
 	gear.nuke_jse_back = {name="Lugh's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
 	
@@ -73,10 +76,10 @@ function init_gear_sets()
 
 	sets.precast.FC =
 	{
-		main = "Mpaca's Staff", sub = "Khonsu", ammo = "Sapience Orb",
+		main = "Mpaca's Staff", sub = "Khonsu", ammo = "Impatiens",
 		head = "Merlinic Hood", neck = "Orunmila's Torque", ear1 = "Malignance Earring", ear2 = "Loquac. Earring",
-		body = "Merlinic Jubbah", hands = "Acad. Bracers +1", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
-		back = "Fi Follet Cape +1", waist = "Witful Belt", legs = "Kaykaus Tights +1", feet = "Pedagogy Loafers +1"
+		body = "Merlinic Jubbah", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
+		back = "Fi Follet Cape +1", waist = "Witful Belt", legs = "Agwu's Slops", feet = "Peda. Loafers +3"
 	}
 
 	sets.precast.FC.Arts = {}
@@ -146,14 +149,14 @@ function init_gear_sets()
 		ammo = "Hasty Pinion +1",
 		head = "Merlinic Hood", neck = "Orunmila's Torque", ear1 = "Malignance Earring +1", ear2 = "Loquac. Earring",
 		body = "Zendik Robe", hands = "Academic's Bracers +1", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
-		back = "Fi Follet Cape +1", waist = "Witful Belt", legs = "Kaykaus Tights +1", feet = "Pedagogy Loafers +1"
+		back = "Fi Follet Cape +1", waist = "Witful Belt", legs = "Kaykaus Tights +1", feet = "Pedagogy Loafers +3"
 	}
 
 	sets.midcast.Cure =
 	{
 		main = "Raetic Rod +1", sub = "Genmei Shield", ammo = "Hasty Pinion +1",
 		head = "Kaykaus Mitra +1", neck = "Incanter's Torque", ear1 = "Malignance Earring", ear2 = "Meili Earring",
-		body = "Kaykaus Bliaut +1", hands = "Pedagogy Bracers +1", ring1 = "Menelaus's Ring", ring2 = "Lebeche Ring",
+		body = "Kaykaus Bliaut +1", hands = "Pedagogy Bracers +3", ring1 = "Menelaus's Ring", ring2 = "Lebeche Ring",
 		back = "Fi Follet Cape +1", waist = "Luminary Sash", legs = "Kaykaus Tights +1", feet = "Kaykaus Boots +1"
 	}
 
@@ -186,7 +189,7 @@ function init_gear_sets()
 
 	sets.midcast['Enhancing Magic'].Duration =
 	{
-		main = "Gada", sub = "Ammurapi Shield", ammo = "Staunch Tathlum +1",
+		main = "Musa", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
 		head = "Telchine Cap", neck = "Twilight Torque", ear1 = "Calamitous Earring", ear2 = "Etiolation Earring",
 		body = "Pedagogy Gown +1", hands = gear.telchine.hands.enhancing, ring1 = "Mephitas's Ring +1", ring2 = "Defending Ring",
 		back = "Fi Follet Cape +1", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Telchine Pigaches"
@@ -194,7 +197,6 @@ function init_gear_sets()
 
 	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'].Duration,
 	{
-		main = "Bolelabunga",
 		head = "Arbatel Bonnet +1",
 		back = "Bookworm's Cape",
 	})
@@ -213,7 +215,7 @@ function init_gear_sets()
 	
 	sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'].Duration, { legs = "Shedir Seraweels" })
 
-	sets.midcast.Storm = set_combine(sets.midcast['Enhancing Magic'].Duration, { feet = "Peda. Loafers +1" })
+	sets.midcast.Storm = set_combine(sets.midcast['Enhancing Magic'].Duration, { feet = "Peda. Loafers +3" })
 
 	sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'].Duration, { ring2 = "Sheltered Ring" })
 	sets.midcast.Protectra = sets.midcast.Protect
@@ -227,7 +229,7 @@ function init_gear_sets()
 	{
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
 		head = "Agwu's Cap", neck = "Erra Pendant", ear1 = "Malignance Earring", ear2 = "Regal Earring",
-		body = "Agwu's Robe", hands = "Peda. Bracers +1", ring1 = "Kishar Ring", ring2 = "Stikini Ring +1",
+		body = "Agwu's Robe", hands = "Peda. Bracers +3", ring1 = "Kishar Ring", ring2 = "Stikini Ring +1",
 		back = "Aurist's Cape +1", waist = "Luminary Sash", legs = "Arbatel Pants +1", feet = "Agwu's Pigaches"
 	}
 
@@ -337,25 +339,9 @@ function init_gear_sets()
 	sets.idle =
 	{
 		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Homiliary",
-		head = "Volte Beret", neck = "Warder's Charm +1", ear1 = "Lugalbanda Earring", ear2 = "Etiolation Earring",
-		body = "Agwu's Robe", hands = "Agwu's Gages", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
-		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = "Volte Gaiters"
-	}
-
-	sets.idle.PDT =
-	{
-		main = "Daybreak", sub = "Genmei Shield", ammo = "Staunch Tathlum +1",
-		head = "Nyame Helm", neck = "Twilight Torque", ear1 = "Lugalbanda Earring", ear2 = "Etiolation Earring",
+		head = "Nyame Helm", neck = "Warder's Charm +1", ear1 = "Lugalbanda Earring", ear2 = "Etiolation Earring",
 		body = "Agwu's Robe", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
-		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
-	}
-
-	sets.idle.MDT =
-	{
-		main = "Daybreak", sub = "Genmei Shield", ammo = "Staunch Tathlum +1",
-		head = "Agwu's Cap", neck = "Warder's Charm +1", ear1 = "Lugalbanda Earring", ear2 = "Etiolation Earring",
-		body = "Agwu's Robe", hands = "Agwu's Gages", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
-		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Agwu's Slops", feet = "Agwu's Pigaches"
+		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Agwu's Slops", feet = "Nyame Sollerets"
 	}
 
 	sets.Kiting = { feet="Herald's Gaiters" }
@@ -390,8 +376,8 @@ function init_gear_sets()
 	sets.buff['Immanence'] = { hands = "Arbatel Bracers +1" }
 	sets.buff['Penury'] = { legs = "Arbatel Pants +1" }
 	sets.buff['Parsimony'] = { legs = "Arbatel Pants +1" }
-	sets.buff['Celerity'] = { feet = "Peda. Loafers +1" }
-	sets.buff['Alacrity'] = { feet = "Peda. Loafers +1" }
+	sets.buff['Celerity'] = { feet = "Peda. Loafers +3" }
+	sets.buff['Alacrity'] = { feet = "Peda. Loafers +3" }
 	sets.buff['Klimaform'] = { feet = "Arbatel Loafers +1" }
 
 	sets.HPDown = {}
@@ -407,6 +393,7 @@ function init_gear_sets()
 
 	-- Weapons sets
 	sets.weapons.Khatvanga = { main = "Khatvanga", sub = "Bloodrain Strap" }
+	sets.weapons.Musa = { main = "Musa", sub = "Umbra Strap" }
 	sets.weapons.Maxentius = { main = "Maxentius", sub = "Genmei Shield" }
 	sets.weapons.Daybreak = { main = "Daybreak", sub = "Genmei Shield" }
 	sets.weapons.DualMaxentius = { main = "Maxentius", sub = "Ternion Dagger +1" }

@@ -10,9 +10,9 @@ function user_job_setup()
 	gear.magic_jse_back = {name="Intarabus's Cape",augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10','Damage taken-5%',}}
 
 	-- Adjust this if using the Terpander (new +song instrument)
-    info.ExtraSongInstrument = 'Blurred Harp +1'
+    info.ExtraSongInstrument = 'Terpander'
 	-- How many extra songs we can keep from Daurdabla/Terpander
-    info.ExtraSongs = 1
+    info.ExtraSongs = 0
 	
 	-- Set this to false if you don't want to use custom timers.
     state.UseCustomTimers = M(false, 'Use Custom Timers')
@@ -157,7 +157,7 @@ function init_gear_sets()
 	
 
 	-- For song buffs (duration and AF3 set bonus)
-	sets.midcast.SongEffect = {main="Kali",sub="Genmei Shield",range="Blurred Harp +1",ammo=empty,
+	sets.midcast.SongEffect = {main="Kali",sub="Genmei Shield",range="Gjallarhorn",ammo=empty,
 		head="Fili Calot +1",neck="Mnbw. Whistle +1",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
 		body="Fili Hongreline +1",hands="Inyan. Dastanas +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back=gear.magic_jse_back,waist="Kobo Obi",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}

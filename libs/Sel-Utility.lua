@@ -1318,7 +1318,7 @@ function check_sub()
 				return true
 			end
 		end
-		if (player.main_job == 'SCH' or player.sub_job == 'SCH') then
+		if (player.main_job == 'SCH' or player.sub_job == 'SCH') and not buffactive['weakness'] then
 			local abil_recasts = windower.ffxi.get_ability_recasts()
 			if abil_recasts[234] < latency then
 				if buffactive['Sublimation: Complete'] then

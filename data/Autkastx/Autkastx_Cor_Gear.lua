@@ -295,7 +295,7 @@ function init_gear_sets()
 	sets.idle =
 	{
 		ammo = gear.RAbullet,
-		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
+		head = "Malignance Chapeau", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
 		back= gear.Camulus.Snapshot, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
@@ -303,7 +303,7 @@ function init_gear_sets()
 	sets.idle.PDT =
 	{
 		ammo = gear.RAbullet,
-		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
+		head = "Malignance Chapeau", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
 		back= gear.Camulus.Snapshot, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
@@ -311,7 +311,7 @@ function init_gear_sets()
 	sets.idle.Refresh =
 	{
 		ammo = gear.RAbullet,
-		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
+		head = "Malignance Chapeau", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
 		back= gear.Camulus.Snapshot, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
 	}

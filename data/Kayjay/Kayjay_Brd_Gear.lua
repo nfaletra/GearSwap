@@ -19,7 +19,10 @@ function user_job_setup()
 	info.AutoSongs = 'march march min'
 	-- How long to wait between auto singing
 	info.AutoSongDelay = 210 -- 3:30 min
-	
+
+	state.AutoCureMode:options('Off', 'Party', 'Ally')
+	state.StatusCureMode:options('Party', 'Ally', 'Off')
+
 	-- Set this to false if you don't want to use custom timers.
 	state.UseCustomTimers = M(false, 'Use Custom Timers')
 	
@@ -59,9 +62,9 @@ function init_gear_sets()
 	sets.precast.FC =
 	{
 		main = "Kali", sub = "Genmei Shield",
-		head = "Fili Calot +1", neck = "Orunmila's Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
-		body = "Inyanga Jubbah +2", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
-		back = "Intarabus's Cape", waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Volte Gaiters"
+		head = "Fili Calot +1", neck = "Loricate Torque +1", ear1 = "Etiolation Earring", ear2 = "Loquac. Earring",
+		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
+		back = "Intarabus's Cape", waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Regal Pumps +1"
 	}
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
 	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {})
@@ -69,10 +72,10 @@ function init_gear_sets()
 
 	sets.precast.FC.BardSong =
 	{
-		main = "Carnwenhan", range = "Blurred Harp +1",
-		head = "Fili Calot +1", neck = "Orunmila's Torque", ear1 = "Enchanter's Earring +1", ear2 = "Loquac. Earring",
-		body = "Inyanga Jubbah +2", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
-		back = "Intarabus's Cape", waist = "Embla Sash", legs = "Aya. Cosciales +2", feet = "Bihu Slippers +3"
+		main = "Carnwenhan", sub = "Genmei Shield",
+		head = "Fili Calot +1", neck = "Loricate Torque +1", ear1 = "Enchanter's Earring +1", ear2 = "Loquac. Earring",
+		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
+		back = "Intarabus's Cape", waist = "Embla Sash", legs = "Aya. Cosciales +2", feet = "Bihu Slippers +1"
 	}
 	sets.precast.FC['Honor March'] = set_combine(sets.precast.FC.BardSong, { range = "Marsyas" })
 
@@ -196,7 +199,7 @@ function init_gear_sets()
 	sets.idle =
 	{
 		main = "Ipetam", sub = "Genmei Shield", range = "Terpander",
-		head = "Inyanga Tiara +2", neck = "Twilight Torque", ear1 = "Eabani Earring", ear2 = "Ethereal Earring",
+		head = "Inyanga Tiara +2", neck = "Loricate Torque +1", ear1 = "Eabani Earring", ear2 = "Ethereal Earring",
 		body = "Inyanga Jubbah +2", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Stikini Ring +1",
 		back = "Fi Follet Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
 	}

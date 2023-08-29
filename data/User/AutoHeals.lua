@@ -11,7 +11,7 @@
 -- If >= 3 party members are below cure threshold and are within AoE range of each other, Curaga (tier based on most hp missing)
 -- If < 3 party members are below cure threshold, prioritize cures by lowest HPP (TODO: weight by hpp, missing hp, job, weakened)
 ----------------------------------------------------------------------------------
-include('Vector3.lua')
+--[[include('Vector3.lua')
 
 function user_setup()
 	-- Maximum hp percent for cures
@@ -209,4 +209,4 @@ function do_cure(cureTarget, missingHP, useCuraga)
 	end
 
 	tickdelay = os.clock() + 2
-end
+end]]

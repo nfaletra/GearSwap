@@ -31,8 +31,7 @@ state.SkipProcWeapons 		= M(true, 'Skip Proc Weapons') --Set this to false if yo
 state.NotifyBuffs	  		= M(false, 'Notify Buffs') 	 --Set this to true if you want to notify your party when you recieve a specific buff/debuff. (List Below)
 
 state.AutoCureMode = M{ ['description'] = 'Auto Cure Mode' }
-state.AllianceCureMode = M{ ['description'] = 'Alliance Cures' }
-state.StatusCureMode = M(true, 'Status Cures')
+state.StatusCureMode = M{ ['description'] = 'Status Cure Mode'}
 
 --[[Binds you may want to change.
 	Bind special characters.
@@ -46,7 +45,7 @@ state.StatusCureMode = M(true, 'Status Cures')
 ]]
 
 send_command('bind !@^f7 gs c toggle AutoWSMode') --Turns auto-ws mode on and off.
-send_command('bind !^f7 gs c toggle AutoFoodMode') --Turns auto-ws mode on and off.
+send_command('bind !^f7 gs c toggle AutoFoodMode') --Turns auto-food mode on and off.
 send_command('bind f7 gs c cycle Weapons') --Cycle through weapons sets.
 send_command('bind @f8 gs c toggle AutoNukeMode') --Turns auto-nuke mode on and off.
 send_command('bind ^f8 gs c toggle AutoStunMode') --Turns auto-stun mode off and on.
@@ -80,6 +79,7 @@ send_command('bind ^t gs c cycle treasuremode') --Toggles hitting htings with yo
 send_command('bind !t input /target <bt>') --Targets the battle target.
 send_command('bind ^o fillmode') --Lets you see through walls.
 send_command('bind @m gs c mount Omega')
+send_command('bind ` gs c toggle AutoCureMode')
 
 NotifyBuffs = S{'doom','petrification'}
 

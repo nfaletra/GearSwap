@@ -8,7 +8,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None', 'Naegling', 'NaeglingAcc', 'Maxentius', 'Magic')
+	state.Weapons:options('None', 'Naegling', 'NaeglingAcc', 'Maxentius', 'MaxentiusAcc', 'Magic')
 
 	state.ExtraMeleeMode = M{ ['description'] = 'Extra Melee Mode', 'None'}
 
@@ -424,8 +424,9 @@ function init_gear_sets()
 
 	-- Weapons sets
 	sets.weapons.Naegling = { main = "Naegling", sub = "Thibron" }
-	sets.weapons.NaeglingAcc = { main = "Naegling", sub = "Sakpata's Sword" }
+	sets.weapons.NaeglingAcc = { main = "Naegling", sub = "Zantetsuken" }
 	sets.weapons.Maxentius = { main = "Maxentius", sub = "Thibron" }
+	sets.weapons.MaxentiusAcc = { main = "Maxentius", sub = "Zantetsuken" }
 	sets.weapons.Magic = { main = "Maxentius", sub = "Bunzi's Rod" }
 
 	-- Engaged sets

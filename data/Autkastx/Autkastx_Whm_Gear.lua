@@ -4,7 +4,7 @@ function user_job_setup()
 
 	state.OffenseMode:options('Normal', 'Acc')
 	state.CastingMode:options('Normal','Resistant', 'SIRD', 'DT')
-	state.IdleMode:options('Normal', 'DT', 'MEVA')
+	state.IdleMode:options('Normal')
 	state.HybridMode:options('Normal', 'Dual Wield')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
@@ -13,13 +13,12 @@ function user_job_setup()
 	state.WeaponskillMode:options('Normal')
 
 	state.AutoCureMode:options('Off', 'Party', 'Ally')
-	state.AllianceCureMode:options('Off', 'Top', 'Bottom', 'All')
+	state.StatusCureMode:options('Party', 'Ally', 'Off')
 
 	gear.Alaunus =
 	{
 		TP = { name = "Alaunus's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%' } },
 		Healing = { name = "Alaunus's Cape", augments = { 'MND+20', 'Enmity-10' } },
-
 	}
 
 	-- Additional local binds
@@ -90,25 +89,21 @@ function init_gear_sets()
 	{
 		main = "C. Palug Hammer", sub = "Chanter's Shield", ammo = "Impatiens",
 		head = "Ebers Cap +2", neck = "Clr. Torque +2", ear1 = "Loquac. Earring", ear2 = "Malignance Earring",
-		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Lebeche Ring",
+		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Medada's Ring", ring2 = "Lebeche Ring",
 		back = "Perimede Cape", waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Regal Pumps +1"
 	}
 		
 	sets.precast.FC.DT = sets.precast.FC
 
-	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, { waist = "Siegel Sash" })
+	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {})
 
 	sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {})
 
-	sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, { legs = "Ebers Pant. +3" })
+	sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {})
 
 	sets.precast.FC.StatusRemoval = sets.precast.FC['Healing Magic']
 
-	sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'],
-	{
-		main = "Queller Rod", sub = "Sors Shield",
-		ear1 = "Mendi. Earring",
-	})
+	sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {})
 
 	sets.precast.FC.Curaga = sets.precast.FC.Cure
 
@@ -191,7 +186,13 @@ function init_gear_sets()
 	-- Gear for Magic Burst mode.
 	sets.MagicBurst = { neck="Mizu. Kubikazari" }
 
-	sets.midcast.FastRecast = sets.precast.FC
+	sets.midcast.FastRecast = set_combine(sets.precast.FC,
+	{
+		ammo = "Pemphredo Tathlum",
+		ear1 = "Etiolation Earring", ear2 = "Ebers Earring",
+		hands = "Ebers Mitts +2", ring1 = "Gelationus Ring +1", ring2 = "Defending Ring",
+		back = "Fi Follet Cape +1"
+	}
 
 	-- Cure sets
 	sets.midcast['Full Cure'] = sets.midcast.FastRecast
@@ -362,28 +363,12 @@ function init_gear_sets()
 	-- Sets to return to when not performing an action.
 
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-	sets.idle =
+	sets.idle = -- With Khonsu and all +3 Empy, this set is 10% over DT Cap (60% total). When that happens, swap neck for Warder's Charm and another 5% can still be swapped out.
 	{
-		main = "Daybreak", sub = "Genmei Shield", ammo = "Homiliary",
-		head = "Inyanga Tiara +2", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
-		body = "Ebers Bliaut +3", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
-		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
-	}
-
-	sets.idle.DT =
-	{
-		main = "Malignance Pole", sub = "Umbra Strap", ammo = "Homiliary",
-		head = "Nyame Helm", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Genmei Earring",
-		body = "Ebers Bliaut +3", hands = "Inyan. Dastanas +2", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
-		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Nyame Sollerets"
-	}
-
-	sets.idle.MEVA =
-	{
-		main = "Daybreak", sub = "Genmei Shield", ammo = "Homiliary",
-		head = "Bunzi's Hat", neck = "Warder's Charm +1", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
-		body = "Ebers Bliaut +3", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
-		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Bunzi's Pants", feet = "Inyan. Crackows +2"
+		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
+		head = "Nyame Helm", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
+		body = "Ebers Bliaut +3", hands = "Ebers Mitts +2", ring1 = "Stikini Ring +1", ring2 = "Shadow Ring",
+		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Ebers Pant. +3", feet = "Ebers Duckbills +2"
 	}
 
 	-- Resting sets

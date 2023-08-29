@@ -5,7 +5,7 @@ function user_job_setup()
 	state.HybridMode:options('Normal', 'DTLite', 'DTFull', 'MEVA', 'Evasion', 'Cait')
 	state.RangedMode:options('Normal', 'Acc')
 	state.WeaponskillMode:options('Match', 'Normal', 'Acc', 'Proc')
-	state.IdleMode:options('Normal', 'Sphere')
+	state.IdleMode:options('Normal', 'Evasion')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
@@ -295,7 +295,14 @@ function init_gear_sets()
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Defending Ring",
 		back = gear.Toutatis.TP, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
-	sets.idle.Sphere = set_combine(sets.idle, { body = "Mekosu. Harness" })
+
+	sets.idle.Evasion =
+	{
+		ammo = "Yamarang",
+		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Balder Earring +1",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Petrov Ring",
+		back = gear.Toutatis.TP, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
 
 	sets.idle.Weak = set_combine(sets.idle, {})
 

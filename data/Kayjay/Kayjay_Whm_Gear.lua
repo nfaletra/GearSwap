@@ -10,7 +10,7 @@ function user_job_setup()
 	state.WeaponskillMode:options('Normal','Fodder')
 
 	state.AutoCureMode:options('Off', 'Party', 'Ally')
-	state.AllianceCureMode:options('Off', 'Top', 'Bottom', 'All')
+	state.StatusCureMode:options('Party', 'Ally', 'Off')
 
 	gear.obi_cure_waist = "Austerity Belt +1"
 	gear.obi_cure_back = "Alaunus's Cape"
@@ -479,3 +479,383 @@ function user_job_lockstyle()
 end
 
 autows_list = {['DualWeapons']='Realmrazer',['MeleeWeapons']='Realmrazer'}
+
+function extra_user_job_tick()
+	if player.hp == 0 and #ActionStack > 0 then
+		ClearActionStack()
+	end
+
+	if os.clock() - lastChat > 10 then
+		if buffactive['petrification'] then
+			send_command('input /p stoned')
+			lastChat = os.clock()
+		elseif buffactive['sleep'] then
+			send_command('input /p zzz')
+			lastChat = os.clock()
+		end
+	end
+
+	if buffactive['paralysis'] then
+		AddToStack(GetSpellFromName('Paralyna'), player.name)
+	end
+
+	if state.AutoCureMode ~= 'Off' then
+		CureProcess()
+	end
+end
+
+function process_chat_message(message, sender)
+	local threeSlice = message:sub(1, 3)
+	local fourSlice = message:sub(1, 4)
+	local fiveSlice = message:sub(1, 5)
+	local sixSlice = message:sub(1, 6)
+	local sevenSlice = message:sub(1, 7)
+	local eightSlice = message:sub(1, 8)
+
+	local getBoost = function()
+		local stats = { 'str', 'dex', 'vit', 'agi', 'int', 'mnd', 'chr' }
+		if fiveSlice == 'boost' then
+			for _, v in pairs(stats) do
+				if eightSlice:sub(-3) == v then
+					return v:upper()
+				end
+			end
+		elseif S{ 'str', 'dex', 'vit', 'agi', 'int', 'mnd', 'chr' }:contains(threeSlice) and eightSlice:sub(-4) ~= 'down' and sevenSlice ~= 'strange' then
+			for _, v in pairs(stats) do
+				if threeSlice == v then
+					return v:upper()
+				end
+			end
+		end
+
+		return nil
+	end
+	local boostSuffix = getBoost()
+
+	local getStorm = function()
+		if message:sub(-5) ~= 'storm' then return nil end
+		local weatherMap =
+		{
+			sand = { 'sand', 'earth', 'stone' },
+			wind = { 'wind', 'aero' },
+			rain = { 'rain', 'water' },
+			fire = { 'fire' },
+			hail = { 'hail', 'ice', 'blizz' },
+			thunder = { 'thunder' },
+			void = { 'void', 'dark' },
+			aurora = { 'aurora', 'light' }
+		}
+
+		for k, v in pairs(weatherMap) do
+			if v:contains(fourSlice) or v:contains(fiveSlice) or v:contains(sixSlice) or v:contains(sevenSlice) then
+				return k:ucfirst()
+			end
+		end
+
+		return nil
+	end
+	local stormPrefix = getStorm()
+
+	local fullBuffs =
+	T{
+		waterbuffs = { 'Protectra V', 'Shellra V', 'Barwatera', 'Barpoisonra', 'Boost-STR', 'Auspice' },
+		firebuffs = { 'Protectra V', 'Shellra V', 'Barfira', 'Baramnesra', 'Boost-STR', 'Auspice' },
+		thunderbuffs = { 'Protectra V', 'Shellra V', 'Barthundra', 'Barsleepra', 'Boost-STR', 'Auspice' },
+		icebuffs = { 'Protectra V', 'Shellra V', 'Barblizzara', 'Barparalyzra', 'Boost-STR', 'Auspice' },
+		windbuffs = { 'Protectra V', 'Shellra V', 'Baraera', 'Barsilencera', 'Boost-STR', 'Auspice' },
+		stonebuffs = { 'Protectra V', 'Shellra V', 'Barstonra', 'Barpetra', 'Boost-STR', 'Auspice' },
+	}
+
+	if state.StatusCureMode == 'Party' then
+		if CheckRange(sender, true) then -- In range and in party
+			if fourSlice == 'slow' or fourSlice == 'grav' or fiveSlice == 'bound' or sixSlice == 'max hp' or
+				sevenSlice == 'hp down' or sixSlice == 'max mp' or sevenSlice == 'mp down' or threeSlice == 'bio' or
+				threeSlice == 'dia' or fiveSlice == 'erase') then
+					AddToStack(GetSpellFromName('Erase'), sender, { partyCheck = true })
+			elseif fourSlice == 'devo' then
+				if IsAbilityReady('Devotion') then
+					AddToStack(GetAbilityFromName('Devotion'), sender, { partyCheck = true })
+				end
+			elseif fiveSlice == 'esuna' then
+				AddToStack(GetSpellFromName('Esuna'), sender, { partyCheck = true })
+			elseif fiveSlice == 'sacro' then
+				if IsAbilityReady('Sacrosanctity') then
+					AddToStack(GetAbilityFromName('Sacrosanctity'), player.name)
+				end
+			elseif fiveSlice == 'sleeo' or message:sub(1, 2) == 'zz' then
+				AddToStack(GetSpellFromName('Curaga', sender,
+				{
+					partyCheck = true,
+					precastCheck = function(this)
+						if os.clock() - this.addedAt < 1 then
+							return true
+						end
+						if CheckPlayerForBuff(sender, 'sleep') then
+							return true
+						end
+						return 'remove'
+					end,
+				})
+			elseif fiveSlice == 'haste' then
+				AddToStack(GetSpellFromName('Haste'), sender
+				{
+					partyCheck = true,
+					precastCheck = function(this)
+						if os.clock() - this.addedAt < 1 then
+							return true
+						end
+						if CheckPlayerForBuff(sender, 'slow') then
+							AddToStack(GetSpellFromName('Erase'), sender
+							{
+								partyCheck = true,
+								precastCheck = function(this)
+									if os.clock() - this.addedAt < 1 then
+										return true
+									end
+									if CheckPlayerForBuff(sender, 'slow') then
+										return true
+									end
+									return 'remove'
+								end
+							})
+							return false
+						end
+						return true
+					end,
+				})
+			elseif fourSlice == 'prot' then
+				if CheckAoERange(sender) then
+					AddToStack(GetSpellFromName('Protectra V'), player.name)
+				else
+					AddToStack(GetSpellFromName('Protect V'), sender)
+				end
+			elseif fiveSlice == 'shell' then
+				if CheckAoERange(sender) then
+					AddToStack(GetSpellFromName('Shellra V'), player.name)
+				else
+					AddToStack(GetSpellFromName('Shell V'), player.name)
+				end
+			elseif fiveSlice == 'sacri' or sixSlice == 'zombie' then
+				AddToStack(GetSpellFromName('Sacrifice'), sender, { partyCheck = true })
+			elseif fiveSlice == 'sneak' then
+				AddToStack(GetSpellFromName('Sneak'), sender,
+				{
+					partyCheck = true,
+					precastCheck = function(this)
+						if os.clock() - this.addedAt < 1 then
+							return true
+						end
+						if not CheckPlayerForBuff(sender, 'sneak') then
+							return true
+						end
+						return 'remove'
+					end,
+				})
+			elseif fiveSlice == 'invis' then
+				AddToStack(GetSpellFromName('Invisible'), sender,
+				{
+					partyCheck = true,
+					precastCheck = function(this)
+						if os.clock() - this.addedAt < 1 then
+							return true
+						end
+						if not CheckPlayerForBuff(sender, 'invisible') then
+							return true
+						end
+						return 'remove'
+					end,
+				})
+			elseif fiveSlice == 'regen' then
+				AddToStack(GetSpellFromName('Regen IV'), sender, { partyCheck = true })
+			elseif threeSlice == 'bar' then
+				if CheckAoERange(sender) then
+					if fiveSlice == 'barfi' then
+						AddToStack(GetSpellFromName('Barfira'), player.name)
+					elseif fiveSlice == 'barwa' then
+						AddToStack(GetSpellFromName('Barwatera'), player.name)
+					elseif fiveSlice == 'barth' then
+						AddToStack(GetSpellFromName('Barthundra'), player.name)
+					elseif fiveSlice == 'barae' or fiveSlice == 'barwi' then
+						AddToStack(GetSpellFromName('Baraera'), player.name)
+					elseif sevenSlice == 'barbliz' then
+						AddToStack(GetSpellFromName('Barblizzara'), player.name)
+					elseif fiveSlice == 'barbl' then
+						AddToStack(GetSpellFromName('Barblindra'), player.name)
+					elseif fiveSlice == 'baram' then
+						AddToStack(GetSpellFromName('Baramnesra'), player.name)
+					elseif fiveSlice == 'barpe' then
+						AddToStack(GetSpellFromName('Barpetra'), player.name)
+					elseif fiveSlice == 'barpo' then
+						AddToStack(GetSpellFromName('Barpoisonra'), player.name)
+					elseif fiveSlice == 'barpa' then
+						AddToStack(GetSpellFromName('Barparalyzra'), player.name)
+					elseif fiveSlice == 'barsi' then
+						AddToStack(GetSpellFromName('Barsilencera'), player.name)
+					elseif fiveSlice == 'barvi' then
+						AddToStack(GetSpellFromName('Barvira'), player.name)
+					end
+				end
+			elseif fiveSlice == 'auspi' then
+				if CheckAoERange(sender) then
+					AddToStack(GetSpellFromName('Auspice'), player.name)
+				end
+			elseif boostSuffix then
+				if CheckAoERange(sender) then
+					AddToStack(GetSpellFromName('Boost-'..boostSuffix), player.name)
+				end
+			elseif player.sub_job == 'RDM' and sevenSlice == 'refresh' then
+				AddToStack(GetSpellFromName('Refresh'), sender, { partyCheck = true })
+			elseif player.sub_job == 'SCH' and stormPrefix then
+				AddToStack(GetSpellFromName(stormPrefix..'storm'), sender, { partyCheck = true })
+			elseif fullBuffs:containskey(message) then
+				for _, v in pairs(fullBuffs[message]) do
+					AddToStack(GetSpellFromName(v), player.name)
+				end
+			end
+		elseif CheckRange(sender, false) then -- In range and in alliance
+			if fourSlice == 'para' then
+				AddToStack(GetSpellFromName('Paralyna'), sender,
+				{
+					precastCheck = function(this)
+						if os.clock() - this.addedAt < 1 then
+							return true
+						end
+						if CheckPlayerForBuff(sender, 'paralysis') then
+							return true
+						end
+						return 'remove'
+					end,
+				})
+			elseif fourSlice == 'viru' or sevenSlice == 'disease' or sixSlice == 'plague' then
+					AddToStack(GetSpellFromName('Viruna'), sender,
+					{
+						precastCheck = function(this)
+							if os.clock() - this.addedAt < 1 then
+								return true
+							end
+							local buffs = GetPlayerBuffsFromAlliance(sender)
+							if buffs['plague'] or buffs['disease'] then
+								return true
+							end
+							return 'remove'
+						end,
+					})
+				end
+			elseif fiveSlice == 'blind' then
+				AddToStack(GetSpellFromName('Blindna'), sender,
+				{
+					precastCheck = function(this)
+						if os.clock() - this.addedAt < 1 then
+							return true
+						end
+						if CheckPlayerForBuff(sender, 'blindness') then
+							return true
+						end
+						return 'remove'
+					end,
+				})
+			elseif fiveSlice == 'silen' then
+				AddToStack(GetSpellFromName('Silena'), sender,
+				{
+					precastCheck = function(this)
+						if os.clock() - this.addedAt < 1 then
+							return true
+						end
+						if CheckPlayerForBuff(sender, 'silence') then
+							return true
+						end
+						return 'remove'
+					end,
+				})
+			elseif fiveSlice == 'curse' or fourSlice == 'doom' then
+				AddToStack(GetSpellFromName('Cursna'), sender,
+				{
+					precastCheck = function(this)
+						if os.clock() < this.addedAt < 1 then
+							return true
+						end
+						local buffs GetPlayerBuffsFromAlliance(sender)
+						if buffs['curse'] or buffs['doom'] then
+							return true
+						end
+						return 'remove'
+					end,
+				})
+			elseif sixSlice == 'poison' then
+				AddToStack(GetSpellFromName('Poisona'), sender
+				{
+					precastCheck = function(this)
+						if os.clock() - this.addedAt < 1 then
+							return true
+						end
+						if CheckPlayerForBuff(sender, 'poison') then
+							return true
+						end
+						return 'remove'
+					end,
+				})
+			elseif sixSlice == 'stoned' or fiveSlice == 'stona' or fourSlice == 'petra' then
+				AddToStack(GetSpellFromName('Stona'), sender
+				{
+					precastCheck = function(this)
+						if os.clock() - this.addedAt < 1 then
+							return true
+						end
+						if CheckPlayerForBuff(sender, 'petrification') then
+							return true
+						end
+						return 'remove'
+					end,
+				})
+			elseif fiveSlice == 'sleep' or message:sub(1, 2) == 'zz' then
+				AddToStack(GetSpellFromName('Cure'), sender,
+				{
+					precastCheck = function(this)
+						if os.clock() - this.addedAt < 1 then
+							return true
+						end
+						if CheckPlayerForBuff(sender, 'sleep') then
+							return true
+						end
+						return 'remove'
+					end,
+				})
+			elseif fiveSlice == 'haste' then
+				AddToStack(GetSpellFromName('Haste'), sender
+				{
+					precastCheck = function(this)
+						if os.clock() - this.addedAt < 1 then
+							return true
+						end
+						local buffs = GetPlayerBuffsFromAlliance(sender)
+						if not buffs['slow'] then
+							return true
+						end
+						return 'remove'
+					end,
+				})
+			elseif fourSlice == 'prot' then
+				AddToStack(GetSpellFromName('Protect V'), sender)
+			elseif fiveSlice == 'shell' then
+				AddToStack(GetSpellFromName('Shell V'), sender)
+			end
+		elseif (fiveSlice == 'raise' or fiveSlice == 'arise') and CheckRaisable(sender) then
+			local raisePrecast = function()
+				if os.clock() - this.addedAt < 1 then
+					return true
+				end
+				if CheckRaisable(sender) then
+					return true
+				end
+				return 'remove'
+			end
+			local RaiseSpells = S{ 'Arise', 'Raise III', 'Raise II', 'Raise' }
+			for k, v in pairs(RaiseSpells) do
+				if IsSpellReady(v) then
+					AddToStack(GetSpellFromName(v), sender, { precastCheck = raisePrecast })
+					break
+				end
+			end
+		end
+	end
+end

@@ -401,6 +401,7 @@ function job_tick()
 	if check_arts() then return true end
 	if check_buff() then return true end
 	if check_buffup() then return true end
+
 	return false
 end
 

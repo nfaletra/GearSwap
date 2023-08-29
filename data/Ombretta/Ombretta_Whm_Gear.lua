@@ -13,7 +13,7 @@ function user_job_setup()
 	state.WeaponskillMode:options('Normal')
 
 	state.AutoCureMode:options('Off', 'Party', 'Ally')
-	state.AllianceCureMode:options('Off', 'Top', 'Bottom', 'All')
+	state.StatusCureMode:options('Party', 'Ally', 'Off')
 
 	-- Additional local binds
 	send_command('bind ^` input /ma "Arise" <t>')

@@ -31,8 +31,8 @@ function init_gear_sets()
 
 	-- Precast Sets
 	-- Precast sets to enhance JAs
-	sets.precast.JA.Meditate = { head = "Wakido Kabuto +3", hands = "Sakonji Kote +3", back = gear.ws_jse_back }
-	sets.precast.JA['Warding Circle'] = { head = "Wakido Kabuto +3" }
+	sets.precast.JA.Meditate = { head = "Wakido Kabuto +2", hands = "Sakonji Kote +3", back = gear.ws_jse_back }
+	sets.precast.JA['Warding Circle'] = { head = "Wakido Kabuto +2" }
 	sets.precast.JA['Blade Bash'] = { hands = "Sakonji Kote +3" }
 	sets.precast.JA['Sekkanoki'] = { hands = "Kasuga Kote +1" }
 	sets.precast.JA['Sengikori'] = { feet = "Kas. Sune-Ate +1" }
@@ -60,7 +60,7 @@ function init_gear_sets()
 	sets.precast.WS.Proc = {ammo="Hasty Pinion +1",
         head="Flam. Zucchetto +2",neck="Moonbeam Nodowa",ear1="Telos Earring",ear2="Mache Earring +1",
         body="Tartarus Platemail",hands="Flam. Manopolas +2",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-        back=gear.stp_jse_back,waist="Olseni Belt",legs="Wakido Haidate +3",feet="Flam. Gambieras +2"}
+        back=gear.stp_jse_back,waist="Olseni Belt",legs="Wakido Haidate +1",feet="Flam. Gambieras +2"}
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {})
@@ -120,7 +120,7 @@ function init_gear_sets()
     sets.precast.WS['Apex Arrow'] = {
         head="Ynglinga Sallet",neck="Fotia Gorget",ear1="Clearview Earring",ear2="Moonshade Earring",
         body="Kyujutsugi",hands="Buremte Gloves",ring1="Ilabrat Ring",ring2="Regal Ring",
-        back=gear.ws_jse_back,waist="Fotia Belt",legs="Wakido Haidate +3",feet="Wakido Sune. +3"}
+        back=gear.ws_jse_back,waist="Fotia Belt",legs="Wakido Haidate +1",feet="Waki. Sune-Ate +1"}
 
 	sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {})
 
@@ -136,7 +136,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Loess Barbuta +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
         body="Tartarus Platemail",hands="Leyline Gloves",ring1="Defending Ring",ring2="Prolix Ring",
-        back="Moonlight Cape",waist="Tempus Fugit",legs="Wakido Haidate +3",feet="Amm Greaves"}
+        back="Moonlight Cape",waist="Tempus Fugit",legs="Wakido Haidate +1",feet="Amm Greaves"}
 
     -- Specific spells
     sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, {back="Mujin Mantle"})
@@ -145,12 +145,12 @@ function init_gear_sets()
     sets.midcast.RA = {
         head="Flam. Zucchetto +2",neck="Combatant's Torque",ear1="Clearview Earring",ear2="Neritic Earring",
         body="Kyujutsugi",hands="Buremte Gloves",ring1="Ilabrat Ring",ring2="Regal Ring",
-        back=gear.stp_jse_back,waist="Carrier's Sash",legs="Wakido Haidate +3",feet="Wakido Sune. +3"}
+        back=gear.stp_jse_back,waist="Carrier's Sash",legs="Wakido Haidate +1",feet="Waki. Sune-Ate +1"}
 
     sets.midcast.RA.Acc = {
         head="Flam. Zucchetto +2",neck="Combatant's Torque",ear1="Clearview Earring",ear2="Neritic Earring",
         body="Kyujutsugi",hands="Buremte Gloves",ring1="Ilabrat Ring",ring2="Regal Ring",
-        back=gear.stp_jse_back,waist="Carrier's Sash",legs="Wakido Haidate +3",feet="Wakido Sune. +3"}
+        back=gear.stp_jse_back,waist="Carrier's Sash",legs="Wakido Haidate +1",feet="Waki. Sune-Ate +1"}
 
     
     -- Sets to return to when not performing an action.
@@ -159,7 +159,7 @@ function init_gear_sets()
     sets.resting = {ammo="Staunch Tathlum +1",
         head=gear.valorous_wsd_head,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
         body="Sacro Breastplate",hands="Sakonji Kote +1",ring1="Defending Ring",ring2="Dark Ring",
-        back="Moonlight Cape",waist="Flume Belt +1",legs="Wakido Haidate +3",feet="Flam. Gambieras +2"}
+        back="Moonlight Cape",waist="Flume Belt +1",legs="Wakido Haidate +1",feet="Flam. Gambieras +2"}
     
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
@@ -203,7 +203,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Flam. Zucchetto +2", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Kasuga Earring +1",
 		body = "Tatena. Harama. +1", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring", ring2 = "Chirich Ring +1",
-		back = "Atheling Mantle", waist = "Ioskeha Belt +1", legs = "Tatena. Haidate +1", feet = "Tatena. Sune-Ate +1"
+		back = "Atheling Mantle", waist = "Ioskeha Belt +1", legs = "Tatena. Haidate +1", feet = "Tatena. Sune. +1"
 	}
 	
 	sets.engaged.Hybrid =
@@ -211,7 +211,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Flam. Zucchetto +2", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Kasuga Earring +1",
 		body = "Mpaca's Doublet", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = "Atheling Mantle", waist = "Ioskeha Belt +1", legs = "Mpaca's Hose" , feet = "Tatena. Sune-Ate +1"
+		back = "Atheling Mantle", waist = "Ioskeha Belt +1", legs = "Mpaca's Hose" , feet = "Tatena. Sune. +1"
 	}
 
 	sets.engaged.MEVA =
