@@ -29,7 +29,7 @@ local Cure4Threshold = 850
 local Cure5Threshold = 1100
 local Cure6Threshold = 1400
 
-local CastSpeed = 1.0
+info.CastSpeed = 1.0
 local RangedDelay = 168
 local AutoStrat = true
 
@@ -599,14 +599,14 @@ end
 
 function GetDelayFromAction(action)
 	if action.type == 'Misc' then
-		return math.ceil((RangedDelay / 106) * CastSpeed)
+		return math.ceil((RangedDelay / 106) * info.CastSpeed)
 	elseif action.type == 'JobAbility' or action.type == 'PetCommand' or action.type == 'Scholar' or not action.cast_time then
 		return 0.5
 	elseif action.english == 'Stoneskin' then
-		return math.ceil(10 * CastSpeed)
+		return math.ceil(10 * info.CastSpeed)
 	end
 
-	return math.ceil(action.cast_time * CastSpeed)
+	return math.ceil(action.cast_time * info.CastSpeed)
 end
 
 function user_tick()

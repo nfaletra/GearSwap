@@ -20,6 +20,8 @@ function user_job_setup()
 	-- How long to wait between auto singing
 	info.AutoSongDelay = 210 -- 3:30 min
 
+	info.CastSpeed = 0.5
+
 	state.AutoCureMode:options('Off', 'Party', 'Ally')
 	state.StatusCureMode:options('Party', 'Ally', 'Off')
 

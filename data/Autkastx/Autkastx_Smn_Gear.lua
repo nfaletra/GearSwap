@@ -291,7 +291,7 @@ function init_gear_sets()
     -- Resting sets
     sets.resting =
 	{
-		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
+		main = "Mpaca's Staff", sub = "Khonsu", ammo = "Staunch Tathlum +1",
 		head = "Beckoner's Horn +2", neck = "Smn. Collar +2", ear1 = "Eabani Earring", ear2 = "Beck. Earring +1",
 		body = "Shomonjijoe +1", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
 		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = "Inyan. Crackows +2"
@@ -300,7 +300,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle =
 	{
-		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
+		main = "Mpaca's Staff", sub = "Khonsu", ammo = "Staunch Tathlum +1",
 		head = "Beckoner's Horn +2", neck = "Smn. Collar +2", ear1 = "Eabani Earring", ear2 = "Beck. Earring +1",
 		body = "Shomonjijoe +1", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Stikini Ring +1",
 		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
@@ -308,7 +308,7 @@ function init_gear_sets()
 
 	sets.idle.PDT =
 	{
-		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
+		main = "Mpaca's Staff", sub = "Khonsu", ammo = "Staunch Tathlum +1",
 		head = "Beckoner's Horn +2", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Beck. Earring +1",
 		body = "Shomonjijoe +1", hands = "Bunzi's Gloves", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
 		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = "Inyan. Crackows +2"

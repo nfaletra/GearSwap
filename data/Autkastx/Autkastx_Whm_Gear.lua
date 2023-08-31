@@ -15,6 +15,8 @@ function user_job_setup()
 	state.AutoCureMode:options('Off', 'Party', 'Ally')
 	state.StatusCureMode:options('Party', 'Ally', 'Off')
 
+	info.CastSpeed = 0.2
+
 	gear.Alaunus =
 	{
 		TP = { name = "Alaunus's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%' } },

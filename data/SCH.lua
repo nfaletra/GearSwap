@@ -251,7 +251,7 @@ function job_post_midcast(spell, spellMap, eventArgs)
 		end
 	elseif default_spell_map == 'ElementalEnfeeble' and (state.Buff['Dark Arts']  or state.Buff['Addendum: Black']) and sets.buff['Dark Arts'] then
 		equip(sets.buff['Dark Arts'])
-    elseif spell.skill == 'Elemental Magic' and spell.english ~= 'Impact' then
+	elseif spell.skill == 'Elemental Magic' and spell.english ~= 'Impact' then
 		if state.MagicBurstMode.value ~= 'Off' then
 			if state.CastingMode.value:contains('Resistant') and sets.ResistantMagicBurst then
 				equip(sets.ResistantMagicBurst)
@@ -283,9 +283,9 @@ function job_post_midcast(spell, spellMap, eventArgs)
 			end
 		end
 		
-        if state.Buff.Immanence then
-            equip(sets.buff['Immanence'])
-        end
+		if state.Buff.Immanence then
+			equip(sets.buff['Immanence'])
+		end
 		
 		if state.RecoverMode.value ~= 'Never' and (state.RecoverMode.value == 'Always' or tonumber(state.RecoverMode.value:sub(1, -2)) > player.mpp) then
 			if state.MagicBurstMode.value ~= 'Off' then
@@ -300,7 +300,7 @@ function job_post_midcast(spell, spellMap, eventArgs)
 				equip(sets.RecoverMP)
 			end
 		end
-    end
+	end
 	
 end
 
