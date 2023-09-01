@@ -194,7 +194,7 @@ function init_gear_sets()
 		ear1 = "Etiolation Earring", ear2 = "Ebers Earring",
 		hands = "Ebers Mitts +2", ring1 = "Gelationus Ring +1", ring2 = "Defending Ring",
 		back = "Fi Follet Cape +1"
-	}
+	})
 
 	-- Cure sets
 	sets.midcast['Full Cure'] = sets.midcast.FastRecast
@@ -213,9 +213,9 @@ function init_gear_sets()
 	sets.midcast.LightWeatherCureSolace = set_combine(sets.midcast.CureSolace, sets.midcast.LightWeatherCure, {})
 	sets.midcast.LightDayCureSolace = set_combine(sets.midcast.CureSolace, sets.midcast.LightDayCure, {})
 
-	sets.midcast.Curaga = set_combine(sets.midcast.Cure, { back = "Twilight Cape" })
-	sets.midcast.LightWeatherCuraga = set_combine(sets.midcast.Curaga, { waist = "Hachirin-no-obi" })
-	sets.midcast.LightDayCuraga = set_combine(sets.midcast.Curaga, { waist = "Hachirin-no-obi" })
+	sets.midcast.Curaga = set_combine(sets.midcast.Cure, {})
+	sets.midcast.LightWeatherCuraga = set_combine(sets.midcast.Curaga, { back = "Twilight Cape", waist = "Hachirin-no-obi" })
+	sets.midcast.LightDayCuraga = set_combine(sets.midcast.Curaga, { back = "Twilight Cape", waist = "Hachirin-no-obi" })
 
 	sets.midcast.Cure.DT = set_combine(sets.midcast.Cure, {})
 

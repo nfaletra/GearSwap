@@ -165,7 +165,7 @@ function init_gear_sets()
 	sets.midcast['Horde Lullaby II'] = {range="Marsyas"}
 	sets.midcast['Horde Lullaby II'].Resistant = {range="Blurred Harp +1"}
 	sets.midcast['Horde Lullaby II'].AoE = {range="Blurred Harp +1"}
-	sets.midcast.Madrigal = { head = "Fili Calot +1" }
+	sets.midcast.Madrigal = { head = "Fili Calot +1", back = "Intarabus's Cape" }
 	sets.midcast.Paeon = { head = "Brioso Roundlet +1" }
 	sets.midcast.March = { hands = "Fili Manchettes +1" }
 	sets.midcast['Honor March'] = set_combine(sets.midcast.March, { range = "Marsyas"})
@@ -268,14 +268,14 @@ function init_gear_sets()
 		range = "Linos",
 		head = "Aya. Zucchetto +2", neck = "Bard's Charm +1", ear1 = "Crep. Earring", ear2 = "Telos Earring",
 		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
-		waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = "Intarabus's Cape", waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.engaged.DW =
 	{
 		range = "Linos",
 		head = "Aya. Zucchetto +2", neck = "Bard's Charm +2", ear1 = "Eabani Earring", ear2 = "Telos Earring",
 		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
-		waist = "Reiki Yotai", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = "Intarabus's Cape", waist = "Reiki Yotai", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 end
 

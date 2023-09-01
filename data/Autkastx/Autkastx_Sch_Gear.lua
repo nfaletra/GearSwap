@@ -360,7 +360,7 @@ function init_gear_sets()
 	sets.buff['Parsimony'] = { legs = "Arbatel Pants +2" }
 	sets.buff['Celerity'] = { feet = "Peda. Loafers +3" }
 	sets.buff['Alacrity'] = { feet = "Peda. Loafers +3" }
-	sets.buff['Klimaform'] = { feet = "Arbatel Loafers +1" }
+	sets.buff['Klimaform'] = { feet = "Arbatel Loafers +2" }
 
 	sets.HPDown = {}
 

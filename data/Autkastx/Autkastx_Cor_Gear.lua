@@ -1,7 +1,7 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_job_setup()
 	state.OffenseMode:options('Normal', 'Acc')
-	state.RangedMode:options('Normal', 'Crit')
+	state.RangedMode:options('Normal', 'Crit', 'Acc')
 	state.WeaponskillMode:options('Match', 'Normal', 'Acc', 'Proc')
 	state.CastingMode:options('Normal', 'Fodder', 'Proc')
 	state.IdleMode:options('Normal', 'PDT', 'Refresh')
