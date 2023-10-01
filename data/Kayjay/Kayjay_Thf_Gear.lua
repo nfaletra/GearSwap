@@ -41,7 +41,7 @@ function init_gear_sets()
     --------------------------------------
 
 	sets.TreasureHunter = {hands="Plunderer's Armlets +1",waist="Chaac Belt",feet="Skulk. Poulaines +1"}
-    sets.Kiting = {feet="Skd. Jambeaux +1"}
+    sets.Kiting = { ring1 = "Shneddick Ring +1" }
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {head="Frenzy Sallet"}
@@ -246,11 +246,14 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
-    sets.idle = {ammo="Staunch Tathlum +1",
-        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Dark Ring",
-        back="Moonlight Cape",waist="Flume Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
-		
+	sets.idle =
+	{
+		ammo = "Staunch Tathlum +1",
+		head = "Malignance Chapeau", neck = "Loricate Torque +1", ear1 = "Etiolation Earring", ear2 = "Sanare Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Dark Ring",
+		back = "Moonlight Cape", waist = "Flume Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
+	}
+
     sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
 
     sets.idle.Weak = set_combine(sets.idle, {})
@@ -281,12 +284,15 @@ function init_gear_sets()
     -- Melee sets  
     --------------------------------------
 
-    -- Normal melee group
-    sets.engaged = {ammo="Aurgelmir Orb +1",
-        head="Dampening Tam",neck="Iskur Gorget",ear1="Dedition Earring",ear2="Sherida Earring",
-        body="Adhemar Jacket +1",hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Epona's Ring",
-        back=gear.da_jse_back,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_ta_feet}
-		
+	-- Normal melee group
+	sets.engaged =
+	{
+		ammo = "Aurgelmir Orb",
+		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Kemas Earring",
+		body = "Rawhide Vest", hands = "Meg. Gloves +2", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
+		back = "Atheling Mantle", waist = "Windbuffet Belt +1", legs = "Meg. Chausses +2", feet = "Meg. Jam. +2"
+	}
+
     sets.engaged.SomeAcc = {ammo="Aurgelmir Orb +1",
         head="Dampening Tam",neck="Combatant's Torque",ear1="Brutal Earring",ear2="Sherida Earring",
         body="Pillager's Vest +3",hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Epona's Ring",

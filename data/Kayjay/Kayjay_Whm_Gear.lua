@@ -499,7 +499,7 @@ function extra_user_job_tick()
 		AddToStack(GetSpellFromName('Paralyna'), player.name)
 	end
 
-	if state.AutoCureMode ~= 'Off' then
+	if state.AutoCureMode.value ~= 'Off' then
 		CureProcess()
 	end
 end
@@ -566,11 +566,11 @@ function process_chat_message(message, sender)
 		stonebuffs = { 'Protectra V', 'Shellra V', 'Barstonra', 'Barpetra', 'Boost-STR', 'Auspice' },
 	}
 
-	if state.StatusCureMode == 'Party' then
+	if state.StatusCureMode.value == 'Party' then
 		if CheckRange(sender, true) then -- In range and in party
 			if fourSlice == 'slow' or fourSlice == 'grav' or fiveSlice == 'bound' or sixSlice == 'max hp' or
 				sevenSlice == 'hp down' or sixSlice == 'max mp' or sevenSlice == 'mp down' or threeSlice == 'bio' or
-				threeSlice == 'dia' or fiveSlice == 'erase') then
+				threeSlice == 'dia' or fiveSlice == 'erase' then
 					AddToStack(GetSpellFromName('Erase'), sender, { partyCheck = true })
 			elseif fourSlice == 'devo' then
 				if IsAbilityReady('Devotion') then
@@ -582,8 +582,8 @@ function process_chat_message(message, sender)
 				if IsAbilityReady('Sacrosanctity') then
 					AddToStack(GetAbilityFromName('Sacrosanctity'), player.name)
 				end
-			elseif fiveSlice == 'sleeo' or message:sub(1, 2) == 'zz' then
-				AddToStack(GetSpellFromName('Curaga', sender,
+			elseif fiveSlice == 'sleep' or message:sub(1, 2) == 'zz' then
+				AddToStack(GetSpellFromName('Curaga'), sender,
 				{
 					partyCheck = true,
 					precastCheck = function(this)
@@ -616,7 +616,7 @@ function process_chat_message(message, sender)
 										return true
 									end
 									return 'remove'
-								end
+								end,
 							})
 							return false
 						end
@@ -727,20 +727,19 @@ function process_chat_message(message, sender)
 					end,
 				})
 			elseif fourSlice == 'viru' or sevenSlice == 'disease' or sixSlice == 'plague' then
-					AddToStack(GetSpellFromName('Viruna'), sender,
-					{
-						precastCheck = function(this)
-							if os.clock() - this.addedAt < 1 then
-								return true
-							end
-							local buffs = GetPlayerBuffsFromAlliance(sender)
-							if buffs['plague'] or buffs['disease'] then
-								return true
-							end
-							return 'remove'
-						end,
-					})
-				end
+				AddToStack(GetSpellFromName('Viruna'), sender,
+				{
+					precastCheck = function(this)
+						if os.clock() - this.addedAt < 1 then
+							return true
+						end
+						local buffs = GetPlayerBuffsFromAlliance(sender)
+						if buffs['plague'] or buffs['disease'] then
+							return true
+						end
+						return 'remove'
+					end,
+				})
 			elseif fiveSlice == 'blind' then
 				AddToStack(GetSpellFromName('Blindna'), sender,
 				{
