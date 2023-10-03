@@ -499,7 +499,7 @@ function extra_user_job_tick()
 		AddToStack(GetSpellFromName('Paralyna'), player.name)
 	end
 
-	if state.AutoCureMode ~= 'Off' then
+	if state.AutoCureMode.value ~= 'Off' then
 		CureProcess()
 	end
 end
