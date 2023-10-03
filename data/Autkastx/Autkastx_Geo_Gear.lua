@@ -63,7 +63,7 @@ function init_gear_sets()
 	{
 		main = "Cath Palug Hammer", sub = "Genmei Shield", range = "Dunna",
 		head = "Merlinic Hood", neck = "Twilight Torque", ear1 = "Loquac. Earring", ear2 = "Malignance Earring",
-		body = "Agwu's Robe", hands = "Agwu's Gages", ring1 = "Kishar Ring", ring2 = "Lebeche Ring",
+		body = "Agwu's Robe", hands = "Agwu's Gages", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
 		back = "Perimede Cape", waist = "Witful Belt", legs = "Geo. Pants +1", feet = gear.amalric.feet.a
 	}
 
@@ -218,23 +218,24 @@ function init_gear_sets()
 	
 	sets.midcast['Elemental Magic'] =
 	{
-		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
-		head = empty, neck = "Bagua Charm +2", ear1 = "Malignance Earring", ear2 = "Regal Earring",
-		body = "Cohort Cloak +1", hands = "Agwu's Gages", ring1 = "Metamor. Ring +1", ring2 = "Freke Ring",
-		back = gear.Nantosuelta.MAB, waist = "Eschan Stone", legs = "Merlinic Shalwar", feet = "Agwu's Pigaches"
+		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
+		head = "Azimuth Hood +2", neck = "Bagua Charm +2", ear1 = "Malignance Earring", ear2 = "Regal Earring",
+		body = "Azimuth Coat +2", hands = "Azimuth Gloves +2", ring1 = "Medada's Ring", ring2 = "Freke Ring",
+		back = gear.Nantosuelta.MAB, waist = "Eschan Stone", legs = "Azimuth Tights +2", feet = "Azimuth Gaiters +2"
 	}
 
-	sets.midcast['Dark Magic'] = {main="Rubicundity",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-        head=gear.merlinic_nuke_head,neck="Erra Pendant",ear1="Regal Earring",ear2="Malignance Earring",
-        body=gear.merlinic_nuke_body,hands="Amalric Gages +1",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
-        back=gear.nuke_jse_back,waist="Yamabuki-no-Obi",legs="Merlinic Shalwar",feet=gear.merlinic_aspir_feet}
-		
-    sets.midcast.Drain = {main="Rubicundity",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-        head="Pixie Hairpin +1",neck="Erra Pendant",ear1="Regal Earring",ear2="Malignance Earring",
-        body=gear.merlinic_nuke_body,hands="Amalric Gages +1",ring1="Archon Ring",ring2="Evanescence Ring",
-        back=gear.nuke_jse_back,waist="Fucho-no-obi",legs="Merlinic Shalwar",feet=gear.merlinic_aspir_feet}
-    
-    sets.midcast.Aspir = sets.midcast.Drain
+	sets.midcast['Dark Magic'] = set_combine(sets.midcast['Elemental Magic'],
+	{
+		neck = "Erra Pendant",
+		ring2 = "Stikini Ring +1",
+	})
+
+	sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'],
+	{
+		head = "Pixie Hairpin +1",
+		ring1 = "Archon Ring", ring2 = "Evanescence Ring",
+	})
+	sets.midcast.Aspir = sets.midcast.Drain
 
 	sets.midcast['Enfeebling Magic'] =
 	{
@@ -338,7 +339,7 @@ function init_gear_sets()
 	{
 		main = "Daybreak", sub = "Genmei Shield", ammo = "Staunch Tathlum +1",
 		head = "Agwu's Cap", neck = "Warder's Charm +1", ear1 = "Lugalbanda Earring", ear2 = "Etiolation Earring",
-		body = "Azimuth Coat +1", hands = "Agwu's Gages", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
+		body = "Azimuth Coat +2", hands = "Agwu's Gages", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
 		back = "Lifestream Cape", waist = "Carrier's Sash", legs = "Agwu's Slops", feet = "Geo. Sandals +1"
 	}
 
@@ -347,7 +348,7 @@ function init_gear_sets()
 	{
 		main = "Solstice", range = "Dunna", ammo = empty,
 		head = "Azimuth Hood +2", neck = "Bagua Charm +2",
-		body = "Azimuth Coat +1", hands = "Geo. Mitaines +2", ring1 = "Gelatinous Ring +1",
+		body = "Azimuth Coat +2", hands = "Geo. Mitaines +2", ring1 = "Gelatinous Ring +1",
 		back = gear.Nantosuelta.Pet, waist = "Isa Belt", feet = "Bagua Sandals +3"
 	})
 

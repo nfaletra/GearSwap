@@ -1,25 +1,25 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_job_setup()
 	-- Options: Override default values
-    state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder')
-    state.HybridMode:options('Normal','DT')
-    state.RangedMode:options('Normal', 'Acc')
-    state.WeaponskillMode:options('Match','Normal','DT','SomeAcc','Acc','FullAcc','Fodder','Proc')
+	state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder')
+	state.HybridMode:options('Normal','DT')
+	state.RangedMode:options('Normal', 'Acc')
+	state.WeaponskillMode:options('Match','Normal','DT','SomeAcc','Acc','FullAcc','Fodder','Proc')
 	state.IdleMode:options('Normal', 'Sphere')
-    state.PhysicalDefenseMode:options('PDT')
+	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.Weapons:options('Aeneas','Aeolian','Savage','ProcWeapons','Evisceration','Throwing','SwordThrowing','Bow')
 
-    state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWMax','Parry'}
+	state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWMax','Parry'}
 	state.AmbushMode = M(false, 'Ambush Mode')
 
 	gear.da_jse_back = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
 	gear.wsd_jse_back = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 
-    -- Additional local binds
-    send_command('bind ^` input /ja "Flee" <me>')
-    send_command('bind !` input /ra <t>')
+	-- Additional local binds
+	send_command('bind ^` input /ja "Flee" <me>')
+	send_command('bind !` input /ra <t>')
 	send_command('bind @` gs c cycle SkillchainMode')
 	send_command('bind @f10 gs c toggle AmbushMode')
 	send_command('bind ^backspace input /item "Thief\'s Tools" <t>')
@@ -31,26 +31,26 @@ function user_job_setup()
 	send_command('bind ^\\\\ input /ja "Despoil" <t>')
 	send_command('bind !\\\\ input /ja "Mug" <t>')
 
-    select_default_macro_book()
+	select_default_macro_book()
 end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-    --------------------------------------
-    -- Special sets (required by rules)
-    --------------------------------------
+	--------------------------------------
+	-- Special sets (required by rules)
+	--------------------------------------
 
 	sets.TreasureHunter = {hands="Plunderer's Armlets +1",waist="Chaac Belt",feet="Skulk. Poulaines +1"}
-    sets.Kiting = {feet="Skd. Jambeaux +1"}
+	sets.Kiting = {feet="Skd. Jambeaux +1"}
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {head="Frenzy Sallet"}
 	
-    sets.buff['Sneak Attack'] = {}
-    sets.buff['Trick Attack'] = {"Pill. Armlets +3"}
+	sets.buff['Sneak Attack'] = {}
+	sets.buff['Trick Attack'] = {"Pill. Armlets +3"}
 
-    -- Extra Melee sets.  Apply these on top of melee sets.
-    sets.Knockback = {}
+	-- Extra Melee sets.  Apply these on top of melee sets.
+  	  sets.Knockback = {}
 	sets.Suppa = {ear1="Suppanomimi", ear2="Sherida Earring"}
 	sets.DWEarrings = {ear1="Dudgeon Earring",ear2="Heartseeker Earring"}
 	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Adhemar Jacket +1",hands="Floral Gauntlets",waist="Reiki Yotai"}
@@ -66,14 +66,14 @@ function init_gear_sets()
 	sets.weapons.Throwing = {main="Aeneas",sub="Gleti's Knife",range="Raider's Bmrng.",ammo=empty}
 	sets.weapons.SwordThrowing = {main="Naegling",sub="Gleti's Knife",range="Raider's Bmrng.",ammo=empty}
 	sets.weapons.Bow = {main="Aeneas",sub="Kustawi +1",range="Kaja Bow",ammo="Chapuli Arrow"}
-	
-    -- Actions we want to use to tag TH.
-    sets.precast.Step = {ammo="C. Palug Stone",
-        head="Malignance Chapeau",neck="Combatant's Torque",ear1="Mache Earring +1",ear2="Odr Earring",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-        back=gear.da_jse_back,waist="Olseni Belt",legs="Malignance Tights",feet="Malignance Boots"}
+
+	-- Actions we want to use to tag TH.
+	sets.precast.Step = {ammo="C. Palug Stone",
+		head="Malignance Chapeau",neck="Combatant's Torque",ear1="Mache Earring +1",ear2="Odr Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
+		back=gear.da_jse_back,waist="Olseni Belt",legs="Malignance Tights",feet="Malignance Boots"}
 		
-    sets.precast.JA['Violent Flourish'] = {ammo="C. Palug Stone",
+	sets.precast.JA['Violent Flourish'] = {ammo="C. Palug Stone",
         head="Malignance Chapeau",neck="Combatant's Torque",ear1="Digni. Earring",ear2="Odr Earring",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
         back=gear.da_jse_back,waist="Olseni Belt",legs="Malignance Tights",feet="Malignance Boots"}

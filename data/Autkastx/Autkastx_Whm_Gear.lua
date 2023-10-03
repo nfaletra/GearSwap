@@ -167,7 +167,7 @@ function init_gear_sets()
 
 	-- Midcast Sets
 
-	sets.Kiting = { feet = "Herald's Gaiters" }
+	sets.Kiting = { ring1 = "Shneddick Ring" }
 	sets.latent_refresh = {}
 	sets.latent_refresh_grip = {}
 	sets.TPEat = {}

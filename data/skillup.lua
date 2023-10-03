@@ -22,19 +22,12 @@ sets.brd = {
     string_inst = {
         range="Terpander"},}--put your string instrument here
 sets.Idle = {
-    right_ear="Liminus Earring",
-    head="Tema. Headband",
-    body="Temachtiani Shirt",
-    hands="Temachtiani Gloves",
-    legs="Temachtiani Pants",
-    feet="Temachtiani Boots",
+	main = "Kali", sub = "Genmei Shield", range = "Blurred Harp +1",ammo=empty,
+	head = "Fili Calot +1", neck = "Orunmila's Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
+	body = "Inyanga Jubbah +2", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
+	back = "Fi Follet Cape +1", waist = "Embla Sash", legs = "Aya. Cosciales +2", feet = "Bihu Slippers +1"
     }
 sets.Resting = {
-    main="Dark Staff",
-    left_ear="Relaxing Earring",
-    ammo="Clarus Stone",
-    neck="Eidolon pendant",
-    right_ear="Boroka Earring",
     }
 --DO NOT CHANGE ANY THING BELOW THIS LINE--
 function get_sets()

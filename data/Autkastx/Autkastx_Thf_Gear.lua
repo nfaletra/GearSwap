@@ -42,7 +42,7 @@ function init_gear_sets()
 	-- Special sets (required by rules)
 	--------------------------------------
 	sets.TreasureHunter = { hands = "Plun. Armlets +3", feet = "Skulk. Poulaines +2" }
-	sets.Kiting = { feet = "Trotter Boots" }
+	sets.Kiting = { ring1 = "Shneddick Ring" }
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {}
@@ -173,7 +173,7 @@ function init_gear_sets()
 	{
 		ammo = "Seeth. Bomblet +1",
 		head = "Nyame Helm", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Meg. Gloves +2", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
 		back = gear.Toutatis.WSD, waist = "Kentarch Belt +1", legs = "Plun. Culottes +3", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS["Shark Bite"].Acc = set_combine(sets.precast.WS["Shark Bite"], {})
@@ -194,7 +194,7 @@ function init_gear_sets()
 	{
 		ammo = "C. Palug Stone",
 		head = "Plun. Bonnet +3", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Brutal Earring",
-		body = "Plunderer's Vest +3", hands = "Meg. Gloves +2", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		body = "Plunderer's Vest +3", hands = "Nyame Gauntlets", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
 		back = gear.Toutatis.WSD, waist = "Fotia Belt", legs = "Meg. Chausses +2", feet = "Plun. Poulaines +3"
 	})
 
@@ -317,7 +317,7 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		ammo = "Aurgelmir Orb",
-		head = "Adhemar Bonnet +1", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Skulk. Earring +1",
+		head = "Skulker's Bonnet +2", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Skulk. Earring +1",
 		body = "Pillager's Vest +3", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Hetairoi Ring",
 		back = gear.Toutatis.TP, waist = "Reiki Yotai", legs = "Samnuha Tights", feet = "Plun. Poulaines +3"
 	}

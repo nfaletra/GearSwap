@@ -16,7 +16,7 @@ function user_job_setup()
 	-- How long to wait between singing
 	info.SongDelay = 15
 	-- Auto Songs to sing
-	info.AutoSongs = 'march march min'
+	info.AutoSongs = 'march min min'
 	-- How long to wait between auto singing
 	info.AutoSongDelay = 210 -- 3:30 min
 

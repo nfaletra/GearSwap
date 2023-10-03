@@ -72,7 +72,7 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
 
-    sets.precast.JA['Tabula Rasa'] = {legs="Peda. Pants +1"}
+    sets.precast.JA['Tabula Rasa'] = { legs = "Peda. Pants +2" }
 	sets.precast.JA['Enlightenment'] = {} --body="Peda. Gown +1"
 
     -- Fast cast sets for spells
@@ -186,7 +186,7 @@ function init_gear_sets()
 	{
 		main = "Gada", sub = "Ammurapi Shield", ammo = "Savant's Treatise",
 		head = "Befouled Crown", neck = "Incantor's Torque", ear1 = "Mimir Earring", ear2 = "Andoaa Earring",
-		body = "Telchine Chas.", hands = "Pedagogy Bracers +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
+		body = "Telchine Chas.", hands = "Pedagogy Bracers +3", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = "Fi Follet Cape +1", waist = "Olympus Sash", legs = "Academic's Pants +1", feet = "Kaykaus Boots +1"
 	}
 
@@ -194,7 +194,7 @@ function init_gear_sets()
 	{
 		main = "Musa", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
 		head = "Telchine Cap", neck = "Twilight Torque", ear1 = "Calamitous Earring", ear2 = "Etiolation Earring",
-		body = "Pedagogy Gown +1", hands = gear.telchine.hands.enhancing, ring1 = "Mephitas's Ring +1", ring2 = "Defending Ring",
+		body = "Pedagogy Gown +3", hands = gear.telchine.hands.enhancing, ring1 = "Mephitas's Ring +1", ring2 = "Defending Ring",
 		back = "Fi Follet Cape +1", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Telchine Pigaches"
 	}
 
@@ -260,14 +260,14 @@ function init_gear_sets()
 		main = "Rubicundity", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
 		head = "Pixie Hairpin +1", neck = "Erra Pendant", ear1 = "Regal Earring", ear2 = "Malignance Earring",
 		body = "Merlinic Jubbah", hands = "Agwu's Gages", ring1 = "Evanescence Ring", ring2 = "Archon Ring",
-		back = "Bookworm's Cape", waist = "Fucho-no-obi", legs = "Peda. Pants +1", feet = "Agwu's Pigaches"
+		back = "Bookworm's Cape", waist = "Fucho-no-obi", legs = "Peda. Pants +2", feet = "Agwu's Pigaches"
 	}
 	sets.midcast.Aspir = sets.midcast.Drain
 
 	sets.midcast.Stun =
 		{
 			main = "Musa", sub = "Khonsu", ammo = "Pemphredo Tathlum",
-			head = "Acad. Mortar. +1", neck = "Argute Stole +2", ear1 = "Regal Earring", ear2 = "Malignance Earring",
+			head = "Acad. Mortar. +2", neck = "Argute Stole +2", ear1 = "Regal Earring", ear2 = "Malignance Earring",
 			body = "Acad. Gown +1", hands = "Acad. Bracers +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 			back = gear.Lughs.Nuke, waist = "Witful Belt", legs = "Acad. Pants +1", feet = "Acad. Loafers +1"
 		}
@@ -326,7 +326,7 @@ function init_gear_sets()
 	-- Resting sets
 	sets.resting = sets.idle
 
-	sets.Kiting = { feet = "Herald's Gaiters" }
+	sets.Kiting = { ring1 = "Shneddick Ring" }
 	sets.DayIdle = {}
 	sets.NightIdle = {}
 
@@ -370,7 +370,7 @@ function init_gear_sets()
 	sets.buff['Light Arts'] = {} --legs="Academic's Pants +3"
 	sets.buff['Dark Arts'] = {} --body="Academic's Gown +3"
 
-	sets.buff.Sublimation = { head = "Acad. Mortar. +1", waist = "Embla Sash" }
+	sets.buff.Sublimation = { head = "Acad. Mortar. +2", waist = "Embla Sash" }
 	sets.buff.DTSublimation = { waist = "Embla Sash" }
 
 	-- Weapons sets

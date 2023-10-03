@@ -238,7 +238,7 @@ end
 function job_customize_kiting_set(kitingSet)
 	if player.status == 'Idle' and moving and state.DefenseMode.value == 'None' and (state.IdleMode.value == 'Normal' or state.IdleMode.value == 'Sphere') then
 		if classes.DuskToDawn and sets.DuskKiting then
-		kitingSet = set_combine(idleSet, sets.DuskKiting)
+			kitingSet = set_combine(idleSet, sets.DuskKiting)
 		end
 	end
 	

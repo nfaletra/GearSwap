@@ -5,7 +5,7 @@ function user_job_setup()
 	state.RangedMode:options('Normal', 'Acc')
 	state.WeaponskillMode:options('Match', 'Normal', 'Proc')
 	state.CastingMode:options('Normal', 'Proc', 'Resistant')
-	state.IdleMode:options('Normal', 'Sphere')
+	state.IdleMode:options('Normal', 'Evasion')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
@@ -22,7 +22,7 @@ function user_job_setup()
 	send_command('bind ^` gs c cycle ElementalMode')
 	send_command('bind @` gs c cycle SkillchainMode')
 	send_command('bind !` gs c cycle Stance')
-	send_command('bind ^r gs c weapons Default;gs c set WeaponskillMode Normal;gs c set CastingMode Normal;gs c update')
+	send_command('bind ^r gs c weapons Default;gs c reset WeaponskillMode;gs c reset CastingMode;gs c update')
 
 	utsusemi_cancel_delay = .3
 	utsusemi_ni_cancel_delay = .06
@@ -46,7 +46,7 @@ function init_gear_sets()
 
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Mijin Gakure'] = { legs = "Mochi. Hakama +3" }
-	sets.precast.JA['Yonin'] = { head = "Mochi. Hatsuburi +3", legs = "Hattori Hakama +1" }
+	sets.precast.JA['Yonin'] = { head = "Mochi. Hatsuburi +3", legs = "Hattori Hakama +2" }
 	sets.precast.JA['Innin'] = { head = "Mochi. Hatsuburi +3" }
 	sets.precast.JA['Provoke'] = sets.Enmity
 
@@ -431,7 +431,7 @@ function init_gear_sets()
 		back = gear.Andartia.MAB, waist = "Cimmerian Sash", feet = "Mochi. Kyahan +3"
 	}
 
-	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, { back = gear.Andartia.DA, feet = "Hattori Kyahan +1" })
+	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, { back = gear.Andartia.DA, feet = "Hattori Kyahan +2" })
 
 	sets.midcast.RA =
 	{
@@ -456,14 +456,20 @@ function init_gear_sets()
 		back = gear.Andartia.DA, waist = "Carrier's Sash", legs = "Mpaca's Hose", feet = "Nyame Sollerets"
 	}
 
-	sets.idle.Sphere = set_combine(sets.idle, {})
+	sets.idle.Evasion =
+	{
+		ammo = "Yamarang",
+		head = "Malignance Chapeau", neck = "Bathy Choker +1", ear1 = "Eabani Earring", ear2 = "Balder Earring +1",
+		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Vengeful Ring", ring2 = "Defending Ring",
+		back = gear.Andartia.DA, waist = "Engraved Belt", legs = "Mpaca's Hose", feet = "Malignance Boots"
+	}
 
 	sets.defense.PDT = {}
 	sets.defense.MDT = {}
 	sets.defense.MEVA = {}
 
-	sets.Kiting = { feet = "Danzo Sune-Ate" }
-	sets.DuskKiting = { feet = "Hachiya Kyahan +3" }
+	sets.Kiting = { ring1 = "Shneddick Ring" }
+	sets.DuskKiting = { ring1 = "Shneddick Ring", feet = "Hachiya Kyahan +3" }
 	sets.DuskIdle = {}
 	sets.DayIdle = {}
 	sets.NightIdle = {}
@@ -530,8 +536,8 @@ function init_gear_sets()
 	sets.engaged.Evasion =
 	{
 		ammo = "Seki Shuriken",
-		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Brutal Earring", ear2 = "Telos Earring",
-		body = "Mpaca's Doublet", hands = gear.adhemar.hands.a, ring1 = "Vengeful Ring", ring2 = "Ilabrat Ring",
+		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Cessance Earring", ear2 = "Balder Earring +1",
+		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Vengeful Ring", ring2 = "Ilabrat Ring",
 		back = gear.Andartia.DA, waist = "Sailfi Belt +1", legs = "Mpaca's Hose", feet = "Malignance Boots"
 	}
 	sets.engaged.Tank.Evasion = set_combine(sets.engaged.Evasion,
@@ -588,8 +594,8 @@ function init_gear_sets()
 	sets.buff.Migawari = {} -- body = "Hattori Ningi +1"
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Futae = { hands = "Hattori Tekko +1" }
-	sets.buff.Yonin = { legs = "Hattori Hakama +1" }
-	sets.buff.Innin = {} --head = "Hattori Zukin +1"
+	sets.buff.Yonin = { legs = "Hattori Hakama +2" }
+	sets.buff.Innin = { head = "Hattori Zukin +2" }
 
 	-- Extra Melee sets.  Apply these on top of melee sets.
 	sets.Knockback = {}
@@ -620,7 +626,7 @@ function init_gear_sets()
 	sets.weapons.ProcScythe = { main = "Hoe", sub = "Bloodrain Strap" }
 	sets.weapons.ProcPolearm = { main = "Iapetus", sub = "Bloodrain Strap" }
 	sets.weapons.ProcGreatKatana = { main = "Mutsunokami", sub = "Bloodrain Strap" }
-	sets.weapons.ProcKatana = { main = "Debahocho", sub = "Ceremonial Dagger" }
+	sets.weapons.ProcKatana = { main = "Yagyu Short. +1", sub = "Debahocho" }
 	sets.weapons.ProcClub = { main = "Thunder Hammer", sub = "Ceremonial Dagger" }
 	sets.weapons.ProcStaff = { main = "Ram Staff", sub = "Bloodrain Strap" }
 end

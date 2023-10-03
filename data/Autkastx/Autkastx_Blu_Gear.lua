@@ -411,7 +411,7 @@ function init_gear_sets()
 		back = gear.Rosmerta.Evasion, waist = "Kasiri Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
-	sets.Kiting = { legs = "Carmine Cuisses +1" }
+	sets.Kiting = { ring1 = "Shneddick Ring +1", legs = "Carmine Cuisses +1" }
 
 	-- Extra Melee sets.  Apply these on top of melee sets.
 	sets.Knockback = {}

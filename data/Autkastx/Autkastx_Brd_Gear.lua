@@ -68,7 +68,7 @@ function init_gear_sets()
 	sets.precast.FC.BardSong =
 	{
 		main = "Kali", sub = "Genmei Shield", range = "Blurred Harp +1",ammo=empty,
-		head = "Fili Calot +1", neck = "Orunmila's Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
+		head = "Fili Calot +2", neck = "Orunmila's Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = "Inyanga Jubbah +2", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
 		back = "Fi Follet Cape +1", waist = "Embla Sash", legs = "Aya. Cosciales +2", feet = "Bihu Slippers +1"
 	}
@@ -165,7 +165,7 @@ function init_gear_sets()
 	sets.midcast['Horde Lullaby II'] = {range="Marsyas"}
 	sets.midcast['Horde Lullaby II'].Resistant = {range="Blurred Harp +1"}
 	sets.midcast['Horde Lullaby II'].AoE = {range="Blurred Harp +1"}
-	sets.midcast.Madrigal = { head = "Fili Calot +1", back = "Intarabus's Cape" }
+	sets.midcast.Madrigal = { head = "Fili Calot +2", back = "Intarabus's Cape" }
 	sets.midcast.Paeon = { head = "Brioso Roundlet +1" }
 	sets.midcast.March = { hands = "Fili Manchettes +1" }
 	sets.midcast['Honor March'] = set_combine(sets.midcast.March, { range = "Marsyas"})
@@ -184,7 +184,7 @@ function init_gear_sets()
 	sets.midcast.SongEffect =
 	{
 		main = "Kali", sub = "Genmei Shield", range = "Gjallarhorn",
-		head = "Fili Calot +1", neck = "Mnbw. Whistle +1", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
+		head = "Fili Calot +2", neck = "Mnbw. Whistle +1", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",	
 		body = "Fili Hongreline +1", hands = "Bunzi's Glvoes", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
 		back = "Fi Follet Cape", waist = "Embla Sash", legs = "Inyanga Shalwar +2", feet = "Brioso Slippers +1"
 	}
@@ -251,7 +251,7 @@ function init_gear_sets()
 	-- Resting sets
 	sets.resting = sets.idle
 
-	sets.Kiting = { feet = "Fili Cothurnes +1" }
+	sets.Kiting = { ring1 = "Shneddick Ring", feet = "Fili Cothurnes +1" }
 	sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.latent_refresh_grip = {sub="Oneiros Grip"}
 	sets.TPEat = {neck="Chrys. Torque"}

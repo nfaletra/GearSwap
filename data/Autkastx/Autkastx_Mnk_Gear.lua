@@ -263,7 +263,7 @@ function init_gear_sets()
 		back = "Moonlight Cape", waist = "Engraved Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
-	sets.Kiting = { feet = "Herald's Gaiters" }
+	sets.Kiting = { ring1 = "Shneddick Ring" }
 
 	-- Engaged sets
 
@@ -285,7 +285,7 @@ function init_gear_sets()
 	sets.engaged.DT = set_combine(sets.engaged,
 	{
 		hands = "Malignance Gloves",
-		feet = "Bhikku Gaiters +2"
+		feet = "Bhikku Gaiters +3"
 	})
 	sets.engaged.Acc.DT = set_combine(sets.engaged.DT, {})
 
@@ -294,7 +294,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Bhikku Crown +2", neck = "Bathy Choker +1", ear1 = "Sherida Earring", ear2 = "Bhikku Earring +1",
 		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Anch. Hose +3", feet = "Bhikku Gaiters +2"
+		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Anch. Hose +3", feet = "Bhikku Gaiters +3"
 	}
 	sets.engaged.Acc.Counter = set_combine(sets.engaged.Counter, {})
 
@@ -302,6 +302,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Odnowa Earring +1",
+		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Mpaca's Hose", feet = "Malignance Boots"
 	}
 	sets.engaged['Subtle Blow'].Acc = set_combine(sets.engaged['Subtle Blow'], {})

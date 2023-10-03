@@ -505,12 +505,21 @@ function extra_user_job_tick()
 end
 
 function process_chat_message(message, sender)
+	for word in string.gmatch(message, "%w+") do
+		process_party_chat_word(word, sender)
+	end
+end
+
+function process_party_chat_word(message, sender)
 	local threeSlice = message:sub(1, 3)
 	local fourSlice = message:sub(1, 4)
 	local fiveSlice = message:sub(1, 5)
 	local sixSlice = message:sub(1, 6)
 	local sevenSlice = message:sub(1, 7)
 	local eightSlice = message:sub(1, 8)
+	local nineSlice = message:sub(1, 9)
+	local tenSlice = message:sub(1, 10)
+	local twelveSlice = message:sub(1, 12)
 
 	local getBoost = function()
 		local stats = { 'str', 'dex', 'vit', 'agi', 'int', 'mnd', 'chr' }
@@ -566,11 +575,11 @@ function process_chat_message(message, sender)
 		stonebuffs = { 'Protectra V', 'Shellra V', 'Barstonra', 'Barpetra', 'Boost-STR', 'Auspice' },
 	}
 
-	if state.StatusCureMode == 'Party' then
+	if state.StatusCureMode.value == 'Party' then
 		if CheckRange(sender, true) then -- In range and in party
 			if fourSlice == 'slow' or fourSlice == 'grav' or fiveSlice == 'bound' or sixSlice == 'max hp' or
 				sevenSlice == 'hp down' or sixSlice == 'max mp' or sevenSlice == 'mp down' or threeSlice == 'bio' or
-				threeSlice == 'dia' or fiveSlice == 'erase') then
+				threeSlice == 'dia' or fiveSlice == 'erase' then
 					AddToStack(GetSpellFromName('Erase'), sender, { partyCheck = true })
 			elseif fourSlice == 'devo' then
 				if IsAbilityReady('Devotion') then
@@ -582,8 +591,8 @@ function process_chat_message(message, sender)
 				if IsAbilityReady('Sacrosanctity') then
 					AddToStack(GetAbilityFromName('Sacrosanctity'), player.name)
 				end
-			elseif fiveSlice == 'sleeo' or message:sub(1, 2) == 'zz' then
-				AddToStack(GetSpellFromName('Curaga', sender,
+			elseif fiveSlice == 'sleep' or message:sub(1, 2) == 'zz' then
+				AddToStack(GetSpellFromName('Curaga'), sender,
 				{
 					partyCheck = true,
 					precastCheck = function(this)
@@ -597,7 +606,7 @@ function process_chat_message(message, sender)
 					end,
 				})
 			elseif fiveSlice == 'haste' then
-				AddToStack(GetSpellFromName('Haste'), sender
+				AddToStack(GetSpellFromName('Haste'), sender,
 				{
 					partyCheck = true,
 					precastCheck = function(this)
@@ -605,7 +614,7 @@ function process_chat_message(message, sender)
 							return true
 						end
 						if CheckPlayerForBuff(sender, 'slow') then
-							AddToStack(GetSpellFromName('Erase'), sender
+							AddToStack(GetSpellFromName('Erase'), sender,
 							{
 								partyCheck = true,
 								precastCheck = function(this)
@@ -616,7 +625,7 @@ function process_chat_message(message, sender)
 										return true
 									end
 									return 'remove'
-								end
+								end,
 							})
 							return false
 						end
@@ -707,9 +716,16 @@ function process_chat_message(message, sender)
 				AddToStack(GetSpellFromName('Refresh'), sender, { partyCheck = true })
 			elseif player.sub_job == 'SCH' and stormPrefix then
 				AddToStack(GetSpellFromName(stormPrefix..'storm'), sender, { partyCheck = true })
-			elseif fullBuffs:containskey(message) then
-				for _, v in pairs(fullBuffs[message]) do
-					AddToStack(GetSpellFromName(v), player.name)
+			else
+				local sliceToUse = nil
+				if fullBuffs:containskey(eightSlice) then sliceToUse = eightSlice end
+				if fullBuffs:containskey(nineSlice) then sliceToUse = nineSlice end
+				if fullBuffs:containskey(tenSlice) then sliceToUse = tenSlice end
+				if fullBuffs:containskey(twelveSlice) then sliceToUse = twelveSlice end
+				if sliceToUse then
+					for _, v in pairs(fullBuffs[sliceToUse]) do
+						AddToStack(GetSpellFromName(v), player.name)
+					end
 				end
 			end
 		elseif CheckRange(sender, false) then -- In range and in alliance
@@ -740,7 +756,6 @@ function process_chat_message(message, sender)
 							return 'remove'
 						end,
 					})
-				end
 			elseif fiveSlice == 'blind' then
 				AddToStack(GetSpellFromName('Blindna'), sender,
 				{
@@ -782,7 +797,7 @@ function process_chat_message(message, sender)
 					end,
 				})
 			elseif sixSlice == 'poison' then
-				AddToStack(GetSpellFromName('Poisona'), sender
+				AddToStack(GetSpellFromName('Poisona'), sender,
 				{
 					precastCheck = function(this)
 						if os.clock() - this.addedAt < 1 then
@@ -795,7 +810,7 @@ function process_chat_message(message, sender)
 					end,
 				})
 			elseif sixSlice == 'stoned' or fiveSlice == 'stona' or fourSlice == 'petra' then
-				AddToStack(GetSpellFromName('Stona'), sender
+				AddToStack(GetSpellFromName('Stona'), sender,
 				{
 					precastCheck = function(this)
 						if os.clock() - this.addedAt < 1 then
@@ -821,7 +836,7 @@ function process_chat_message(message, sender)
 					end,
 				})
 			elseif fiveSlice == 'haste' then
-				AddToStack(GetSpellFromName('Haste'), sender
+				AddToStack(GetSpellFromName('Haste'), sender,
 				{
 					precastCheck = function(this)
 						if os.clock() - this.addedAt < 1 then
