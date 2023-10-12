@@ -78,7 +78,7 @@ function init_gear_sets()
 	sets.precast.FC.Impact = set_combine(sets.precast.FC,
 	{
 		head = empty,
-		body = "Twilight Cloak",
+		body = "Crepuscular Cloak",
 	})
 
 	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, { main = "Daybreak", sub = "Ammurapi Shield" })
@@ -260,7 +260,7 @@ function init_gear_sets()
 	sets.midcast.Impact = set_combine(sets.midcast['Enfeebling Magic'],
 	{
 		head = empty,
-		body = "Twilight Cloak", hands = "Geo. Mitaines +2", ring1 = "Stikini Ring +1",
+		body = "Crepuscular Cloak", hands = "Geo. Mitaines +2", ring1 = "Stikini Ring +1",
 	})
 
 	sets.midcast.Dispel = set_combine(sets.midcast['Enfeebling Magic'],

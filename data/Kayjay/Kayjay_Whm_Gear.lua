@@ -702,6 +702,8 @@ function process_party_chat_word(message, sender)
 						AddToStack(GetSpellFromName('Barsilencera'), player.name)
 					elseif fiveSlice == 'barvi' then
 						AddToStack(GetSpellFromName('Barvira'), player.name)
+					elseif fiveSlice == 'barsl' then
+						AddToStack(GetSpellFromName('Barsleepra'), player.name)
 					end
 				end
 			elseif fiveSlice == 'auspi' then

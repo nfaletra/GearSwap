@@ -278,7 +278,7 @@ function ShouldBuff()
 end
 
 function party_buff_change(affectedPlayer, buffName, gain)
-	if state.StatusCureMode.value ~= 'Off' then return false end
+	if state.StatusCureMode.value == 'Off' then return false end
 	if not affectedPlayer.buffactive or affectedPlayer.buffactive.charm then
 		return false
 	end

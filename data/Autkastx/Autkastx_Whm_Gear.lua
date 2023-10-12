@@ -111,7 +111,7 @@ function init_gear_sets()
 
 	sets.precast.FC.CureSolace = sets.precast.FC.Cure
 
-	sets.precast.FC.Impact =  set_combine(sets.precast.FC, { head = empty, body = "Twilight Cloak" })
+	sets.precast.FC.Impact =  set_combine(sets.precast.FC, { head = empty, body = "Crepuscular Cloak" })
 
 	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, { main = "Daybreak" })
 
@@ -346,7 +346,7 @@ function init_gear_sets()
 	sets.midcast.Dispel = set_combine(sets.midcast['Enfeebling Magic'], {})
 	sets.midcast.Dispelga = set_combine(sets.midcast.Dispel, {})
 
-	sets.midcast.Impact = set_combine(sets.midcast['Enfeebling Magic'], { head = empty, body = "Twilight Cloak" })
+	sets.midcast.Impact = set_combine(sets.midcast['Enfeebling Magic'], { head = empty, body = "Crepuscular Cloak" })
 	sets.midcast.Dia = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
 	sets.midcast.Diaga = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
 	sets.midcast['Dia II'] = sets.midcast['Enfeebling Magic']

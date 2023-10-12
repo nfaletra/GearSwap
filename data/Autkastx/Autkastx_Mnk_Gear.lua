@@ -115,7 +115,7 @@ function init_gear_sets()
 	sets.precast.WS['Raging Fists'] =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Ken. Jinpachi +1", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
+		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
 		body = gear.adhemar.body.b, hands = gear.adhemar.hands.b, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.Segomo.STR_DA, waist = "Moonbow Belt +1", legs = "Mpaca's Hose", feet = gear.herculean_ta_feet
 	}

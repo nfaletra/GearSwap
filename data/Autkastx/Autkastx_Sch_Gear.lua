@@ -95,7 +95,7 @@ function init_gear_sets()
 
     sets.precast.FC.Curaga = sets.precast.FC.Cure
 
-    sets.precast.FC.Impact = set_combine(sets.precast.FC['Elemental Magic'], { head = empty, body = "Twilight Cloak" })
+    sets.precast.FC.Impact = set_combine(sets.precast.FC['Elemental Magic'], { head = empty, body = "Crepuscular Cloak" })
 	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, { main = "Daybreak", sub = "Genmei Shield"})
 
 	-- Weaponskill sets
@@ -307,11 +307,11 @@ function init_gear_sets()
 	{
 		main = "Daybreak", ammo = "Pemphredo Tathlum",
 		head = empty,
-		body = "Twilight Cloak", hands = "Acad. Bracers +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
+		body = "Crepuscular Cloak", hands = "Acad. Bracers +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = "Aurist's Cape +1", waist = "Acuity Belt +1", legs = "Arbatel Pants +2", feet = "Arbatel Loafers +2"
 	})
 
-	sets.midcast.Impact.OccultAcumen = set_combine(sets.midcast['Elemental Magic'].OccultAcumen, { head = empty, body = "Twilight Cloak" })
+	sets.midcast.Impact.OccultAcumen = set_combine(sets.midcast['Elemental Magic'].OccultAcumen, { head = empty, body = "Crepuscular Cloak" })
 
 	-- Sets to return to when not performing an action.
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)

@@ -72,7 +72,7 @@ function init_gear_sets()
 	
 	sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {})
 
-	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})       
+	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Crepuscular Cloak"})
 	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak",sub="Genmei Shield"})
 
 	-- Weaponskill sets
@@ -142,10 +142,10 @@ function init_gear_sets()
 	{
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
 		head = empty,neck = "Erra Pendant", ear1 = "Enchntr. Earring +1", ear2 = "Gwati Earring",
-		body = "Twilight Cloak", hands = "Regal Cuffs", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
+		body = "Crepuscular Cloak", hands = "Regal Cuffs", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
 		back = "Toro Cape", waist = "Acuity Belt +1", legs = "Merlinic Shalwar", feet = gear.merlinic_aspir_feet
 	}
-	sets.midcast.Impact.OccultAcumen = set_combine(sets.midcast['Elemental Magic'].OccultAcumen, {head=empty,body="Twilight Cloak"})
+	sets.midcast.Impact.OccultAcumen = set_combine(sets.midcast['Elemental Magic'].OccultAcumen, {head=empty,body="Crepuscular Cloak"})
 
     sets.midcast['Divine Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
         head=gear.merlinic_nuke_head,neck="Baetyl Pendant",ear1="Crematio Earring",ear2="Friomisi Earring",

@@ -4,15 +4,12 @@ function user_job_setup()
 	state.HybridMode:options('Normal')
     state.CastingMode:options('Normal','Resistant','AoE')
     state.IdleMode:options('Normal')
-	state.Weapons:options('None', 'Naegling', 'Aeneas', 'DualWeapons', 'DualNaegling', 'DualTauret', 'DualAeolian')
-
-	gear.melee_jse_back = {name="Intarabus's Cape",augments={'Accuracy+20 Attack+20'}}
-	gear.magic_jse_back = {name="Intarabus's Cape",augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10','Damage taken-5%',}}
+	state.Weapons:options('None', 'Naegling', 'Aeneas', 'DualWeapons', 'DualNaegling', 'DualTauret', 'DualAeolian', 'DualTrial')
 
 	-- Adjust this if using the Terpander (new +song instrument)
-	info.ExtraSongInstrument = 'Terpander'
+	info.ExtraSongInstrument = 'Daurdabla'
 	-- How many extra songs we can keep from Daurdabla/Terpander
-	info.ExtraSongs = 1
+	info.ExtraSongs = 2
 
 	info.CastSpeed = 0.2
 	
@@ -45,6 +42,7 @@ function init_gear_sets()
 	sets.weapons.Naegling = { main= "Naegling", sub = "Genmei Shield" }
 	sets.weapons.DualTauret = { main = "Tauret", sub = "Gleti's Knife" }
 	sets.weapons.DualAeolian = { main = "Tauret", sub = "Malevolence" }
+	sets.weapons.DualTrial = { main = "Naegling", sub = "Gleti's Knife", range = "Gjallarhorn" }
 
 	sets.buff.Sublimation = { waist = "Embla Sash" }
 	sets.buff.DTSublimation = { waist = "Embla Sash" }
@@ -165,18 +163,18 @@ function init_gear_sets()
 	sets.midcast['Horde Lullaby II'] = {range="Marsyas"}
 	sets.midcast['Horde Lullaby II'].Resistant = {range="Blurred Harp +1"}
 	sets.midcast['Horde Lullaby II'].AoE = {range="Blurred Harp +1"}
-	sets.midcast.Madrigal = { head = "Fili Calot +2", back = "Intarabus's Cape" }
+	sets.midcast.Madrigal = { head = "Fili Calot +2", back = "Intarabus's Cape", feet = "Fili Cothurnes +2" }
 	sets.midcast.Paeon = { head = "Brioso Roundlet +1" }
 	sets.midcast.March = { hands = "Fili Manchettes +1" }
 	sets.midcast['Honor March'] = set_combine(sets.midcast.March, { range = "Marsyas"})
-	sets.midcast.Minuet = { body = "Fili Hongreline +1" }
+	sets.midcast.Minuet = { body = "Fili Hongreline +2" }
 	sets.midcast.Minne = { legs = "Mousai Seraweels +1" }
 	sets.midcast.Carol = { hands = "Mousai Gages +1" }
 	sets.midcast["Sentinel's Scherzo"] = { feet = "Fili Cothurnes +1" }
 	sets.midcast['Magic Finale'] = { range = "Blurred Harp +1" }
 	sets.midcast.Mazurka = { range = "Marsyas" }
 	sets.midcast.Etude = { head = "Mousai Turban +1" }
-	sets.midcast.Prelude = {}
+	sets.midcast.Prelude = { back = "Intarabus's Cape" }
 	sets.midcast.Mambo= { feet = "Mousai Crackows +1" }
 	
 
@@ -185,7 +183,7 @@ function init_gear_sets()
 	{
 		main = "Kali", sub = "Genmei Shield", range = "Gjallarhorn",
 		head = "Fili Calot +2", neck = "Mnbw. Whistle +1", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",	
-		body = "Fili Hongreline +1", hands = "Bunzi's Glvoes", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
+		body = "Fili Hongreline +2", hands = "Fili Manchettes +2", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
 		back = "Fi Follet Cape", waist = "Embla Sash", legs = "Inyanga Shalwar +2", feet = "Brioso Slippers +1"
 	}
 
@@ -221,7 +219,7 @@ function init_gear_sets()
 	sets.midcast['Enhancing Magic'] = {main="Serenity",sub="Fulcio Grip",ammo="Hasty Pinion +1",
 		head="Telchine Cap",neck="Voltsurge Torque",ear1="Andoaa Earring",ear2="Gifted Earring",
 		body="Telchine Chas.",hands="Telchine Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back=gear.magic_jse_back,waist="Embla Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
+		back="Fi Folet Cape +1",waist="Embla Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
 		
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",legs="Shedir Seraweels"})
 		
