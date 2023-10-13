@@ -303,7 +303,7 @@ function party_buff_change(affectedPlayer, buffName, gain)
 		end
 
 		local erasesNeeded = 0
-		for _, v in pairs(eraseables) do
+		for _, v in pairs(Eraseables) do
 			if buffName == v then
 				erasesNeeded = erasesNeeded + 1
 			end

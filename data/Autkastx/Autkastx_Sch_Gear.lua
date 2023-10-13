@@ -7,7 +7,7 @@ function user_job_setup()
 	state.Weapons:options('None','Musa','Khatvanga','Maxentius','Daybreak','DualMaxentius','DualDaybreak')
 
 	state.AutoCureMode:options('Off', 'Party', 'Ally')
-	state.StatusCureMode:options('Party', 'Ally', 'Off')
+	state.StatusCureMode:options('Off', 'Party', 'Ally')
 
 	gear.Lughs =
 	{

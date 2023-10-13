@@ -13,7 +13,7 @@ function user_job_setup()
 	state.WeaponskillMode:options('Normal')
 
 	state.AutoCureMode:options('Off', 'Party', 'Ally')
-	state.StatusCureMode:options('Party', 'Ally', 'Off')
+	state.StatusCureMode:options('Off', 'Party', 'Ally')
 
 	info.CastSpeed = 0.2
 

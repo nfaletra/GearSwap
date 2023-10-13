@@ -11,7 +11,19 @@ function user_job_setup()
 	-- How many extra songs we can keep from Daurdabla/Terpander
 	info.ExtraSongs = 2
 
+	-- Auto Songs to sing
+	info.AutoSongs = 'march min min mad'
+	-- How long to wait between auto singing
+	info.AutoSongDelay = 210 -- 3:30 min
+
 	info.CastSpeed = 0.2
+
+	gear.Intarabus =
+	{
+		Idle = { name = "Intarabus's Cape", augments = {} },
+		TP = { name = "Intarabus's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%' } },
+		DEX_WSD = { name = "Intarabus's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%' } },
+	}
 	
 	-- Set this to false if you don't want to use custom timers.
 	state.UseCustomTimers = M(false, 'Use Custom Timers')
@@ -66,7 +78,7 @@ function init_gear_sets()
 	sets.precast.FC.BardSong =
 	{
 		main = "Kali", sub = "Genmei Shield", range = "Blurred Harp +1",ammo=empty,
-		head = "Fili Calot +2", neck = "Orunmila's Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
+		head = "Fili Calot +3", neck = "Orunmila's Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = "Inyanga Jubbah +2", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
 		back = "Fi Follet Cape +1", waist = "Embla Sash", legs = "Aya. Cosciales +2", feet = "Bihu Slippers +1"
 	}
@@ -103,7 +115,7 @@ function init_gear_sets()
 		range = "Linos",
 		head = "Nyame Helm", neck = "Repub. Plat. Medal", ear1 = "Regal Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Shukuyu Ring", ring2 = "Rufescent Ring",
-		waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Intarabus.DEX_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {})
@@ -163,7 +175,7 @@ function init_gear_sets()
 	sets.midcast['Horde Lullaby II'] = {range="Marsyas"}
 	sets.midcast['Horde Lullaby II'].Resistant = {range="Blurred Harp +1"}
 	sets.midcast['Horde Lullaby II'].AoE = {range="Blurred Harp +1"}
-	sets.midcast.Madrigal = { head = "Fili Calot +2", back = "Intarabus's Cape", feet = "Fili Cothurnes +2" }
+	sets.midcast.Madrigal = { head = "Fili Calot +3", back = gear.Intarabus.Idle, feet = "Fili Cothurnes +2" }
 	sets.midcast.Paeon = { head = "Brioso Roundlet +1" }
 	sets.midcast.March = { hands = "Fili Manchettes +1" }
 	sets.midcast['Honor March'] = set_combine(sets.midcast.March, { range = "Marsyas"})
@@ -174,7 +186,7 @@ function init_gear_sets()
 	sets.midcast['Magic Finale'] = { range = "Blurred Harp +1" }
 	sets.midcast.Mazurka = { range = "Marsyas" }
 	sets.midcast.Etude = { head = "Mousai Turban +1" }
-	sets.midcast.Prelude = { back = "Intarabus's Cape" }
+	sets.midcast.Prelude = { back = gear.Intarabus.Idle }
 	sets.midcast.Mambo= { feet = "Mousai Crackows +1" }
 	
 
@@ -182,7 +194,7 @@ function init_gear_sets()
 	sets.midcast.SongEffect =
 	{
 		main = "Kali", sub = "Genmei Shield", range = "Gjallarhorn",
-		head = "Fili Calot +2", neck = "Mnbw. Whistle +1", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",	
+		head = "Fili Calot +3", neck = "Mnbw. Whistle +1", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",	
 		body = "Fili Hongreline +2", hands = "Fili Manchettes +2", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
 		back = "Fi Follet Cape", waist = "Embla Sash", legs = "Inyanga Shalwar +2", feet = "Brioso Slippers +1"
 	}
@@ -266,14 +278,14 @@ function init_gear_sets()
 		range = "Linos",
 		head = "Aya. Zucchetto +2", neck = "Bard's Charm +1", ear1 = "Crep. Earring", ear2 = "Telos Earring",
 		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
-		back = "Intarabus's Cape", waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Intarabus.TP, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.engaged.DW =
 	{
 		range = "Linos",
 		head = "Aya. Zucchetto +2", neck = "Bard's Charm +2", ear1 = "Eabani Earring", ear2 = "Telos Earring",
 		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
-		back = "Intarabus's Cape", waist = "Reiki Yotai", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Intarabus.TP, waist = "Reiki Yotai", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 end
 
