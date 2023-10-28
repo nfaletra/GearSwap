@@ -89,7 +89,7 @@ T{
 	'elegy', 'requiem', 'bind', 'weight', 'bio', 'dia', 'slow', 'max hp down', 'max mp down',
 	'str down', 'dex down', 'vit down', 'agi down', 'int down', 'mnd down', 'chr down',
 	'attack down', 'accuracy down', 'defense down', 'magic def. down', 'magic atk. down', 'evasion down', 'magic acc. down', 'magic evasion down',
-	'burn', 'frost', 'choke', 'rasp', 'shock', 'drown'
+	'burn', 'frost', 'choke', 'rasp', 'shock', 'drown', 'gravity'
 }
 
 local LastStatus = {}
@@ -229,7 +229,7 @@ end
 function GetCurePriority(hp)
 	hp = 100 - tonumber(hp)
 	local priority = 0
-	if hp == 0 or hp > 85 then
+	if hp == 0 or hp > 80 then
 		priority = 0
 	else
 		priority = (0.0007 * hp * hp * hp * hp) + (0.0028 * hp * hp * hp) + (0.707 * hp * hp) + (2.7944 * hp) + 97.323
@@ -274,7 +274,8 @@ function CanStatusHeal()
 end
 
 function ShouldBuff()
-	return S{ 'WHM', 'SCH', 'RDM' }:contains(player.main_job)
+	--return S{ 'WHM', 'SCH', 'RDM' }:contains(player.main_job)
+	return false
 end
 
 function party_buff_change(affectedPlayer, buffName, gain)
@@ -1246,7 +1247,6 @@ function user_aftercast(spell, spellMap, eventArgs)
 		end
 
 		if #ActionStack > 0 then
-			eventArgs.handled = true
 			local targetId = tostring(spell.target.id)
 			for i = 1, #ActionStack, 1 do
 				if spell.english == ActionStack[i].spell.english and
@@ -1265,18 +1265,24 @@ function user_aftercast(spell, spellMap, eventArgs)
 					elseif not spell.cast_time or spell.type == 'JobAbility' or spell.type == 'Scholar' or spell.type == 'Item' or spell.type == 'PetCommand' or (spell.type == 'CorsairRoll' and ActionStack[i].spell.en == 'Double-Up') then
 						tickdelay = os.clock() + 0.8
 					elseif ActionStack[i].dummySong then
-						tickdelay = os.clock() + 8
+						if buffactive['Nightingale'] then
+							tickdelay = os.clock() + 2.5
+						else
+							tickdelay = os.clock() + 5
+						end
 					else
 						tickdelay = os.clock() + 2.5
 					end
 
 					RebuildArray(ActionStack[i].spell, ActionStack[i].target)
 					ShowArrayContents()
+					eventArgs.handled = true
 					break
 				elseif spell.type == 'CorsairRoll' and ActionStack[i].spell.en == 'Double-Up' then
 					RebuildArray(ActionStack[i].spell, ActionStack[i].target)
 					tickdelay = os.clock() + 0.8
 					ShowArrayContents()
+					eventArgs.handled = true
 					break
 				end
 			end

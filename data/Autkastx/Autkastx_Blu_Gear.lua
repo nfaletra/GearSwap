@@ -30,6 +30,7 @@ function user_job_setup()
 	send_command('bind ^@!` gs c cycle SkillchainMode')
 	send_command('bind !backspace input /ja "Unbridled Learning" <me>;wait 1;input /ja "Diffusion" <me>;wait 2;input /ma "Mighty Guard" <me>')
 	send_command('bind @backspace input /ja "Unbridled Learning" <me>;wait 1;input /ja "Diffusion" <me>;wait 2;input /ma "Carcharian Verve" <me>')
+	send_command('bind ^backspace input /ja "Unbridled Learning" <me>;wait 1;input /ma "Cruel Joke" <t>')
 	send_command('bind @f10 gs c toggle LearningMode')
 	send_command('bind ^@!` gs c cycle MagicBurstMode')
 	send_command('bind @f8 gs c toggle AutoNukeMode')
@@ -118,18 +119,17 @@ function init_gear_sets()
 	sets.precast.WS =
 	{
 		ammo = "Oshasha's Treatise",
-		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Brutal Earring", ear2 = "Moonshade Earring",
+		head = "Hashi. Kavuk +2", neck = "Fotia Gorget", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Epona's Ring", ring2 = "Ilabrat Ring",
-		back = gear.Rosmerta.WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Rosmerta.WSD, waist = "Fotia Belt", legs = "Luhlaza Shalwar +3", feet = "Nyame Sollerets"
 	}
 
-	sets.precast.WS['Expiacion'] =
+	sets.precast.WS['Expiacion'] = set_combine(sets.precast.WS,
 	{
-		ammo = "Oshasha's Treatise",
-		head = "Nyame Helm", neck = "Mirage Stole +2", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Epaminondas's Ring", ring2 = "Rufescent Ring",
-		back = gear.Rosmerta.WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
-	}
+		neck = "Mirage Stole +2",
+		ring1 = "Epaminondas's Ring", ring2 = "Rufescent Ring",
+		waist = "Sailfi Belt +1",
+	})
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS['Expiacion'], {})
 	sets.precast.WS['Judgement'] = set_combine(sets.precast.WS['Expiacion'], {})
 
@@ -241,7 +241,7 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].Magical.SIRD =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Nyame Helm", neck = "Loricate Torque +1", ear1 = "Magnetic Earring",
+		head = "Nyame Helm", neck = "Twilight Torque", ear1 = "Magnetic Earring",
 		body = "Nyame Mail", hands = "Rawhide Gloves", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
 		back = "Fi Follet Cape +1", waist = "Rumination Sash", legs = "Assim. Shalwar +2", feet = gear.amalric.feet.d
 	}
@@ -281,7 +281,7 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Loricate Torque +1", ear1 = "Regal Earring", ear2 = "Mendi. Earring",
-		body = "Vrikodara Jupon", hands = "Telchine Gloves", ring1 = "Janniston Ring", ring2 = "Menelaus's Ring",
+		body = "Vrikodara Jupon", hands = "Telchine Gloves", ring1 = "Naji's Loop", ring2 = "Menelaus's Ring",
 		back = gear.Rosmerta.Cure, waist = "Luminary Sash", legs = "Nyame Flanchard", feet = "Medium's Sabots"
 	}
 
@@ -411,7 +411,7 @@ function init_gear_sets()
 		back = gear.Rosmerta.Evasion, waist = "Kasiri Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
-	sets.Kiting = { ring1 = "Shneddick Ring +1", legs = "Carmine Cuisses +1" }
+	sets.Kiting = { ring1 = "Shneddick Ring", legs = "Carmine Cuisses +1" }
 
 	-- Extra Melee sets.  Apply these on top of melee sets.
 	sets.Knockback = {}

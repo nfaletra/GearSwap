@@ -122,7 +122,7 @@ function AddSpellToStack(spellToAdd, spellTarget, options)
 	{
 		priority = options.priority or 1,
 		partyCheck = options.partyCheck or false,
-		withStrategem = options.withStrategem or false,
+		withStratagem = options.withStratagem or false,
 		skillchainName = options.skillchainName or '',
 		skillchainStep = options.skillchainStep or 0,
 		pianissimo = options.pianissimo or false,

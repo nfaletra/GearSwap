@@ -109,11 +109,11 @@ function job_filtered_action(spell, eventArgs)
 		-- WS 112 is Double Thrust, meaning a Spear is equipped.
 		if available_ws:contains(112) then
             if spell.english == "Tachi: Fudo" then
-				windower.chat.input('/ws "Stardiver" '..spell.target.raw)
+				windower.chat.input('/ws "Impulse Drive" '..spell.target.raw)
                 cancel_spell()
 				eventArgs.cancel = true
             elseif spell.english == "Tachi: Shoha" then
-                send_command('@input /ws "Impulse Drive" '..spell.target.raw)
+                send_command('@input /ws "Stardiver" '..spell.target.raw)
                 cancel_spell()
 				eventArgs.cancel = true
             elseif spell.english == "Tachi: Rana" then

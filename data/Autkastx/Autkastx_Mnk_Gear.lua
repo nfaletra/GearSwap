@@ -25,7 +25,8 @@ function user_job_setup()
 		TP = { name = "Segomo's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%' } },
 		STR_DA = { name = "Segomo's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } },
 		INT_WSD = { name = "Segomo's Mantle", augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } },
-		VIT_WSD = { name = "Segomo's Mantle", augments = { 'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } }
+		VIT_WSD = { name = "Segomo's Mantle", augments = { 'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } },
+		Counter = { name = "Segomo's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'System: 1 ID: 640 Val: 4' } },
 	}
 
 	select_default_macro_book()
@@ -43,7 +44,7 @@ function init_gear_sets()
 	sets.precast.JA['Boost'] = { hands = "Anchor. Gloves +3" }
 	sets.precast.JA['Boost'].OutOfCombat = { hands = "Anchor. Gloves +3" }
 	sets.precast.JA['Dodge'] = { feet = "Anch. Gaiters +3" }
-	sets.precast.JA['Focus'] = { head = "Anchor. Crown +1" }
+	sets.precast.JA['Focus'] = { head = "Anchor. Crown +3" }
 	sets.precast.JA['Counterstance'] = { feet = "Hes. Gaiters +3" }
 	sets.precast.JA['Footwork'] = { feet = "Shukuyu Sune-Ate" }
 	sets.precast.JA['Formless Strikes'] = { body = "Hes. Cyclas +3" }
@@ -54,7 +55,7 @@ function init_gear_sets()
 	sets.precast.JA['Chakra'] =
 	{
 		head = "Genmei Kabuto", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Anch. Cyclas +1", hands = "Hes. Gloves +3", ring1 = "Niqmaddu Ring", ring2 = "Regal Ring",
+		body = "Anch. Cyclas +2", hands = "Hes. Gloves +3", ring1 = "Niqmaddu Ring", ring2 = "Regal Ring",
 		back = gear.Segomo.VIT_WSD, legs = "Tatena. Haidate +1", feet = "Anch. Gaiters +3"
 	}
 
@@ -119,6 +120,10 @@ function init_gear_sets()
 		body = gear.adhemar.body.b, hands = gear.adhemar.hands.b, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.Segomo.STR_DA, waist = "Moonbow Belt +1", legs = "Mpaca's Hose", feet = gear.herculean_ta_feet
 	}
+	sets.precast.WS['Spinning Attack'] = set_combine(sets.precast.WS['Raging Fists'],
+	{
+		head = "Adhemar Bonnet +1", ear2 = "Schere Earring",
+	})
 
 	sets.precast.WS['Shijin Spiral'] =
 	{
@@ -293,8 +298,8 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Bhikku Crown +2", neck = "Bathy Choker +1", ear1 = "Sherida Earring", ear2 = "Bhikku Earring +1",
-		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Anch. Hose +3", feet = "Bhikku Gaiters +3"
+		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
+		back = gear.Segomo.Counter, waist = "Moonbow Belt +1", legs = "Bhikku Hose +3", feet = "Bhikku Gaiters +3"
 	}
 	sets.engaged.Acc.Counter = set_combine(sets.engaged.Counter, {})
 

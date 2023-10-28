@@ -110,7 +110,7 @@ function job_setup()
 		end
 
 		if missingHP then
-			if missingHP < 250 then
+			if missingHP < 300 then
 				if spell_recasts[1] < spell_latency then
 					windower.chat.input('/ma "Cure" '..cureTarget.id..'')
 				elseif spell_recasts[2] < spell_latency then
@@ -118,7 +118,7 @@ function job_setup()
 				else
 					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
 				end
-			elseif missingHP < 400 then
+			elseif missingHP < 500 then
 				if spell_recasts[2] < spell_latency then
 					windower.chat.input('/ma "Cure II" '..cureTarget.id..'')
 				elseif spell_recasts[3] < spell_latency then
@@ -128,7 +128,7 @@ function job_setup()
 				else
 					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
 				end
-			elseif missingHP < 800 then
+			elseif missingHP < 1000 then
 				if spell_recasts[3] < spell_latency then
 					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
 				elseif spell_recasts[4] < spell_latency then
@@ -136,7 +136,7 @@ function job_setup()
 				else
 					add_to_chat(123, 'Abort: Appropriate cures are on cooldown.')
 				end
-			elseif missingHP < 1200 then
+			elseif missingHP < 1500 then
 				if spell_recasts[4] < spell_latency then
 					windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
 				elseif spell_recasts[3] < spell_latency then
@@ -146,7 +146,7 @@ function job_setup()
 				else
 					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
 				end
-			elseif missingHP < 1500 then
+			elseif missingHP < 3000 then
 				if spell_recasts[5] < spell_latency then
 					windower.chat.input('/ma "Cure V" '..cureTarget.id..'')
 				elseif spell_recasts[4] < spell_latency then
@@ -564,10 +564,8 @@ end
 buff_spell_lists = {
 	Auto = {--Options for When are: Always, Engaged, Idle, OutOfCombat, Combat
 		{Name='Reraise IV',		Buff='Reraise',		SpellID=848,	When='Always'},
-		{Name='Haste',			Buff='Haste',		SpellID=57,		When='Always'},
+		{Name='Blink',			Buff='Blink',		SpellID=53,		When='Always'},
 		{Name='Aurorastorm',	Buff='Aurorastorm',	SpellID=119,	When='Always'},
-		{Name='Refresh',		Buff='Refresh',		SpellID=109,	When='Always'},
-		{Name='Stoneskin',		Buff='Stoneskin',	SpellID=54,		When='Always'},
 	},
 	Default = {
 		{Name='Reraise IV',		Buff='Reraise',		SpellID=848,	Reapply=false},

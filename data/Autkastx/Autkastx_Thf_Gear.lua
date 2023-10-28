@@ -98,9 +98,9 @@ function init_gear_sets()
 	sets.precast.JA['Flee'] = {}
 	sets.precast.JA['Hide'] = { body = "Pillager's Vest +3" }
 	sets.precast.JA['Conspirator'] = {} 
-	sets.precast.JA['Steal'] = {}
+	sets.precast.JA['Steal'] = { ammo = "Barathrum" }
 	sets.precast.JA['Mug'] = {}
-	sets.precast.JA['Despoil'] = { legs = "Raider's Culottes +1", feet = "Skulk. Poulaines +2" }
+	sets.precast.JA['Despoil'] = { ammo = "Barathrum", legs = "Raider's Culottes +1", feet = "Skulk. Poulaines +2" }
 	sets.precast.JA['Perfect Dodge'] = { hands = "Plun. Armlets +3" }
 	sets.precast.JA['Feint'] = { legs = "Plun. Culottes +3" }
 

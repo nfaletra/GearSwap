@@ -12,9 +12,9 @@ function user_job_setup()
 	info.ExtraSongs = 2
 
 	-- Auto Songs to sing
-	info.AutoSongs = 'march min min mad'
+	info.AutoSongs = 'march march mad mad'
 	-- How long to wait between auto singing
-	info.AutoSongDelay = 210 -- 3:30 min
+	info.AutoSongDelay = 270 -- 3:30 min
 
 	info.CastSpeed = 0.2
 
@@ -34,7 +34,7 @@ function user_job_setup()
 	send_command('bind @` gs c cycle MagicBurstMode')
 	send_command('bind @f10 gs c cycle RecoverMode')
 	send_command('bind @f8 gs c toggle AutoNukeMode')
-	send_command('bind !r gs c weapons None;gs c update')
+	send_command('bind ^r gs c weapons None;gs c update')
 	send_command('bind !q gs c weapons NukeWeapons;gs c update')
 	send_command('bind ^q gs c weapons Swords;gs c update')
 
@@ -67,7 +67,7 @@ function init_gear_sets()
 		main = "Kali", sub = "Genmei Shield",
 		head = "Bunzi's Hat", neck = "Orunmila's Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = "Inyanga Jubbah +2", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
-		back = "Fi Follet Cape +1", waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Volte Gaiters"
+		back = "Fi Follet Cape +1", waist = "Witful Belt", legs = "Kaykaus Tights +1", feet = "Volte Gaiters"
 	}
 
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
@@ -77,7 +77,7 @@ function init_gear_sets()
 	
 	sets.precast.FC.BardSong =
 	{
-		main = "Kali", sub = "Genmei Shield", range = "Blurred Harp +1",ammo=empty,
+		main = "Kali", sub = "Genmei Shield", range = "Blurred Harp +1", ammo = empty,
 		head = "Fili Calot +3", neck = "Orunmila's Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = "Inyanga Jubbah +2", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
 		back = "Fi Follet Cape +1", waist = "Embla Sash", legs = "Aya. Cosciales +2", feet = "Bihu Slippers +1"
@@ -97,10 +97,9 @@ function init_gear_sets()
 
 	sets.precast.FC.Daurdabla = set_combine(sets.precast.FC.BardSong, {range=info.ExtraSongInstrument})
 	sets.precast.DaurdablaDummy = sets.precast.FC.Daurdabla
-		
-	
+
 	-- Precast sets to enhance JAs
-	
+
 	sets.precast.JA.Nightingale = {feet="Bihu Slippers +1"}
 	sets.precast.JA.Troubadour = {body="Bihu Jstcorps +1"}
 	sets.precast.JA['Soul Voice'] = {legs="Bihu Cannions +1"}
@@ -179,7 +178,7 @@ function init_gear_sets()
 	sets.midcast.Paeon = { head = "Brioso Roundlet +1" }
 	sets.midcast.March = { hands = "Fili Manchettes +1" }
 	sets.midcast['Honor March'] = set_combine(sets.midcast.March, { range = "Marsyas"})
-	sets.midcast.Minuet = { body = "Fili Hongreline +2" }
+	sets.midcast.Minuet = { body = "Fili Hongreline +3" }
 	sets.midcast.Minne = { legs = "Mousai Seraweels +1" }
 	sets.midcast.Carol = { hands = "Mousai Gages +1" }
 	sets.midcast["Sentinel's Scherzo"] = { feet = "Fili Cothurnes +1" }
@@ -195,8 +194,8 @@ function init_gear_sets()
 	{
 		main = "Kali", sub = "Genmei Shield", range = "Gjallarhorn",
 		head = "Fili Calot +3", neck = "Mnbw. Whistle +1", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",	
-		body = "Fili Hongreline +2", hands = "Fili Manchettes +2", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
-		back = "Fi Follet Cape", waist = "Embla Sash", legs = "Inyanga Shalwar +2", feet = "Brioso Slippers +1"
+		body = "Fili Hongreline +3", hands = "Fili Manchettes +2", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
+		back = "Fi Follet Cape", waist = "Embla Sash", legs = "Inyanga Shalwar +2", feet = "Brioso Slippers +2"
 	}
 
 	-- For song defbuffs (duration primary, accuracy secondary)
@@ -217,11 +216,13 @@ function init_gear_sets()
 	sets.midcast.DaurdablaDummy = set_combine(sets.midcast.SongRecast, { range = info.ExtraSongInstrument })
 
 	-- Other general spells and classes.
-	sets.midcast.Cure = {main="Serenity",sub="Curatio Grip",ammo="Pemphredo Tathlum",
-        head="Gende. Caubeen +1",neck="Incanter's Torque",ear1="Gifted Earring",ear2="Mendi. Earring",
-        body="Kaykaus Bliaut",hands="Kaykaus Cuffs",ring1="Janniston Ring",ring2="Menelaus's Ring",
-        back="Tempered Cape +1",waist="Luminary Sash",legs="Carmine Cuisses +1",feet="Kaykaus Boots"}
-		
+	sets.midcast.Cure =
+	{
+		main = "Daybreak", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
+		head = "Kaykaus Mitra +1", neck = "Reti Pendant", ear1 = "Calamitous Earring", ear2 = "Magnetic Earring",
+		body = "Kaykaus Bliaut +1", hands = "Kaykaus Cuffs +1", ring1 = "Metamor. Ring +1", ring2 = "Mephitas's Ring +1",
+		back = "Aurist's Cape +1", waist = "Shinjutsu-no-Obi +1", legs = "Kaykaus Tights +1", feet = "Kaykaus Boots +1"
+	}
 	sets.midcast.Curaga = sets.midcast.Cure
 		
 	sets.Self_Healing = {neck="Phalaina Locket",hands="Buremte Gloves",ring2="Kunaji Ring",waist="Gishdubar Sash"}
@@ -276,7 +277,7 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		range = "Linos",
-		head = "Aya. Zucchetto +2", neck = "Bard's Charm +1", ear1 = "Crep. Earring", ear2 = "Telos Earring",
+		head = "Aya. Zucchetto +2", neck = "Bard's Charm +2", ear1 = "Crep. Earring", ear2 = "Telos Earring",
 		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
 		back = gear.Intarabus.TP, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}

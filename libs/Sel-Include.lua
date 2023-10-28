@@ -1108,7 +1108,7 @@ function default_post_precast(spell, spellMap, eventArgs)
 			if state.WeaponskillMode.value == 'Proc' and not (sets.precast.WS[spell.english] and sets.precast.WS[spell.english].Proc) and sets.precast.WS.Proc then
 				equip(sets.precast.WS.Proc)
 			end
-			
+
 			if state.Capacity.value == true then
 				equip(sets.Capacity)
 			end
@@ -1862,9 +1862,7 @@ function get_precast_set(spell, spellMap)
     -- Handle automatic selection of set based on spell class/name/map/skill/type.
     equipSet = select_specific_set(equipSet, spell, spellMap)
 
-    
     -- Once we have a named base set, do checks for specialized modes (casting mode, weaponskill mode, etc).
-    
     if spell.action_type == 'Magic' then
 		if state.CastingMode.current:contains('DT') and not (player.in_combat or being_attacked) then
 		elseif state.CastingMode.current:contains('SIRD') and not (player.in_combat or being_attacked) then

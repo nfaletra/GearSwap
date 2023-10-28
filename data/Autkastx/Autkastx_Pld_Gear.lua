@@ -59,13 +59,12 @@ function init_gear_sets()
 		back = gear.Rudianos.Enmity, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Chev. Sabatons +2"
 	}
 
-	sets.Enmity.SIRD = set_combine(sets.Enmity,
+	sets.SIRD =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Souv. Schaller +1", neck = "Moonlight Necklace",
-		body = "Chev. Cuirass +2",
+		head = "Souv. Schaller +1", neck = "Moonlight Necklace", ear1 = "Magnetic Earring",
 		waist = "Rumination Sash", legs = "Founder's Hose",
-	})
+	}
 
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Invincible'] = set_combine(sets.Enmity, { legs = "Cab. Breeches +3" })
@@ -217,11 +216,11 @@ function init_gear_sets()
 	sets.midcast.FastRecast.DT = set_combine(sets.midcast.FastRecast, {})
 
 	sets.midcast.Flash = set_combine(sets.Enmity, { head = "Carmine Mask +1" })
-	sets.midcast.Flash.SIRD = set_combine(sets.midcast.Flash, sets.Enmity.SIRD, {})
+	sets.midcast.Flash.SIRD = set_combine(sets.midcast.Flash, sets.SIRD, {})
 	sets.midcast.Stun = set_combine(sets.Enmity, { head = "Carmine Mask +1" })
-	sets.midcast.Stun.SIRD = set_combine(sets.midcast.Stun, sets.Enmity.SIRD, {})
+	sets.midcast.Stun.SIRD = set_combine(sets.midcast.Stun, sets.SIRD, {})
 	sets.midcast['Blue Magic'] = set_combine(sets.Enmity, {})
-	sets.midcast['Blue Magic'].SIRD = set_combine(sets.Enmity.SIRD, {})
+	sets.midcast['Blue Magic'].SIRD = set_combine(sets.SIRD, {})
 
 	sets.midcast.Cure =
 	{
@@ -230,10 +229,10 @@ function init_gear_sets()
 		body = "Souv. Cuirass +1", hands = "Macabre Gaunt. +1", ring1 = "Eihwaz Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.Rudianos.FC, waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
 	}
-	sets.midcast.Cure.SIRD = set_combine(sets.midcast.Cure, { hands = "Regal Gauntlets" })
+	sets.midcast.Cure.SIRD = set_combine(sets.midcast.Cure, sets.SIRD, {})
 
 	sets.Self_Healing = set_combine(sets.midcast.Cure, {})
-	sets.Self_Healing.SIRD = set_combine(sets.Self_Healing, { hands = "Regal Gauntlets" })
+	sets.Self_Healing.SIRD = set_combine(sets.Self_Healing, sets.SIRD, {})
 
 	sets.midcast.Reprisal =
 	{
@@ -242,11 +241,7 @@ function init_gear_sets()
 		body = "Rev. Surcoat +3", hands = "Regal Gauntlets", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
 		back = gear.Rudianos.FC, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Chev. Sabatons +2"
 	}
-	sets.midcast.Reprisal.SIRD = set_combine(sets.midcast.Reprisal,
-	{
-		body = "Chev. Cuirass +2",
-		waist = "Rumination Sash", legs = "Founder's Hose",
-	})
+	sets.midcast.Reprisal.SIRD = set_combine(sets.midcast.Reprisal, sets.SIRD, {})
 
 	sets.Cure_Received = { hands = "Souv. Handsch. +1", feet = "Souveran Schuhs +1" }
 	sets.Self_Refresh = { waist = "Gishdubar Sash" }
@@ -258,13 +253,7 @@ function init_gear_sets()
 		body = "Shab. Cuirass +1", hands = "Regal Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = "Moonlight Cape", waist = "Olympus Sash", legs = "Carmine Cuisses +1", feet = "Carmine Greaves +1"
 	}
-	sets.midcast['Enhancing Magic'].SIRD =
-	{
-		ammo = "Staunch Tathlum +1",
-		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
-		body = "Rev. Surcoat +3", hands = "Regal Gauntlets", ring1 = "Moonlight Ring", ring2 = "Stikini Ring +1",
-		back = "Moonlight Cape", waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
-	}
+	sets.midcast['Enhancing Magic'].SIRD = set_combine(sets.midcast['Enhancing Magic'], sets.SIRD, {})
 
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], { waist = "Siegel Sash" })
 
@@ -278,11 +267,7 @@ function init_gear_sets()
 		body = "Odyssean Chestplate", hands = "Souv. Handsch. +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = "Weard Mantle", waist = "Creed Baudrier", legs = "Sakpata's Cuisses", feet = "Souveran Schuhs +1"
 	})
-	sets.midcast.Phalanx.SIRD = set_combine(sets.midcast.Phalanx,
-	{
-		head = "Souv. Schaller +1", neck = "Moonlight Necklace",
-		waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
-	})
+	sets.midcast.Phalanx.SIRD = set_combine(sets.midcast.Phalanx, sets.SIRD, {})
 	sets.Phalanx_Received = sets.midcast.Phalanx
 
 	sets.midcast['Enlight II'] = sets.midcast['Enhancing Magic']

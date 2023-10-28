@@ -2,7 +2,7 @@
 function user_job_setup()
 	state.OffenseMode:options('Normal', 'Acc')
 	state.CastingMode:options('Normal', 'Resistant', 'OccultAcumen')
-	state.IdleMode:options('Normal', 'PDT')
+	state.IdleMode:options('Normal')
 	state.Weapons:options('None', 'Gridarvor', 'Khatvanga')
 
 	gear.magic_jse_back = { name = "Campestres's Cape",augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10',}}
@@ -38,9 +38,9 @@ function init_gear_sets()
 	sets.precast.JA['Elemental Siphon'] =
 	{
 		main = "Chatoyant Staff", sub = "Vox Grip", ammo = "Esper Stone +1",
-		head = "Convoker's Horn +2", neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "C. Palug Earring",
-		body = "Telchine Chasuble", hands = "Baayami Cuffs +1", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
-		back = "Conveyance Cape", waist = "Kobo Obi", legs = "Telchine Braconi", feet = "Beck. Pigaches +1"
+		head = "Baayami Hat", neck = "Incanter's Torque", ear1 = "Lodurr Earring", ear2 = "C. Palug Earring",
+		body = "Baayami Robe", hands = "Baayami Cuffs +1", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
+		back = "Conveyance Cape", waist = "Kobo Obi", legs = "Baayami Slops", feet = "Beck. Pigaches +1"
 	}
 
 	sets.precast.JA['Mana Cede'] = { hands = "Beck. Bracers +1" }
@@ -222,19 +222,18 @@ function init_gear_sets()
 
 	sets.midcast.Pet.DebuffBloodPactWard =
 	{
-		main = "Espiritus", sub = "Vox Grip", ammo = "Epitaph",
+		main = "Espiritus", sub = "Vox Grip", ammo = "Sancus Sachet +1",
 		head = "Convoker's Horn +2", neck = "Smn. Collar +2", ear1 = "Lugalbanda Earring", ear2 = "Enmerkar Earring",
 		body = "Con. Doublet +3", hands = "Convo. Bracers +2", ring1 = "Evoker's Ring", ring2 = "C. Palug Ring",
 		back = gear.Campestres.Magic, waist = "Regal Belt", legs = "Convo. Spats +2", feet = "Convo. Pigaches +3"
 	}
-
 	sets.midcast.Pet.DebuffBloodPactWard.Acc = sets.midcast.Pet.DebuffBloodPactWard
 
 	sets.midcast.Pet.PhysicalBloodPactRage =
 	{
 		main = "Gridarvor", sub = "Elan Strap +1", ammo = "Epitaph",
 		head = "Apogee Crown +1", neck = "Smn. Collar +2", ear1 = "Lugalbanda Earring", ear2 = "Kyrene's Earring",
-		body = "Con. Doublet +3", hands = "Merlinic Dastanas", ring1 = "Varar Ring +1", ring2 = "Varar Ring +1",
+		body = "Con. Doublet +3", hands = "Convo. Bracers +2", ring1 = "Varar Ring +1", ring2 = "C. Palug Ring",
 		back = gear.Campestres.Idle, waist = "Incarnation Sash", legs = gear.apogee.legs.d, feet = gear.apogee.feet.b
 	}
 
@@ -244,7 +243,7 @@ function init_gear_sets()
 	{
 		main = "Grioavolr", sub = "Elan Strap +1", ammo = "Epitaph",
 		head = "C. Palug Crown", neck = "Smn. Collar +2", ear1 = "Lugalbanda Earring", ear2 = "Gelos Earring",
-		body = "Apogee Dalmatica +1", hands = "Merlinic Dastanas", ring1 = "Varar Ring +1", ring2 = "Varar Ring +1",
+		body = "Con. Doublet +3", hands = "Merlinic Dastanas", ring1 = "Varar Ring +1", ring2 = "Varar Ring +1",
 		back = gear.Campestres.Magic, waist = "Regal Belt", legs = "Enticer's Pants", feet = gear.apogee.feet.a
 	}
 
@@ -267,35 +266,23 @@ function init_gear_sets()
 	{
 		main = "Grioavolr" , sub = "Elan Strap +1", ammo = "Epitaph",
 		head = "C. Palug Crown", neck = "Smn. Collar +2", ear1 = "Lugalbanda Earring", ear2 = "Gelos Earring",
-		body = "Beck. Doublet +2", hands = "Merlinic Dastanas", ring1 = "Varar Ring +1", ring2 = "Varar Ring +1",
+		body = "Apogee Dalmatica +1", hands = "Merlinic Dastanas", ring1 = "Varar Ring +1", ring2 = "Varar Ring +1",
 		back = gear.Campestres.Magic, waist = "Regal Belt", legs = gear.apogee.legs.a, feet = gear.apogee.feet.a
 	}
-		
-	sets.midcast.Pet['Flaming Crush'].Acc = set_combine(sets.midcast.Pet['Flaming Crush'], { feet = "Convo. Pigaches +3" })
-	
-	sets.midcast.Pet['Mountain Buster'] = set_combine(sets.midcast.Pet.PhysicalBloodPactRage, {legs="Enticer's Pants"})
-	sets.midcast.Pet['Mountain Buster'].Acc = set_combine(sets.midcast.Pet.PhysicalBloodPactRage.Acc, {legs="Enticer's Pants"})
-	sets.midcast.Pet['Rock Buster'] = set_combine(sets.midcast.Pet.PhysicalBloodPactRage, {legs="Enticer's Pants"})
-	sets.midcast.Pet['Rock Buster'].Acc = set_combine(sets.midcast.Pet.PhysicalBloodPactRage.Acc, {legs="Enticer's Pants"})
-	sets.midcast.Pet['Crescent Fang'] = set_combine(sets.midcast.Pet.PhysicalBloodPactRage, {legs="Enticer's Pants"})
-	sets.midcast.Pet['Crescent Fang'].Acc = set_combine(sets.midcast.Pet.PhysicalBloodPactRage.Acc, {legs="Enticer's Pants"})
-	sets.midcast.Pet['Eclipse Bite'] = set_combine(sets.midcast.Pet.PhysicalBloodPactRage, {legs="Enticer's Pants"})
-	sets.midcast.Pet['Eclipse Bite'].Acc = set_combine(sets.midcast.Pet.PhysicalBloodPactRage.Acc, {legs="Enticer's Pants"})
-	sets.midcast.Pet['Blindside'] = set_combine(sets.midcast.Pet.PhysicalBloodPactRage, {legs="Enticer's Pants"})
-	sets.midcast.Pet['Blindside'].Acc = set_combine(sets.midcast.Pet.PhysicalBloodPactRage.Acc, {legs="Enticer's Pants"})
 
-    --------------------------------------
-    -- Idle/resting/defense/etc sets
-    --------------------------------------
-    
-    -- Resting sets
-    sets.resting =
-	{
-		main = "Mpaca's Staff", sub = "Khonsu", ammo = "Staunch Tathlum +1",
-		head = "Beckoner's Horn +2", neck = "Smn. Collar +2", ear1 = "Eabani Earring", ear2 = "Beck. Earring +1",
-		body = "Shomonjijoe +1", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
-		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = "Inyan. Crackows +2"
-	}
+	sets.midcast.Pet['Mountain Buster'] = set_combine(sets.midcast.Pet.PhysicalBloodPactRage, { legs = "Enticer's Pants" })
+	sets.midcast.Pet['Rock Buster'] = set_combine(sets.midcast.Pet.PhysicalBloodPactRage, { legs = "Enticer's Pants" })
+	sets.midcast.Pet['Crescent Fang'] = set_combine(sets.midcast.Pet.PhysicalBloodPactRage, { legs = "Enticer's Pants" })
+	sets.midcast.Pet['Eclipse Bite'] = set_combine(sets.midcast.Pet.PhysicalBloodPactRage, { legs = "Enticer's Pants" })
+	sets.midcast.Pet['Blindside'] = set_combine(sets.midcast.Pet.PhysicalBloodPactRage, { legs = "Enticer's Pants" })
+	sets.midcast.Pet['Hysteric Assault'] = set_combine(sets.midcast.Pet.PhysicalBloodPactRage, { legs = "Enticer's Pants" })
+
+	--------------------------------------
+	-- Idle/resting/defense/etc sets
+	--------------------------------------
+
+	-- Resting sets
+	sets.resting = {}
 
 	-- Idle sets
 	sets.idle =
@@ -303,15 +290,7 @@ function init_gear_sets()
 		main = "Mpaca's Staff", sub = "Khonsu", ammo = "Staunch Tathlum +1",
 		head = "Beckoner's Horn +2", neck = "Smn. Collar +2", ear1 = "Eabani Earring", ear2 = "Beck. Earring +1",
 		body = "Shomonjijoe +1", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Stikini Ring +1",
-		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
-	}
-
-	sets.idle.PDT =
-	{
-		main = "Mpaca's Staff", sub = "Khonsu", ammo = "Staunch Tathlum +1",
-		head = "Beckoner's Horn +2", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Beck. Earring +1",
-		body = "Shomonjijoe +1", hands = "Bunzi's Gloves", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
-		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = "Inyan. Crackows +2"
+		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Baayami Sabots"
 	}
 
 	-- perp costs:
@@ -328,35 +307,12 @@ function init_gear_sets()
 
 	sets.idle.Avatar =
 	{
-		main = "Gridarvor", sub = "Elan Strap +1", ammo = "Epitaph",
-		head = "Beckoner's Horn +2", neck = "Caller's Pendant", ear1 = "Evans Earring", ear2 = "Beck. Earring +1",
-		body = "Beck. Doublet +2", hands = "Asteria Mitts +1", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
-		back = gear.Campestres.Idle, waist = "Lucidity Sash", legs = "Assid. Pants +1", feet = "Baayami Sabots"
+		main = "Gridarvor", sub = "Elan Strap +1", ammo = "Sancus Sachet +1",
+		head = "Beckoner's Horn +2", neck = "Smn. Collar +2", ear1 = "Cath Palug Earring", ear2 = "Beck. Earring +1",
+		body = "Beck. Doublet +2", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
+		back = gear.Campestres.Idle, waist = "Isa Belt", legs = "Inyanga Shalwar +2", feet = "Baayami Sabots"
 	}
-
-	sets.idle.PDT.Avatar =
-	{
-		main = "Gridarvor", sub = "Elan Strap +1", ammo = "Epitaph",
-		head = "Beckoner's Horn +2", neck = "Caller's Pendant", ear1 = "Evans Earring", ear2 = "Beck. Earring +1",
-		body = "Beck. Doublet +2", hands = "Bunzi's Gloves", ring1 = "Evoker's Ring", ring2 = "Defending Ring",
-		back = gear.Campestres.Idle, waist = "Lucidity Sash", legs = "Assid. Pants +1", feet = "Baayami Sabots"
-	}
-
-	sets.idle.Spirit =
-	{
-		main = "Gridarvor", sub = "Elan Strap +1", ammo = "Epitaph",
-		head = "Convoker's Horn +2", neck = "Caller's Pendant", ear1 = "Evans Earring", ear2 = "C. Palug Earring",
-		body = "Shomonjijoe +1", hands = "Bunzi's Gloves", ring1 = "Evoker's Ring", ring2 = "Defending Ring",
-		back = gear.Campestres.Idle, waist = "Lucidity Sash", legs = "Assid. Pants +1", feet = "Baayami Sabots"
-	}
-
-	sets.idle.PDT.Spirit =
-	{
-		main = "Gridarvor", sub = "Elan Strap +1", ammo = "Epitaph",
-		head = "Convoker's Horn +2", neck = "Caller's Pendant", ear1 = "Evans Earring", ear2 = "C. Palug Earring",
-		body = "Shomonjijoe +1", hands = "Bunzi's Gloves", ring1 = "Evoker's Ring", ring2 = "Defending Ring",
-		back = gear.Campestres.Idle, waist = "Lucidity Sash", legs = "Assid. Pants +1", feet = "Baayami Sabots"
-	}
+	sets.idle.Spirit = sets.idle.Avatar
 
 	--Favor always up and head is best in slot idle so no specific items here at the moment.
 	sets.idle.Avatar.Favor = {}

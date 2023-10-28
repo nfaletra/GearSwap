@@ -481,7 +481,7 @@ end
 autows_list = {['DualWeapons']='Realmrazer',['MeleeWeapons']='Realmrazer'}
 
 function extra_user_job_tick()
-	if player.hp == 0 and #ActionStack > 0 then
+	if player.hp == 0 and ActionStack and #ActionStack > 0 then
 		ClearActionStack()
 	end
 
@@ -646,6 +646,10 @@ function process_party_chat_word(message, sender)
 				end
 			elseif fiveSlice == 'sacri' or sixSlice == 'zombie' then
 				AddToStack(GetSpellFromName('Sacrifice'), sender, { partyCheck = true })
+			elseif sevenSlice == 'sneakga' and CheckAoERange(sender) then
+				AddToStack(GetSpellFromName('Sneak'), sender, { partyCheck = true, withStratagem = 'Accession' })
+			elseif sevenSlice == 'invisga' and CheckAoERange(sender) then
+				AddToStack(GetSpellFromName('Invisible'), sender, { partyCheck = true, withStratagem = 'Accession' })
 			elseif fiveSlice == 'sneak' then
 				AddToStack(GetSpellFromName('Sneak'), sender,
 				{
@@ -788,7 +792,7 @@ function process_party_chat_word(message, sender)
 				AddToStack(GetSpellFromName('Cursna'), sender,
 				{
 					precastCheck = function(this)
-						if os.clock() < this.addedAt < 1 then
+						if os.clock() - this.addedAt < 1 then
 							return true
 						end
 						local buffs GetPlayerBuffsFromAlliance(sender)

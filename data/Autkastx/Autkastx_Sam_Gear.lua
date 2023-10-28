@@ -31,14 +31,16 @@ function init_gear_sets()
 	sets.precast.JA.Meditate = { head = "Wakido Kabuto +2", hands = "Sakonji Kote +3", back = "Smertrios's Mantle" }
 	sets.precast.JA['Warding Circle'] = { head = "Wakido Kabuto +2" }
 	sets.precast.JA['Blade Bash'] = { hands = "Sakonji Kote +3" }
-	sets.precast.JA['Sekkanoki'] = { hands = "Kasuga Kote +1" }
+	sets.precast.JA['Sekkanoki'] = { hands = "Kasuga Kote +2" }
 	sets.precast.JA['Sengikori'] = { feet = "Kas. Sune-Ate +1" }
 
 	-- Fast cast sets for spells
 	sets.precast.FC =
 	{
-		neck = "Voltsurge Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
-		body = "Sacro Breastplate", hands = "Leyline Gloves", ring1 = "Lebeche Ring", ring2 = "Prolix Ring"
+		ammo = "Sapience Orb",
+		neck = "Orunmila's Torque", ear1 = "Etiolation Earring", ear2 = "Loquac. Earring",
+		body = "Sacro Breastplate", hands = "Leyline Gloves", ring1 = "Lebeche Ring", ring2 = "Medada's Ring",
+		legs = "Arjuna Breeches"
 	}
 
 	-- Ranged snapshot gear
@@ -49,17 +51,17 @@ function init_gear_sets()
 	sets.precast.WS =
 	{
 		ammo = "Knobkierrie",
-		head = "Mpaca's Cap", neck = "Sam. Nodowa +2", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Epaminondas's Ring",
-		back = "Atheling Mantle", waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		head = "Mpaca's Cap", neck = "Sam. Nodowa +2", ear1 = "Moonshade Earring", ear2 = "Kasuga Earring +1",
+		body = "Sakonji Domaru +3", hands = "Kasuga Kote +2", ring1 = "Niqmaddu Ring", ring2 = "Epaminondas's Ring",
+		back = "Smertrios's Mantle", waist = "Sailfi Belt +1", legs = "Wakido Haidate +3", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS.Proc =
 	{
 		ammo = "Hasty Pinion +1",
 		head = "Flam. Zucchetto +2", neck = "Moonbeam Nodowa", ear1 = "Telos Earring", ear2 = "Mache Earring +1",
-		body = "Tartarus Platemail", hands = "Flam. Manopolas +2", ring1 = "Ramuh Ring +1", ring2 = "Ramuh Ring +1",
-		back = "Smertrios's Mantle", waist = "Olseni Belt", legs = "Wakido Haidate +1", feet = "Flam. Gambieras +2"
+		body = "Sacro Breastplate", hands = "Flam. Manopolas +2", ring1 = "Ramuh Ring +1", ring2 = "Ramuh Ring +1",
+		back = "Smertrios's Mantle", waist = "Olseni Belt", legs = "Volte Hose", feet = "Flam. Gambieras +2"
 	}
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -69,7 +71,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS,
 	{
-		head = "Nyame Helm", ear2 = "Lugra Earring +1"
+		head = "Nyame Helm", ear1 = "Lugra Earring +1"
 	})
 
 	sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {})
@@ -112,16 +114,16 @@ function init_gear_sets()
 	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Coiste Bodhar",
-		ear1 = "Schere Earring",
-		body = "Tatena. Harama. +1", hands = "Ryuo Tekko +1",
-		waist = "Fotia Belt", legs = "Mpaca's Hose"
+		head = "Mpaca's Cap", neck = "Fotia Gorget", ear2 = "Schere Earring",
+		body = "Mpaca's Doublet", hands = "Mpaca's Gloves", ring2 = "Regal Ring",
+		waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	})
 
 	sets.precast.WS['Apex Arrow'] =
 	{
 		head = "Ynglinga Sallet", neck = "Fotia Gorget", ear1 = "Clearview Earring", ear2 = "Moonshade Earring",
 		body = "Kyujutsugi", hands = "Buremte Gloves", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
-		back = "Smertrios's Mantle", waist = "Fotia Belt", legs = "Wakido Haidate +1", feet = "Waki. Sune-Ate +1"
+		back = "Smertrios's Mantle", waist = "Fotia Belt", legs = "Wakido Haidate +3", feet = "Waki. Sune-Ate +1"
 	}
 
 	sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {})
@@ -139,7 +141,7 @@ function init_gear_sets()
 	{
 		head="Loess Barbuta +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
 		body="Tartarus Platemail",hands="Leyline Gloves",ring1="Defending Ring",ring2="Prolix Ring",
-		back="Moonlight Cape",waist="Tempus Fugit",legs="Wakido Haidate +1",feet="Amm Greaves"
+		back="Moonlight Cape",waist="Tempus Fugit",legs="Wakido Haidate +3",feet="Amm Greaves"
 	}
 
 	-- Specific spells
@@ -150,14 +152,14 @@ function init_gear_sets()
 	{
 		head = "Flam. Zucchetto +2", neck = "Combatant's Torque", ear1 = "Clearview Earring", ear2 = "Neritic Earring",
 		body = "Kyujutsugi", hands = "Buremte Gloves", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
-		back = "Smertrios's Mantle", waist = "Carrier's Sash", legs = "Wakido Haidate +1", feet = "Waki. Sune-Ate +1"
+		back = "Smertrios's Mantle", waist = "Carrier's Sash", legs = "Wakido Haidate +3", feet = "Waki. Sune-Ate +1"
 	}
 
 	sets.midcast.RA.Acc =
 	{
 		head = "Flam. Zucchetto +2", neck = "Combatant's Torque",ear1="Clearview Earring",ear2="Neritic Earring",
 		body = "Kyujutsugi", hands = "Buremte Gloves", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
-		back = "Smertrios's Mantle", waist = "Carrier's Sash", legs = "Wakido Haidate +1", feet = "Waki. Sune-Ate +1"
+		back = "Smertrios's Mantle", waist = "Carrier's Sash", legs = "Wakido Haidate +3", feet = "Waki. Sune-Ate +1"
 	}
 
 
@@ -173,9 +175,9 @@ function init_gear_sets()
 	sets.idle =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Nyame Helm", neck = "Sam. Nodowa +2", ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Shadow Ring", ring2 = "Gelatinous Ring +1",
-		back = "Atheling Mantle", waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		head = "Wakido Kabuto +2", neck = "Sam. Nodowa +2", ear1 = "Infused Earring", ear2 = "Odnowa Earring +1",
+		body = "Sacro Breastplate", hands = "Nyame Gauntlets", ring1 = "Shadow Ring", ring2 = "Gelatinous Ring +1",
+		back = "Atheling Mantle", waist = "Flume Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.DayIdle = {}
@@ -200,25 +202,25 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flam. Zucchetto +2", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Kasuga Earring +1",
-		body = "Tatena. Harama. +1", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring", ring2 = "Chirich Ring +1",
-		back = "Smertrios's Mantle", waist = "Ioskeha Belt +1", legs = "Tatena. Haidate +1", feet = "Tatena. Sune. +1"
+		head = "Kasuga Kabuto +2", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Kasuga Earring +1",
+		body = "Kasuga Domaru +2", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring", ring2 = "Chirich Ring +1",
+		back = "Smertrios's Mantle", waist = "Sweordfaetels +1", legs = "Kasuga Haidate +2", feet = "Ryuo Sune-Ate +1"
 	}
 	
 	sets.engaged.Hybrid =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flam. Zucchetto +2", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Kasuga Earring +1",
-		body = "Mpaca's Doublet", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
-		back = "Smertrios's Mantle", waist = "Ioskeha Belt +1", legs = "Mpaca's Hose" , feet = "Tatena. Sune. +1"
+		head = "Kasuga Kabuto +2", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Kasuga Earring +1",
+		body = "Kasuga Domaru +2", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring", ring2 = "Chirich Ring +1",
+		back = "Smertrios's Mantle", waist = "Sweordfaetels +1", legs = "Kasuga Haidate +2" , feet = "Ryuo Sune-Ate +1"
 	}
 
 	sets.engaged.MEVA =
 	{
 		ammo = "Staunch Tathlum +1",
-		helm = "Nyame Helm", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Kasuga Earring +1",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Chirich Ring +1",
-		back = "Smertrios's Mantle", waist = "Ioskeha Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets",
+		helm = "Kasuga Kabuto +2", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Kasuga Earring +1",
+		body = "Kasuga Domaru +2", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Chirich Ring +1",
+		back = "Smertrios's Mantle", waist = "Sweordfaetels +1", legs = "Kasuga Haidate +2", feet = "Nyame Sollerets",
 	}
 
 	-- Weapons sets
@@ -230,12 +232,12 @@ function init_gear_sets()
 	-- Buff sets
 	sets.Cure_Received = {hands="Buremte Gloves",waist="Gishdubar Sash",legs="Flamma Dirs +2"}
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
-	sets.buff.Sleep = {neck="Vim Torque +1"}
-	sets.buff.Hasso = { hands = "Wakido Kote +2" }
+	sets.buff.Sleep = { neck = "Vim Torque +1" }
+	sets.buff.Hasso = {}
 	sets.buff['Third Eye'] = {} --legs="Sakonji Haidate +3"
-	sets.buff.Sekkanoki = {hands="Kasuga Kote +1"}
+	sets.buff.Sekkanoki = { hands = "Kasuga Kote +2" }
 	sets.buff.Sengikori = {feet="Kas. Sune-Ate +1"}
-	sets.buff['Meikyo Shisui'] = {feet="Sak. Sune-Ate +1"}
+	sets.buff['Meikyo Shisui'] = {feet="Sak. Sune-Ate +3"}
 end
 
 -- Select default macro book on initial load or subjob change.
