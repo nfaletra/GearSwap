@@ -2,10 +2,10 @@
 function user_job_setup()
 	--include('AutoHeals.lua')
 
-	state.OffenseMode:options('Normal', 'Acc')
+	state.OffenseMode:options('Normal')
 	state.CastingMode:options('Normal','Resistant', 'SIRD', 'DT')
 	state.IdleMode:options('Normal')
-	state.HybridMode:options('Normal', 'Dual Wield')
+	state.HybridMode:options('Normal')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
@@ -242,7 +242,7 @@ function init_gear_sets()
 	{
 		main = "Gada", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
 		head = "Telchine Cap", neck = "Incanter's Torque", ear1 = "Andoaa Earring",
-		body = "Telchine Chas.", hands = "Telchine Gloves", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
+		body = "Telchine Chas.", hands = gear.telchine.hands.enhancing, ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = "Mending Cape", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Theo. Duckbills +3"
 	}
 
@@ -251,7 +251,7 @@ function init_gear_sets()
 		main = "Beneficus",
 		head = "Ebers Cap +2",
 		body = "Ebers Bliaut +3", hands = "Ebers Mitts +2",
-		legs = "Piety Pantaln. +3", feet = "Ebers Duckbills +2"
+		legs = "Piety Pantaln. +3", feet = "Ebers Duckbills +3"
 	})
 
 	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'],
@@ -275,7 +275,7 @@ function init_gear_sets()
 		waist = "Emphatikos Rope", legs = "Shedir Seraweels"
 	})
 
-	sets.midcast.Auspice = set_combine(sets.midcast['Enhancing Magic'], { feet = "Ebers Duckbills +2" })
+	sets.midcast.Auspice = set_combine(sets.midcast['Enhancing Magic'], { feet = "Ebers Duckbills +3" })
 
 	sets.midcast.Cursna =
 	{
@@ -370,7 +370,7 @@ function init_gear_sets()
 		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
 		body = "Ebers Bliaut +3", hands = "Ebers Mitts +2", ring1 = "Stikini Ring +1", ring2 = "Shadow Ring",
-		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Ebers Pant. +3", feet = "Ebers Duckbills +2"
+		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Ebers Pant. +3", feet = "Ebers Duckbills +3"
 	}
 
 	-- Resting sets
@@ -391,10 +391,7 @@ function init_gear_sets()
 		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Petrov Ring", ring2 = "Chirich Ring +1",
 		back = gear.Alaunus.TP, waist = "Cornelia's Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
-	sets.engaged.Acc = set_combine(sets.engaged, {})
-
-	sets.engaged['Dual Wield'] = set_combine(sets.engaged, { ear1 = "Suppanomimi", ear2 = "Eabani Earring" })
-	sets.engaged['Dual Wield'].Acc = set_combine(sets.engaged.DW, {})
+	sets.engaged.DW = set_combine(sets.engaged, { ear1 = "Suppanomimi", ear2 = "Eabani Earring" })
 
 	-- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
 	sets.buff['Divine Caress'] = { hands = "Ebers Mitts +2", back = "Mending Cape" }

@@ -575,7 +575,7 @@ function process_party_chat_word(message, sender)
 		stonebuffs = { 'Protectra V', 'Shellra V', 'Barstonra', 'Barpetra', 'Boost-STR', 'Auspice' },
 	}
 
-	if state.StatusCureMode.value == 'Party' then
+	if state.StatusCureMode.value == 'Party' or state.StatusCureMode.value == 'Ally' then
 		if CheckRange(sender, true) then -- In range and in party
 			if fourSlice == 'slow' or fourSlice == 'grav' or fiveSlice == 'bound' or sixSlice == 'max hp' or
 				sevenSlice == 'hp down' or sixSlice == 'max mp' or sevenSlice == 'mp down' or threeSlice == 'bio' or
