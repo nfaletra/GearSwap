@@ -44,7 +44,7 @@ function init_gear_sets()
 	sets.precast.JA['Boost'] = { hands = "Anchor. Gloves +3" }
 	sets.precast.JA['Boost'].OutOfCombat = { hands = "Anchor. Gloves +3" }
 	sets.precast.JA['Dodge'] = { feet = "Anch. Gaiters +3" }
-	sets.precast.JA['Focus'] = { head = "Anchor. Crown +3" }
+	sets.precast.JA['Focus'] = { head = "Anch. Crown +3" }
 	sets.precast.JA['Counterstance'] = { feet = "Hes. Gaiters +3" }
 	sets.precast.JA['Footwork'] = { feet = "Shukuyu Sune-Ate" }
 	sets.precast.JA['Formless Strikes'] = { body = "Hes. Cyclas +3" }

@@ -2337,7 +2337,10 @@ function get_current_stratagem_count()
 	end
 	
 	if player.sub_job == 'SCH' then
-		if player.sub_job_level > 29 then
+		if player.sub_job_level >= 50 then
+			maxStratagems = 3
+			StratagemChargeTimer = 80
+		elseif player.sub_job_level > 29 then
 			maxStratagems = 2
 		end
 	else
