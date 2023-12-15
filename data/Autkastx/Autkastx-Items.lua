@@ -72,6 +72,22 @@ gear.valorous_magical_pet_legs = { name="Valor. Hose",augments={'Pet: "Mag.Atk.B
 gear.valorous_magical_pet_feet = {name="Valorous Greaves",augments={'Pet: "Mag.Atk.Bns."+29','Pet: "Dbl.Atk."+1 Pet: Crit.hit rate +1','Pet: INT+9','Pet: Accuracy+1 Pet: Rng. Acc.+1','Pet: Attack+4 Pet: Rng.Atk.+4',}}
 gear.valorous_wsd_feet = {name="Valorous Greaves",augments={'Accuracy+25','Weapon skill damage +4%','STR+5',}}
 
+gear.valorous = {}
+
+gear.valorous.head = {}
+gear.valorous.head.pet_mab = { name = "Valorous Mask", augments = {} }
+
+gear.valorous.body = {}
+gear.valorous.body.pet_phys = { name = "Valorous Mail", augments = {} }
+
+gear.valorous.legs = {}
+gear.valorous.legs.pet_phys = { name = "Valor. Hose", augments = {} }
+gear.valorous.legs.pet_mab = { name = "Valor. Hose", augments = {} }
+
+gear.valorous.feet = {}
+gear.valorous.feet.crit = { name = "Valorous Greaves", augments = {} }
+gear.valorous.feet.pet_mab = { name = "Valorous Greaves", augments = {} }
+
 -- Abjuration Gear
 -- Adhemar gear
 gear.adhemar = {}
@@ -113,3 +129,14 @@ gear.telchine = {}
 -- Hands
 gear.telchine.hands = {}
 gear.telchine.hands.enhancing = { name = "Telchine Gloves", augments = { 'Mag. Evasion+19', '"Conserve MP"+4', 'Enh. Mag. eff. dur. +10' } }
+
+gear.acro = {}
+
+gear.acro.head = {}
+gear.acro.head.call_beast = { name = "Acro Helm", augments = { '"Call Beast" ability delay -5' } }
+
+gear.acro.legs = {}
+gear.acro.legs.call_beast = { name = "Acro Breeches", augments = { '"Call Beast" ability delay -5' } }
+
+gear.acro.feet = {}
+gear.acro.feet.call_beast = { name = "Acro Leggings", augments = { '"Call Beast" ability delay -5' } }
