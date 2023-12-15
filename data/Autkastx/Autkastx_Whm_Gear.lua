@@ -335,8 +335,8 @@ function init_gear_sets()
 	{
 		main = "Daybreak", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
 		head = "Theophany Cap +3", neck = "Erra Pendant", ear1 = "Regal Earring", ear2 = "Malignance Earring",
-		body = "Theo. Bliaut +3", hands = "Theophany Mitts +3", ring1 = "Kishar Ring", ring2 = "Stikini Ring +1",
-		waist = "Luminary Sash", legs="Inyanga Shalwar +2", feet = "Theo. Duckbills +3"
+		body = "Theo. Bliaut +3", hands = "Theophany Mitts +3", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
+		back = "Aurists's Cape +1", waist = "Obstin. Sash", legs = "Inyanga Shalwar +2", feet = "Theo. Duckbills +3"
 	}
 	sets.midcast['Enfeebling Magic'].Resistant = set_combine(sets.midcast['Enfeebling Magic'], {})
 

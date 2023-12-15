@@ -338,7 +338,7 @@ function init_gear_sets()
 
 	-- MELEE (DUAL-WIELD) SETS FOR DNC AND NIN SUBJOB
 	sets.engaged.DW = {main="Izizoeksi",sub="Hunahpu",ammo="Aurgelmir Orb +1",
-		head="Gavialis Helm",neck="Combatant's Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+		head="Gavialis Helm",neck="Combatant's Torque",ear1="Dudgeon Earring",ear2="Suppanomimi",
 		body="Tartarus Platemail",hands="Meg. Gloves +2",ring1="Petrov Ring",ring2="Epona's Ring",
 		back="Ground. Mantle +1",waist="Reiki Yotai",legs="Meg. Chausses +2",feet="Meg. Jam. +2"}
 
@@ -406,7 +406,7 @@ function init_gear_sets()
 	
 	-- Weapons sets
 	sets.weapons.PetPDTAxe = {main ="Izizoeksi"}
-	sets.weapons.DualWeapons = {main ="Izizoeksi",sub="Hunahpu"}
+	sets.weapons.DualWeapons = { main = "Dolichenus", sub = "Agwu's Axe" }
 
 
 -------------------------------------------------------------------------------------------------------------------

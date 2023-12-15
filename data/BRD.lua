@@ -91,6 +91,7 @@ function job_setup()
 	SongMap =
 	T{
 		march = { --[["Honor March", ]]"Victory March", "Advancing March" },
+		hmarch = { "Honor March" },
 		prelude = { "Hunter's Prelude", "Archer's Prelude" },
 		mambo = { "Dragonfoe Mambo", "Sheepfoe Mambo" },
 		lcarol = { "Light Carol II", "Light Carol" },

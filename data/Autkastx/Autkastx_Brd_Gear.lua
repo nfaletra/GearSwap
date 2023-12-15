@@ -18,9 +18,11 @@ function user_job_setup()
 
 	info.CastSpeed = 0.2
 
+	state.AutoCureMode:options('Off', 'Party', 'Ally')
+	state.StatusCureMode:options('Off', 'Party', 'Ally')
+
 	gear.Intarabus =
 	{
-		Idle = { name = "Intarabus's Cape", augments = {} },
 		TP = { name = "Intarabus's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%' } },
 		DEX_WSD = { name = "Intarabus's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%' } },
 	}
@@ -80,7 +82,7 @@ function init_gear_sets()
 		main = "Kali", sub = "Genmei Shield", range = "Blurred Harp +1", ammo = empty,
 		head = "Fili Calot +3", neck = "Orunmila's Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = "Inyanga Jubbah +2", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
-		back = "Fi Follet Cape +1", waist = "Embla Sash", legs = "Aya. Cosciales +2", feet = "Bihu Slippers +1"
+		back = "Fi Follet Cape +1", waist = "Embla Sash", legs = "Aya. Cosciales +2", feet = "Bihu Slippers +3"
 	}
 
 	sets.precast.FC.SongDebuff = set_combine(sets.precast.FC.BardSong, {})
@@ -100,9 +102,9 @@ function init_gear_sets()
 
 	-- Precast sets to enhance JAs
 
-	sets.precast.JA.Nightingale = {feet="Bihu Slippers +1"}
-	sets.precast.JA.Troubadour = {body="Bihu Jstcorps +1"}
-	sets.precast.JA['Soul Voice'] = {legs="Bihu Cannions +1"}
+	sets.precast.JA.Nightingale = { feet = "Bihu Slippers +3" }
+	sets.precast.JA.Troubadour = { body = "Bihu Jstcorps +1" }
+	sets.precast.JA['Soul Voice'] = { legs = "Bihu Cannions +3" }
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {}
@@ -174,7 +176,7 @@ function init_gear_sets()
 	sets.midcast['Horde Lullaby II'] = {range="Marsyas"}
 	sets.midcast['Horde Lullaby II'].Resistant = {range="Blurred Harp +1"}
 	sets.midcast['Horde Lullaby II'].AoE = {range="Blurred Harp +1"}
-	sets.midcast.Madrigal = { head = "Fili Calot +3", back = gear.Intarabus.Idle, feet = "Fili Cothurnes +2" }
+	sets.midcast.Madrigal = { head = "Fili Calot +3", back = gear.Intarabus.TP, feet = "Fili Cothurnes +2" }
 	sets.midcast.Paeon = { head = "Brioso Roundlet +1" }
 	sets.midcast.March = { hands = "Fili Manchettes +1" }
 	sets.midcast['Honor March'] = set_combine(sets.midcast.March, { range = "Marsyas"})
@@ -185,7 +187,7 @@ function init_gear_sets()
 	sets.midcast['Magic Finale'] = { range = "Blurred Harp +1" }
 	sets.midcast.Mazurka = { range = "Marsyas" }
 	sets.midcast.Etude = { head = "Mousai Turban +1" }
-	sets.midcast.Prelude = { back = gear.Intarabus.Idle }
+	sets.midcast.Prelude = { back = gear.Intarabus.TP }
 	sets.midcast.Mambo= { feet = "Mousai Crackows +1" }
 	
 
@@ -195,7 +197,7 @@ function init_gear_sets()
 		main = "Kali", sub = "Genmei Shield", range = "Gjallarhorn",
 		head = "Fili Calot +3", neck = "Mnbw. Whistle +1", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",	
 		body = "Fili Hongreline +3", hands = "Fili Manchettes +2", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
-		back = "Fi Follet Cape", waist = "Embla Sash", legs = "Inyanga Shalwar +2", feet = "Brioso Slippers +2"
+		back = "Fi Follet Cape +1", waist = "Embla Sash", legs = "Inyanga Shalwar +2", feet = "Brioso Slippers +2"
 	}
 
 	-- For song defbuffs (duration primary, accuracy secondary)
@@ -232,7 +234,7 @@ function init_gear_sets()
 	sets.midcast['Enhancing Magic'] = {main="Serenity",sub="Fulcio Grip",ammo="Hasty Pinion +1",
 		head="Telchine Cap",neck="Voltsurge Torque",ear1="Andoaa Earring",ear2="Gifted Earring",
 		body="Telchine Chas.",hands="Telchine Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Fi Folet Cape +1",waist="Embla Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
+		back="Fi Folett Cape +1",waist="Embla Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
 		
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",legs="Shedir Seraweels"})
 		
@@ -254,15 +256,15 @@ function init_gear_sets()
 	sets.idle =
 	{
 		main = "Daybreak", sub = "Genmei Shield", range = "Terpander",
-		head = "Inyanga Tiara +2", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
-		body = "Volte Doublet", hands = "Bunzi's Gloves", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
+		head = "Fili Calot +3", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Fili Earring +1",
+		body = "Volte Doublet", hands = "Fili Manchettes +2", ring1 = "Shadow Ring", ring2 = "Defending Ring",
 		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
 	}
 
 	-- Resting sets
 	sets.resting = sets.idle
 
-	sets.Kiting = { ring1 = "Shneddick Ring", feet = "Fili Cothurnes +1" }
+	sets.Kiting = { ring1 = "Shneddick Ring" }
 	sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.latent_refresh_grip = {sub="Oneiros Grip"}
 	sets.TPEat = {neck="Chrys. Torque"}
@@ -293,6 +295,10 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
 	set_macro_page(1, 9)
+end
+
+function user_job_lockstyle()
+	windower.chat.input('/lockstyleset 014')
 end
 
 state.Weapons:options('None','Naegling','Aeneas','DualWeapons','DualNaegling','DualTauret','DualAeolian')

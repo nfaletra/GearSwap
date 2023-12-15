@@ -48,7 +48,7 @@ function init_gear_sets()
 	-- Start defining the sets
 	--------------------------------------
 
-	sets.buff['Burst Affinity'] = { feet = "Hashi. Basmak +1" }
+	sets.buff['Burst Affinity'] = { feet = "Hashi. Basmak +2" }
 	sets.buff['Chain Affinity'] = { head = "Hashishin Kavuk +2", feet = "Assim. Charuqs +2" }
 	sets.buff.Convergence = { head = "Luh. Keffiyeh +3" }
 	sets.buff.Diffusion = { feet = "Luhlaza Charuqs +3" }
@@ -155,8 +155,8 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Luh. Keffiyeh +3", neck = "Fotia Gorget", ear1 = "Regal Earring", ear2 = "Telos Earring",
-		body = "Hashishin Mintan +3", hands = "Hashi. Bazu. +1", ring1 = "Metamor. Ring +1", ring2 = "Rufescent Ring",
-		back = gear.Rosmerta.WSD, waist = "Fotia Belt", legs = "Hashishin Tayt +2", feet = "Hashi. Basmak +1"
+		body = "Hashishin Mintan +3", hands = "Hashi. Bazu. +2", ring1 = "Metamor. Ring +1", ring2 = "Rufescent Ring",
+		back = gear.Rosmerta.WSD, waist = "Fotia Belt", legs = "Hashishin Tayt +2", feet = "Hashi. Basmak +2"
 	}
 
 	sets.precast.WS['Black Halo'] =
@@ -200,7 +200,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Carmine Mask +1", neck = "Mirage Stole +2", ear1 = "Regal Earring", ear2 = "Digni. Earring",
-		body = "Luhlaza Jubbah +3", hands = "Hashi. Bazu. +1", ring1 = "Kishar Ring", ring2 = "Metamor. Ring +1",
+		body = "Luhlaza Jubbah +3", hands = "Hashi. Bazu. +2", ring1 = "Kishar Ring", ring2 = "Metamor. Ring +1",
 		back = gear.Rosmerta.Evasion, waist = "Witful Belt", legs = "Assim. Shalwar +2", feet = "Luhlaza Charuqs +3"
 	}
 
@@ -226,10 +226,10 @@ function init_gear_sets()
 	-- Magical Spells --
 	sets.midcast['Blue Magic'].Magical =
 	{
-		ammo = "Pemphredo Tathlum",
-		head = "Hashishin Kavuk +2", neck = "Baetyl Pendant", ear1 = "Regal Earring", ear2 = "Friomisi Earring",
-		body = "Hashishin Mintan +3", hands = "Hashi. Bazu. +1", ring1 = "Metamor. Ring +1", ring2 = "Shiva Ring +1",
-		back = gear.Rosmerta.Magic, waist = "Sacro Cord", legs = "Luhlaza Shalwar +3", feet = gear.amalric.feet.d
+		ammo = "Ghastly Tathlum +1",
+		head = "Hashishin Kavuk +3", neck = "Sibyl Scarf", ear1 = "Regal Earring", ear2 = "Friomisi Earring",
+		body = "Hashishin Mintan +3", hands = "Hashi. Bazu. +2", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
+		back = gear.Rosmerta.Magic, waist = "Sacro Cord", legs = "Luhlaza Shalwar +3", feet = "Hashi. Basmak +2"
 	}
 
 	sets.midcast['Blue Magic']['Tenebral Crush'] = set_combine(sets.midcast['Blue Magic'].Magical,
@@ -243,7 +243,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Twilight Torque", ear1 = "Magnetic Earring",
 		body = "Nyame Mail", hands = "Rawhide Gloves", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
-		back = "Fi Follet Cape +1", waist = "Rumination Sash", legs = "Assim. Shalwar +2", feet = gear.amalric.feet.d
+		back = "Fi Follet Cape +1", waist = "Rumination Sash", legs = "Hashishin Tayt +2", feet = "Hashi. Basmak +2"
 	}
 
 	sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, { ring2 = "Stikini Ring +1" })
@@ -254,9 +254,9 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].MagicAccuracy =
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Hashishin Kavuk +2", neck = "Mirage Stole +2", ear1 = "Regal Earring", ear2 = "Hermetic Earring",
-		body = "Hashishin Mintan +3", hands = "Hashi. Bazu. +1", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
-		back = "Aurist's Cape +1", waist = "Sacro Cord", legs = "Assim. Shalwar +2", feet = "Hashi. Basmak +1"
+		head = "Hashishin Kavuk +3", neck = "Mirage Stole +2", ear1 = "Digni. Earring", ear2 = "Hashi. Earring +1",
+		body = "Hashishin Mintan +3", hands = "Hashi. Bazu. +2", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
+		back = "Aurist's Cape +1", waist = "Acuity Belt +1", legs = "Hashishin Tayt +2", feet = "Hashi. Basmak +2"
 	}
 
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Blue Magic'].MagicAccuracy,
@@ -275,7 +275,7 @@ function init_gear_sets()
 	sets.midcast.Helix = sets.midcast['Elemental Magic']
 
 	sets.element.Dark = { head = "Pixie Hairpin +1", ring2 = "Archon Ring" }
-	sets.element.Light = { head = "Assim. Keffiyeh +2", hands = "Hashi. Bazu. +1" }
+	sets.element.Light = { head = "Assim. Keffiyeh +2", hands = "Hashi. Bazu. +2" }
 
 	sets.midcast.Cure =
 	{
@@ -351,7 +351,7 @@ function init_gear_sets()
 	{
 		ammo = "Sapience Orb",
 		neck = "Incanter's Torque",
-		hands = "Hashishin Bazubands +1", ring1 = "Mephitas's Ring +1",
+		hands = "Hashishin Bazubands +2", ring1 = "Mephitas's Ring +1",
 		feet = "Carmine Greaves +1"
 	})
 

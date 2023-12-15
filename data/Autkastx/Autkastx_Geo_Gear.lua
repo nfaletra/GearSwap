@@ -10,6 +10,9 @@ function user_job_setup()
 	state.ResistDefenseMode:options('MEVA')
 	state.Weapons:options('None', 'Maxentius', 'Daybreak', 'DualMaxentius', 'DualDaybreak')
 
+	state.AutoCureMode:options('Off')
+	state.StatusCureMode:options('Off')
+
 	gear.Nantosuelta =
 	{
 		MAB = { name = "Nantosuelta's Cape", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%' } },

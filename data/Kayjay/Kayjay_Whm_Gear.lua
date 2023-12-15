@@ -179,7 +179,7 @@ function init_gear_sets()
 	-- Gear for Magic Burst mode.
     sets.MagicBurst = {main=gear.grioavolr_nuke_staff,sub="Enki Strap",neck="Mizu. Kubikazari",ring1="Mujin Band",ring2="Locus Ring"}
 	
-    sets.midcast.FastRecast = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",ammo="Hasty Pinion +1",
+    sets.midcast.FastRecast = {ammo="Hasty Pinion +1",
 		head="Bunzi's Hat",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
 		body="Inyanga Jubbah +2",hands="Gende. Gages +1",ring1="Kishar Ring",ring2="Prolix Ring",
 		back="Swith Cape +1",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps +1"}
@@ -529,7 +529,7 @@ function process_party_chat_word(message, sender)
 					return v:upper()
 				end
 			end
-		elseif S{ 'str', 'dex', 'vit', 'agi', 'int', 'mnd', 'chr' }:contains(threeSlice) and eightSlice:sub(-4) ~= 'down' and sevenSlice ~= 'strange' then
+		elseif S{ 'str', 'dex', 'vit', 'agi', 'int', 'mnd', 'chr' }:contains(threeSlice) and fourSlice ~= 'into' and eightSlice:sub(-4) ~= 'down' and sevenSlice ~= 'strange' then
 			for _, v in pairs(stats) do
 				if threeSlice == v then
 					return v:upper()

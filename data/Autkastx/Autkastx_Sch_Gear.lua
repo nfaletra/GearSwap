@@ -85,7 +85,7 @@ function init_gear_sets()
 		back = "Fi Follet Cape +1", waist = "Witful Belt", legs = "Agwu's Slops", feet = "Peda. Loafers +3"
 	}
 
-	sets.precast.FC.Arts = {}
+	sets.precast.FC.Arts = { head = "Peda. M.Board +3", feet = "Acad. Loafers +1" }
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, { waist = "Siegel Sash" })
 
@@ -143,14 +143,14 @@ function init_gear_sets()
 	{
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
 		head = "Agwu's Cap", neck = "Argute Stole +2", ear1 = "Regal Earring", ear2 = "Malignance Earring",
-		body = "Agwu's Robe", hands = "Amalric Gages +1", ring1 = "Freke Ring", ring2 = "Mujin Ring",
+		body = "Agwu's Robe", hands = "Amalric Gages +1", ring1 = "Freke Ring", ring2 = "Mujin Band",
 		back = "Aurist's Cape +1", waist = "Sacro Cord", legs = "Agwu's Slops", feet = "Agwu's Pigaches"
 	}
 
 	sets.midcast.FastRecast =
 	{
 		ammo = "Hasty Pinion +1",
-		head = "Merlinic Hood", neck = "Orunmila's Torque", ear1 = "Malignance Earring +1", ear2 = "Loquac. Earring",
+		head = "Merlinic Hood", neck = "Orunmila's Torque", ear1 = "Malignance Earring", ear2 = "Loquac. Earring",
 		body = "Zendik Robe", hands = "Academic's Bracers +1", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
 		back = "Fi Follet Cape +1", waist = "Witful Belt", legs = "Kaykaus Tights +1", feet = "Pedagogy Loafers +3"
 	}
@@ -233,7 +233,7 @@ function init_gear_sets()
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
 		head = "Agwu's Cap", neck = "Erra Pendant", ear1 = "Malignance Earring", ear2 = "Regal Earring",
 		body = "Agwu's Robe", hands = "Peda. Bracers +3", ring1 = "Kishar Ring", ring2 = "Stikini Ring +1",
-		back = "Aurist's Cape +1", waist = "Luminary Sash", legs = "Arbatel Pants +2", feet = "Agwu's Pigaches"
+		back = "Aurist's Cape +1", waist = "Obstin. Sash", legs = "Arbatel Pants +2", feet = "Agwu's Pigaches"
 	}
 
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast['Enfeebling Magic'], { legs = "Agwu's Slops" })
@@ -275,8 +275,8 @@ function init_gear_sets()
 	-- Elemental Magic sets are default for handling low-tier nukes.
 	sets.midcast['Elemental Magic'] =
 	{
-		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum",
-		head = "Agwu's Cap", neck = "Argute Stole +2", ear1 = "Regal Earring", ear2 = "Maligance Earring",
+		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
+		head = "Agwu's Cap", neck = "Argute Stole +2", ear1 = "Regal Earring", ear2 = "Malignance Earring",
 		body = "Agwu's Robe", hands = "Agwu's Gages", ring1 = "Freke Ring", ring2 = "Metamor. Ring +1",
 		back = gear.Lughs.Nuke, waist = "Sacro Cord", legs = "Agwu's Slops", feet = "Agwu's Pigaches"
 	}

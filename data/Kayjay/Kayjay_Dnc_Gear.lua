@@ -1,13 +1,13 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_job_setup()
-	state.OffenseMode:options('Normal','Acc')
-	state.HybridMode:options('Normal','DTLite','PDT','MDT')
+	state.OffenseMode:options('Normal')
+	state.HybridMode:options('Normal', 'DT')
 	state.WeaponskillMode:options('Match','Normal','Acc','Proc')
 	state.IdleMode:options('Normal', 'Sphere')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Aeneas','LowBuff')
+	state.Weapons:options('Aeneas')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWEarrings','DWMax'}
 
 	gear.senuna_tp = { name = "Senuna's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } }
@@ -49,8 +49,7 @@ function init_gear_sets()
 	sets.DWMax = { ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Adhemar Jacket +1",hands="Floral Gauntlets",waist="Shetal Stone"}
 	
 	-- Weapons sets
-	sets.weapons.Aeneas = {main="Enchufla",sub="Polyhymnia"}
-	sets.weapons.LowBuff = {main="Aeneas",sub="Blurred Knife +1"}
+	sets.weapons.Aeneas = { main = "Aeneas", sub = "Polyhymnia" }
 	
 	-- Precast Sets
 
@@ -220,8 +219,8 @@ function init_gear_sets()
 	sets.idle =
 	{
 		ammo = "Aurgelmir Orb",
-		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
-		body = "Meg. Cuirie +2", hands = "Espial Bracers", ring1 = "Rajas Ring", ring2 = "Keen Ring",
+		head = "Adhemar Bonnet +1", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
+		body = "Meg. Cuirie +2", hands = "Adhemar Wrist. +1", ring1 = "Rajas Ring", ring2 = "Keen Ring",
 		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Meg. Chausses +2", feet = "Horos Toe Shoes +1"
 	}
 
@@ -261,36 +260,12 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		ammo = "Aurgelmir Orb",
-		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
-		body = "Meg. Cuirie +2", hands = "Espial Bracers", ring1 = "Rajas Ring", ring2 = "Keen Ring",
+		head = "Adhemar Bonnet +1", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
+		body = "Meg. Cuirie +2", hands = "Adhemar Wrist. +1", ring1 = "Rajas Ring", ring2 = "Keen Ring",
 		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Meg. Chausses +2", feet = "Horos Toe Shoes +1"
 	}
 
-	sets.engaged.DTLite = {
-		ammo="Yamarang",
-		head="Dampening Tam",neck="Loricate Torque +1",ear1="Brutal Earring",ear2="Sherida Earring",
-		body="Adhemar Jacket +1",hands="Adhemar Wrist. +1",ring1="Defending Ring",ring2="Epona's Ring",
-		back=gear.stp_jse_back,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_ta_feet
-	}
-    
-	sets.engaged.Acc = {
-		head="Espial Cap",neck="Chivalrous Chain",ear1="Spike Earring",ear2="Suppanomimi",
-		body="Espial Gambison",hands="Espial Bracers",ring1="Ecphoria Ring",ring2="Jaeger Ring",
-		back="Amemet Mantle +1",waist="Windbuffet Belt +1",legs="Espial Hose",feet="Espial Socks"
-	}
-
-	sets.engaged.PDT = {
-		ammo="Staunch Tathlum +1",
-		head="Dampening Tam",neck="Loricate Torque +1",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Meg. Cuirie +2",hands="Meg. Gloves +2",ring1="Defending Ring",ring2="Moonlight Ring",
-		back="Moonlight Cape",waist="Flume Belt +1",legs="Meg. Chausses +2",feet="Ahosi Leggings"
-	}
-
-	sets.engaged.Acc.PDT = {
-		ammo="Staunch Tathlum +1",
-		head="Dampening Tam",neck="Loricate Torque +1",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Meg. Cuirie +2",hands="Meg. Gloves +2",ring1="Defending Ring",ring2="Patricius Ring",
-		back="Moonlight Cape",waist="Flume Belt +1",legs="Meg. Chausses +2",feet="Ahosi Leggings"}
+	sets.engaged.DT = set_combine(sets.engaged, {})
 
 	-- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
 	sets.buff['Saber Dance'] = {} --legs="Horos Tights"

@@ -3,11 +3,11 @@ function user_job_setup()
 	state.OffenseMode:options('Normal')
 	state.RangedMode:options('Normal', 'Acc', 'Crit')
 	state.WeaponskillMode:options('Match', 'Normal', 'Acc', 'Proc')
-	state.CastingMode:options('Normal', 'Fodder', 'Proc')
+	state.CastingMode:options('Normal', 'Damage', 'Proc')
 	state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	state.HybridMode:options('Normal', 'DT', 'Xevioso')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'OneHanded', 'DWMax' }
-	state.Weapons:options('Default', 'Ranged', 'Crit', 'Savage', 'Evisceration', 'DualWeapons', 'DualSavage', 'DualEvisceration', 'DualLeadenRanged', 'DualLeadenMelee', 'DualAeolian', 'DualLeadenMeleeAcc', 'DualRanged', 'DualProcWeapons', 'None')
+	state.Weapons:options('Default', 'Ranged', 'Crit', 'Savage', 'Evisceration', 'DualWeapons', 'DualRanged', 'DualSavage', 'DualLeadenRanged', 'DualLeadenMelee', 'DualHotShot', 'DualEvisceration', 'DualAeolian', 'None')
 	state.CompensatorMode:options('Never', '300', '1000', 'Always')
 
 	gear.RAbullet = "Chrono Bullet"
@@ -70,7 +70,7 @@ function init_gear_sets()
 
 	sets.precast.LuzafRing = { ring2 = "Luzaf's Ring" }
 
-	sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, { legs = "Chas. Culottes +2" })
+	sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, { legs = "Chas. Culottes +3" })
 	sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, { feet = "Chass. Bottes +2" })
 	sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, { head = "Chass. Tricorne +2" })
 	sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, { body = "Chasseur's Frac +2" })
@@ -79,29 +79,30 @@ function init_gear_sets()
 	sets.precast.CorsairShot =
 	{
 		ammo = gear.QDbullet,
-		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Dingir Ring", ring2 = "Regal Ring",
-		back = gear.Camulus.Ranged, waist = "Svelt. Gouriz +1", legs = "Chas. Culottes +2", feet = "Malignance Boots"
+		head = "Ikenga's Hat", neck = "Iskur Gorget", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Crepuscular Ring", ring2 = "Chirich Ring +1",
+		back = gear.Camulus.Ranged, waist = "K. Kachina Belt +1", legs = "Chas. Culottes +3", feet = "Malignance Boots"
 	}
 
 	sets.precast.CorsairShot.Damage =
 	{
 		ammo = gear.QDbullet,
-		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
+		head = "Laksa. Tricorne +2", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
 		body = "Lanun Frac +3", hands = "Carmine Fin. Ga. +1", ring1 = "Dingir Ring", ring2 = "Regal Ring",
-		back = gear.Camulus.Leaden, waist = "Svelt. Gouriz +1", legs = "Chas. Culottes +2", feet = "Chass. Bottes +2"
+		back = gear.Camulus.Leaden, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
 	sets.precast.CorsairShot.Proc = set_combine(sets.precast.CorsairShot.Damage,
 	{
+		feet = "Chass. Bottes +2"
 	})
 
 	sets.precast.CorsairShot['Light Shot'] =
 	{
 		ammo = gear.QDbullet,
-		head = "Laksa. Tricorne +2", neck= "Comm. Charm +2", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
-		body = "Chasseur's Frac +2", hands = "Malignance Gloves", ring1 = "Stikini Ring +1", ring2 = "Regal Ring",
-		back = gear.Camulus.Leaden, waist = "Eschan Stone", legs = "Chas. Culottes +2", feet = "Laksa. Bottes +2" 
+		head = "Laksa. Tricorne +2", neck= "Comm. Charm +2", ear1 = "Crep. Earring", ear2 = "Chas. Earring +2",
+		body = "Ikenga's Vest", hands = "Laksa. Gants +2", ring1 = "Stikini Ring +1", ring2 = "Regal Ring",
+		back = gear.Camulus.Leaden, waist = "K. Kachina Belt +1", legs = "Ikenga's Trousers", feet = "Laksa. Bottes +2"
 	}
 
 	sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], {})
@@ -113,7 +114,7 @@ function init_gear_sets()
 	{
 		head = "Chass. Tricorne +2", neck = "Combatant's Torque", ear1 = "Crep. Earring", ear2 = "Mache Earring +1",
 		body = "Chasseur's Frac +2", hands = "Chasseur's Gants +3", ring1 = "Regal Ring", ring2 = "Mummu Ring",
-		back = gear.Camulus.Melee, waist = "Kentarch Belt +1", legs = "Chas. Culottes +2", feet = "Chass. Bottes +2"
+		back = gear.Camulus.Melee, waist = "Kentarch Belt +1", legs = "Chas. Culottes +3", feet = "Chass. Bottes +2"
 	}
 
 	sets.Self_Waltz = {}
@@ -202,7 +203,7 @@ function init_gear_sets()
 	{
 		ammo = gear.WSbullet,
 		head = "Lanun Tricorne +3", neck = "Fotia Gorget", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
-		body = "Laksa. Frac +3"--[["Ikenga's Vest"]], hands = "Chasseur's Gants +3", ring1 = "Dingir Ring", ring2 = "Epaminondas's Ring",
+		body = "Ikenga's Vest", hands = "Chasseur's Gants +3", ring1 = "Dingir Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Camulus.WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
@@ -224,17 +225,17 @@ function init_gear_sets()
 	{
 		ammo = gear.MAbullet,
 		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Hermetic Earring",
-		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Dingir Ring", ring2 = "Epaminondas's Ring",
+		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Dingir Ring", ring2 = "Medada's Ring",
 		back = gear.Camulus.Leaden, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
-	sets.precast.WS['Hot Shot'] = set_combine(sets.precast.WS['Wildfire'],
+	sets.precast.WS['Hot Shot'] =
 	{
 		ammo = gear.MAbullet,
-		neck = "Fotia Gorget", ear2 = "Moonshade Earring",
-		body = "Nyame Mail",
-		cape = gear.Camulus.Leaden, waist = "Fotia Belt",
-	})
+		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
+		body = "Nyame Mail", hands = "Chasseur's Gants +3", ring1 = "Dingir Ring", ring2 = "Medada's Ring",
+		cape = gear.Camulus.Leaden, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
+	}
 
 	--Because omen skillchains.
 	sets.precast.WS['Burning Blade'] =
@@ -274,7 +275,7 @@ function init_gear_sets()
 	{
 		ammo = gear.RAbullet,
 		head = "Ikenga's Hat", neck = "Iskur Gorget", ear1 = "Telos Earring", ear2 = "Crep. Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Ilabrat Ring", ring2 = "Crepuscular Ring",
+		body = "Ikenga's Vest", hands = "Malignance Gloves", ring1 = "Ilabrat Ring", ring2 = "Crepuscular Ring",
 		back = gear.Camulus.Ranged, waist = "Yemaya Belt", legs = "Chas. Culottes +3", feet = "Malignance Boots"
 	}
 
@@ -286,14 +287,14 @@ function init_gear_sets()
 
 	sets.midcast.RA.Crit = set_combine(sets.midcast.RA,
 	{
-		head = "Meghanada Visor +2", ear1 = "Odr Earring", ear2 = "Chas. Earring +1",
-		body = "Meg. Cuirie +2", hands = "Dingir Ring", ring1 = "Begdrudging Ring",
+		head = "Meghanada Visor +2", ear1 = "Odr Earring", ear2 = "Chas. Earring +2",
+		body = "Meg. Cuirie +2", hands = "Dingir Ring", ring1 = "Begrudging Ring",
 		waist = "K. Kachina Belt +1", legs = "Darraigner's Brais", feet = "Osh. Leggings +1"
 	})
 
 	sets.buff['Triple Shot'] =
 	{
-		head = "Ohshosi Mask +1",
+		head = "Oshosi Mask +1",
 		body = "Chasseur's Frac +2", hands = "Lanun Gants +3",
 		legs = "Osh. Trousers +1", feet = "Osh. Leggings +1"
 	}
@@ -370,12 +371,13 @@ function init_gear_sets()
 	sets.weapons.Savage = { main = "Naegling", sub = "Nusku Shield", range = "Ataktos" }
 	sets.weapons.Evisceration = { main = "Tauret", sub = "Nusku Shield", range = "Ataktos" }
 	sets.weapons.DualWeapons = { main = "Rostam", sub = "Gleti's Knife", range = "Fomalhaut" }
+	sets.weapons.DualRanged = { main = "Rostam", sub = "Kustawi +1", range = "Fomalhaut" }
 	sets.weapons.DualSavage = { main = "Naegling", sub = "Gleti's Knife", range = "Ataktos" }
 	sets.weapons.DualEvisceration = { main = "Tauret", sub = "Gleti's Knife", range = "Ataktos" }
 	sets.weapons.DualLeadenRanged = { main = "Rostam", sub = "Kustawi +1", range = "Fomalhaut" }
 	sets.weapons.DualLeadenMelee = { main = "Rostam", sub = "Tauret", range = "Fomalhaut" }
+	sets.weapons.DualHotShot = { main = "Naegling", sub = "Tauret", range = "Fomalhaut" }
 	sets.weapons.DualAeolian = { main = "Rostam", sub = "Tauret", range = "Ataktos" }
-	sets.weapons.DualRanged = { main = "Rostam", sub = "Kustawi +1", range = "Fomalhaut" }
 
 	-- Engaged sets
 

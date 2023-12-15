@@ -1291,7 +1291,7 @@ function user_aftercast(spell, spellMap, eventArgs)
 end
 
 windower.raw_register_event("action", function(act)
-	if act.category == 5 then
+	if act and act.category == 5 then
 		if #ActionStack > 0 then
 			local targetId = tostring(act.targets[1].id)
 			for i = 1, #ActionStack, 1 do

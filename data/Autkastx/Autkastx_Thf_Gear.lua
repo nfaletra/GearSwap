@@ -348,7 +348,7 @@ function init_gear_sets()
 	sets.engaged.MEVA =
 	{
 		ammo = "Yamarang",
-		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Suppanomimi",
+		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Eabani Earring", ear2 = "Suppanomimi",
 		body = "Pillager's Vest +3", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Moonlight Ring",
 		back = gear.Toutatis.TP, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
 	}

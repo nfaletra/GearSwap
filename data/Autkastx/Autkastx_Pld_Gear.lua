@@ -17,7 +17,7 @@ function user_job_setup()
 	{
 		FC = { name = "Rudianos's Mantle", augments = { 'HP+60', '"Fast Cast"+10' } },
 		TP = { name = "Rudianos's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } },
-		VIT_WSD = { name = "Rudianos's Mantle", augments = { 'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Damage taken-5%' } },
+		WSD = { name = "Rudianos's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%' } },
 		Emnity = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', 'Enmity+10', 'Phys. dmg. taken-10%' } },
 		Shield = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'Chance of successful block +5' } },
 		Counter = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'System: 1 ID: 640 Val: 4' } }
@@ -74,11 +74,11 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Cab. Coronet +3",
-		body = "Rev. Surcoat +3", "Cab. Gauntlets +3", ring2 = "Supershear Ring",
+		body = "Rev. Surcoat +3", hands = "Cab. Gauntlets +3", ring2 = "Supershear Ring",
 	})
 	sets.precast.JA['Fealty'] = set_combine(sets.Enmity, { body = "Cab. Surcoat +3" })
 	sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, { feet = "Chev. Sabatons +2" })
-	sets.precast.JA['Cover'] = set_combine(sets.Enmity, { head = "Rev. Coronet +2", body = "Cab. Surcoat +3" })
+	sets.precast.JA['Cover'] = set_combine(sets.Enmity, { head = "Rev. Coronet +3", body = "Cab. Surcoat +3" })
 
 	-- add mnd for Chivalry
 	sets.precast.JA['Chivalry'] =
@@ -139,7 +139,7 @@ function init_gear_sets()
 		ammo = "Oshasha's Treatise",
 		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Epaminondas's Ring",
-		back = gear.Rudianos.VIT_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Rudianos.WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS.Acc = {}
 
@@ -157,14 +157,14 @@ function init_gear_sets()
 		ammo = "Aurgelmir Orb",
 		head = "Flamma Zucchetto +2", neck = "Fotia Gorget", ear1 = "Mache Earring +1", ear2 = "Moonshade Earring",
 		body = "Hjarrandi Breast.", hands = "Flamma Manopolas +2", 	ring1 = "Regal Ring", ring2 = "Hetairoi Ring",
-		back = gear.Rudianos.VIT_WSD, waist = "Fotia Belt", legs = "Lustratio Subligar +1", feet = "Nyame Sollerets"
+		back = gear.Rudianos.WSD, waist = "Fotia Belt", legs = "Lustratio Subligar +1", feet = "Nyame Sollerets"
 	})
 
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS,
 	{
 		head = "Nyame Helm", neck = "Kgt. Beads +2", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Epaminondas's Ring",
-		back = gear.Rudianos.VIT_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Rudianos.WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	})
 
 	sets.precast.WS['Knights of Round'] =
@@ -172,7 +172,7 @@ function init_gear_sets()
 		ammo = "Oshasha's Treatise",
 		head = "Nyame Helm", neck = "Kgt. Beads +2", ear1 = "Thrud Earring", ear2 = "Ishvara Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Epaminondas's Ring",
-		back = gear.Rudianos.VIT_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Rudianos.WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['Flat Blade'] = {}
@@ -198,7 +198,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
 		body = "Hjarrandi Breast.", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Epaminondas's Ring",
-		back = gear.Rudianos.VIT_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Sulevia's Leggings +2"
+		back = gear.Rudianos.WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Sulevia's Leggings +2"
 	}
 
 	sets.precast.WS['Torcleaver'] = set_combine(sets.precast.WS['Savage Blade'], {})
