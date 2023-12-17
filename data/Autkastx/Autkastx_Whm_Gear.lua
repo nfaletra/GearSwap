@@ -186,7 +186,7 @@ function init_gear_sets()
 	sets.midcast.Teleport = sets.ConserveMP
 
 	-- Gear for Magic Burst mode.
-	sets.MagicBurst = { neck="Mizu. Kubikazari" }
+	sets.MagicBurst = { neck = "Mizu. Kubikazari" }
 
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,
 	{
@@ -280,7 +280,7 @@ function init_gear_sets()
 	sets.midcast.Cursna =
 	{
 		main = "Yagrush", sub = "Thuellaic Ecu +1",
-		head = "Vanya Hood", neck = "Malison Medallion", ear1 = "Meili Earring", ear2 = "Ebers Earring",
+		head = "Vanya Hood", neck = "Debilis Medallion", ear1 = "Meili Earring", ear2 = "Ebers Earring",
 		body = "Ebers Bliaut +3", hands = "Fanatic Gloves", ring1 = "Haoma's Ring", ring2 = "Haoma's Ring",
 		back = gear.Alaunus.Healing, legs = "Th. Pant. +3", feet = "Vanya Clogs"
 	}
@@ -303,7 +303,7 @@ function init_gear_sets()
 		main = "Daybreak", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
 		head = empty, neck = "Mizu. Kubikazari", ear1 = "Regal Earring", ear2 = "Malignance Earring",
 		body = "Cohort Cloak +1", hands = "Bunzi's Gloves", ring1 = "Metamor. Ring +1", ring2 = "Freke Ring",
-		legs = "Bunzi's Pants", feet = "Bunzi's Sabots"
+		back = "Aurist's Cape +1", waist = "Sacro Cord", legs = "Bunzi's Pants", feet = "Bunzi's Sabots"
 	}
 	sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {})
 	

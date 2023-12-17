@@ -269,7 +269,7 @@ function init_gear_sets()
 	{
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Ken. Samue +1", hands = "Ryuo Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Abnoba Kaftan", hands = "Ryuo Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 

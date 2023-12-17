@@ -18,8 +18,7 @@ function user_job_setup()
 	send_command('bind ^` input /ja "Hasso" <me>')
 	send_command('bind !` input /ja "Seigan" <me>')
 	send_command('bind @` gs c cycle SkillchainMode')
-	send_command('bind !r gs c weapons Greatsword;gs c update')
-	
+
 	select_default_macro_book()
 end
 
@@ -198,11 +197,14 @@ function init_gear_sets()
 	sets.buff.Sleep = {head="Frenzy Sallet"}
      
             -- Engaged sets
-	sets.engaged = {ammo="Aurgelmir Orb +1",
-		head="Flam. Zucchetto +2",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
-		back="Cichol's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
-    sets.engaged.SomeAcc = {ammo="Aurgelmir Orb +1",
+	sets.engaged =
+	{
+		ammo = "Aurgelmir Orb",
+		head = "Flam. Zucchetto +2", neck = "Asperity Necklace", ear1 = "Brutal Earring", ear2 = "Cessance Earring",
+		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Petrov Ring",
+		back = "Cichol's Mantle", waist = "Ioskeha Belt +1", legs = "Sulev. Cuisses +2", feet = "Flam. Gambieras +2"
+	}
+	sets.engaged.SomeAcc = {ammo="Aurgelmir Orb +1",
 		head="Flam. Zucchetto +2",neck="Combatant's Torque",ear1="Brutal Earring",ear2="Cessance Earring",
 		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Flamma Ring",ring2="Niqmaddu Ring",
 		back="Cichol's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
@@ -1240,7 +1242,7 @@ function init_gear_sets()
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	
 	-- Weapons sets
-	sets.weapons.Chango = {main="Chango",sub="Utu Grip"}
+	sets.weapons.Chango = { main = "Lycurgos", sub = "Utu Grip" }
 	sets.weapons.DualWeapons = {main="Firangi",sub="Reikiko"}
 	sets.weapons.Greatsword = {main="Montante +1",sub="Utu Grip"}
 	sets.weapons.ProcDagger = {main="Chicken Knife II",sub=empty}

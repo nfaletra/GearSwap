@@ -212,7 +212,7 @@ function init_gear_sets()
 
 	sets.midcast.Cursna =
 	{
-		head = "Vanya Hood", neck = "Malison Medallion", ear1 = "Meili Earring", ear2 = "Malignance Earring",
+		head = "Vanya Hood", neck = "Debilis Medallion", ear1 = "Meili Earring", ear2 = "Malignance Earring",
 		body = "Zendik Robe", hands = "Geo. Mitaines +2", ring1 = "Haoma's Ring", ring2 = "Haoma's Ring",
 		back = "Oretania's Cape +1", waist = "Witful Belt", legs = "Geomancy Pants +1", feet = "Vanya Clogs"
 	}

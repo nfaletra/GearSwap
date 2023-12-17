@@ -1715,10 +1715,12 @@ function check_cpring()
 		if item_available('Caliber Ring') then
 			local caliber_ring = get_usable_item('Caliber Ring')
 		
-			if ((caliber_ring.next_use_time + Offset) < 6 and caliber_ring.charges_remaining > 0) then
-				cp_ring_equip('Caliber Ring')
-				cp_delay = 10
-				return true
+			if caliber_ring then
+				if ((caliber_ring.next_use_time + Offset) < 6 and caliber_ring.charges_remaining > 0) then
+					cp_ring_equip('Caliber Ring')
+					cp_delay = 10
+					return true
+				end
 			end
 		end
 

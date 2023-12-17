@@ -287,7 +287,7 @@ function init_gear_sets()
 
 	sets.midcast.Cursna =  set_combine(sets.midcast.Cure,
 	{
-		neck = "Malison Medallion",
+		neck = "Debilis Medallion",
 		ring1 = "Haoma's Ring", ring2 = "Haoma's Ring",
 		waist = "Witful Belt"
 	})

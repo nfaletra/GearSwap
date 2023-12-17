@@ -8,7 +8,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PetPDT', 'PDT', 'Reraise', 'PKiller')
 	state.MagicalDefenseMode:options('PetMDT', 'MDT', 'MKiller')
 	state.ResistDefenseMode:options('PetMEVA', 'MEVA')
-	state.Weapons:options('None', 'Aymur', 'Pangu', 'Dolichenus', 'Naegling', 'DualAymur', 'DualPangu', 'DualDolichenus', 'DualNaegling')
+	state.Weapons:options('None', 'Aymur', 'Pangu', 'Dolichenus', 'Naegling', 'Drepanum', 'DualAymur', 'DualPangu', 'DualDolichenus', 'DualNaegling')
 	state.ExtraMeleeMode = M{ ['description']='Extra Melee Mode','None' }
 
 	-- Set up Jug Pet cycling and keybind Ctrl+F7
@@ -88,7 +88,7 @@ function init_gear_sets()
 	sets.precast.Waltz =
 	{
 		ammo = "Voluspa Tathlum",
-		head = "Anwig Salade", neck = "Unmoving Collar +1", ear1 = "Handler's Earring", ear2 = "Enchantr. Earring +1",
+		head = "Anwig Salade", neck = "Unmoving Collar +1", ear1 = "Handler's Earring +1", ear2 = "Enchantr. Earring +1",
 		body = "Gleti's Cuirass", hands = "Gleti's Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Carbuncle Ring",
 		back = gear.Artio.CHR_WSD, waist = "Flume Belt +1", legs = "Dashing Subligar", feet = "Nyame Sollerets"
 	}
@@ -110,7 +110,7 @@ function init_gear_sets()
 
 	sets.midcast.Cure = set_combine(sets.midcast.FastRecast,
 	{
-		neck = "Incantor's Torque",
+		neck = "Incanter's Torque",
 		body = "Jumalik Mail", hands = "Nyame Gauntlets", ring2 = "Menelaus's Ring",
 		back = gear.Artio.Pet_Macc, waist = "Tempus Fugit"
 	})
@@ -182,7 +182,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Decimation'] =
 	{
-		ammo = "Coiste Bodhar"
+		ammo = "Coiste Bodhar",
 		head = "Blistering Sallet +1", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Lugra Earring +1",
 		body = "Tali'ah Manteel +2", hands = "Nyame Gauntlets", ring1 = "Epona's Ring", ring2 = "Gere Ring",
 		back = gear.Artio.STR_DA, waist = "Fotia Belt", legs = "Meghanada Chausses +2", feet = "Nyame Sollerets"
@@ -265,7 +265,7 @@ function init_gear_sets()
 		body = "Gleti's Cuirass", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Gere Ring",
 		back = gear.Artio.STR_DA, waist = "Fotia Belt", legs = "Meghanada Chausses +2", feet = gear.valorous.feet.crit
 	}
-	sets.precast.WS['Rampage'].PDL =
+	sets.precast.WS['Rampage'].PDL = set_combine(sets.precast.WS['Rampage'],
 	{
 		ammo = "Crepuscular Pebble",
 		head = "Gleti's Mask", neck = "Bst. Collar +2",
@@ -280,7 +280,7 @@ function init_gear_sets()
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Gere Ring",
 		back = gear.Artio.STR_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
-	setst.precast.WS['Savage Blade'].PDL = set_combine(sets.precast.WS['Savage Blade'],
+	sets.precast.WS['Savage Blade'].PDL = set_combine(sets.precast.WS['Savage Blade'],
 	{
 		ammo = "Crepuscular Pebble",
 		body = "Gleti's Cuirass", ring1 = "Sroda Ring",
@@ -391,7 +391,7 @@ function init_gear_sets()
 	sets.midcast.Pet.WS =
 	{
 		ammo = "Hesperiidae",
-		head = "Emicho Coronet +1", neck = "Shulmanu Collar", ear1 = "Hija Earring", ear2 = "Enmerkar Earring",
+		head = "Emicho Coronet +1", neck = "Shulmanu Collar", ear1 = "Kyrene's Earring", ear2 = "Enmerkar Earring",
 		body = gear.valorous.body.pet_phys, hands = "Nukumi Manoplas +1", ring1 = "Cath Palug Ring", ring2 = "Varar Ring +1",
 		back = gear.Artio.Pet_Idle, waist = "Incarnation Sash", legs = gear.valorous.legs.pet_phys, feet = "Gleti's Boots"
 	}
@@ -405,7 +405,7 @@ function init_gear_sets()
 	sets.midcast.Pet.MagicReady =
 	{
 		ammo = "Voluspa Tathlum",
-		head = gear.valorous.head.pet_mab, neck = "Adad Amulet", ear1 = "Hija Earring", ear2 = "Enmerkar Earring",
+		head = gear.valorous.head.pet_mab, neck = "Adad Amulet", ear1 = "Kyrene's Earring", ear2 = "Enmerkar Earring",
 		body = "Emicho Haubert +1", hands = "Nukumi Manoplas +1", ring1 = "Cath Palug Ring", ring2 = "Tali'ah Ring",
 		back = gear.Artio.Pet_Macc, waist = "Incarnation Sash", legs = gear.valorous.legs.pet_mab, feet = gear.valorous.feet.pet_mab
 	}
@@ -446,7 +446,7 @@ function init_gear_sets()
 	sets.idle.Pet =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Nyame Helm", neck = "Shepherd's Chain", ear1 = "Handler's Earring", ear2 = "Enmerkar Earring",
+		head = "Nyame Helm", neck = "Shepherd's Chain", ear1 = "Handler's Earring +1", ear2 = "Enmerkar Earring",
 		body = "Totemic Jacket +3", hands = "Gleti's Gauntlets", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
 		back = gear.Artio.Idle, waist = "Isa Belt", legs = "Tali'ah Seraweels +2", feet = "Ankusa Gaiters +3"
 	}
@@ -462,7 +462,7 @@ function init_gear_sets()
 
 	sets.idle.Pet.Engaged.DT =
 	{
-		ammo = "Staunch Tathlum +2",
+		ammo = "Staunch Tathlum +1",
 		head = "Anwig Salade", neck = "Shepherd's Chain", ear1 = "Handler's Earring +1", ear2 = "Enmerkar Earring",
 		body = "Totemic Jackcoat +3", hands = "Gleti's Gauntlets", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
 		back = gear.Artio.Idle, waist = "Isa Belt", legs = "Tali'ah Seraweels +2", feet = "Ankusa Gaiters +3"
@@ -476,7 +476,7 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Dedition Earring",
+		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Telos Earring",
 		body = "Tali'ah Manteel +2", hands = "Malignance Gloves", ring1 = "Epona's Ring", ring2 = "Gere Ring",
 		back = gear.Artio.Idle, waist = "Windbuffet Belt +1", legs = "Meghanada Chausses +2", feet = "Malignance Boots"
 	}
@@ -512,17 +512,18 @@ function init_gear_sets()
 
 	sets.buff['Killer Instinct'] = { body = "Nukumi Gausape +1" }
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
-	sets.buff.Sleep = {head="Frenzy Sallet"}
+	sets.buff.Sleep = {}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	sets.Knockback = {}
-	sets.SuppaBrutal = {ear1="Suppanomimi", ear2="Sherida Earring"}
-	sets.DWEarrings = {ear1="Dudgeon Earring",ear2="Heartseeker Earring"}
+	sets.SuppaBrutal = {}
+	sets.DWEarrings = {}
 	
 	-- Weapons sets
 	sets.weapons.Aymur = { main = "Aymur", sub = "Sacro Bulwark" }
 	sets.weapons.Pangu = { main = "Pangu", sub = "Sacro Bulwark" }
 	sets.weapons.Dolichenus = { main = "Dolichenus", sub = "Sacro Bulwark" }
 	sets.weapons.Naegling = { main = "Naegling", sub = "Sacro Bulwark" }
+	sets.weapons.Drepanum = { main = "Drepanum", sub = "Bloodrain Strap" }
 	sets.weapons.DualAymur = { main = "Aymur", sub = "Agwu's Axe" }
 	sets.weapons.DualPangu = { main = "Pangu", sub = "Agwu's Axe" }
 	sets.weapons.DualDolichenus = { main = "Dolichenus", sub = "Ternion Dagger +1" }
@@ -615,17 +616,7 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
 	-- Default macro set/book
-	if player.sub_job == 'DNC' then
-		set_macro_page(6, 16)
-	elseif player.sub_job == 'NIN' then
-		set_macro_page(4, 16)
-	elseif player.sub_job == 'THF' then
-		set_macro_page(6, 16)
-	elseif player.sub_job == 'RUN' then
-		set_macro_page(6, 16)
-	else
-		set_macro_page(6, 16)
-	end
+	set_macro_page(4, 16)
 end
 
 state.Weapons:options('None','PetPDTAxe','DualWeapons')

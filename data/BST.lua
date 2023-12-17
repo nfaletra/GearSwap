@@ -61,6 +61,7 @@ function job_setup()
 	state.Buff['Killer Instinct'] = buffactive['Killer Instinct'] or false
 	state.Buff["Unleash"] = buffactive["Unleash"] or false
 	state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
+	state.Stance = M{['description']='Stance','Hasso','Seigan','None'}
 
 	-- 'Out of Range' distance; WS will auto-cancel
 	target_distance = 6
@@ -236,7 +237,7 @@ function job_setup()
 
 	update_pet_groups()
 	update_melee_groups()
-	init_job_states({"Capacity","AutoRuneMode","AutoTrustMode","AutoWSMode","AutoShadowMode","AutoFoodMode","AutoStunMode","AutoDefenseMode","AutoReadyMode",},{"AutoBuffMode","AutoSambaMode","Weapons","OffenseMode","WeaponskillMode","PetMode","IdleMode","Passive","RuneElement","JugMode","RewardMode","TreasureMode",})
+	init_job_states({"Capacity","AutoRuneMode","AutoTrustMode","AutoWSMode","AutoShadowMode","AutoFoodMode","AutoStunMode","AutoDefenseMode","AutoReadyMode",},{"AutoBuffMode","AutoSambaMode","Weapons","OffenseMode","WeaponskillMode","Stance","PetMode","IdleMode","Passive","RuneElement","JugMode","RewardMode","TreasureMode",})
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -581,6 +582,27 @@ function update_melee_groups()
 	end
 end
 
+function check_hasso()
+	if player.sub_job == 'SAM' and player.status == 'Engaged' and not (state.Stance.value == 'None' or state.Buff.Hasso or state.Buff.Seigan or state.Buff['SJ Restriction'] or main_weapon_is_one_handed() or silent_check_amnesia()) then
+		
+		local abil_recasts = windower.ffxi.get_ability_recasts()
+		
+		if state.Stance.value == 'Hasso' and abil_recasts[138] < latency then
+			windower.chat.input('/ja "Hasso" <me>')
+			tickdelay = os.clock() + 1.1
+			return true
+		elseif state.Stance.value == 'Seigan' and abil_recasts[139] < latency then
+			windower.chat.input('/ja "Seigan" <me>')
+			tickdelay = os.clock() + 1.1
+			return true
+		else
+			return false
+		end
+	end
+
+	return false
+end
+
 function job_self_command(commandArgs, eventArgs)
 	if commandArgs[1]:lower() == 'showcharge' then
 		add_to_chat(204, '~~~Current Ready Charges Available: ['..get_current_ready_count()..']~~~')
@@ -610,6 +632,7 @@ end
 function job_tick()
 	if check_pet() then return true end
 	if check_ready() then return true end
+	if check_hasso() then return true end
 	return false
 end
 

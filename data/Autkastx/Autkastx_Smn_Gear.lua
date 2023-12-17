@@ -105,7 +105,7 @@ function init_gear_sets()
 		main = "Gada", sub = "Sors Shield", ammo = "Pemphredo Tathlum",
 		head = "Vanya Hood", neck = "Incanter's Torque", ear1 = "Mendi. Earring", ear2 = "Malignance Earring",
 		body = "Vedic Coat", hands = "Telchine Gloves" ,ring1 = "Lebeche Ring", ring2 = "Stikini Ring +1",
-		back = "Pahtli Cape", waist = "Luminary Sash", legs = "Assiduity Pants +1", feet = "Vanya Clogs"
+		back = "Aurist's Cape +1", waist = "Luminary Sash", legs = "Assiduity Pants +1", feet = "Vanya Clogs"
 	}
 
 	sets.Self_Healing = {neck="Phalaina Locket",ring1="Kunaji Ring",ring2="Asklepian Ring",waist="Gishdubar Sash"}
@@ -336,7 +336,7 @@ function init_gear_sets()
 	-- Not really used anymore, was for the days of specific staves for specific avatars.
 	sets.perp.staff_and_grip = {}
 
-	sets.Kiting = { feet = "Herald's Gaiters" }
+	sets.Kiting = { ring2 = "Shneddick Ring" }
 	sets.latent_refresh = { waist = "Fucho-no-obi" }
 	sets.latent_refresh_grip = { sub = "Oneiros Grip" }
 	sets.TPEat = { neck = "Chrys. Torque" }
