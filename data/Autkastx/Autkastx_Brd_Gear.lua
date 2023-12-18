@@ -178,7 +178,7 @@ function init_gear_sets()
 	sets.midcast['Horde Lullaby II'].AoE = {range="Blurred Harp +1"}
 	sets.midcast.Madrigal = { head = "Fili Calot +3", back = gear.Intarabus.TP, feet = "Fili Cothurnes +2" }
 	sets.midcast.Paeon = { head = "Brioso Roundlet +1" }
-	sets.midcast.March = { hands = "Fili Manchettes +1" }
+sets.midcast.March = { hands = "Fili Manchettes +1" }
 	sets.midcast['Honor March'] = set_combine(sets.midcast.March, { range = "Marsyas"})
 	sets.midcast.Minuet = { body = "Fili Hongreline +3" }
 	sets.midcast.Minne = { legs = "Mousai Seraweels +1" }
@@ -203,9 +203,10 @@ function init_gear_sets()
 	-- For song defbuffs (duration primary, accuracy secondary)
 	sets.midcast.SongDebuff = set_combine(sets.midcast.SongEffect,
 	{
-		head = "Brioso Roundlet +1", ear2 = "Regal Earring",
-		body = "Brioso Justaucorps +1", hands = "Brioso Cuffs +1", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
-		back = "Aurist's Cape +1", waist = "Obstinate Sash"
+		sub = "Ammurapi Shield",
+		ear1 = "Regal Earring", ear2 = "Fili Earring +1",
+		ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
+		back = "Aurist's Cape +1", waist = "Acuity Belt +1", legs = "Bihu Cannions +3", feet = "Bihu Slippers +3
 	})
 		
 	-- Song-specific recast reduction
@@ -231,27 +232,31 @@ function init_gear_sets()
 	sets.Cure_Received = {neck="Phalaina Locket",hands="Buremte Gloves",ring2="Kunaji Ring",waist="Gishdubar Sash"}
 	sets.Self_Refresh = {back="Grapevine Cape",waist="Gishdubar Sash"}
 		
-	sets.midcast['Enhancing Magic'] = {main="Serenity",sub="Fulcio Grip",ammo="Hasty Pinion +1",
-		head="Telchine Cap",neck="Voltsurge Torque",ear1="Andoaa Earring",ear2="Gifted Earring",
-		body="Telchine Chas.",hands="Telchine Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Fi Folett Cape +1",waist="Embla Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
-		
+	sets.midcast['Enhancing Magic'] =
+	{
+		sub = "Ammurapi Shield", ammo = "Hasty Pinion +1",
+		head = "Telchine Cap", neck = "Voltsurge Torque" , ear1 = "Andoaa Earring", ear2 = "Gifted Earring",
+		body = "Telchine Chas.", hands = gear.telchine.hands.enhancing, ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
+		back = "Fi Folett Cape +1", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Telchine Pigaches"
+	}
+
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",legs="Shedir Seraweels"})
 		
-	sets.midcast['Elemental Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-		head="C. Palug Crown",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Crematio Earring",
-		body="Chironic Doublet",hands="Volte Gloves",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
-		back="Toro Cape",waist="Sekhmet Corset",legs="Gyve Trousers",feet=gear.chironic_nuke_feet}
+	sets.midcast['Elemental Magic'] =
+	{
+		main = "Daybreak", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
+		head = "C. Palug Crown", neck = "Sanctity Necklace", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
+		body = "Chironic Doublet", hands = "Volte Gloves", ring1 = "Shiva Ring +1", ring2 = "Shiva Ring +1",
+		back = "Toro Cape", waist = "Sekhmet Corset", legs = "Gyve Trousers", feet = gear.chironic_nuke_feet
+	}
 		
-	sets.midcast['Elemental Magic'].Resistant = {main="Daybreak",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-		head="C. Palug Crown",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Crematio Earring",
-		body="Chironic Doublet",hands="Volte Gloves",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
-		back="Toro Cape",waist="Yamabuki-no-Obi",legs="Gyve Trousers",feet=gear.chironic_nuke_feet}
-		
-	sets.midcast.Cursna =  set_combine(sets.midcast.Cure, {neck="Debilis Medallion",hands="Hieros Mittens",
-		back="Oretan. Cape +1",ring1="Haoma's Ring",ring2="Menelaus's Ring",waist="Witful Belt",feet="Vanya Clogs"})
-		
-	sets.midcast.StatusRemoval = set_combine(sets.midcast.FastRecast, {main=gear.grioavolr_fc_staff,sub="Clemency Grip"})
+	sets.midcast.Cursna =  set_combine(sets.midcast.Cure,
+	{
+		neck = "Debilis Medallion", hands = "Hieros Mittens", ring1 = "Haoma's Ring", ring2 = "Menelaus's Ring",
+		back = "Oretan. Cape +1", waist = "Witful Belt", feet = "Vanya Clogs"
+	})
+
+	sets.midcast.StatusRemoval = set_combine(sets.midcast.FastRecast, {})
 
 	sets.idle =
 	{
