@@ -2,7 +2,7 @@
 function user_job_setup()
 	state.OffenseMode:options('Normal')
 	state.RangedMode:options('Normal', 'Acc', 'Crit')
-	state.WeaponskillMode:options('Match', 'Normal', 'Acc', 'Proc')
+	state.WeaponskillMode:options('Match', 'Normal', 'PDL', 'Proc')
 	state.CastingMode:options('Normal', 'Damage', 'Proc')
 	state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	state.HybridMode:options('Normal', 'DT', 'Xevioso')
@@ -172,6 +172,10 @@ function init_gear_sets()
 		body = "Nyame Mail", hands = "Chasseur's Gants +3", ring1 = "Regal Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Camulus.Savage, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
+	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS['Savage Blade'],
+	{
+		body = "Ikenga's Vest", ring2 = "Sroda Ring",
+	})
 
 	sets.precast.WS['Seraph Blade'] =
 	{
@@ -186,10 +190,15 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'] =
 	{
 		ammo = gear.WSbullet,
-		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Odr Earring", ear2 = "Moonshade Earring",
-		body = "Mummu Jacket +2", hands = "Chasseur's Gants +3", ring1 = "Ilabrat Ring", ring2 = "Epona's Ring",
-		back = gear.Camulus.Melee, waist = "Fotia Belt", legs = "Meg. Chausses +2", feet = "Mummu Gamash. +2"
+		head = "Blistering Sallet +1", neck = "Fotia Gorget", ear1 = "Odr Earring", ear2 = "Moonshade Earring",
+		body = "Meg. Cuirie +2", hands = gear.adhemar.hands.b, ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		back = gear.Camulus.Melee, waist = "Fotia Belt", legs = "Zoar Subligar +1", feet = "Adhe. Gamashes +1"
 	}
+	sets.precast.WS['Evisceration'].PDL = set_combine(sets.precast.WS['Evisceration'],
+	{
+		body = "Ikenga's Vest",
+		feet = "Ikenga's Clogs"
+	})
 
 	sets.precast.WS['Aeolian Edge'] =
 	{
@@ -206,12 +215,23 @@ function init_gear_sets()
 		body = "Ikenga's Vest", hands = "Chasseur's Gants +3", ring1 = "Dingir Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Camulus.WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
+	sets.precast.WS['Last Stand'].PDL = sets.precast.WS['Last Stand'],
+	{
+		head = "Ikenga's Hat",
+		hands = "Ikenga's Gloves", ring2 = "Sroda Ring",
+		legs = "Ikenga's Trousers", feet = "Ikenga's Clogs"
+	})
 
 	sets.precast.WS['Detonator'] = sets.precast.WS['Last Stand']
+	sets.precast.WS['Detonator'].PDL = sets.precast.WS['Last Stand'].PDL
 	sets.precast.WS['Slug Shot'] = sets.precast.WS['Last Stand']
+	sets.precast.WS['Slug Shot'].PDL = sets.precast.WS['Last Stand'].PDL
 	sets.precast.WS['Numbing Shot'] = sets.precast.WS['Last Stand']
+	sets.precast.WS['Numbing Shot'].PDL = sets.precast.WS['Last Stand'].PDL
 	sets.precast.WS['Sniper Shot'] = sets.precast.WS['Last Stand']
+	sets.precast.WS['Sniper Shot'].PDL = sets.precast.WS['Last Stand'].PDL
 	sets.precast.WS['Split Shot'] = sets.precast.WS['Last Stand']
+	sets.precast.WS['Split Shot'].PDL = sets.precast.WS['Last Stand'].PDL
 
 	sets.precast.WS['Leaden Salute'] =
 	{

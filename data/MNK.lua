@@ -124,8 +124,6 @@ function job_post_precast(spell, spellMap, eventArgs)
 		if state.Buff['Impetus'] and (spell.english == "Ascetic's Fury" or spell.english == "Victory Smite") then
 			if sets.buff.ImpetusWS then
 				equip(sets.buff.ImpetusWS)
-			else
-				equip(sets.buff.Impetus)
 			end
 		elseif buffactive.Footwork and (spell.english == "Dragon Kick" or spell.english	 == "Tornado Kick") then
 			equip(sets.FootworkWS)
@@ -160,13 +158,8 @@ function job_customize_melee_set(meleeSet)
 		meleeSet = set_combine(meleeSet, sets.buff.Counterstance)
 	end
 	
-	if state.OffenseMode.value ~= 'FullAcc' then
-		if state.Buff['Impetus'] then
-			meleeSet = set_combine(meleeSet, sets.buff.Impetus)
-		end
-		if buffactive.Footwork then
-			meleeSet = set_combine(meleeSet, sets.buff.Footwork)
-		end
+	if buffactive.Footwork then
+		meleeSet = set_combine(meleeSet, sets.buff.Footwork)
 	end
 
 	if state.Buff['Boost'] then
@@ -314,15 +307,15 @@ end
 function update_melee_groups()
 	classes.CustomMeleeGroups:clear()
 
-	if buffactive.footwork and not buffactive['hundred fists'] then
-		classes.CustomMeleeGroups:append('Footwork')
-	end
-	
-	if player.equipment.main and player.equipment.main == "Glanzfaust" and state.Buff['Aftermath: Lv.3'] then
-		classes.CustomMeleeGroups:append('AM')
+	if state.Buff['Impetus'] then
+		classes.CustomMeleeGroups:append('Impetus')
 	end
 
-	if state.Buff['Hundred Fists'] then
-		classes.CustomMeleeGroups:append('HF')
+	if player.equipment.main and player.equipment.main == "Godhands" then
+		classes.CustomMeleeGroups:append("Godhands")
+	end
+
+	if player.equipment.main and player.equipment.main == "Glanzfaust" and state.Buff['Aftermath: Lv.3'] then
+		classes.CustomMeleeGroups:append('AM')
 	end
 end

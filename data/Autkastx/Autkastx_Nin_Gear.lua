@@ -3,7 +3,7 @@ function user_job_setup()
 	state.OffenseMode:options('Normal', 'Tank', 'H2H', 'GKT')
 	state.HybridMode:options('Normal', 'DT', 'Evasion', 'Subtle Blow', 'Proc')
 	state.RangedMode:options('Normal', 'Acc')
-	state.WeaponskillMode:options('Match', 'Normal', 'Proc')
+	state.WeaponskillMode:options('Match', 'Normal', 'PDL', 'Proc')
 	state.CastingMode:options('Normal', 'Proc', 'Resistant')
 	state.IdleMode:options('Normal', 'Evasion')
 	state.PhysicalDefenseMode:options('PDT')
@@ -108,50 +108,85 @@ function init_gear_sets()
 	sets.precast.WS['Blade: Metsu'] =
 	{
 		ammo = "Voluspa Tathlum",
-		head = "Hachiya Hatsu. +3", neck = "Ninja Nodowa +2", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
+		head = "Nyame Helm", neck = "Ninja Nodowa +2", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Ilabrat Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
 	}
+	sets.precast.WS['Blade: Metsu'].PDL = set_combine(sets.precast.WS['Blade: Metsu'],
+	{
+		ammo = "Crepuscular Pebble",
+		head = "Hachiya Hatsu. +3", ring2 = "Sroda Ring"
+	})
 
 	sets.precast.WS['Blade: Shun'] =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Epaminondas's Ring",
-		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
+		head = "Mochi. Hatsuburi +3", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
+		body = "Mpaca's Doublet", hands = "Mochi. Tekko +3", ring1 = "Gere Ring", ring2 = "Epaminondas's Ring",
+		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mochi. Kyahan +3"
 	}
+	sets.precast.WS['Blade: Shun'].PDL = set_combine(sets.precast.WS['Blade: Shun'],
+	{
+		ammo = "Crepuscular Pebble",
+		head = "Adhemar Bonnet +1", neck = "Ninja Nodowa +2",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring2 = "Sroda Ring",
+		feet = "Mpaca's Boots"
+	})
 
 	sets.precast.WS['Blade: Ten'] =
 	{
 		ammo = "Voluspa Tathlum",
 		head = "Mpaca's Cap", neck = "Ninja Nodowa +2", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Epaminondas's Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
 	}
+	sets.precast.WS['Blade: Ten'].PDL = set_combine(sets.precast.WS['Blade: Ten'],
+	{
+		ammo = "Crepuscular Pebble",
+		ring2 = "Sroda Ring"
+	})
 
 	sets.precast.WS['Blade: Kamu'] =
 	{
 		ammo = "Voluspa Tathlum",
-		head = "Hachiya Hatsu. +3", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Ishvara Earring",
+		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Ishvara Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
 	}
+	sets.precast.WS['Blade: Kamu'].PDL = set_combine(sets.precast.WS['Blade: Kamu'],
+	{
+		ammo = "Crepuscular Pebble",
+		head = "Hachiya Hatsu. +3", neck = "Ninja Nodowa +2",
+		ring2 = "Sroda Ring"
+	})
 
 	sets.precast.WS['Blade: Hi'] =
 	{
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Ninja Nodowa +2", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Ken. Samue +1", hands = "Ryuo Tekko +1", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
-		back = gear.Andartia.STR_WSD, waist = "Svelt. Gouriz +1", legs = "Mochi. Hakama +3", feet = "Mpaca's Boots"
+		body = "Mochi. Chainmail +3", hands = "Ryuo Tekko +1", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		back = gear.Andartia.STR_WSD, waist = "Svelt. Gouriz +1", legs = "Mochi. Hakama +3", feet = "Mochi. Kyahan +3"
 	}
+	sets.precast.WS['Blade: Hi'].PDL = set_combine(sets.precast.WS['Blade: Hi'],
+	{
+		head = "Hachiya Hatsu. +3",
+		body = "Malignance Tabard", ring2 = "Sroda Ring",
+		feet = "Malignance Boots"
+	})
 
 	sets.precast.WS['Blade: Ku'] =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Mache Earring +1",
-		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Epona's Ring",
-		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Samnuha Tights", feet = "Mpaca's Boots"
+		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Mache Earring +1",
+		body = "Mpaca's Doublet", hands = "Mpaca's Gloves", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
+	sets.precast.WS['Blade: Ku'].PDL = set_combine(sets.precast.WS['Blade: Ku'],
+	{
+		ammo = "Crepuscular Pebble",
+		head = "Malignance Chapeau",
+		body = "Malignance Tabard", ring2 = "Sroda Ring",
+	})
 
 	sets.precast.WS['Blade: Chi'] =
 	{
@@ -224,6 +259,11 @@ function init_gear_sets()
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
 	}
+	sets.precast.WS['Savage Blade'].PDL = set_combine(sets.precast.WS['Savage Blade'],
+	{
+		ammo = "Crepuscular Pebble",
+		neck = "Ninja Nodowa +2", ring2 = "Sroda Ring",
+	})
 
 	sets.precast.WS['Sanguine Blade'] =
 	{
@@ -240,6 +280,7 @@ function init_gear_sets()
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back = gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
+	sets.precast.WS['Burning Blade'] = {}
 
 	sets.precast.WS['Seraph Blade'] =
 	{
@@ -248,6 +289,7 @@ function init_gear_sets()
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back =gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
+	sets.precast.WS['Shining Blade'] = {}
 
 	sets.precast.WS['Flat Blade'] =
 	{
@@ -269,7 +311,7 @@ function init_gear_sets()
 	{
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Abnoba Kaftan", hands = "Ryuo Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Ken. Samue +1", hands = "Ryuo Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
@@ -284,26 +326,44 @@ function init_gear_sets()
 	sets.precast.WS['Asuran Fists'] =
 	{
 		ammo = "Voluspa Tathlum",
-		head = "Hachiya Hatsu. +3", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Telos Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
-		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
+		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Telos Earring",
+		body = "Mochi. Chainmail +3", hands = "Mochi. Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Mochi. Hakama +3", feet = "Mochi. Kyahan +3"
 	}
+	sets.precast.WS['Asuran Fists'].PDL = set_combine(sets.precast.WS['Asuran Fists'],
+	{
+		head = "Malignance Chapeau",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring2 = "Sroda Ring",
+		legs = "Malignance Tights", feet = "Malignance Boots"
+	})
 
 	sets.precast.WS['Raging Fists'] =
 	{
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
-		body = gear.adhemar.body.b, hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Regal Ring",
-		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = gear.herculean_ta_feet
+		body = "Mpaca's Doublet", hands = "Mochi Tekko +3", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mochi. Kyahan +3"
 	}
+	set.precast.WS['Raging Fists'].PDL = set_combine(sets.precast.WS['Raging Fists'],
+	{
+		ammo = "Crepuscular Pebble",
+		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring2 = "Sroda Ring",
+		feet = "Mpaca's Boots"
+	})
 
 	sets.precast.WS['Combo'] =
 	{
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
-		body = gear.adhemar.body.b, hands = gear.adhemar.hands.b, ring1 = "Gere Ring", ring2 = "Regal Ring",
-		back =gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = gear.herculean_ta_feet
+		body = "Mpaca's Doublet", hands = "Mochi. Tekko +3", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mochi. Kyahan +3"
 	}
+	sets.precast.WS['Combo'].PDL = set_combine(sets.prcast.WS['Combo'],
+	{
+		ammo = "Crepuscular Pebble",
+		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring2 = "Sroda Ring",
+		feet = "Mpaca's Boots"
+	})
 
 	sets.precast.WS['Shoulder Tackle'] =
 	{
@@ -320,6 +380,12 @@ function init_gear_sets()
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
 	}
+	sets.precast.WS['Spinning Attack'].PDL = set_combine(sets.precast.WS['Spinning Attack'],
+	{
+		ammo = "Crepuscular Pebble",
+		neck = "Ninja Nodowa +2",
+		ring2 = "Sroda Ring",
+	})
 
 	sets.precast.WS['Tachi: Kasha'] =
 	{
@@ -328,6 +394,12 @@ function init_gear_sets()
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
 	}
+	sets.precast.WS['Tachi: Kasha'].PDL = set_combine(sets.precast.WS['Tashi: Kasha'],
+	{
+		ammo = "Crepuscular Pebble",
+		neck = "Ninja Nodowa +2",
+		ring2 = "Sroda Ring"
+	})
 
 	sets.precast.WS['Tachi: Jinpu'] =
 	{
@@ -376,6 +448,12 @@ function init_gear_sets()
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Sailfi Belt +1", legs = "Mochi. Hakama +3", feet = "Nyame Sollerets"
 	}
+	sets.precast.WS['Tachi: Enpi'].PDL = set_combine(sets.precast.WS['Tachi: Enpi'],
+	{
+		ammo = "Crepuscular Pebble",
+		neck = "Ninja Nodowa +2",
+		ring2 = "Sroda Ring"
+	})
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {}

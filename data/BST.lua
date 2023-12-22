@@ -515,14 +515,6 @@ function job_status_change(newStatus, oldStatus, eventArgs)
 	end
 end
 
-function get_custom_wsmode(spell, spellMap, default_wsmode)
-        if default_wsmode ~= 'Fodder' then
-                if spell.english == "Ruinator" and (world.day_element == 'Water' or world.day_element == 'Wind' or world.day_element == 'Ice') then
-                        return 'Mekira'
-                end
-        end
-end
-
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
 -------------------------------------------------------------------------------------------------------------------

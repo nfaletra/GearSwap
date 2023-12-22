@@ -184,6 +184,10 @@ function get_custom_wsmode(spell, spellMap, defaut_wsmode)
 		wsmode = (wsmode or '') .. 'TA'
 	end
 
+	if state.WeaponskillMode.value == 'PDL' and wsmode then
+		wsmode = wsmode..'.PDL'
+	end
+
 	return wsmode
 end
 
