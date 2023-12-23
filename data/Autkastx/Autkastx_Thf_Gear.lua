@@ -17,7 +17,8 @@ function user_job_setup()
 	gear.Toutatis =
 	{
 		TP = { name = "Toutatis's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', '"Store TP"+10', 'Damage taken-5%' } },
-		WSD = { name = "Toutatis's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } }
+		WSD = { name = "Toutatis's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } },
+		DW = { name = "Toutatis's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', '"Dual Wield"+10', 'Phys. dmg. taken-10%' } }
 	}
 
 	-- Additional local binds
@@ -165,7 +166,7 @@ function init_gear_sets()
 		ammo = "Yetshila +1",
 		head = "Pill. Bonnet +3", ear1 = "Odr Earring",
 	})
-	sets.precast.WS["Rudra's Storm"].SA.PDL = sets.precast.WS["Rudra's Storm"].SA, { ring1 = "Epaminondas's Ring" })
+	sets.precast.WS["Rudra's Storm"].SA.PDL = set_combine(sets.precast.WS["Rudra's Storm"].SA, { ring1 = "Epaminondas's Ring" })
 	sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].SA, {})
 	sets.precast.WS["Rudra's Storm"].TA.PDL = set_combine(sets.precast.WS["Rudra's Storm"].SA.PDL, {})
 	sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].SA, {})
@@ -240,7 +241,7 @@ function init_gear_sets()
 	sets.precast.WS["Savage Blade"].PDL = set_combine(sets.precast.WS["Savage Blade"],
 	{
 		ammo = "Crepuscular Pebble",
-		body = "Gleti's Cuirass", ring1 = "Sroda Ring"
+		body = "Gleti's Cuirass", ring1 = "Sroda Ring",
 		legs = "Gleti's Breeches"
 	})
 
@@ -358,6 +359,20 @@ function init_gear_sets()
 		body = "Pillager's Vest +3", hands = "Gleti's Gauntlets", ring1 = "Gere Ring", ring2 = "Hetairoi Ring",
 		back = gear.Toutatis.TP, waist = "Reiki Yotai", legs = "Gleti's Breeches", feet = "Plun. Poulaines +3"
 	}
+	sets.engaged.Haste30 = set_combine(sets.engaged,
+	{
+		ear1 = "Eabani Earring", ear2 = "Suppanomimi",
+		back = gear.Toutatis.DW,
+	})
+	sets.engaged.Haste15 = set_combine(sets.engaged.Haste30,
+	{
+		body = gear.adhemar.body.b, hands = "Pill. Armlets +3"
+	})
+	sets.engaged.Haste0 = set_combine(sets.engaged.Haste15,
+	{
+		-- hands = "Herculean Gloves", -- 6% DW
+		-- feet = "Herculean Boots" -- 5% DW
+	})
 
 	sets.engaged.Hybrid =
 	{
@@ -366,6 +381,17 @@ function init_gear_sets()
 		body = "Pillager's Vest +3", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Moonlight Ring",
 		back = gear.Toutatis.TP, waist = "Reiki Yotai", legs = "Pill. Culottes +3", feet = "Plun. Poulaines +3"
 	}
+	sets.engaged.Hybrid.Haste30 = set_combine(sets.engaged.Hybrid,
+	{
+		ear1 = "Eabani Earring", ear2 = "Suppanomimi",
+		hands = gear.adhemar.hands.a,
+		back = gear.Toutatis.DW, legs = "Malignance Tights",
+	})
+	sets.engaged.Hybrid.Haste15 = set_combine(sets.engaged.Hybrid.Haste30,
+	{
+		body = gear.adhemar.body.b, hands = "Pill. Armlets +3"
+	})
+	sets.engaged.Hybrid.Haste0 = set_combine(sets.engaged.Hybrid.Haste15, {})
 
 	sets.engaged.FullDT =
 	{

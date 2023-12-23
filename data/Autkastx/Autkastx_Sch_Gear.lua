@@ -4,7 +4,7 @@ function user_job_setup()
     state.CastingMode:options('Normal','Resistant','Proc','OccultAcumen','9k')
     state.IdleMode:options('Normal', 'PDT', 'MDT')
 	state.HybridMode:options('Normal','Dual Wield')
-	state.Weapons:options('None','Musa','Khatvanga','Maxentius','Daybreak','DualMaxentius','DualDaybreak')
+	state.Weapons:options('None','Musa','Mpaca','Khatvanga','Maxentius','Daybreak','DualMaxentius','DualDaybreak')
 
 	state.AutoCureMode:options('Off', 'Party', 'Ally')
 	state.StatusCureMode:options('Off', 'Party', 'Ally')
@@ -376,6 +376,7 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Khatvanga = { main = "Khatvanga", sub = "Bloodrain Strap" }
 	sets.weapons.Musa = { main = "Musa", sub = "Khonsu" }
+	sets.weapons.Mpaca = { main = "Mpaca's Staff", sub = "Elder's Grip +1" }
 	sets.weapons.Maxentius = { main = "Maxentius", sub = "Genmei Shield" }
 	sets.weapons.Daybreak = { main = "Daybreak", sub = "Genmei Shield" }
 	sets.weapons.DualMaxentius = { main = "Maxentius", sub = "Ternion Dagger +1" }
