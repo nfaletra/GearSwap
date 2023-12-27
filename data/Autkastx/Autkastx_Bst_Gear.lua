@@ -13,7 +13,7 @@ function user_job_setup()
 
 	-- Set up Jug Pet cycling and keybind Ctrl+F7
 	-- INPUT PREFERRED JUG PETS HERE
-	state.JugMode = M{['description']='Jug Mode','FatsoFargann','ScissorlegXerin','BlackbeardRandy','AttentiveIbuki','DroopyDortwin','WarlikePatrick','AcuexFamiliar'}
+	state.JugMode = M{['description']='Jug Mode','GenerousArthur','CaringKiyomaro','FatsoFargann','ScissorlegXerin','BlackbeardRandy','AttentiveIbuki','DroopyDortwin','WarlikePatrick','AcuexFamiliar'}
 	send_command('bind ^f7 gs c cycle JugMode')
 
 	-- Set up Monster Correlation Modes and keybind Alt+F7
@@ -48,7 +48,6 @@ function init_gear_sets()
 	sets.precast.JA['Killer Instinct'] = { head = "Ankusa Helm +3" }
 	sets.precast.JA['Call Beast'] =
 	{
-		ammo = "Staunch Tathlum +1",
 		head = gear.acro.head.call_beast, neck = "Loricate Torque +1", ear1 = "Eabani Earring", ear2 = "Sanare Earring",
 		body = "Mirke Wardecors", hands = "Ankusa Gloves +3", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
 		back = gear.Artio.FC, waist = "Flume Belt +1", legs = gear.acro.legs.call_beast, feet = gear.acro.feet.call_beast

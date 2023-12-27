@@ -52,12 +52,11 @@
 
 -- Initialization function for this job file.
 function get_sets()
-        -- Load and initialize the include file.
-        include('Sel-Include.lua')
+	-- Load and initialize the include file.
+	include('Sel-Include.lua')
 end
 
 function job_setup()
-
 	state.Buff['Killer Instinct'] = buffactive['Killer Instinct'] or false
 	state.Buff["Unleash"] = buffactive["Unleash"] or false
 	state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
@@ -71,15 +70,15 @@ function job_setup()
 
 	-- List of Magic-based Ready moves to use with Pet MAB or Pet M.Acc gearset.
 	magic_ready_moves = S{'Dust Cloud','Sheep Song','Scream','Dream Flower','Roar','Gloeosuccus','Palsy Pollen',
-        'Soporific','Cursed Sphere','Venom','Geist Wall','Toxic Spit','Numbing Noise','Spoil','Hi-Freq Field',
-        'Sandpit','Sandblast','Venom Spray','Bubble Shower','Filamented Hold','Silence Gas','Spore','Dark Spore',
+		'Soporific','Cursed Sphere','Venom','Geist Wall','Toxic Spit','Numbing Noise','Spoil','Hi-Freq Field',
+		'Sandpit','Sandblast','Venom Spray','Bubble Shower','Filamented Hold','Silence Gas','Spore','Dark Spore',
 		'Fireball','Plague Breath','Infrasonics','Chaotic Eye','Blaster','Intimidate','Snow Cloud',
 		'Noisome Powder','TP Drainkiss','Jettatura','Charged Whisker','Purulent Ooze','Corrosive Ooze','Aqua Breath',
 		'Molting Plumage','Stink Bomb','Nectarous Deluge','Nepenthic Plunge','Pestilent Plume','Foul Waters',
 		'Spider Web','Nihility Song','Venom Shower','Digest'}
-		
+
 	debuff_ready_moves = S{'Dust Cloud','Sheep Song','Scream','Dream Flower','Roar','Gloeosuccus','Palsy Pollen',
-        'Soporific','Geist Wall','Numbing Noise','Spoil','Hi-Freq Field','Sandpit','Sandblast','Filamented Hold',
+		'Soporific','Geist Wall','Numbing Noise','Spoil','Hi-Freq Field','Sandpit','Sandblast','Filamented Hold',
 		'Spore','Fireball','Infrasonics','Chaotic Eye','Blaster','Intimidate','Noisome Powder','TP Drainkiss',
 		'Jettatura','Purulent Ooze','Corrosive Ooze','Pestilent Plume','Spider Web','Nihility Song'}
 		
@@ -90,8 +89,8 @@ function job_setup()
 
 	-- List of abilities to reference for applying Treasure Hunter +1 via Chaac Belt.
 	abilities_to_check = S{'Feral Howl','Quickstep','Box Step','Stutter Step','Desperate Flourish','Violent Flourish',
-        'Animated Flourish','Provoke','Dia','Dia II','Flash','Bio','Bio II','Sleep','Sleep II',
-        'Drain','Aspir','Dispel','Steal','Mug'}
+		'Animated Flourish','Provoke','Dia','Dia II','Flash','Bio','Bio II','Sleep','Sleep II',
+		'Drain','Aspir','Dispel','Steal','Mug'}
 
 	pet_info = {['FunguarFamiliar']="Funguar, Plantoid, Warrior",['CourierCarrie']="Crab, Aquan, Paladin",
 				['AmigoSabotender']="Cactuar, Plantoid, Warrior",['NurseryNazuna']="Sheep, Beast, Warrior",
@@ -134,7 +133,7 @@ function job_setup()
 				}
 
 	ready_moves = {}
-	ready_moves.default =  {['DroopyDortwin']='Foot Kick',['PonderingPeter']='Foot Kick',['HeraldHenry']='Big Scissors',['CourierCarrie']='Big Scissors',
+	ready_moves.default =	{['DroopyDortwin']='Foot Kick',['PonderingPeter']='Foot Kick',['HeraldHenry']='Big Scissors',['CourierCarrie']='Big Scissors',
 							['AgedAngus']='Big Scissors',['SunburstMalfik']='Big Scissors',['WarlikePatrick']='Fireball',['ScissorlegXerin']='Sensilla Blades',
 							['BouncingBertha']='Sensilla Blades',['RhymingShizuna']='Lamb Chop',['AttentiveIbuki']='Swooping Frenzy',
 							['SwoopingZhivago']='Swooping Frenzy',['AmiableRoche']='Recoil Dive',['BrainyWaluis']='Frogkick',['SuspiciousAlice']='Cyclotail',
@@ -152,7 +151,7 @@ function job_setup()
 							['SlimeFamiliar']='Fluid Toss',['SultryPatrice']='Fluid Toss',['FatsoFargann']='TP Drainkiss',
 							}
 							
-	ready_moves.aoe = 	   {['DroopyDortwin']='Whirl Claws',['PonderingPeter']='Whirl Claws',['HeraldHenry']='Bubble Shower',['CourierCarrie']='Bubble Shower',
+	ready_moves.aoe =		{['DroopyDortwin']='Whirl Claws',['PonderingPeter']='Whirl Claws',['HeraldHenry']='Bubble Shower',['CourierCarrie']='Bubble Shower',
 							['AgedAngus']='Bubble Shower',['SunburstMalfik']='Bubble Shower',['WarlikePatrick']='Fireball',['ScissorlegXerin']='Tegmina Buffet',
 							['BouncingBertha']='Tegmina Buffet',['RhymingShizuna']='Sheep Song',['AttentiveIbuki']='Molting Plumage',
 							['SwoopingZhivago']='Molting Plumage',['AmiableRoche']='Recoil Dive',['BrainyWaluis']='Silence Gas',['SuspiciousAlice']='Cyclotail',
@@ -165,14 +164,14 @@ function job_setup()
 							['VivaciousGaston']='Charged Whisker',['Hip.Familiar']='Choke Breath',['DaringRoland']='Choke Breath',
 							['SlimeFamiliar']='Fluid Spread',['SultryPatrice']='Fluid Spread',}
 
-	ready_moves.buff =     {['DroopyDortwin']='Wild Carrot',['PonderingPeter']='Wild Carrot',['HeraldHenry']='Scissor Guard',['CourierCarrie']='Scissor Guard',
+	ready_moves.buff =		{['DroopyDortwin']='Wild Carrot',['PonderingPeter']='Wild Carrot',['HeraldHenry']='Scissor Guard',['CourierCarrie']='Scissor Guard',
 							['AgedAngus']='Scissor Guard',['SunburstMalfik']='Scissor Guard',['WarlikePatrick']='Secretion',
 							['RhymingShizuna']='Rage',['AmiableRoche']='Water Wall',['HurlerPercival']='Rhino Guard',
 							['CaringKiyomaro']='Zealous Snort',['VivaciousVickie']='Zealous Snort',['P.CrabFamiliar']='Scissor Guard',
 							['JovialEdwin']='Scissor Guard',['Y.BeetleFamiliar']='Rhino Guard',['EnergizedSefina']='Rhino Guard',['LynxFamiliar']='Frenzied Rage',
 							['VivaciousGaston']='Frenzied Rage',['Hip.Familiar']='Fantod',['DaringRoland']='Fantod',}
 
-	ready_moves.debuff =   {['DroopyDortwin']='Dust Cloud',['PonderingPeter']='Dust Cloud',['HeraldHenry']='Bubble Shower',['CourierCarrie']='Bubble Shower',
+	ready_moves.debuff =	{['DroopyDortwin']='Dust Cloud',['PonderingPeter']='Dust Cloud',['HeraldHenry']='Bubble Shower',['CourierCarrie']='Bubble Shower',
 							['AgedAngus']='Bubble Shower',['SunburstMalfik']='Bubble Shower',['WarlikePatrick']='Infrasonics',['ScissorlegXerin']='Tegmina Buffet',
 							['BouncingBertha']='Tegmina Buffet',['RhymingShizuna']='Sheep Song',['AttentiveIbuki']='Swooping Frenzy',
 							['SwoopingZhivago']='Swooping Frenzy',['AmiableRoche']='Intimidate',['BrainyWaluis']='Numbshroom',['SuspiciousAlice']='Geist Wall',
@@ -218,8 +217,7 @@ function job_setup()
 	state.AutoCallPet = M(false, 'Auto Call Pet')
 	state.PetMode = M{['description']='Pet Mode','Tank','DD'}
 	state.RewardMode = M{['description']='Reward Mode', 'Theta', 'Zeta', 'Eta'}
-    state.JugMode = M{['description']='Jug Mode', 'ScissorlegXerin', 'BlackbeardRandy', 'AttentiveIbuki', 'AgedAngus',
-                'RedolentCandi','DroopyDortwin','WarlikePatrick','HeraldHenry','AlluringHoney','SwoopingZhivago','AcuexFamiliar'}
+	state.JugMode = M{['description']='Jug Mode', 'ScissorlegXerin', 'BlackbeardRandy', 'AttentiveIbuki', 'AgedAngus', 'RedolentCandi','DroopyDortwin','WarlikePatrick','HeraldHenry','AlluringHoney','SwoopingZhivago','AcuexFamiliar'}
 
 	UnleashLock = true
 	UnleashLocked = false
@@ -229,7 +227,7 @@ function job_setup()
 
 	base_chargetimer = 30
 
-	if 	player.job_points[(res.jobs[player.main_job_id].ens):lower()].jp_spent > 100 then
+	if player.job_points[(res.jobs[player.main_job_id].ens):lower()].jp_spent > 100 then
 		base_chargetimer = base_chargetimer - 5
 	end
 	
@@ -251,99 +249,89 @@ function job_filtered_action(spell, eventArgs)
 end
 
 function job_filter_precast(spell, spellMap, eventArgs)
-    if spell.english == "Bestial Loyalty" then
-
+	if spell.english == "Bestial Loyalty" then
 		local abil_recasts = windower.ffxi.get_ability_recasts()
-
 		if abil_recasts[94] ~= 0 then
-				send_command('@input /ja "Call Beast" <me>')
-                eventArgs.cancel = true
-				return
+			send_command('@input /ja "Call Beast" <me>')
+			eventArgs.cancel = true
+			return
 		end
-
-    end
+	end
 end
 
 function job_precast(spell, spellMap, eventArgs)
-        if spell.type == "WeaponSkill" and spell.english ~= 'Mistral Axe' and spell.english ~= 'Bora Axe' and spell.target.distance > target_distance then
-                eventArgs.cancel = true
-                add_to_chat(123, spell.name..' Canceled: [Out of Range]')
-
-		elseif spell.english == 'Reward' then
-			equip(sets.precast.JA.Reward[state.RewardMode.value])
-			if can_dual_wield then
-				equip(sets.RewardAxesDW)
+	if spell.type == "WeaponSkill" and spell.english ~= 'Mistral Axe' and spell.english ~= 'Bora Axe' and spell.target.distance > target_distance then
+		eventArgs.cancel = true
+		add_to_chat(123, spell.name..' Canceled: [Out of Range]')
+	elseif spell.english == 'Reward' then
+		equip(sets.precast.JA.Reward[state.RewardMode.value])
+		if can_dual_wield then
+			equip(sets.RewardAxesDW)
+		else
+			equip(sets.RewardAxe)
+		end
+	elseif spell.english == 'Spur' then
+		equip(sets.precast.JA.Spur)
+		if can_dual_wield then
+			equip(sets.SpurAxesDW)
+		else
+			equip(sets.SpurAxe)
+		end
+	elseif spell.english == 'Bestial Loyalty' then
+			if state.JugMode.value == 'DroopyDortwin' and item_available('Vis. Broth') then
+				equip(sets.precast.JA['Bestial Loyalty'].PonderingPeter)
+			elseif state.JugMode.value == 'SunburstMalfik' and item_available('Ferm. Broth') then
+				equip(sets.precast.JA['Bestial Loyalty'].AgedAngus)
+			elseif state.JugMode.value == 'ScissorlegXerin' and item_available('Bubbly Broth') then
+				equip(sets.precast.JA['Bestial Loyalty'].BouncingBertha)
+			elseif state.JugMode.value == 'AttentiveIbuki' and item_available('Windy Greens') then
+				equip(sets.precast.JA['Bestial Loyalty'].SwoopingZhivago)
+			elseif state.JugMode.value == 'RedolentCandi' and item_available('Bug-Ridden Broth') then
+				equip(sets.precast.JA['Bestial Loyalty'].AlluringHoney)
+			elseif state.JugMode.value == 'CaringKiyomaro' and item_available('Tant. Broth') then
+				equip(sets.precast.JA['Bestial Loyalty'].VivaciousVickie)
+			elseif state.JugMode.value == 'ColibriFamiliar' and item_available('Glazed Broth') then
+				equip(sets.precast.JA['Bestial Loyalty'].ChoralLeera)
+			elseif state.JugMode.value == 'SpiderFamiliar' and item_available('Slimy Webbing') then
+				equip(sets.precast.JA['Bestial Loyalty'].GussyHachirobe)
+			elseif state.JugMode.value == 'SurgingStorm' and item_available('Deepwater Broth') then
+				equip(sets.precast.JA['Bestial Loyalty'].SubmergedIyo)
+			elseif state.JugMode.value == 'AcuexFamiliar' and item_available('Venomous Broth') then
+				equip(sets.precast.JA['Bestial Loyalty'].FluffyBredo)
+			elseif state.JugMode.value == 'MosquitoFamiliar' and item_available('Heavenly Broth') then
+				equip(sets.precast.JA['Bestial Loyalty']['Left-HandedYoko'])
+			elseif state.JugMode.value == 'WeevilFamiliar' and item_available('T. Pristine Sap') then
+				equip(sets.precast.JA['Bestial Loyalty']['StalwartAngelina'])
+			elseif state.JugMode.value == 'P.CrabFamiliar' and item_available('Pungent Broth') then
+				equip(sets.precast.JA['Bestial Loyalty']['JovialEdwin'])
+			elseif state.JugMode.value == 'Y.BeetleFamiliar' and item_available('Gassy Sap') then
+				equip(sets.precast.JA['Bestial Loyalty']['EnergizedSefina'])
+			elseif state.JugMode.value == 'LynxFamiliar' and item_available('Spumante Broth') then
+				equip(sets.precast.JA['Bestial Loyalty']['VivaciousGaston'])
+			elseif state.JugMode.value == 'Hip.Familiar' and item_available('Feculent Broth') then
+				equip(sets.precast.JA['Bestial Loyalty']['DaringRoland'])
+			elseif state.JugMode.value == 'SlimeFamiliar' and item_available('Putrescent Broth') then
+				equip(sets.precast.JA['Bestial Loyalty']['SultryPatrice'])
 			else
-				equip(sets.RewardAxe)
-			end
-
-		elseif spell.english == 'Spur' then
-			equip(sets.precast.JA.Spur)
-			if can_dual_wield then
-				equip(sets.SpurAxesDW)
-			else
-				equip(sets.SpurAxe)
-			end
-
-		elseif spell.english == 'Bestial Loyalty' then
-				if state.JugMode.value == 'DroopyDortwin' and item_available('Vis. Broth') then
-					equip(sets.precast.JA['Bestial Loyalty'].PonderingPeter)
-				elseif state.JugMode.value == 'SunburstMalfik' and item_available('Ferm. Broth') then
-					equip(sets.precast.JA['Bestial Loyalty'].AgedAngus)
-				elseif state.JugMode.value == 'ScissorlegXerin' and item_available('Bubbly Broth') then
-					equip(sets.precast.JA['Bestial Loyalty'].BouncingBertha)
-				elseif state.JugMode.value == 'AttentiveIbuki' and item_available('Windy Greens') then
-					equip(sets.precast.JA['Bestial Loyalty'].SwoopingZhivago)
-				elseif state.JugMode.value == 'RedolentCandi' and item_available('Bug-Ridden Broth') then
-					equip(sets.precast.JA['Bestial Loyalty'].AlluringHoney)
-				elseif state.JugMode.value == 'CaringKiyomaro' and item_available('Tant. Broth') then
-					equip(sets.precast.JA['Bestial Loyalty'].VivaciousVickie)
-				elseif state.JugMode.value == 'ColibriFamiliar' and item_available('Glazed Broth') then
-					equip(sets.precast.JA['Bestial Loyalty'].ChoralLeera)
-				elseif state.JugMode.value == 'SpiderFamiliar' and item_available('Slimy Webbing') then
-					equip(sets.precast.JA['Bestial Loyalty'].GussyHachirobe)
-				elseif state.JugMode.value == 'SurgingStorm' and item_available('Deepwater Broth') then
-					equip(sets.precast.JA['Bestial Loyalty'].SubmergedIyo)
-				elseif state.JugMode.value == 'AcuexFamiliar' and item_available('Venomous Broth') then
-					equip(sets.precast.JA['Bestial Loyalty'].FluffyBredo)
-				elseif state.JugMode.value == 'MosquitoFamiliar' and item_available('Heavenly Broth') then
-					equip(sets.precast.JA['Bestial Loyalty']['Left-HandedYoko'])
-				elseif state.JugMode.value == 'WeevilFamiliar' and item_available('T. Pristine Sap') then
-					equip(sets.precast.JA['Bestial Loyalty']['StalwartAngelina'])
-				elseif state.JugMode.value == 'P.CrabFamiliar' and item_available('Pungent Broth') then
-					equip(sets.precast.JA['Bestial Loyalty']['JovialEdwin'])
-				elseif state.JugMode.value == 'Y.BeetleFamiliar' and item_available('Gassy Sap') then
-					equip(sets.precast.JA['Bestial Loyalty']['EnergizedSefina'])
-				elseif state.JugMode.value == 'LynxFamiliar' and item_available('Spumante Broth') then
-					equip(sets.precast.JA['Bestial Loyalty']['VivaciousGaston'])
-				elseif state.JugMode.value == 'Hip.Familiar' and item_available('Feculent Broth') then
-					equip(sets.precast.JA['Bestial Loyalty']['DaringRoland'])
-				elseif state.JugMode.value == 'SlimeFamiliar' and item_available('Putrescent Broth') then
-					equip(sets.precast.JA['Bestial Loyalty']['SultryPatrice'])
-				else
-					equip(sets.precast.JA['Bestial Loyalty'][state.JugMode.value])
-				end
-
-		elseif spell.english == 'Call Beast' then
 				equip(sets.precast.JA['Bestial Loyalty'][state.JugMode.value])
-
--- Define class for Sic and Ready moves.
-        elseif spell.type == 'Monster' then
-                classes.CustomClass = "WS"
-                if can_dual_wield then
-					equip(sets.midcast.Pet.ReadyRecastDW)
-                else
-					equip(sets.midcast.Pet.ReadyRecast)
-                end
-        end
+			end
+	elseif spell.english == 'Call Beast' then
+			equip(sets.precast.JA['Bestial Loyalty'][state.JugMode.value])
+	elseif spell.type == 'Monster' then -- Define class for Sic and Ready moves.
+		classes.CustomClass = "WS"
+		if can_dual_wield then
+			equip(sets.midcast.Pet.ReadyRecastDW)
+		else
+			equip(sets.midcast.Pet.ReadyRecast)
+		end
+	end
 end
 
 function job_post_precast(spell, spellMap, eventArgs)
 	if spell.type == 'WeaponSkill' then
-
 		local WSset = standardize_set(get_precast_set(spell, spellMap))
 		local wsacc = check_ws_acc()
-		
+
 		if (WSset.ear1 == "Moonshade Earring" or WSset.ear2 == "Moonshade Earring") then
 			-- Replace Moonshade Earring if we're at cap TP
 			if get_effective_player_tp(spell, WSset) > 3200 then
@@ -378,7 +366,7 @@ function job_post_precast(spell, spellMap, eventArgs)
 				equip(sets.DayWSEars[spell.english] or sets.DayWSEars)
 			end
 		end
-		
+
 		-- If Killer Instinct is active during WS, equip Ferine Gausape +2.
 		if buffactive['Killer Instinct'] then
 			equip(sets.buff['Killer Instinct'])
@@ -387,11 +375,9 @@ function job_post_precast(spell, spellMap, eventArgs)
 end
 
 function job_pet_midcast(spell, spellMap, eventArgs)
-
 end
 
 function job_post_pet_midcast(spell, spellMap, eventArgs)
-
 end
 
 function job_pet_aftercast(spell, action, spellMap, eventArgs)
@@ -401,18 +387,16 @@ end
 -- Return true if we handled the aftercast work.  Otherwise it will fall back
 -- to the general aftercast() code in Mote-Include.
 function job_midcast(spell, spellMap, eventArgs)
-
 end
 
 function job_aftercast(spell, spellMap, eventArgs)
 	if spell.type == 'Monster' then
 		equip(get_pet_midcast_set(spell, spellMap))
 		petWillAct = os.clock()
-		
-		
-        if magic_ready_moves:contains(spell.english) then
+
+		if magic_ready_moves:contains(spell.english) then
 			if debuff_ready_moves:contains(spell.english) and sets.midcast.Pet.DebuffReady then
-					equip(sets.midcast.Pet.DebuffReady)
+				equip(sets.midcast.Pet.DebuffReady)
 			else
 				if sets.midcast.Pet.MagicReady[state.OffenseMode.value] then
 					equip(sets.midcast.Pet.MagicReady[state.OffenseMode.value])
@@ -426,14 +410,14 @@ function job_aftercast(spell, spellMap, eventArgs)
 			equip(sets.midcast.Pet.MultiHitReady)
 		elseif buff_ready_moves:contains(spell.english) and sets.midcast.Pet.BuffReady then
 			equip(sets.midcast.Pet.BuffReady)
-        else
+		else
 			if sets.midcast.Pet[state.OffenseMode.value] then
 				equip(sets.midcast.Pet[state.OffenseMode.value])
 			else
 				equip(sets.midcast.Pet.WS)
 			end
-        end
-		
+		end
+
 		if state.Buff["Unleash"] and UnleashLock and not UnleashLocked then
 			UnleashLocked = true
 			disable('main','sub','range','ammo','head','neck','lear','rear','body','hands','lring','rring','back','waist','legs','feet')
@@ -452,7 +436,6 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Customization hook for idle sets.
 -------------------------------------------------------------------------------------------------------------------
-
 function job_customize_idle_set(idleSet)
 	if pet.isvalid and pet.status == 'Engaged' and can_dual_wield and sets.idle.Pet.Engaged.DW then
 		idleSet = set_combine(idleSet, sets.idle.Pet.Engaged.DW)
@@ -462,7 +445,7 @@ function job_customize_idle_set(idleSet)
 		idleSet = set_combine(idleSet, sets.Correlation)
 	end
 	
-    return idleSet
+	return idleSet
 end
 
 function job_state_change(stateField, newValue, oldValue)
@@ -476,15 +459,15 @@ function job_state_change(stateField, newValue, oldValue)
 end
 
 function job_pet_change(pet, gain)
-    update_pet_groups()
+	update_pet_groups()
 end
 
 -- Update custom groups based on the current pet.
 function update_pet_groups()
-    classes.CustomIdleGroups:clear()
-    if pet.isvalid then
-        classes.CustomIdleGroups:append(state.PetMode.value)
-    end
+	classes.CustomIdleGroups:clear()
+	if pet.isvalid then
+		classes.CustomIdleGroups:append(state.PetMode.value)
+	end
 end
 
 -- Modify the default melee set after it was constructed.
@@ -493,7 +476,7 @@ function job_customize_melee_set(meleeSet)
 		meleeSet = set_combine(meleeSet, sets.Correlation)
 	end
 
-    return meleeSet
+	return meleeSet
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -528,37 +511,37 @@ end
 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
-    local msg = 'Melee'
+	local msg = 'Melee'
 
-    if state.CombatForm.has_value then
-        msg = msg .. ' (' .. state.CombatForm.value .. ')'
-    end
+	if state.CombatForm.has_value then
+		msg = msg .. ' (' .. state.CombatForm.value .. ')'
+	end
 
-    msg = msg .. ': '
+	msg = msg .. ': '
 
-    msg = msg .. state.OffenseMode.value
-    if state.HybridMode.value ~= 'Normal' then
-        msg = msg .. '/' .. state.HybridMode.value
-    end
-    msg = msg .. ', WS: ' .. state.WeaponskillMode.value
+	msg = msg .. state.OffenseMode.value
+	if state.HybridMode.value ~= 'Normal' then
+		msg = msg .. '/' .. state.HybridMode.value
+	end
+	msg = msg .. ', WS: ' .. state.WeaponskillMode.value
 
-    if state.DefenseMode.value ~= 'None' then
-        msg = msg .. ', ' .. 'Defense: ' .. state.DefenseMode.value .. ' (' .. state[state.DefenseMode.value .. 'DefenseMode'].value .. ')'
-    end
+	if state.DefenseMode.value ~= 'None' then
+		msg = msg .. ', ' .. 'Defense: ' .. state.DefenseMode.value .. ' (' .. state[state.DefenseMode.value .. 'DefenseMode'].value .. ')'
+	end
 
-    if state.Kiting.value then
-        msg = msg .. ', Kiting'
-    end
+	if state.Kiting.value then
+		msg = msg .. ', Kiting'
+	end
 
-    if state.ExtraMeleeMode.value ~= 'None' then
-        msg = msg .. ', Extra: ' .. state.ExtraMeleeMode.value
-    end
+	if state.ExtraMeleeMode.value ~= 'None' then
+		msg = msg .. ', Extra: ' .. state.ExtraMeleeMode.value
+	end
 
-    msg = msg .. ', Reward: '..state.RewardMode.value..', Correlation: '..(state.CorrelationMode.value and 'On' or 'Off')
+	msg = msg .. ', Reward: '..state.RewardMode.value..', Correlation: '..(state.CorrelationMode.value and 'On' or 'Off')
 
-    add_to_chat(122, msg)
+	add_to_chat(122, msg)
 
-    eventArgs.handled = true
+	eventArgs.handled = true
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -576,7 +559,6 @@ end
 
 function check_hasso()
 	if player.sub_job == 'SAM' and player.status == 'Engaged' and not (state.Stance.value == 'None' or state.Buff.Hasso or state.Buff.Seigan or state.Buff['SJ Restriction'] or main_weapon_is_one_handed() or silent_check_amnesia()) then
-		
 		local abil_recasts = windower.ffxi.get_ability_recasts()
 		
 		if state.Stance.value == 'Hasso' and abil_recasts[138] < latency then
@@ -598,7 +580,6 @@ end
 function job_self_command(commandArgs, eventArgs)
 	if commandArgs[1]:lower() == 'showcharge' then
 		add_to_chat(204, '~~~Current Ready Charges Available: ['..get_current_ready_count()..']~~~')
-
 	elseif commandArgs[1]:lower() == 'displaypetinfo' then
 		add_to_chat(8,''..state.JugMode.value..': '..pet_info[state.JugMode.value]..'')
 	elseif commandArgs[1]:lower() == 'unleashlock' then
@@ -609,15 +590,12 @@ function job_self_command(commandArgs, eventArgs)
 			UnleashLock = true
 			add_to_chat(122, "Unleash now locks gear.")
 		end
-
 	elseif commandArgs[1]:lower() == 'ready' and pet.isvalid then
-
-			if pet.status == "Idle" and player.target.type == "MONSTER" then
-				windower.chat.input('/pet Fight <t>')
-			else
-				handle_ready(commandArgs)
-			end
-
+		if pet.status == "Idle" and player.target.type == "MONSTER" then
+			windower.chat.input('/pet Fight <t>')
+		else
+			handle_ready(commandArgs)
+		end
 	end
 end
 
@@ -629,11 +607,10 @@ function job_tick()
 end
 
 function check_pet()
-
 	if pet.isvalid then
 		if pet.hpp < 34 then
 			local abil_recasts = windower.ffxi.get_ability_recasts()
-			
+
 			if abil_recasts[103] < latency and not (buffactive.amnesia or buffactive.impairment) then
 				if item_available('Pet Food '..state.RewardMode.value..'') then
 					windower.chat.input('/ja "Reward" <me>')
@@ -660,7 +637,6 @@ function check_pet()
 	else
 		return false
 	end
-
 end
 
 function check_ready()
@@ -683,87 +659,86 @@ function check_ready()
 	else
 		return false
 	end
-
 end
 
 function get_current_ready_count()
-    local readyRecast = windower.ffxi.get_ability_recasts()[102]
+	local readyRecast = windower.ffxi.get_ability_recasts()[102]
 
-    local maxCharges = 3
+	local maxCharges = 3
 
 	local ReadyChargeTimer = get_ready_charge_timer()
 
 	-- The *# is your current recharge timer.
-    local fullRechargeTime = 3*ReadyChargeTimer
+	local fullRechargeTime = 3*ReadyChargeTimer
 
-    local currentCharges = math.floor(maxCharges - maxCharges * readyRecast / fullRechargeTime)
+	local currentCharges = math.floor(maxCharges - maxCharges * readyRecast / fullRechargeTime)
 
-    return currentCharges
+	return currentCharges
 end
 
-function job_zone_change(new_id,old_id)
+function job_zone_change(new_id, old_id)
 	state.AutoReadyMode:reset()
 end
 
 function handle_ready(commandArgs)
-    if data.areas.cities:contains(world.area) then
-        add_to_chat(123, 'Abort:You cannot use ready in town.')
-        return
-    end
+	if data.areas.cities:contains(world.area) then
+		add_to_chat(123, 'Abort:You cannot use ready in town.')
+		return
+	end
 
-    if not pet.isvalid then
-        add_to_chat(123,'Abort: You do not have a pet.')
-        return
-    end
+	if not pet.isvalid then
+		add_to_chat(123,'Abort: You do not have a pet.')
+		return
+	end
 
 	if get_current_ready_count() == 0 then
 		add_to_chat(123,'Abort: No pet charges!')
 		return
 	end
 
-    if not commandArgs[2] then
+	if not commandArgs[2] then
 		if ready_moves.default[pet.name] then
 			windower.chat.input('/pet "'..ready_moves.default[pet.name]..'" <me>')
 		else
 			windower.chat.input('/pet "Sic" <me>')
 		end
 		return
-    end
+	end
 
-    local ready = commandArgs[2]:lower()
+	local ready = commandArgs[2]:lower()
 
-    if not ready_moves[ready] then
-        add_to_chat(123,'Abort: Unknown ready type: '..tostring(ready))
-        return
-    end
+	if not ready_moves[ready] then
+		add_to_chat(123,'Abort: Unknown ready type: '..tostring(ready))
+		return
+	end
 
-    if ready_moves[ready][pet.name] then
+	if ready_moves[ready][pet.name] then
 		windower.chat.input('/pet "'..ready_moves[ready][pet.name]..'" <me>')
 	elseif ready == 'default' then
 		windower.chat.input('/pet "Sic" <me>')
-    else
-        add_to_chat(123,'Abort: No '..ready..' ready move for '..pet.name..'.')
-    end
+	else
+		add_to_chat(123,'Abort: No '..ready..' ready move for '..pet.name..'.')
+	end
 end
 
 function get_ready_charge_timer()
 	local charge_timer = base_chargetimer
 	if state.Weapons.Value == 'None' then
 		if can_dual_wield and sets.midcast.Pet.ReadyRecastDW.sub and sets.midcast.Pet.ReadyRecastDW.sub == "Charmer's Merlin" then
-				charge_timer = charge_timer - 5
+			charge_timer = charge_timer - 5
 		elseif sets.midcast.Pet.ReadyRecast.main and sets.midcast.Pet.ReadyRecast.main == "Charmer's Merlin" then
 			charge_timer = charge_timer - 5
 		end
 	elseif sets.weapons[state.Weapons.Value].main == "Charmer's Merlin" or sets.weapons[state.Weapons.Value].main == "Charmer's Merlin" then
 		charge_timer = charge_timer - 5
 	end
-	
-    if can_dual_wield and sets.midcast.Pet.ReadyRecastDW.legs and (sets.midcast.Pet.ReadyRecastDW.legs == "Desultor Tassets" or sets.midcast.Pet.ReadyRecastDW.legs == "Gleti's Breeches") then
-            charge_timer = charge_timer - 5
-    elseif sets.midcast.Pet.ReadyRecast.legs and (sets.midcast.Pet.ReadyRecast.legs == "Desultor Tassets" or sets.midcast.Pet.ReadyRecast.legs == "Gleti's Breeches") then
-            charge_timer = charge_timer - 5
-    end
-	
+
+	if can_dual_wield and sets.midcast.Pet.ReadyRecastDW.legs and (sets.midcast.Pet.ReadyRecastDW.legs == "Desultor Tassets" or sets.midcast.Pet.ReadyRecastDW.legs == "Gleti's Breeches") then
+		charge_timer = charge_timer - 5
+	elseif sets.midcast.Pet.ReadyRecast.legs and (sets.midcast.Pet.ReadyRecast.legs == "Desultor Tassets" or sets.midcast.Pet.ReadyRecast.legs == "Gleti's Breeches") then
+		charge_timer = charge_timer - 5
+	end
+
 	if charge_timer < 10 then
 		return 10
 	else
