@@ -12,9 +12,9 @@ function user_job_setup()
 	info.ExtraSongs = 2
 
 	-- Auto Songs to sing
-	info.AutoSongs = 'march march mad mad'
+	info.AutoSongs = 'ja hmarch min min mad'
 	-- How long to wait between auto singing
-	info.AutoSongDelay = 270 -- 3:30 min
+	info.AutoSongDelay = 600 -- 10:00 min
 
 	info.CastSpeed = 0.2
 
@@ -100,6 +100,11 @@ function init_gear_sets()
 	sets.precast.FC.Daurdabla = set_combine(sets.precast.FC.BardSong, {range=info.ExtraSongInstrument})
 	sets.precast.DaurdablaDummy = sets.precast.FC.Daurdabla
 
+	sets.precast.FC['Goblin Gavotte'] = set_combine(sets.precast.DaurdablaDummy, {})
+	sets.precast.FC['Warding Round'] = set_combine(sets.precast.DaurdablaDummy, {})
+	sets.precast.FC['Gold Capriccio'] = set_combine(sets.precast.DaurdablaDummy, {})
+	sets.precast.FC['Puppet\'s Operetta'] = set_combine(sets.precast.DaurdablaDummy, {})
+
 	-- Precast sets to enhance JAs
 
 	sets.precast.JA.Nightingale = { feet = "Bihu Slippers +3" }
@@ -178,7 +183,7 @@ function init_gear_sets()
 	sets.midcast['Horde Lullaby II'].AoE = {range="Blurred Harp +1"}
 	sets.midcast.Madrigal = { head = "Fili Calot +3", back = gear.Intarabus.TP, feet = "Fili Cothurnes +2" }
 	sets.midcast.Paeon = { head = "Brioso Roundlet +1" }
-sets.midcast.March = { hands = "Fili Manchettes +1" }
+	sets.midcast.March = { hands = "Fili Manchettes +1" }
 	sets.midcast['Honor March'] = set_combine(sets.midcast.March, { range = "Marsyas"})
 	sets.midcast.Minuet = { body = "Fili Hongreline +3" }
 	sets.midcast.Minne = { legs = "Mousai Seraweels +1" }
@@ -189,6 +194,12 @@ sets.midcast.March = { hands = "Fili Manchettes +1" }
 	sets.midcast.Etude = { head = "Mousai Turban +1" }
 	sets.midcast.Prelude = { back = gear.Intarabus.TP }
 	sets.midcast.Mambo= { feet = "Mousai Crackows +1" }
+
+	-- Dummy songs
+	sets.midcast['Goblin Gavotte'] = set_combine(sets.precast.DaurdablaDummy, {})
+	sets.midcast['Warding Round'] = set_combine(sets.precast.DaurdablaDummy, {})
+	sets.midcast['Gold Capriccio'] = set_combine(sets.precast.DaurdablaDummy, {})
+	sets.midcast['Puppet\'s Operetta'] = set_combine(sets.precast.DaurdablaDummy, {})
 	
 
 	-- For song buffs (duration and AF3 set bonus)
@@ -197,7 +208,7 @@ sets.midcast.March = { hands = "Fili Manchettes +1" }
 		main = "Kali", sub = "Genmei Shield", range = "Gjallarhorn",
 		head = "Fili Calot +3", neck = "Mnbw. Whistle +1", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",	
 		body = "Fili Hongreline +3", hands = "Fili Manchettes +2", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
-		back = "Fi Follet Cape +1", waist = "Embla Sash", legs = "Inyanga Shalwar +2", feet = "Brioso Slippers +2"
+		back = "Fi Follet Cape +1", waist = "Embla Sash", legs = "Inyanga Shalwar +2", feet = "Brioso Slippers +3"
 	}
 
 	-- For song defbuffs (duration primary, accuracy secondary)
@@ -206,7 +217,7 @@ sets.midcast.March = { hands = "Fili Manchettes +1" }
 		sub = "Ammurapi Shield",
 		ear1 = "Regal Earring", ear2 = "Fili Earring +1",
 		ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
-		back = "Aurist's Cape +1", waist = "Acuity Belt +1", legs = "Bihu Cannions +3", feet = "Bihu Slippers +3
+		back = "Aurist's Cape +1", waist = "Acuity Belt +1", legs = "Bihu Cannions +3", feet = "Bihu Slippers +3"
 	})
 		
 	-- Song-specific recast reduction

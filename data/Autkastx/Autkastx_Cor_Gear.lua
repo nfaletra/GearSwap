@@ -8,7 +8,7 @@ function user_job_setup()
 	state.HybridMode:options('Normal', 'DT', 'MEVA')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', }
 	state.Weapons:options('Default', 'Ranged', 'Crit', 'Savage', 'Evisceration', 'DualWeapons', 'DualRanged', 'DualSavage', 'DualLeadenRanged', 'DualLeadenMelee', 'DualHotShot', 'DualEvisceration', 'DualAeolian', 'None')
-	state.CompensatorMode:options('Never', '300', '1000', 'Always')
+	state.CompensatorMode:options('Always', 'Never', '300', '1000')
 
 	gear.RAbullet = "Chrono Bullet"
 	gear.WSbullet = "Chrono Bullet"
@@ -27,6 +27,12 @@ function user_job_setup()
 		AGI_WSD = { name = "Camulus's Mantle", augments = { 'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%', 'Mag. Evasion+15' }},
 		AGI_WSD_Phys = { name = "Camulus's Mantle", augments = { 'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Weapon skill damage +10%', 'Mag. Evasion+15' } },
 		FC = { name = "Camulus's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', '"Fast Cast"+10' } }
+	}
+
+	gear.Rostam =
+	{
+		A = { name = "Rostam", augments = { 'Path: A' } },
+		C = { name = "Rostam", augments = {'Path: C' } }
 	}
 
 	-- Additional local binds
@@ -66,6 +72,7 @@ function init_gear_sets()
 
 	sets.precast.CorsairRoll =
 	{
+		main = gear.Rostam.C,
 		head = "Lanun Tricorne +3", neck = "Regal Necklace", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Chasseur's Gants +3", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.Camulus.Idle, waist = "Flume Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
@@ -228,7 +235,7 @@ function init_gear_sets()
 		body = "Ikenga's Vest", hands = "Chasseur's Gants +3", ring1 = "Dingir Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Camulus.AGI_WSD_Phys, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
-	sets.precast.WS['Last Stand'].PDL = sets.precast.WS['Last Stand'],
+	sets.precast.WS['Last Stand'].PDL = set_combine(sets.precast.WS['Last Stand'],
 	{
 		head = "Ikenga's Hat",
 		hands = "Ikenga's Gloves", ring2 = "Sroda Ring",
@@ -396,19 +403,19 @@ function init_gear_sets()
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 
 	-- Weapons sets
-	sets.weapons.Default = { main = "Rostam", sub = "Nusku Shield", range = "Fomalhaut" }
-	sets.weapons.Ranged = { main = "Rostam", sub = "Nusku Shield", range = "Fomalhaut" }
+	sets.weapons.Default = { main = gear.Rostam.A, sub = "Nusku Shield", range = "Fomalhaut" }
+	sets.weapons.Ranged = { main = gear.Rostam.A, sub = "Nusku Shield", range = "Fomalhaut" }
 	sets.weapons.Crit = { main = "Gleti's Knife", sub = "Nusku Shield", range = "Fomalhaut" }
 	sets.weapons.Savage = { main = "Naegling", sub = "Nusku Shield", range = "Ataktos" }
 	sets.weapons.Evisceration = { main = "Tauret", sub = "Nusku Shield", range = "Ataktos" }
-	sets.weapons.DualWeapons = { main = "Rostam", sub = "Gleti's Knife", range = "Fomalhaut" }
-	sets.weapons.DualRanged = { main = "Rostam", sub = "Kustawi +1", range = "Fomalhaut" }
+	sets.weapons.DualWeapons = { main = gear.Rostam.A, sub = "Gleti's Knife", range = "Fomalhaut" }
+	sets.weapons.DualRanged = { main = gear.Rostam.A, sub = "Kustawi +1", range = "Fomalhaut" }
 	sets.weapons.DualSavage = { main = "Naegling", sub = "Gleti's Knife", range = "Ataktos" }
 	sets.weapons.DualEvisceration = { main = "Tauret", sub = "Gleti's Knife", range = "Ataktos" }
-	sets.weapons.DualLeadenRanged = { main = "Rostam", sub = "Kustawi +1", range = "Fomalhaut" }
-	sets.weapons.DualLeadenMelee = { main = "Rostam", sub = "Tauret", range = "Fomalhaut" }
+	sets.weapons.DualLeadenRanged = { main = gear.Rostam.A, sub = "Kustawi +1", range = "Fomalhaut" }
+	sets.weapons.DualLeadenMelee = { main = gear.Rostam.A, sub = "Tauret", range = "Fomalhaut" }
 	sets.weapons.DualHotShot = { main = "Naegling", sub = "Tauret", range = "Fomalhaut" }
-	sets.weapons.DualAeolian = { main = "Rostam", sub = "Tauret", range = "Ataktos" }
+	sets.weapons.DualAeolian = { main = gear.Rostam.A, sub = "Tauret", range = "Ataktos" }
 
 	-- Engaged sets
 

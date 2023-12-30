@@ -346,7 +346,7 @@ function init_gear_sets()
 		body = "Mpaca's Doublet", hands = "Mochi Tekko +3", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mochi. Kyahan +3"
 	}
-	set.precast.WS['Raging Fists'].PDL = set_combine(sets.precast.WS['Raging Fists'],
+	sets.precast.WS['Raging Fists'].PDL = set_combine(sets.precast.WS['Raging Fists'],
 	{
 		ammo = "Crepuscular Pebble",
 		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring2 = "Sroda Ring",
@@ -360,7 +360,7 @@ function init_gear_sets()
 		body = "Mpaca's Doublet", hands = "Mochi. Tekko +3", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mochi. Kyahan +3"
 	}
-	sets.precast.WS['Combo'].PDL = set_combine(sets.prcast.WS['Combo'],
+	sets.precast.WS['Combo'].PDL = set_combine(sets.precast.WS['Combo'],
 	{
 		ammo = "Crepuscular Pebble",
 		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring2 = "Sroda Ring",
