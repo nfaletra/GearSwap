@@ -745,7 +745,12 @@ function init_gear_sets()
 
 	-- Extra Melee sets.  Apply these on top of melee sets.
 	sets.Knockback = {}
-	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
+	sets.TreasureHunter = set_combine(sets.TreasureHunter,
+	{
+		ammo = "Per. Lucky Egg",
+		hands = "Volte Bracers",
+		legs = "Volte Hose",
+	})
 	sets.Skillchain = {}
 
 	-- Weapons sets
