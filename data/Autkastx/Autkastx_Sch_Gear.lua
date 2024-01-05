@@ -72,7 +72,7 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
 
-    sets.precast.JA['Tabula Rasa'] = { legs = "Peda. Pants +2" }
+    sets.precast.JA['Tabula Rasa'] = { legs = "Peda. Pants +3" }
 	sets.precast.JA['Enlightenment'] = {} --body="Peda. Gown +1"
 
     -- Fast cast sets for spells
@@ -110,7 +110,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS,
 	{
-		neck = "Repub. Plat. Medal", ear1 = "Regal Earring", ear2 = "Moonshade Earring",
+		neck = "Rep. Plat. Medal", ear1 = "Regal Earring", ear2 = "Moonshade Earring",
 		ring1 = "Rufescent Ring", ring2 = "Metamor. Ring +1",
 		back = "Aurist's Cape +1", waist = "Luminary Sash",
 	})
@@ -126,7 +126,7 @@ function init_gear_sets()
 	sets.precast.WS['Myrkr'] =
 	{
 		ammo="Staunch Tathlum +1",
-		head = "Amarlic Coif +1", neck = "Dualism Collar +1", ear1 = "Evans Earring", ear2 = "Moonshade Earring",
+		head = "Amalric Coif +1", neck = "Dualism Collar +1", ear1 = "Evans Earring", ear2 = "Moonshade Earring",
 		body = "Acad. Gown +1", hands = "Peda. Bracers +3", ring1 = "Mephitas's Ring +1", ring2 = "Mephitas's Ring",
 		back = "Aurist's Cape +1", waist = "Shinjintsu-no-Obi +1", legs = "Agwu's Slops", feet = gear.amalric.feet.a
 	}
@@ -151,7 +151,7 @@ function init_gear_sets()
 	{
 		ammo = "Hasty Pinion +1",
 		head = "Merlinic Hood", neck = "Orunmila's Torque", ear1 = "Malignance Earring", ear2 = "Loquac. Earring",
-		body = "Zendik Robe", hands = "Academic's Bracers +1", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
+		body = "Merlinic Jubbah", hands = "Academic's Bracers +1", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
 		back = "Fi Follet Cape +1", waist = "Witful Belt", legs = "Kaykaus Tights +1", feet = "Pedagogy Loafers +3"
 	}
 
@@ -171,9 +171,7 @@ function init_gear_sets()
 
 	sets.midcast.Curaga = sets.midcast.Cure
 
-	sets.Self_Healing = {neck="Phalaina Locket",ring1="Kunaji Ring",ring2="Asklepian Ring",waist="Gishdubar Sash"}
-	sets.Cure_Received = {neck="Phalaina Locket",ring1="Kunaji Ring",ring2="Asklepian Ring",waist="Gishdubar Sash"}
-	sets.Self_Refresh = {back="Grapevine Cape",waist="Gishdubar Sash",feet="Inspirited Boots"}
+	sets.Self_Refresh = { waist = "Gishdubar Sash" }
 	
 	sets.midcast.Cursna = {main=gear.grioavolr_fc_staff,sub="Clemency Grip",ammo="Hasty Pinion +1",
 		head="Amalric Coif +1",neck="Debilis Medallion",ear1="Meili Earring",ear2="Malignance Earring",
@@ -260,7 +258,7 @@ function init_gear_sets()
 		main = "Rubicundity", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
 		head = "Pixie Hairpin +1", neck = "Erra Pendant", ear1 = "Regal Earring", ear2 = "Malignance Earring",
 		body = "Merlinic Jubbah", hands = "Agwu's Gages", ring1 = "Evanescence Ring", ring2 = "Archon Ring",
-		back = "Bookworm's Cape", waist = "Fucho-no-obi", legs = "Peda. Pants +2", feet = "Agwu's Pigaches"
+		back = "Bookworm's Cape", waist = "Fucho-no-obi", legs = "Peda. Pants +3", feet = "Agwu's Pigaches"
 	}
 	sets.midcast.Aspir = sets.midcast.Drain
 
@@ -285,7 +283,7 @@ function init_gear_sets()
 	{
 		main = empty, sub = empty, ammo = "Impatiens",
 		head = "Vanya Hood", neck = "Voltsurge Torque", ear1 = "Enchntr. Earring +1", ear2 = "Malignance Earring",
-		body = "Zendik Robe", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Prolix Ring",
+		body = "Zendik Robe", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
 		back = "Swith Cape +1", waist = "Witful Belt", legs = "Psycloth Lappas", feet = "Regal Pumps +1"
 	}
 
@@ -293,7 +291,7 @@ function init_gear_sets()
 
 	sets.midcast.Kaustra = set_combine(sets.midcast['Elemental Magic'],
 	 {
-		head = "Pixie Hairpin",
+		head = "Pixie Hairpin +1",
 		ring2 = "Archon Ring",
 	})
 
@@ -376,7 +374,7 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Khatvanga = { main = "Khatvanga", sub = "Bloodrain Strap" }
 	sets.weapons.Musa = { main = "Musa", sub = "Khonsu" }
-	sets.weapons.Mpaca = { main = "Mpaca's Staff", sub = "Elder's Grip +1" }
+	sets.weapons.Marin = { main = "Marin Staff +1", sub = "Elder's Grip +1" }
 	sets.weapons.Maxentius = { main = "Maxentius", sub = "Genmei Shield" }
 	sets.weapons.Daybreak = { main = "Daybreak", sub = "Genmei Shield" }
 	sets.weapons.DualMaxentius = { main = "Maxentius", sub = "Ternion Dagger +1" }

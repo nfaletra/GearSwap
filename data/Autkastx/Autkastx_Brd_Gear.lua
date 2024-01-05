@@ -193,7 +193,7 @@ function init_gear_sets()
 	sets.midcast.Mazurka = { range = "Marsyas" }
 	sets.midcast.Etude = { head = "Mousai Turban +1" }
 	sets.midcast.Prelude = { back = gear.Intarabus.TP }
-	sets.midcast.Mambo= { feet = "Mousai Crackows +1" }
+	sets.midcast.Mambo = { feet = "Mousai Crackows +1" }
 
 	-- Dummy songs
 	sets.midcast['Goblin Gavotte'] = set_combine(sets.precast.DaurdablaDummy, {})

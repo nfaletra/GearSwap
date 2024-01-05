@@ -7,7 +7,7 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'DT', 'Evasion', 'Refresh')
-	state.Weapons:options('Godhands', 'Verethragna', 'Spharai', 'Karambit', 'Varga', 'Staff', 'Club', 'ProcStaff', 'Barehanded')
+	state.Weapons:options('Godhands', 'Verethragna', 'Spharai', 'Karambit', 'Varga', 'Gozuki', 'Xoanon', 'Club', 'ProcStaff', 'Barehanded')
 
 	state.ExtraMeleeMode = M{['description'] = 'Extra Melee Mode', 'None', 'Warder', 'Staff'}
 
@@ -83,7 +83,7 @@ function init_gear_sets()
 	sets.precast.FC =
 	{
 		ammo = "Sapience Orb",
-		head = gear.herculean_fc_head, neck = "Orunmila's Torque", ear1 = "Enchantr. Earring +1", ear2 = "Loquac. Earring",
+		head = gear.herculean_fc_head, neck = "Orunmila's Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = gear.adhemar.body.d, hands = "Leyline Gloves", ring1 = "Rahab Ring", ring2 = "Medada's Ring",
 		legs = "Limbo Trousers"
 	}
@@ -102,7 +102,7 @@ function init_gear_sets()
 		body = "Nyame Mail", hands = "Anchor. Gloves +3", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.Segomo.VIT_WSD, waist = "Moonbow Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
-	precast.WS.PDL = set_combine(sets.precast.WS,
+	sets.precast.WS.PDL = set_combine(sets.precast.WS,
 	{
 		ammo = "Crepuscular Pebble",
 		neck = "Mnk. Nodowa +2",
@@ -112,7 +112,7 @@ function init_gear_sets()
 	-- Specific weaponskill sets.
 	sets.precast.WS['Victory Smite'] =
 	{
-		ammo = "Coise Bodhar",
+		ammo = "Coiste Bodhar",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Odr Earring",
 		body = "Ken. Samue +1", hands = "Ryuo Tekko +1", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.Segomo.STR_DA, waist = "Moonbow Belt +1", legs = "Mpaca's Hose", feet = gear.herculean_crit_feet
@@ -187,7 +187,7 @@ function init_gear_sets()
 		body = "Tatena. Harama. +1", hands = gear.herculean_ta_hands, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.Segomo.STR_DA, waist = "Moonbow Belt +1", legs = "Mpaca's Hose", feet = "Anch. Gaiters +3"
 	}
-	sets.precast.WS['Tornado Kick'].PDL = set_combine(sets.precasts.WS['Tornado Kick'],
+	sets.precast.WS['Tornado Kick'].PDL = set_combine(sets.precast.WS['Tornado Kick'],
 	{
 		ammo = "Crepuscular Pebble",
 		ring2 = "Sroda Ring"
@@ -260,6 +260,19 @@ function init_gear_sets()
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
 		back = gear.Segomo.INT_WSD, waist = "Acuity Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
+
+	sets.precast.WS['Full Swing'] =
+	{
+		ammo = "Knobkierrie",
+		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Epaminondas's Ring",
+		back = gear.Segomo.VIT_WSD, waist = "Moonbow Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+	}
+	sets.precast.WS['Full Swing'].PDL = set_combine(sets.precast.WS['Full Swing'],
+	{
+		ammo = "Crepuscular Pebble",
+		ring2 = "Sroda Ring",
+	})
 	
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = { ear2 = "Brutal Earring" }
@@ -340,6 +353,7 @@ function init_gear_sets()
 	-- If you create a set with both offense and defense modes, the offense mode should be first.
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
+	sets.Impetus = { body = "Bhikku Cyclas +3" }
 	sets.Godhands = { ear2 = "Mache Earring +1" }
 
 	-- Normal melee sets
@@ -351,11 +365,8 @@ function init_gear_sets()
 		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Bhikku Hose +3", feet = "Anch. Gaiters +3"
 	}
 	sets.engaged.Godhands = set_combine(sets.engaged, sets.Godhands)
-	sets.engaged.Impetus = set_combine(sets.engaged,
-	{
-		body = "Bhikku Cyclas +3"
-	})
-	sets.engaged.Impetus.Godhands = set_combine(sets.engaged.Impetus, sets.Godhands)
+	sets.engaged.Impetus = set_combine(sets.engaged, sets.Impetus, {})
+	sets.engaged.Impetus.Godhands = set_combine(sets.engaged.Impetus, sets.Godhands, {})
 
 	-- Hybrid sets
 	sets.engaged.Hybrid = set_combine(sets.engaged,
@@ -364,12 +375,9 @@ function init_gear_sets()
 		hands = "Mpaca's Gloves",
 		feet = "Mpaca's Boots"
 	})
-	sets.engaged.Hybrid.Godhands = set_combinet(sets.engaged.Hybrid, sets.Godhands)
-	sets.engaged.Hybrid.Impetus = set_combine(sets.engaged.Hybrid,
-	{
-		legs = "Bhikku Hose +3",
-	})
-	sets.engaged.Hybrid.Impetus.Godhands = set_combine(sets.engaged.Hybrid.Impetus, sets.Godhands)
+	sets.engaged.Hybrid.Godhands = set_combine(sets.engaged.Hybrid, sets.Godhands, {})
+	sets.engaged.Hybrid.Impetus = set_combine(sets.engaged.Hybrid, sets.Impetus, {})
+	sets.engaged.Hybrid.Impetus.Godhands = set_combine(sets.engaged.Hybrid.Impetus, sets.Godhands, {})
 
 	sets.engaged.Counter =
 	{
@@ -386,10 +394,9 @@ function init_gear_sets()
 		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Mpaca's Hose", feet = "Malignance Boots"
 	}
-	sets.engaged['Subtle Blow'].Impetus = set_combine(sets.engaged['Subtle Blow'],
-	{
-		body = "Bhikku Cyclas +3",
-	})
+	sets.engaged['Subtle Blow'].Godhands = set_combine(sets.engaged['Subtle Blow'], sets.Godhands, {})
+	sets.engaged['Subtle Blow'].Impetus = set_combine(sets.engaged['Subtle Blow'], sets.Impetus, {})
+	sets.engaged['Subtle Blow'].Impetus.Godhands = set_combine(sets.engaged['Subtle Blow'].Impetus, sets.Godhands, {})
 
 	-- Extra Melee Modes
 	sets.Warder = { neck = "Warder's Charm +1" }
@@ -427,7 +434,8 @@ function init_gear_sets()
 	sets.weapons.Karambit = { main = "Karambit" }
 	sets.weapons.Varga = { main = "Varga Purnikawa" }
 	sets.weapons.Club = { main = "Mafic Cudgel" }
-	sets.weapons.Staff = { main = "Xoanon", sub = "Bloodrain Strap" }
+	sets.weapons.Gozuki = { main = "Gozuki Mezuki", sub = "Bloodrain Strap" }
+	sets.weapons.Xoanon = { main = "Xoanon", sub = "Bloodrain Strap" }
 	sets.weapons.ProcStaff = { main = "Ram Staff", sub = "Bloodrain Strap" }
 	sets.weapons.Barehanded = { main = empty }
 end

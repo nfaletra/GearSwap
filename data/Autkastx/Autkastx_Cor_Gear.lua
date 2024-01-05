@@ -13,7 +13,7 @@ function user_job_setup()
 	gear.RAbullet = "Chrono Bullet"
 	gear.WSbullet = "Chrono Bullet"
 	gear.MAbullet = "Orichalc. Bullet" --For MAB WS, do not put single-use bullets here.
-	gear.QDbullet = "Orichalc. Bullet"
+	gear.QDbullet = "Hauksbok Bullet"
 	options.ammo_warning_limit = 5
 
 	gear.Camulus =
@@ -64,7 +64,7 @@ function init_gear_sets()
 
 	-- Precast sets to enhance JAs
 
-	sets.precast.JA['Triple Shot'] = { body = "Chasseur's Frac +2" }
+	sets.precast.JA['Triple Shot'] = { body = "Chasseur's Frac +3" }
 	sets.precast.JA['Snake Eye'] = { legs = "Lanun Trews +3" }
 	sets.precast.JA['Wild Card'] = { feet = "Lanun Bottes +3" }
 	sets.precast.JA['Random Deal'] = { body = "Lanun Frac +3" }
@@ -82,8 +82,8 @@ function init_gear_sets()
 
 	sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, { legs = "Chas. Culottes +3" })
 	sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, { feet = "Chass. Bottes +2" })
-	sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, { head = "Chass. Tricorne +2" })
-	sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, { body = "Chasseur's Frac +2" })
+	sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, { head = "Chass. Tricorne +3" })
+	sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, { body = "Chasseur's Frac +3" })
 	sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, { hands = "Chasseur's Gants +3" })
 
 	sets.precast.CorsairShot =
@@ -122,8 +122,8 @@ function init_gear_sets()
 
 	sets.precast.Step =
 	{
-		head = "Chass. Tricorne +2", neck = "Combatant's Torque", ear1 = "Crep. Earring", ear2 = "Mache Earring +1",
-		body = "Chasseur's Frac +2", hands = "Chasseur's Gants +3", ring1 = "Regal Ring", ring2 = "Mummu Ring",
+		head = "Chass. Tricorne +3", neck = "Combatant's Torque", ear1 = "Crep. Earring", ear2 = "Mache Earring +1",
+		body = "Chasseur's Frac +3", hands = "Chasseur's Gants +3", ring1 = "Regal Ring", ring2 = "Mummu Ring",
 		back = gear.Camulus.DA, waist = "Kentarch Belt +1", legs = "Chas. Culottes +3", feet = "Chass. Bottes +2"
 	}
 
@@ -148,7 +148,7 @@ function init_gear_sets()
 	sets.precast.RA =
 	{
 		ammo = gear.RAbullet,
-		head = "Chass. Tricorne +2", neck = "Comm. Charm +2",
+		head = "Chass. Tricorne +3", neck = "Comm. Charm +2",
 		body = "Oshosi Vest +1", hands = "Carmine Fin. Ga. +1", ring1 = "Crepuscular Ring",
 		back = gear.Camulus.Idle, waist = "Impulse Belt", legs = "Adhemar Kecks +1", feet = "Meg. Jam. +2"
 	}
@@ -164,7 +164,7 @@ function init_gear_sets()
 	sets.precast.RA.Flurry2 =
 	{
 		ammo = gear.RABullet,
-		head = "Chass. Tricorne +2",
+		head = "Chass. Tricorne +3",
 		body = "Laksa. Frac +3", hands = "Carmine Fin. Ga. +1", ring1 = "Crepuscular Ring",
 		back = gear.Camulus.Idle, waist = "Yemaya Belt", legs = "Adhemar Kecks +1", feet = "Pursuer's Gaiters"
 	}
@@ -335,7 +335,7 @@ function init_gear_sets()
 	sets.buff['Triple Shot'] =
 	{
 		head = "Oshosi Mask +1",
-		body = "Chasseur's Frac +2", hands = "Lanun Gants +3",
+		body = "Chasseur's Frac +3", hands = "Lanun Gants +3",
 		legs = "Osh. Trousers +1", feet = "Osh. Leggings +1"
 	}
 

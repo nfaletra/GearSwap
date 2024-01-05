@@ -427,7 +427,7 @@ function init_gear_sets()
 	sets.weapons.NaeglingAcc = { main = "Naegling", sub = "Zantetsuken" }
 	sets.weapons.Maxentius = { main = "Maxentius", sub = "Thibron" }
 	sets.weapons.MaxentiusAcc = { main = "Maxentius", sub = "Zantetsuken" }
-	sets.weapons.Magic = { main = "Maxentius", sub = "Bunzi's Rod" }
+	sets.weapons.Magic = { main = "Bunzi's Rod", sub = "Maxentius" }
 
 	-- Engaged sets
 

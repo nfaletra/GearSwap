@@ -9,7 +9,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None', 'Maxentius', 'Daybreak', 'DualMaxentius', 'DualDaybreak', 'DualTrial')
+	state.Weapons:options('None', 'Maxentius', 'Daybreak', 'DualYagrush', 'DualMaxentius', 'DualDaybreak')
 	state.WeaponskillMode:options('Normal')
 
 	state.AutoCureMode:options('Off', 'Party', 'Ally')
@@ -77,9 +77,9 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Maxentius = { main = "Maxentius", sub = "Genmei Shield" }
 	sets.weapons.Daybreak = { main = "Daybreak", sub = "Genmei Shield" }
+	sets.weapons.DualYagrush = { main = "Yagrush", sub = "C. Palug Hammer" }
 	sets.weapons.DualMaxentius = { main = "Maxentius", sub = "C. Palug Hammer" }
 	sets.weapons.DualDaybreak = { main = "Daybreak", sub = "C. Palug Hammer" }
-	sets.weapons.DualTrial = { main = "Yagrush", sub = "C. Palug Hammer" }
 	
 	sets.buff.Sublimation = { waist = "Embla Sash" }
 	sets.buff.DTSublimation = { waist = "Embla Sash" }
@@ -192,7 +192,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		ear1 = "Etiolation Earring", ear2 = "Ebers Earring",
-		hands = "Ebers Mitts +2", ring1 = "Gelationus Ring +1", ring2 = "Defending Ring",
+		hands = "Ebers Mitts +2", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
 		back = "Fi Follet Cape +1"
 	})
 
@@ -336,7 +336,7 @@ function init_gear_sets()
 		main = "Daybreak", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
 		head = "Theophany Cap +3", neck = "Erra Pendant", ear1 = "Regal Earring", ear2 = "Malignance Earring",
 		body = "Theo. Bliaut +3", hands = "Theophany Mitts +3", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
-		back = "Aurists's Cape +1", waist = "Obstin. Sash", legs = "Inyanga Shalwar +2", feet = "Theo. Duckbills +3"
+		back = "Aurist's Cape +1", waist = "Obstin. Sash", legs = "Inyanga Shalwar +2", feet = "Theo. Duckbills +3"
 	}
 	sets.midcast['Enfeebling Magic'].Resistant = set_combine(sets.midcast['Enfeebling Magic'], {})
 
@@ -386,9 +386,9 @@ function init_gear_sets()
 	-- Basic set for if no TP weapon is defined.
 	sets.engaged =
 	{
-		ammo = "Oshasha's Treatise",
+		ammo = "Amar Cluster",
 		head = "Blistering Sallet +1", neck = "Combatant's Torque", ear1 = "Telos Earring" , ear2 = "Crep. Earring",
-		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Petrov Ring", ring2 = "Chirich Ring +1",
+		body = "Ayanmo Corazza +2", hands = "Gazu Bracelets +1", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
 		back = gear.Alaunus.TP, waist = "Cornelia's Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.engaged.DW = set_combine(sets.engaged, { ear1 = "Suppanomimi", ear2 = "Eabani Earring" })

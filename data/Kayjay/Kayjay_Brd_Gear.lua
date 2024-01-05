@@ -136,6 +136,12 @@ function init_gear_sets()
 	sets.midcast["Sentinel's Scherzo"] = { feet = "Fili Cothurnes +1" }
 	sets.midcast['Magic Finale'] = { range = "Blurred Harp +1" }
 	sets.midcast.Mazurka = { range = "Marsyas" }
+
+	-- Dummy songs
+	sets.midcast['Goblin Gavotte'] = set_combine(sets.precast.DaurdablaDummy, {})
+	sets.midcast['Warding Round'] = set_combine(sets.precast.DaurdablaDummy, {})
+	sets.midcast['Gold Capriccio'] = set_combine(sets.precast.DaurdablaDummy, {})
+	sets.midcast['Puppet\'s Operetta'] = set_combine(sets.precast.DaurdablaDummy, {})
 	
 
 	-- For song buffs (duration and AF3 set bonus)
@@ -158,9 +164,12 @@ function init_gear_sets()
 
 	-- Cast spell with normal gear, except using Daurdabla instead
 	sets.midcast.Daurdabla = { range = info.ExtraSongInstrument }
-
-	-- Dummy song with Daurdabla; minimize duration to make it easy to overwrite.
 	sets.midcast.DaurdablaDummy = set_combine(sets.midcast.SongRecast, { range = info.ExtraSongInstrument })
+
+	sets.precast.FC['Goblin Gavotte'] = set_combine(sets.precast.DaurdablaDummy, {})
+	sets.precast.FC['Warding Round'] = set_combine(sets.precast.DaurdablaDummy, {})
+	sets.precast.FC['Gold Capriccio'] = set_combine(sets.precast.DaurdablaDummy, {})
+	sets.precast.FC['Puppet\'s Operetta'] = set_combine(sets.precast.DaurdablaDummy, {})
 
 	-- Other general spells and classes.
 	sets.midcast.Cure =

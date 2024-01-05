@@ -198,7 +198,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
 		body = "Hjarrandi Breast.", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Epaminondas's Ring",
-		back = gear.Rudianos.WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Sulevia's Leggings +2"
+		back = gear.Rudianos.WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Sulev. Leggings +2"
 	}
 
 	sets.precast.WS['Torcleaver'] = set_combine(sets.precast.WS['Savage Blade'], {})
@@ -276,8 +276,8 @@ function init_gear_sets()
 	sets.midcast.Cocoon = sets.midcast['Enhancing Magic']
 	sets.midcast.Cocoon.SIRD = sets.midcast['Enhancing Magic'].SIRD
 
-	sets.midcast['Banishga'] = sets.Enmity
-	sets.midcast['Banishga'].SIRD = sets.Enmity.SIRD
+	sets.midcast['Banishga'] = set_combine(sets.midcast.FastRecast, {})
+	sets.midcast['Banishga'].SIRD = set_combine(sets.midcast['Banishga'], sets.SIRD, {})
 	--------------------------------------
 	-- Idle/resting/defense/etc sets
 	--------------------------------------
@@ -296,22 +296,22 @@ function init_gear_sets()
 		back = gear.Rudianos.Shield, waist = "Carrier's Sash", legs = "Chev. Cuisses +2", feet = "Rev. Leggings +3"
 	}
 
-	-- Brilliance / Srivatsa
+	-- Burtgang / Srivatsa
 	sets.idle.Perfect2 =
 	{
 		sub = "Srivatsa", ammo = "Staunch Tathlum +1",
 		head = "Chev. Armet +3", neck = "Combatant's Torque", ear1 = "Foresti Earring", ear2 = "Chev. Earring +1",
-		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Eihwaz Ring", ring2 = "Moonlight Ring",
+		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Eihwaz Ring", ring2 = "Shadow Ring",
 		back = gear.Rudianos.Shield, waist = "Carrier's Sash", legs = "Chev. Cuisses +2", feet = "Rev. Leggings +3"
 	}
 
-	-- MEva/Lower content block
+	-- Burtgang / Priwen (still capped block rate against 139/140 content at ML30+)
 	sets.idle.Priwen =
 	{
 		sub = "Priwen", ammo = "Staunch Tathlum +1",
 		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
-		body = "Sakpata's Breastplate", hands = "Macabre Gaunt. +1", ring1 = "Eihwaz Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.Rudianos.Shield, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
+		body = "Sakpata's Breastplate", hands = "Macabre Gaunt. +1", ring1 = "Eihwaz Ring", ring2 = "Shadow Ring",
+		back = gear.Rudianos.Shield, waist = "Carrier's Sash", legs = "Chev. Cuisses +2", feet = "Sakpata's Leggings"
 	}
 
 	-- MDT
@@ -320,16 +320,16 @@ function init_gear_sets()
 		sub = "Aegis", ammo = "Staunch Tathlum +1",
 		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
 		body = "Rev. Surcoat +3", hands = "Sakpata's Gauntlets", ring1 = "Eihwaz Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.Rudianos.Counter, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
+		back = gear.Rudianos.Counter, waist = "Carrier's Sash", legs = "Chev. Cuisses +2", feet = "Sakpata's Leggings"
 	}
 
-	-- Brilliance or Sakpata Sword - Highest Magic Protection
+	-- Burtgang - Highest Magic Protection
 	sets.idle.MEvaAegis =
 	{
 		sub = "Aegis", ammo = "Staunch Tathlum +1",
 		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
 		body = "Sacro Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.Rudianos.Counter, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
+		back = gear.Rudianos.Counter, waist = "Carrier's Sash", legs = "Chev. Cuisses +2", feet = "Sakpata's Leggings"
 	}
 
 	-- MP Restore

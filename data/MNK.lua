@@ -148,6 +148,10 @@ function job_buff_change(buff, gain)
 	update_melee_groups()
 end
 
+function job_state_change(stateField, newValue, oldValue)
+	update_melee_groups()
+end
+
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------

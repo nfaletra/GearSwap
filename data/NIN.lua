@@ -204,6 +204,10 @@ function job_buff_change(buff, gain)
 	update_melee_groups()
 end
 
+function job_state_change(stateField, newValue, oldValue)
+	update_melee_groups()
+end
+
 function job_status_change(new_status, old_status)
 
 end
