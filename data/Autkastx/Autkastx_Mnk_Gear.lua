@@ -353,7 +353,6 @@ function init_gear_sets()
 	-- If you create a set with both offense and defense modes, the offense mode should be first.
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
-	sets.Impetus = { body = "Bhikku Cyclas +3" }
 	sets.Godhands = { ear2 = "Mache Earring +1" }
 
 	-- Normal melee sets
@@ -365,8 +364,6 @@ function init_gear_sets()
 		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Bhikku Hose +3", feet = "Anch. Gaiters +3"
 	}
 	sets.engaged.Godhands = set_combine(sets.engaged, sets.Godhands)
-	sets.engaged.Impetus = set_combine(sets.engaged, sets.Impetus, {})
-	sets.engaged.Impetus.Godhands = set_combine(sets.engaged.Impetus, sets.Godhands, {})
 
 	-- Hybrid sets
 	sets.engaged.Hybrid = set_combine(sets.engaged,
@@ -376,8 +373,6 @@ function init_gear_sets()
 		feet = "Mpaca's Boots"
 	})
 	sets.engaged.Hybrid.Godhands = set_combine(sets.engaged.Hybrid, sets.Godhands, {})
-	sets.engaged.Hybrid.Impetus = set_combine(sets.engaged.Hybrid, sets.Impetus, {})
-	sets.engaged.Hybrid.Impetus.Godhands = set_combine(sets.engaged.Hybrid.Impetus, sets.Godhands, {})
 
 	sets.engaged.Counter =
 	{
@@ -395,8 +390,6 @@ function init_gear_sets()
 		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Mpaca's Hose", feet = "Malignance Boots"
 	}
 	sets.engaged['Subtle Blow'].Godhands = set_combine(sets.engaged['Subtle Blow'], sets.Godhands, {})
-	sets.engaged['Subtle Blow'].Impetus = set_combine(sets.engaged['Subtle Blow'], sets.Impetus, {})
-	sets.engaged['Subtle Blow'].Impetus.Godhands = set_combine(sets.engaged['Subtle Blow'].Impetus, sets.Godhands, {})
 
 	-- Extra Melee Modes
 	sets.Warder = { neck = "Warder's Charm +1" }
@@ -408,6 +401,7 @@ function init_gear_sets()
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {}
+	sets.buff.Impetus = { body = "Bhikku Cyclas +3" }
 	sets.buff.ImpetusWS = { ear2 = "Schere Earring", body = "Bhikku Cyclas +3" }
 	sets.buff.Footwork = { feet = "Anch. Gaiters +3" }
 	sets.buff.Boost = { waist = "Ask Sash" }

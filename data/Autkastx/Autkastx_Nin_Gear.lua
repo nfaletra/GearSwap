@@ -25,6 +25,7 @@ function user_job_setup()
 	send_command('bind @` gs c cycle SkillchainMode')
 	send_command('bind !` gs c cycle Stance')
 	send_command('bind ^r gs c weapons Default;gs c reset WeaponskillMode;gs c reset CastingMode;gs c update')
+	send_command('bind ^f gs c weapons ProcDagger;gs c set WeaponskillMode Proc;gs c update')
 
 	utsusemi_cancel_delay = .3
 	utsusemi_ni_cancel_delay = .06
@@ -124,7 +125,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Mochi. Hatsuburi +3", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Mpaca's Doublet", hands = "Mochi. Tekko +3", ring1 = "Gere Ring", ring2 = "Epaminondas's Ring",
+		body = "Mpaca's Doublet", hands = "Mochizuki Tekko +3", ring1 = "Gere Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mochi. Kyahan +3"
 	}
 	sets.precast.WS['Blade: Shun'].PDL = set_combine(sets.precast.WS['Blade: Shun'],
@@ -329,7 +330,7 @@ function init_gear_sets()
 	{
 		ammo = "Voluspa Tathlum",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Telos Earring",
-		body = "Mochi. Chainmail +3", hands = "Mochi. Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Mochi. Chainmail +3", hands = "Mochizuki Tekko +3", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Fotia Belt", legs = "Mochi. Hakama +3", feet = "Mochi. Kyahan +3"
 	}
 	sets.precast.WS['Asuran Fists'].PDL = set_combine(sets.precast.WS['Asuran Fists'],
@@ -343,7 +344,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
-		body = "Mpaca's Doublet", hands = "Mochi Tekko +3", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Mpaca's Doublet", hands = "Mochizuki Tekko +3", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mochi. Kyahan +3"
 	}
 	sets.precast.WS['Raging Fists'].PDL = set_combine(sets.precast.WS['Raging Fists'],
@@ -357,7 +358,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
-		body = "Mpaca's Doublet", hands = "Mochi. Tekko +3", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Mpaca's Doublet", hands = "Mochizuki Tekko +3", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mochi. Kyahan +3"
 	}
 	sets.precast.WS['Combo'].PDL = set_combine(sets.precast.WS['Combo'],
@@ -540,7 +541,7 @@ function init_gear_sets()
 	sets.defense.MEVA = {}
 
 	sets.Kiting = { ring1 = "Shneddick Ring" }
-	sets.DuskKiting = { ring1 = "Shneddick Ring", feet = "Hachiya Kyahan +3" }
+	sets.DuskKiting = sets.Kiting
 	sets.DuskIdle = {}
 	sets.DayIdle = {}
 	sets.NightIdle = {}
@@ -564,7 +565,7 @@ function init_gear_sets()
 	}
 	sets.engaged.Haste30 = set_combine(sets.engaged,
 	{
-		head = "Ryuo Somen +1", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
+		head = "Hattori Zukin +2", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
 		waist = "Reiki Yotai"
 	})
 	sets.engaged.Haste15 = set_combine(sets.engaged.Haste30,
@@ -587,12 +588,12 @@ function init_gear_sets()
 	}
 	sets.engaged.DT.Haste30 = set_combine(sets.engaged.DT,
 	{
-		head = "Ryuo Somen +1", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
+		head = "Hattori Zukin +2", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
 		waist = "Reiki Yotai"
 	})
 	sets.engaged.DT.Haste15 = set_combine(sets.engaged.DT.Haste30,
 	{
-		ear2 = "Teols Earring",
+		ear2 = "Telos Earring",
 		body = "Mochi. Chainmail +3",
 		legs = "Hachiya Hakama +2"
 	})
@@ -633,7 +634,7 @@ function init_gear_sets()
 	}
 	sets.engaged.Tank.Haste30 = set_combine(sets.engaged.Tank,
 	{
-		head = "Ryuo Somen +1", ear1 = "Eabani Earring",
+		head = "Hattori Zukin +2", ear1 = "Eabani Earring",
 		waist = "Reiki Yotai",
 	})
 	sets.engaged.Tank.Haste15 = set_combine(sets.engaged.Tank.Haste30,
@@ -655,7 +656,7 @@ function init_gear_sets()
 	}
 	sets.engaged.Tank.DT.Haste30 = set_combine(sets.engaged.Tank.DT,
 	{
-		head = "Ryuo Somen +1", ear1 = "Eabani Earring",
+		head = "Hattori Zukin +2", ear1 = "Eabani Earring",
 		waist = "Reiki Yotai", feet = "Malignance Boots"
 	})
 	sets.engaged.Tank.DT.Haste15 = set_combine(sets.engaged.Tank.Haste30,
@@ -677,7 +678,7 @@ function init_gear_sets()
 	}
 	sets.engaged.Tank.Evasion.Haste30 = set_combine(sets.engaged.Tank.Evasion,
 	{
-		head = "Ryuo Somen +1",
+		head = "Hattori Zukin +2",
 		body = "Mochi. Chainmail +3", hands = "Malignance Gloves",
 		legs = "Malignance Tights"
 	})
@@ -714,7 +715,7 @@ function init_gear_sets()
 	sets.engaged.GKT =
 	{
 		ammo = "Seki Shuriken",
-		head = "Dampening Tam", neck = "Ninja Nodowa +1", ear1 = "Crep. Earring", ear2 = "Telos Earring",
+		head = "Dampening Tam", neck = "Ninja Nodowa +2", ear1 = "Crep. Earring", ear2 = "Telos Earring",
 		body = "Ken. Samue +1", hands = gear.herculean_ta_hands, ring1 = "Gere Ring", ring2 = "Epona's Ring",
 		back = gear.Andartia.DA, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
 	}

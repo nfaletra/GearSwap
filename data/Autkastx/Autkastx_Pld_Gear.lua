@@ -352,16 +352,16 @@ function init_gear_sets()
 	sets.idle.DW =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flam. Zucchetto +2", neck = "Vim Torque +1", ear1 = "Telos Earring", ear2 = "Eabani Earring",
-		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
+		head = "Flam. Zucchetto +2", neck = "Vim Torque +1", ear1 = "Brutal Earring", ear2 = "Eabani Earring",
+		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Chirich Ring +1", ring2 = "Petrov Ring",
 		back = gear.Rudianos.TP, waist = "Reiki Yotai", legs = "Odyssean Cuisses", feet = "Flam. Gambieras +2"
 	}
 
 	sets.idle.TwoHanded =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flam. Zucchetto +2", neck = "Vim Torque +1", ear1 = "Telos Earring", ear2 = "Balder Earring +1",
-		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Petrov Ring", ring2 = "Epona's Ring",
+		head = "Flam. Zucchetto +2", neck = "Vim Torque +1", ear1 = "Telos Earring", ear2 = "Brutal Earring",
+		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Chirich Ring +1", ring2 = "Petrov Ring",
 		back = gear.Rudianos.TP, waist = "Sailfi Belt +1", legs = "Odyssean Cuisses", feet = "Flam. Gambieras +2"
 	}
 

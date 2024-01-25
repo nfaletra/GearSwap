@@ -161,13 +161,17 @@ function job_customize_melee_set(meleeSet)
 	if state.Buff['Counterstance'] then
 		meleeSet = set_combine(meleeSet, sets.buff.Counterstance)
 	end
-	
+
 	if buffactive.Footwork then
 		meleeSet = set_combine(meleeSet, sets.buff.Footwork)
 	end
 
 	if state.Buff['Boost'] then
 		meleeSet = set_combine(meleeSet, sets.buff.Boost)
+	end
+
+	if buffactive.Impetus then
+		meleeSet = set_combine(meleeSet, sets.buff.Impetus)
 	end
 	
 	return meleeSet
@@ -310,10 +314,6 @@ end
 
 function update_melee_groups()
 	classes.CustomMeleeGroups:clear()
-
-	if state.Buff['Impetus'] then
-		classes.CustomMeleeGroups:append('Impetus')
-	end
 
 	if player.equipment.main and player.equipment.main == "Godhands" then
 		classes.CustomMeleeGroups:append("Godhands")

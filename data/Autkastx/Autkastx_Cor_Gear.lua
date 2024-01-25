@@ -156,7 +156,7 @@ function init_gear_sets()
 	sets.precast.RA.Flurry =
 	{
 		ammo = gear.RABullet,
-		head = "Cass. Tricorne +2", neck = "Comm. Charm +2",
+		head = "Chass. Tricorne +3", neck = "Comm. Charm +2",
 		body = "Laksa. Frac +3", hands = "Carmine Fin. Ga. +1", ring1 = "Crepuscular Ring",
 		back = gear.Camulus.Idle, waist = "Yemaya Belt", legs = "Adhemar Kecks +1", feet = "Meg. Jam. +2"
 	}

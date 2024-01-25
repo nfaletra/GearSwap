@@ -36,7 +36,12 @@ function user_job_setup()
 
 	gear.Artio =
 	{
-		Idle = "Artio's Mantle"
+		Idle = { name = "Artio's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%' } },
+		STP = { name = "Artio's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%' } },
+		DA = { name = "Artio's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%' } },
+		STR_WSD = { name = "Artio's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%' } },
+		MND_WSD = { name = "Artio's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%' } },
+		CHR_WSD = { name = "Artio's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%' } },
 	}
 
 	select_default_macro_book()
@@ -184,7 +189,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Blistering Sallet +1", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Lugra Earring +1",
 		body = "Tali'ah Manteel +2", hands = "Nyame Gauntlets", ring1 = "Epona's Ring", ring2 = "Gere Ring",
-		back = gear.Artio.STR_DA, waist = "Fotia Belt", legs = "Meghanada Chausses +2", feet = "Nyame Sollerets"
+		back = gear.Artio.DA, waist = "Fotia Belt", legs = "Meghanada Chausses +2", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Decimation'].PDL = set_combine(sets.precast.WS['Decimation'],
 	{
@@ -199,7 +204,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Blistering Sallet +1", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Lugra Earring +1",
 		body = "Tali'ah Manteel +2", hands = "Nyame Gauntlets", ring1 = "Epona's Ring", ring2 = "Gere Ring",
-		back = gear.Artio.STR_DA, waist = "Fotia Belt", legs = "Meghanada Chausses +2", feet = "Nyame Sollerets"
+		back = gear.Artio.DA, waist = "Fotia Belt", legs = "Meghanada Chausses +2", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Ruinator'].PDL = set_combine(sets.precast.WS['Ruinator'],
 	{
@@ -262,7 +267,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Blistering Sallet +1", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Lugra Earring +1",
 		body = "Gleti's Cuirass", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Gere Ring",
-		back = gear.Artio.STR_DA, waist = "Fotia Belt", legs = "Meghanada Chausses +2", feet = gear.valorous.feet.crit
+		back = gear.Artio.DA, waist = "Fotia Belt", legs = "Meghanada Chausses +2", feet = gear.valorous.feet.crit
 	}
 	sets.precast.WS['Rampage'].PDL = set_combine(sets.precast.WS['Rampage'],
 	{
@@ -477,7 +482,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Telos Earring",
 		body = "Tali'ah Manteel +2", hands = "Malignance Gloves", ring1 = "Epona's Ring", ring2 = "Gere Ring",
-		back = gear.Artio.Idle, waist = "Windbuffet Belt +1", legs = "Meghanada Chausses +2", feet = "Malignance Boots"
+		back = gear.Artio.STP, waist = "Windbuffet Belt +1", legs = "Meghanada Chausses +2", feet = "Malignance Boots"
 	}
 
 	sets.engaged.DT = set_combine(sets.engaged,
@@ -489,13 +494,13 @@ function init_gear_sets()
 	{
 		neck = "Shulmanu Collar", ear2 = "Enmerkar Earring",
 		body = "Totemic Jackcoat +3", hands = "Gleti's Gauntlets", ring2 = "Defending Ring",
-		back = gear.Artio.Idle, legs = "Tali'ah Seraweels +2", feet = "Gleti's Boots"
+		back = gear.Artio.STP, legs = "Tali'ah Seraweels +2", feet = "Gleti's Boots"
 	})
 
 	sets.engaged.DW = set_combine(sets.engaged,
 	{
 		ear2 = "Eabani Earring",
-		waist = "Reiki Yotai",
+		back = gear.Artio.DA, waist = "Reiki Yotai",
 	})
 
 	sets.engaged.DT.DW = set_combine(sets.engaged.DW,
@@ -506,7 +511,7 @@ function init_gear_sets()
 	sets.engaged.Hybrid.DW = set_combine(sets.engaged.Hybrid,
 	{
 		ring2 = "Gere Ring",
-		back = gear.Artio.DW, waist = "Klouskap Sash +1", feet = "Malignance Boots"
+		waist = "Klouskap Sash +1", feet = "Malignance Boots"
 	})
 
 	sets.buff['Killer Instinct'] = { body = "Nukumi Gausape +1" }

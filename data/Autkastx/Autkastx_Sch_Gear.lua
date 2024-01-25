@@ -4,7 +4,7 @@ function user_job_setup()
     state.CastingMode:options('Normal','Resistant','Proc','OccultAcumen','9k')
     state.IdleMode:options('Normal', 'PDT', 'MDT')
 	state.HybridMode:options('Normal','Dual Wield')
-	state.Weapons:options('None','Musa','Mpaca','Khatvanga','Maxentius','Daybreak','DualMaxentius','DualDaybreak')
+	state.Weapons:options('None','Musa','Marin','Khatvanga','Maxentius','Daybreak','DualMaxentius','DualDaybreak')
 
 	state.AutoCureMode:options('Off', 'Party', 'Ally')
 	state.StatusCureMode:options('Off', 'Party', 'Ally')

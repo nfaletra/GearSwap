@@ -1242,7 +1242,7 @@ function init_gear_sets()
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	
 	-- Weapons sets
-	sets.weapons.Chango = { main = "Lycurgos", sub = "Utu Grip" }
+	sets.weapons.Chango = { main = "Chango", sub = "Utu Grip" }
 	sets.weapons.DualWeapons = {main="Firangi",sub="Reikiko"}
 	sets.weapons.Greatsword = {main="Montante +1",sub="Utu Grip"}
 	sets.weapons.ProcDagger = {main="Chicken Knife II",sub=empty}

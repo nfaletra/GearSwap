@@ -49,7 +49,7 @@ function init_gear_sets()
 	--------------------------------------
 
 	sets.buff['Burst Affinity'] = { feet = "Hashi. Basmak +2" }
-	sets.buff['Chain Affinity'] = { head = "Hashishin Kavuk +2", feet = "Assim. Charuqs +2" }
+	sets.buff['Chain Affinity'] = { head = "Hashishin Kavuk +3", feet = "Assim. Charuqs +2" }
 	sets.buff.Convergence = { head = "Luh. Keffiyeh +3" }
 	sets.buff.Diffusion = { feet = "Luhlaza Charuqs +3" }
 	sets.buff.Enchainment = {}
@@ -119,7 +119,7 @@ function init_gear_sets()
 	sets.precast.WS =
 	{
 		ammo = "Oshasha's Treatise",
-		head = "Hashi. Kavuk +2", neck = "Fotia Gorget", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
+		head = "Hashi. Kavuk +3", neck = "Fotia Gorget", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Epona's Ring", ring2 = "Ilabrat Ring",
 		back = gear.Rosmerta.WSD, waist = "Fotia Belt", legs = "Luhlaza Shalwar +3", feet = "Nyame Sollerets"
 	}
@@ -170,7 +170,7 @@ function init_gear_sets()
 	sets.precast.WS['Flash Nova'] =
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Hashishin Kavuk +2", neck = "Baetyl Pendant", ear1 = "Regal Earring", ear2 = "Friomisi Earring",
+		head = "Hashi. Kavuk +3", neck = "Baetyl Pendant", ear1 = "Regal Earring", ear2 = "Friomisi Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Shiva Ring +1",
 		back = gear.Rosmerta.WSD, waist = "Sacro Cord", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
