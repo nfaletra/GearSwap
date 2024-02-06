@@ -39,6 +39,8 @@ function user_job_setup()
 		Idle = { name = "Artio's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%' } },
 		STP = { name = "Artio's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%' } },
 		DA = { name = "Artio's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%' } },
+		Pet_Idle = { name = "Artio's Mantle", augments = { 'Pet: M.Acc.+20 Pet: M.Dmg.+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: Mag. Acc.+10', '"Cure" potency +10%', 'Damage taken-5%' } },
+		Pet_Macc = { name = "Artio's Mantle", augmnents = { 'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: Accuracy+10 Pet: Rng. Acc.+10', 'Pet: Haste+10', 'Pet: Damage taken -5%' } },
 		STR_WSD = { name = "Artio's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%' } },
 		MND_WSD = { name = "Artio's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%' } },
 		CHR_WSD = { name = "Artio's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%' } },
@@ -452,7 +454,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Shepherd's Chain", ear1 = "Handler's Earring +1", ear2 = "Enmerkar Earring",
 		body = "Totemic Jacket +3", hands = "Gleti's Gauntlets", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
-		back = gear.Artio.Idle, waist = "Isa Belt", legs = "Tali'ah Seraweels +2", feet = "Ankusa Gaiters +3"
+		back = gear.Artio.Pet_Idle, waist = "Isa Belt", legs = "Tali'ah Seraweels +2", feet = "Ankusa Gaiters +3"
 	}
 
 	sets.idle.Pet.Engaged =
@@ -460,7 +462,7 @@ function init_gear_sets()
 		ammo = "Voluspa Tathlum",
 		head = "Tali'ah Turban +2", neck = "Bst. Collar +2", ear1 = "Handler's Earring +1", ear2 = "Enmerkar Earring",
 		body = "Ankusa Jackcoat +3", hands = "Gleti's Gauntlets", ring1 = "Cath Palug Ring", ring2 = "Varar Ring +1",
-		back = gear.Artio.Idle, waist = "Incarnation Sash", legs = "Ankusa Trousers +3", feet = "Gleti's Boots"
+		back = gear.Artio.Pet_Idle, waist = "Incarnation Sash", legs = "Ankusa Trousers +3", feet = "Gleti's Boots"
 	}
 	sets.idle.Pet.Engaged.DD = sets.idle.Pet.Engaged
 
@@ -469,7 +471,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum +1",
 		head = "Anwig Salade", neck = "Shepherd's Chain", ear1 = "Handler's Earring +1", ear2 = "Enmerkar Earring",
 		body = "Totemic Jackcoat +3", hands = "Gleti's Gauntlets", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
-		back = gear.Artio.Idle, waist = "Isa Belt", legs = "Tali'ah Seraweels +2", feet = "Ankusa Gaiters +3"
+		back = gear.Artio.Pet_Idle, waist = "Isa Belt", legs = "Tali'ah Seraweels +2", feet = "Ankusa Gaiters +3"
 	}
 
 	sets.Kiting = { ring1 = "Shneddick Ring" }

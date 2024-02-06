@@ -394,9 +394,9 @@ function update_melee_groups()
 		classes.CustomMeleeGroups:clear()
 		
 		if player.equipment.main == "Epeolatry" and state.Buff['Aftermath: Lv.3'] then
-				classes.CustomMeleeGroups:append('AM')
+			classes.CustomMeleeGroups:append('AM')
 		end
-	end	
+	end
 end
 
 function check_hasso()

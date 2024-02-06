@@ -20,7 +20,7 @@ function user_job_setup()
 	gear.Alaunus =
 	{
 		TP = { name = "Alaunus's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%' } },
-		Healing = { name = "Alaunus's Cape", augments = { 'MND+20', 'Enmity-10' } },
+		Healing = { name = "Alaunus's Cape", augments = { 'MND+20', 'Eva.+20 /Mag. Eva.+20', 'Enmity-10', 'Damage taken-5%' } },
 	}
 
 	-- Additional local binds

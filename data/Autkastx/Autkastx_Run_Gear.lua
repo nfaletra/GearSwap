@@ -1,7 +1,7 @@
 function user_job_setup()
 
 	state.OffenseMode:options('Normal')
-	state.HybridMode:options('Normal', 'DT', 'MEVA', 'DD')
+	state.HybridMode:options('Normal', 'DT', 'MEVA', 'Hybrid', 'DD')
 	state.WeaponskillMode:options('Normal', 'DT')
 	state.CastingMode:options('SIRD','Normal')
 	state.PhysicalDefenseMode:options('PDT_HP','PDT')
@@ -159,7 +159,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		neck = "Fotia Gorget", ear1 = "Sherida Earring",
-		ring2 = "Epona's Ring",
+		ring1 = "Epona's Ring", ring2 = "Niqmaddu Ring",
 		waist = "Fotia Belt",
 	})
 
@@ -301,7 +301,7 @@ function init_gear_sets()
 	sets.idle =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Nyame Helm", neck = "Futhark Torque +2", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
+		head = "Nyame Helm", neck = "Loricate Torque +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
 		body = "Erilaz Surcoat +3", hands = "Nyame Gauntlets", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.Ogma.Idle, waist = "Flume Belt +1", legs = "Nyame Flanchard", feet = "Erilaz Greaves +2"
 	}
@@ -365,13 +365,33 @@ function init_gear_sets()
 		back = gear.Ogma.Parry, waist = "Engraved Belt", legs = "Eri. Leg Guards +2", feet = "Erilaz Greaves +2"
 	}
 
-	sets.engaged.DD =
+	sets.engaged.Hybrid =
 	{
 		ammo = "Coiste Bodhar",
 		head = "Nyame Helm", neck = "Combatant's Torque", ear1 = "Sherida Earring", ear2 = "Brutal Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Moonlight Ring", ring2 = "Niqmaddu Ring",
 		back = gear.Ogma.Parry, waist = "Ioskeha Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
+	sets.engaged.Hybrid.AM = set_combine(sets.engaged.Hybrid,
+	{
+		ammo = "Yamarang",
+		ear1 = "Crep. Earring", ear2 = "Telos Earring",
+		waist = "Sailfi Belt +1",
+	})
+
+	sets.engaged.DD =
+	{
+		ammo = "Coiste Bodhar",
+		head = "Nyame Helm", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Telos Earring",
+		body = "Nyame Mail", hands = gear.adhemar.hands.a, ring1 = "Moonlight Ring", ring2 = "Niqmaddu Ring",
+		back = gear.Ogma.Parry, waist = "Ioskeha Belt +1", legs = "Samnuha Tights", feet = "Nyame Sollerets"
+	}
+	sets.engaged.DD.AM = set_combine(sets.engaged.DD,
+	{
+		ammo = "Aurgelmir Orb",
+		ear1 = "Crep. Earring", ear2 = "Dedition Earring",
+		waist = "Sailfi Belt +1",
+	})
 
 	--------------------------------------
 	-- Custom buff sets
