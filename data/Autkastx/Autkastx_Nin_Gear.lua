@@ -26,6 +26,7 @@ function user_job_setup()
 	send_command('bind !` gs c cycle Stance')
 	send_command('bind ^r gs c weapons Default;gs c reset WeaponskillMode;gs c reset CastingMode;gs c update')
 	send_command('bind ^f gs c weapons ProcDagger;gs c set WeaponskillMode Proc;gs c update')
+	send_command('bind !backspace input /item "Forbidden Key" <t>')
 
 	utsusemi_cancel_delay = .3
 	utsusemi_ni_cancel_delay = .06
@@ -102,7 +103,7 @@ function init_gear_sets()
 
 	sets.precast.WS.Proc =
 	{
-		ammo = "Seki Shuriken",
+		ammo = "Staunch Tathlum +1",
 		head = "Mummu Bonnet +2", neck = "Combatant's Torque", ear1 = "Mache Earring +1", ear2 = "Telos Earring",
 		body = "Mummu Jacket +2", hands = "Mummu Wrists +2", ring1 = "Etana Ring", ring2 = "Rufescent Ring",
 		back = gear.Andartia.DA, waist = "Engraved Belt", legs = "Mummu Kecks +2", feet = "Malignance Boots"

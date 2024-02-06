@@ -368,7 +368,7 @@ function init_gear_sets()
 	sets.idle = -- With Khonsu and all +3 Empy, this set is 10% over DT Cap (60% total). When that happens, swap neck for Warder's Charm and another 5% can still be swapped out.
 	{
 		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
-		head = "Nyame Helm", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
+		head = "Nyame Helm", neck = "Loricate Torque +1", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
 		body = "Ebers Bliaut +3", hands = "Ebers Mitts +2", ring1 = "Stikini Ring +1", ring2 = "Shadow Ring",
 		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Ebers Pant. +3", feet = "Ebers Duckbills +3"
 	}

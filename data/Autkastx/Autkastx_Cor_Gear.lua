@@ -280,7 +280,7 @@ function init_gear_sets()
 	--Because omen skillchains.
 	sets.precast.WS['Burning Blade'] =
 	{
-		head = "Meghanada Visor +2", neck = "Twilight Torque", ear1 = "Telos Earring", ear2 = "Crep. Earring",
+		head = "Meghanada Visor +2", neck = "Loricate Torque +1", ear1 = "Telos Earring", ear2 = "Crep. Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Regal Ring",
 		back = "Moonlight Cape", waist = "Flume Belt +1", legs = "Meg. Chausses +2", feet = "Meg. Jam. +2"
 	}

@@ -119,7 +119,7 @@ function init_gear_sets()
 	sets.precast.WS =
 	{
 		range = "Linos",
-		head = "Nyame Helm", neck = "Repub. Plat. Medal", ear1 = "Regal Earring", ear2 = "Moonshade Earring",
+		head = "Nyame Helm", neck = "Rep. Plat. Medal", ear1 = "Regal Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Shukuyu Ring", ring2 = "Rufescent Ring",
 		back = gear.Intarabus.DEX_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
@@ -183,7 +183,7 @@ function init_gear_sets()
 	sets.midcast['Horde Lullaby II'].AoE = {range="Blurred Harp +1"}
 	sets.midcast.Madrigal = { head = "Fili Calot +3", back = gear.Intarabus.TP, feet = "Fili Cothurnes +2" }
 	sets.midcast.Paeon = { head = "Brioso Roundlet +1" }
-	sets.midcast.March = { hands = "Fili Manchettes +1" }
+	sets.midcast.March = { hands = "Fili Manchettes +2" }
 	sets.midcast['Honor March'] = set_combine(sets.midcast.March, { range = "Marsyas"})
 	sets.midcast.Minuet = { body = "Fili Hongreline +3" }
 	sets.midcast.Minne = { legs = "Mousai Seraweels +1" }
@@ -248,7 +248,7 @@ function init_gear_sets()
 		sub = "Ammurapi Shield", ammo = "Hasty Pinion +1",
 		head = "Telchine Cap", neck = "Voltsurge Torque" , ear1 = "Andoaa Earring", ear2 = "Gifted Earring",
 		body = "Telchine Chas.", hands = gear.telchine.hands.enhancing, ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
-		back = "Fi Folett Cape +1", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Telchine Pigaches"
+		back = "Fi Folet Cape +1", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Telchine Pigaches"
 	}
 
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",legs="Shedir Seraweels"})
@@ -272,7 +272,7 @@ function init_gear_sets()
 	sets.idle =
 	{
 		main = "Daybreak", sub = "Genmei Shield", range = "Terpander",
-		head = "Fili Calot +3", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Fili Earring +1",
+		head = "Fili Calot +3", neck = "Loricate Torque +1", ear1 = "Etiolation Earring", ear2 = "Fili Earring +1",
 		body = "Volte Doublet", hands = "Fili Manchettes +2", ring1 = "Shadow Ring", ring2 = "Defending Ring",
 		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
 	}

@@ -65,7 +65,7 @@ function init_gear_sets()
 	sets.precast.FC =
 	{
 		main = "Cath Palug Hammer", sub = "Genmei Shield", range = "Dunna",
-		head = "Merlinic Hood", neck = "Twilight Torque", ear1 = "Loquac. Earring", ear2 = "Malignance Earring",
+		head = "Merlinic Hood", neck = "Loricate Torque +1", ear1 = "Loquac. Earring", ear2 = "Malignance Earring",
 		body = "Agwu's Robe", hands = "Agwu's Gages", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
 		back = "Perimede Cape", waist = "Witful Belt", legs = "Geo. Pants +1", feet = gear.amalric.feet.a
 	}
@@ -303,14 +303,14 @@ function init_gear_sets()
 
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'],
 	{
-		neck = "Twilight Torque", ear1 = "Lugalbanda Earring", ear2 = "Etiolation Earring",
+		neck = "Loricate Torque +1", ear1 = "Lugalbanda Earring", ear2 = "Etiolation Earring",
 		ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
 		legs = "Shedir Seraweels",
 	})
 	
 	sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'].Stoneskin,
 	{
-		head = "Amalric Coif +1", neck = "Twilight Torque", ear1 = "Lugalbanda Earring", ear2 = "Etiolation Earring",
+		head = "Amalric Coif +1", neck = "Loricate Torque +1", ear1 = "Lugalbanda Earring", ear2 = "Etiolation Earring",
 		ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
 		back = "Grapevine Cape", waist = "Gishdubar Sash",
 	})

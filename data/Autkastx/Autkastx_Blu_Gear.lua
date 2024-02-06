@@ -241,7 +241,7 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].Magical.SIRD =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Nyame Helm", neck = "Twilight Torque", ear1 = "Magnetic Earring",
+		head = "Nyame Helm", neck = "Loricate Torque +1", ear1 = "Magnetic Earring",
 		body = "Nyame Mail", hands = "Rawhide Gloves", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
 		back = "Fi Follet Cape +1", waist = "Rumination Sash", legs = "Hashishin Tayt +2", feet = "Hashi. Basmak +2"
 	}
@@ -336,7 +336,7 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].Buff =
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Telchine Cap", neck = "Twilight Torque", ear1 = "Mendicant's Earring", ear2 = "Magnetic Earring",
+		head = "Telchine Cap", neck = "Loricate Torque +1", ear1 = "Mendicant's Earring", ear2 = "Magnetic Earring",
 		body = "Amalric Doublet +1", hands = "Shrieker's Cuffs", ring1 = "Mephitas's Ring +1", ring2 = "Defending Ring",
 		back = "Fi Follet Cape +1", waist = "Flume Belt +1", legs = "Nyame Flanchard", feet = "Carmine Greaves +1"
 	}
@@ -420,7 +420,7 @@ function init_gear_sets()
 	sets.SuppaBrutal = {}
 	sets.DWEarrings = {}
 	sets.DWMax = {}
-	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
+	sets.TreasureHunter = set_combine(sets.TreasureHunter, { ammo = "Per. Lucky Egg", hands = "Volte Bracers", legs = "Volte Hose" })
 
 	-- Weapons sets
 	sets.weapons.Naegling = { main = "Naegling", sub = "Thibron" }

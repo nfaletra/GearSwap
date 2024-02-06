@@ -293,7 +293,7 @@ function init_gear_sets()
 	-- Sets to return to when not performing an action.
 
 	-- Resting sets
-	sets.resting = { body = "Hes. Cyclas +3" }
+	sets.resting = {}
 
 	-- Idle sets
 	sets.idle =
@@ -409,7 +409,7 @@ function init_gear_sets()
 	sets.buff.Counterstance =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Bhikku Crown +2", neck = "Twilight Torque", ear1 = "Sherida Earring", ear2 = "Telos Earring",
+		head = "Bhikku Crown +2", neck = "Loricate Torque +1", ear1 = "Sherida Earring", ear2 = "Telos Earring",
 		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Anch. Hose +3", feet = "Hes. Gaiters +3"
 	}

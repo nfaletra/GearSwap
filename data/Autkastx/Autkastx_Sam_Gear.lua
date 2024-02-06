@@ -181,7 +181,7 @@ function init_gear_sets()
 	sets.idle =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Wakido Kabuto +2", neck = "Sam. Nodowa +2", ear1 = "Infused Earring", ear2 = "Odnowa Earring +1",
+		head = "Wakido Kabuto +2", neck = "Loricate Torque +1", ear1 = "Infused Earring", ear2 = "Odnowa Earring +1",
 		body = "Sacro Breastplate", hands = "Nyame Gauntlets", ring1 = "Shadow Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.Smertrios.TP, waist = "Flume Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}

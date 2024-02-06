@@ -62,7 +62,8 @@ function init_gear_sets()
 	sets.SIRD =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Souv. Schaller +1", neck = "Moonlight Necklace", ear1 = "Magnetic Earring",
+		head = "Souv. Schaller +1", neck = "Loricate Torque +1",
+		body = "Chev. Cuirass +2", hands = "Regal Gauntlets",
 		waist = "Rumination Sash", legs = "Founder's Hose",
 	}
 
@@ -128,7 +129,7 @@ function init_gear_sets()
 	{
 		ammo = "Sapience Orb",
 		head = "Carmine Mask +1", neck = "Orunmila's Torque", ear1 = "Loquac. Earring", ear2 = "Enchanter's Earring +1",
-		body = "Odyssean Chestplate", hands = "Leyline Gloves", ring1 = "Mephitas's Ring +1", ring2 = "Mephitas's Ring",
+		body = "Odyssean Chestplate", hands = "Leyline Gloves", ring1 = "Mephitas's Ring +1", ring2 = "Medada's Ring",
 		back  = gear.Rudianos.FC, waist = "Carrier's Sash", legs = "Eschite Cuisses", feet = "Carmine Greaves +1"
 	})
 

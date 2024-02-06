@@ -8,7 +8,7 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('MDT_HP','MDT')
 	state.ResistDefenseMode:options('MEVA','MEVA_HP')
 	state.IdleMode:options('Normal', 'Evasion')
-	state.Weapons:options('Aettir', 'Lionheart', 'Lycurgos', 'Evasion', 'Naegling')
+	state.Weapons:options('Epeo', 'Aettir', 'Lionheart', 'Lycurgos', 'Evasion', 'Naegling')
 	
 	state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP'}
 
@@ -244,7 +244,7 @@ function init_gear_sets()
 	sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'],
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Rune. Bandeau +2", neck = "Sacro Gorget", ear2 = "Erilaz Earring",
+		head = "Rune. Bandeau +2", neck = "Sacro Gorget", ear2 = "Erilaz Earring +1",
 		hands = "Regal Gauntlets", ring1 = "Moonlight Ring", rign2 = "Gelatinous Ring +1",
 		back = gear.Ogma.FC, waist = "Flume Belt +1"
 	})
@@ -327,7 +327,8 @@ function init_gear_sets()
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 
 	-- Weapons sets
-	sets.weapons.Aettir = { main = "Aettir", sub = "Refined Grip +1" }
+	sets.weapons.Epeo = { main = "Epeolatry", sub = "Utu Grip" }
+	sets.weapons.Aettir = { main = "Aettir", sub = "Utu Grip" }
 	sets.weapons.Lionheart = { main = "Lionheart", sub = "Utu Grip" }
 	sets.weapons.Lycurgos = {main = "Lycurgos", sub = "Utu Grip" }
 	sets.weapons.Evasion = { main = "Soulcleaver", sub = "Kupayopl" }
@@ -343,7 +344,7 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Nyame Helm", neck = "Futhark Torque +2", ear1 = "Odnowa Earring +1", ear2 = "Erilaz Earring",
+		head = "Nyame Helm", neck = "Futhark Torque +2", ear1 = "Odnowa Earring +1", ear2 = "Erilaz Earring +1",
 		body = "Erilaz Surcoat +3", hands = "Turms Mittens +1", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.Ogma.Parry, waist = "Engraved Belt", legs = "Eri. Leg Guards +2", feet = "Turms Leggings +1"
 	}

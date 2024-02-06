@@ -143,7 +143,7 @@ function init_gear_sets()
 	{
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
 		head = "Agwu's Cap", neck = "Argute Stole +2", ear1 = "Regal Earring", ear2 = "Malignance Earring",
-		body = "Agwu's Robe", hands = "Amalric Gages +1", ring1 = "Freke Ring", ring2 = "Mujin Band",
+		body = "Agwu's Robe", hands = "Agwu's Gages", ring1 = "Freke Ring", ring2 = "Mujin Band",
 		back = "Aurist's Cape +1", waist = "Sacro Cord", legs = "Agwu's Slops", feet = "Agwu's Pigaches"
 	}
 
@@ -191,7 +191,7 @@ function init_gear_sets()
 	sets.midcast['Enhancing Magic'].Duration =
 	{
 		main = "Musa", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
-		head = "Telchine Cap", neck = "Twilight Torque", ear1 = "Calamitous Earring", ear2 = "Etiolation Earring",
+		head = "Telchine Cap", neck = "Loricate Torque +1", ear1 = "Calamitous Earring", ear2 = "Etiolation Earring",
 		body = "Pedagogy Gown +3", hands = gear.telchine.hands.enhancing, ring1 = "Mephitas's Ring +1", ring2 = "Defending Ring",
 		back = "Fi Follet Cape +1", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Telchine Pigaches"
 	}
