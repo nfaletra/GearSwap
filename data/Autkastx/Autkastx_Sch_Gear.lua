@@ -151,7 +151,7 @@ function init_gear_sets()
 	{
 		ammo = "Hasty Pinion +1",
 		head = "Merlinic Hood", neck = "Orunmila's Torque", ear1 = "Malignance Earring", ear2 = "Loquac. Earring",
-		body = "Merlinic Jubbah", hands = "Academic's Bracers +1", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
+		body = "Merlinic Jubbah", hands = "Academic's Bracers +1", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
 		back = "Fi Follet Cape +1", waist = "Witful Belt", legs = "Kaykaus Tights +1", feet = "Pedagogy Loafers +3"
 	}
 

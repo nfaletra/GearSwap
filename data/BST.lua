@@ -472,7 +472,7 @@ end
 
 -- Modify the default melee set after it was constructed.
 function job_customize_melee_set(meleeSet)
-	if pet.isvalid and state.CorrelationMode then
+	if pet.isvalid and state.CorrelationMode.value then
 		meleeSet = set_combine(meleeSet, sets.Correlation)
 	end
 
@@ -548,11 +548,10 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 function update_melee_groups()
+	classes.CustomMeleeGroups:clear()
 	if player.equipment.main then
-		classes.CustomMeleeGroups:clear()
-
 		if player.equipment.main == "Aymur" and state.Buff['Aftermath: Lv.3'] then
-				classes.CustomMeleeGroups:append('AM')
+			classes.CustomMeleeGroups:append('AM')
 		end
 	end
 end
@@ -626,10 +625,6 @@ function check_pet()
 		if abil_recasts[94] < latency then
 			send_command('@input /ja "Bestial Loyalty" <me>')
 			tickdelay = os.clock() + .7
-			return true
-		elseif abil_recasts[104] < latency then
-			send_command('@input /ja "Call Beast" <me>')
-			tickdelay = os.clock() + 1.1
 			return true
 		else
 			return false

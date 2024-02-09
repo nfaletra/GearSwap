@@ -417,9 +417,6 @@ function init_gear_sets()
 	sets.Knockback = {}
 	sets.MP = { waist = "Flume Belt +1", ear1 = "Suppanomimi", ear2 = "Ethereal Earring" }
     sets.MP_Knockback = {}
-	sets.SuppaBrutal = {}
-	sets.DWEarrings = {}
-	sets.DWMax = {}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, { ammo = "Per. Lucky Egg", hands = "Volte Bracers", legs = "Volte Hose" })
 
 	-- Weapons sets

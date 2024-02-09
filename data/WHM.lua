@@ -45,7 +45,7 @@
 -- Initialization function for this job file.
 function get_sets()    
 	-- Load and initialize the include file.
-	include('User/AutoHeals.lua')
+	--include('User/AutoHeals.lua')
 	include('Sel-Include.lua')
 end
 

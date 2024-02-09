@@ -118,7 +118,8 @@ function init_gear_sets()
 	sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], {})
 
 	-- Waltz set (chr and vit)
-	sets.precast.Waltz = {}
+	sets.precast.Waltz = { body = "Passion Jacket" }
+	sets.Self_Waltz = sets.precast.Waltz
 
 	sets.precast.Step =
 	{
@@ -126,8 +127,6 @@ function init_gear_sets()
 		body = "Chasseur's Frac +3", hands = "Chasseur's Gants +3", ring1 = "Regal Ring", ring2 = "Mummu Ring",
 		back = gear.Camulus.DA, waist = "Kentarch Belt +1", legs = "Chas. Culottes +3", feet = "Chass. Bottes +2"
 	}
-
-	sets.Self_Waltz = {}
 
 	-- Don't need any special gear for Healing Waltz.
 	sets.precast.Waltz['Healing Waltz'] = {}

@@ -256,14 +256,14 @@ function init_gear_sets()
 	sets.precast.WS['Last Stand'] =
 	{
 		head = "Pill. Bonnet +3", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Enervating Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Apate Ring", ring2 = "Regal Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Crepuscular Ring", ring2 = "Regal Ring",
 		back = gear.Toutatis.WSD, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.precast.WS['Empyreal Arrow'] =
 	{
 		head = "Pill. Bonnet +3", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Enervating Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Apate Ring", ring2 = "Regal Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Apate Crepuscular", ring2 = "Regal Ring",
 		back = gear.Toutatis.WSD, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -314,7 +314,7 @@ function init_gear_sets()
 	sets.midcast.RA =
 	{
 		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Telos Earring", ear2 = "Enervating Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Apate Ring", ring2 = "Regal Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Crepuscular Ring", ring2 = "Regal Ring",
 		back = gear.Toutatis.TP, waist = "Chaac Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {})

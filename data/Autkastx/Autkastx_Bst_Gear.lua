@@ -1,6 +1,6 @@
 function user_job_setup()
 	state.OffenseMode:options('Normal')
-	state.HybridMode:options('Normal', 'DT', 'Hybrid')
+	state.HybridMode:options('Normal', 'Hybrid', 'Pet')
 	state.WeaponskillMode:options('Match', 'Normal', 'PDL', 'Proc')
 	state.CastingMode:options('Normal')
 	state.IdleMode:options('Normal')
@@ -259,7 +259,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Nyame Helm", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Helm", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back = gear.Artio.MND_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Cloudsplitter'].PDL = set_combine(sets.precast.WS['Cloudsplitter'], {}) -- Magic WS don't benefit from PDL
@@ -453,7 +453,7 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Shepherd's Chain", ear1 = "Handler's Earring +1", ear2 = "Enmerkar Earring",
-		body = "Totemic Jacket +3", hands = "Gleti's Gauntlets", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
+		body = "Totemic Jackcoat +3", hands = "Gleti's Gauntlets", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
 		back = gear.Artio.Pet_Idle, waist = "Isa Belt", legs = "Tali'ah Seraweels +2", feet = "Ankusa Gaiters +3"
 	}
 
@@ -487,12 +487,12 @@ function init_gear_sets()
 		back = gear.Artio.STP, waist = "Windbuffet Belt +1", legs = "Meghanada Chausses +2", feet = "Malignance Boots"
 	}
 
-	sets.engaged.DT = set_combine(sets.engaged,
+	sets.engaged.Hybrid = set_combine(sets.engaged,
 	{
 		body = "Gleti's Cuirass", ring2 = "Defending Ring",
 	})
 
-	sets.engaged.Hybrid = set_combine(sets.engaged,
+	sets.engaged.Pet = set_combine(sets.engaged,
 	{
 		neck = "Shulmanu Collar", ear2 = "Enmerkar Earring",
 		body = "Totemic Jackcoat +3", hands = "Gleti's Gauntlets", ring2 = "Defending Ring",
@@ -505,12 +505,9 @@ function init_gear_sets()
 		back = gear.Artio.DA, waist = "Reiki Yotai",
 	})
 
-	sets.engaged.DT.DW = set_combine(sets.engaged.DW,
-	{
-		body = "Gleti's Cuirass", ring2 = "Defending Ring",
-	})
+	sets.engaged.DW.Hybrid = set_combine(sets.engaged.DW, sets.engaged.Hybrid, {})
 
-	sets.engaged.Hybrid.DW = set_combine(sets.engaged.Hybrid,
+	sets.engaged.DW.Pet = set_combine(sets.engaged.Pet,
 	{
 		ring2 = "Gere Ring",
 		waist = "Klouskap Sash +1", feet = "Malignance Boots"
@@ -623,6 +620,10 @@ end
 function select_default_macro_book()
 	-- Default macro set/book
 	set_macro_page(4, 16)
+end
+
+function user_job_lockstyle()
+	windower.chat.input('/lockstyleset 015')
 end
 
 state.Weapons:options('None','PetPDTAxe','DualWeapons')

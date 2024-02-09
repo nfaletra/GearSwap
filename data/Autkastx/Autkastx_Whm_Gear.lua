@@ -1,7 +1,5 @@
 -- Setup vars that are user-dependent.  Can override this in a sidecar file.
 function user_job_setup()
-	--include('AutoHeals.lua')
-
 	state.OffenseMode:options('Normal')
 	state.CastingMode:options('Normal','Resistant', 'SIRD', 'DT')
 	state.IdleMode:options('Normal')

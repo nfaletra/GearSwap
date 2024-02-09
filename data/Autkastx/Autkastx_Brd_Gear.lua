@@ -18,9 +18,6 @@ function user_job_setup()
 
 	info.CastSpeed = 0.2
 
-	state.AutoCureMode:options('Off', 'Party', 'Ally')
-	state.StatusCureMode:options('Off', 'Party', 'Ally')
-
 	gear.Intarabus =
 	{
 		TP = { name = "Intarabus's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%' } },

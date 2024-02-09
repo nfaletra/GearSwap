@@ -272,7 +272,7 @@ function init_gear_sets()
 	sets.idle =
 	{
 		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
-		head = "Befouled Crown", neck = "Twilight Torque",ear1="Lugalbanda Earring", ear2 = "Etiolation Earring",
+		head = "Befouled Crown", neck = "Loricate Torque +1",ear1="Lugalbanda Earring", ear2 = "Etiolation Earring",
 		body = "Supay Weskit", hands = "Nyame Gauntlets", ring1 = "Defending Ring", ring2 = "Metamor. Ring +1",
 		back = "Umbra Cape", waist = "Carrier's Sash", legs = "Assid. Pants +1", feet = "Nyame Sollerets"
 	}

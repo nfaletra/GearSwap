@@ -315,10 +315,6 @@ end
 function update_melee_groups()
 	classes.CustomMeleeGroups:clear()
 
-	if player.equipment.main and player.equipment.main == "Godhands" then
-		classes.CustomMeleeGroups:append("Godhands")
-	end
-
 	if player.equipment.main and player.equipment.main == "Glanzfaust" and state.Buff['Aftermath: Lv.3'] then
 		classes.CustomMeleeGroups:append('AM')
 	end

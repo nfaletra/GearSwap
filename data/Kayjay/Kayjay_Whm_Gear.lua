@@ -9,9 +9,6 @@ function user_job_setup()
 	state.Weapons:options('None','DualWeapons','MeleeWeapons')
 	state.WeaponskillMode:options('Normal','Fodder')
 
-	state.AutoCureMode:options('Off', 'Party', 'Ally')
-	state.StatusCureMode:options('Party', 'Ally', 'Off')
-
 	gear.obi_cure_waist = "Austerity Belt +1"
 	gear.obi_cure_back = "Alaunus's Cape"
 
@@ -480,8 +477,9 @@ end
 
 autows_list = {['DualWeapons']='Realmrazer',['MeleeWeapons']='Realmrazer'}
 
+--[[
 function extra_user_job_tick()
-	if player.hp == 0 and ActionStack and #ActionStack > 0 then
+	--[[if player.hp == 0 and ActionStack and #ActionStack > 0 then
 		ClearActionStack()
 	end
 
@@ -880,3 +878,4 @@ function process_party_chat_word(message, sender)
 		end
 	end
 end
+]]

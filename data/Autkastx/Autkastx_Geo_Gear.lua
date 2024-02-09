@@ -149,7 +149,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Shell Crusher'] =
 	{
-		head = "Nyame Helm", neck = "Sanctity Necklace", ear1 = "Crepuscular Earring", ear2 = "Digni. Earring",
+		head = "Nyame Helm", neck = "Erra Pendant", ear1 = "Crepuscular Earring", ear2 = "Digni. Earring",
 		body = "Nyame Mail", hands = "Gazu Bracelets +1", ring1 = "Metamor. Ring +1", ring2 = "Etana Ring",
 		back = gear.Nantosuelta.MAB, waist = "Eschan Stone", legs = "Agwu's Slops", feet = "Agwu's Pigaches"
 	}
@@ -237,6 +237,7 @@ function init_gear_sets()
 	{
 		head = "Pixie Hairpin +1",
 		ring1 = "Archon Ring", ring2 = "Evanescence Ring",
+		waist = "Austerity Belt +1",
 	})
 	sets.midcast.Aspir = sets.midcast.Drain
 

@@ -509,7 +509,7 @@ function init_gear_sets()
 	sets.midcast.RA =
 	{
 		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Enervating Earring", ear2 = "Telos Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Apate Ring", ring2 = "Regal Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Crepuscular Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.DA, waist = "Chaac Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {})
@@ -698,7 +698,7 @@ function init_gear_sets()
 	sets.engaged.H2H =
 	{
 		ammo = "Seki Shuriken",
-		head = "Hizamaru Somen +2", neck = "Ninja Nodowa +2", ear1 = "Mache Earring +1", ear2 = "Mache Earring +1",
+		head = "Hiza. Somen +2", neck = "Ninja Nodowa +2", ear1 = "Mache Earring +1", ear2 = "Mache Earring +1",
 		body = "Ken. Samue +1", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Epona's Ring",
 		back = gear.Andartia.DA, waist = "Windbuffet Belt +1", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}

@@ -7,9 +7,9 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'DT', 'Evasion', 'Refresh')
-	state.Weapons:options('Godhands', 'Verethragna', 'Spharai', 'Karambit', 'Varga', 'Gozuki', 'Xoanon', 'Club', 'ProcStaff', 'Barehanded')
+	state.Weapons:options('Godhands', 'Verethragna', 'Spharai', 'Karambit', 'Varga', 'Staff', 'Club', 'ProcStaff', 'Barehanded')
 
-	state.ExtraMeleeMode = M{['description'] = 'Extra Melee Mode', 'None', 'Warder', 'Staff'}
+	state.ExtraMeleeMode = M{['description'] = 'Extra Melee Mode', 'None', 'Warder'}
 
 	update_melee_groups()
 	
@@ -364,6 +364,7 @@ function init_gear_sets()
 		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Bhikku Hose +3", feet = "Anch. Gaiters +3"
 	}
 	sets.engaged.Godhands = set_combine(sets.engaged, sets.Godhands)
+	sets.engaged.Staff = set_combine(sets.engaged, { neck = "Anu Torque", legs = "Mpaca's Hose" })
 
 	-- Hybrid sets
 	sets.engaged.Hybrid = set_combine(sets.engaged,
@@ -372,7 +373,8 @@ function init_gear_sets()
 		hands = "Mpaca's Gloves",
 		feet = "Mpaca's Boots"
 	})
-	sets.engaged.Hybrid.Godhands = set_combine(sets.engaged.Hybrid, sets.Godhands, {})
+	sets.engaged.Godhands.Hybrid = set_combine(sets.engaged.Hybrid, sets.Godhands, {})
+	sets.engaged.Staff.Hybrid = set_combine(sets.engaged.Hybrid, { neck = "Anu Torque", legs = "Mpaca's Hose" })
 
 	sets.engaged.Counter =
 	{
@@ -389,15 +391,11 @@ function init_gear_sets()
 		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Mpaca's Hose", feet = "Malignance Boots"
 	}
-	sets.engaged['Subtle Blow'].Godhands = set_combine(sets.engaged['Subtle Blow'], sets.Godhands, {})
+	sets.engaged.Godhands['Subtle Blow'] = set_combine(sets.engaged['Subtle Blow'], sets.Godhands, {})
+	sets.engaged.Staff['Subtle Blow'] = set_combine(sets.engaged['Subtle Blow'], { neck = "Anu Torque" })
 
 	-- Extra Melee Modes
 	sets.Warder = { neck = "Warder's Charm +1" }
-	sets.Staff =
-	{
-		neck = "Anu Torque",
-		legs = "Mpaca's Hose",
-	}
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {}
@@ -428,8 +426,7 @@ function init_gear_sets()
 	sets.weapons.Karambit = { main = "Karambit" }
 	sets.weapons.Varga = { main = "Varga Purnikawa" }
 	sets.weapons.Club = { main = "Mafic Cudgel" }
-	sets.weapons.Gozuki = { main = "Gozuki Mezuki", sub = "Bloodrain Strap" }
-	sets.weapons.Xoanon = { main = "Xoanon", sub = "Bloodrain Strap" }
+	sets.weapons.Staff = { main = "Xoanon", sub = "Bloodrain Strap" }
 	sets.weapons.ProcStaff = { main = "Ram Staff", sub = "Bloodrain Strap" }
 	sets.weapons.Barehanded = { main = empty }
 end

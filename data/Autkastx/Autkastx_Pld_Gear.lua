@@ -239,7 +239,7 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Etiolation Earring",
-		body = "Rev. Surcoat +3", hands = "Regal Gauntlets", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
+		body = "Rev. Surcoat +3", hands = "Regal Gauntlets", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
 		back = gear.Rudianos.FC, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Chev. Sabatons +2"
 	}
 	sets.midcast.Reprisal.SIRD = set_combine(sets.midcast.Reprisal, sets.SIRD, {})
