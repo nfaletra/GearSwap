@@ -30,9 +30,6 @@ state.CancelStoneskin 		= M(true, 'Cancel Stone Skin') --Set this to false if yo
 state.SkipProcWeapons 		= M(true, 'Skip Proc Weapons') --Set this to false if you want to display weapon sets fulltime rather than just Aby/Voidwatch.
 state.NotifyBuffs	  		= M(false, 'Notify Buffs') 	 --Set this to true if you want to notify your party when you recieve a specific buff/debuff. (List Below)
 
-state.AutoCureMode = M{ ['description'] = 'Auto Cure Mode' }
-state.StatusCureMode = M{ ['description'] = 'Status Cure Mode'}
-
 --[[Binds you may want to change.
 	Bind special characters.
 	@ = Windows Key
@@ -79,7 +76,6 @@ send_command('bind ^t gs c cycle treasuremode') --Toggles hitting htings with yo
 send_command('bind !t input /target <bt>') --Targets the battle target.
 send_command('bind ^o fillmode') --Lets you see through walls.
 send_command('bind @m gs c mount Omega')
-send_command('bind ` gs c toggle AutoCureMode')
 
 NotifyBuffs = S{'doom','petrification'}
 

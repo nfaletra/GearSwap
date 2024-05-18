@@ -2,13 +2,13 @@
 function user_job_setup()
 	state.OffenseMode:options('Normal')
 	state.HybridMode:options('Normal', 'Hybrid', 'MEVA')
-	state.WeaponskillMode:options('Match', 'Normal', 'Acc', 'Proc')
+	state.WeaponskillMode:options('Match', 'Normal', 'PDL', 'Proc')
 	state.RangedMode:options('Normal', 'Acc')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal')
-	state.Weapons:options('Dojikiri', 'Shining One', 'Sword', 'ProcWeapon')
+	state.Weapons:options('Masamune', 'Dojikiri', 'Shining One', 'Sword', 'ProcWeapon', 'Trial')
 	-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')
 	send_command('bind !` input /ja "Seigan" <me>')
@@ -16,6 +16,8 @@ function user_job_setup()
 	send_command('bind @` gs c cycle SkillchainMode')
 	send_command('bind !@^` gs c cycle Stance')
 	send_command('bind ^q gs c weapons Bow;gs c update')
+	send_command('bind ^r gs c weapons Masamune;gs c reset WeaponskillMode')
+	send_command('bind ^f gs c weapons ProcWeapon;gs c set WeaponskillMode Proc;gs c update')
 
 	gear.Smertrios =
 	{
@@ -61,6 +63,12 @@ function init_gear_sets()
 		body = "Sakonji Domaru +3", hands = "Kasuga Kote +3", ring1 = "Epaminondas's Ring", ring2 = "Regal Ring",
 		back = gear.Smertrios.WSD, waist = "Sailfi Belt +1", legs = "Wakido Haidate +3", feet = "Nyame Sollerets"
 	}
+	sets.precast.WS.PDL = set_combine(sets.precast.WS,
+	{
+		ammo = "Crepuscular Pebble",
+		ring2 = "Sroda Ring",
+		legs = "Mpaca's Hose", feet = "Kas. Sune-Ate +2"
+	})
 
 	sets.precast.WS.Proc =
 	{
@@ -72,8 +80,10 @@ function init_gear_sets()
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Tachi: Fudo'].PDL = set_combine(sets.precast.WS.PDL, {})
 	
-	sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, { ring2 = "Niqmaddu Ring" })
+	sets.precast.WS['Tachi: Shoha'].PDL = set_combine(sets.precast.WS['Tachi: Shoha'], sets.precast.WS.PDL, {})
 
 	sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS,
 	{
@@ -81,10 +91,13 @@ function init_gear_sets()
 	})
 
 	sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Tachi: Kasha'].PDL = set_combine(sets.precast.WS.PDL, {})
 
 	sets.precast.WS['Tachi: Gekko'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Tachi: Gekko'].PDL = set_combine(sets.precast.WS.PDL, {})
 
 	sets.precast.WS['Tachi: Yukikaze'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Tachi: Yukikaze'].PDL = set_combine(sets.precast.WS.PDL, {})
 
 	sets.precast.WS['Tachi: Ageha'] =
 	{
@@ -115,7 +128,10 @@ function init_gear_sets()
 	sets.precast.WS['Tachi: Koki'] = set_combine(sets.precast.WS['Tachi: Jinpu'], {})
 
 	sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Impulse Drive'].PDL = set_combine(sets.precast.WS.PDL, {})
+
 	sets.precast.WS['Sonic Thrust'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Sonic Thrust'].PDL = set_combine(sets.precast.WS.PDL, {})
 
 	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS,
 	{
@@ -123,6 +139,12 @@ function init_gear_sets()
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear2 = "Schere Earring",
 		body = "Mpaca's Doublet", hands = "Mpaca's Gloves", ring1 = "Niqmaddu Ring",
 		waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
+	})
+	sets.precast.WS['Stardiver'].PDL = set_combine(sets.precast.WS['Stardiver'],
+	{
+		neck = "Sam. Nodowa +2",
+		ring2 = "Sroda Ring",
+		feet = "Kas. Sune-Ate +2",
 	})
 
 	sets.precast.WS['Apex Arrow'] =
@@ -132,26 +154,11 @@ function init_gear_sets()
 		back = gear.Smertrios.WSD, waist = "Fotia Belt", legs = "Wakido Haidate +3", feet = "Waki. Sune-Ate +1"
 	}
 
-	sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {})
-
-	-- Swap to these on Moonshade using WS if at 3000 TP
-	sets.MaxTP = {ear1="Thrud Earring",ear2="Lugra Earring +1"}
-	sets.AccMaxTP = {ear1="Telos Earring",ear2="Mache Earring +1"}
-	sets.AccDayMaxTPWSEars = {ear1="Telos Earring",ear2="Mache Earring +1"}
-	sets.DayMaxTPWSEars = {ear1="Thrud Earring",ear2="Brutal Earring"}
-	sets.AccDayWSEars = {ear1="Telos Earring",ear2="Mache Earring +1"}
-	sets.DayWSEars = {ear1="Thrud Earring",ear2="Moonshade Earring"}
-
 	-- Midcast Sets
-	sets.midcast.FastRecast =
-	{
-		head="Loess Barbuta +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
-		body="Tartarus Platemail",hands="Leyline Gloves",ring1="Defending Ring",ring2="Prolix Ring",
-		back="Moonlight Cape",waist="Tempus Fugit",legs="Wakido Haidate +3",feet="Amm Greaves"
-	}
+	sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
 
 	-- Specific spells
-	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, {back="Mujin Mantle"})
+	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, {})
 
 	-- Ranged gear
 	sets.midcast.RA =
@@ -161,18 +168,7 @@ function init_gear_sets()
 		back = gear.Smertrios.TP, waist = "Carrier's Sash", legs = "Wakido Haidate +3", feet = "Waki. Sune-Ate +1"
 	}
 
-	sets.midcast.RA.Acc =
-	{
-		head = "Flam. Zucchetto +2", neck = "Combatant's Torque",ear1="Clearview Earring",ear2="Neritic Earring",
-		body = "Kyujutsugi", hands = "Buremte Gloves", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
-		back = gear.Smertrios.TP, waist = "Carrier's Sash", legs = "Wakido Haidate +3", feet = "Waki. Sune-Ate +1"
-	}
-
-
-	-- Sets to return to when not performing an action.
-
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-
 	sets.Kiting = { ring1 = "Shneddick Ring" }
 
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
@@ -230,63 +226,28 @@ function init_gear_sets()
 	}
 
 	-- Weapons sets
+	sets.weapons.Masamune = { main = "Masamune", sub = "Utu Grip" }
 	sets.weapons.Dojikiri = { main = "Dojikiri Yasutsuna", sub = "Utu Grip" }
 	sets.weapons['Shining One'] = { main = "Shining One", sub = "Utu Grip" }
 	sets.weapons.Sword = { main = "Twinned Blade", sub = empty }
 	sets.weapons.ProcWeapon = { main = "Soboro Sukehiro", sub = "Utu Grip" }
+	sets.weapons.Trial = { main = "Radennotachi", sub = "Utu Grip" }
 	
 	-- Buff sets
-	sets.Cure_Received = {hands="Buremte Gloves",waist="Gishdubar Sash",legs="Flamma Dirs +2"}
+	sets.Cure_Received = { hands = "Buremte Gloves", waist = "Gishdubar Sash", legs = "Flamma Dirs +2" }
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = { neck = "Vim Torque +1" }
 	sets.buff.Hasso = {}
-	sets.buff['Third Eye'] = {} --legs="Sakonji Haidate +3"
+	sets.buff['Third Eye'] = {}
 	sets.buff.Sekkanoki = { hands = "Kasuga Kote +3" }
 	sets.buff.Sengikori = { feet = "Kas. Sune-Ate +2" }
-	sets.buff['Meikyo Shisui'] = {feet="Sak. Sune-Ate +3"}
+	sets.buff['Meikyo Shisui'] = { feet = "Sak. Sune-Ate +3" }
 end
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
 	-- Default macro set/book
 	set_macro_page(1, 4)
-end
-
---Job Specific Trust Overwrite
-function check_trust()
-	if not moving then
-		if state.AutoTrustMode.value and not data.areas.cities:contains(world.area) and (buffactive['Elvorseal'] or buffactive['Reive Mark'] or not player.in_combat) then
-			local party = windower.ffxi.get_party()
-			if party.p5 == nil then
-				local spell_recasts = windower.ffxi.get_spell_recasts()
-			
-				if spell_recasts[980] < spell_latency and not have_trust("Yoran-Oran") then
-					windower.send_command('input /ma "Yoran-Oran (UC)" <me>')
-					tickdelay = os.clock() + 3
-					return true
-				elseif spell_recasts[952] < spell_latency and not have_trust("Koru-Moru") then
-					windower.send_command('input /ma "Koru-Moru" <me>')
-					tickdelay = os.clock() + 3
-					return true
-				elseif spell_recasts[967] < spell_latency and not have_trust("Qultada") then
-					windower.send_command('input /ma "Qultada" <me>')
-					tickdelay = os.clock() + 3
-					return true
-				elseif spell_recasts[914] < spell_latency and not have_trust("Ulmia") then
-					windower.send_command('input /ma "Ulmia" <me>')
-					tickdelay = os.clock() + 3
-					return true
-				elseif spell_recasts[979] < spell_latency and not have_trust("Selh'teus") then
-					windower.send_command('input /ma "Selh\'teus" <me>')
-					tickdelay = os.clock() + 3
-					return true
-				else
-					return false
-				end
-			end
-		end
-	end
-	return false
 end
 
 function user_job_lockstyle()

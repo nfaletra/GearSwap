@@ -10,9 +10,6 @@ function user_job_setup()
 	state.Weapons:options('None', 'Maxentius', 'Daybreak', 'DualYagrush', 'DualMaxentius', 'DualDaybreak')
 	state.WeaponskillMode:options('Normal')
 
-	state.AutoCureMode:options('Off', 'Party', 'Ally')
-	state.StatusCureMode:options('Off', 'Party', 'Ally')
-
 	info.CastSpeed = 0.2
 
 	gear.Alaunus =
@@ -239,12 +236,12 @@ function init_gear_sets()
 	sets.midcast['Enhancing Magic'] =
 	{
 		main = "Gada", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
-		head = "Telchine Cap", neck = "Incanter's Torque", ear1 = "Andoaa Earring",
-		body = "Telchine Chas.", hands = gear.telchine.hands.enhancing, ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
-		back = "Mending Cape", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Theo. Duckbills +3"
+		head = "Telchine Cap", neck = "Incanter's Torque", ear1 = "Magnetic Earring", ear2 = "Andoaa Earring",
+		body = "Telchine Chas.", hands = gear.telchine.hands.enhancing, ring1 = "Stikini Ring +1", ring2 = "Mephitas's Ring +1",
+		back = "Fi Folet Cape +1", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Theo. Duckbills +3"
 	}
 
-	sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'].Duration,
+	sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'],
 	{
 		main = "Beneficus",
 		head = "Ebers Cap +2",
@@ -252,11 +249,16 @@ function init_gear_sets()
 		legs = "Piety Pantaln. +3", feet = "Ebers Duckbills +3"
 	})
 
+	sets.midcast.BarStatus = set_combine(sets.midcast['Enhancing Magic'],
+	{
+		neck = "Sroda Necklace"
+	})
+
 	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'],
 	{
 		main = "Bolelabunga",
-		head = "Inyanga Tiara +2", ear2 = "Gifted Earring",
-		body = "Piety Bliaut +3", hands = "Ebers Mitts +2", ring1 = "Mephitas's Ring +1",
+		head = "Inyanga Tiara +2",
+		body = "Piety Bliaut +3", hands = "Ebers Mitts +2",
 		legs = "Th. Pant. +3", feet = "Bunzi's Sabots"
 	})
 
@@ -268,7 +270,8 @@ function init_gear_sets()
 
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],
 	{
-		head = "Chironic Hat", ear2 = "Gifted Earring",
+		main = "Vadose Rod",
+		head = "Chironic Hat",
 		hands = "Regal Cuffs", ring1 = "Mephitas's Ring +1",
 		waist = "Emphatikos Rope", legs = "Shedir Seraweels"
 	})
@@ -363,7 +366,7 @@ function init_gear_sets()
 	-- Sets to return to when not performing an action.
 
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-	sets.idle = -- With Khonsu and all +3 Empy, this set is 10% over DT Cap (60% total). When that happens, swap neck for Warder's Charm and another 5% can still be swapped out.
+	sets.idle = -- With +3 Empy, this set is 10% over DT Cap (54% total). When that happens, swap neck for Warder's Charm and another 5% can still be swapped out.
 	{
 		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Loricate Torque +1", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",

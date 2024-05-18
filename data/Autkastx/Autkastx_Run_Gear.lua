@@ -2,7 +2,7 @@ function user_job_setup()
 
 	state.OffenseMode:options('Normal')
 	state.HybridMode:options('Normal', 'DT', 'MEVA', 'Hybrid', 'DD')
-	state.WeaponskillMode:options('Normal', 'DT')
+	state.WeaponskillMode:options('Match', 'Normal', 'DT')
 	state.CastingMode:options('SIRD','Normal')
 	state.PhysicalDefenseMode:options('PDT_HP','PDT')
 	state.MagicalDefenseMode:options('MDT_HP','MDT')
@@ -241,14 +241,14 @@ function init_gear_sets()
 	})
 	sets.midcast['Phalanx'].SIRD = set_combine(sets.midcast['Phalanx'], sets.SIRD, {})
 
-	sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'],
+	sets.midcast['Regen IV'] = set_combine(sets.midcast['Enhancing Magic'],
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Rune. Bandeau +2", neck = "Sacro Gorget", ear2 = "Erilaz Earring +1",
 		hands = "Regal Gauntlets", ring1 = "Moonlight Ring", rign2 = "Gelatinous Ring +1",
-		back = gear.Ogma.FC, waist = "Flume Belt +1"
+		back = gear.Ogma.FC, waist = "Sroda Belt"
 	})
-	sets.midcast['Regen'].SIRD = set_combine(sets.midcast['Regen'], sets.SIRD, {})
+	sets.midcast['Regen IV'].SIRD = set_combine(sets.midcast['Regen IV'], sets.SIRD, {})
 
 	sets.midcast['Refresh'] = set_combine(sets.midcast['Enhancing Magic'], { waist = "Gishdubar Sash" })
 	sets.midcast['Refresh'].SIRD = set_combine(sets.midcast['Refresh'], sets.SIRD, {})
@@ -368,29 +368,29 @@ function init_gear_sets()
 	sets.engaged.Hybrid =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Nyame Helm", neck = "Combatant's Torque", ear1 = "Sherida Earring", ear2 = "Brutal Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Moonlight Ring", ring2 = "Niqmaddu Ring",
-		back = gear.Ogma.Parry, waist = "Ioskeha Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		head = "Nyame Helm", neck = "Combatant's Torque", ear1 = "Sherida Earring", ear2 = "Telos Earring",
+		body = "Nyame Mail", hands = gear.adhemar.hands.a, ring1 = "Moonlight Ring", ring2 = "Niqmaddu Ring",
+		back = gear.Ogma.Parry, waist = "Ioskeha Belt +1", legs = "Samnuha Tights", feet = "Nyame Sollerets"
 	}
 	sets.engaged.Hybrid.AM = set_combine(sets.engaged.Hybrid,
 	{
-		ammo = "Yamarang",
-		ear1 = "Crep. Earring", ear2 = "Telos Earring",
+		ammo = "Aurgelmir Orb",
+		ear1 = "Crep. Earring",
 		waist = "Sailfi Belt +1",
 	})
 
 	sets.engaged.DD =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Nyame Helm", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Nyame Mail", hands = gear.adhemar.hands.a, ring1 = "Moonlight Ring", ring2 = "Niqmaddu Ring",
-		back = gear.Ogma.Parry, waist = "Ioskeha Belt +1", legs = "Samnuha Tights", feet = "Nyame Sollerets"
+		head = "Adhemar Bonnet +1", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Telos Earring",
+		body = gear.adhemar.body.b, hands = gear.adhemar.hands.a, ring1 = "Epona's Ring", ring2 = "Niqmaddu Ring",
+		back = gear.Ogma.Parry, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
 	}
 	sets.engaged.DD.AM = set_combine(sets.engaged.DD,
 	{
 		ammo = "Aurgelmir Orb",
-		ear1 = "Crep. Earring", ear2 = "Dedition Earring",
-		waist = "Sailfi Belt +1",
+		-- ear2 = "Dedition Earring",
+		body = "Nyame Mail", ring1 = "Chirich Ring +1"
 	})
 
 	--------------------------------------

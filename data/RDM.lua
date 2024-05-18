@@ -180,7 +180,7 @@ function job_post_midcast(spell, spellMap, eventArgs)
 			end
 		end
 		
-    elseif spell.skill == 'Enfeebling Magic' then
+	elseif spell.skill == 'Enfeebling Magic' then
 		if state.Buff.Stymie and state.CastingMode.value:contains('Resistant') then
 			if sets.midcast[spell.english] and sets.midcast[spell.english].Fodder then
 				equip(sets.midcast[spell.english].Fodder)
@@ -606,7 +606,15 @@ function update_melee_groups()
 	
 	if player.equipment.main and player.equipment.main == "Murgleis" and state.Buff['Aftermath: Lv.3'] then
 		classes.CustomMeleeGroups:append('AM')
-	end	
+	end
+
+	if totalhaste then
+		if totalhaste < 45 then
+			classes.CustomMeleeGroups:append('Haste30')
+		else
+			-- Haste 45 or more, intentionally empty
+		end
+	end
 end
 
 buff_spell_lists = {

@@ -456,7 +456,7 @@ function init_include()
 	include('Sel-GlobalItems')
 
 	-- Load Action Stack
-	include('ActionStack')
+	--include('ActionStack')
 end
 
 -- Function to perform actions on new targets.

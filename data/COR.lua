@@ -403,7 +403,11 @@ function do_bullet_checks(spell, spellMap, eventArgs)
             return
         end
     elseif spell.type == 'CorsairShot' then
-        bullet_name = gear.QDbullet
+		if spell.name == 'Light Shot' or spell.name == 'Dark Shot' then
+			bullet_name = gear.MACCbullet
+		else
+        	bullet_name = gear.QDbullet
+		end
     elseif spell.action_type == 'Ranged Attack' then
         bullet_name = gear.RAbullet
         if state.Buff['Triple Shot'] then
@@ -429,7 +433,7 @@ function do_bullet_checks(spell, spellMap, eventArgs)
     end
     
     -- Don't allow shooting or weaponskilling with ammo reserved for quick draw.
-    if spell.type ~= 'CorsairShot' and bullet_name == gear.QDbullet and (available_bullets <= bullet_min_count) then
+    if spell.type ~= 'CorsairShot' and (bullet_name == gear.QDbullet or bullet_name == gear.MACCbullet) and (available_bullets <= bullet_min_count) then
         add_to_chat(217, 'No ammo will be left for Quick Draw.  Cancelling.')
         eventArgs.cancel = true
         return

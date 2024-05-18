@@ -125,7 +125,7 @@ function init_gear_sets()
 	sets.precast.FC =
 	{
 		ammo = "Sapience Orb",
-		head = gear.herculean_fc_head, ear1 = "Enchantr. Earring +1", ear2 = "Loquac. Earring",
+		head = gear.herculean_fc_head, ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = gear.adhemar.body.d, hands = "Leyline Gloves", ring1 = "Rahab Ring", ring2 = "Medada's Ring",
 		legs = "Limbo Trousers"
 	}
@@ -159,7 +159,7 @@ function init_gear_sets()
 	{
 		ammo = "Crepuscular Pebble",
 		head = "Skulker's Bonnet +2", ear1 = "Odr Earring",
-		body = "Glet's Cuirass", hands = "Meg. Gloves +2", ring1 = "Epaminondas's Ring"
+		body = "Gleti's Cuirass", hands = "Meg. Gloves +2", ring1 = "Epaminondas's Ring"
 	})
 	sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"],
 	{
@@ -226,7 +226,7 @@ function init_gear_sets()
 	sets.precast.WS['Dancing Edge'] =
 	{
 		ammo = "Seeth. Bomblet +1",
-		head = "Skulker's Bonnet +2", neck = "Warder's Charm +1", ear1 = "Sherida Earring", ear2 = "Balder Earring",
+		head = "Skulker's Bonnet +2", neck = "Warder's Charm +1", ear1 = "Sherida Earring", ear2 = "Balder Earring +1",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Mujin Band",
 		back = "Sacro Mantle", waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}

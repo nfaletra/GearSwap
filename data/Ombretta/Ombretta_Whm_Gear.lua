@@ -10,9 +10,6 @@ function user_job_setup()
 	state.Weapons:options('None', 'Maxentius', 'Daybreak', 'DualMaxentius', 'DualDaybreak')
 	state.WeaponskillMode:options('Normal')
 
-	state.AutoCureMode:options('Off', 'Party', 'Ally')
-	state.StatusCureMode:options('Party', 'Ally', 'Off')
-
 	-- Additional local binds
 	send_command('bind ^` input /ma "Arise" <t>')
 	send_command('bind !` input /ja "Penury" <me>')
@@ -354,7 +351,7 @@ function init_gear_sets()
 	sets.idle =
 	{
 		main = "Daybreak", sub = "Genmei Shield", ammo = "Homiliary",
-		head = "Inyanga Tiara +2", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
+		head = "Inyanga Tiara +2", neck = "Loricate Torque +1", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
 		body = "Ebers Bliaut +2", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
 		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
 	}
@@ -362,7 +359,7 @@ function init_gear_sets()
 	sets.idle.DT =
 	{
 		main = "Malignance Pole", sub = "Umbra Strap", ammo = "Homiliary",
-		head = "Nyame Helm", neck = "Twilight Torque", ear1 = "Etiolation Earring", ear2 = "Genmei Earring",
+		head = "Nyame Helm", neck = "Loricate Torque +1", ear1 = "Etiolation Earring", ear2 = "Genmei Earring",
 		body = "Ebers Bliaut +2", hands = "Inyan. Dastanas +2", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Nyame Sollerets"
 	}

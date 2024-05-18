@@ -6,9 +6,6 @@ function user_job_setup()
 	state.HybridMode:options('Normal','Dual Wield')
 	state.Weapons:options('None','Musa','Marin','Khatvanga','Maxentius','Daybreak','DualMaxentius','DualDaybreak')
 
-	state.AutoCureMode:options('Off', 'Party', 'Ally')
-	state.StatusCureMode:options('Off', 'Party', 'Ally')
-
 	gear.Lughs =
 	{
 		Nuke = { name = "Lugh's Cape", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%' } }

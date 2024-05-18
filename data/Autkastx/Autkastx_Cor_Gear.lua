@@ -7,13 +7,14 @@ function user_job_setup()
 	state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	state.HybridMode:options('Normal', 'DT', 'MEVA')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', }
-	state.Weapons:options('Default', 'Ranged', 'Crit', 'Savage', 'Evisceration', 'DualWeapons', 'DualRanged', 'DualSavage', 'DualLeadenRanged', 'DualLeadenMelee', 'DualHotShot', 'DualEvisceration', 'DualAeolian', 'None')
+	state.Weapons:options('Default', 'Ranged', 'Crit', 'Savage', 'Evisceration', 'DualWeapons', 'DualRanged', 'DualCrit', 'DualSavage', 'DualLeadenRanged', 'DualLeadenMelee', 'DualHotShot', 'DualEvisceration', 'DualAeolian', 'None')
 	state.CompensatorMode:options('Always', 'Never', '300', '1000')
 
 	gear.RAbullet = "Chrono Bullet"
 	gear.WSbullet = "Chrono Bullet"
 	gear.MAbullet = "Orichalc. Bullet" --For MAB WS, do not put single-use bullets here.
 	gear.QDbullet = "Hauksbok Bullet"
+	gear.MACCbullet = "Devastating Bullet"
 	options.ammo_warning_limit = 5
 
 	gear.Camulus =
@@ -109,16 +110,15 @@ function init_gear_sets()
 
 	sets.precast.CorsairShot['Light Shot'] =
 	{
-		ammo = gear.QDbullet,
+		ammo = gear.MACCbullet,
 		head = "Laksa. Tricorne +2", neck= "Comm. Charm +2", ear1 = "Crep. Earring", ear2 = "Chas. Earring +2",
 		body = "Ikenga's Vest", hands = "Laksa. Gants +2", ring1 = "Stikini Ring +1", ring2 = "Regal Ring",
 		back = gear.Camulus.AGI_WSD, waist = "K. Kachina Belt +1", legs = "Ikenga's Trousers", feet = "Laksa. Bottes +2"
 	}
-
 	sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], {})
 
 	-- Waltz set (chr and vit)
-	sets.precast.Waltz = { body = "Passion Jacket" }
+	sets.precast.Waltz = { body = "Passion Jacket", legs = "Dashing Subligar", feet = "Rawhide Boots" }
 	sets.Self_Waltz = sets.precast.Waltz
 
 	sets.precast.Step =
@@ -404,11 +404,12 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Default = { main = gear.Rostam.A, sub = "Nusku Shield", range = "Fomalhaut" }
 	sets.weapons.Ranged = { main = gear.Rostam.A, sub = "Nusku Shield", range = "Fomalhaut" }
-	sets.weapons.Crit = { main = "Gleti's Knife", sub = "Nusku Shield", range = "Fomalhaut" }
+	sets.weapons.Crit = { main = "Gleti's Knife", sub = "Nusku Shield", range = "Armageddon" }
 	sets.weapons.Savage = { main = "Naegling", sub = "Nusku Shield", range = "Ataktos" }
 	sets.weapons.Evisceration = { main = "Tauret", sub = "Nusku Shield", range = "Ataktos" }
 	sets.weapons.DualWeapons = { main = gear.Rostam.A, sub = "Gleti's Knife", range = "Fomalhaut" }
 	sets.weapons.DualRanged = { main = gear.Rostam.A, sub = "Kustawi +1", range = "Fomalhaut" }
+	sets.weapons.DualCrit = { main = gear.Rostam.A, sub = "Gleti's Knife", range = "Armageddon" }
 	sets.weapons.DualSavage = { main = "Naegling", sub = "Gleti's Knife", range = "Ataktos" }
 	sets.weapons.DualEvisceration = { main = "Tauret", sub = "Gleti's Knife", range = "Ataktos" }
 	sets.weapons.DualLeadenRanged = { main = gear.Rostam.A, sub = "Kustawi +1", range = "Fomalhaut" }

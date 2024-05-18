@@ -8,10 +8,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT', 'NukeLock', 'GeoLock', 'PetPDT')
 	state.MagicalDefenseMode:options('MDT', 'NukeLock')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None', 'Maxentius', 'Daybreak', 'DualMaxentius', 'DualDaybreak')
-
-	state.AutoCureMode:options('Off')
-	state.StatusCureMode:options('Off')
+	state.Weapons:options('None', 'Maxentius', 'Daybreak', 'Staff', 'DualMaxentius', 'DualDaybreak')
 
 	gear.Nantosuelta =
 	{
@@ -408,6 +405,7 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Maxentius = { main = "Maxentius", sub = "Genmei Shield" }
 	sets.weapons.Daybreak = { main = "Daybreak", sub = "Genmei Shield" }
+	sets.weapons.Staff = { main = "Mpaca's Staff", sub = "Bloodrain Strap" }
 	sets.weapons.DualMaxentius = { main = "Maxentius", sub = "Cath Palug Hammer" }
 	sets.weapons.DualDaybreak = { main = "Daybreak", sub = "Cath Palug Hammer" }
 end

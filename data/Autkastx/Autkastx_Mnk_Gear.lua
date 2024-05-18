@@ -288,7 +288,7 @@ function init_gear_sets()
 	}
 
 	-- Specific spells
-	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, {})
+	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, {})	
 
 	-- Sets to return to when not performing an action.
 
@@ -299,7 +299,7 @@ function init_gear_sets()
 	sets.idle =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Malignance Chapeau", neck = "Bathy Choker +1", ear1 = "Infused Earring", ear2 = "Odnowa Earring +1",
+		head = "Malignance Chapeau", neck = "Loricate Torque +1", ear1 = "Infused Earring", ear2 = "Odnowa Earring +1",
 		body = "Hiza. Haramaki +2", hands = "Malignance Gloves", ring1 = "Chirich Ring +1", ring2 = "Defending Ring",
 		back = "Moonlight Cape", waist = "Moonbow Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}

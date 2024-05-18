@@ -22,9 +22,6 @@ function user_job_setup()
 
 	info.CastSpeed = 0.5
 
-	state.AutoCureMode:options('Off', 'Party', 'Ally')
-	state.StatusCureMode:options('Party', 'Ally', 'Off')
-
 	-- Set this to false if you don't want to use custom timers.
 	state.UseCustomTimers = M(false, 'Use Custom Timers')
 	

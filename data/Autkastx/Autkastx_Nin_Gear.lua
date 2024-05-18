@@ -751,7 +751,7 @@ function init_gear_sets()
 	{
 		ammo = "Per. Lucky Egg",
 		hands = "Volte Bracers",
-		legs = "Volte Hose",
+		waist = "Chaac Belt", legs = "Volte Hose",
 	})
 	sets.Skillchain = {}
 

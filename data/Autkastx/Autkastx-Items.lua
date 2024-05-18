@@ -4,7 +4,7 @@ sets.Sheltered = {ring2="Sheltered Ring"}
 sets.Capacity = { back = "Mecisto. Mantle" }
 
 sets.buff.Doom = { neck = "Nicander's Necklace", waist = "Gishdubar Sash", ring1 = "Purity Ring", ring2 = "Saida Ring" }
-sets.TreasureHunter = { head = "Wh. Rarab Cap +1", waist = "Chaac Belt", legs = "Volte Hose" }
+sets.TreasureHunter = { ammo = "Per. Lucky Egg", hands = "Volte Bracers", waist = "Chaac Belt", legs = "Volte Hose" }
 
 sets.precast.Item['Hallowed Water'] = {}
 sets.precast.Item['Holy Water'] = {}

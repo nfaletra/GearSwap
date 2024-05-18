@@ -1,7 +1,7 @@
 function user_job_setup()
 	state.OffenseMode:options('Normal')
-	state.HybridMode:options('Normal', 'Hybrid', 'Pet')
-	state.WeaponskillMode:options('Match', 'Normal', 'PDL', 'Proc')
+	state.HybridMode:options('Normal', 'Pet')
+	state.WeaponskillMode:options('Match', 'Normal', 'PDL', 'SubtleBlow', 'Proc')
 	state.CastingMode:options('Normal')
 	state.IdleMode:options('Normal')
 	state.RestingMode:options('Normal')
@@ -149,7 +149,7 @@ function init_gear_sets()
 	sets.precast.WS =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Ankusa Helm +3", neck = "Bst. Collar +2", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
+		head = "Nyame Helm", neck = "Bst. Collar +2", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Gere Ring",
 		back = gear.Artio.STR_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
@@ -159,11 +159,15 @@ function init_gear_sets()
 		body = "Gleti's Cuirass", ring1 = "Sroda Ring"
 	})
 
+	sets.SubtleBlow = { neck = "Bathy Choker +1", ring2 = "Chirich Ring +1" }
+
+	sets.precast.WS['Subtle Blow'] = set_combine(sets.precast.WS, sets.SubtleBlow)
+
 	-- Specific weaponskill sets.
 	sets.precast.WS['Mistral Axe'] =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Ankusa Helm +3", neck = "Bst. Collar +2", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
+		head = "Nyame Helm", neck = "Bst. Collar +2", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Gere Ring",
 		back = gear.Artio.STR_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
@@ -172,11 +176,12 @@ function init_gear_sets()
 		ammo = "Crepuscular Pebble",
 		body = "Gleti's Cuirass", ring1 = "Sroda Ring"
 	})
+	sets.precast.WS['Mistral Axe']['Subtle Blow'] = set_combine(sets.precast.WS['Mistral Axe'], sets.SubtleBlow)
 
 	sets.precast.WS['Calamity'] =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Ankusa Helm +3", neck = "Bst. Collar +2", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
+		head = "Nyame Helm", neck = "Bst. Collar +2", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Gere Ring",
 		back = gear.Artio.STR_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets",
 	}
@@ -185,6 +190,7 @@ function init_gear_sets()
 		ammo = "Crepuscular Pebble",
 		body = "Gleti's Cuirass", ring1 = "Sroda Ring",
 	})
+	sets.precast.WS['Calamity']['Subtle Blow'] = set_combine(sets.precast.WS['Calamity'], sets.SubtleBlow)
 
 	sets.precast.WS['Decimation'] =
 	{
@@ -200,6 +206,7 @@ function init_gear_sets()
 		hands = "Gleti's Gauntlets", ring1 = "Sroda Ring",
 		feet = "Gleti's Boots"
 	})
+	sets.precast.WS['Decimation']['Subtle Blow'] = set_combine(sets.precast.WS['Decimation'], sets.SubtleBlow)
 
 	sets.precast.WS['Ruinator'] =
 	{
@@ -215,6 +222,7 @@ function init_gear_sets()
 		body = "Gleti's Cuirass", hands = "Gleti's Gauntlets", ring1 = "Sroda Ring",
 		legs = "Gleti's Breeches", feet = "Gleti's Boots"
 	})
+	sets.precast.WS['Ruinator']['Subtle Blow'] = set_combine(sets.precast.WS['Ruinator'], sets.SubtleBlow)
 
 	sets.precast.WS['Onslaught'] =
 	{
@@ -230,6 +238,7 @@ function init_gear_sets()
 		body = "Gleti's Cuirass", ring1 = "Sroda Ring",
 		legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	})
+	sets.precast.WS['Onslaught']['Subtle Blow'] = set_combine(sets.precast.WS['Onslaught'], sets.SubtleBlow)
 
 	sets.precast.WS['Bora Axe'] =
 	{
@@ -245,6 +254,7 @@ function init_gear_sets()
 		body = "Gleti's Cuirass", ring1 = "Sroda Ring",
 		legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	})
+	sets.precast.WS['Bora Axe']['Subtle Blow'] = set_combine(sets.precast.WS['Bora Axe'], sets.SubtleBlow)
 
 	sets.precast.WS['Primal Rend'] =
 	{
@@ -253,7 +263,7 @@ function init_gear_sets()
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back = gear.Artio.CHR_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
-	sets.precast.WS['Primal Rend'].PDL = set_combine(sets.precast.WS['Primal Rend'], {}) -- Magic WS don't benefit from PDL
+	sets.precast.WS['Primal Rend']['Subtle Blow'] = set_combine(sets.precast.WS['Primal Rend'], sets.SubtleBlow)
 
 	sets.precast.WS['Cloudsplitter'] =
 	{
@@ -262,7 +272,7 @@ function init_gear_sets()
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back = gear.Artio.MND_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
-	sets.precast.WS['Cloudsplitter'].PDL = set_combine(sets.precast.WS['Cloudsplitter'], {}) -- Magic WS don't benefit from PDL
+	sets.precast.WS['Cloudsplitter']['Subtle Blow'] = set_combine(sets.precast.WS['Cloudsplitter'], sets.SubtleBlow)
 
 	sets.precast.WS['Rampage'] =
 	{
@@ -275,9 +285,10 @@ function init_gear_sets()
 	{
 		ammo = "Crepuscular Pebble",
 		head = "Gleti's Mask", neck = "Bst. Collar +2",
-		body = "Gleti's Cuirass", hands = "Gleti's Gauntlets", ring1 = "Sroda Ring",
+		hands = "Gleti's Gauntlets", ring1 = "Sroda Ring",
 		legs = "Gleti's Breeches", feet = "Gleti's Boots"
 	})
+	sets.precast.WS['Rampage']['Subtle Blow'] = set_combine(sets.precast.WS['Rampage'], sets.SubtleBlow)
 
 	sets.precast.WS['Savage Blade'] =
 	{
@@ -291,6 +302,7 @@ function init_gear_sets()
 		ammo = "Crepuscular Pebble",
 		body = "Gleti's Cuirass", ring1 = "Sroda Ring",
 	})
+	sets.precast.WS['Savage Blade']['Subtle Blow'] = set_combine(sets.precast.WS['Savage Blade'], sets.SubtleBlow)
 
 	sets.precast.WS['Sanguine Blade'] =
 	{
@@ -299,7 +311,6 @@ function init_gear_sets()
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Archon Ring",
 		back = gear.Artio.MND_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
-	sets.precast.WS['Sanguine Blade'].PDL = set_combine(sets.precast.WS['Sanguine Blade'], {}) -- Magic WS don't benefit from PDL
 
 	sets.precast.WS['Red Lotus Blade'] =
 	{
@@ -308,10 +319,8 @@ function init_gear_sets()
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back = gear.Artio.STR_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
-	sets.precast.WS['Red Lotus Blade'].PDL = set_combine(sets.precast.WS['Red Lotus Blade'], {})
 
 	sets.precast.WS['Burning Blade'] = {} -- Empty for omen/proc purproses
-	sets.precast.WS['Burning Blade'].PDL = {}
 
 	sets.precast.WS['Seraph Blade'] =
 	{
@@ -320,10 +329,8 @@ function init_gear_sets()
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back = gear.Artio.STR_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
-	sets.precast.WS['Seraph Blade'].PDL = set_combine(sets.precast.WS['Seraph Blade'], {}) -- Magic WS don't benefit from PDL
 
 	sets.precast.WS['Shining Blade'] = {} -- Empty for omen/proc purproses
-	sets.precast.WS['Shining Blade'].PDL = {}
 
 	sets.precast.WS['Evisceration'] =
 	{
@@ -339,6 +346,7 @@ function init_gear_sets()
 		hands = "Gleti's Gauntlets", ring1 = "Sroda Ring",
 		legs = "Gleti's Breeches", feet = "Gleti's Boots"
 	})
+	sets.precast.WS['Evisceration']['Subtle Blow'] = set_combine(sets.precast.WS['Evisceration'], sets.SubtleBlow)
 
 	sets.precast.WS['Aeolian Edge'] =
 	{
@@ -347,7 +355,6 @@ function init_gear_sets()
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back = gear.Artio.CHR_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
-	sets.precast.WS['Aeolian Edge'].PDL = set_combine(sets.precast.WS['Aeolian Edge'], {}) -- Magic WS don't benefit from PDL
 
 	sets.precast.WS['True Strike'] =
 	{
@@ -361,6 +368,7 @@ function init_gear_sets()
 		ammo = "Crepuscular Pebble",
 		body = "Gleti's Cuirass", ring1 = "Sroda Ring"
 	})
+	sets.precast.WS['True Strike']['Subtle Blow'] = set_combine(sets.precast.WS['True Strike'], sets.SubtleBlow)
 
 	sets.precast.WS['Spiral Hell'] =
 	{
@@ -374,6 +382,7 @@ function init_gear_sets()
 		ammo = "Crepuscular Pebble",
 		body = "Gleti's Cuirass", ring1 = "Sroda Ring"
 	})
+	sets.precast.WS['Spiral Hell']['Subtle Blow'] = set_combine(sets.precast.WS['Spiral Hell'], sets.SubtleBlow)
 
 	sets.precast.WS['Entropy'] =
 	{
@@ -389,6 +398,7 @@ function init_gear_sets()
 		body = "Gleti's Cuirass", hands = "Gleti's Gauntlets", ring1 = "Sroda Ring",
 		legs = "Gleti's Breeches", feet = "Gleti's Boots"
 	})
+	sets.precast.WS['Entropy']['Subtle Blow'] = set_combine(sets.precast.WS['Entropy'], sets.SubtleBlow)
 
 		-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {}
@@ -410,7 +420,7 @@ function init_gear_sets()
 
 	sets.midcast.Pet.MagicReady =
 	{
-		ammo = "Voluspa Tathlum",
+		ammo = "Hesperiidae",
 		head = gear.valorous.head.pet_mab, neck = "Adad Amulet", ear1 = "Kyrene's Earring", ear2 = "Enmerkar Earring",
 		body = "Emicho Haubert +1", hands = "Nukumi Manoplas +1", ring1 = "Cath Palug Ring", ring2 = "Tali'ah Ring",
 		back = gear.Artio.Pet_Macc, waist = "Incarnation Sash", legs = gear.valorous.legs.pet_mab, feet = gear.valorous.feet.pet_mab
@@ -418,10 +428,10 @@ function init_gear_sets()
 		
 	sets.midcast.Pet.DebuffReady =
 	{
-		ammo = "Voluspa Tathlum",
-		head = "Nyame Helm", neck = "Adad Amulet", ear1 = "Handler's Earring +1", ear2 = "Enmerkar Earring",
-		body = "Nyame Mail", hands = "Gleti's Gauntlets", ring1 = "Cath Palug Ring", ring2 = "Tali'ah Ring",
-		back = gear.Artio.Pet_Macc, waist = "Incarnation Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		ammo = "Hesperiidae",
+		head = "Nyame Helm", neck = "Adad Amulet", ear1 = "Enmerkar Earring", ear2 = "Nukumi Earring +1",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Cath Palug Ring", ring2 = "Tali'ah Ring",
+		back = gear.Artio.Pet_Macc, waist = "Incarnation Sash", legs = "Nyame Flanchard", feet = "Gleti's Boots"
 	}
 		
 	sets.midcast.Pet.PhysicalDebuffReady = set_combine(sets.midcast.Pet.WS, {})
@@ -483,13 +493,13 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Tali'ah Manteel +2", hands = "Malignance Gloves", ring1 = "Epona's Ring", ring2 = "Gere Ring",
-		back = gear.Artio.STP, waist = "Windbuffet Belt +1", legs = "Meghanada Chausses +2", feet = "Malignance Boots"
+		body = "Gleti's Cuirass", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Defending Ring",
+		back = gear.Artio.STP, waist = "Sailfi Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
-
-	sets.engaged.Hybrid = set_combine(sets.engaged,
+	sets.engaged.DW = set_combine(sets.engaged,
 	{
-		body = "Gleti's Cuirass", ring2 = "Defending Ring",
+		ear2 = "Eabani Earring",
+		back = gear.Artio.DA, waist = "Reiki Yotai"
 	})
 
 	sets.engaged.Pet = set_combine(sets.engaged,
@@ -499,37 +509,30 @@ function init_gear_sets()
 		back = gear.Artio.STP, legs = "Tali'ah Seraweels +2", feet = "Gleti's Boots"
 	})
 
-	sets.engaged.DW = set_combine(sets.engaged,
-	{
-		ear2 = "Eabani Earring",
-		back = gear.Artio.DA, waist = "Reiki Yotai",
-	})
-
-	sets.engaged.DW.Hybrid = set_combine(sets.engaged.DW, sets.engaged.Hybrid, {})
-
 	sets.engaged.DW.Pet = set_combine(sets.engaged.Pet,
 	{
-		ring2 = "Gere Ring",
 		waist = "Klouskap Sash +1", feet = "Malignance Boots"
 	})
 
 	sets.buff['Killer Instinct'] = { body = "Nukumi Gausape +1" }
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {}
-	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
-	sets.Knockback = {}
-	sets.SuppaBrutal = {}
-	sets.DWEarrings = {}
-	
+	sets.TreasureHunter = set_combine(sets.TreasureHunter,
+	{
+		ammo = "Per. Lucky Egg",
+		hands = "Volte Bracers",
+		waist = "Chaac Belt", legs = "Volte Hose",
+	})
+
 	-- Weapons sets
-	sets.weapons.Aymur = { main = "Aymur", sub = "Sacro Bulwark" }
+	sets.weapons.Aymur = { main = "Agwu's Axe", sub = "Sacro Bulwark" }
 	sets.weapons.Pangu = { main = "Pangu", sub = "Sacro Bulwark" }
 	sets.weapons.Dolichenus = { main = "Dolichenus", sub = "Sacro Bulwark" }
 	sets.weapons.Naegling = { main = "Naegling", sub = "Sacro Bulwark" }
 	sets.weapons.Drepanum = { main = "Drepanum", sub = "Bloodrain Strap" }
 	sets.weapons.DualAymur = { main = "Aymur", sub = "Agwu's Axe" }
 	sets.weapons.DualPangu = { main = "Pangu", sub = "Agwu's Axe" }
-	sets.weapons.DualDolichenus = { main = "Dolichenus", sub = "Ternion Dagger +1" }
+	sets.weapons.DualDolichenus = { main = "Dolichenus", sub = "Agwu's Axe" }
 	sets.weapons.DualNaegling = { main = "Naegling", sub = "Fernagu" }
 
 -------------------------------------------------------------------------------------------------------------------
