@@ -99,7 +99,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Knights of Round'] = set_combine(sets.precast.WS,
 	{
-		head = "Viti. Chapeau +2", neck = "Rep. Plat. Medal", ear1 = "Sherida Earring",
+		neck = "Rep. Plat. Medal", ear1 = "Ishvara Earring",
 		waist = "Sailfi Belt +1"
 	})
 	sets.precast.WS['Knights of Round'].PDL = set_combine(sets.precast.WS['Knights of Round'],
@@ -118,7 +118,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS,
 	{
-		head = "Viti. Chapeau +2", neck = "Rep. Plat. Medal",
+		neck = "Rep. Plat. Medal",
 		waist = "Sailfi Belt +1"
 	})
 	sets.precast.WS['Savage Blade'].PDL = set_combine(sets.precast.WS['Savage Blade'],
@@ -129,8 +129,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Death Blossom'] = set_combine(sets.precast.WS,
 	{
-		ammo = "Regal Gem",
-		head = "Viti. Chapeau +2", neck = "Rep. Plat. Medal",
+		neck = "Rep. Plat. Medal", ear1 = "Ishvara Earring",
 		waist = "Sailfi Belt +1"
 	})
 	sets.precast.WS['Death Blossom'] = set_combine(sets.precast.WS['Death Blossom'],
@@ -142,9 +141,9 @@ function init_gear_sets()
 	sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Yetshila +1",
-		head = "Blistering Sallet +1", ear1 = "Sherida Earring", ear2 = "Mache Earring +1",
-		body = "Ayanmo Corraza +2", hands = "Malignance Gloves", ring1 = "Ilabrat Ring", ring2 = "Petrov Ring",
-		feet = "Thereoid Greaves"
+		head = "Blistering Sallet +1", ear1 = "Sherida Earring",
+		body = "Lethargy Sayon +3", hands = "Malignance Gloves", ring1 = "Ilabrat Ring", ring2 = "Begrudging Ring",
+		legs = "Zoar Subligar +1", feet = "Thereoid Greaves"
 	})
 	sets.precast.WS['Chant du Cygne'].PDL = set_combine(sets.precast.WS['Chant du Cygne'],
 	{
@@ -155,7 +154,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS,
 	{
-		head = "Viti. Chapeau +2", ear2 = "Brutal Earring",
+		head = "Viti. Chapeau +3", ear2 = "Brutal Earring",
 		body = "Ayanmo Corazza +2", hands = "Bunzi's Hands", ring1 = "Rufescent Ring", ring2 = "Freke Ring",
 		legs = "Vitiation Tights +3"
 	})
@@ -170,17 +169,17 @@ function init_gear_sets()
 	sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Sroda Tathlum",
-		head = "Pixie Hairpin +1", neck = "Sibyl Scarf", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
-		ring1 = "Archon Ring", ring2 = "Medada's Ring",
-		waist = "Eschan Stone", legs = "Merlinic Shalwar"
+		head = "Pixie Hairpin +1", neck = "Sibyl Scarf", ear1 = "Regal Earring", ear2 = "Malignance Earring",
+		hands = "Jhakri Cuffs +2", ring1 = "Archon Ring", ring2 = "Medada's Ring",
+		waist = "Eschan Stone", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
 	})
 
 	sets.precast.WS['Red Lotus Blade'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Sroda Tathlum",
 		neck = "Sibyl Scarf", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
-		ring1 = "Rufescent Ring", ring2 = "Medada's Ring",
-		waist = "Eschan Stone", legs = "Merlinic Shalwar"
+		ring1 = "Freke Ring", ring2 = "Medada's Ring",
+		waist = "Eschan Stone", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
 	})
 
 	sets.precast.WS['Burning Blade'] = {}
@@ -188,9 +187,9 @@ function init_gear_sets()
 	sets.precast.WS['Seraph Blade'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Sroda Tathlum",
-		neck = "Sibyl Scarf", ear1 = "Regal Earring", ear2 = "Crematio Earring",
-		ring1 = "Rufescent Ring", ring2 = "Medada's Ring",
-		waist = "Eschan Stone", legs = "Merlinic Shalwar"
+		neck = "Dls. Torque +2", ear2 = "Moonshade Earring",
+		hands = "Jhakri Cuffs +2", ring1 = "Freke Ring", ring2 = "Medada's Ring",
+		waist = "Eschan Stone", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
 	})
 
 	sets.precast.WS['Shining Blade'] = {}
@@ -206,9 +205,9 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Yetshila +1",
-		head = "Malignance Chapeau", ear1 = "Mache Earring +1", ear2 = "Mache Earring +1",
-		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves",
-		legs = "Vitiation Tights +3", feet = "Thereoid Greaves"
+		head = "Blistering Sallet +1", ear1 = "Sherida Earring +1",
+		body = "Lethargy Sayon +3", hands = "Malignance Gloves", ring1 = "Ilabrat Ring", ring2 = "Begrudging Ring",
+		legs = "Zoar Subligar +1", feet = "Thereoid Greaves"
 	})
 	sets.precast.WS['Evisceration'].PDL = set_combine(sets.precast.WS['Evisceration'],
 	{
@@ -220,16 +219,15 @@ function init_gear_sets()
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Sroda Tathlum",
-		neck = "Sibyl Scarf", ear1 = "Regal Earring", ear2 = "Friomisi Earring",
-		ring1 = "Freke Ring", ring2 = "Medada's Ring",
-		waist = "Eschan Stone", legs = "Merlinic Shalwar",
+		neck = "Sibyl Scarf", ear2 = "Malignance Earring",
+		hands = "Jhakri Cuffs +2", ring1 = "Freke Ring", ring2 = "Medada's Ring",
+		waist = "Eschan Stone", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
 	})
 
 	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS,
 	{
-		ammo = "Regal Gem",
-		head = "Vitiation Chapeau +3", neck = "Dls. Torque +2",
-		waist = "Sailfi Belt +1"
+		neck = "Dls. Torque +2",
+		waist = "Sailfi Belt +1", feet = "Leth. Houseaux +3"
 	})
 	sets.precast.WS['Black Halo'].PDL = set_combine(sets.precast.WS['Black Halo'],
 	{
@@ -239,7 +237,7 @@ function init_gear_sets()
 
 	sets.precast.WS['True Strike'] = set_combine(sets.precast.WS,
 	{
-		head = "Viti. Chapeau +2", neck = "Rep. Plat. Medal",
+		neck = "Rep. Plat. Medal", ear1 = "Sherida Earring",
 		waist = "Sailfi Belt +1"
 	})
 	sets.precast.WS['True Strike'].PDL = set_combine(sets.precast.WS['True Strike'],
@@ -251,17 +249,17 @@ function init_gear_sets()
 	sets.precast.WS['Shining Strike'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Sroda Tathlum",
-		neck = "Sibyl Scarf", ear1 = "Regal Earring", ear2 = "Crematio Earring",
-		ring1 = "Rufescent Ring", ring2 = "Medada's Ring",
-		waist = "Eschan Stone", legs = "Merlinic Shalwar"
+		neck = "Dls. Torque +2", ear2 = "Malignance Earring",
+		hands = "Jhakri Cuffs +2", ring1 = "Freke Ring", ring2 = "Medada's Ring",
+		waist = "Eschan Stone", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
 	})
 
 	sets.precast.WS['Seraph Strike'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Sroda Tathlum",
-		neck = "Sibyl Scarf", ear1 = "Regal Earring", ear2 = "Crematio Earring",
-		ring1 = "Rufescent Ring", ring2 = "Medada's Ring",
-		waist = "Eschan Stone", legs = "Merlinic Shalwar"
+		neck = "Dls. Torque +2", ear2 = "Malignance Earring",
+		hands = "Jhakri Cuffs +2", ring1 = "Freke Ring", ring2 = "Medada's Ring",
+		waist = "Eschan Stone", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
 	})
 
 	sets.precast.WS['Flaming Arrow'] = set_combine(sets.precast.WS,
@@ -290,7 +288,9 @@ function init_gear_sets()
 	-- Gear for Magic Burst mode.
 	sets.MagicBurst =
 	{
-		neck = "Mizu. Kubikazari", ring1 = "Mujin Band"
+		head = "Ea Hat +1", neck = "Mizu. Kubikazari",
+		body = "Ea Houppe. +1", ring1 = "Mujin Band",
+		legs = "Leth. Fuseau +3", feet = "Bunzi's Sabots"
 	}
 
 	sets.midcast.FastRecast =
@@ -339,8 +339,8 @@ function init_gear_sets()
 		ring1 = "Kishar Ring", ring2 = "Medada's Ring"
 	})
 
-	--Red Mage enhancing sets are handled in a different way from most, layered on due to the way Composure works
-	--Don't set combine a full set with these spells, they should layer on Enhancing Set > Composure (If Applicable) > Spell
+	-- Red Mage enhancing sets are handled in a different way from most, layered on due to the way Composure works
+	-- Don't set combine a full set with these spells, they should layer on Enhancing Set > Composure (If Applicable) > Spell
 	sets.EnhancingSkill =
 	{
 		main = "Pukulatmuj +1", sub = "Forfend +1",
@@ -352,8 +352,8 @@ function init_gear_sets()
 	sets.midcast.Refresh =
 	{
 		head = "Amalric Coif +1",
-		body = "Atrophy Tabard +2", hands = "Atrophy Gloves +3",
-		back = "Grapevine Cape", waist = "Gishdubar Sash", legs = "Leth. Fuseau +3"
+		body = "Atrophy Tabard +3", hands = "Atrophy Gloves +2",
+		waist = "Gishdubar Sash", legs = "Leth. Fuseau +3"
 	}
 	sets.midcast.Aquaveil =
 	{
@@ -365,7 +365,7 @@ function init_gear_sets()
 	sets.midcast.BarElement = set_combine(sets.EnhancingSkill,
 	{
 		head = "Telchine Cap", neck = "Dls. Torque +2",
-		hands = "Atrophy Gloves +3",
+		hands = "Atrophy Gloves +2",
 		waist = "Embla Sash", legs = "Shedir Seraweels"
 	})
 
@@ -373,7 +373,7 @@ function init_gear_sets()
 	{
 		ammo = "Sapience Orb",
 		main = "Bolelabunga",
-		hands = "Atrophy Gloves +3"
+		hands = "Atrophy Gloves +2"
 	}
 
 	sets.midcast.Temper = sets.EnhancingSkill
@@ -399,73 +399,44 @@ function init_gear_sets()
 	sets.midcast['Enfeebling Magic'] =
 	{
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Regal Gem",
-		head = "Viti. Chapeau +2", neck = "Dls. Torque +2", ear1 = "Regal Earring", ear2 = "Snotra Earring",
-		body = "Atrophy Tabard +2", hands = "Regal Cuffs", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
-		back = "Aurist's Cape +1", waist = "Obstin. Sash", legs = "Bunzi's Pants", feet = "Vitiation Boots +3"
+		head = "Atrophy Chapeau +3", neck = "Dls. Torque +2", ear1 = "Regal Earring", ear2 = "Snotra Earring",
+		body = "Atrophy Tabard +3", hands = "Leth. Ganth. +3", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
+		back = "Aurist's Cape +1", waist = "Acuity Belt +1", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
 	}
-
-	sets.midcast.SkillBasedEnfeebling = set_combine(sets.midcast['Enfeebling Magic'],
+	
+	sets.midcast['Frazzle II'] = set_combine(sets.midcast['Enfeebling Magic'], {})
+	sets.midcast['Frazzle III'] = set_combine(sets.midcast['Enfeebling Magic'],
 	{
-		ear1 = "Enfeebling Earring", ear2 = "Vor Earring",
-		body = "Lethargy Sayon +3", hands = "Leth. Gantherots +3",
-		legs = "Psycloth Lappas"
+		head = "Viti. Chapeau +3", neck = "Incantor's Torque", ear1 = "Enfeebling Earring", ear2 = "Vor Earring",
+		back = "Ghostfyre Cape", waist = "Rumination Sash", legs = "Psycloth Lappas", feet = "Vitiation Boots +3"
 	})
-	
-	sets.midcast['Frazzle II'] =
-	{
-		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Regal Gem",
-		head = "Viti. Chapeau +2", neck = "Dls. Torque +2", ear1 = "Regal Earring", ear2 = "Snotra Earring",
-		body = "Atrophy Tabard +2", hands = "Regal Cuffs", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
-		waist = "Obstinate Sash", legs = "Chironic Hose", feet = "Vitiation Boots +3"
-	}
-	sets.midcast['Frazzle III'] =
-	{
-		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Regal Gem",
-		head = "Viti. Chapeau +2", neck = "Dls. Torque +2", ear1 = "Enfeebling Earring", ear2 = "Vor Earring",
-		body = "Lethargy Sayon +3", hands = "Lethargy Gantherots +3", ring1 = "Stikini Ring +1", ring2 = "Metamor. Ring +1",
-		waist = "Obstinate Sash", legs = "Psycloth Lappas", feet = "Vitiation Boots +3"
-	}
 	sets.midcast['Poison II'] = sets.midcast['Frazzle III']
-	
-	sets.midcast['Distract III'] =
-	{
-		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Regal Gem",
-		head = "Viti. Chapeau +2", neck = "Dls. Torque +2", ear1 = "Enfeebling Earring", era2 = "Vor Earring",
-		body = "Atrophy Tabard +3", hands = "Lethargy Gantherots +3", ring1 = "Stikini Ring +1", ring2 = "Kishar Ring",
-		waist = "Rumination Sash", legs = "Psycloth Lappas", feet = "Vitiation Boots +3"
-	}
+	sets.midcast['Distract III'] = sets.midcast['Frazzle III']
 
-	sets.midcast.Slow =
+	sets.midcast.Slow = set_combine(sets.midcast['Enfeebling Magic'],
 	{
-		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Regal Gem",
-		head = "Viti. Chapeau +2", neck = "Dls. Torque +2", ear1 = "Regal Earring", ear2 = "Snotra Earring",
-		body = "Lethargy Sayon +3", hands = "Regal Cuffs", ring1 = "Stikini Ring +1", ring2 = "Kishar Ring",
-		waist = "Obstinate Sash", legs = "Chironic Hose", feet = "Vitiation Boots +3"
-	}
+		main = "Daybreak",
+		head = "Viti. Chapeau +3",
+		body = "Lethargy Sayon +3", ring2 = "Metamor. Ring +1",
+		waist = "Obstin. Sash", feet = "Vitiation Boots +3"
+	})
 	sets.midcast['Slow II'] = sets.midcast.Slow
 	sets.midcast.Paralyze = sets.midcast.Slow
 	sets.midcast['Paralyze II'] = sets.midcast.Slow
 	sets.midcast.Addle = sets.midcast.Slow
 	sets.midcast['Addle II'] = sets.midcast.Slow
 
-	sets.midcast.Dia =
+	sets.midcast.Dia = set_combine(sets.midcast['Enfeebling Magic'],
 	{
-		main = "Daybreak", sub = "Ammurapi Shield", ammo = "Regal Gem",
-		head = "Viti. Chapeau +2", neck = "Dls. Torque +2", ear1 = "Regal Earring", ear2 = "Snotra Earring",
+		head = "Leth. Chappel +3",
 		body = "Lethargy Sayon +3", hands = "Regal Cuffs", ring1 = "Stikini Ring +1", ring2 = "Kishar Ring",
-		waist = "Obstinate Sash", legs = "Lethargy Fuseau +3", feet = "Vitiation Boots +3"
-	}
+		waist = "Obstin. Sash",
+	})
 	sets.midcast.Bio = sets.midcast.Dia
 	sets.midcast.Inundation = sets.midcast.Dia
 	sets.midcast.Diaga = set_combine(sets.midcast.Dia, sets.TreasureHunter)
 
-	sets.midcast.Sleep =
-	{
-		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Regal Gem",
-		head = "Viti. Chapeau +2", neck = "Dls. Torque +2", ear1 = "Regal Earring", ear2 = "Snotra Earring",
-		body = "Atrophy Tabard +2", hands = "Regal Cuffs", ring1 = "Stikini Ring +1", ring2 = "Kishar Ring",
-		waist = "Obstinate Sash", legs = "Chironic Hose", feet = "Vitiation Boots +3"
-	}
+	sets.midcast.Sleep = set_combine(sets.midcast['Enfeebling Magic'], {})
 	sets.midcast['Sleep II'] = sets.midcast.Sleep
 	sets.midcast.Sleepga = sets.midcast.Sleep
 	sets.midcast.Bind = sets.midcast.Sleep
@@ -488,8 +459,8 @@ function init_gear_sets()
 	{
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Regal Gem",
 		head = empty, neck = "Dls. Torque +2", ear1 = "Malignance Earring", ear2 = "Snotra Earring",
-		body = "Crepuscular Cloak", hands = "Regal Cuffs", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
-		waist = "Obstinate Sash", legs = "Chironic Hose", feet = "Vitiation Boots +3"
+		body = "Crepuscular Cloak", hands = "Leth. Ganth. +", ring1 = "Stikini Ring +1", ring2 = "Metamor. Ring +1",
+		back = "Aurist's Cape +1", waist = "Acuity Belt +1", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
 	}
 
 	sets.midcast['Divine Magic'] = set_combine(sets.midcast['Enfeebling Magic'], {})
@@ -497,14 +468,14 @@ function init_gear_sets()
 	sets.midcast['Elemental Magic'] =
 	{
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
-		head = empty, neck = "Baetyl Pendant", ear1 = "Regal Earring", ear2 = "Malignance Earring",
-		body = "Cohort Cloak +1", hands = "Amalric Gages +1", ring1 = "Freke Ring", ring2 = "Medada's Ring",
-		waist = "Eschan Stone", legs = "Merlinic Shalwar", feet = "Amalric Nails +1"
+		head = "Leth. Chappel +3", neck = "Dls. Torque +2", ear1 = "Malignance Earring", ear2 = "Regal Earring",
+		body = "Amalric Doublet +1", hands = "Amalric Gages +1", ring1 = "Freke Ring", ring2 = "Medada's Ring",
+		waist = "Sacro Cord", legs = "Amalric Slops +1", feet = "Leth. Houseaux +3"
 	}
 
 	sets.midcast['Dark Magic'] = {main="Rubicundity",sub="Ammurapi Shield",range="Kaja Bow",ammo=empty,
 		head="Amalric Coif +1",neck="Erra Pendant",ear1="Regal Earring",ear2="Malignance Earring",
-		body="Atrophy Tabard +2",hands="Leth. Gantherots +1",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
+		body="Atrophy Tabard +3",hands="Leth. Gantherots +1",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
 		back=gear.nuke_jse_back,waist="Luminary Sash",legs="Psycloth Lappas",feet="Amalric Nails +1"}
 
     sets.midcast.Drain = {main="Rubicundity",sub="Ammurapi Shield",range="Kaja Bow",ammo=empty,
@@ -521,7 +492,7 @@ function init_gear_sets()
 		
 	sets.midcast.Stun.Resistant = {main="Daybreak",sub="Ammurapi Shield",range="Kaja Bow",ammo=empty,
 		head="Atrophy Chapeau +3",neck="Dls. Torque +2",ear1="Regal Earring",ear2="Malignance Earring",
-		body="Atrophy Tabard +2",hands="Volte Gloves",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
+		body="Atrophy Tabard +3",hands="Volte Gloves",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
 		back=gear.nuke_jse_back,waist="Acuity Belt +1",legs="Chironic Hose",feet=gear.merlinic_aspir_feet}
 
 	-- Sets for special buff conditions on spells.
@@ -554,12 +525,12 @@ function init_gear_sets()
 	sets.idle =
 	{
 		main = "Daybreak", sub = "Sacro Bulwark", ammo = "Staunch Tathlum +1",
-		head = "Viti. Chapeau +2", neck = "Warder's Charm +1", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
-		body = "Atrophy Tabard +2", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Mephitas's Ring +1",
+		head = "Viti. Chapeau +3", neck = "Warder's Charm +1", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
+		body = "Lethargy Sayon +3", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Mephitas's Ring +1",
 		back = "Umbra Cape", waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
-	sets.idle.Refresh = set_combine(sets.idle, { ammo = "Homiliary", hands = "Bunzi's Gloves", ring1 = "Gelatinous Ring +1", feet = "Volte Gaiters" })
+	sets.idle.Refresh = set_combine(sets.idle, { ammo = "Homiliary", ring2 = "Stikini Ring +1", feet = "Volte Gaiters" })
 
 	sets.Kiting = { legs = "Carmine Cuisses +1" }
 
