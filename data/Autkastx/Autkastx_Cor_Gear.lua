@@ -105,6 +105,7 @@ function init_gear_sets()
 
 	sets.precast.CorsairShot.Proc = set_combine(sets.precast.CorsairShot.Damage,
 	{
+		body = "Mirke Wardecors",
 		feet = "Chass. Bottes +2"
 	})
 

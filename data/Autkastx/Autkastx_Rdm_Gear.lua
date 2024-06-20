@@ -9,7 +9,7 @@ function user_job_setup()
     state.PhysicalDefenseMode:options('PDT','NukeLock')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None','Naegling','DualNaegling','DualExcalibur','DualLightDamage','DualClubs','DualTauret','DualAeolian','DualTrial','EnspellOnly','EnspellDW')
+	state.Weapons:options('None', 'Naegling', 'Croc', 'DualNaegling', 'DualNaeglingAcc', 'DualCroc', 'DualExcalibur', 'DualLightDamage', 'DualClubs', 'DualTauret', 'DualAeolian', 'EnspellOnly', 'EnspellDW', 'DualProc')
 	
 	gear.obi_cure_back = "Tempered Cape +1"
 	gear.obi_cure_waist = "Witful Belt"
@@ -20,9 +20,11 @@ function user_job_setup()
 	gear.obi_high_nuke_back = "Toro Cape"
 	gear.obi_high_nuke_waist = "Refoccilation Stone"
 
-	gear.stp_jse_back = {name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10',}}
-	gear.nuke_jse_back = {name="Sucellos's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
-	gear.wsd_jse_back = {name="Sucellos's Cape",augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+	gear.Sucellos =
+	{
+		STP = { name = "Sucellos's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%' } },
+		WSD_STR = { name = "Sucellos's Cape", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%' } }
+	}
 
 		-- Additional local binds
 	send_command('bind ^` gs c cycle ElementalMode')
@@ -69,7 +71,7 @@ function init_gear_sets()
 	sets.precast.FC = 
 	{
 		main = "Crocea Mors", sub = "Theullaic Ecu +1", ammo = "Impatiens",
-		head = "Atrophy Chapeau +3", neck = "Sanctity Necklace", ear1 = "Malignance Earring", ear2 = "Lethargy Earring +1",
+		head = "Atrophy Chapeau +2", neck = "Sanctity Necklace", ear1 = "Malignance Earring", ear2 = "Lethargy Earring +1",
 		body = "Viti. Tabard +3", hands = "Leyline Gloves", ring1 = "Lebeche Ring", ring2 = "Medada's Ring",
 		back = "Perimede Cape", waist = "Witful Belt", legs = "Kaykaus Tights +1", feet = "Carmine Greaves +1"
 	}
@@ -93,7 +95,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Moonshade Earring", ear2 = "Leth. Earring +1",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Shukuyu Ring", ring2 = "Epaminondas's Ring",
-		back = gear.wsd_jse_back, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Sucellos.WSD_STR, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS.PDL = set_combine(sets.precast.WS, {})
 
@@ -113,7 +115,7 @@ function init_gear_sets()
 		ammo = "Hasty Pinion +1",
 		head = "Malignance Chapeau", neck = "Combatant's Torque", ear1 = "Mache Earring +1", ear2 = "Telos Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Ramuh Ring +1", ring2 = "Ramuh Ring +1",
-		back = gear.wsd_jse_back, waist = "Olseni Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Sucellos.STP, waist = "Olseni Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS,
@@ -295,7 +297,7 @@ function init_gear_sets()
 
 	sets.midcast.FastRecast =
 	{
-		head = "Atrophy Chapeau +3", neck = "Sanctity Necklace", ear1 = "Malignance Earring", ear2 = "Leth. Earring +1",
+		head = "Atrophy Chapeau +2", neck = "Sanctity Necklace", ear1 = "Malignance Earring", ear2 = "Leth. Earring +1",
 		body = "Vitiation Tabard +3", hands = "Regal Cuffs", ring1 = "Mephitas's Ring +1", ring2 = "Medada's Ring",
 		waist = "Witful Belt", feet = "Carmine Greaves +1"
 	}
@@ -330,7 +332,7 @@ function init_gear_sets()
 		main = "Colada", sub = "Ammurapi Shield", ammo = "Staunch Tathlum +1",
 		head = "Telchine Cap", neck = "Dls. Torque +2", ear1 = "Ondowa Earring +1", ear2 = "Leth. Earring +1",
 		body = "Telchine Chas.", hands = "Atrophy Gloves +2", ring1 = "Defending Ring", ring2 = "Mephitas's Ring +1",
-		back= "Ghostfyre Cape", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Telchine Pigaches"
+		back = "Ghostfyre Cape", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Telchine Pigaches"
 	}
 
 	sets.buff.ComposureOther = set_combine(sets.midcast['Enhancing Magic'],
@@ -346,7 +348,7 @@ function init_gear_sets()
 		main = "Pukulatmuj +1", sub = "Forfend +1",
 		head = "Befouled Crown", neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "Mimir Earring",
 		body = "Viti. Tabard +3", hands = "Viti. Gloves +3", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
-		back = "Ghostfyre Cape", waist = "Olympus Sash", legs = "Atrophy Tights +3", feet = "Leth. Houseaux +3"
+		back = "Ghostfyre Cape", waist = "Olympus Sash", legs = "Atrophy Tights +2", feet = "Leth. Houseaux +3"
 	}
 
 	sets.midcast.Refresh =
@@ -399,7 +401,7 @@ function init_gear_sets()
 	sets.midcast['Enfeebling Magic'] =
 	{
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Regal Gem",
-		head = "Atrophy Chapeau +3", neck = "Dls. Torque +2", ear1 = "Regal Earring", ear2 = "Snotra Earring",
+		head = "Atrophy Chapeau +2", neck = "Dls. Torque +2", ear1 = "Regal Earring", ear2 = "Snotra Earring",
 		body = "Atrophy Tabard +3", hands = "Leth. Ganth. +3", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = "Aurist's Cape +1", waist = "Acuity Belt +1", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
 	}
@@ -486,12 +488,12 @@ function init_gear_sets()
 	sets.midcast.Aspir = sets.midcast.Drain
 		
 	sets.midcast.Stun = {main="Daybreak",sub="Ammurapi Shield",range="Kaja Bow",ammo=empty,
-		head="Atrophy Chapeau +3",neck="Dls. Torque +2",ear1="Regal Earring",ear2="Malignance Earring",
+		head="Atrophy Chapeau +2",neck="Dls. Torque +2",ear1="Regal Earring",ear2="Malignance Earring",
 		body="Zendik Robe",hands="Volte Gloves",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
 		back=gear.nuke_jse_back,waist="Sailfi Belt +1",legs="Chironic Hose",feet=gear.merlinic_aspir_feet}
 		
 	sets.midcast.Stun.Resistant = {main="Daybreak",sub="Ammurapi Shield",range="Kaja Bow",ammo=empty,
-		head="Atrophy Chapeau +3",neck="Dls. Torque +2",ear1="Regal Earring",ear2="Malignance Earring",
+		head="Atrophy Chapeau +2",neck="Dls. Torque +2",ear1="Regal Earring",ear2="Malignance Earring",
 		body="Atrophy Tabard +3",hands="Volte Gloves",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
 		back=gear.nuke_jse_back,waist="Acuity Belt +1",legs="Chironic Hose",feet=gear.merlinic_aspir_feet}
 
@@ -527,7 +529,7 @@ function init_gear_sets()
 		main = "Daybreak", sub = "Sacro Bulwark", ammo = "Staunch Tathlum +1",
 		head = "Viti. Chapeau +3", neck = "Warder's Charm +1", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
 		body = "Lethargy Sayon +3", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Mephitas's Ring +1",
-		back = "Umbra Cape", waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Sucellos.STP, waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.idle.Refresh = set_combine(sets.idle, { ammo = "Homiliary", ring2 = "Stikini Ring +1", feet = "Volte Gaiters" })
@@ -537,15 +539,18 @@ function init_gear_sets()
 	-- Weapons sets
 	--state.Weapons:options('None','Naegling','DualNaegling','DualExcalibur','DualLightDamage','DualClubs','DualTauret','DualAeolian','EnspellOnly','EnspellDW')
 	sets.weapons.Naegling = { main = "Naegling", sub = "Sacro Bulwark" }
+	sets.weapons.Croc = { main = "Crocea Mors", sub = "Sacro Bulawark" }
 	sets.weapons.DualNaegling = { main = "Naegling", sub = "Thibron" }
-	sets.weapons.DualExcalibur = { main = "Excalibur", sub = "Ternion Dagger +1", }
-	sets.weapons.DualLightDamage = { main = "Crocea Mors", sub = "Daybreak", }
-	sets.weapons.DualClubs = { main = "Maxentius", sub = "Thibron", }
-	sets.weapons.DualTauret = { main = "Tauret", sub = "Gleti's Knife", }
-	sets.weapons.DualAeolian = { main = "Tauret", sub = "Daybreak", }
-	sets.weapons.DualTrial = { main = "Vorpal Sword", sub = "Ternion Dagger +1" }
+	sets.weapons.DualNaeglingAcc = { main = "Naegling", sub = "Ternion Dagger +1" }
+	sets.weapons.DualCroc = { main = "Crocea Mors", sub = "Ternion Dagger +1" }
+	sets.weapons.DualExcalibur = { main = "Excalibur", sub = "Ternion Dagger +1" }
+	sets.weapons.DualLightDamage = { main = "Crocea Mors", sub = "Daybreak" }
+	sets.weapons.DualClubs = { main = "Maxentius", sub = "Thibron" }
+	sets.weapons.DualTauret = { main = "Tauret", sub = "Gleti's Knife" }
+	sets.weapons.DualAeolian = { main = "Tauret", sub = "Daybreak" }
 	sets.weapons.EnspellOnly = { main = "Crocea Mors", sub = "Aern Dagger", range = "Kaja Bow", ammo = "Beetle Arrow" }
 	sets.weapons.EnspellDW = { main = "Blurred Knife +1", sub = "Atoyac", range = "Kaja Bow", ammo = "Beetle Arrow" }
+	sets.weapons.DualProc = { main = "Twinned Blade", sub = "Ternion Dagger +1" }
 
 	sets.buff.Sublimation = { waist = "Embla Sash" }
 	sets.buff.DTSublimation = { waist = "Embla Sash" }
@@ -563,7 +568,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Brutal Earring",
 		body = "Malignance Tabard", hands = "Bunzi's Gloves", ring1 = "Ilabrat Ring", ring2 = "Hetairoi Ring",
-		back = gear.stp_jse_back, waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Sucellos.STP, waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.engaged.DT = set_combine(sets.engaged, {})
@@ -573,7 +578,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Eabani Earring",
 		body = "Malignance Tabard", hands = "Bunzi's Gloves", ring1 = "Ilabrat Ring", ring2 = "Hetairoi Ring",
-		back = gear.stp_jse_back, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Sucellos.STP, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 	sets.engaged.DW.DT = set_combine(sets.engaged.DW, { ring2 = "Defending Ring" })
 

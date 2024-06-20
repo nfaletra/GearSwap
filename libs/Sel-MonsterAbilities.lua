@@ -73,6 +73,7 @@ PhysicalAbility = S{"Ripper Fang","Chomp Rush","Scythe Tail","Cyclotail","Delta 
 					"Moonlit Charge","Bone Crunch","Throat Stab","Hell Scissors","Impalement","Deadly Hold","Empty Thrash","View Sync",
 					"Carousel","Vanity Dive","Quadratic Continuum","??? Needles","10000 Needles","4000 Needles","2000 Needles","1000 Needles",
 					"Rhinowrecker","Sub-zero Smash","Benthic Typhoon","Diabolic Claw","Barbed Crescent","Jet Stream","Megalith Throw",
+					"Rending Blow","Scorching Luminescence","Searing Serration",
 				   }
 
 --List of moves to activate magical defense on.
@@ -88,7 +89,8 @@ MagicalAbility = S{"Stone III","Stone IV","Stone V","Stone VI","Stonega III","St
 					"Venom Shower","Marine Mayhem","Tidal Guillotine","Leafstorm","Ecliptic Meteor","Spirit Absorption",
 					"Stygian Release","Atramentous Libations","Dragon Breath","Searing Light","Everyone's Grudge","Everyone's Rancor",
 					"Pain Sync","Backdraft","Radiant Breath","Chaos Breath","Dark Orb","Spectral Floe","Zero Hour","Interference","Flank Opening",
-					"Hellish Crescendo","Malign Invocation","Shadow Wreck","Stygian Cyclone",
+					"Hellish Crescendo","Malign Invocation","Shadow Wreck","Stygian Cyclone","Chastise","Denounce","Vicious Rake","Tyrannical Blow",
+					"Pyroclastic Surge",
 				  }
 
 --List of moves to activate resist defense on.
@@ -98,6 +100,7 @@ ResistAbility = S{"Death","Frond Fatale","Atropine Spore","Deracinator","Cruel J
 					"Fulmination","Chilling Roar","Maiden's Virelai","Entice","Psyche Suction","Scream","Fatal Scream","Tepal Twist","Bloom Fouette",
 					"Petalback Spin","Potted Plant","Tiiimbeeer","Level 3 Petrify","Afflicting Gaze","Beleaguerment","Besieger's Bane","Deathly Diminuendo",
 					"Enthrall","Shah Mat","Infected Illusion","Impact","Slimy Proposal","Spinning Fin","Nosferatu's Kiss","Ululation","Malevolent Blessing",
+					"Gardez","Volcanic Stasis","Incinerating Lahar",
 				 }
 
 AoEAbility = S{"Frond Fatale","Atropine Spore","Deracinator","Cruel Joke","Paralyga","Breakga","Bad Breath","Sweet Breath","Torpefying Charge",

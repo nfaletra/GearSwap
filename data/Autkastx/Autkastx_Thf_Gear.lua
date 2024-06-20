@@ -9,7 +9,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Aeneas', 'Gandring', 'Savage', 'Evisceration', 'Karambit', 'Throwing', 'SwordThrowing', 'Bow')
+	state.Weapons:options('Aeneas', 'Gandring', 'Aeolian', 'Savage', 'Evisceration', 'Karambit', 'Throwing', 'SwordThrowing', 'Bow')
 
 	state.ExtraMeleeMode = M{ ['description'] = 'Extra Melee Mode', 'None', 'Suppa', 'DWMax', 'Parry'}
 	state.AmbushMode = M(false, 'Ambush Mode')
@@ -61,7 +61,8 @@ function init_gear_sets()
 
 	-- Weapons sets
 	sets.weapons.Aeneas = { main = "Aeneas", sub = "Gleti's Knife" }
-	sets.weapons.Gandring = { main = "Gandring", sub = "Malevolence" }
+	sets.weapons.Gandring = { main = "Gandring", sub = "Gleti's Knife" }
+	sets.weapons.Aeolian = { main = "Gandring", sub = "Malevolence" }
 	sets.weapons.Savage = { main = "Naegling", sub = "Gleti's Knife" }
 	sets.weapons.Evisceration = { main = "Tauret", sub = "Gleti's Knife" }
 	sets.weapons.Karambit = { main = "Karambit" }
@@ -396,7 +397,7 @@ function init_gear_sets()
 	sets.engaged.FullDT =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Odnowa Earring +1",
+		head = "Malignance Chapeau", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Dedition Earring",
 		body = "Pillager's Vest +3", hands = "Malignance Gloves", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
 		back = gear.Toutatis.TP, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Plun. Poulaines +3"
 	}

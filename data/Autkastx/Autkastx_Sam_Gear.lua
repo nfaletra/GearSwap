@@ -59,15 +59,15 @@ function init_gear_sets()
 	sets.precast.WS =
 	{
 		ammo = "Knobkierrie",
-		head = "Mpaca's Cap", neck = "Sam. Nodowa +2", ear1 = "Moonshade Earring", ear2 = "Kasuga Earring +1",
-		body = "Sakonji Domaru +3", hands = "Kasuga Kote +3", ring1 = "Epaminondas's Ring", ring2 = "Regal Ring",
-		back = gear.Smertrios.WSD, waist = "Sailfi Belt +1", legs = "Wakido Haidate +3", feet = "Nyame Sollerets"
+		head = "Mpaca's Cap", neck = "Sam. Nodowa +2", ear1 = "Moonshade Earring", ear2 = "Thrud Earring",
+		body = "Nyame Mail", hands = "Kasuga Kote +3", ring1 = "Niqmaddu Ring", ring2 = "Epaminondas's Ring",
+		back = gear.Smertrios.WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS.PDL = set_combine(sets.precast.WS,
 	{
 		ammo = "Crepuscular Pebble",
 		ring2 = "Sroda Ring",
-		legs = "Mpaca's Hose", feet = "Kas. Sune-Ate +2"
+		--[[legs = "Mpaca's Hose",]] feet = "Kas. Sune-Ate +2"
 	})
 
 	sets.precast.WS.Proc =
@@ -82,7 +82,7 @@ function init_gear_sets()
 	sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {})
 	sets.precast.WS['Tachi: Fudo'].PDL = set_combine(sets.precast.WS.PDL, {})
 	
-	sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, { ring2 = "Niqmaddu Ring" })
+	sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {})
 	sets.precast.WS['Tachi: Shoha'].PDL = set_combine(sets.precast.WS['Tachi: Shoha'], sets.precast.WS.PDL, {})
 
 	sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS,
@@ -212,7 +212,7 @@ function init_gear_sets()
 	sets.engaged.Hybrid =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Kasuga Kabuto +2", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Kasuga Earring +1",
+		head = "Kasuga Kabuto +2", neck = "Sam. Nodowa +2", ear1 = "Dedition Earring", ear2 = "Kasuga Earring +1",
 		body = "Kasuga Domaru +2", hands = "Tatena. Gote +1", ring1 = "Niqmaddu Ring", ring2 = "Chirich Ring +1",
 		back = gear.Smertrios.TP, waist = "Sweordfaetels +1", legs = "Kasuga Haidate +2" , feet = "Ryuo Sune-Ate +1"
 	}
@@ -220,7 +220,7 @@ function init_gear_sets()
 	sets.engaged.MEVA =
 	{
 		ammo = "Staunch Tathlum +1",
-		helm = "Kasuga Kabuto +2", neck = "Sam. Nodowa +2", ear1 = "Schere Earring", ear2 = "Kasuga Earring +1",
+		helm = "Kasuga Kabuto +2", neck = "Sam. Nodowa +2", ear1 = "Dedition Earring", ear2 = "Kasuga Earring +1",
 		body = "Kasuga Domaru +2", hands = "Nyame Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Chirich Ring +1",
 		back = gear.Smertrios.TP, waist = "Sweordfaetels +1", legs = "Kasuga Haidate +2", feet = "Nyame Sollerets",
 	}

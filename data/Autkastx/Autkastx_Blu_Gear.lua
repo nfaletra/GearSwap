@@ -171,7 +171,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Hashi. Kavuk +3", neck = "Baetyl Pendant", ear1 = "Regal Earring", ear2 = "Friomisi Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Shiva Ring +1",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back = gear.Rosmerta.WSD, waist = "Sacro Cord", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -179,7 +179,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Pixie Hairpin +1", neck = "Baetyl Pendant", ear1 = "Regal Earring", ear2 = "Friomisi Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Shiva Ring +1",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Medada's Ring",
 		back = gear.Rosmerta.Magic, waist = "Sacro Cord", legs = "Luhlaza Shalwar +3", feet = "Nyame Sollerets"
 	}
 
@@ -187,7 +187,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Nyame Helm", neck = "Baetyl Pendant", ear1 = "Regal Earring", ear2 = "Friomisi Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Shiva Ring +1",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back = gear.Rosmerta.Magic, waist = "Sacro Cord", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 

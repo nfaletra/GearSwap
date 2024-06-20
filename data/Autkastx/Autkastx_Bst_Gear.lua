@@ -95,7 +95,7 @@ function init_gear_sets()
 	{
 		ammo = "Voluspa Tathlum",
 		head = "Anwig Salade", neck = "Unmoving Collar +1", ear1 = "Handler's Earring +1", ear2 = "Enchantr. Earring +1",
-		body = "Gleti's Cuirass", hands = "Gleti's Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Carbuncle Ring",
+		body = "Gleti's Cuirass", hands = "Gleti's Gauntlets", ring1 = "Metamor. Ring +1",
 		back = gear.Artio.CHR_WSD, waist = "Flume Belt +1", legs = "Dashing Subligar", feet = "Nyame Sollerets"
 	}
 

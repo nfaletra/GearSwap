@@ -119,9 +119,9 @@ function init_gear_sets()
 
 	sets.midcast['Summoning Magic'] =
 	{
-		main = "Malignance Pole", sub = "Umbra Strap", ammo = "Epitaph",
+		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Epitaph",
 		head = "Beckoner's Horn +2", neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "Lodurr Earring",
-		body = "Baayami Robe", hands = "Glyphic Bracers +1", ring1 = "Stikini Ring +1", ring2= "Stikini Ring +1",
+		body = "Baayami Robe", hands = "Glyphic Bracers +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = gear.Campestres.Magic, waist = "Emphatikos Rope", legs = "Assid. Pants +1", feet = "Glyph. Pigaches +1"
 	}
 
@@ -129,7 +129,7 @@ function init_gear_sets()
 	{
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
 		head = "Bunzi's Hat", neck = "Baetyl Pendant", ear1 = "Crematio Earring", ear2 = "Friomisi Earring",
-		body = gear.merlinic_nuke_body, hands = "Amalric Gages +1", ring1 = "Shiva Ring +1", ring2 = "Freke Ring",
+		body = gear.merlinic_nuke_body, hands = "Amalric Gages +1", ring1 = "Medada's Ring", ring2 = "Freke Ring",
 		back = "Toro Cape", waist = "Sekhmet Corset", legs = "Merlinic Shalwar", feet = gear.amalric.feet.d
 	}
 
@@ -149,7 +149,7 @@ function init_gear_sets()
 
     sets.midcast['Divine Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
         head=gear.merlinic_nuke_head,neck="Baetyl Pendant",ear1="Crematio Earring",ear2="Friomisi Earring",
-        body=gear.merlinic_nuke_body,hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Freke Ring",
+        body=gear.merlinic_nuke_body,hands="Amalric Gages +1",ring1="Medada's Ring",ring2="Freke Ring",
 		back="Toro Cape",waist="Sekhmet Corset",legs="Merlinic Shalwar",feet = gear.amalric.feet.d}
 		
     sets.midcast['Dark Magic'] = {main="Rubicundity",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
