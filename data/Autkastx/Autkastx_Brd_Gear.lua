@@ -23,6 +23,12 @@ function user_job_setup()
 		TP = { name = "Intarabus's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%' } },
 		DEX_WSD = { name = "Intarabus's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%' } },
 	}
+
+	gear.Linos =
+	{
+		TP = { name = "Linos", augments = { 'Accuracy+15', '"Store TP"+3', 'Quadruple Attack +3' } },
+		WSD = { name = "Linos", augments = { 'Accuracy+15', '"Store TP"+3', 'Quadruple Attack +3' } }
+	}
 	
 	-- Set this to false if you don't want to use custom timers.
 	state.UseCustomTimers = M(false, 'Use Custom Timers')
@@ -115,9 +121,9 @@ function init_gear_sets()
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS =
 	{
-		range = "Linos",
+		range = gear.Linos.WSD,
 		head = "Nyame Helm", neck = "Rep. Plat. Medal", ear1 = "Regal Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Shukuyu Ring", ring2 = "Rufescent Ring",
+		body = "Bihu Jstcorps. +3", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Epaminondas's Ring",
 		back = gear.Intarabus.DEX_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -127,7 +133,7 @@ function init_gear_sets()
 	{
 		range = "Terpander",
 		head = "Pixie Hairpin +1", neck = "Baetyl Pendant",
-		ring1 = "Metamor. Ring +1", ring2 = "Archon Ring",
+		ring2 = "Archon Ring",
 		waist = "Eschan Stone"
 	})
 
@@ -191,6 +197,7 @@ function init_gear_sets()
 	sets.midcast.Etude = { head = "Mousai Turban +1" }
 	sets.midcast.Prelude = { back = gear.Intarabus.TP }
 	sets.midcast.Mambo = { feet = "Mousai Crackows +1" }
+	sets.midcast.Threnody = { body = "Mousai Manteel +1" }
 
 	-- Dummy songs
 	sets.midcast['Goblin Gavotte'] = set_combine(sets.precast.DaurdablaDummy, {})
@@ -291,15 +298,15 @@ function init_gear_sets()
 	
 	sets.engaged =
 	{
-		range = "Linos",
-		head = "Aya. Zucchetto +2", neck = "Bard's Charm +2", ear1 = "Crep. Earring", ear2 = "Telos Earring",
+		range = gear.Linos.TP,
+		head = "Bunzi's Hat", neck = "Bard's Charm +2", ear1 = "Crep. Earring", ear2 = "Telos Earring",
 		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
 		back = gear.Intarabus.TP, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.engaged.DW =
 	{
-		range = "Linos",
-		head = "Aya. Zucchetto +2", neck = "Bard's Charm +2", ear1 = "Eabani Earring", ear2 = "Telos Earring",
+		range = gear.Linos.TP,
+		head = "Bunzi's Hat", neck = "Bard's Charm +2", ear1 = "Eabani Earring", ear2 = "Telos Earring",
 		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
 		back = gear.Intarabus.TP, waist = "Reiki Yotai", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}

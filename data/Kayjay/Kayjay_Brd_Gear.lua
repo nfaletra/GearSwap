@@ -130,11 +130,14 @@ function init_gear_sets()
 	sets.midcast.March = { hands = "Fili Manchettes +1" }
 	sets.midcast['Honor March'] = set_combine(sets.midcast.March, { range = "Marsyas" })
 	sets.midcast.Minuet = { body = "Fili Hongreline +1" }
-	sets.midcast.Minne = {}
-	sets.midcast.Carol = {}
+	sets.midcast.Minne = { legs = "Mousai Seraweels +1" }
+	sets.midcast.Carol = { hands = "Mousai Gages +1" }
 	sets.midcast["Sentinel's Scherzo"] = { feet = "Fili Cothurnes +1" }
 	sets.midcast['Magic Finale'] = { range = "Blurred Harp +1" }
 	sets.midcast.Mazurka = { range = "Marsyas" }
+	sets.midcast.Etude = { head = "Mousai Turban +1" }
+	sets.midcast.Prelude = {}
+	sets.midcast.Mamob = { feet = "Mousai Crackows +1" }
 
 	-- Dummy songs
 	sets.midcast['Goblin Gavotte'] = set_combine(sets.precast.DaurdablaDummy, {})

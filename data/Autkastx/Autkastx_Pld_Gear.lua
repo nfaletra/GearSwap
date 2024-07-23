@@ -361,7 +361,7 @@ function init_gear_sets()
 	sets.idle.TwoHanded =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flam. Zucchetto +2", neck = "Combatant's Torque", ear1 = "Telos Earring", ear2 = "Brutal Earring",
+		head = "Flam. Zucchetto +2", neck = "Vim Torque +1", ear1 = "Telos Earring", ear2 = "Brutal Earring",
 		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Chirich Ring +1", ring2 = "Petrov Ring",
 		back = gear.Rudianos.TP, waist = "Sailfi Belt +1", legs = "Odyssean Cuisses", feet = "Flam. Gambieras +2"
 	}

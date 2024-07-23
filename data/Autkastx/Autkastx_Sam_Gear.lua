@@ -234,7 +234,6 @@ function init_gear_sets()
 	sets.weapons.Trial = { main = "Radennotachi", sub = "Utu Grip" }
 	
 	-- Buff sets
-	sets.Cure_Received = { hands = "Buremte Gloves", waist = "Gishdubar Sash", legs = "Flamma Dirs +2" }
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = { neck = "Vim Torque +1" }
 	sets.buff.Hasso = {}

@@ -72,6 +72,9 @@ gear.valorous_magical_pet_legs = { name="Valor. Hose",augments={'Pet: "Mag.Atk.B
 gear.valorous_magical_pet_feet = {name="Valorous Greaves",augments={'Pet: "Mag.Atk.Bns."+29','Pet: "Dbl.Atk."+1 Pet: Crit.hit rate +1','Pet: INT+9','Pet: Accuracy+1 Pet: Rng. Acc.+1','Pet: Attack+4 Pet: Rng.Atk.+4',}}
 gear.valorous_wsd_feet = {name="Valorous Greaves",augments={'Accuracy+25','Weapon skill damage +4%','STR+5',}}
 
+-- Reisenjima Gear
+
+-- Valorous
 gear.valorous = {}
 
 gear.valorous.head = {}
@@ -87,6 +90,13 @@ gear.valorous.legs.pet_mab = { name = "Valor. Hose", augments = {} }
 gear.valorous.feet = {}
 gear.valorous.feet.crit = { name = "Valorous Greaves", augments = {} }
 gear.valorous.feet.pet_mab = { name = "Valorous Greaves", augments = {} }
+
+-- Merlinic
+gear.merlinic = {}
+
+gear.merlinic.hands = {}
+gear.merlinic.hands.BP = { name = "Merlinic Dastanas", augments = { 'Blood Pact Dmg.+10', 'Pet: INT+10' } }
+gear.merlinic.hands.FC = { name = "Merlinic Dastanas", augments = { '"Mag.Atk.Bns."+11', '"Fast Cast"+6', 'CHR+8' } }
 
 -- Abjuration Gear
 -- Adhemar gear

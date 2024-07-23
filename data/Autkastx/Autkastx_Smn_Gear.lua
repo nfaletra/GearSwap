@@ -102,7 +102,7 @@ function init_gear_sets()
 
 	sets.midcast.Cure =
 	{
-		main = "Gada", sub = "Sors Shield", ammo = "Pemphredo Tathlum",
+		main = "Chatoyant Staff", ammo = "Pemphredo Tathlum",
 		head = "Vanya Hood", neck = "Incanter's Torque", ear1 = "Mendi. Earring", ear2 = "Malignance Earring",
 		body = "Vedic Coat", hands = "Telchine Gloves" ,ring1 = "Lebeche Ring", ring2 = "Stikini Ring +1",
 		back = "Aurist's Cape +1", waist = "Luminary Sash", legs = "Assiduity Pants +1", feet = "Vanya Clogs"
@@ -243,7 +243,7 @@ function init_gear_sets()
 	{
 		main = "Grioavolr", sub = "Elan Strap +1", ammo = "Epitaph",
 		head = "C. Palug Crown", neck = "Smn. Collar +2", ear1 = "Lugalbanda Earring", ear2 = "Gelos Earring",
-		body = "Con. Doublet +3", hands = "Merlinic Dastanas", ring1 = "Varar Ring +1", ring2 = "Varar Ring +1",
+		body = "Con. Doublet +3", hands = gear.merlinic.hands.BP, ring1 = "Varar Ring +1", ring2 = "Varar Ring +1",
 		back = gear.Campestres.Magic, waist = "Regal Belt", legs = "Enticer's Pants", feet = gear.apogee.feet.a
 	}
 
@@ -266,7 +266,7 @@ function init_gear_sets()
 	{
 		main = "Grioavolr" , sub = "Elan Strap +1", ammo = "Epitaph",
 		head = "C. Palug Crown", neck = "Smn. Collar +2", ear1 = "Lugalbanda Earring", ear2 = "Gelos Earring",
-		body = "Apogee Dalmatica +1", hands = "Merlinic Dastanas", ring1 = "Varar Ring +1", ring2 = "Varar Ring +1",
+		body = "Apogee Dalmatica +1", hands = gear.merlinic.hands.BP, ring1 = "Varar Ring +1", ring2 = "Varar Ring +1",
 		back = gear.Campestres.Magic, waist = "Regal Belt", legs = gear.apogee.legs.a, feet = gear.apogee.feet.a
 	}
 
@@ -362,7 +362,7 @@ function init_gear_sets()
 	sets.engaged = set_combine(sets.idle.Avatar,
 	{
 		hands = "Bunzi's Gloves", ear2 = "Telos Earring",
-		waist = "Cornelia's Belt", legs = "Tali'ah Sera. +2", feet = "Tali'ah Crackows +2"
+		waist = "Cornelia's Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	})
 end
 

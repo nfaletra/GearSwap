@@ -397,8 +397,8 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		ammo = "Amar Cluster",
-		head = "Blistering Sallet +1", neck = "Combatant's Torque", ear1 = "Telos Earring" , ear2 = "Crep. Earring",
-		body = "Ayanmo Corazza +2", hands = "Gazu Bracelets +1", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
+		head = "Bunzi's Hat", neck = "Combatant's Torque", ear1 = "Telos Earring" , ear2 = "Crep. Earring",
+		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
 		back = gear.Alaunus.TP, waist = "Cornelia's Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.engaged.DW = set_combine(sets.engaged, { ear1 = "Suppanomimi", ear2 = "Eabani Earring" })

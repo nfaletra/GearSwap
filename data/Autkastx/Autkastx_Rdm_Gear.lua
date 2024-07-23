@@ -304,7 +304,7 @@ function init_gear_sets()
 
 	sets.midcast.Cure =
 	{
-		main = "Daybreak", sub = "Sors Shield", ammo = "Staunch Tathlum +1",
+		main = "Chatoyant Staff",ammo = "Staunch Tathlum +1",
 		head = "Kaykaus Mitra +1", neck = "Incanter's Torque", ear1 = "Meili Earring", ear2 = "Mendi. Earring",
 		body = "Kaykaus Bliaut +1", hands = "Kaykaus Cuffs +1", ring1 = "Lebeche Ring", ring2 = "Mephitas's Ring +1",
 		back = "Tempered Cape +1", waist = "Luminary Sash", legs = "Kaykaus Tights +1", feet = "Kaykaus Boots +1"
@@ -503,17 +503,16 @@ function init_gear_sets()
 	
 	sets.HPDown =
 	{
-		head="Pixie Hairpin +1",ear1="Mendicant's Earring",ear2="Evans Earring",
-		body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
-		back="Swith Cape +1",legs="Shedir Seraweels",feet="Jhakri Pigaches +2"
+		head = "Pixie Hairpin +1", ear1 = "Mendicant's Earring", ear2 = "Evans Earring",
+		body = "Jhakri Robe +2", hands = "Jhakri Cuffs +2", ring1 = "Mephitas's Ring +1", ring2 = "Mephitas's Ring",
+		back = "Swith Cape +1", legs = "Shedir Seraweels", feet = "Jhakri Pigaches +2"
 	}
 
 	sets.HPCure =
 	{
-		main="Daybreak",sub="Sors Shield",range=empty,ammo="Hasty Pinion +1",
-		head="Gende. Caubeen +1",neck="Unmoving Collar +1",ear1="Gifted Earring",ear2="Mendi. Earring",
-		body="Viti. Tabard +3",hands = "Kaykaus Cuffs +1",ring1="Gelatinous Ring +1",ring2="Meridian Ring",
-		back="Moonlight Cape",waist="Luminary Sash",legs="Carmine Cuisses +1",feet="Kaykaus Boots +1"
+		head = "Gende. Caubeen +1", neck = "Unmoving Collar +1", ear1 = "Gifted Earring", ear2 = "Mendi. Earring",
+		body = "Viti. Tabard +3", hands = "Kaykaus Cuffs +1", ring1 = "Gelatinous Ring +1", ring2 = "Meridian Ring",
+		back = "Moonlight Cape", waist = "Luminary Sash", legs = "Carmine Cuisses +1", feet = "Kaykaus Boots +1"
 	}
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})

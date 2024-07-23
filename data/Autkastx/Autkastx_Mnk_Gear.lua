@@ -7,7 +7,7 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'DT', 'Evasion', 'Refresh')
-	state.Weapons:options('Godhands', 'Verethragna', 'Spharai', 'Karambit', 'Varga', 'Staff', 'Club', 'ProcStaff', 'Barehanded')
+	state.Weapons:options('Godhands', 'Verethragna', 'Spharai', 'Karambit', 'Varga', 'Staff', 'ProcStaff', 'ProcClub', 'Barehanded')
 
 	state.ExtraMeleeMode = M{['description'] = 'Extra Melee Mode', 'None', 'Warder'}
 
@@ -300,7 +300,7 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Malignance Chapeau", neck = "Loricate Torque +1", ear1 = "Infused Earring", ear2 = "Odnowa Earring +1",
-		body = "Hiza. Haramaki +2", hands = "Malignance Gloves", ring1 = "Chirich Ring +1", ring2 = "Defending Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Chirich Ring +1", ring2 = "Defending Ring",
 		back = "Moonlight Cape", waist = "Moonbow Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -425,9 +425,9 @@ function init_gear_sets()
 	sets.weapons.Spharai = { main = "Spharai" }
 	sets.weapons.Karambit = { main = "Karambit" }
 	sets.weapons.Varga = { main = "Varga Purnikawa" }
-	sets.weapons.Club = { main = "Mafic Cudgel" }
 	sets.weapons.Staff = { main = "Xoanon", sub = "Bloodrain Strap" }
 	sets.weapons.ProcStaff = { main = "Ram Staff", sub = "Bloodrain Strap" }
+	sets.weapons.ProcClub = { main = "Thunder Hammer" }
 	sets.weapons.Barehanded = { main = empty }
 end
 

@@ -210,7 +210,7 @@ function init_gear_sets()
 	sets.midcast.Cursna =
 	{
 		head = "Vanya Hood", neck = "Debilis Medallion", ear1 = "Meili Earring", ear2 = "Malignance Earring",
-		body = "Zendik Robe", hands = "Geo. Mitaines +2", ring1 = "Haoma's Ring", ring2 = "Haoma's Ring",
+		body = "Zendik Robe", hands = "Geo. Mitaines +2", ring1 = "Haoma's Ring", ring2 = "Menelaus's Ring",
 		back = "Oretania's Cape +1", waist = "Witful Belt", legs = "Geomancy Pants +1", feet = "Vanya Clogs"
 	}
 	
@@ -344,7 +344,7 @@ function init_gear_sets()
 		back = "Lifestream Cape", waist = "Carrier's Sash", legs = "Agwu's Slops", feet = "Geo. Sandals +1"
 	}
 
-	-- .Pet sets are for when Luopan is present.
+	-- Pet sets are for when Luopan is present.
 	sets.idle.Pet = set_combine(sets.idle,
 	{
 		main = "Solstice", range = "Dunna", ammo = empty,

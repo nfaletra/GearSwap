@@ -54,6 +54,8 @@ function job_setup()
 	state.Buff['Mana Wall'] = buffactive['Mana Wall'] or false
 	state.Buff['Manafont'] = buffactive['Manafont'] or false
 	state.Buff['Manawell'] = buffactive['Manawell'] or false
+	state.Buff.Hasso = buffactive.Hasso or false
+	state.Buff.Seigan = buffactive.Seigan or false
 
     LowTierNukes = S{'Stone', 'Water', 'Aero', 'Fire', 'Blizzard', 'Thunder',
         'Stone II', 'Water II', 'Aero II', 'Fire II', 'Blizzard II', 'Thunder II',
@@ -63,13 +65,14 @@ function job_setup()
 	AutoManawellOccultSpells = S{'Impact','Meteor','Thundaja','Blizzaja','Firaja','Thunder VI','Blizzard VI',}
 
 	state.DeathMode = M{['description'] = 'Death Mode', 'Off', 'Single', 'Lock'}
-	state.AutoManawell = M(true, 'Auto Manawell Mode')
+	state.AutoManawell = M(false, 'Auto Manawell Mode')
 	state.RecoverMode = M('35%', '60%', 'Always', 'Never')
+	state.Stance = M{['description']='Stance','None','Hasso','Seigan'}
 
 	autows = 'Vidohunir'
 	autofood = 'Pear Crepe'
 	
-	init_job_states({"Capacity","AutoRuneMode","AutoTrustMode","AutoNukeMode","AutoManawell","AutoWSMode","AutoShadowMode","AutoFoodMode","AutoStunMode","AutoDefenseMode"},{"AutoBuffMode","Weapons","OffenseMode","WeaponskillMode","IdleMode","Passive","RuneElement","RecoverMode","ElementalMode","CastingMode","TreasureMode",})
+	init_job_states({"Capacity","AutoRuneMode","AutoTrustMode","AutoNukeMode","AutoManawell","AutoWSMode","AutoShadowMode","AutoFoodMode","AutoStunMode","AutoDefenseMode"},{"AutoBuffMode","Weapons","OffenseMode","WeaponskillMode","Stance","IdleMode","Passive","RuneElement","RecoverMode","ElementalMode","CastingMode","TreasureMode",})
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -160,10 +163,18 @@ function job_post_midcast(spell, spellMap, eventArgs)
 
 		elseif is_nuke(spell, spellMap) then
 			if state.MagicBurstMode.value ~= 'Off' then
-				if state.CastingMode.value:contains('Resistant') and sets.ResistantMagicBurst then
-					equip(sets.ResistantMagicBurst)
+				if state.DeathMode.value ~= 'Off' and sets.MagicBurst.Death then
+					if state.CastingMode.value == 'Resistant' and sets.MagicBurst.Death.Reistant then
+						equip(sets.MagicBurst.Death.Resistant)
+					else
+						equip(sets.MagicBurst.Death)
+					end
 				else
-					equip(sets.MagicBurst)
+					if state.CastingMode.value == 'Resistant' and sets.MagicBurst.Resistant then
+						equip(sets.MagicBurst.Resistant)
+					else
+						equip(sets.MagicBurst)
+					end
 				end
 			end
 
@@ -241,6 +252,14 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
+
+function job_customize_kiting_set(kitingSet)
+	if state.DeathMode.value ~= 'Off' then
+		kitingSet = set_combine(kitingSet, sets.idle.Death)
+	end
+
+	return kitingSet
+end
 
 -- Custom spell mapping.
 function job_get_spell_map(spell, default_spell_map)
@@ -348,6 +367,7 @@ end
 
 function job_tick()
 	if check_arts() then return true end
+	if check_hasso() then return true end
 	if check_buff() then return true end
 	if check_buffup() then return true end
 	return false
@@ -500,8 +520,29 @@ function handle_elemental(cmdParams)
 	elseif command == 'bardsong' then
 		windower.chat.input('/ma "'..data.elements.threnody_of[state.ElementalMode.value]..' Threnody" '..target..'')
 	else
-        add_to_chat(123,'Unrecognized elemental command.')
-    end
+		add_to_chat(123,'Unrecognized elemental command.')
+	end
+end
+
+function check_hasso()
+	if player.status == 'Engaged' and not (state.Stance.value == 'None' or state.Buff.Hasso or state.Buff.Seigan or main_weapon_is_one_handed() or silent_check_amnesia()) then
+		
+		local abil_recasts = windower.ffxi.get_ability_recasts()
+		
+		if state.Stance.value == 'Hasso' and abil_recasts[138] < latency then
+			windower.chat.input('/ja "Hasso" <me>')
+			tickdelay = os.clock() + 1.1
+			return true
+		elseif state.Stance.value == 'Seigan' and abil_recasts[139] < latency then
+			windower.chat.input('/ja "Seigan" <me>')
+			tickdelay = os.clock() + 1.1
+			return true
+		else
+			return false
+		end
+	end
+
+	return false
 end
 
 function check_buff()

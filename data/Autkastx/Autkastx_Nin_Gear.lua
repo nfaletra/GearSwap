@@ -773,7 +773,7 @@ function init_gear_sets()
 	sets.weapons.ProcPolearm = { main = "Iapetus", sub = "Bloodrain Strap" }
 	sets.weapons.ProcGreatKatana = { main = "Mutsunokami", sub = "Bloodrain Strap" }
 	sets.weapons.ProcKatana = { main = "Yagyu Short. +1", sub = "Debahocho" }
-	sets.weapons.ProcClub = { main = "Thunder Hammer", sub = "Ceremonial Dagger" }
+	sets.weapons.ProcClub = { main = "Thunder Hammer", sub = "Debahocho" }
 	sets.weapons.ProcStaff = { main = "Ram Staff", sub = "Bloodrain Strap" }
 end
 

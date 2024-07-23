@@ -294,7 +294,7 @@ function init_gear_sets()
 
 	sets.midcast.Helix = set_combine(sets.midcast['Elemental Magic'],
 	{
-		hands = "Amalric Gages +1",ring2 = "Mallquis Ring",
+		hands = "Amalric Gages +1", ring2 = "Mallquis Ring",
 		waist = "Acuity Belt +1", feet = gear.amalric.feet.a
 	})
 

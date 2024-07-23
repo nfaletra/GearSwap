@@ -399,7 +399,7 @@ function init_gear_sets()
 		back= gear.Camulus.Idle, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
-	sets.Kiting = { ring1 = "Shneddick Ring", legs = "Carmine Cuisses +1" }
+	sets.Kiting = { ring1 = "Shneddick Ring" }
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 
 	-- Weapons sets
