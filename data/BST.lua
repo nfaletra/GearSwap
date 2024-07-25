@@ -394,42 +394,51 @@ function job_aftercast(spell, spellMap, eventArgs)
 		equip(get_pet_midcast_set(spell, spellMap))
 		petWillAct = os.clock()
 
-		if magic_ready_moves:contains(spell.english) then
-			if debuff_ready_moves:contains(spell.english) and sets.midcast.Pet.DebuffReady then
-				equip(sets.midcast.Pet.DebuffReady)
-			else
-				if sets.midcast.Pet.MagicReady[state.OffenseMode.value] then
-					equip(sets.midcast.Pet.MagicReady[state.OffenseMode.value])
+	if not spell.interrupted then
+			if magic_ready_moves:contains(spell.english) then
+				if debuff_ready_moves:contains(spell.english) and sets.midcast.Pet.DebuffReady then
+					equip(sets.midcast.Pet.DebuffReady)
 				else
-					equip(sets.midcast.Pet.MagicReady)
+					if sets.midcast.Pet.MagicReady[state.OffenseMode.value] then
+						equip(sets.midcast.Pet.MagicReady[state.OffenseMode.value])
+					else
+						equip(sets.midcast.Pet.MagicReady)
+					end
+				end
+			elseif physical_debuff_ready_moves:contains(spell.english) and sets.midcast.Pet.PhysicalDebuffReady then
+				equip(sets.midcast.Pet.PhysicalDebuffReady)
+			elseif multi_hit_ready_moves:contains(spell.english) and sets.midcast.Pet.MultiHitReady then
+				equip(sets.midcast.Pet.MultiHitReady)
+			elseif buff_ready_moves:contains(spell.english) and sets.midcast.Pet.BuffReady then
+				equip(sets.midcast.Pet.BuffReady)
+			else
+				if sets.midcast.Pet[state.OffenseMode.value] then
+					equip(sets.midcast.Pet[state.OffenseMode.value])
+				else
+					equip(sets.midcast.Pet.WS)
 				end
 			end
-		elseif physical_debuff_ready_moves:contains(spell.english) and sets.midcast.Pet.PhysicalDebuffReady then
-			equip(sets.midcast.Pet.PhysicalDebuffReady)
-		elseif multi_hit_ready_moves:contains(spell.english) and sets.midcast.Pet.MultiHitReady then
-			equip(sets.midcast.Pet.MultiHitReady)
-		elseif buff_ready_moves:contains(spell.english) and sets.midcast.Pet.BuffReady then
-			equip(sets.midcast.Pet.BuffReady)
-		else
-			if sets.midcast.Pet[state.OffenseMode.value] then
-				equip(sets.midcast.Pet[state.OffenseMode.value])
-			else
-				equip(sets.midcast.Pet.WS)
+
+			if state.CorrelationMode.value then
+				equip(sets.Correlation)
 			end
-		end
 
-		if state.Buff["Unleash"] and UnleashLock and not UnleashLocked then
-			UnleashLocked = true
-			disable('main','sub','range','ammo','head','neck','lear','rear','body','hands','lring','rring','back','waist','legs','feet')
-			add_to_chat(217, "Unleash is on, locking your current Ready set.")
-		end
+			if tp_based_ready_moves:contains(spell.english) then
+				if pet.tp < 1900 or (PetJob != 'Warrior' and pet.tp < 2400) then
+					equip(sets.midcast.Pet.TPBonus)
+				end
+			end
 
-		if state.CorrelationMode.value then
-			equip(sets.Correlation)
+			if state.Buff["Unleash"] and UnleashLock and not UnleashLocked then
+				UnleashLocked = true
+				disable('main','sub','range','ammo','head','neck','lear','rear','body','hands','lring','rring','back','waist','legs','feet')
+				add_to_chat(217, "Unleash is on, locking your current Ready set.")
+			end
+		
+			eventArgs.handled = true
+		elseif spell.english == "Bestial Loyalty" or spell.english == 'Call Beast' then
+			eventArgs.handled = true
 		end
-		eventArgs.handled = true
-	elseif spell.english == "Bestial Loyalty" or spell.english == 'Call Beast' then
-		eventArgs.handled = true
 	end
 end
 

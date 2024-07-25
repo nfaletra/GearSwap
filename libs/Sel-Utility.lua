@@ -607,7 +607,7 @@ function set_macro_page(set,book)
             add_to_chat(123,'Error setting macro page: Macro book ('..tostring(book)..') must be between 1 and 20.')
             return
         end
-        send_command('@input /macro book '..tostring(book)..';wait .1;input /macro set '..tostring(set))
+        send_command('@input /macro book '..tostring(book)..';wait 2;input /macro set '..tostring(set))
     else
         send_command('@input /macro set '..tostring(set))
     end
@@ -667,8 +667,8 @@ function silent_can_use(spellid)
 	local available_spells = windower.ffxi.get_spells()
 	local spell_jobs = copy_entry(res.spells[spellid].levels)
         
-	-- Filter for spells that you do not know. Exclude Impact, Honor March and Dispelga.
-	if not available_spells[spellid] and not (spellid == 503 or spellid == 417 or spellid == 360) then
+	-- Filter for spells that you do not know. Exclude Impact, Honor March and Dispelga and Aria of Passion
+	if not available_spells[spellid] and not (spellid == 503 or spellid == 417 or spellid == 360 or spellid == 418) then
 		return false
 	-- Filter for spells that you know, but do not currently have access to
 	elseif (not spell_jobs[player.main_job_id] or not (spell_jobs[player.main_job_id] <= player.main_job_level or
@@ -691,8 +691,8 @@ function can_use(spell)
         local available_spells = windower.ffxi.get_spells()
         local spell_jobs = copy_entry(res.spells[spell.id].levels)
         
-        -- Filter for spells that you do not know. Exclude Impact.
-        if not available_spells[spell.id] and not (spell.id == 503 or spell.id == 417 or spellid == 360) then
+        -- Filter for spells that you do not know. Exclude Impact, Honor March, Dispelga, and Aria of Passion
+        if not available_spells[spell.id] and not (spell.id == 503 or spell.id == 417 or spell.id == 360 or spell.id == 418) then
             add_to_chat(123,"Abort: You haven't learned ["..(res.spells[spell.id][language] or spell.id).."].")
             return false
         elseif spell.type == 'Ninjutsu'  then
@@ -1993,7 +1993,7 @@ function is_nuke(spell, spellMap)
 	    (player.main_job == 'BLU' and spell.skill == 'Blue Magic' and spellMap and spellMap:contains('Magical')) or
 		(player.main_job == 'NIN' and spell.skill == 'Ninjutsu' and spellMap and spellMap:contains('ElementalNinjutsu')) or
 		spell.english == 'Comet' or spell.english == 'Meteor' or spell.english == 'Death' or spell.english:startswith('Banish')
-		or spell.english:startswith('Drain') or spell.english:startswith('Aspir')
+		or spell.english:startswith('Drain') or spell.english:startswith('Aspir') or spell.english:startswith('Holy') or spell.english == 'Kaustra'
 		) then
 		
 		return true
@@ -2413,6 +2413,9 @@ windower.raw_register_event('outgoing chunk',function(id,original,modified,injec
 end)
 
 --TP Bonus Handling
+Ikenga_vest_bonus = 190
+Ikenga_axe_bonus = 300
+
 function get_effective_player_tp(spell, WSset)
 	local effective_tp = player.tp
 	if is_fencing() then effective_tp = effective_tp + get_fencer_tp_bonus(WSset) end
@@ -2422,7 +2425,11 @@ function get_effective_player_tp(spell, WSset)
 	if state.Buff['Warcry'] and player.main_job == "WAR" and lastwarcry == player.name then effective_tp = effective_tp + warcry_tp_bonus end
 	if WSset.ear1 == "Moonshade Earring" or WSset.ear2 == "Moonshade Earring" then effective_tp = effective_tp + 250 end
 	if WSset.head == "Mpaca's Cap" then effective_tp = effective_tp + 200 end
-	if WSset.body == "Ikenga's Vest" then effective_tp = effective_tp + 170 end
+	if WSset.body == "Ikenga's Vest" then effective_tp = effective_tp + Ikenga_vest_bonus end
+	if WSset.legs == "Boii Cuisses +3" then effective_tp = effective_tp + 100 end
+	if player.equipment.main == "Ikenga's Axe" or player.equipment.sub == "Ikenga's Axe" then
+		effective_tp = effective_tp + Ikenga_axe_bonus
+	end
 	
 	if spell.skill == 25 or spell.skill == 26 then
 		if data.equipment.aeonic_weapons:contains(player.equipment.range) then effective_tp = effective_tp + 500 end
@@ -2463,8 +2470,12 @@ do
 		local fencer_tp_bonus = 0
 		local adjusted_fencer_tier = base_fencer_tier
 		
-		if WSset.legs and WSset.legs:startswith('Boii Cuisses') then 
-			if WSset.legs:endswith('+1') then
+		if WSset.legs and WSset.legs:startswith('Boii Cuisses') then
+			if WSset.legs:endswith('+3') then
+				adjusted_fencer_tier = adjusted_fencer_tier + 3
+			elseif WSset.legs:endswith('+2') then
+				adjusted_fencer_tier = adjusted_fencer_tier + 3
+			elseif WSset.legs:endswith('+1') then
 				adjusted_fencer_tier = adjusted_fencer_tier + 2
 			else
 				adjusted_fencer_tier = adjusted_fencer_tier + 1
@@ -2525,8 +2536,12 @@ function get_base_fencer_tier()
 			end
 		end
 
-	elseif player.sub_job == 'WAR' and player.sub_job_level >= 45 then
-		fencer_tier_level = 1
+	elseif fencer_jobs_level_thresholds[player.sub_job] ~= nil then
+		for _, level_threshold in ipairs(fencer_jobs_level_thresholds[player.sub_job]) do
+			if player.sub_job_level >= level_threshold then
+				fencer_tier_level = fencer_tier_level + 1
+			end
+		end
 	end
 
 	return fencer_tier_level
@@ -2554,11 +2569,9 @@ end
 warcry_tp_bonus = get_warcry_tp_bonus()
 
 function set_dual_wield()
-	if (data.jobs.dual_wield_jobs:contains(player.main_job) or (player.sub_job == 'DNC' or player.sub_job == 'NIN')) then
-		can_dual_wield = true
-	else
-		can_dual_wield = false
-	end
+	-- Check Job Traits directly
+	local traits = T(windower.ffxi.get_abilities().job_traits)
+	can_dual_wield = traits:any(function(v) return gearswap.res.job_traits[v].englisdh == 'Dual Wield' end)
 end
 
 function get_closest_mob_id_by_name(name)

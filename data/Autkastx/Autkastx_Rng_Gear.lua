@@ -52,6 +52,8 @@ function user_job_setup()
 	send_command('bind @` gs c cycle SkillchainMode')
 	send_command('bind !r gs c weapons MagicWeapons;gs c update')
 	send_command('bind ^q gs c weapons SingleWeapon;gs c update')
+
+	Ikenga_vest_bonus = 170
 	
 	select_default_macro_book()
 

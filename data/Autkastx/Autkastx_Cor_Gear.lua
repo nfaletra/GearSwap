@@ -52,6 +52,8 @@ function user_job_setup()
 
 	send_command('bind @pause roller roll')
 
+	Ikenga_vest_bonus = 170
+
 	select_default_macro_book()
 end
 

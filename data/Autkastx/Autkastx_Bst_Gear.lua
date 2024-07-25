@@ -31,6 +31,8 @@ function user_job_setup()
 	send_command('bind @f8 gs c toggle AutoReadyMode')
 	send_command('bind !` gs c ready default')
 
+	Ikenga_axe_bonus = 0
+
 	--Example of how to change default ready moves.
 	--ready_moves.default.WarlikePatrick = 'Tail Blow'
 

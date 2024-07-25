@@ -188,7 +188,7 @@ function init_gear_sets()
 		main = "Chatoyant Staff",
 		head = "Vanya Hood", neck = "Clr. Torque +2", ear1 = "Glorious Earring",
 		hands = "Weath. Cuffs +1",
-		back = "Alaunus's Cape",
+		back = "Alaunus's Cape", legs = "Ebers Pantaloons"
 	}
 	sets.midcast.LightWeatherCure = set_combine(sets.midcast.Cure, { waist = "Hachirin-no-obi" })
 	sets.midcast.LightDayCure = set_combine(sets.midcast.Cure, { waist = "Hachirin-no-obi" })
@@ -344,7 +344,7 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle =
 	{
-		main = "Bolelabunga", sub = "Genmei Shield", ammo = "Homiliary",
+		main = "Bolelabunga", sub = "Sors Shield", ammo = "Homiliary",
 		head = "Inyanga Tiara +2", neck = "Loricate Torque +1", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
 		body = "Inyanga Jubbah +2", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
 		back = "Alaunus's Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyanga Crackows +2"

@@ -19,6 +19,8 @@ function user_job_setup()
 	send_command('bind !` input /ja "Seigan" <me>')
 	send_command('bind @` gs c cycle SkillchainMode')
 
+	Ikenga_axe_bonus = 0
+
 	select_default_macro_book()
 end
 
