@@ -125,8 +125,8 @@ function init_gear_sets()
 	sets.midcast.Lullaby = { range = "Marsyas" }
 	sets.midcast['Horde Lullaby'] = { range = "Marsyas" }
 	sets.midcast['Horde Lullaby II'] = { range = "Marsyas" }
-	sets.midcast.Madrigal = { head = "Fili Calot +1" }
-	sets.midcast.Paeon = {}
+	sets.midcast.Madrigal = { head = "Fili Calot +1", feet = "Fili Cothurnes +1" }
+	sets.midcast.Paeon = { head = "Brioso Roundlet +3" }
 	sets.midcast.March = { hands = "Fili Manchettes +1" }
 	sets.midcast['Honor March'] = set_combine(sets.midcast.March, { range = "Marsyas" })
 	sets.midcast.Minuet = { body = "Fili Hongreline +1" }
@@ -136,7 +136,7 @@ function init_gear_sets()
 	sets.midcast['Magic Finale'] = { range = "Blurred Harp +1" }
 	sets.midcast.Mazurka = { range = "Marsyas" }
 	sets.midcast.Etude = { head = "Mousai Turban +1" }
-	sets.midcast.Prelude = {}
+	sets.midcast.Prelude = { feet = "Fili Cothurnes +1" }
 	sets.midcast.Mamob = { feet = "Mousai Crackows +1" }
 
 	-- Dummy songs
@@ -149,7 +149,7 @@ function init_gear_sets()
 	-- For song buffs (duration and AF3 set bonus)
 	sets.midcast.SongEffect =
 	{
-		main = "Kali", sub = "Genmei Shield", range = "Blurred Harp +1",
+		main = "Kali", sub = "Genmei Shield", range = "Gjallarhorn",
 		head = "Bunzi's Hat", neck = "Mnbw. Whistle +1", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = "Fili Hongreline +1", hands = "Bunzi's Gloves", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
 		back = gear.Intarabus.FC, waist = "Embla Sash", legs = "Inyanga Shalwar +2", feet = "Brioso Slippers +3"
@@ -211,7 +211,7 @@ function init_gear_sets()
 	
 	sets.idle =
 	{
-		main = "Ipetam", sub = "Genmei Shield", range = "Terpander",
+		main = "Daybreak", sub = "Genmei Shield", range = "Terpander",
 		head = "Inyanga Tiara +2", neck = "Loricate Torque +1", ear1 = "Eabani Earring", ear2 = "Ethereal Earring",
 		body = "Inyanga Jubbah +2", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Stikini Ring +1",
 		back = gear.Intarabus.FC, waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"

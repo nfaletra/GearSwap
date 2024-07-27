@@ -2571,7 +2571,7 @@ warcry_tp_bonus = get_warcry_tp_bonus()
 function set_dual_wield()
 	-- Check Job Traits directly
 	local traits = T(windower.ffxi.get_abilities().job_traits)
-	can_dual_wield = traits:any(function(v) return gearswap.res.job_traits[v].englisdh == 'Dual Wield' end)
+	can_dual_wield = traits:any(function(v) return gearswap.res.job_traits[v].english == 'Dual Wield' end)
 end
 
 function get_closest_mob_id_by_name(name)

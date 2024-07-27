@@ -9,7 +9,7 @@ function user_job_setup()
     state.PhysicalDefenseMode:options('PDT','NukeLock')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None', 'Naegling', 'Croc', 'DualNaegling', 'DualNaeglingAcc', 'DualCroc', 'DualExcalibur', 'DualLightDamage', 'DualClubs', 'DualTauret', 'DualAeolian', 'EnspellOnly', 'EnspellDW', 'DualProc')
+	state.Weapons:options('None', 'Naegling', 'Croc', 'DualNaegling', 'DualNaeglingAcc', 'DualCroc', 'DualExcalibur', 'DualLightDamage', 'DualClubs', 'DualTauret', 'DualAeolian', 'EnspellOnly', 'DualProc')
 	
 	gear.obi_cure_back = "Tempered Cape +1"
 	gear.obi_cure_waist = "Witful Belt"
@@ -315,10 +315,13 @@ function init_gear_sets()
 		--Cureset for if it's not light weather but is light day.
 	sets.midcast.LightDayCure = set_combine(sets.midcast.Cure, {})
 
-	sets.midcast.Cursna = {main=gear.grioavolr_fc_staff,sub="Curatio Grip",range=empty,ammo="Staunch Tathlum +1",
-		head="Bunzi's Hat",neck="Debilis Medallion",ear1="Meili Earring",ear2="Mendi. Earring",
-		body="Viti. Tabard +3",hands="Hieros Mittens",ring1="Haoma's Ring",ring2="Menelaus's Ring",
-		back="Oretan. Cape +1",waist="Witful Belt",legs="Carmine Cuisses +1",feet="Vanya Clogs"}
+	sets.midcast.Cursna =
+	{
+		range = empty, ammo = "Staunch Tathlum +1",
+		head = "Kaykaus Mitra +1", neck = "Debilis Medallion", ear1 = "Meili Earring", ear2 = "Mendi. Earring",
+		body="Viti. Tabard +3", hands = "Hieros Mittens", ring1 = "Haoma's Ring", ring2 = "Menelaus's Ring",
+		back = "Oretan. Cape +1", waist = "Bishop's Sash", legs = "Vanya Slops", feet = "Vanya Clogs"
+	}
 
 	sets.midcast.StatusRemoval = set_combine(sets.midcast.FastRecast, {main=gear.grioavolr_fc_staff,sub="Clemency Grip"})
 		
@@ -469,33 +472,25 @@ function init_gear_sets()
 
 	sets.midcast['Elemental Magic'] =
 	{
-		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
+		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
 		head = "Leth. Chappel +3", neck = "Dls. Torque +2", ear1 = "Malignance Earring", ear2 = "Regal Earring",
 		body = "Amalric Doublet +1", hands = "Amalric Gages +1", ring1 = "Freke Ring", ring2 = "Medada's Ring",
-		waist = "Sacro Cord", legs = "Amalric Slops +1", feet = "Leth. Houseaux +3"
+		waist = "Sacro Cord", legs = "Leth. Fuseau +3", feet = gear.amalric.feet.a
 	}
 
-	sets.midcast['Dark Magic'] = {main="Rubicundity",sub="Ammurapi Shield",range="Kaja Bow",ammo=empty,
-		head="Amalric Coif +1",neck="Erra Pendant",ear1="Regal Earring",ear2="Malignance Earring",
-		body="Atrophy Tabard +3",hands="Leth. Gantherots +1",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
-		back=gear.nuke_jse_back,waist="Luminary Sash",legs="Psycloth Lappas",feet="Amalric Nails +1"}
+	sets.midcast['Dark Magic'] = sets.midcast['Enfeebling Magic']
 
-    sets.midcast.Drain = {main="Rubicundity",sub="Ammurapi Shield",range="Kaja Bow",ammo=empty,
-        head="Pixie Hairpin +1",neck="Erra Pendant",ear1="Regal Earring",ear2="Malignance Earring",
-        body=gear.merlinic_nuke_body,hands=gear.chironic_enfeeble_hands,ring1="Evanescence Ring",ring2="Archon Ring",
-        back=gear.nuke_jse_back,waist="Fucho-no-obi",legs="Chironic Hose",feet=gear.merlinic_aspir_feet}
+	sets.midcast.Drain =
+	{
+		main = "Rubicundity", sub = "Ammurapi Shield", range = "Ullr", ammo = empty,
+		head = "Pixie Hairpin +1", neck = "Erra Pendant", ear1 = "Malignance Earring", ear2 = "Digni. Earring",
+		body = "Merlinic Jubbah", hands = gear.merlinic.hands.FC, ring1 = "Evanescence Ring", ring2 = "Archon Ring",
+		waist = "Fucho-no-obi", legs = "Merlinic Shalwar", feet = "Merlinic Crackows"
+	}
 
 	sets.midcast.Aspir = sets.midcast.Drain
-		
-	sets.midcast.Stun = {main="Daybreak",sub="Ammurapi Shield",range="Kaja Bow",ammo=empty,
-		head="Atrophy Chapeau +2",neck="Dls. Torque +2",ear1="Regal Earring",ear2="Malignance Earring",
-		body="Zendik Robe",hands="Volte Gloves",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
-		back=gear.nuke_jse_back,waist="Sailfi Belt +1",legs="Chironic Hose",feet=gear.merlinic_aspir_feet}
-		
-	sets.midcast.Stun.Resistant = {main="Daybreak",sub="Ammurapi Shield",range="Kaja Bow",ammo=empty,
-		head="Atrophy Chapeau +2",neck="Dls. Torque +2",ear1="Regal Earring",ear2="Malignance Earring",
-		body="Atrophy Tabard +3",hands="Volte Gloves",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
-		back=gear.nuke_jse_back,waist="Acuity Belt +1",legs="Chironic Hose",feet=gear.merlinic_aspir_feet}
+
+	sets.midcast.Stun = set_combine(sets.midcast['Enfeebling Magic'], {})
 
 	-- Sets for special buff conditions on spells.
 		
@@ -504,7 +499,7 @@ function init_gear_sets()
 	sets.HPDown =
 	{
 		head = "Pixie Hairpin +1", ear1 = "Mendicant's Earring", ear2 = "Evans Earring",
-		body = "Jhakri Robe +2", hands = "Jhakri Cuffs +2", ring1 = "Mephitas's Ring +1", ring2 = "Mephitas's Ring",
+		body = "Jhakri Robe +2", hands = "Jhakri Cuffs +2", ring1 = "Stikini Ring +1", ring2 = "Mephitas's Ring +1",
 		back = "Swith Cape +1", legs = "Shedir Seraweels", feet = "Jhakri Pigaches +2"
 	}
 
@@ -547,8 +542,7 @@ function init_gear_sets()
 	sets.weapons.DualClubs = { main = "Maxentius", sub = "Thibron" }
 	sets.weapons.DualTauret = { main = "Tauret", sub = "Gleti's Knife" }
 	sets.weapons.DualAeolian = { main = "Tauret", sub = "Daybreak" }
-	sets.weapons.EnspellOnly = { main = "Crocea Mors", sub = "Aern Dagger", range = "Kaja Bow", ammo = "Beetle Arrow" }
-	sets.weapons.EnspellDW = { main = "Blurred Knife +1", sub = "Atoyac", range = "Kaja Bow", ammo = "Beetle Arrow" }
+	sets.weapons.EnspellOnly = { main = "Crocea Mors", sub = "Ceremonial Dagger", range = "Kaja Bow", ammo = "Beetle Arrow" }
 	sets.weapons.DualProc = { main = "Twinned Blade", sub = "Ternion Dagger +1" }
 
 	sets.buff.Sublimation = { waist = "Embla Sash" }
@@ -588,10 +582,12 @@ function init_gear_sets()
 	})
 	sets.engaged.DW.DT.Haste30 = set_combine(sets.engaged.DW.Haste30, { neck = "Loricate Torque +1", ring2 = "Defending Ring" })
 
-	sets.engaged.EnspellOnly = {
-		head="Malignance Chapeau",neck="Dls. Torque +2",ear1="Suppanomimi",ear2="Digni. Earring",
-		body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Metamor. Ring +1",ring2="Ramuh Ring +1",
-		back="Ghostfyre Cape",waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet="Malignance Boots"}
+	sets.engaged.EnspellOnly =
+	{
+		head = "Umuthi Hat", neck = "Dls. Torque +2",ear1 = "Suppanomimi", ear2 = "Digni. Earring",
+		body = "Viti. Tabard +3", hands = "Aya. Manopolas +2", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
+		back = "Ghostfyre Cape", waist = "Orpheus's Sash", legs = "Viti. Tights +3", feet = "Malignance Boots"
+	}
 end
 
 -- Select default macro book on initial load or subjob change.
