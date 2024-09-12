@@ -199,7 +199,7 @@ function init_gear_sets()
 		main = "Raetic Rod +1", sub = "Thuellaic Ecu +1", ammo = "Pemphredo Tathlum",
 		head = "Kaykaus Mitra +1", neck = "Clr. Torque +2", ear1 = "Glorious Earring", ear2 = "Magnetic Earring",
 		body = "Theo. Bliaut +3", hands = "Theophany Mitts +3", ring1 = "Mephitas's Ring +1", ring2 = "Defending Ring",
-		back = gear.Alaunus.Healing, waist = "Luminary Sash", legs = "Ebers Pant. +3", feet = "Kaykaus Boots +1"
+		back = gear.Alaunus.Healing, waist = "Shinjutsu-no-Obi +1", legs = "Ebers Pant. +3", feet = "Kaykaus Boots +1"
 	}
 	sets.midcast.LightWeatherCure = set_combine(sets.midcast.Cure, { waist = "Hachirin-no-obi" })
 	sets.midcast.LightDayCure = set_combine(sets.midcast.Cure, { waist = "Hachirin-no-obi" })
@@ -220,7 +220,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Kaykaus Mitra +1", neck = "Clr. Torque +2", ear1 = "Glorious Earring", ear2 = "Magnetic Earring",
 		body = "Theo. Bliaut +3", hands = "Theophany Mitts +3", ring1 = "Mephitas's Ring +1", ring2 = "Defending Ring",
-		back = gear.Alaunus.Healing, waist = "Luminary Sash", legs = "Ebers Pant. +3", feet = "Kaykaus Boots +1"
+		back = gear.Alaunus.Healing, waist = "Shinjutsu-no-Obi +1", legs = "Ebers Pant. +3", feet = "Kaykaus Boots +1"
 	}
 
 	sets.midcast.MeleeCureSolace = set_combine(sets.midcast.MeleeCure, sets.midcast.CureSolace, {})
@@ -378,7 +378,7 @@ function init_gear_sets()
 	sets.idle = -- With +3 Empy, this set is 10% over DT Cap (54% total). When that happens, swap neck for Warder's Charm and another 5% can still be swapped out.
 	{
 		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
-		head = "Nyame Helm", neck = "Loricate Torque +1", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
+		head = "Nyame Helm", neck = "Warder's Charm +1", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
 		body = "Ebers Bliaut +3", hands = "Ebers Mitts +3", ring1 = "Stikini Ring +1", ring2 = "Shadow Ring",
 		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Ebers Pant. +3", feet = "Ebers Duckbills +3"
 	}

@@ -2,13 +2,13 @@
 function user_job_setup()
 	state.OffenseMode:options('Normal')
 	state.HybridMode:options('Normal', 'DT')
-	state.WeaponskillMode:options('Match','Normal','Acc','Proc')
+	state.WeaponskillMode:options('Match', 'Normal', 'Proc')
 	state.IdleMode:options('Normal', 'Sphere')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Aeneas')
-	state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWEarrings','DWMax'}
+	state.Weapons:options('Aeneas', 'Tauret')
+	state.ExtraMeleeMode = M{ ['description'] = 'Extra Melee Mode', 'None' }
 
 	gear.senuna_tp = { name = "Senuna's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } }
 	gear.wsd_jse_back = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
@@ -43,13 +43,9 @@ function init_gear_sets()
 		legs = "Heidrek Brais", feet = "Heidrek Boots"
 	}
 
-	-- Extra Melee sets.  Apply these on top of melee sets.
-	sets.Suppa = { ear1="Spike Earring", ear2="Suppanomimi" }
-	sets.DWEarrings = { ear1="Dudgeon Earring", ear2="Heartseeker Earring" }
-	sets.DWMax = { ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Adhemar Jacket +1",hands="Floral Gauntlets",waist="Shetal Stone"}
-	
 	-- Weapons sets
-	sets.weapons.Aeneas = { main = "Aeneas", sub = "Polyhymnia" }
+	sets.weapons.Aeneas = { main = "Aeneas", sub = "Ternion Dagger +1" }
+	sets.weapons.Tauret = { main = "Tauret", sub = "Ternion Dagger +1" }
 	
 	-- Precast Sets
 
@@ -137,12 +133,6 @@ function init_gear_sets()
 		body="Adhemar Jacket +1",hands="Meg. Gloves +2",ring1="Ilabrat Ring",ring2="Regal Ring",
 		back=gear.wsd_jse_back,waist="Grunfeld Rope",legs="Samnuha Tights",feet=gear.herculean_wsd_feet
 	}
-	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-		ammo="C. Palug Stone",
-		neck="Combatant's Torque",ear1="Telos Earring",
-		body="Meg. Cuirie +2",
-		waist="Olseni Belt",legs="Meg. Chausses +2",feet="Malignance Boots"
-	})
 	sets.precast.WS.Proc = {
 		ammo="Yamarang",
 		head="Wh. Rarab Cap +1",neck="Loricate Torque +1",ear1="Brutal Earring",ear2="Sanare Earring",
@@ -166,11 +156,12 @@ function init_gear_sets()
 	})
 	sets.precast.WS["Shark Bite"].Acc = set_combine(sets.precast.WS.Acc, {ear1="Moonshade Earring",body="Meg. Cuirie +2"})
 
-	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-		ammo="Charis Feather",
-		head="Adhemar Bonnet +1",neck="Fotia Gorget",
-		body="Abnoba Kaftan",hands="Mummu Wrists +2",ring1="Begrudging Ring",
-		waist="Fotia Belt",feet="Mummu Gamash. +2"
+	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS,
+	{
+		ammo = "Charis Feather",
+		head = "Adhemar Bonnet +1", neck = "Fotia Gorget",
+		body = "Mummu Jacket +2", hands = "Mummu Wrists +2", ring1 = "Begrudging Ring",
+		waist = "Fotia Belt", legs = "Mummu Kecks +2", feet = "Mummu Gamash. +2"
 	})
 	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS.Acc, {
 		head="Mummu Bonnet +2",ring1="Begrudging Ring",neck="Fotia Gorget",
@@ -220,7 +211,7 @@ function init_gear_sets()
 	{
 		ammo = "Aurgelmir Orb",
 		head = "Adhemar Bonnet +1", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
-		body = "Meg. Cuirie +2", hands = "Adhemar Wrist. +1", ring1 = "Rajas Ring", ring2 = "Keen Ring",
+		body = "Mummu Jacket +2", hands = "Adhemar Wrist. +1", ring1 = "Rajas Ring", ring2 = "Keen Ring",
 		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Meg. Chausses +2", feet = "Horos Toe Shoes +1"
 	}
 
@@ -261,7 +252,7 @@ function init_gear_sets()
 	{
 		ammo = "Aurgelmir Orb",
 		head = "Adhemar Bonnet +1", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
-		body = "Meg. Cuirie +2", hands = "Adhemar Wrist. +1", ring1 = "Rajas Ring", ring2 = "Keen Ring",
+		body = "Mummu Jacket +2", hands = "Adhemar Wrist. +1", ring1 = "Rajas Ring", ring2 = "Keen Ring",
 		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Meg. Chausses +2", feet = "Horos Toe Shoes +1"
 	}
 

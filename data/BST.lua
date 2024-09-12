@@ -60,13 +60,24 @@ function job_setup()
 	state.Buff['Killer Instinct'] = buffactive['Killer Instinct'] or false
 	state.Buff["Unleash"] = buffactive["Unleash"] or false
 	state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
-	state.Stance = M{['description']='Stance','Hasso','Seigan','None'}
+	state.Stance = M{['description']='Stance','None','Hasso','Seigan'}
 
 	-- 'Out of Range' distance; WS will auto-cancel
 	target_distance = 6
 
-	buff_ready_moves = S{ 'Wild Carrot', 'Bubble Curtain', 'Scissor Guard', 'Secretion', 'Rage', 'Harden Shell',
-		'TP Drainkiss', 'Fantod', 'Rhino Guard', 'Zealous Snort', 'Frenzied Rage', 'Digest' } 
+	tp_based_ready_moves = S{'Sic','Somersault ','Dust Cloud','Foot Kick','Sheep Song','Sheep Charge','Lamb Chop',
+		'Rage','Head Butt','Scream','Dream Flower','Wild Oats','Leaf Dagger','Claw Cyclone','Razor Fang','Roar',
+		'Gloeosuccus','Palsy Pollen','Soporific','Cursed Sphere','Geist Wall','Numbing Noise','Frog Kick',
+		'Nimble Snap','Cyclotail','Spoil','Rhino Guard','Rhino Attack','Hi-Freq Field','Sandpit','Sandblast',
+		'Mandibular Bite','Metallic Body','Bubble Shower','Bubble Curtain','Scissor Guard','Grapple','Spinning Top',
+		'Double Claw','Filamented Hold','Spore','Blockhead','Secretion','Fireball','Tail Blow','Plague Breath',
+		'Brain Crush','Infrasonics','Needleshot','Chaotic Eye','Blaster','Ripper Fang','Intimidate','Recoil Dive',
+		'Water Wall','Snow Cloud','Wild Carrot','Sudden Lunge','Noisome Powder','Wing Slap','Beak Lunge','Suction',
+		'Drainkiss','Acid Mist','Back Heel','Jettatura','Choke Breath','Fantod','Charged Whisker',
+		'Purulent Ooze','Corrosive Ooze','Tortoise Stomp','Harden Shell','Aqua Breath','Sensilla Blades',
+		'Tegmina Buffet','Sweeping Gouge','Zealous Snort','Tickling Tendrils','Pecking Flurry','Pestilent Plume',
+		'Foul Waters','Spider Web','Crossthrash','Venom Shower','Mega Scissors','Fluid Toss',
+		'Fluid Spread','Digest','Rhinowrecker','Disembowel','Extirpating Salvo','Frenzied Rage'}
 
 	-- List of Magic-based Ready moves to use with Pet MAB or Pet M.Acc gearset.
 	magic_ready_moves = S{'Dust Cloud','Sheep Song','Scream','Dream Flower','Roar','Gloeosuccus','Palsy Pollen',
@@ -409,8 +420,6 @@ function job_aftercast(spell, spellMap, eventArgs)
 				equip(sets.midcast.Pet.PhysicalDebuffReady)
 			elseif multi_hit_ready_moves:contains(spell.english) and sets.midcast.Pet.MultiHitReady then
 				equip(sets.midcast.Pet.MultiHitReady)
-			elseif buff_ready_moves:contains(spell.english) and sets.midcast.Pet.BuffReady then
-				equip(sets.midcast.Pet.BuffReady)
 			else
 				if sets.midcast.Pet[state.OffenseMode.value] then
 					equip(sets.midcast.Pet[state.OffenseMode.value])
@@ -424,7 +433,7 @@ function job_aftercast(spell, spellMap, eventArgs)
 			end
 
 			if tp_based_ready_moves:contains(spell.english) then
-				if pet.tp < 1900 or (PetJob != 'Warrior' and pet.tp < 2400) then
+				if pet.tp < 1900 or (PetJob ~= 'Warrior' and pet.tp < 2400) then
 					equip(sets.midcast.Pet.TPBonus)
 				end
 			end
