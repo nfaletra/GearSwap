@@ -58,7 +58,7 @@ function init_gear_sets()
 	sets.Ambush = {} --body="Plunderer's Vest +1"
 	
 	-- Weapons sets
-	sets.weapons.Aeneas = {main="Aeneas",sub="Gleti's Knife"}
+	sets.weapons.Aeneas = { main = "Aeneas", sub = "Ternion Dagger +1" }
 	sets.weapons.Aeolian = {main="Malevolence",sub="Malevolence"}
 	sets.weapons.Savage = {main="Naegling",sub="Gleti's Knife"}
 	sets.weapons.ProcWeapons = {main="Blurred Knife +1",sub="Atoyac"}
@@ -250,7 +250,7 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Malignance Chapeau", neck = "Loricate Torque +1", ear1 = "Etiolation Earring", ear2 = "Sanare Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Dark Ring",
+		body = "Mummu Jacket +1", hands = "Adhemar Wrist. +1", ring1 = "Defending Ring", ring2 = "Dark Ring",
 		back = "Moonlight Cape", waist = "Flume Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -288,8 +288,8 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		ammo = "Aurgelmir Orb",
-		head = "Skormoth Mask", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Kemas Earring",
-		body = "Rawhide Vest", hands = "Meg. Gloves +2", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
+		head = "Malignance Chapeau", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Kemas Earring",
+		body = "Mummu Jacket +1", hands = "Adhemar Wrist. +1", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
 		back = "Atheling Mantle", waist = "Windbuffet Belt +1", legs = "Meg. Chausses +2", feet = "Meg. Jam. +2"
 	}
 

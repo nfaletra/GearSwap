@@ -7,7 +7,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Aeneas')
+	state.Weapons:options('Aeneas', 'Tauret')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWEarrings','DWMax'}
 
 	gear.senuna_tp = { name = "Senuna's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } }
@@ -49,7 +49,8 @@ function init_gear_sets()
 	sets.DWMax = { ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Adhemar Jacket +1",hands="Floral Gauntlets",waist="Shetal Stone"}
 	
 	-- Weapons sets
-	sets.weapons.Aeneas = { main = "Aeneas", sub = "Polyhymnia" }
+	sets.weapons.Aeneas = { main = "Aeneas", sub = "Ternion Dagger +1" }
+	sets.weapons.Tauret = { main = "Tauret", sub = "Ternion Dagger +1" }
 	
 	-- Precast Sets
 
@@ -62,7 +63,7 @@ function init_gear_sets()
 	sets.precast.Waltz = {
 		ammo="Yamarang",
 		head="Etoile Tiara",neck="Unmoving Collar +1",ear1="Enchntr. Earring +1",ear2="Handler's Earring +1",
-		body="Dancer's Casaque",hands=gear.herculean_waltz_hands,ring1="Defending Ring",ring2="Valseur's Ring",
+		body = "Maxixi Casaque +1",hands=gear.herculean_waltz_hands,ring1="Defending Ring",ring2="Valseur's Ring",
 		back="Toetapper Mantle",waist="Chaac Belt",legs="Dashing Subligar",feet=gear.herculean_waltz_feet
 	}
 
