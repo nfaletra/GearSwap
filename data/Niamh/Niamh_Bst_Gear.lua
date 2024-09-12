@@ -197,15 +197,16 @@ function init_gear_sets()
 	sets.precast.WS['Decimation'] =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Thrud Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Sroda Ring", ring2 = "Gere Ring",
-		back = gear.Artio.DA, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		head = "Blistering Sallet +1", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Lugra Earring +1",
+		body = "Tali'ah Manteel +2", hands = "Nyame Gauntlets", ring1 = "Epona's Ring", ring2 = "Gere Ring",
+		back = gear.Artio.DA, waist = "Fotia Belt", legs = "Meghanada Chausses +2", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Decimation'].PDL = set_combine(sets.precast.WS['Decimation'],
 	{
-		head = "Gleti's Mask", neck = "Bst. Collar +2", ear2 = "Nukumi Earring +1",
-		hands = "Gleti's Gauntlets", hands = "Gleti's Gauntlets",
-		waist = "Fotia Belt", legs = "Gleti's Breeches"
+		ammo = "Crepuscular Pebble",
+		head = "Gleti's Mask", neck = "Bst. Collar +2",
+		hands = "Gleti's Gauntlets", ring1 = "Sroda Ring",
+		feet = "Gleti's Boots"
 	})
 	sets.precast.WS['Decimation']['Subtle Blow'] = set_combine(sets.precast.WS['Decimation'], sets.SubtleBlow)
 
@@ -493,14 +494,14 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Dedition Earring",
-		body = "Gleti's Cuirass", hands = "Malignance Gloves", ring1 = "Epona's Ring", ring2 = "Gere Ring",
+		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Telos Earring",
+		body = "Gleti's Cuirass", hands = "Malignance Gloves", ring1 = "Gere Ring", ring2 = "Defending Ring",
 		back = gear.Artio.STP, waist = "Sailfi Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 	sets.engaged.DW = set_combine(sets.engaged,
 	{
 		ear2 = "Eabani Earring",
-		waist = "Reiki Yotai"
+		back = gear.Artio.DA, waist = "Reiki Yotai"
 	})
 
 	sets.engaged.Pet = set_combine(sets.engaged,
@@ -533,7 +534,7 @@ function init_gear_sets()
 	sets.weapons.Drepanum = { main = "Drepanum", sub = "Bloodrain Strap" }
 	sets.weapons.DualAymur = { main = "Aymur", sub = "Agwu's Axe" }
 	sets.weapons.DualPangu = { main = "Pangu", sub = "Agwu's Axe" }
-	sets.weapons.DualDolichenus = { main = "Dolichenus", sub = "Ikenga's Axe" }
+	sets.weapons.DualDolichenus = { main = "Dolichenus", sub = "Agwu's Axe" }
 	sets.weapons.DualNaegling = { main = "Naegling", sub = "Fernagu" }
 
 -------------------------------------------------------------------------------------------------------------------

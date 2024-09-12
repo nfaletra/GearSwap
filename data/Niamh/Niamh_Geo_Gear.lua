@@ -187,7 +187,7 @@ function init_gear_sets()
 	{
 		main = "Solstice", sub = "Genmei Shield", range = "Dunna",
 		head = "Azimuth Hood +2", neck = "Bagua Charm +2", ear1 = "Magnetic Earring", ear2 = "Odnowa Earring +1",
-		body = "Vedic Coat", hands = "Geo. Mitaines +2", ring1 = "Mephitas's Ring +1", ring2 = "Defending Ring",
+		body = "Vedic Coat", hands = "Geo. Mitaines +2", ring1 = "Mephitas's Ring +1", ring2 = "Defending Ring"
 		back = "Fi Follet Cape +1", waist = "Shinjutsu-no-Obi +1", legs = "Vanya Slops", feet = "Azimuth Gaiters +2"
 	})
 

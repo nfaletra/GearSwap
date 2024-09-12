@@ -2,12 +2,13 @@ function user_job_setup()
 	-- Options: Override default values
     state.OffenseMode:options('Normal')
 	state.HybridMode:options('Normal')
-    state.CastingMode:options('Normal','Resistant','AoE')
+    state.CastingMode:options('Normal', 'Resistant', 'AoE')
     state.IdleMode:options('Normal')
-	state.Weapons:options('None','Naegling','Aeneas','DualWeapons','DualNaegling','DualTauret','DualAeolian')
+	state.Weapons:options('None', 'Aeneas', 'Naegling', 'Trial', 'DualWeapons', 'DualNaegling', 'DualTauret', 'DualAeolian', 'DualTrial')
 
 	gear.Intarabus =
 	{
+		Idle = { name = "Intarabus's Cape", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity-10', 'Damage taken-5%' } },
 		FC = { name = "Intarabus's Cape", augments = { 'CHR+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10', 'Damage taken-5%' } }
 	}
 
@@ -48,11 +49,13 @@ function init_gear_sets()
 
 	-- Weapons sets
 	sets.weapons.Aeneas = { main = "Aeneas", sub = "Genmei Shield"}
+	sets.weapons.Naegling = { main = "Naegling", sub = "Genmei Shield" }
+	sets.weapons.Trial = { main = "Daybreak", sub = "Genmei Shield", range = "Gjallarhorn" }
 	sets.weapons.DualWeapons = { main = "Aeneas", sub = "Blurred Knife +1" }
 	sets.weapons.DualNaegling = { main = "Naegling", sub = "Blurred Knife +1" }
-	sets.weapons.Naegling = { main = "Naegling", sub = "Genmei Shield" }
 	sets.weapons.DualTauret = { main = "Tauret", sub = "Blurred Knife +1" }
 	sets.weapons.DualAeolian = { main = "Tauret", sub = "Malevolence" }
+	sets.weapons.DualTrial = { main = "Aeneas", sub = "Blurred Knife +1", range = "Gjallarhorn" }
 
     sets.buff.Sublimation = { waist = "Embla Sash" }
     sets.buff.DTSublimation = { waist = "Embla Sash" }
@@ -99,7 +102,7 @@ function init_gear_sets()
 		range = "Linos",
 		head = "Nyame Helm", neck = "Republican Platinum Medal", ear1 = "Regal Earring", ear2 = "Moonshade Earring",
 		body = "Bihu Justaucorps +3", hands = "Nyame Gauntlets", ring1 = "Shukuyu Ring", ring2 = "Rufescent Ring",
-		back = "Intarabus's Cape", waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Intarabus.Idle, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
@@ -214,7 +217,7 @@ function init_gear_sets()
 		main = "Daybreak", sub = "Genmei Shield", range = "Terpander",
 		head = "Inyanga Tiara +2", neck = "Loricate Torque +1", ear1 = "Eabani Earring", ear2 = "Ethereal Earring",
 		body = "Inyanga Jubbah +2", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Stikini Ring +1",
-		back = gear.Intarabus.FC, waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
+		back = gear.Intarabus.Idle, waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
 	}
 
 	sets.Kiting = { ring2 = "Shneddick Ring" }
@@ -229,9 +232,9 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		range = "Linos",
-		head = "Aya. Zucchetto +1", neck = "Bard's Charm +2", ear1 = "Suppanomimi", ear2 = "Brutal Earring",
-		body = "Ayanmo Corazza +2", hands = "Aya. Manopolas +1", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
-		back = gear.Intarabus.FC, waist = "Reiki Yotai", legs = "Aya. Cosciales +2", feet = "Aya. Gambieras +1"
+		head = "Aya. Zucchetto +2", neck = "Bard's Charm +2", ear1 = "Suppanomimi", ear2 = "Brutal Earring",
+		body = "Ayanmo Corazza +2", hands = "Aya. Manopolas +2", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
+		back = gear.Intarabus.Idle, waist = "Reiki Yotai", legs = "Aya. Cosciales +2", feet = "Aya. Gambieras +2"
 	}
 end
 

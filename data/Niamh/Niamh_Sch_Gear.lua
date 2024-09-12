@@ -125,7 +125,7 @@ function init_gear_sets()
 		ammo="Staunch Tathlum +1",
 		head = "Amalric Coif +1", neck = "Dualism Collar +1", ear1 = "Evans Earring", ear2 = "Moonshade Earring",
 		body = "Acad. Gown +1", hands = "Peda. Bracers +3", ring1 = "Mephitas's Ring +1", ring2 = "Mephitas's Ring",
-		back = "Aurist's Cape +1", waist = "Shinjutsu-no-Obi +1", legs = "Agwu's Slops", feet = gear.amalric.feet.a
+		back = "Aurist's Cape +1", waist = "Shinjintsu-no-Obi +1", legs = "Agwu's Slops", feet = gear.amalric.feet.a
 	}
 
 	-- Midcast Sets
@@ -157,7 +157,7 @@ function init_gear_sets()
 		main = "Raetic Rod +1", sub = "Genmei Shield", ammo = "Hasty Pinion +1",
 		head = "Kaykaus Mitra +1", neck = "Incanter's Torque", ear1 = "Malignance Earring", ear2 = "Meili Earring",
 		body = "Kaykaus Bliaut +1", hands = "Pedagogy Bracers +3", ring1 = "Menelaus's Ring", ring2 = "Lebeche Ring",
-		back = "Fi Follet Cape +1", waist = "Shinjutsu-no-Obi +1", legs = "Kaykaus Tights +1", feet = "Kaykaus Boots +1"
+		back = "Fi Follet Cape +1", waist = "Luminary Sash", legs = "Kaykaus Tights +1", feet = "Kaykaus Boots +1"
 	}
 
 	sets.midcast.LightWeatherCure = set_combine(sets.midcast.Cure,
