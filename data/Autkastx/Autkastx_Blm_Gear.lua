@@ -232,7 +232,7 @@ function init_gear_sets()
 		waist = "Acuity Belt +1", legs = "Spae. Tonban +3", feet = "Wicce Sabots +2"
 	})
 
-    sets.midcast.Stun = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",ammo="Hasty Pinion +1",
+    sets.midcast.Stun = {sub="Clerisy Strap +1",ammo="Hasty Pinion +1",
         head="Amalric Coif +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
         body="Zendik Robe",hands="Volte Gloves",ring1="Stikini Ring +1",ring2="Metamor. Ring +1",
         back=gear.Taranus.Idle,waist="Witful Belt",legs="Psycloth Lappas",feet="Regal Pumps +1"}

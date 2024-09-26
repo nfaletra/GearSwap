@@ -77,9 +77,9 @@ function init_gear_sets()
 	sets.precast.FC =
 	{
 		main = "Mpaca's Staff", sub = "Khonsu", ammo = "Impatiens",
-		head = "Merlinic Hood", neck = "Orunmila's Torque", ear1 = "Malignance Earring", ear2 = "Loquac. Earring",
-		body = "Merlinic Jubbah", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
-		back = "Fi Follet Cape +1", waist = "Witful Belt", legs = "Agwu's Slops", feet = "Peda. Loafers +3"
+		head = "Merlinic Hood", neck = "Voltsurge Torque", ear1 = "Malignance Earring", ear2 = "Loquac. Earring",
+		body = "Zendik Robe", hands = "Gende. Gages +1", ring1 = "Lebeche Ring", ring2 = "Medada's Ring",
+		back = "Perimede Cape", waist = "Witful Belt", legs = "Agwu's Slops", feet = "Peda. Loafers +3"
 	}
 
 	sets.precast.FC.Arts = { head = "Peda. M.Board +3", feet = "Acad. Loafers +1" }
@@ -122,7 +122,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Myrkr'] =
 	{
-		ammo="Staunch Tathlum +1",
+		ammo = "Staunch Tathlum +1",
 		head = "Amalric Coif +1", neck = "Dualism Collar +1", ear1 = "Evans Earring", ear2 = "Moonshade Earring",
 		body = "Acad. Gown +1", hands = "Peda. Bracers +3", ring1 = "Mephitas's Ring +1", ring2 = "Mephitas's Ring",
 		back = "Aurist's Cape +1", waist = "Shinjutsu-no-Obi +1", legs = "Agwu's Slops", feet = gear.amalric.feet.a
@@ -140,8 +140,16 @@ function init_gear_sets()
 	{
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
 		head = "Agwu's Cap", neck = "Argute Stole +2", ear1 = "Regal Earring", ear2 = "Malignance Earring",
+		body = "Arbatel Gown +2", hands = "Agwu's Gages", ring1 = "Freke Ring", ring2 = "Metamor. Ring +1",
+		back = gear.Lughs.Nuke, waist = "Sacro Cord", legs = "Agwu's Slops", feet = "Arbatel Loafers +2"
+	}
+
+	sets.MagicBurstHelix =
+	{
+		main = "Bunzi's Rod", sub = "Culminus", ammo = "Ghastly Tathlum +1",
+		head = "Agwu's Cap", neck = "Argute Stole +2", ear1 = "Crematio Earring", ear2 = "Arbatel Earring +1",
 		body = "Agwu's Robe", hands = "Agwu's Gages", ring1 = "Freke Ring", ring2 = "Mujin Band",
-		back = "Aurist's Cape +1", waist = "Sacro Cord", legs = "Agwu's Slops", feet = "Agwu's Pigaches"
+		back = gear.Lughs.Nuke, waist = "Sacro Cord", legs = "Arbatel Pants +2", feet = "Arbatel Loafers +2"
 	}
 
 	sets.midcast.FastRecast =
@@ -170,7 +178,7 @@ function init_gear_sets()
 
 	sets.Self_Refresh = { waist = "Gishdubar Sash" }
 	
-	sets.midcast.Cursna = {main=gear.grioavolr_fc_staff,sub="Clemency Grip",ammo="Hasty Pinion +1",
+	sets.midcast.Cursna = {sub="Clemency Grip",ammo="Hasty Pinion +1",
 		head="Amalric Coif +1",neck="Debilis Medallion",ear1="Meili Earring",ear2="Malignance Earring",
 		body="Zendik Robe",hands="Hieros Mittens",ring1="Haoma's Ring",ring2="Menelaus's Ring",
 		back="Oretan. Cape +1",waist="Witful Belt",legs="Psycloth Lappas",feet="Vanya Clogs"}
@@ -286,11 +294,10 @@ function init_gear_sets()
 
 	sets.midcast['Elemental Magic'].OccultAcumen = set_combine(sets.midcast['Elemental Magic'], {})
 
-	sets.midcast.Kaustra = set_combine(sets.midcast['Elemental Magic'],
-	 {
-		head = "Pixie Hairpin +1",
-		ring2 = "Archon Ring",
-	})
+	sets.midcast.Kaustra =
+	{
+		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
+	}
 
 	sets.midcast.Helix = set_combine(sets.midcast['Elemental Magic'],
 	{
@@ -359,19 +366,24 @@ function init_gear_sets()
 
 	sets.HPDown = {}
 
-	sets.HPCure = {}
+	sets.HPCure =
+	{
+		head = "Gende. Caubeen +1", neck = "Unmoving Collar +1", ear1 = "Gifted Earring", ear2 = "Mendi. Earring",
+		body = "Viti. Tabard +3", hands = "Kaykaus Cuffs +1", ring1 = "Gelatinous Ring +1", ring2 = "Meridian Ring",
+		back = "Moonlight Cape", waist = "Luminary Sash", legs = "Carmine Cuisses +1", feet = "Kaykaus Boots +1"
+	}
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff['Light Arts'] = {} --legs="Academic's Pants +3"
 	sets.buff['Dark Arts'] = {} --body="Academic's Gown +3"
 
-	sets.buff.Sublimation = { head = "Acad. Mortar. +2", waist = "Embla Sash" }
+	sets.buff.Sublimation = { waist = "Embla Sash" }
 	sets.buff.DTSublimation = { waist = "Embla Sash" }
 
 	-- Weapons sets
 	sets.weapons.Khatvanga = { main = "Khatvanga", sub = "Bloodrain Strap" }
-	sets.weapons.Mpaca = { main = "Mpaca's Staff", sub = "Elder's Grip +1" }
-	sets.weapons.Marin = { main = "Marin Staff +1", sub = "Elder's Grip +1" }
+	sets.weapons.Mpaca = { main = "Mpaca's Staff", sub = "Enki Strap" }
+	sets.weapons.Marin = { main = "Marin Staff +1", sub = "Enki Strap" }
 	sets.weapons.Maxentius = { main = "Maxentius", sub = "Genmei Shield" }
 	sets.weapons.Daybreak = { main = "Daybreak", sub = "Genmei Shield" }
 	sets.weapons.DualMaxentius = { main = "Maxentius", sub = "Ternion Dagger +1" }

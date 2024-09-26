@@ -162,7 +162,7 @@ function init_gear_sets()
 
 	-- Midcast Sets
 
-	sets.Kiting = { ring1 = "Shneddick Ring" }
+	sets.Kiting = { feet = "Herald's Gaiters" }
 	sets.latent_refresh = {}
 	sets.latent_refresh_grip = {}
 	sets.TPEat = {}
@@ -181,7 +181,7 @@ function init_gear_sets()
 	sets.midcast.Teleport = sets.ConserveMP
 
 	-- Gear for Magic Burst mode.
-	sets.MagicBurst = { neck = "Mizu. Kubikazari" }
+	sets.MagicBurst = {}
 
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,
 	{
@@ -308,7 +308,7 @@ function init_gear_sets()
 	sets.midcast['Elemental Magic'] =
 	{
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
-		head = empty, neck = "Mizu. Kubikazari", ear1 = "Regal Earring", ear2 = "Malignance Earring",
+		head = empty, neck = "Baetyl Pendant", ear1 = "Regal Earring", ear2 = "Malignance Earring",
 		body = "Cohort Cloak +1", hands = "Bunzi's Gloves", ring1 = "Metamor. Ring +1", ring2 = "Freke Ring",
 		back = "Aurist's Cape +1", waist = "Sacro Cord", legs = "Bunzi's Pants", feet = "Bunzi's Sabots"
 	}

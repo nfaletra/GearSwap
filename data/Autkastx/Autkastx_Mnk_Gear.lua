@@ -246,7 +246,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Shoulder Tackle'] =
 	{
-		ammo = "Voluspa Tathlum",
+		ammo = "Pemphredo Tathlum",
 		head = "Malignance Chapeau", neck = "Moonlight Necklace", ear1 = "Crep. Earring", ear2 = "Hermetic Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
 		back = gear.Segomo.INT_WSD, waist = "Acuity Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
@@ -276,7 +276,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Shell Crusher'] =
 	{
-		ammo = "Voluspa Tathlum",
+		ammo = "Pemphredo Tathlum",
 		head = "Malignance Chapeau", neck = "Moonlight Necklace", ear1 = "Crep. Earring", ear2 = "Hermetic Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
 		back = gear.Segomo.INT_WSD, waist = "Acuity Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"

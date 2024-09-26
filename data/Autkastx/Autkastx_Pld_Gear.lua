@@ -199,10 +199,13 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
 		body = "Hjarrandi Breast.", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Epaminondas's Ring",
-		back = gear.Rudianos.WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Sulev. Leggings +2"
+		back = gear.Rudianos.WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
-	sets.precast.WS['Torcleaver'] = set_combine(sets.precast.WS['Savage Blade'], {})
+	sets.precast.WS['Torcleaver'] = set_combine(sets.precast.WS['Savage Blade'],
+	{
+		
+	})
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = { ear2 = "Brutal Earring" }

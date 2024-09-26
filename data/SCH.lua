@@ -256,7 +256,11 @@ function job_post_midcast(spell, spellMap, eventArgs)
 			if state.CastingMode.value:contains('Resistant') and sets.ResistantMagicBurst then
 				equip(sets.ResistantMagicBurst)
 			else
-				equip(sets.MagicBurst)
+				if spell.english:contains('helix') then
+					equip(sets.MagicBurstHelix)
+				else
+					equip(sets.MagicBurst)
+				end
 			end
 		end
 		if not state.CastingMode.value:contains('Resistant') then

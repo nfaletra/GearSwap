@@ -212,10 +212,10 @@ function init_gear_sets()
 	{
 		head = "Vanya Hood", neck = "Debilis Medallion", ear1 = "Meili Earring", ear2 = "Malignance Earring",
 		body = "Zendik Robe", hands = "Geo. Mitaines +2", ring1 = "Haoma's Ring", ring2 = "Menelaus's Ring",
-		back = "Oretania's Cape +1", waist = "Witful Belt", legs = "Geomancy Pants +1", feet = "Vanya Clogs"
+		back = "Oretania's Cape +1", waist = "Witful Belt", legs = "Geomancy Pants +2", feet = "Vanya Clogs"
 	}
 	
-	sets.midcast.StatusRemoval = set_combine(sets.midcast.FastRecast, {main=gear.grioavolr_fc_staff,sub="Clemency Grip"})
+	sets.midcast.StatusRemoval = set_combine(sets.midcast.FastRecast, {sub="Clemency Grip"})
 	
 	sets.midcast['Elemental Magic'] =
 	{
@@ -244,7 +244,7 @@ function init_gear_sets()
 		main = "Bunzi's Rod", sub = "Ammurapi Shield",
 		head = "Geomancy Galero +1", neck = "Bagua Charm +2", ear1 = "Regal Earring", ear2 = "Malignance Earring",
 		body = "Geomancy Tunic +1", hands = "Agwu's Gages", ring1 = "Kishar Ring", ring2 = "Metamor. Ring +1",
-		back = gear.Nantosuelta.MAB, waist = "Luminary Sash", legs = "Geomancy Pants +1", feet = "Geomancy Sandals +1"
+		back = gear.Nantosuelta.MAB, waist = "Luminary Sash", legs = "Geomancy Pants +2", feet = "Geo. Sandals +2"
 	}
 
 	sets.midcast.Stun = set_combine(sets.midcast['Enfeebling Magic'],
@@ -342,7 +342,7 @@ function init_gear_sets()
 		main = "Daybreak", sub = "Genmei Shield", ammo = "Staunch Tathlum +1",
 		head = "Agwu's Cap", neck = "Warder's Charm +1", ear1 = "Lugalbanda Earring", ear2 = "Etiolation Earring",
 		body = "Azimuth Coat +2", hands = "Agwu's Gages", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
-		back = "Lifestream Cape", waist = "Carrier's Sash", legs = "Agwu's Slops", feet = "Geo. Sandals +1"
+		back = "Lifestream Cape", waist = "Carrier's Sash", legs = "Agwu's Slops", feet = "Geo. Sandals +2"
 	}
 
 	-- Pet sets are for when Luopan is present.
@@ -358,7 +358,7 @@ function init_gear_sets()
 	sets.idle.Indi = set_combine(sets.idle, {})
 	sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {})
 
-	sets.Kiting = { feet = "Geo. Sandals +1" }
+	sets.Kiting = { feet = "Geo. Sandals +2" }
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})

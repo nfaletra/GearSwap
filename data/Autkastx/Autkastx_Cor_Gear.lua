@@ -127,7 +127,7 @@ function init_gear_sets()
 	sets.precast.Step =
 	{
 		head = "Chass. Tricorne +3", neck = "Combatant's Torque", ear1 = "Crep. Earring", ear2 = "Mache Earring +1",
-		body = "Chasseur's Frac +3", hands = "Chasseur's Gants +3", ring1 = "Regal Ring", ring2 = "Mummu Ring",
+		body = "Chasseur's Frac +3", hands = "Chasseur's Gants +3", ring1 = "Regal Ring", ring2 = "Chirich Ring +1",
 		back = gear.Camulus.DA, waist = "Kentarch Belt +1", legs = "Chas. Culottes +3", feet = "Chass. Bottes +2"
 	}
 

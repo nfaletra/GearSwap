@@ -190,7 +190,7 @@ function init_gear_sets()
 	sets.midcast.Minuet = { body = "Fili Hongreline +3" }
 	sets.midcast.Minne = { legs = "Mousai Seraweels +1" }
 	sets.midcast.Carol = { hands = "Mousai Gages +1" }
-	sets.midcast["Sentinel's Scherzo"] = { feet = "Fili Cothurnes +1" }
+	sets.midcast["Sentinel's Scherzo"] = { feet = "Fili Cothurnes +2" }
 	sets.midcast['Magic Finale'] = { range = "Blurred Harp +1" }
 	sets.midcast.Mazurka = { range = "Marsyas" }
 	sets.midcast.Etude = { head = "Mousai Turban +1" }
@@ -251,7 +251,7 @@ function init_gear_sets()
 		sub = "Ammurapi Shield", ammo = "Hasty Pinion +1",
 		head = "Telchine Cap", neck = "Voltsurge Torque" , ear1 = "Andoaa Earring", ear2 = "Gifted Earring",
 		body = "Telchine Chas.", hands = gear.telchine.hands.enhancing, ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
-		back = "Fi Folet Cape +1", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Telchine Pigaches"
+		back = "Fi Follet Cape +1", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Telchine Pigaches"
 	}
 
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",legs="Shedir Seraweels"})
