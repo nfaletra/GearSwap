@@ -128,6 +128,14 @@ function init_gear_sets()
 		back = "Aurist's Cape +1", waist = "Shinjutsu-no-Obi +1", legs = "Agwu's Slops", feet = gear.amalric.feet.a
 	}
 
+	sets.precast.WS['Cataclysm'] =
+	{
+		ammo = "Ghastly Tathlum +1",
+		head = "Pixie Hairpin +1", neck = "Argute Stole +2", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Medada's Ring", ring2 = "Archon Ring",
+		back = gear.Lughs.Nuke, waist = "Orpheus's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+	}
+
 	-- Midcast Sets
 
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
@@ -328,7 +336,7 @@ function init_gear_sets()
 	-- Resting sets
 	sets.resting = sets.idle
 
-	sets.Kiting = { ring1 = "Shneddick Ring" }
+	sets.Kiting = { feet = "Herald's Gaiters" }
 	sets.DayIdle = {}
 	sets.NightIdle = {}
 

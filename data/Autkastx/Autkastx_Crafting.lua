@@ -12,7 +12,7 @@ sets.Chocobo.skill = {} -- {body="S. Blue Race Silks"}
 sets.Chocobo.personal = {} -- {body="Red Race Silks"}
 sets.Chocobo.game = {} -- {body="Black Race Silks"}
 sets.crafting.HQ = {} -- {ring2="Craftmaster's Ring"}
-sets.crafting.Alchemy = { body = "Alchemist's Smock", neck = "Alchemst. Torque", ring1 = "Orvail Ring" } -- {main="Caduceus",sub="Brewer's Escutcheon"}
+sets.crafting.Alchemy = { main = "Caduceus", body = "Alchemist's Smock", neck = "Alchemst. Torque", ring1 = "Orvail Ring" } -- {main="Caduceus",sub="Brewer's Escutcheon"}
 sets.crafting.Alchemy.NQ = {} -- {ring1="Alchemist's Ring"}
 sets.crafting.Leathercraft = {} -- {neck="Tanner's Torque",sub="Beveler's Escutcheon",body="Tanner's Smock"}
 sets.crafting.Leathercraft.NQ = {} -- {ring1="Tanner's Ring"}

@@ -400,10 +400,10 @@ function init_gear_sets()
 		ammo = gear.RAbullet,
 		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Shadow Ring",
-		back= gear.Camulus.Idle, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Camulus.Idle, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
-	sets.Kiting = { ring1 = "Shneddick Ring" }
+	sets.Kiting = { legs = "Carmine Cuisses +1" }
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 
 	-- Weapons sets

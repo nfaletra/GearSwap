@@ -189,7 +189,7 @@ function init_gear_sets()
 	}
 
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-	sets.Kiting = { ring1 = "Shneddick Ring" }
+	sets.Kiting = { feet = "Danzo Sune-Ate" }
 
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	sets.Skillchain = {}
