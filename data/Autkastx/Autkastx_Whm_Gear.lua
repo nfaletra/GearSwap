@@ -52,13 +52,21 @@ function user_job_setup()
 	send_command('bind !f5 gs c smartcure a14')
 	send_command('bind !f6 gs c smartcure a15')
 
-	-- Bottom alliance - WindowsKey + FKey
+	-- Bottom alliance - Windows Key + FKey
 	send_command('bind @f1 gs c smartcure a20')
 	send_command('bind @f2 gs c smartcure a21')
 	send_command('bind @f3 gs c smartcure a22')
 	send_command('bind @f4 gs c smartcure a23')
 	send_command('bind @f5 gs c smartcure a24')
 	send_command('bind @f6 gs c smartcure a25')
+
+	-- Curaga bind - Ctrl + Windows Key + FKey
+	send_command('bind ^@f1 input /ma "Curaga III" <p0>')
+	send_command('bind ^@f2 input /ma "Curaga III" <p1>')
+	send_command('bind ^@f3 input /ma "Curaga III" <p2>')
+	send_command('bind ^@f4 input /ma "Curaga III" <p3>')
+	send_command('bind ^@f5 input /ma "Curaga III" <p4>')
+	send_command('bind ^@f6 input /ma "Curaga III" <p5>')
 
 	select_default_macro_book()
 end

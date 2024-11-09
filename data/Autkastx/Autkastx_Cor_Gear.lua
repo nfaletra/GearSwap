@@ -182,25 +182,25 @@ function init_gear_sets()
 	sets.precast.WS['Requiescat'] =
 	{
 		ammo = gear.WSbullet,
-		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Moonshade Earring",
-		body = gear.adhemar.body.b, hands  = gear.adhemar.hands.b, ring1 = "Rufescent Ring", ring2 = "Epona's Ring",
-		back = gear.Camulus.STR_WSD, waist = "Fotia Belt", legs = "Meg. Chausses +2", feet = gear.herculean_ta_feet
+		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Brutal Earring", ear2 = "Chas. Earring +2",
+		body = "Ikenga's Vest" hands = "Malignance Gloves", ring1 = "Sroda Ring", ring2 = "Metamor. Ring +1",
+		back = gear.Camulus.STR_WSD, waist = "Fotia Belt", legs = "Chas. Culottes +3", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['Savage Blade'] =
 	{
 		ammo = gear.WSbullet,
-		head = "Nyame Helm", neck = "Rep. Plat. Medal", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
+		head = "Nyame Helm", neck = "Rep. Plat. Medal", ear1 = "Moonshade Earring", ear2 = "Chas. Earring +2",
 		body = "Nyame Mail", hands = "Chasseur's Gants +3", ring1 = "Regal Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Camulus.STR_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS['Savage Blade'],
 	{
 		neck = "Comm. Charm +2",
-		body = "Ikenga's Vest", ring2 = "Sroda Ring",
+		body = "Ikenga's Vest", ring1 = "Sroda Ring",
 	})
 
-	sets.precast.WS['Seraph Blade'] =
+	sets.precast.WS['Shining Blade'] =
 	{
 		ammo = gear.QDbullet,
 		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
@@ -213,13 +213,12 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'] =
 	{
 		ammo = gear.WSbullet,
-		head = "Blistering Sallet +1", neck = "Fotia Gorget", ear1 = "Odr Earring", ear2 = "Moonshade Earring",
-		body = "Meg. Cuirie +2", hands = gear.adhemar.hands.b, ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
-		back = gear.Camulus.DA, waist = "Fotia Belt", legs = "Zoar Subligar +1", feet = "Adhe. Gamashes +1"
+		head = "Blistering Sallet +1", neck = "Fotia Gorget", ear1 = "Odr Earring", ear2 = "Chas. Earring +2",
+		body = "Ikenga's Vest", hands = "Meg. Gloves +2", ring1 = "Regal Ring", ring2 = "Epona's Ring",
+		back = gear.Camulus.DA, waist = "Fotia Belt", legs = "Samnuha Tights", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Evisceration'].PDL = set_combine(sets.precast.WS['Evisceration'],
 	{
-		body = "Ikenga's Vest", ear2 = "Mache Earring +1",
 		hands = "Malignance Gloves",
 		feet = "Ikenga's Clogs"
 	})
@@ -227,23 +226,23 @@ function init_gear_sets()
 	sets.precast.WS['Aeolian Edge'] =
 	{
 		ammo = gear.QDbullet,
-		head = "Nyame Helm", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Epaminondas's Ring", ring2 = "Dingir Ring",
-		back = gear.Camulus.AGI_WSD, waist = "Orpheus's Sash", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
+		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
+		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Epaminondas's Ring", ring2 = "Medada's Ring",
+		back = gear.Camulus.AGI_WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
 	sets.precast.WS['Last Stand'] =
 	{
 		ammo = gear.WSbullet,
-		head = "Lanun Tricorne +3", neck = "Comm. Charm +2", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
+		head = "Lanun Tricorne +3", neck = "Comm. Charm +2", ear1 = "Moonshade Earring", ear2 = "Chas. Earring +2",
 		body = "Ikenga's Vest", hands = "Chasseur's Gants +3", ring1 = "Dingir Ring", ring2 = "Regal Ring",
 		back = gear.Camulus.AGI_WSD_Phys, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 	sets.precast.WS['Last Stand'].PDL = set_combine(sets.precast.WS['Last Stand'],
 	{
-		head = "Nyame Helm", neck = "Fotia Gorget",
+		head = "Ikenga's Hat", neck = "Fotia Gorget",
 		ring1 = "Epaminondas's Ring", ring2 = "Sroda Ring",
-		legs = "Ikenga's Trousers", feet = "Nyame Sollerets"
+		legs = "Ikenga's Trousers",
 	})
 
 	sets.precast.WS['Detonator'] = sets.precast.WS['Last Stand']
@@ -262,14 +261,14 @@ function init_gear_sets()
 		ammo = gear.MAbullet,
 		head = "Pixie Hairpin +1", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Dingir Ring", ring2 = "Archon Ring",
-		back = gear.Camulus.AGI_WSD, waist = "Svelt. Gouriz +1", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
+		back = gear.Camulus.AGI_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
 	sets.precast.WS['Wildfire'] =
 	{
 		ammo = gear.MAbullet,
-		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Hermetic Earring",
-		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Dingir Ring", ring2 = "Medada's Ring",
+		head = "Nyame Helm", neck = "Comm. Charm +2", ear1 = "Friomisi Earring", ear2 = "Chas. Earring +2",
+		body = "Lanun Frac +3", hands = "Nyame Gauntlets", ring1 = "Dingir Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Camulus.AGI_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
@@ -277,8 +276,8 @@ function init_gear_sets()
 	{
 		ammo = gear.MAbullet,
 		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Chasseur's Gants +3", ring1 = "Dingir Ring", ring2 = "Epamindondas's Ring",
-		cape = gear.Camulus.AGI_WSD, waist = "Orpheus's Sash", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Sroda Ring", ring2 = "Epamindondas's Ring",
+		cape = gear.Camulus.AGI_WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
 	--Because omen skillchains.
@@ -432,28 +431,28 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged =
 	{
-		head = "Malignance Chapeau", neck = "Combatant's Torque", ear1 = "Crep. Earring", ear2 = "Brutal Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Epona's Ring",
-		back = gear.Camulus.DA, waist = "Carrier's Sash", legs = "Chas. Culottes +3", feet = "Malignance Boots"
+		head = "Dampening Tam", neck = "Iskur Gorget", ear1 = "Brutal Earring", ear2 = "Dedition Earring",
+		body = "Malignance Tabard", hands = gear.adhemar.hands.a, ring1 = "Chirich Ring +1", ring2 = "Epona's Ring",
+		back = gear.Camulus.DA, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
 	}
 	sets.engaged.DT =
 	{
-		head = "Malignance Chapeau", neck = "Combatant's Torque", ear1 = "Crep. Earring", ear2 = "Brutal Earring",
+		head = "Nyame Helm", neck = "Iskur Gorget", ear1 = "Brutal Earring", ear2 = "Balder Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Epona's Ring",
-		back = gear.Camulus.DA, waist = "Carrier's Sash", legs = "Chas. Culottes +3", feet = "Malignance Boots"
+		back = gear.Camulus.DA, waist = "Winbuffet Belt +1", legs = "Chas. Culottes +3", gear.herculean_ta_feet
 	}
 	sets.engaged.MEVA =
 	{
-		head = "Malignance Chapeau", neck = "Warder's Charm +1", ear1 = "Telos Earring", ear2 = "Brutal Earring",
+		head = "Malignance Chapeau", neck = "Warder's Charm +1", ear1 = "Brutal Earring", ear2 = "Balder Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Epona's Ring",
-		back = gear.Camulus.DA, waist = "Windbuffet Belt +1", legs = "Chas. Culottes +3", feet = "Malignance Boots"
+		back = gear.Camulus.DA, waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.engaged.DW =
 	{
-		head = "Malignance Chapeau", neck = "Combatant's Torque", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
-		body = gear.adhemar.body.b, hands = gear.adhemar.hands.a, ring1 = "Petrov Ring", ring2 = "Epona's Ring",
-		back = gear.Camulus.DA, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
+		head = "Dampening Tam", neck = "Iskur Gorget", ear1 = "Eabani Earring", ear2 = "Dedition Earring",
+		body = "Malignance Tabard", hands = gear.adhemar.hands.a, ring1 = "Chirich Ring +1", ring2 = "Epona's Ring",
+		back = gear.Camulus.DA, waist = "Reiki Yotai", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
 	}
 	sets.engaged.DW.Haste30 = set_combine(sets.engaged.DW,
 	{
@@ -471,9 +470,9 @@ function init_gear_sets()
 
 	sets.engaged.DW.DT =
 	{
-		head = "Malignance Chapeau", neck = "Combatant's Torque", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
-		body = "Malignance Tabard", hands = gear.adhemar.hands.a, ring1 = "Defending Ring", ring2 = "Epona's Ring",
-		back = gear.Camulus.DA, waist = "Reiki Yotai", legs = "Samnuha Tights", feet = "Malignance Boots"
+		head = "Nyame Helm", neck = "Iskur Gorget", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Epona's Ring",
+		back = gear.Camulus.DA, waist = "Reiki Yotai", legs = "Chas. Culottes +3", feet = gear.herculean_ta_feet
 	}
 	sets.engaged.DW.DT.Haste30 = set_combine(sets.engaged.DW.DT,
 	{
@@ -492,7 +491,7 @@ function init_gear_sets()
 
 	sets.engaged.DW.MEVA =
 	{
-		head = "Malignance Chapeau", neck = "Combatant's Torque", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
+		head = "Malignance Chapeau", neck = "Warder's Charm", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Epona's Ring",
 		back = gear.Camulus.DA, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
 	}

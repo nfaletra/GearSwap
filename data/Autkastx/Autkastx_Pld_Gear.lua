@@ -348,25 +348,25 @@ function init_gear_sets()
 	sets.idle.DD =
 	{
 		sub = "Blurred Shield +1", ammo = "Coiste Bodhar",
-		head = "Flam. Zucchetto +2", neck = "Vim Torque +1", ear1 = "Telos Earring", ear2 = "Balder Earring +1",
-		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Petrov Ring", ring2 = "Chirich Ring +1",
-		back = gear.Rudianos.TP, waist = "Sailfi Belt +1", legs = "Odyssean Cuisses", feet = "Flam. Gambieras +2"
+		head = "Flam. Zucchetto +2", neck = "Combatant's Torque", ear1 = "Brutal Earring", ear2 = "Dedition Earring",
+		body = "Dagon Breast.", hands = "Sakpata's Gauntlets", ring1 = "Chirich Ring +1", ring2 = "Petrov Ring",
+		back = gear.Rudianos.TP, waist = "Windbuffet Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
 	}
 
 	sets.idle.DW =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flam. Zucchetto +2", neck = "Vim Torque +1", ear1 = "Brutal Earring", ear2 = "Eabani Earring",
-		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Chirich Ring +1", ring2 = "Petrov Ring",
-		back = gear.Rudianos.TP, waist = "Reiki Yotai", legs = "Odyssean Cuisses", feet = "Flam. Gambieras +2"
+		head = "Flam. Zucchetto +2", neck = "Combatant's Torque", ear1 = "Brutal Earring", ear2 = "Dedition Earring",
+		body = "Dagon Breast.", hands = "Sakpata's Gauntlets", ring1 = "Chirich Ring +1", ring2 = "Petrov Ring",
+		back = gear.Rudianos.TP, waist = "Windbuffet Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
 	}
 
 	sets.idle.TwoHanded =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Flam. Zucchetto +2", neck = "Vim Torque +1", ear1 = "Telos Earring", ear2 = "Brutal Earring",
-		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Chirich Ring +1", ring2 = "Petrov Ring",
-		back = gear.Rudianos.TP, waist = "Sailfi Belt +1", legs = "Odyssean Cuisses", feet = "Flam. Gambieras +2"
+		head = "Flam. Zucchetto +2", neck = "Combatant's Torque", ear1 = "Brutal Earring", ear2 = "Dedition Earring",
+		body = "Dagon Breast.", hands = "Sakpata's Gauntlets", ring1 = "Chirich Ring +1", ring2 = "Petrov Ring",
+		back = gear.Rudianos.TP, waist = "Windbuffet Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
 	}
 
 	sets.Kiting = { ring1 = "Shneddick Ring", legs = "Carmine Cuisses +1" }

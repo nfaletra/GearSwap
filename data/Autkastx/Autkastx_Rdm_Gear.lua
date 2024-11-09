@@ -14,7 +14,9 @@ function user_job_setup()
 	gear.Sucellos =
 	{
 		STP = { name = "Sucellos's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%' } },
-		STR_WSD = { name = "Sucellos's Cape", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%' } }
+		STR_WSD = { name = "Sucellos's Cape", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%' } },
+		MND_WSD = { name = "Sucellos's Cape", augments = { 'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'MND+10', 'Weapon skill damage +10%', 'Damage taken-5%' } },
+		MAB = { name = "Sucellos's Cape", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Damage taken-5%' } }
 	}
 
 		-- Additional local binds
@@ -115,7 +117,7 @@ function init_gear_sets()
 	sets.precast.WS['Savage Blade'] =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Nyame Helm", neck = "Rep. Plat. Medal", ear1 = "Sherida Earring Earring", ear2 = "Moonshade Earring",
+		head = "Viti. Chapeau +3", neck = "Rep. Plat. Medal", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Sroda Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Sucellos.STR_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Leth. Houseaux +3"
 	}
@@ -171,7 +173,7 @@ function init_gear_sets()
 		ammo = "Sroda Tathlum",
 		head = "Pixie Hairpin +1", neck = "Dls. Torque +2", ear1 = "Regal Earring", ear2 = "Malignance Earring",
 		body = "Nyame Mail", hands = "Jhakri Cuffs +2", ring1 = "Archon Ring", ring2 = "Epaminondas's Ring",
-		back = gear.Sucellos.STR_WSD, waist = "Orpheus's Sash", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
+		back = gear.Sucellos.MND_WSD, waist = "Orpheus's Sash", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
 	}
 
 	sets.precast.WS['Red Lotus Blade'] =
@@ -179,7 +181,7 @@ function init_gear_sets()
 		ammo = "Sroda Tathlum",
 		head = "Leth. Chappel +3", neck = "Sibyl Scarf", ear1 = "Moonshade Earring", ear2 = "Malignance Earring",
 		body = "Nyame Mail", hands = "Jhakri Cuffs +2", ring1 = "Freke Ring", ring2 = "Epaminondas's Ring",
-		back = gear.Sucellos.STR_WSD, waist = "Orpheus's Sash", legs = "Nyame Mail", feet = "Leth. Houseaux +3"
+		back = gear.Sucellos.MND_WSD, waist = "Orpheus's Sash", legs = "Nyame Mail", feet = "Leth. Houseaux +3"
 	}
 
 	sets.precast.WS['Burning Blade'] = {}
@@ -189,7 +191,7 @@ function init_gear_sets()
 		ammo = "Sroda Tathlum",
 		head = "Leth. Chappel +3", neck = "Fotia Gorget", ear1 = "Moonshade Earring", ear2 = "Malignance Earring",
 		body = "Nyame Mail", hands = "Leth. Ganth. +3", ring1 = "Medada's Ring", ring2 = "Epaminondas's Ring",
-		back = gear.Sucellos.STR_WSD, waist = "Orpheus's Sash", legs = "Nyame Flanchard", feet = "Leth. Houseaux +3"
+		back = gear.Sucellos.MND_WSD, waist = "Orpheus's Sash", legs = "Nyame Flanchard", feet = "Leth. Houseaux +3"
 	}
 
 	sets.precast.WS['Shining Blade'] = {}
@@ -283,7 +285,12 @@ function init_gear_sets()
 		legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	})
 
-	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
+	sets.TreasureHunter = set_combine(sets.TreasureHunter,
+	{
+		ammo = "Per. Lucky Egg",
+		hands = "Volte Bracers",
+		waist = "Chaac Belt", legs = "Volte Hose",
+	})
 
 	-- Midcast Sets
 	-- Gear for Magic Burst mode.
@@ -292,7 +299,7 @@ function init_gear_sets()
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
 		head = "Ea Hat +1", neck = "Sibyl Scarf", ear1 = "Malignance Earring", ear2 = "Regal Earring",
 		body = "Ea Houppe. +1", hands = "Bunzi's Gloves", ring1 = "Freke Ring", ring2 = "Metamor. Ring +1",
-		waist = "Acuity Belt +1", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
+		back = gear.Sucellos.MAB, waist = "Acuity Belt +1", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
 	}
 
 	sets.midcast.FastRecast =
@@ -420,6 +427,7 @@ function init_gear_sets()
 		range = empty, ammo = "Regal Gem",
 		head = "Viti. Chapeau +3", ear1 = "Malignance Earring",
 		body = "Lethargy Sayon +3", ring1 = "Stikini Ring +1",
+		back = gear.Sucellos.MND_WSD
 	})
 	sets.midcast['Poison II'] = sets.midcast['Frazzle III']
 	sets.midcast['Distract III'] = sets.midcast['Frazzle III']
@@ -430,6 +438,7 @@ function init_gear_sets()
 		range = empty, ammo = "Regal Gem",
 		body = "Lethargy Sayon +3",
 		waist = "Luminary Sash",
+		back = gear.Sucellos.MND_WSD
 	})
 	sets.midcast['Slow II'] = sets.midcast.Slow
 	sets.midcast.Paralyze = sets.midcast.Slow
@@ -483,7 +492,7 @@ function init_gear_sets()
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Regal Gem",
 		head = empty, neck = "Dls. Torque +2", ear1 = "Malignance Earring", ear2 = "Snotra Earring",
 		body = "Crepuscular Cloak", hands = "Leth. Ganth. +3", ring1 = "Stikini Ring +1", ring2 = "Metamor. Ring +1",
-		back = "Aurist's Cape +1", waist = "Acuity Belt +1", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
+		back = gear.Sucellos.MAB, waist = "Acuity Belt +1", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
 	}
 
 	sets.midcast['Divine Magic'] = set_combine(sets.midcast['Enfeebling Magic'], {})
@@ -493,7 +502,7 @@ function init_gear_sets()
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
 		head = "Leth. Chappel +3", neck = "Sibyl Scarf", ear1 = "Malignance Earring", ear2 = "Regal Earring",
 		body = "Lethargy Sayon +3", hands = "Leth. Ganth. +3", ring1 = "Freke Ring", ring2 = "Metamor. Ring +1",
-		back = "Aurist's Cape +1", waist = "Acuity Belt +1", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
+		back = gear.Sucellos.MAB, waist = "Acuity Belt +1", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
 	}
 
 	sets.midcast['Dark Magic'] = sets.midcast['Enfeebling Magic']
@@ -503,7 +512,7 @@ function init_gear_sets()
 		main = "Rubicundity", sub = "Ammurapi Shield", range = "Ullr", ammo = empty,
 		head = "Pixie Hairpin +1", neck = "Erra Pendant", ear1 = "Malignance Earring", ear2 = "Digni. Earring",
 		body = "Merlinic Jubbah", hands = gear.merlinic.hands.FC, ring1 = "Evanescence Ring", ring2 = "Archon Ring",
-		waist = "Fucho-no-obi", legs = "Merlinic Shalwar", feet = "Merlinic Crackows"
+		back = gear.Sucellos.MAB, waist = "Fucho-no-obi", legs = "Merlinic Shalwar", feet = "Merlinic Crackows"
 	}
 
 	sets.midcast.Aspir = sets.midcast.Drain
@@ -580,25 +589,28 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Dedition Earring",
-		body = "Malignance Tabard", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
+		head = "Bunzi's Hat", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Dedition Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
 		back = gear.Sucellos.STP, waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
-
-	sets.engaged.DT = set_combine(sets.engaged, { ring2 = "Defending Ring" })
+	sets.engaged.DT = set_combine(sets.engaged,
+	{
+		ammo = "Crepuscular Pebble",
+		ring2 = "Petrov Ring"
+	})
 
 	sets.engaged.DW =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Eabani Earring",
-		body = "Malignance Tabard", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
+		head = "Bunzi's Hat", neck = "Anu Torque", ear1 = "Eabani Earring", ear2 = "Dedition Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Chirich Ring +1", ring2 = "Crepuscular Ring",
 		back = gear.Sucellos.STP, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 	sets.engaged.DW.DT = set_combine(sets.engaged.DW, { ring2 = "Defending Ring" })
 
 	sets.engaged.DW.Haste30 = set_combine(sets.engaged.DW,
 	{
-		head = "Bunzi's Hat", ear1 = "Suppanomimi",
+		ear1 = "Suppanomimi",
 		feet = "Taeon Boots"
 	})
 	sets.engaged.DW.DT.Haste30 = set_combine(sets.engaged.DW.Haste30, { neck = "Loricate Torque +1", ring2 = "Defending Ring" })

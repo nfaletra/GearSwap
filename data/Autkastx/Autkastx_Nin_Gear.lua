@@ -753,14 +753,14 @@ function init_gear_sets()
 	sets.weapons.GKT = { main = "Hachimonji", sub = "Bloodrain Strap" }
 	sets.weapons.Karambit = { main = "Karambit" }
 	sets.weapons.Tank = { main = "Fudo Masamune", sub = "Tsuru" }
-	sets.weapons.ProcDagger = { main = "Ceremonial Dagger", sub = "Debahocho" }
-	sets.weapons.ProcSword = { main = "Twinned Blade", sub = "Debahocho" }
+	sets.weapons.ProcDagger = { main = "Ceremonial Dagger", sub = "Yagyu Short. +1" }
+	sets.weapons.ProcSword = { main = "Twinned Blade", sub = "Yagyu Short. +1" }
 	sets.weapons.ProcGreatSword = { main = "Ophidian Sword", sub = "Bloodrain Strap" }
 	sets.weapons.ProcScythe = { main = "Hoe", sub = "Bloodrain Strap" }
 	sets.weapons.ProcPolearm = { main = "Iapetus", sub = "Bloodrain Strap" }
 	sets.weapons.ProcGreatKatana = { main = "Mutsunokami", sub = "Bloodrain Strap" }
-	sets.weapons.ProcKatana = { main = "Yagyu Short. +1", sub = "Debahocho" }
-	sets.weapons.ProcClub = { main = "Thunder Hammer", sub = "Debahocho" }
+	sets.weapons.ProcKatana = { main = "Yagyu Short. +1", sub = "Ceremonial Dagger" }
+	sets.weapons.ProcClub = { main = "Thunder Hammer", sub = "Ceremonial Dagger" }
 	sets.weapons.ProcStaff = { main = "Ram Staff", sub = "Bloodrain Strap" }
 end
 

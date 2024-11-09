@@ -8,11 +8,7 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.Weapons:options('Aeneas', 'Tauret')
-<<<<<<< HEAD
-	state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWEarrings','DWMax'}
-=======
 	state.ExtraMeleeMode = M{ ['description'] = 'Extra Melee Mode', 'None' }
->>>>>>> f6adac25579130f97a94f486dee704a0ffe4cdaa
 
 	gear.senuna_tp = { name = "Senuna's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } }
 	gear.wsd_jse_back = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
