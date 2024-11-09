@@ -210,8 +210,8 @@ function init_gear_sets()
 	sets.idle =
 	{
 		ammo = "Aurgelmir Orb",
-		head = "Adhemar Bonnet +1", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
-		body = "Mummu Jacket +2", hands = "Adhemar Wrist. +1", ring1 = "Rajas Ring", ring2 = "Keen Ring",
+		head = "Adhemar Bonnet +1", neck = "Anu Torque", ear1 = "Brutal Earring", ear2 = "Dedition Earring",
+		body = "Mummu Jacket +2", hands = "Adhemar Wrist. +1", ring1 = "Chirich Ring +1", ring2 = "Petrov Ring",
 		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Meg. Chausses +2", feet = "Horos Toe Shoes +1"
 	}
 
@@ -251,8 +251,8 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		ammo = "Aurgelmir Orb",
-		head = "Adhemar Bonnet +1", neck = "Defiant Collar", ear1 = "Brutal Earring", ear2 = "Suppanomimi",
-		body = "Mummu Jacket +2", hands = "Adhemar Wrist. +1", ring1 = "Rajas Ring", ring2 = "Keen Ring",
+		head = "Adhemar Bonnet +1", neck = "Anu Torque", ear1 = "Brutal Earring", ear2 = "Dedition Earring",
+		body = "Mummu Jacket +2", hands = "Adhemar Wrist. +1", ring1 = "Chirich Ring +1", ring2 = "Petrov Ring",
 		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Meg. Chausses +2", feet = "Horos Toe Shoes +1"
 	}
 
