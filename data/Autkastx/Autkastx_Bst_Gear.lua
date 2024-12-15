@@ -111,7 +111,7 @@ function init_gear_sets()
 		body = "Sacro Breastplate", hands = "Leyline Gloves", ring1 = "Medada's Ring", ring2 = "Rahab Ring",
 		back = gear.Artio.FC, waist = "Flume Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
-	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck = "Magoraga Beads" })
+	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
 		-- MIDCAST SETS
 	sets.midcast.FastRecast = set_combine(sets.precast.FC, {})

@@ -143,7 +143,7 @@ function init_gear_sets()
 		back = gear.Camulus.FC, waist = "Flume Belt +1", legs = "Rawhide Trousers", feet = "Carmine Greaves +1"
 	}
 
-	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck = "Magoraga Beads", body = "Passion Jacket" })
+	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { body = "Passion Jacket" })
 
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, { ear2 = "Mendi. Earring" })
 
@@ -183,7 +183,7 @@ function init_gear_sets()
 	{
 		ammo = gear.WSbullet,
 		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Brutal Earring", ear2 = "Chas. Earring +2",
-		body = "Ikenga's Vest" hands = "Malignance Gloves", ring1 = "Sroda Ring", ring2 = "Metamor. Ring +1",
+		body = "Ikenga's Vest", hands = "Malignance Gloves", ring1 = "Sroda Ring", ring2 = "Metamor. Ring +1",
 		back = gear.Camulus.STR_WSD, waist = "Fotia Belt", legs = "Chas. Culottes +3", feet = "Nyame Sollerets"
 	}
 
@@ -285,7 +285,7 @@ function init_gear_sets()
 	{
 		head = "Meghanada Visor +2", neck = "Loricate Torque +1", ear1 = "Telos Earring", ear2 = "Crep. Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Regal Ring",
-		back = "Moonlight Cape", waist = "Flume Belt +1", legs = "Meg. Chausses +2", feet = "Meg. Jam. +2"
+		back = gear.Camulus.TP, waist = "Flume Belt +1", legs = "Meg. Chausses +2", feet = "Meg. Jam. +2"
 	}
 
 	sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS['Leaden Salute'],
@@ -304,7 +304,7 @@ function init_gear_sets()
 	{
 		head = "Carmine Mask +1", neck= "Baetyl Pendant", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = "Dread Jupon", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Lebeche Ring",
-		back = "Moonlight Cape", waist = "Flume Belt +1", legs = "Rawhide Trousers", feet = "Carmine Greaves +1"
+		back = gear.Camulus.FC, waist = "Flume Belt +1", legs = "Rawhide Trousers", feet = "Carmine Greaves +1"
 	}
 
 	sets.Self_Healing = { waist = "Gishdubar Sash" }
@@ -491,7 +491,7 @@ function init_gear_sets()
 
 	sets.engaged.DW.MEVA =
 	{
-		head = "Malignance Chapeau", neck = "Warder's Charm", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
+		head = "Malignance Chapeau", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Epona's Ring",
 		back = gear.Camulus.DA, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
 	}

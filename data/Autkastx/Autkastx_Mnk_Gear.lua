@@ -88,10 +88,7 @@ function init_gear_sets()
 		legs = "Limbo Trousers"
 	}
 
-	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC,
-	{
-		neck = "Magoraga Beads"
-	})
+	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
@@ -247,7 +244,7 @@ function init_gear_sets()
 	sets.precast.WS['Shoulder Tackle'] =
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Malignance Chapeau", neck = "Moonlight Necklace", ear1 = "Crep. Earring", ear2 = "Hermetic Earring",
+		head = "Malignance Chapeau", neck = "Sanctity Necklace", ear1 = "Crep. Earring", ear2 = "Hermetic Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
 		back = gear.Segomo.INT_WSD, waist = "Acuity Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
@@ -277,7 +274,7 @@ function init_gear_sets()
 	sets.precast.WS['Shell Crusher'] =
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Malignance Chapeau", neck = "Moonlight Necklace", ear1 = "Crep. Earring", ear2 = "Hermetic Earring",
+		head = "Malignance Chapeau", neck = "Sanctity Necklace", ear1 = "Crep. Earring", ear2 = "Hermetic Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
 		back = gear.Segomo.INT_WSD, waist = "Acuity Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
@@ -323,7 +320,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum +1",
 		head = "Malignance Chapeau", neck = "Loricate Torque +1", ear1 = "Infused Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Chirich Ring +1", ring2 = "Defending Ring",
-		back = "Moonlight Cape", waist = "Moonbow Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.idle.DT = sets.idle
@@ -341,32 +338,7 @@ function init_gear_sets()
 		ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1"
 	})
 
-	-- Defense sets
-	sets.defense.PDT =
-	{
-		ammo = "Staunch Tathlum +1",
-		head = "Nyame Helm", neck = "Warder's Charm +1",ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
-		back = "Moonlight Cape", waist = "Engraved Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
-	}
-
-	sets.defense.MDT =
-	{
-		ammo = "Staunch Tathlum +1",
-		head = "Nyame Helm", neck = "Warder's Charm +1",ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
-		back = "Moonlight Cape", waist = "Engraved Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
-	}
-		
-	sets.defense.MEVA =
-	{
-		ammo = "Staunch Tathlum +1",
-		head = "Nyame Helm", neck = "Warder's Charm +1",ear1 = "Tuisto Earring", ear2 = "Odnowa Earring +1",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
-		back = "Moonlight Cape", waist = "Engraved Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
-	}
-
-	sets.Kiting = { ring1 = "Shneddick Ring" }
+	sets.Kiting = { feet = "Herald's Gaiters" }
 
 	-- Engaged sets
 

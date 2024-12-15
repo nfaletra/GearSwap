@@ -88,7 +88,7 @@ function init_gear_sets()
 	sets.precast.WS =
 	{
 		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Shukuyu Ring", ring2 = "Rufescent Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Shukuyu Ring", ring2 = "Epaminondas's Ring",
 		back = "Nantosuelta's Cape", waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets",
 	}
 
@@ -104,7 +104,7 @@ function init_gear_sets()
 	sets.precast.WS['Judgment'] =
 	{
 		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Shukuyu Ring", ring2 = "Rufescent Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Shukuyu Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Nantosuelta.MAB, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -118,14 +118,14 @@ function init_gear_sets()
 	sets.precast.WS['Realmrazer'] =
 	{
 		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Regal Earring", ear2 = "Telos Earring",
-		body = "Nyame Mail", hands = "Gazu Bracelets +1", ring1 = "Metamor. Ring +1", ring2 = "Rufescent Ring",
+		body = "Nyame Mail", hands = "Gazu Bracelets +1", ring1 = "Metamor. Ring +1", ring2 = "Epaminondas's Ring",
 		back = gear.Nantosuelta.MAB, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['Hexa Strike'] =
 	{
 		head = "Blistering Sallet +1", neck = "Fotia Gorget", ear1 = "Regal Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Gazu Bracelets +1", ring1 = "Shukuyu Ring", ring2 = "Rufescent Ring",
+		body = "Nyame Mail", hands = "Gazu Bracelets +1", ring1 = "Shukuyu Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Nantosuelta.MAB, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -147,7 +147,7 @@ function init_gear_sets()
 	sets.precast.WS['Shell Crusher'] =
 	{
 		head = "Nyame Helm", neck = "Erra Pendant", ear1 = "Crepuscular Earring", ear2 = "Digni. Earring",
-		body = "Nyame Mail", hands = "Gazu Bracelets +1", ring1 = "Metamor. Ring +1", ring2 = "Etana Ring",
+		body = "Nyame Mail", hands = "Gazu Bracelets +1", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back = gear.Nantosuelta.MAB, waist = "Eschan Stone", legs = "Agwu's Slops", feet = "Agwu's Pigaches"
 	}
 

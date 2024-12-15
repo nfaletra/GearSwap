@@ -18,7 +18,7 @@ function user_job_setup()
 		FC = { name = "Rudianos's Mantle", augments = { 'HP+60', '"Fast Cast"+10' } },
 		TP = { name = "Rudianos's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } },
 		WSD = { name = "Rudianos's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%' } },
-		Emnity = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', 'Enmity+10', 'Phys. dmg. taken-10%' } },
+		Enmity = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', 'Enmity+10', 'Phys. dmg. taken-10%' } },
 		Shield = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'Chance of successful block +5' } },
 		Counter = { name = "Rudianos's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'System: 1 ID: 640 Val: 4' } }
 	}
@@ -30,6 +30,7 @@ function user_job_setup()
 	send_command('bind !backspace input /ja "Sentinel" <me>')
 	send_command('bind @= input /ja "Chivalry" <me>')
 	send_command('bind != input /ja "Palisade" <me>')
+	send_command('bind !pause gs c toggle AutoSubMode') --Automatically uses sublimation.
 	send_command('bind ^delete input /ja "Provoke" <stnpc>')
 	send_command('bind !delete input /ma "Cure IV" <stal>')
 	send_command('bind @delete input /ma "Flash" <stnpc>')
@@ -56,7 +57,7 @@ function init_gear_sets()
 		ammo = "Sapience Orb",
 		head = "Loess Barbuta +1", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
 		body = "Souv. Cuirass +1", hands = "Cab. Gauntlets +3", ring1 = "Eihwaz Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.Rudianos.Enmity, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Chev. Sabatons +2"
+		back = gear.Rudianos.Enmity, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Chev. Sabatons +3"
 	}
 
 	sets.SIRD =
@@ -78,7 +79,7 @@ function init_gear_sets()
 		body = "Rev. Surcoat +3", hands = "Cab. Gauntlets +3", ring2 = "Supershear Ring",
 	})
 	sets.precast.JA['Fealty'] = set_combine(sets.Enmity, { body = "Cab. Surcoat +3" })
-	sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, { feet = "Chev. Sabatons +2" })
+	sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, { feet = "Chev. Sabatons +3" })
 	sets.precast.JA['Cover'] = set_combine(sets.Enmity, { head = "Rev. Coronet +3", body = "Cab. Surcoat +3" })
 
 	-- add mnd for Chivalry
@@ -87,7 +88,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum +1",
 		head = "Sakpata's Helm", neck = "Kgt. Beads +2", ear1 = "Odnowa Earring +1", ear2 = "Etiolation Earring",
 		body = "Rev. Surcoat +3", hands = "Cab. Gauntlets +3", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
-		back = "Moonlight Cape", waist = "Luminary Sash", legs = "Souv. Diechlings +1", feet = "Carmine Greaves +1"
+		back = gear.Rudianos.Enmity, waist = "Luminary Sash", legs = "Souv. Diechlings +1", feet = "Carmine Greaves +1"
 	}
 
 	sets.precast.JA['Shield Bash'] = set_combine(sets.Enmity, { hands = "Cab. Gauntlets +3" })
@@ -118,7 +119,7 @@ function init_gear_sets()
 		ammo = "Sapience Orb",
 		head = "Carmine Mask +1", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
 		body = "Rev. Surcoat +3", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.Rudianos.FC, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Chev. Sabatons +2"
+		back = gear.Rudianos.FC, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Chev. Sabatons +3"
 	}
 
 	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, { waist = "Siegel Sash" })
@@ -183,7 +184,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Pixie Hairpin +1", neck = "Baetyl Pendant", ear1 = "Thrud Earring", ear2 = "Friomisi Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Epaminondas's Ring",
-		back = "Moonlight Cape", waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Rudianos.WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['Atonement'] =
@@ -191,7 +192,7 @@ function init_gear_sets()
 		ammo = "Sapience Orb",
 		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Trux Earring", ear2 = "Moonshade Earring",
 		body = "Souv. Cuirass +1", hands = "Cab. Gauntlets +3", ring1 = "Eihwaz Ring", ring2 = "Supershear Ring",
-		back = gear.Rudianos.Enmity, waist = "Fotia Belt", legs = "Souv. Diechlings +1", feet = "Chev. Sabatons +2"
+		back = gear.Rudianos.Enmity, waist = "Fotia Belt", legs = "Souv. Diechlings +1", feet = "Chev. Sabatons +3"
 	}
 
 	sets.precast.WS['Impulse Drive'] =
@@ -243,7 +244,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum +1",
 		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Etiolation Earring",
 		body = "Rev. Surcoat +3", hands = "Regal Gauntlets", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
-		back = gear.Rudianos.FC, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Chev. Sabatons +2"
+		back = gear.Rudianos.FC, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Chev. Sabatons +3"
 	}
 	sets.midcast.Reprisal.SIRD = set_combine(sets.midcast.Reprisal, sets.SIRD, {})
 
@@ -255,7 +256,7 @@ function init_gear_sets()
 		ammo = "Sapience Orb",
 		head = "Carmine Mask +1", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
 		body = "Shab. Cuirass +1", hands = "Regal Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
-		back = "Moonlight Cape", waist = "Olympus Sash", legs = "Carmine Cuisses +1", feet = "Carmine Greaves +1"
+		back = gear.Rudianos.FC, waist = "Olympus Sash", legs = "Carmine Cuisses +1", feet = "Carmine Greaves +1"
 	}
 	sets.midcast['Enhancing Magic'].SIRD = set_combine(sets.midcast['Enhancing Magic'], sets.SIRD, {})
 
@@ -297,7 +298,7 @@ function init_gear_sets()
 		sub = "Priwen", ammo = "Staunch Tathlum +1",
 		head = "Chev. Armet +3", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Chev. Earring +1",
 		body = "Sakpata's Breastplate", hands = "Macabre Gauntlets +1", ring1 = "Eihwaz Ring", ring2 = "Shadow Ring",
-		back = gear.Rudianos.Shield, waist = "Carrier's Sash", legs = "Chev. Cuisses +2", feet = "Rev. Leggings +3"
+		back = gear.Rudianos.Shield, waist = "Carrier's Sash", legs = "Chev. Cuisses +3", feet = "Rev. Leggings +3"
 	}
 
 	-- Burtgang / Srivatsa
@@ -306,7 +307,7 @@ function init_gear_sets()
 		sub = "Srivatsa", ammo = "Staunch Tathlum +1",
 		head = "Chev. Armet +3", neck = "Combatant's Torque", ear1 = "Foresti Earring", ear2 = "Chev. Earring +1",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Eihwaz Ring", ring2 = "Shadow Ring",
-		back = gear.Rudianos.Shield, waist = "Carrier's Sash", legs = "Chev. Cuisses +2", feet = "Rev. Leggings +3"
+		back = gear.Rudianos.Shield, waist = "Carrier's Sash", legs = "Chev. Cuisses +3", feet = "Rev. Leggings +3"
 	}
 
 	-- Burtgang / Priwen (still capped block rate against 139/140 content at ML30+)
@@ -315,7 +316,7 @@ function init_gear_sets()
 		sub = "Priwen", ammo = "Staunch Tathlum +1",
 		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
 		body = "Sakpata's Breastplate", hands = "Macabre Gaunt. +1", ring1 = "Eihwaz Ring", ring2 = "Shadow Ring",
-		back = gear.Rudianos.Shield, waist = "Carrier's Sash", legs = "Chev. Cuisses +2", feet = "Sakpata's Leggings"
+		back = gear.Rudianos.Shield, waist = "Carrier's Sash", legs = "Chev. Cuisses +3", feet = "Sakpata's Leggings"
 	}
 
 	-- MDT
@@ -324,7 +325,7 @@ function init_gear_sets()
 		sub = "Aegis", ammo = "Staunch Tathlum +1",
 		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
 		body = "Rev. Surcoat +3", hands = "Sakpata's Gauntlets", ring1 = "Eihwaz Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.Rudianos.Counter, waist = "Carrier's Sash", legs = "Chev. Cuisses +2", feet = "Sakpata's Leggings"
+		back = gear.Rudianos.Counter, waist = "Carrier's Sash", legs = "Chev. Cuisses +3", feet = "Sakpata's Leggings"
 	}
 
 	-- Burtgang - Highest Magic Protection
@@ -333,16 +334,16 @@ function init_gear_sets()
 		sub = "Aegis", ammo = "Staunch Tathlum +1",
 		head = "Sakpata's Helm", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
 		body = "Sacro Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.Rudianos.Counter, waist = "Carrier's Sash", legs = "Chev. Cuisses +2", feet = "Sakpata's Leggings"
+		back = gear.Rudianos.Counter, waist = "Carrier's Sash", legs = "Chev. Cuisses +3", feet = "Sakpata's Leggings"
 	}
 
 	-- MP Restore
-	sets.idle.Ochain =
+	sets.idle.Duban =
 	{
-		sub = "Ochain", ammo = "Staunch Tathlum +1",
+		sub = "Duban", ammo = "Staunch Tathlum +1",
 		head = "Chev. Armet +3", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
 		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.Rudianos.Enmity, waist = "Flume Belt +1", legs = "Chev. Cuisses +2", feet = "Rev. Leggings +3"
+		back = gear.Rudianos.Enmity, waist = "Flume Belt +1", legs = "Chev. Cuisses +3", feet = "Rev. Leggings +3"
 	}
 
 	sets.idle.DD =
@@ -437,7 +438,7 @@ function init_gear_sets()
 	-- Custom buff sets
 	--------------------------------------
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
-	sets.buff.Sleep = { neck = "Vim Torque +1" }
+	sets.buff.Sleep = {}
 	sets.buff.Cover = { body = "Cab. Surcoat +3" }
 end
 

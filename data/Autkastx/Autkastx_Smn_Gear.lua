@@ -290,7 +290,7 @@ function init_gear_sets()
 		main = "Mpaca's Staff", sub = "Khonsu", ammo = "Staunch Tathlum +1",
 		head = "Beckoner's Horn +2", neck = "Smn. Collar +2", ear1 = "Eabani Earring", ear2 = "Beck. Earring +1",
 		body = "Shomonjijoe +1", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Stikini Ring +1",
-		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Baayami Sabots +1"
+		back = gear.Campestres.Idle, waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Baayami Sabots +1"
 	}
 
 	-- perp costs:

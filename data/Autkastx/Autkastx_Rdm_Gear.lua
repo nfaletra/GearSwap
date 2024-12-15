@@ -64,7 +64,7 @@ function init_gear_sets()
 	sets.precast.FC = 
 	{
 		main = "Crocea Mors", sub = "Theullaic Ecu +1", ammo = "Impatiens",
-		head = "Atrophy Chapeau +2", neck = "Sanctity Necklace", ear1 = "Malignance Earring", ear2 = "Lethargy Earring +1",
+		head = "Atrophy Chapeau +2", neck = "Voltsurge Torque", ear1 = "Malignance Earring", ear2 = "Lethargy Earring +1",
 		body = "Viti. Tabard +3", hands = "Leyline Gloves", ring1 = "Lebeche Ring", ring2 = "Medada's Ring",
 		back = "Perimede Cape", waist = "Witful Belt", legs = "Kaykaus Tights +1", feet = "Carmine Greaves +1"
 	}
@@ -157,7 +157,7 @@ function init_gear_sets()
 	sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS,
 	{
 		head = "Viti. Chapeau +3", ear2 = "Brutal Earring",
-		body = "Ayanmo Corazza +2", hands = "Bunzi's Hands", ring1 = "Rufescent Ring", ring2 = "Freke Ring",
+		body = "Ayanmo Corazza +2", hands = "Bunzi's Hands", ring1 = "Epaminondas's Ring", ring2 = "Freke Ring",
 		legs = "Vitiation Tights +3"
 	})
 	sets.precast.WS['Requiescat'].PDL = set_combine(sets.precast.WS['Requiescat'],
@@ -200,7 +200,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Malignance Chapeau", neck = "Dls. Torque +2", ear1 = "Regal Earring", ear2 = "Malignance Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Rufescent Ring", ring2 = "Metamor. Ring +1",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Medada's Ring", ring2 = "Metamor. Ring +1",
 		back = "Aurist's Cape +1", waist = "Acuity Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	})
 
@@ -268,7 +268,7 @@ function init_gear_sets()
 	sets.precast.WS['Flaming Arrow'] = set_combine(sets.precast.WS,
 	{
 		neck = "Sanctity Necklace", ear1 = "Friomisi Earring", ear2 = "Telos Earring",
-		ring1 = "Rufescent Ring", ring2 = "Medada's Ring",
+		ring1 = "Epaminondas's Ring", ring2 = "Medada's Ring",
 		waist = "Eschan Stone"
 	})
 
@@ -304,7 +304,7 @@ function init_gear_sets()
 
 	sets.midcast.FastRecast =
 	{
-		head = "Atrophy Chapeau +2", neck = "Sanctity Necklace", ear1 = "Malignance Earring", ear2 = "Leth. Earring +1",
+		head = "Atrophy Chapeau +2", neck = "Voltsurge Torque", ear1 = "Malignance Earring", ear2 = "Leth. Earring +1",
 		body = "Vitiation Tabard +3", hands = "Regal Cuffs", ring1 = "Mephitas's Ring +1", ring2 = "Medada's Ring",
 		waist = "Witful Belt", feet = "Carmine Greaves +1"
 	}
@@ -534,7 +534,7 @@ function init_gear_sets()
 	{
 		head = "Gende. Caubeen +1", neck = "Unmoving Collar +1", ear1 = "Gifted Earring", ear2 = "Mendi. Earring",
 		body = "Viti. Tabard +3", hands = "Kaykaus Cuffs +1", ring1 = "Gelatinous Ring +1", ring2 = "Meridian Ring",
-		back = "Moonlight Cape", waist = "Luminary Sash", legs = "Carmine Cuisses +1", feet = "Kaykaus Boots +1"
+		back = "Swith Cape +1", waist = "Luminary Sash", legs = "Carmine Cuisses +1", feet = "Kaykaus Boots +1"
 	}
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
@@ -547,7 +547,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle =
 	{
-		main = "Daybreak", sub = "Sacro Bulwark", ammo = "Staunch Tathlum +1",
+		main = "Sakpata's Sword", sub = "Sacro Bulwark", ammo = "Staunch Tathlum +1",
 		head = "Viti. Chapeau +3", neck = "Warder's Charm +1", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
 		body = "Lethargy Sayon +3", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Mephitas's Ring +1",
 		back = gear.Sucellos.STP, waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"

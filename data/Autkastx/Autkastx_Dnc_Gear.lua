@@ -111,7 +111,7 @@ function init_gear_sets()
 		body="Dread Jupon",hands="Leyline Gloves",ring1="Lebeche Ring",ring2="Prolix Ring",
 		legs="Rawhide Trousers"}
 
-    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
+    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
        
     -- Weaponskill sets

@@ -68,9 +68,9 @@ function init_gear_sets()
 	--------------------------------------
 
 	-- Weapons sets
-	sets.weapons.Maxentius = { main = "Kaja Rod", sub = "Genmei Shield" }
+	sets.weapons.Maxentius = { main = "Maxentius", sub = "Genmei Shield" }
 	sets.weapons.Daybreak = { main = "Daybreak", sub = "Genmei Shield" }
-	sets.weapons.DualMaxentius = { main = "Kaja Rod", sub = "Eminent Wand" }
+	sets.weapons.DualMaxentius = { main = "Maxentius", sub = "Eminent Wand" }
 	sets.weapons.DualDaybreak = { main = "Daybreak", sub = "C. Palug Hammer" }
 	
 	sets.buff.Sublimation = { waist = "Embla Sash" }

@@ -77,7 +77,7 @@ function init_gear_sets()
 	{
 		head = "Rune. Bandeau +2", neck = "Futhark Torque +2", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
 		body = "Runeist Coat +3", hands = "Runeist Mitons +1", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
-		back = "Moonlight Cape", waist = "Kasiri Belt", legs = "Futhark Trousers +3", feet = "Carmine Greaves +1"
+		back = gear.Ogma.Parry, waist = "Kasiri Belt", legs = "Futhark Trousers +3", feet = "Carmine Greaves +1"
 	}
 
 	sets.precast.JA['Lunge'] =
@@ -136,7 +136,7 @@ function init_gear_sets()
 		ring1 = "Moonlight Ring",
 		waist = "Siegel Sash", legs = "Futhark Trousers +3"
 	})
-	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck = "Magoraga Beads" })
+	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
 
 	-- Weaponskill sets
@@ -167,7 +167,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Agwu's Cap", neck = "Sanctity Necklace", ear1 = "Digni. Earring", ear2 = "Crep. Earring",
-		body = "Erilaz Surcoat +2", hands = "Agwu's Gages", ring1 = "Etana Ring", ring2 = "Metamor. Ring +1",
+		body = "Erilaz Surcoat +2", hands = "Agwu's Gages", ring1 = "Medada's Ring", ring2 = "Metamor. Ring +1",
 		back = gear.Ogma.Idle, waist = "Eschan Stone", legs = "Agwu's Slops", feet = "Agwu's Pigaches"
 	}
 
@@ -188,10 +188,10 @@ function init_gear_sets()
 	--------------------------------------
 	-- Midcast sets
 	--------------------------------------
-	sets.SIRD = -- 104% SIRD
+	sets.SIRD = -- 94% SIRD
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Erilaz Galea +3", neck = "Moonlight Necklace", ear1 = "Magnetic Earring",
+		head = "Erilaz Galea +3", neck = "Loricate Torque +1", ear1 = "Magnetic Earring",
 		hands = "Regal Gauntlets",
 		gear.Ogma.FC, waist = "Rumination Sash", legs = "Carmine Cuisses +1",
 	}
@@ -208,7 +208,7 @@ function init_gear_sets()
 	{
 		head = "Erilaz Galea +3", neck = "Incanter's Torque", ear1 = "Odnowa Earring +1", ear2 = "Mimir Earring",
 		body = "Nyame Mail", hands = "Runeist Mitons +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
-		back = "Moonlight Cape", waist = "Olympus Sash", legs = "Futhark Trousers +3",
+		back = gear.Ogma.FC, waist = "Olympus Sash", legs = "Futhark Trousers +3",
 	})
 	sets.midcast['Enhancing Magic'].SIRD = set_combine(sets.midcast['Enhancing Magic'], sets.SIRD, {})
 
@@ -235,7 +235,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum +1",
 		head = "Fu. Bandeau +3",
 		body = "Taeon Tabard", hands = "Taeon Gloves", ring2 = "Gelatinous Ring +1",
-		back = "Moonlight Cape", legs = "Taeon Tights", feet = "Taeon Boots"
+		back = gear.Ogma.FC, legs = "Taeon Tights", feet = "Taeon Boots"
 	})
 	sets.midcast['Phalanx'].SIRD = set_combine(sets.midcast['Phalanx'], sets.SIRD, {})
 

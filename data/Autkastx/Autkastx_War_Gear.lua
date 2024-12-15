@@ -64,7 +64,7 @@ function init_gear_sets()
 	sets.precast.FC = {ammo="Impatiens",
 		head="Carmine Mask +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
 		body="Odyss. Chestplate",hands="Leyline Gloves",ring1="Lebeche Ring",ring2="Prolix Ring",
-		back="Moonlight Cape",waist="Flume Belt +1",legs=gear.odyssean_fc_legs,feet="Odyssean Greaves"}
+		back = gear.Cichol.TP,waist="Flume Belt +1",legs=gear.odyssean_fc_legs,feet="Odyssean Greaves"}
 	
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
@@ -72,7 +72,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {ammo="Staunch Tathlum +1",
 		head="Carmine Mask +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
 		body="Odyss. Chestplate",hands="Leyline Gloves",ring1="Lebeche Ring",ring2="Prolix Ring",
-		back="Moonlight Cape",waist="Tempus Fugit",legs=gear.odyssean_fc_legs,feet="Odyssean Greaves"}
+		back = gear.Cichol.TP,waist="Tempus Fugit",legs=gear.odyssean_fc_legs,feet="Odyssean Greaves"}
 	
 	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, {back="Mujin Mantle"})
 
@@ -96,7 +96,7 @@ function init_gear_sets()
 	{
 		ammo = "Knobkierrie",
 		head = "Agoge Mask +3", neck = "War. Beads +2", ear1 = "Moonshade Earring", ear2 = "Thrud Earring",
-		body = "Nyame Mail", hands = "Boii Mufflers +2", ring1 = "Beithir Ring", ring2 = "Regal Ring",
+		body = "Nyame Mail", hands = "Boii Mufflers +3", ring1 = "Beithir Ring", ring2 = "Regal Ring",
 		back = gear.Cichol.STR_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Savage Blade'].PDL = set_combine(sets.precast.WS['Savage Blade'],
@@ -138,7 +138,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Agoge Mask +3", neck = "War. Beads +2", ear1 = "Schere Earring", ear2 = "Lugra Earring +1",
 		body = "Sakpata's Breastplate", hands = "Boii Mufflers +3", ring1 = "Niqmaddu Ring", ring2 = "Regal Ring",
-		back = gear.Cichol.STR_WSD, waist = "Sailfi Belt +1", legs = "Boii Cuisses", feet = "Nyame Sollerets"
+		back = gear.Cichol.STR_WSD, waist = "Sailfi Belt +1", legs = "Boii Cuisses +3", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Circle Blade'].PDL = set_combine(sets.precast.WS['Circle Blade'],
 	{
@@ -158,7 +158,7 @@ function init_gear_sets()
 		body = "Sakpata's Breastplate", hands = "Boii Mufflers +3", ring1 = "Niqmaddu Ring", ring2 = "Regal Ring",
 		back = gear.Cichol.TP, waist = "Fotia Belt", legs = "Boii Cuisses +3", feet = "Sakpata's Leggings"
 	}
-	sets.precast.WS['Swift Blade'].PDL = set_combine(set.precast.WS['Swift Blade'],
+	sets.precast.WS['Swift Blade'].PDL = set_combine(sets.precast.WS['Swift Blade'],
 	{
 		head = "Sakpata's Helm", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Boii Earring +1",
 		hands = "Sakpata's Gauntlets", ring2 = "Sroda Ring",
@@ -176,7 +176,7 @@ function init_gear_sets()
 	{
 		ammo = "Knobkierrie",
 		head = "Agoge Mask +3", neck = "War. Beads +2", ear1 = "Moonshade Earring", ear2 = "Thrud Earring",
-		body = "Nyame Mail", hands = "Boii Mufflers +2", ring1 = "Niqmaddu Ring", ring2 = "Regal Ring",
+		body = "Nyame Mail", hands = "Boii Mufflers +3", ring1 = "Niqmaddu Ring", ring2 = "Regal Ring",
 		back = gear.Cichol.STR_WSD, waist = "Sailfi Belt +1", legs = "Boii Cuisses +3", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Upheaval'].PDL = set_combine(sets.precast.WS['Upheaval'],
@@ -202,7 +202,7 @@ function init_gear_sets()
 	{
 		ammo = "Yetshila +1",
 		head = "Boii Mask +3", neck = "War. Beads +2", ear1 = "Moonshade Earring", ear2 = "Boii Earring +1",
-		body = "Sakpata's Plate", hands = "Boii Mufflers +2", ring1 = "Niqmaddu Ring", ring2 = "Begrudging Ring",
+		body = "Sakpata's Plate", hands = "Boii Mufflers +3", ring1 = "Niqmaddu Ring", ring2 = "Begrudging Ring",
 		back = gear.Cichol.STR_WSD, waist = "Sailfi Belt +1", legs = "Boii Cuisses +3", feet = "Boii Calligae +3"
 	}
 	sets.precast.WS['Ukko\'s Fury'].PDL = set_combine(sets.precast.WS['Ukko\'s Fury'],
@@ -214,7 +214,7 @@ function init_gear_sets()
 	{
 		ammo = "Knobkierrie",
 		head = "Agoge Mask +3", neck = "War. Beads +2", ear1 = "Moonshade Earring", ear2 = "Thrud Earring",
-		body = "Nyame Mail", hands = "Boii Mufflers +2", ring1 = "Niqmaddu Ring", ring2 = "Regal Ring",
+		body = "Nyame Mail", hands = "Boii Mufflers +3", ring1 = "Niqmaddu Ring", ring2 = "Regal Ring",
 		back = gear.Cichol.STR_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['King\'s Justice'].PDL = set_combine(sets.precast.WS['King\'s Justice'],
@@ -231,7 +231,7 @@ function init_gear_sets()
 		body = "Sakpata's Breastplate", hands = "Boii Mufflers +3", ring1 = "Niqmaddu Ring", ring2 = "Regal Ring",
 		back = gear.Cichol.STR_WSD, waist = "Sailfi Belt +1", legs = "Boii Cuisses +3", feet = "Boii Calligae +3"
 	}
-	sets.precast.WS['Impulse Drive'].PDL = set_combine(Sets.precast.WS['Impulse Drive'],
+	sets.precast.WS['Impulse Drive'].PDL = set_combine(sets.precast.WS['Impulse Drive'],
 	{
 		hands = "Sakpata's Gauntlets", ring2 = "Sroda Ring"
 	})
@@ -331,7 +331,7 @@ function init_gear_sets()
 		back = gear.Cichol.TP, waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
 	}
 
-	sets.Kiting = { ring1 = "Shneddick Ring" }
+	sets.Kiting = { feet = "Hermes' Sandals" }
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 
 	-- Engaged sets
@@ -355,7 +355,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Boii Mask +3", neck = "War. Beads +2", ear1 = "Eabani Earring", ear2 = "Boii Earring +1",
-		body = "Boii Lorica +3", hands = "Sakpata's Gloves", ring1 = "Chirich Ring +1", ring2 = "Moonlight Ring",
+		body = "Boii Lorica +3", hands = "Sakpata's Gauntlets", ring1 = "Chirich Ring +1", ring2 = "Moonlight Ring",
 		back = gear.Cichol.TP, waist = "Reiki Yotai", legs = "Sakpata's Cuisses", feet = "Pumm. Calligae +3"
 	}
 

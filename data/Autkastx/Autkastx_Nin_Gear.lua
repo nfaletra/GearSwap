@@ -83,7 +83,6 @@ function init_gear_sets()
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC,
 	{
-		neck = "Magoraga Beads",
 		body = "Mochi. Chainmail +3",
 	})
 	sets.precast.FC.Shadows = set_combine(sets.precast.FC.Utsusemi, {})
@@ -105,7 +104,7 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Mummu Bonnet +2", neck = "Combatant's Torque", ear1 = "Mache Earring +1", ear2 = "Telos Earring",
-		body = "Mummu Jacket +2", hands = "Mummu Wrists +2", ring1 = "Etana Ring", ring2 = "Rufescent Ring",
+		body = "Mummu Jacket +2", hands = "Mummu Wrists +2", ring1 = "Medada's Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.DA, waist = "Engraved Belt", legs = "Mummu Kecks +2", feet = "Malignance Boots"
 	}
 
@@ -238,7 +237,7 @@ function init_gear_sets()
 	{
 		ammo = "Yamarang",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Etana Ring", ring2 = "Regal Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Medada's Ring", ring2 = "Regal Ring",
 		back = gear.Andartia.STR_WSD, waist = "Eschan Stone", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -286,7 +285,7 @@ function init_gear_sets()
 	{
 		ammo = "Yamarang",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Etana Ring", ring2 = "Medada's Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Medada's Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Eschan Stone", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -360,7 +359,7 @@ function init_gear_sets()
 	{
 		ammo = "Yamarang",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Etana Ring", ring2 = "Medada's Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Medada's Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Eschan Stone", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -404,7 +403,7 @@ function init_gear_sets()
 	{
 		ammo = "Yamarang",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Etana Ring", ring2 = "Medada's Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Medada's Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Eschan Stone", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -412,7 +411,7 @@ function init_gear_sets()
 	{
 		ammo = "Yamarang",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Etana Ring", ring2 = "Medada's Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Medada's Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.STR_WSD, waist = "Eschan Stone", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 

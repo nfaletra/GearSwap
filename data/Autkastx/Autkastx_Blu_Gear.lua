@@ -127,7 +127,7 @@ function init_gear_sets()
 	sets.precast.WS['Expiacion'] = set_combine(sets.precast.WS,
 	{
 		neck = "Mirage Stole +2",
-		ring1 = "Epaminondas's Ring", ring2 = "Rufescent Ring",
+		ring1 = "Epaminondas's Ring",
 		waist = "Sailfi Belt +1",
 	})
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS['Expiacion'], {})
@@ -147,7 +147,7 @@ function init_gear_sets()
 	{
 		ammo = "Oshasha's Treatise",
 		head = "Luh. Keffiyeh +3", neck = "Fotia Gorget", ear1 = "Regal Earring", ear2 = "Brutal Earring",
-		body = "Luhlaza Jubbah +3", hands = gear.adhemar.hands.b, ring1 = "Epona's Ring", ring2 = "Rufescent Ring",
+		body = "Luhlaza Jubbah +3", hands = gear.adhemar.hands.b, ring1 = "Epona's Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Rosmerta.Magic, waist = "Fotia Belt", legs = "Luhlaza Shalwar +3", feet = "Luhlaza Charuqs +3"
 	}
 
@@ -155,7 +155,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Luh. Keffiyeh +3", neck = "Fotia Gorget", ear1 = "Regal Earring", ear2 = "Telos Earring",
-		body = "Hashishin Mintan +3", hands = "Hashi. Bazu. +2", ring1 = "Metamor. Ring +1", ring2 = "Rufescent Ring",
+		body = "Hashishin Mintan +3", hands = "Hashi. Bazu. +2", ring1 = "Metamor. Ring +1", ring2 = "Epaminondas's Ring",
 		back = gear.Rosmerta.WSD, waist = "Fotia Belt", legs = "Hashishin Tayt +2", feet = "Hashi. Basmak +2"
 	}
 
@@ -163,7 +163,7 @@ function init_gear_sets()
 	{
 		ammo = "Oshasha's Treatise",
 		head = "Nyame Helm", neck = "Mirage Stole +2", ear1 = "Regal Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Rufescent Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Epaminondas's Ring",
 		back = gear.Rosmerta.WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 

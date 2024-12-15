@@ -8,7 +8,7 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.Weapons:options('None', 'Maxentius', 'Daybreak', 'DualYagrush', 'DualMaxentius', 'DualDaybreak')
-	state.WeaponskillMode:options('Normal')
+	state.WeaponskillMode:options('Match', 'Normal', 'Proc')
 
 	info.CastSpeed = 0.2
 
@@ -132,7 +132,7 @@ function init_gear_sets()
 	{
 		ammo = "Oshasha's Treatise",
 		head = "Nyame Helm", neck = "Clr. Torque +2", ear1 = "Ishvara earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Rufescent Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Epaminondas's Ring",
 		back = gear.Alaunus.TP, waist = "Luminary Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -149,7 +149,7 @@ function init_gear_sets()
 	{
 		ammo = "Oshasha's Treatise",
 		head = "Piety Cap +3", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Regal Earring",
-		body = "Piety Bliaut +3", hands = "Piety Mitts +3", ring2 = "Rufescent Ring",
+		body = "Piety Bliaut +3", hands = "Piety Mitts +3",
 		waist = "Fotia Belt", legs = "Piety Pantaln. +3", feet = "Piety Duckbills +3"
 	})
 
@@ -294,7 +294,7 @@ function init_gear_sets()
 	sets.midcast.Cursna = set_combine(sets.midcast.FastRecast,
 	{
 		main = "Yagrush", sub = "Thuellaic Ecu +1",
-		neck = "Debilis Medallion", ear1 = "Meili Earring", ear2 = "Ebers Earring",
+		neck = "Debilis Medallion", ear1 = "Meili Earring", ear2 = "Ebers Earring +1",
 		body = "Ebers Bliaut +3", hands = "Fanatic Gloves", ring1 = "Menelaus's Ring", ring2 = "Haoma's Ring",
 		back = gear.Alaunus.Healing, waist = "Bishop's Sash", legs = "Th. Pant. +3", feet = "Vanya Clogs"
 	})
@@ -352,7 +352,7 @@ function init_gear_sets()
 	sets.midcast['Enfeebling Magic'] =
 	{
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
-		head = "Theophany Cap +3", neck = "Erra Pendant", ear1 = "Regal Earring", ear2 = "Ebers Earring",
+		head = "Theophany Cap +3", neck = "Erra Pendant", ear1 = "Regal Earring", ear2 = "Ebers Earring +1",
 		body = "Theo. Bliaut +3", hands = "Theophany Mitts +3", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = "Aurist's Cape +1", waist = "Obstin. Sash", legs = "Inyanga Shalwar +2", feet = "Theo. Duckbills +3"
 	}
@@ -376,7 +376,7 @@ function init_gear_sets()
 	sets.midcast.Repose =
 	{
 		main = "Yagrush", sub = "Ammurapi Shield", ammo = "Hydrocera",
-		head = "Theophany Cap +3", neck = "Jokushu Chain", ear1 = "Regal Earring", ear2 = "Ebers Earring",
+		head = "Theophany Cap +3", neck = "Jokushu Chain", ear1 = "Regal Earring", ear2 = "Ebers Earring +1",
 		body = "Theo. Bliaut +3", hands = "Piety Mitts +3", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = "Aurist's Cape +1", waist = "Obstin. Sash", legs = "Th. Pant. +3", feet = "Theo. Duckbills +3"
 	}
@@ -415,6 +415,8 @@ function init_gear_sets()
 	sets.buff['Divine Caress'] = { hands = "Ebers Mitts +3", back = "Mending Cape" }
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
+
+	sets.buff.Sleep = set_combine(sets.buff.Sleep, { main = "Lorg Mor" })
 
 end
 

@@ -255,7 +255,7 @@ function init_gear_sets()
 	
 	-- Buff sets
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
-	sets.buff.Sleep = { neck = "Vim Torque +1" }
+	sets.buff.Sleep = {}
 	sets.buff.Hasso = {}
 	sets.buff['Third Eye'] = {}
 	sets.buff.Sekkanoki = { hands = "Kasuga Kote +3" }

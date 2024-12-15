@@ -27,7 +27,7 @@ function user_job_setup()
 	gear.Linos =
 	{
 		TP = { name = "Linos", augments = { 'Accuracy+15', '"Store TP"+3', 'Quadruple Attack +3' } },
-		WSD = { name = "Linos", augments = { 'Accuracy+15', '"Store TP"+3', 'Quadruple Attack +3' } }
+		WSD = { name="Linos", augments = { 'Accuracy+13 Attack+13', '"Store TP"+4', 'STR+8' } }
 	}
 	
 	-- Set this to false if you don't want to use custom timers.
@@ -121,8 +121,8 @@ function init_gear_sets()
 	sets.precast.WS =
 	{
 		range = gear.Linos.WSD,
-		head = "Nyame Helm", neck = "Rep. Plat. Medal", ear1 = "Regal Earring", ear2 = "Moonshade Earring",
-		body = "Bihu Jstcorps. +3", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Epaminondas's Ring",
+		head = "Nyame Helm", neck = "Rep. Plat. Medal", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
+		body = "Bihu Jstcorps. +3", hands = "Nyame Gauntlets", ring1 = "Sroda Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Intarabus.DEX_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
@@ -283,7 +283,7 @@ function init_gear_sets()
 	-- Resting sets
 	sets.resting = sets.idle
 
-	sets.Kiting = { ring1 = "Shneddick Ring" }
+	sets.Kiting = { feet = "Fili Cothurnes +2" }
 	sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.latent_refresh_grip = {sub="Oneiros Grip"}
 	sets.TPEat = {neck="Chrys. Torque"}

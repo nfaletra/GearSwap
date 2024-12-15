@@ -108,7 +108,7 @@ function init_gear_sets()
 	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS,
 	{
 		neck = "Rep. Plat. Medal", ear1 = "Regal Earring", ear2 = "Moonshade Earring",
-		ring1 = "Rufescent Ring", ring2 = "Metamor. Ring +1",
+		ring1 = "Epaminondas's Ring", ring2 = "Metamor. Ring +1",
 		back = "Aurist's Cape +1", waist = "Luminary Sash",
 	})
 
@@ -378,7 +378,7 @@ function init_gear_sets()
 	{
 		head = "Gende. Caubeen +1", neck = "Unmoving Collar +1", ear1 = "Gifted Earring", ear2 = "Mendi. Earring",
 		body = "Viti. Tabard +3", hands = "Kaykaus Cuffs +1", ring1 = "Gelatinous Ring +1", ring2 = "Meridian Ring",
-		back = "Moonlight Cape", waist = "Luminary Sash", legs = "Carmine Cuisses +1", feet = "Kaykaus Boots +1"
+		back = "Swith Cape +1", waist = "Luminary Sash", legs = "Carmine Cuisses +1", feet = "Kaykaus Boots +1"
 	}
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
