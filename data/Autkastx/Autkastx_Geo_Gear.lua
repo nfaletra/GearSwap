@@ -31,7 +31,7 @@ function user_job_setup()
 	send_command('bind @backspace input /ma "Sleep II" <t>')
 	send_command('bind ^delete input /ma "Aspir III" <t>')
 	send_command('bind @delete input /ma "Sleep" <t>')
-	
+
 	indi_duration = 290
 	
 	select_default_macro_book()
@@ -64,7 +64,7 @@ function init_gear_sets()
 		main = "Cath Palug Hammer", sub = "Genmei Shield", range = "Dunna",
 		head = "Merlinic Hood", neck = "Loricate Torque +1", ear1 = "Loquac. Earring", ear2 = "Malignance Earring",
 		body = "Zendik Robe", hands = "Agwu's Gages", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
-		back = "Perimede Cape", waist = "Witful Belt", legs = "Geo. Pants +1", feet = gear.amalric.feet.a
+		back = "Perimede Cape", waist = "Witful Belt", legs = "Geomancy Pants +2", feet = gear.amalric.feet.a
 	}
 
 	sets.precast.FC.Geomancy = set_combine(sets.precast.FC, {})
@@ -186,9 +186,9 @@ function init_gear_sets()
 	sets.midcast.Geomancy =
 	{
 		main = "Idris", sub = "Genmei Shield", range = "Dunna",
-		head = "Vanya Hood", neck = "Incantor's Torque", ear1 = "Magnetic Earring", ear2 = "Calamitous Earring",
+		head = "Vanya Hood", neck = "Incanter's Torque", ear1 = "Magnetic Earring", ear2 = "Calamitous Earring",
 		body = "Zendik Robe", hands = "Geo. Mitaines +2", ring1 = "Mephitas's Ring +1", ring2 = "Gelatinous Ring +1",
-		back = "Fi Folet Cape +1", waist = "Shinjutsu-no-Obi +1", legs = "Vanya Slops", feet = "Azimuth Gaiters +3"
+		back = "Fi Follet Cape +1", waist = "Shinjutsu-no-Obi +1", legs = "Vanya Slops", feet = "Azimuth Gaiters +3"
 	}
 
 	--Extra Indi duration as long as you can keep your 900 skill cap.
@@ -202,7 +202,7 @@ function init_gear_sets()
 		main = "Raetic Rod +1", sub = "Genmei Shield", ammo = "Pemphredo Tathlum",
 		head = "Vanya Hood", neck = "Incanter's Torque", ear1 = "Magnetic Earring", ear2 = "Mendi. Earring",
 		body = "Vedic Coat", hands = "Geo. Mitaines +2", ring1 = "Metamor. Ring +1", ring2 = "Mephitas's Ring +1",
-		back = "Aurist's Cape +1", waist = "Shinjutsu-No-Obi", legs = "Vanya Slops", feet = "Vanya Clogs"
+		back = "Aurist's Cape +1", waist = "Shinjutsu-no-Obi +1", legs = "Vanya Slops", feet = "Vanya Clogs"
 	}
 
 	sets.midcast.Curaga = set_combine(sets.midcast.Cure, {})
@@ -211,16 +211,16 @@ function init_gear_sets()
 	{
 		head = "Vanya Hood", neck = "Debilis Medallion", ear1 = "Meili Earring", ear2 = "Malignance Earring",
 		body = "Zendik Robe", hands = "Geo. Mitaines +2", ring1 = "Haoma's Ring", ring2 = "Menelaus's Ring",
-		back = "Oretania's Cape +1", waist = "Witful Belt", legs = "Geomancy Pants +2", feet = "Vanya Clogs"
+		back = "Fi Follet Cape +1", waist = "Witful Belt", legs = "Geomancy Pants +2", feet = "Vanya Clogs"
 	}
 	
-	sets.midcast.StatusRemoval = set_combine(sets.midcast.FastRecast, {sub="Clemency Grip"})
+	sets.midcast.StatusRemoval = set_combine(sets.midcast.FastRecast, {})
 	
 	sets.midcast['Elemental Magic'] =
 	{
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
 		head = "Agwu's Cap", neck = "Sibyl Scarf", ear1 = "Regal Earring", ear2 = "Malignance Earring",
-		body = "Azimuth Coat +2", hands = "Agwu's Gages", ring1 = "Freke Ring", ring2 = "Metamor. Ring +1",
+		body = "Azimuth Coat +3", hands = "Agwu's Gages", ring1 = "Freke Ring", ring2 = "Metamor. Ring +1",
 		back = gear.Nantosuelta.MAB, waist = "Acuity Belt +1", legs = "Azimuth Tights +2", feet = "Agwu's Pigaches"
 	}
 
@@ -290,7 +290,7 @@ function init_gear_sets()
 	sets.midcast['Bio II'] = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
 	
 	sets.midcast['Divine Magic'] = set_combine(sets.midcast['Enfeebling Magic'], {ring1="Stikini Ring +1"})
-		
+
 	sets.midcast['Enhancing Magic'] =
 	{
 		main = "Gada", sub = "Ammurapi Shield", range = "Dunna",
@@ -321,10 +321,15 @@ function init_gear_sets()
 		waist = "Emphatikos Rope", legs = "Shedir Seraweels"
 	})
 
-	sets.midcast.BarElement = set_combine(sets.precast.FC['Enhancing Magic'],
+	sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'],
 	{
 		head = "Befouled Crown",
-		waist = "Olympus Sash", legs = "Shedir Seraweels", feet = "Regal Pumps +1"
+		waist = "Olympus Sash", feet = "Regal Pumps +1"
+	})
+
+	sets.midcast.BarStatus = set_combine(sets.midcast['Enhancing Magic'],
+	{
+		neck = "Sroda Necklace",
 	})
 
 	sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {ring2="Sheltered Ring",ear1="Gifted Earring",ear2="Malignance Earring",waist="Sekhmet Corset"})
@@ -340,7 +345,7 @@ function init_gear_sets()
 	{
 		main = "Daybreak", sub = "Genmei Shield", ammo = "Staunch Tathlum +1",
 		head = "Azimuth Hood +3", neck = "Warder's Charm +1", ear1 = "Lugalbanda Earring", ear2 = "Etiolation Earring",
-		body = "Azimuth Coat +2", hands = "Agwu's Gages", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
+		body = "Azimuth Coat +3", hands = "Agwu's Gages", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
 		back = "Lifestream Cape", waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Geo. Sandals +2"
 	}
 
@@ -348,8 +353,8 @@ function init_gear_sets()
 	sets.idle.Pet =
 	{
 		main = "Idris", sub = "Genmei Shield", range = "Dunna", ammo = empty,
-		head = "Azimuth Hood +3", neck = "Loricate Torque +1", ear1 = "Etiolation Earring", ear2 = "Odowa Earring +1",
-		body = "Azimuth Coat +2", hands = "Geo. Mitaines +2", ring1 = "Stikini Ring +1", ring2 = "Gelatinous Ring",
+		head = "Azimuth Hood +3", neck = "Loricate Torque +1", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
+		body = "Azimuth Coat +3", hands = "Geo. Mitaines +2", ring1 = "Stikini Ring +1", ring2 = "Gelatinous Ring +1",
 		back = gear.Nantosuelta.Pet, waist = "Isa Belt", legs = "Nyame Flanchard", feet = "Bagua Sandals +3"
 	}
 
@@ -395,7 +400,7 @@ function init_gear_sets()
 	{
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
 		head = "Ea Hat +1", neck = "Sibyl Scarf", ear1 = "Regal Earring", ear2 = "Malignance Earring",
-		body = "Azimuth Coat +2", hands = "Agwu's Gages", ring1 = "Freke Band", ring2 = "Metamor. Ring +1",
+		body = "Azimuth Coat +3", hands = "Agwu's Gages", ring1 = "Freke Ring", ring2 = "Metamor. Ring +1",
 		back = gear.Nantosuelta.MAB, waist = "Acuity Belt +1", legs = "Azimuth Tights +2", feet = "Agwu's Pigaches"
 	}
 

@@ -38,7 +38,7 @@ function init_gear_sets()
 	sets.precast.JA['Elemental Siphon'] =
 	{
 		main = "Chatoyant Staff", sub = "Vox Grip", ammo = "Esper Stone +1",
-		head = "Baayami Hat", neck = "Incanter's Torque", ear1 = "Lodurr Earring", ear2 = "C. Palug Earring",
+		head = "Baayami Hat +1", neck = "Incanter's Torque", ear1 = "Lodurr Earring", ear2 = "C. Palug Earring",
 		body = "Baayami Robe", hands = "Baayami Cuffs +1", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
 		back = "Conveyance Cape", waist = "Kobo Obi", legs = "Baayami Slops", feet = "Beck. Pigaches +1"
 	}
@@ -208,7 +208,7 @@ function init_gear_sets()
 	sets.midcast.Pet.BloodPactWard =
 	{
 		main = "Espiritus", sub = "Vox Grip", ammo = "Epitaph",
-		head = "Baayami Hat", neck = "Incanter's Torque", ear1 = "Lodurr Earring", ear2 = "C. Palug Earring",
+		head = "Baayami Hat +1", neck = "Incanter's Torque", ear1 = "Lodurr Earring", ear2 = "C. Palug Earring",
 		body = "Baayami Robe", hands = "Baayami Cuffs +1", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
 		back = "Conveyance Cape", waist = "Kobo Obi", legs = "Baayami Slops", feet = "Baayami Sabots +1"
 	}

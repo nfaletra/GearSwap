@@ -31,9 +31,9 @@ function user_job_setup()
 	send_command('bind ^delete input /ja "Dark Arts" <me>')
 	send_command('bind !delete input /ja "Addendum: Black" <me>')
 	send_command('bind @delete input /ja "Manifestation" <me>')
-	send_command('bind ^\\\\ input /ma "Protectra V" <me>')
-	send_command('bind @\\\\ input /ma "Shellra V" <me>')
-	send_command('bind !\\\\ input /ma "Reraise IV" <me>')
+	send_command('bind ^\\ input /ma "Protectra V" <me>')
+	send_command('bind @\\ input /ma "Shellra V" <me>')
+	send_command('bind !\\ input /ma "Reraise IV" <me>')
 
 	-- Smartcure binds
 	-- Party - Ctrl + FKey
@@ -94,7 +94,7 @@ function init_gear_sets()
 	{
 		main = "C. Palug Hammer", sub = "Chanter's Shield", ammo = "Impatiens",
 		head = "Ebers Cap +3", neck = "Clr. Torque +2", ear1 = "Etiolation Earring", ear2 = "Malignance Earring",
-		body = "Inyanga Jubbah +2", hands = "Fanatic Gloves", ring1 = "Medada's Ring", ring2 = "Lebeche Ring",
+		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Medada's Ring", ring2 = "Lebeche Ring",
 		back = "Perimede Cape", waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Regal Pumps +1"
 	}
 		
@@ -194,8 +194,8 @@ function init_gear_sets()
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,
 	{
 		ammo = "Pemphredo Tathlum",
-		head = "Vanya Hood", ear1 = "Magnetic Earring", ear2 = "Mendi. Earring",
-		ring2 = "Mephitas's Ring +1",
+		head = "Vanya Hood", ear1 = "Magnetic Earring", ear2 = "Calamitous Earring",
+		ring1 = "Mephitas's Ring +1", ring2 = "Defending Ring",
 		back = "Fi Follet Cape +1", feet = "Kaykaus Boots +1"
 	})
 
@@ -240,31 +240,34 @@ function init_gear_sets()
 	sets.midcast.MeleeLightWeatherCuraga = set_combine(sets.midcast.MeleeCure, sets.midcast.LightWeatherCuraga, {})
 	sets.midcast.MeleeLightDayCuraga = set_combine(sets.midcast.MeleeCure, sets.midcast.LightDayCuraga, {})
 
-	-- 110 total Enhancing Magic Skill; caps even without Light Arts
+	-- 471 skill - ML17 : 480 skill with light arts
 	sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.FastRecast,
 	{
-		main = "Gada", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
+		main = "Gada", sub = "Ammurapi Shield",
 		head = "Telchine Cap",
 		body = "Telchine Chas.", hands = gear.telchine.hands.enhancing,
 		waist = "Embla Sash", legs = "Telchine Braconi", feet = "Theo. Duckbills +3"
 	})
 
+	-- 491 skill - ML17 : 500 skill with light arts
 	sets.midcast.BoostStat = set_combine(sets.midcast['Enhancing Magic'],
 	{
-		neck = "Incanter's Torque", ear1 = "Mimir Earring",
+		neck = "Incanter's Torque", ear2 = "Mimir Earring",
 	})
 
+	-- 502 skill - ML17
 	sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'],
 	{
 		main = "Beneficus",
-		head = "Ebers Cap +3", neck = "Incanter's Torque",
+		head = "Ebers Cap +3", neck = "Incanter's Torque", ear2 = "Andoaa Earring",
 		body = "Ebers Bliaut +3", hands = "Ebers Mitts +3",
 		back = gear.Alaunus.Healing, legs = "Piety Pantaln. +3", feet = "Ebers Duckbills +3"
 	})
 
+	-- 486 skill - ML17
 	sets.midcast.BarStatus = set_combine(sets.midcast['Enhancing Magic'],
 	{
-		neck = "Sroda Necklace"
+		neck = "Sroda Necklace", ear1 = "Mimir Earring", ear2 = "Andoaa Earring"
 	})
 
 	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'],

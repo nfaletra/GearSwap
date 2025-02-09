@@ -5,7 +5,7 @@ function user_job_setup()
 	state.WeaponskillMode:options('Match', 'Normal', 'PDL', 'Proc')
 	state.CastingMode:options('Normal', 'Damage', 'Proc')
 	state.IdleMode:options('Normal', 'PDT', 'Refresh')
-	state.HybridMode:options('Normal', 'DT', 'MEVA')
+	state.HybridMode:options('Normal', 'DT')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', }
 	state.Weapons:options('Default', 'Ranged', 'Crit', 'Savage', 'Evisceration', 'DualWeapons', 'DualRanged', 'DualCrit', 'DualSavage', 'DualLeadenRanged', 'DualLeadenMelee', 'DualHotShot', 'DualEvisceration', 'DualAeolian', 'None')
 	state.CompensatorMode:options('Always', 'Never', '300', '1000')
@@ -437,15 +437,9 @@ function init_gear_sets()
 	}
 	sets.engaged.DT =
 	{
-		head = "Nyame Helm", neck = "Iskur Gorget", ear1 = "Brutal Earring", ear2 = "Balder Earring +1",
+		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Brutal Earring", ear2 = "Balder Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Epona's Ring",
-		back = gear.Camulus.DA, waist = "Winbuffet Belt +1", legs = "Chas. Culottes +3", gear.herculean_ta_feet
-	}
-	sets.engaged.MEVA =
-	{
-		head = "Malignance Chapeau", neck = "Warder's Charm +1", ear1 = "Brutal Earring", ear2 = "Balder Earring +1",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Epona's Ring",
-		back = gear.Camulus.DA, waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = gear.Camulus.DA, waist = "Windbuffet Belt +1", legs = "Chas. Culottes +3", "Malginance Boots"
 	}
 
 	sets.engaged.DW =
@@ -470,38 +464,17 @@ function init_gear_sets()
 
 	sets.engaged.DW.DT =
 	{
-		head = "Nyame Helm", neck = "Iskur Gorget", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
+		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Epona's Ring",
-		back = gear.Camulus.DA, waist = "Reiki Yotai", legs = "Chas. Culottes +3", feet = gear.herculean_ta_feet
+		back = gear.Camulus.DA, waist = "Reiki Yotai", legs = "Chas. Culottes +3", feet = "Malignance Boots"
 	}
 	sets.engaged.DW.DT.Haste30 = set_combine(sets.engaged.DW.DT,
-	{
-		back = gear.Camulus.DW, legs = "Chas. Culottes +3", feet = "Taeon Boots"
-	})
-	sets.engaged.DW.DT.Haste15 = set_combine(sets.engaged.DW.DT.Haste30,
-	{
-		neck = "Loricate Torque +1", ear2 = "Suppanomimi",
-		legs = "Taeon Tights"
-	})
-	sets.engaged.DW.DT.Haste0 = set_combine(sets.engaged.DW.DT.Haste15,
-	{
-		head = "Taeon Chapeau",
-		hands = "Taeon Gloves", ring2 = "Gelatinous Ring +1",
-	})
-
-	sets.engaged.DW.MEVA =
-	{
-		head = "Malignance Chapeau", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Epona's Ring",
-		back = gear.Camulus.DA, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
-	}
-	sets.engaged.DW.MEVA.Haste30 = set_combine(sets.engaged.DW.MEVA,
 	{
 		ear2 = "Suppanomimi",
 		back = gear.Camulus.DW,
 	})
-	sets.engaged.DW.MEVA.Haste15 = set_combine(sets.engaged.DW.MEVA.Haste30, {}) -- Don't fucking die is the priority
-	sets.engaged.DW.MEVA.Haste0 = set_combine(sets.engaged.DW.MEVA.Haste15, {}) -- Don't fucking die is the priority
+	sets.engaged.DW.DT.Haste15 = set_combine(sets.engaged.DW.DT.Haste30, {})
+	sets.engaged.DW.DT.Haste0 = set_combine(sets.engaged.DW.DT.Haste15, {})
 end
 
 -- Select default macro book on initial load or subjob change.

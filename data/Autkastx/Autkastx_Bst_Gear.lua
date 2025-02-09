@@ -169,8 +169,8 @@ function init_gear_sets()
 	sets.precast.WS['Mistral Axe'] =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Nyame Helm", neck = "Bst. Collar +2", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Gere Ring",
+		head = "Ankusa Helm +3", neck = "Rep. Plat. Medal", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Sroda Ring", ring2 = "Gere Ring",
 		back = gear.Artio.STR_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Mistral Axe'].PDL = set_combine(sets.precast.WS['Mistral Axe'],
@@ -183,21 +183,22 @@ function init_gear_sets()
 	sets.precast.WS['Calamity'] =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Nyame Helm", neck = "Bst. Collar +2", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
+		head = "Ankusa Helm +3", neck = "Rep. Plat. Medal", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Gere Ring",
 		back = gear.Artio.STR_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets",
 	}
 	sets.precast.WS['Calamity'].PDL = set_combine(sets.precast.WS['Calamity'],
 	{
 		ammo = "Crepuscular Pebble",
-		body = "Gleti's Cuirass", ring1 = "Sroda Ring",
+		neck = "Bst. Collar +3", ear1 = "Moonshade Earring", ear2 = "Nukumi Earring +1",
+		ring1 = "Sroda Ring", ring2 = "Epaminondas's Ring",
 	})
 	sets.precast.WS['Calamity']['Subtle Blow'] = set_combine(sets.precast.WS['Calamity'], sets.SubtleBlow)
 
 	sets.precast.WS['Decimation'] =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Thrud Earring",
+		head = "Ankusa Helm +3", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Thrud Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Sroda Ring", ring2 = "Gere Ring",
 		back = gear.Artio.DA, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
@@ -294,8 +295,8 @@ function init_gear_sets()
 	sets.precast.WS['Savage Blade'] =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Ankusa Helm +3", neck = "Bst. Collar +2", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Gere Ring",
+		head = "Ankusa Helm +3", neck = "Rep. Plat. Medal", ear1 = "Thrud Earring", ear2 = "Moonshade Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Sroda Ring", ring2 = "Gere Ring",
 		back = gear.Artio.STR_WSD, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Savage Blade'].PDL = set_combine(sets.precast.WS['Savage Blade'],

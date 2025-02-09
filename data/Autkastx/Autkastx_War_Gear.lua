@@ -43,7 +43,7 @@ function init_gear_sets()
 	sets.precast.JA['Warcry'] = { head = "Agoge Mask +3" }
 	sets.precast.JA['Defender'] = {}
 	sets.precast.JA['Aggressor'] = { head = "Pumm. Mask +1", body = "Agoge Lorica +3" }
-	sets.precast.JA['Mighty Strikes'] = { hands = "Agoge Mufflers +2" }
+	sets.precast.JA['Mighty Strikes'] = { hands = "Agoge Mufflers +3" }
 	sets.precast.JA["Warrior's Charge"] = {}
 	sets.precast.JA['Tomahawk'] = { ammo = "Thr. Tomahawk", feet = "Agoge Calligae +3" }
 	sets.precast.JA['Retaliation'] = {}
@@ -172,6 +172,14 @@ function init_gear_sets()
 		back = gear.Cichol.STR_WSD, waist = "Fotia Belt", legs = "Boii Cuisses +3", feet = "Nyame Sollerets"
 	}
 
+	sets.precast.WS['Flat Blade'] =
+	{
+		ammo = "Pemphredo Tathlum",
+		head = "Boii Mask +3", neck = "Sanctity Necklace", ear1 = "Moonshade Earring", ear2 = "Digni. Earring",
+		body = "Boii Lorica +3", hands = "Boii Mufflers +3", ring1 = "Metmaor. Ring +1", ring2 = "Medada's Ring",
+		back = gear.Cichol.STR_WSD, waist = "Fotia Belt", legs = "Boii Cuisses +3", feet = "Boii Calligae +3"
+	}
+
 	sets.precast.WS['Upheaval'] =
 	{
 		ammo = "Knobkierrie",
@@ -183,7 +191,7 @@ function init_gear_sets()
 	{
 		ammo = "Crepuscular Pebble",
 		head = "Sakpata's Helm",
-		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring2 = "Sroda Ring",
+		body = "Sakpata's Plate", ring2 = "Sroda Ring",
 	})
 
 	sets.precast.WS['Raging Rush'] =
@@ -223,6 +231,14 @@ function init_gear_sets()
 		body = "Sakpata's Plate", ring2 = "Sroda Ring",
 		legs = "Boii Cuisses +3"
 	})
+
+	sets.precast.WS['Armor Break'] =
+	{
+		ammo = "Pemphredo Tathlum",
+		head = "Boii Mask +3", neck = "Sanctity Necklace", ear1 = "Moonshade Earring", ear2 = "Digni. Earring",
+		body = "Boii Lorica +3", hands = "Boii Mufflers +3", ring1 = "Metmaor. Ring +1", ring2 = "Medada's Ring",
+		back = gear.Cichol.STR_WSD, waist = "Fotia Belt", legs = "Boii Cuisses +3", feet = "Boii Calligae +3"
+	}
 
 	sets.precast.WS['Impulse Drive'] =
 	{

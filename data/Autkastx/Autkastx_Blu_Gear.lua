@@ -226,7 +226,7 @@ function init_gear_sets()
 	-- Magical Spells --
 	sets.midcast['Blue Magic'].Magical =
 	{
-		ammo = "Ghastly Tathlum +1",
+		main = "Bunzi's Rod", sub = "Maxentius", ammo = "Ghastly Tathlum +1",
 		head = "Hashishin Kavuk +3", neck = "Sibyl Scarf", ear1 = "Regal Earring", ear2 = "Friomisi Earring",
 		body = "Hashishin Mintan +3", hands = "Hashi. Bazu. +2", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
 		back = gear.Rosmerta.Magic, waist = "Sacro Cord", legs = "Luhlaza Shalwar +3", feet = "Hashi. Basmak +2"
@@ -397,7 +397,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle =
 	{
-		ammo = "Staunch Tathlum +1",
+		main = "Sakpata's Sword", sub = "Bolelabunga", ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Etiolation Earring",
 		body = "Hashishin Mintan +3", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
 		back = gear.Rosmerta.TP, waist = "Flume Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"

@@ -9,7 +9,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Aeneas', 'Gandring', 'Aeolian', 'Savage', 'Evisceration', 'Karambit', 'Throwing', 'SwordThrowing', 'Bow')
+	state.Weapons:options('Aeneas', 'Gandring', 'Aeolian', 'Savage', 'Evisceration', 'Trial', 'Karambit', 'Throwing', 'SwordThrowing', 'Bow')
 
 	state.ExtraMeleeMode = M{ ['description'] = 'Extra Melee Mode', 'None', 'Suppa', 'DWMax', 'Parry'}
 	state.AmbushMode = M(false, 'Ambush Mode')
@@ -60,11 +60,12 @@ function init_gear_sets()
 	sets.Ambush = {}
 
 	-- Weapons sets
-	sets.weapons.Aeneas = { main = "Aeneas", sub = "Gleti's Knife" }
+	sets.weapons.Aeneas = { main = "Aeneas", sub = "Centovente" }
 	sets.weapons.Gandring = { main = "Gandring", sub = "Gleti's Knife" }
 	sets.weapons.Aeolian = { main = "Gandring", sub = "Malevolence" }
 	sets.weapons.Savage = { main = "Naegling", sub = "Gleti's Knife" }
 	sets.weapons.Evisceration = { main = "Tauret", sub = "Gleti's Knife" }
+	sets.weapons.Trial = { main = "Fusetto +3", sub = "Gleti's Knife" }
 	sets.weapons.Karambit = { main = "Karambit" }
 	sets.weapons.Throwing = { main = "Aeneas", sub = "Gleti's Knife", range = "Raider's Bmrng.", ammo = empty }
 	sets.weapons.SwordThrowing = { main = "Naegling", sub = "Gleti's Knife", range = "Raider's Bmrng.", ammo = empty }
@@ -152,7 +153,7 @@ function init_gear_sets()
 	sets.precast.WS["Rudra's Storm"] =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Nyame Helm", neck = "Asn. Gorget +2", ear1 = "Sherida Earring", ear2 = "Moonshade Earring",
+		head = "Nyame Helm", neck = "Asn. Gorget +2", ear1 = "Odr Earring", ear2 = "Moonshade Earring",
 		body = "Skulker's Vest +2", hands = "Nyame Gauntlets", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
 		back = gear.Toutatis.WSD, waist = "Kentarch Belt +1", legs = "Plun. Culottes +3", feet = "Nyame Sollerets"
 	}

@@ -63,7 +63,7 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	sets.precast.FC = 
 	{
-		main = "Crocea Mors", sub = "Theullaic Ecu +1", ammo = "Impatiens",
+		main = "Crocea Mors", sub = "Theulliac Ecu +1", ammo = "Impatiens",
 		head = "Atrophy Chapeau +2", neck = "Voltsurge Torque", ear1 = "Malignance Earring", ear2 = "Lethargy Earring +1",
 		body = "Viti. Tabard +3", hands = "Leyline Gloves", ring1 = "Lebeche Ring", ring2 = "Medada's Ring",
 		back = "Perimede Cape", waist = "Witful Belt", legs = "Kaykaus Tights +1", feet = "Carmine Greaves +1"
@@ -76,7 +76,7 @@ function init_gear_sets()
 
 	sets.precast.FC.Impact = set_combine(sets.precast.FC,
 	{
-		head = empty, neck = "Orunmila's Torque",
+		head = empty, neck = "Voltsurge Torque",
 		body = "Crepuscular Cloak", hands = "Leyline Gloves"
 	})
 	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, { main = "Daybreak" })
@@ -157,7 +157,7 @@ function init_gear_sets()
 	sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS,
 	{
 		head = "Viti. Chapeau +3", ear2 = "Brutal Earring",
-		body = "Ayanmo Corazza +2", hands = "Bunzi's Hands", ring1 = "Epaminondas's Ring", ring2 = "Freke Ring",
+		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Epaminondas's Ring", ring2 = "Freke Ring",
 		legs = "Vitiation Tights +3"
 	})
 	sets.precast.WS['Requiescat'].PDL = set_combine(sets.precast.WS['Requiescat'],
@@ -172,7 +172,7 @@ function init_gear_sets()
 	{
 		ammo = "Sroda Tathlum",
 		head = "Pixie Hairpin +1", neck = "Dls. Torque +2", ear1 = "Regal Earring", ear2 = "Malignance Earring",
-		body = "Nyame Mail", hands = "Jhakri Cuffs +2", ring1 = "Archon Ring", ring2 = "Epaminondas's Ring",
+		body = "Nyame Mail", hands = "Leth. Ganth. +3", ring1 = "Archon Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Sucellos.MND_WSD, waist = "Orpheus's Sash", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
 	}
 
@@ -180,7 +180,7 @@ function init_gear_sets()
 	{
 		ammo = "Sroda Tathlum",
 		head = "Leth. Chappel +3", neck = "Sibyl Scarf", ear1 = "Moonshade Earring", ear2 = "Malignance Earring",
-		body = "Nyame Mail", hands = "Jhakri Cuffs +2", ring1 = "Freke Ring", ring2 = "Epaminondas's Ring",
+		body = "Nyame Mail", hands = "Leth. Ganth. +3", ring1 = "Freke Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Sucellos.MND_WSD, waist = "Orpheus's Sash", legs = "Nyame Mail", feet = "Leth. Houseaux +3"
 	}
 
@@ -313,8 +313,8 @@ function init_gear_sets()
 	{
 		main = "Daybreak",ammo = "Staunch Tathlum +1",
 		head = "Kaykaus Mitra +1", neck = "Incanter's Torque", ear1 = "Odnowa Earring +1", ear2 = "Magnetic Earring",
-		body = "Bunzi's Robe", hands = "Kaykaus Cuffs +1", ring1 = "Gelatinous Ring", ring2 = "Defending Ring",
-		back = "Fi Folet Cape +1", waist = "Shinjutsu-No-Obi", legs = "Kaykaus Tights +1", feet = "Kaykaus Boots +1"
+		body = "Bunzi's Robe", hands = "Kaykaus Cuffs +1", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
+		back = "Fi Follet Cape +1", waist = "Shinjutsu-No-Obi +1", legs = "Kaykaus Tights +1", feet = "Kaykaus Boots +1"
 	}
 
 	sets.midcast.LightWeatherCure = set_combine(sets.midcast.Cure, {})
@@ -325,7 +325,7 @@ function init_gear_sets()
 	sets.midcast.Cursna =
 	{
 		range = empty, ammo = "Staunch Tathlum +1",
-		head = "Kaykaus Mitra +1", neck = "Debilis Medallion", ear1 = "Meili Earring", ear2 = "Mendi. Earring",
+		head = "Kaykaus Mitra +1", neck = "Debilis Medallion", ear1 = "Calamitous Earring", ear2 = "Mendi. Earring",
 		body="Viti. Tabard +3", hands = "Hieros Mittens", ring1 = "Haoma's Ring", ring2 = "Menelaus's Ring",
 		back = "Oretan. Cape +1", waist = "Bishop's Sash", legs = "Vanya Slops", feet = "Vanya Clogs"
 	}
@@ -340,7 +340,7 @@ function init_gear_sets()
 	sets.midcast['Enhancing Magic'] =
 	{
 		main = "Colada", sub = "Ammurapi Shield", ammo = "Staunch Tathlum +1",
-		head = "Telchine Cap", neck = "Dls. Torque +2", ear1 = "Ondowa Earring +1", ear2 = "Leth. Earring +1",
+		head = "Telchine Cap", neck = "Dls. Torque +2", ear1 = "Odnowa Earring +1", ear2 = "Leth. Earring +1",
 		body = "Telchine Chas.", hands = "Atrophy Gloves +2", ring1 = "Defending Ring", ring2 = "Mephitas's Ring +1",
 		back = "Ghostfyre Cape", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Telchine Pigaches"
 	}
@@ -461,7 +461,7 @@ function init_gear_sets()
 	sets.midcast.Bio = set_combine(sets.midcast['Enfeebing Magic'],
 	{
 		head = "Atrophy Chapeau +2", neck = "Erra Pendant", ear2 = "Mani Earring",
-		body = "Shango Robe", hands = "Regal Cuffs", ring1 = "Evanescene Ring",
+		body = "Shango Robe", hands = "Regal Cuffs", ring1 = "Evanescence Ring",
 		back = "Perimede Cape", waist = "Acuity Belt +1",
 	})
 
@@ -521,7 +521,7 @@ function init_gear_sets()
 
 	-- Sets for special buff conditions on spells.
 		
-	sets.buff.Saboteur = { hands = "Leth. Gantherots +3" }
+	sets.buff.Saboteur = { hands = "Leth. Ganth. +3" }
 	
 	sets.HPDown =
 	{
@@ -560,8 +560,8 @@ function init_gear_sets()
 	-- Weapons sets
 	--'None', 'Naegling', 'Croc', 'Excalibur', 'Maxentius', 'DualSavage', 'DualSavageAcc', 'DualSeraph', 'DualSanguine', 'DualExcalibur', 'DualClubs', 'DualClubsAcc',
 	sets.weapons.Naegling = { main = "Naegling", sub = "Sacro Bulwark" }
-	sets.weapons.Croc = { main = "Crocea Mors", sub = "Sacro Bulawark" }
-	sets.weapons.Excalibur = { main = "Excalibur", sub = "Sacro Bulark" }
+	sets.weapons.Croc = { main = "Crocea Mors", sub = "Sacro Bulwark" }
+	sets.weapons.Excalibur = { main = "Excalibur", sub = "Sacro Bulwark" }
 	sets.weapons.Maxentius = { main = "Maxentius", sub = "Sacro Bulwark" }
 	sets.weapons.DualSavage = { main = "Naegling", sub = "Thibron" }
 	sets.weapons.DualSavageAcc = { main = "Naegling", sub = "Gleti's Knife" }
