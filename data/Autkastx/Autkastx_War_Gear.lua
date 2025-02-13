@@ -9,7 +9,7 @@ function user_job_setup()
 	state.IdleMode:options('Normal')
 	state.ExtraMeleeMode = M{ ['description']='Extra Melee Mode', 'None' }
 	state.Passive = M{ ['description'] = 'Passive Mode', 'None', 'Twilight' }
-	state.Weapons:options('Chango', 'ShiningOne', 'Greatsword', 'Naegling', 'Loxotic', 'Doli', 'DualDoli', 'ProcDagger', 'ProcSword', 'ProcGreatSword', 'ProcScythe', 'ProcPolearm', 'ProcGreatKatana', 'ProcClub', 'ProcStaff')
+	state.Weapons:options('Chango', 'Laphria', 'ShiningOne', 'Greatsword', 'Naegling', 'Loxotic', 'Doli', 'DualDoli', 'ProcDagger', 'ProcSword', 'ProcGreatSword', 'ProcScythe', 'ProcPolearm', 'ProcGreatKatana', 'ProcClub', 'ProcStaff')
 
 	gear.Cichol =
 	{
@@ -384,6 +384,7 @@ function init_gear_sets()
 	
 	-- Weapons sets
 	sets.weapons.Chango = { main = "Chango", sub = "Utu Grip" }
+	sets.weapons.Laphria = { main = "Laphria", sub = "Utu Grip" }
 	sets.weapons.ShiningOne = { main = "Shining One", sub = "Utu Grip" }
 	sets.weapons.Greatsword = { main = "Agwu's Claymore", sub = "Utu Grip" }
 	sets.weapons.Naegling = { main = "Naegling", sub = "Blurred Shield +1" }

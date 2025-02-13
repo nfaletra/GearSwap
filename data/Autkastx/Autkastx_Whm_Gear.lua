@@ -131,38 +131,50 @@ function init_gear_sets()
 	sets.precast.WS =
 	{
 		ammo = "Oshasha's Treatise",
-		head = "Nyame Helm", neck = "Clr. Torque +2", ear1 = "Ishvara earring", ear2 = "Moonshade Earring",
+		head = "Nyame Helm", neck = "Rep. Plat. Medal", ear1 = "Ishvara Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Epaminondas's Ring",
-		back = gear.Alaunus.TP, waist = "Luminary Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Alaunus.TP, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
-	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS, {})
-
-	sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS,
-	{
-		head = "Piety Cap +3", neck = "Fotia Gorget", ear1 = "Telos Earring",
-		body = "Piety Bliaut +3", hands = "Piety Mitts +3", ring1 = "Petrov Ring",
-		back = gear.Alaunus.TP, waist = "Fotia Belt", legs = "Piety Pantaln. +3", feet = "Piety Duckbills +3"
-	})
-
-	sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS,
+	sets.precast.WS['Black Halo'] =
 	{
 		ammo = "Oshasha's Treatise",
-		head = "Piety Cap +3", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Regal Earring",
-		body = "Piety Bliaut +3", hands = "Piety Mitts +3",
-		waist = "Fotia Belt", legs = "Piety Pantaln. +3", feet = "Piety Duckbills +3"
-	})
+		head = "Nyame Helm", neck = "Rep. Plat. Medal", ear1 = "Regal Earring", ear2 = "Moonshade Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Epaminondas's Ring",
+		back = gear.Alaunus.TP, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+	}
 
-	sets.precast.WS['Mystic Boon'] = set_combine(sets.precast.WS,
+	sets.precast.WS['Hexa Strike'] =
 	{
-		ear1 = "Regal Earring"
-	})
+		ammo = "Oshasha's Treatise",
+		head = "Blistering Sallet +1", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Mache Earring +1",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Shukuyu Ring", ring2 = "Begrudging Ring",
+		back = gear.Alaunus.TP, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+	}
 
-	sets.precast.WS['Seraph Strike'] = set_combine(sets.precast.WS,
+	sets.precast.WS['Realmrazer'] =
 	{
-		ammo = "Ghastly Tathlum +1",
-		ear1 = "Regal Earring"
-	})
+		ammo = "Oshasha's Treatise",
+		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Mache Earring +1",
+		body = "Nyame Mail", hands = "Bunzi's Gloves", ring1 = "Metamor. Ring +1", ring2 = "Rufescent Ring",
+		back = gear.Alaunus.TP, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+	}
+
+	sets.precast.WS['Mystic Boon'] =
+	{
+		ammo = "Oshasha's Treatise",
+		head = "Nyame Helm", neck = "Rep. Plat. Medal", ear1 = "Regal Earring", ear2 = "Moonshade Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Epaminondas's Ring",
+		back = gear.Alaunus.TP, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+	}
+
+	sets.precast.WS['Seraph Strike'] =
+	{
+		ammo = "Oshasha's Treatise",
+		head = "Nyame Helm", neck = "Saevus Pendant +1", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Epaminondas's Ring",
+		back = gear.Alaunus.TP, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+	}
 
 	sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS['Seraph Strike'], {})
 

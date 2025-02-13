@@ -110,7 +110,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Black Halo'] =
 	{
-		head = "Nyame Helm", neck = "Rep. Plat. Medal", ear1 = "Regal Earring", ear2 = "Moonshade Earring",
+		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Regal Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Epaminondas's Ring",
 		back = gear.Nantosuelta.TP, waist = "Grunfeld Rope", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
