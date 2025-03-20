@@ -374,11 +374,11 @@ function check_dance()
 		
 		local abil_recasts = windower.ffxi.get_ability_recasts()
 		
-		if state.DanceStance.value == 'Saber Dance' and abil_recasts[219] < latency then
+		if state.DanceStance.value == 'Saber Dance' and abil_recasts[219] and abil_recasts[219] < latency then
 			windower.chat.input('/ja "Saber Dance" <me>')
 			tickdelay = os.clock() + 1.1
 			return true
-		elseif state.DanceStance.value == 'Fan Dance' and abil_recasts[224] < latency then
+		elseif state.DanceStance.value == 'Fan Dance' and abil_recasts[224] and abil_recasts[224] < latency then
 			windower.chat.input('/ja "Fan Dance" <me>')
 			tickdelay = os.clock() + 1.1
 			return true

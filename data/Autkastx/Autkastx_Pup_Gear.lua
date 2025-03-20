@@ -17,9 +17,9 @@ function user_job_setup()
 	defaultManeuvers = {
 		Melee = {
 			{Name='Fire Maneuver', 	  Amount=1},
-			{Name='Thunder Maneuver', Amount=1},
+			{Name='Thunder Maneuver', Amount=0},
 			{Name='Wind Maneuver', 	  Amount=1},
-			{Name='Light Maneuver',	  Amount=0},
+			{Name='Light Maneuver',	  Amount=1},
 		},
 		Bruiser = {
 			{Name='Light Maneuver',	  Amount=1},
@@ -28,9 +28,9 @@ function user_job_setup()
 			{Name='Light Maneuver',	  Amount=0},
 		},
 		Ranged = {
-			{Name='Wind Maneuver', 	  Amount=3},
-			{Name='Fire Maneuver',	  Amount=0},
-			{Name='Light Maneuver',	  Amount=0},
+			{Name='Wind Maneuver', 	  Amount=1},
+			{Name='Fire Maneuver',	  Amount=1},
+			{Name='Light Maneuver',	  Amount=1},
 			{Name='Thunder Maneuver', Amount=0},
 		},
 		HybridRanged = {

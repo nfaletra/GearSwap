@@ -2,7 +2,7 @@ function user_job_setup()
 	-- Options: Override default values
     state.OffenseMode:options('Normal')
     state.HybridMode:options('Normal', 'DT')
-	state.WeaponskillMode:options('Match', 'PDL', 'Proc')
+	state.WeaponskillMode:options('Match', 'PDL', 'Acc', 'Proc')
 	state.AutoBuffMode:options('Off','Auto','AutoMelee')
 	state.CastingMode:options('Normal','Resistant', 'Fodder', 'Proc')
     state.IdleMode:options('Normal', 'Refresh')
@@ -237,6 +237,13 @@ function init_gear_sets()
 		neck = "Dls. Torque +2",
 		ring1 = "Sroda Ring",
 	})
+	sets.precast.WS['Black Halo'].Acc = set_combine(sets.precast.WS['Black Halo'],
+	{
+		ammo = "Oshasa's Treatise",
+		head = "Leth. Chappel +3", neck = "Fotia Gorget",
+		body = "Lethargy Sayon +3", hands = "Atrophy Gloves +2",
+		waist = "Fotia Belt", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
+	})
 
 	sets.precast.WS['True Strike'] = set_combine(sets.precast.WS,
 	{
@@ -411,7 +418,7 @@ function init_gear_sets()
 	-- Max MACC
 	sets.midcast['Enfeebling Magic'] =
 	{
-		main = "Bunzi's Rod", sub = "Ammurapi Shield", range = "Ullr", ammo = empty,
+		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Regal Gem",
 		head = "Viti. Chapeau +3", neck = "Dls. Torque +2", ear1 = "Regal Earring", ear2 = "Snotra Earring",
 		body = "Atrophy Tabard +3", hands = "Leth. Ganth. +3", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
 		back = "Aurist's Cape +1", waist = "Obstin. Sash", legs = "Leth. Fuseau +3", feet = "Vitiation Boots +3"
@@ -509,7 +516,7 @@ function init_gear_sets()
 
 	sets.midcast.Drain =
 	{
-		main = "Rubicundity", sub = "Ammurapi Shield", range = "Ullr", ammo = empty,
+		main = "Rubicundity", sub = "Ammurapi Shield", ammo = "Regal Gem",
 		head = "Pixie Hairpin +1", neck = "Erra Pendant", ear1 = "Malignance Earring", ear2 = "Digni. Earring",
 		body = "Merlinic Jubbah", hands = gear.merlinic.hands.FC, ring1 = "Evanescence Ring", ring2 = "Archon Ring",
 		back = gear.Sucellos.MAB, waist = "Fucho-no-obi", legs = "Merlinic Shalwar", feet = "Merlinic Crackows"
