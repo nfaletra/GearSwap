@@ -20,7 +20,7 @@ function user_job_setup()
 	gear.Camulus =
 	{
 		Idle = { name = "Camulus's Mantle", augments = { 'INT+20', 'Eva.+20 /Mag. Eva.+20', '"Snapshot"+10' } },
-		DA = { name = "Camulus's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } },
+		DA = "Null Shawl",
 		DW = { name = "Camulus's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dual Wield"+10', 'Phys. dmg. taken-10%' } },
 		RA = { name = "Camulus's Mantle", augments = { 'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Mag. Evasion+15' } },
 		RA_Crit = { name = "Camulus's Mantle", augments = { 'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Crit.hit rate+10', 'Phys. dmg. taken-10%' } },

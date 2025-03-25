@@ -14,7 +14,7 @@ function user_job_setup()
 	{
 		MAB = { name = "Nantosuelta's Cape", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%' } },
 		Pet = { name = "Nantosuelta's Cape", augments = {'MP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Pet: "Regen"+5' } },
-		TP = { name = "Nantosuelta's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%' } },
+		TP = "Null Shawl",
 	}
 	
 	autoindi = "Haste"

@@ -14,7 +14,7 @@ function user_job_setup()
 
 	gear.Rosmerta =
 	{
-		TP = { name = "Rosmerta's Cape", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } },
+		TP = "Null Shawl",
 		WSD = { name = "Rosmerta's Cape", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } },
 		Magic = { name = "Rosmerta's Cape", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Magic Damage +5', '"Mag.Atk.Bns."+10', 'Mag. Evasion+15' } },
 		Evasion = { name = "Rosmerta's Cape", augments = { 'AGI+20', 'Eva.+20 /Mag. Eva.+20', '"Fast Cast"+10', 'Evasion+15' } },
