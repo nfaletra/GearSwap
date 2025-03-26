@@ -5,9 +5,10 @@ function user_job_setup()
 	state.RangedMode:options('Normal','Acc','Fodder')
 	state.WeaponskillMode:options('Match','Normal', 'Acc')
 	state.IdleMode:options('Normal', 'PDT')
-	state.Weapons:options('Default','DualWeapons','DualSavageWeapons','DualEviscerationWeapons','DualMagicWeapons','DualMalevolence')
+	state.Weapons:options('Bow', 'Fomalhaut', 'Armageddon', 'DualBow', 'DualSavageWeapons', 'DualEviscerationWeapons', 'DualMagicWeapons', 'DualMalevolence')
 	
 	WeaponType =  {['Fail-Not'] = "Bow",
+					['Ullr'] = "Bow",
                    ['Fomalhaut'] = "Gun",
 				   ['Ataktos'] = "Gun",
                    }
@@ -289,10 +290,12 @@ function init_gear_sets()
 	sets.NightIdle = {}
 	
 	-- Weapons sets
-	sets.weapons.Default = {main="Kustawi +1",sub="Nusku Shield",range="Fomalhaut"}
-	sets.weapons.DualWeapons = {main="Kustawi +1",sub="Kustawi",range="Fomalhaut"}
-	sets.weapons.DualSavageWeapons = { main = "Naegling", sub = "Gleti's Knife +1", range = "Fomalhaut" }
-	sets.weapons.DualEviscerationWeapons = {main="Tauret",sub="Blurred Knife +1",range="Fomalhaut"}
+	sets.weapons.Bow = { main = "Kustawi +1", sub = "Nusku Shield", range = "Ullr" }
+	sets.weapons.Fomalhaut = { main = "Kustawi +1", sub = "Nusku Shield", range = "Fomalhaut" }
+	sets.weapons.Armageddon = { main = "Gletis' Kinfe", sub = "Nusku Shield", range = "Armageddon" }
+	sets.weapons.DualBow = { main = "Kustawi +1", sub = "Gleti's Knife", range = "Ullr" }
+	sets.weapons.DualSavageWeapons = { main = "Naegling", sub = "Gleti's Knife", range = "Fomalhaut" }
+	sets.weapons.DualEviscerationWeapons = { main = "Tauret", sub = "Gleti's Knife", range = "Fomalhaut"}
 	sets.weapons.DualMalevolence = {main="Malevolence",sub="Malevolence",range="Fomalhaut"}
 	sets.weapons.DualMagicWeapons = {main="Tauret",sub="Naegling",range="Fomalhaut"}
 
