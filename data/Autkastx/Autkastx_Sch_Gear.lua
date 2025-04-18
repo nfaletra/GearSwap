@@ -376,9 +376,9 @@ function init_gear_sets()
 
 	sets.HPCure =
 	{
-		head = "Gende. Caubeen +1", neck = "Unmoving Collar +1", ear1 = "Gifted Earring", ear2 = "Mendi. Earring",
-		body = "Viti. Tabard +3", hands = "Kaykaus Cuffs +1", ring1 = "Gelatinous Ring +1", ring2 = "Meridian Ring",
-		back = "Swith Cape +1", waist = "Luminary Sash", legs = "Carmine Cuisses +1", feet = "Kaykaus Boots +1"
+		head = "Nyame Helm", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Mendi. Earring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gelatinous Ring +1", ring2 = "Mephitas's Ring",
+		back = "Swith Cape +1", waist = "Luminary Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
