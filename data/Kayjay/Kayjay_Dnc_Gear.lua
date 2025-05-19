@@ -36,7 +36,7 @@ function init_gear_sets()
 	--------------------------------------
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 
-	sets.DI =
+	sets.buff.Elvorseal =
 	{
 		head = "Heidrek Mask",
 		body = "Heidrek Harness", hands = "Heidrek Gloves",

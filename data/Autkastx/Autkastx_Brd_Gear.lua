@@ -299,14 +299,14 @@ function init_gear_sets()
 	{
 		range = gear.Linos.TP,
 		head = "Bunzi's Hat", neck = "Bard's Charm +2", ear1 = "Crep. Earring", ear2 = "Telos Earring",
-		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
+		body = "Ashera Harness", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
 		back = gear.Intarabus.TP, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.engaged.DW =
 	{
 		range = gear.Linos.TP,
 		head = "Bunzi's Hat", neck = "Bard's Charm +2", ear1 = "Eabani Earring", ear2 = "Telos Earring",
-		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
+		body = "Ashera Harness", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
 		back = gear.Intarabus.TP, waist = "Reiki Yotai", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 end

@@ -55,7 +55,7 @@ function init_gear_sets()
 	sets.precast.JA['Provoke'] = sets.Enmity
 
 	-- Buff sets
-	sets.buff['Futae'] = { hands = "Hattori Tekko +1" }
+	sets.buff['Futae'] = { hands = "Hattori Tekko +2" }
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz =
@@ -462,7 +462,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Mochi. Hatsuburi +3", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Crematio Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Dingir Ring", ring2 = "Medada's Ring",
+		body = "Nyame Mail", hands = "Hattori Tekko +2", ring1 = "Dingir Ring", ring2 = "Medada's Ring",
 		back = gear.Andartia.MAB, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Mochi. Kyahan +3"
 	}
 
@@ -559,7 +559,7 @@ function init_gear_sets()
 	{
 		ear2 = "Telos Earring",
 		body = "Mochi. Chainmail +3",
-		legs = "Hachiya Hakama +2"
+		legs = "Hachiya Hakama +3"
 	})
 	sets.engaged.Haste0 = set_combine(sets.engaged.Haste15,
 	{
@@ -582,7 +582,7 @@ function init_gear_sets()
 	{
 		ear2 = "Telos Earring",
 		body = "Mochi. Chainmail +3",
-		legs = "Hachiya Hakama +2"
+		legs = "Hachiya Hakama +3"
 	})
 	sets.engaged.DT.Haste0 = set_combine(sets.engaged.DT.Haste15,
 	{
@@ -605,7 +605,7 @@ function init_gear_sets()
 	{
 		ear2 = "Suppanomimi",
 		body = "Mochi. Chainmail +3", ring2 = "Regal Ring",
-		legs = "Hachiya Hakama +2"
+		legs = "Hachiya Hakama +3"
 	})
 	sets.engaged.Evasion.Haste0 = set_combine(sets.engaged.Evasion.Haste15,
 	{
@@ -627,7 +627,7 @@ function init_gear_sets()
 	sets.engaged.Tank.Haste15 = set_combine(sets.engaged.Tank.Haste30,
 	{
 		body = "Mochi. Chainmail +3",
-		legs = "Hachiya Hakama +2",
+		legs = "Hachiya Hakama +3",
 	})
 	sets.engaged.Tank.Haste0 = set_combine(sets.engaged.Tank.Haste15,
 	{
@@ -649,7 +649,7 @@ function init_gear_sets()
 	sets.engaged.Tank.DT.Haste15 = set_combine(sets.engaged.Tank.Haste30,
 	{
 		body = "Mochi. Chainmail +3", hands = "Mpaca's Gloves",
-		legs = "Hachiya Hakama +2", feet = "Mpaca's Boots"
+		legs = "Hachiya Hakama +3", feet = "Mpaca's Boots"
 	})
 	sets.engaged.Tank.DT.Haste0 = set_combine(sets.engaged.Tank.Haste15,
 	{
@@ -673,7 +673,7 @@ function init_gear_sets()
 	{
 		ear2 = "Suppanomimi",
 		ring2 = "Regal Ring",
-		legs = "Hachiya Hakama +2", feet = "Malignance Boots"
+		legs = "Hachiya Hakama +3", feet = "Malignance Boots"
 	})
 	sets.engaged.Tank.Evasion.Haste0 = set_combine(sets.engaged.Tank.Evasion.Haste15,
 	{
@@ -727,7 +727,7 @@ function init_gear_sets()
 
 	sets.buff.Migawari = {} -- body = "Hattori Ningi +1"
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
-	sets.buff.Futae = { hands = "Hattori Tekko +1" }
+	sets.buff.Futae = { hands = "Hattori Tekko +2" }
 	sets.buff.Yonin = { legs = "Hattori Hakama +2" }
 	sets.buff.Innin = { head = "Hattori Zukin +2" }
 

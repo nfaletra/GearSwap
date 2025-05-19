@@ -60,7 +60,7 @@ function init_gear_sets()
 
 	sets.precast.FC =
 	{
-		main = "Grioavolr", sub = "Umbra Strap",
+		main = "Grioavolr", sub = "Khonsu",
 		head = "Bunzi's Hat", neck = "Orunmila's Torque", ear1 = "Loquac. Earring", ear2 = "Malignance Earring",
 		body = "Inyanga Jubbah +2", hands = "Telchine Gloves", ring1 = "Kishar Ring", ring2 = "Lebeche Ring",
 		back = gear.Campestres.Magic, waist = "Witful Belt", legs = "Psycloth Lappas", feet = "Regal Pumps +1"
@@ -119,7 +119,7 @@ function init_gear_sets()
 
 	sets.midcast['Summoning Magic'] =
 	{
-		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Epitaph",
+		main = "Mpaca's Staff", sub = "Khonsu", ammo = "Epitaph",
 		head = "Beckoner's Horn +2", neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "Lodurr Earring",
 		body = "Baayami Robe", hands = "Glyphic Bracers +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = gear.Campestres.Magic, waist = "Emphatikos Rope", legs = "Assid. Pants +1", feet = "Glyph. Pigaches +1"

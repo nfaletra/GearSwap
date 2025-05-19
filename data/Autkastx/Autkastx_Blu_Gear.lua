@@ -253,10 +253,10 @@ function init_gear_sets()
 
 	sets.midcast['Blue Magic'].MagicAccuracy =
 	{
-		ammo = "Pemphredo Tathlum",
+		main = "Sakpata's Sword", sub = "Bunzi's Rod", ammo = "Pemphredo Tathlum",
 		head = "Hashishin Kavuk +3", neck = "Mirage Stole +2", ear1 = "Digni. Earring", ear2 = "Hashi. Earring +1",
 		body = "Hashishin Mintan +3", hands = "Hashi. Bazu. +2", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
-		back = "Aurist's Cape +1", waist = "Acuity Belt +1", legs = "Hashishin Tayt +2", feet = "Hashi. Basmak +2"
+		back = "Null Shawl", waist = "Null Belt", legs = "Hashishin Tayt +2", feet = "Hashi. Basmak +2"
 	}
 
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Blue Magic'].MagicAccuracy,

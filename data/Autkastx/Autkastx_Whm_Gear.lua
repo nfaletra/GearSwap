@@ -31,9 +31,9 @@ function user_job_setup()
 	send_command('bind ^delete input /ja "Dark Arts" <me>')
 	send_command('bind !delete input /ja "Addendum: Black" <me>')
 	send_command('bind @delete input /ja "Manifestation" <me>')
-	send_command('bind ^\\ input /ma "Protectra V" <me>')
-	send_command('bind @\\ input /ma "Shellra V" <me>')
-	send_command('bind !\\ input /ma "Reraise IV" <me>')
+	send_command('bind ^\\\\ input /ma "Protectra V" <me>')
+	send_command('bind @\\\\ input /ma "Shellra V" <me>')
+	send_command('bind !\\\\ input /ma "Reraise IV" <me>')
 
 	-- Smartcure binds
 	-- Party - Ctrl + FKey

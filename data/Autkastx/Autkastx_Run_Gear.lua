@@ -367,7 +367,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Nyame Helm", neck = "Combatant's Torque", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = "Nyame Mail", hands = gear.adhemar.hands.a, ring1 = "Moonlight Ring", ring2 = "Niqmaddu Ring",
+		body = "Ashera Harness", hands = gear.adhemar.hands.a, ring1 = "Moonlight Ring", ring2 = "Niqmaddu Ring",
 		back = gear.Ogma.Parry, waist = "Ioskeha Belt +1", legs = "Samnuha Tights", feet = "Nyame Sollerets"
 	}
 	sets.engaged.Hybrid.AM = set_combine(sets.engaged.Hybrid,
@@ -381,7 +381,7 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Adhemar Bonnet +1", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Telos Earring",
-		body = gear.adhemar.body.b, hands = gear.adhemar.hands.a, ring1 = "Epona's Ring", ring2 = "Niqmaddu Ring",
+		body = "Ashera Harness", hands = gear.adhemar.hands.a, ring1 = "Epona's Ring", ring2 = "Niqmaddu Ring",
 		back = "Null Shawl", waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
 	}
 	sets.engaged.DD.AM = set_combine(sets.engaged.DD,

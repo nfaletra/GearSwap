@@ -45,20 +45,20 @@
 
 -- Initialization function for this job file.
 function get_sets()
-    -- Load and initialize the include file.
-    include('Sel-Include.lua')
+	-- Load and initialize the include file.
+	include('Sel-Include.lua')
 end
 
 
 -- Setup vars that are user-independent.
 function job_setup()
 
-    state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
+	state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
 	state.Buff['Spirit Surge'] = buffactive['Spirit Surge'] or false
-    state.Buff.Hasso = buffactive.Hasso or false
-    state.Buff.Seigan = buffactive.Seigan or false
+	state.Buff['Third Eye'] = buffactive['Third Eye'] or false
+	state.Buff.Hasso = buffactive.Hasso or false
+	state.Buff.Seigan = buffactive.Seigan or false
 	state.Stance = M{['description']='Stance','Hasso','Seigan','None'}
-	state.AutoJumpMode = M(false, 'Auto Jump Mode')
 	state.AutoBondMode = M(true, 'Auto Bond Mode')
 	
 	autows = 'Stardiver'
@@ -67,7 +67,7 @@ function job_setup()
 	Breath_HPP = 60
 	
 	update_melee_groups()
-	init_job_states({"Capacity","AutoRuneMode","AutoTrustMode","AutoJumpMode","AutoWSMode","AutoShadowMode","AutoFoodMode","AutoStunMode","AutoDefenseMode",},{"AutoBuffMode","AutoSambaMode","Weapons","OffenseMode","WeaponskillMode","Stance","IdleMode","Passive","RuneElement","TreasureMode",})
+	init_job_states({"Capacity","AutoFoodMode","AutoTrustMode","AutoWSMode","AutoJumpMode","AutoShadowMode","AutoStunMode","AutoDefenseMode"},{"AutoBuffMode","AutoSambaMode","AutoRuneMode","Weapons","OffenseMode","WeaponskillMode","Stance","IdleMode","Passive","RuneElement","TreasureMode",})
 end
 
 function job_precast(spell, spellMap, eventArgs)
@@ -78,14 +78,14 @@ function job_precast(spell, spellMap, eventArgs)
 			if player.tp > 1850 and abil_recasts[140] < latency then
 				eventArgs.cancel = true
 				windower.chat.input('/ja "Sekkanoki" <me>')
-				windower.chat.input:schedule(1,'/ws "'..spell.english..'" '..spell.target.raw..'')
-				tickdelay = os.clock() + 1.25
+				windower.chat.input:schedule(1.1,'/ws "'..spell.english..'" '..spell.target.raw..'')
+				add_tick_delay(1.1)
 				return
 			elseif abil_recasts[134] < latency then
 				eventArgs.cancel = true
 				windower.chat.input('/ja "Meditate" <me>')
-				windower.chat.input:schedule(1,'/ws "'..spell.english..'" '..spell.target.raw..'')
-				tickdelay = os.clock() + 1.25
+				windower.chat.input:schedule(1.1,'/ws "'..spell.english..'" '..spell.target.raw..'')
+				add_tick_delay(1.1)
 				return
 			end
 		end
@@ -95,7 +95,8 @@ function job_precast(spell, spellMap, eventArgs)
 			if pet.isvalid and pet.hpp < 75 and abil_recasts[239] < latency and abil_recasts[149] < latency and spell.target.hpp > 44 then
 				eventArgs.cancel = true
 				windower.chat.input('/ja "Spirit Bond" <me>')
-				windower.chat.input:schedule(1,'/ja "Restoring Breath" '..spell.target.raw..'')
+				windower.chat.input:schedule(1.1,'/ja "Restoring Breath" '..spell.target.raw..'')
+				add_tick_delay(1.1)
 			end
 		end
 	end
@@ -169,7 +170,7 @@ function job_buff_change(buff, gain)
 end
 
 function job_update(cmdParams, eventArgs)
-    update_melee_groups()
+	update_melee_groups()
 	find_breath_hpp()
 	
 	if player.sub_job ~= 'SAM' and state.Stance.value ~= "None" then
@@ -178,20 +179,20 @@ function job_update(cmdParams, eventArgs)
 end
 
 function update_melee_groups()
-    classes.CustomMeleeGroups:clear()
-    
-    if data.areas.adoulin:contains(world.area) and buffactive.Ionis then
-		classes.CustomMeleeGroups:append('Adoulin')
-    end
-	
+	classes.CustomMeleeGroups:clear()
+
+	if pet.isvalid then
+		classes.CustomMeleeGroups:append('Pet')
+	end
+
 	if player.equipment.main and player.equipment.main == "Ryunohige" and state.Buff['Aftermath: Lv.3'] then
 		classes.CustomMeleeGroups:append('AM')
 	end
-    
+	
   -- Spirit Surge modifies the custom melee groups
-    if state.Buff['Spirit Surge'] then
-        classes.CustomMeleeGroups:append('SpiritSurge')
-    end
+	if state.Buff['Spirit Surge'] then
+		classes.CustomMeleeGroups:append('SpiritSurge')
+	end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -206,27 +207,29 @@ end
 function job_tick()
 	if check_hasso() then return true end
 	if check_jump() then return true end
+	if check_buffup() then return true end
 	if check_buff() then return true end
+	if job_check_buff() then return true end
 	return false
 end
 
 -- Modify the default melee set after it was constructed.
 function job_customize_melee_set(meleeSet)
-    return meleeSet
+	return meleeSet
 end
 
 function check_hasso()
-if player.sub_job == 'SAM' and player.status == 'Engaged' and not (state.Stance.value == 'None' or state.Buff.Hasso or state.Buff.Seigan or state.Buff['SJ Restriction'] or main_weapon_is_one_handed() or silent_check_amnesia()) then
+	if player.sub_job == 'SAM' and player.status == 'Engaged' and wielding() == 'Two-Handed' and state.Stance.value ~= 'None' and not (state.Buff.Hasso or state.Buff.Seigan or state.Buff['SJ Restriction'] or silent_check_amnesia()) then
 		
 		local abil_recasts = windower.ffxi.get_ability_recasts()
 		
 		if state.Stance.value == 'Hasso' and abil_recasts[138] < latency then
 			windower.chat.input('/ja "Hasso" <me>')
-			tickdelay = os.clock() + 1.1
+			add_tick_delay(1.1)
 			return true
 		elseif state.Stance.value == 'Seigan' and abil_recasts[139] < latency then
 			windower.chat.input('/ja "Seigan" <me>')
-			tickdelay = os.clock() + 1.1
+			add_tick_delay(1.1)
 			return true
 		end
 	
@@ -235,59 +238,62 @@ if player.sub_job == 'SAM' and player.status == 'Engaged' and not (state.Stance.
 	return false
 end
 
-function check_jump()
-    if state.AutoJumpMode.value and player.status == 'Engaged' and player.tp < 501 then
+function check_jump(user)
+	if user or (state.AutoJumpMode.value and player.status == 'Engaged' and player.tp < 501) then
 
-        local abil_recasts = windower.ffxi.get_ability_recasts()
+		local abil_recasts = windower.ffxi.get_ability_recasts()
 
-        if abil_recasts[166] < latency then
-            windower.chat.input('/ja "Spirit Jump" <t>')
-            tickdelay = os.clock() + 1.1
-            return true
-        elseif abil_recasts[167] < latency then
-            windower.chat.input('/ja "Soul Jump" <t>')
-            tickdelay = os.clock() + 1.1
-            return true
-        elseif abil_recasts[158] < latency then
-            windower.chat.input('/ja "Jump" <t>')
-            tickdelay = os.clock() + 1.1
-            return true
-        elseif abil_recasts[159] < latency then
-            windower.chat.input('/ja "High Jump" <t>')
-            tickdelay = os.clock() + 1.1
-            return true
-        elseif pet.isvalid and abil_recasts[162] < latency and pet.tp > 350 then
-            windower.chat.input('/ja "Spirit Link" <me>')
-            tickdelay = os.clock() + 1.1
-            return true
-        else
-            return false
-        end
-    end
+		if abil_recasts[166] < latency then
+			windower.chat.input('/ja "Spirit Jump" <t>')
+			add_tick_delay()
+			return true
+		elseif abil_recasts[167] < latency then
+			windower.chat.input('/ja "Soul Jump" <t>')
+			add_tick_delay()
+			return true
+		elseif abil_recasts[158] < latency then
+			windower.chat.input('/ja "Jump" <t>')
+			add_tick_delay()
+			return true
+		elseif abil_recasts[159] < latency then
+			windower.chat.input('/ja "High Jump" <t>')
+			add_tick_delay()
+			return true
+		elseif pet.isvalid and abil_recasts[162] < latency and player.tp < 501 and pet.tp > 600 then
+			windower.chat.input('/ja "Spirit Link" <me>')
+			add_tick_delay()
+			return true
+		else
+			if user then
+				add_to_chat(123, "All jumps currently on cooldown.")
+			end
+			return false
+		end
+	end
 end
 
-function check_buff()
-	if state.AutoBuffMode.value ~= 'Off' and player.in_combat then
+function job_check_buff()
+	if state.AutoBuffMode.value ~= 'Off' and in_combat then
 		
 		local abil_recasts = windower.ffxi.get_ability_recasts()
 
 		if not pet.isvalid and abil_recasts[163] < latency then
 			windower.chat.input('/ja "Call Wyvern" <me>')
-			tickdelay = os.clock() + 1.1
+			add_tick_delay()
 			return true
 		elseif state.Buff['SJ Restriction'] then
 			return false
 		elseif player.sub_job == 'DRK' and not buffactive['Last Resort'] and abil_recasts[87] < latency then
 			windower.chat.input('/ja "Last Resort" <me>')
-			tickdelay = os.clock() + 1.1
+			add_tick_delay()
 			return true
 		elseif player.sub_job == 'WAR' and not buffactive.Berserk and abil_recasts[1] < latency then
 			windower.chat.input('/ja "Berserk" <me>')
-			tickdelay = os.clock() + 1.1
+			add_tick_delay()
 			return true
 		elseif player.sub_job == 'WAR' and not buffactive.Aggressor and abil_recasts[4] < latency then
 			windower.chat.input('/ja "Aggressor" <me>')
-			tickdelay = os.clock() + 1.1
+			add_tick_delay()
 			return true
 		else
 			return false
@@ -312,3 +318,16 @@ function find_breath_hpp()
 		end
 	end
 end
+
+buff_spell_lists = {
+	Auto = {--Options for When are: Always, Engaged, Idle, OutOfCombat, Combat
+		{Name='Haste',			Buff='Haste',		SpellID=57,		When='Always'},
+		{Name='Refresh',		Buff='Refresh',		SpellID=109,	When='Always'},
+		{Name='Phalanx',		Buff='Phalanx',		SpellID=106,	When='Always'},
+	},
+	Self = {
+		{Name='Haste',			Buff='Haste',		SpellID=57,		Reapply=false},
+		{Name='Refresh',		Buff='Refresh',		SpellID=109,	Reapply=false},
+		{Name='Phalanx',		Buff='Phalanx',		SpellID=106,	Reapply=false},
+	},
+}

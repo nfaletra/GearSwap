@@ -64,7 +64,7 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Souv. Schaller +1", neck = "Loricate Torque +1",
-		body = "Chev. Cuirass +2", hands = "Regal Gauntlets",
+		body = "Chev. Cuirass +3", hands = "Regal Gauntlets",
 		waist = "Rumination Sash", legs = "Founder's Hose",
 	}
 

@@ -10,7 +10,7 @@ function user_job_setup()
 	state.AutoRepairMode = M(false, 'Auto Repair Mode')
 	state.AutoDeployMode = M(true, 'Auto Deploy Mode')
 	state.AutoPetMode 	 = M(false, 'Auto Pet Mode')
-	state.PetWSGear		 = M(false, 'Pet WS Gear')
+	state.PetWSGear		 = M(true, 'Pet WS Gear')
 	state.PetEnmityGear	 = M(false, 'Pet Enmity Gear')
 	
     -- Default/Automatic maneuvers for each pet mode.  Define at least 3.
@@ -77,7 +77,7 @@ function user_job_setup()
 	
 	send_command('bind @` gs c cycle SkillchainMode')
 	send_command('bind @f8 gs c toggle AutoPuppetMode')
-	send_command('bind @f7 gs c toggle AutoRepairMode')
+	send_command('bind !f7 gs c toggle AutoRepairMode')
 end
 
 -- Define sets used by this job file.
@@ -210,9 +210,10 @@ function init_gear_sets()
 	-- The following sets are predictive and are equipped before we even know the ability will happen, as a workaround due to
 	-- the fact that start of ability packets are too late in the case of Pup abilities, WS, and certain spells.
 	sets.midcast.Pet.PetEnmityGear = {}
-	sets.midcast.Pet.PetWSGear = {main="Ohtas",head="Mpaca's Cap",neck="Shulmanu Collar",ear1="Enmerkar Earring",ear2="Domesticator's Earring",
-        body=gear.taeon_pet_body,hands="Mpaca's Gloves",ring1="Varar Ring +1",ring2="C. Palug Ring",
-        back="Visucius's Mantle",waist="Incarnation Sash",legs="Taeon Tights",feet="Mpaca's Boots"}
+	sets.midcast.Pet.PetWSGear = {
+		head="Volte Cap",neck="Shulmanu Collar",ear1="Enmerkar Earring",ear2="Crepuscular Earring",
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Varar Ring +1",ring2="C. Palug Ring",
+        back="Visucius's Mantle",waist="Incarnation Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 	
     sets.midcast.Pet.PetWSGear.Ranged = set_combine(sets.midcast.Pet.PetWSGear, {})
 	sets.midcast.Pet.PetWSGear.Melee = set_combine(sets.midcast.Pet.PetWSGear, {})
@@ -252,9 +253,9 @@ function init_gear_sets()
 
     -- Idle sets to wear while pet is engaged
     sets.idle.Pet.Engaged = {
-        head="Anwig Salade",neck="Shulmanu Collar",ear1="Enmerkar Earring",ear2="Crepuscular Earring",
-        body=gear.taeon_pet_body,hands="Taeon Gloves",ring1="Varar Ring +1",ring2="C. Palug Ring",
-        back="Visucius's Mantle",waist="Incarnation Sash",legs="Taeon Tights",feet="Taeon Boots"}
+        head="Nyame Helm",neck="Shulmanu Collar",ear1="Enmerkar Earring",ear2="Crepuscular Earring",
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Varar Ring +1",ring2="C. Palug Ring",
+        back="Visucius's Mantle",waist="Incarnation Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
     sets.idle.Pet.Engaged.Ranged = set_combine(sets.idle.Pet.Engaged, {})
 	sets.idle.Pet.Engaged.Melee = set_combine(sets.idle.Pet.Engaged, {})

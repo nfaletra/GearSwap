@@ -51,6 +51,7 @@ local cooldown = 0
 local queue = Q{}
 local pending = nil
 local enabled = false
+local direction = true
 
 local action_events = {
     [2] = 'mid /ra',
@@ -223,12 +224,27 @@ local function able_to_use_weaponskill()
 end
 
 local function execute_pending_action()
-    cooldown = cooldowns[pending.prefix]
-    if pending.prefix == '/range' then
-        windower.chat.input("%s %d":format(pending.prefix, pending.target))
-    else
-        windower.chat.input("%s \"%s\" %d":format(pending.prefix, pending.english, pending.target))
-    end
+	if buffactive['Hover Shot'] and state.HoverShot.value then
+		if pending.prefix == '/range' then
+			hover_movement()
+			windower.chat.input:schedule(.8, "%s %d":format(pending.prefix, pending.target))
+			cooldown = cooldowns[pending.prefix] + .8
+		elseif pending.prefix == '/weaponskill' then
+			hover_movement()
+			windower.chat.input:schedule(.8, "%s \"%s\" %d":format(pending.prefix, pending.english, pending.target))
+			cooldown = cooldowns[pending.prefix] + .8
+		else
+			windower.chat.input("%s \"%s\" %d":format(pending.prefix, pending.english, pending.target))
+			cooldown = cooldowns[pending.prefix]
+		end	
+	else
+		cooldown = cooldowns[pending.prefix]
+		if pending.prefix == '/range' then
+				windower.chat.input("%s %d":format(pending.prefix, pending.target))
+		else
+			windower.chat.input("%s \"%s\" %d":format(pending.prefix, pending.english, pending.target))
+		end
+	end
 end
 
 local function process_pending_action()
@@ -311,9 +327,23 @@ function process_queue()
     end
 end
 
+function hover_movement()
+	if not windower.ffxi.get_player().target_locked then 
+		windower.chat.input('/lockon')
+	end
+
+	if direction then
+		send_command('setkey numpad4 down; wait 0.43; setkey numpad4 up;')
+		direction = false
+	else
+		send_command('setkey numpad6 down; wait 0.43; setkey numpad6 up;')
+		direction = true
+	end
+end
+
 local function handle_interrupt()
     completion = true
-    windower.send_command('@wait %f;gs rh process':format(cooldown))
+    send_command('@wait %f;gs rh process':format(cooldown))
 end
 
 local function add_spell_to_queue(spell)
@@ -383,7 +413,7 @@ local function handle_incoming_action_message_packet(id, data, modified, injecte
             if action_message_interrupted[p.Message] then
                 handle_interrupt()
             elseif action_message_unable[p.Message] then
-                windower.send_command('@wait 0;gs rh process')
+                send_command('@wait 0;gs rh process')
             end
         end
     end

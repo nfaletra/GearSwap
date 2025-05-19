@@ -82,7 +82,7 @@ function init_gear_sets()
 		back = "Perimede Cape", waist = "Witful Belt", legs = "Agwu's Slops", feet = "Peda. Loafers +3"
 	}
 
-	sets.precast.FC.Arts = { head = "Peda. M.Board +3", feet = "Acad. Loafers +1" }
+	sets.precast.FC.Arts = {}
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, { waist = "Siegel Sash" })
 
@@ -203,7 +203,7 @@ function init_gear_sets()
 
 	sets.midcast['Enhancing Magic'].Duration =
 	{
-		main = "Musa", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
+		main = "Musa", ammo = "Staunch Tathlum +1",
 		head = "Telchine Cap", neck = "Loricate Torque +1", ear1 = "Calamitous Earring", ear2 = "Etiolation Earring",
 		body = "Pedagogy Gown +3", hands = gear.telchine.hands.enhancing, ring1 = "Mephitas's Ring +1", ring2 = "Defending Ring",
 		back = "Fi Follet Cape +1", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Telchine Pigaches"
@@ -327,7 +327,7 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle =
 	{
-		main = "Mpaca's Staff", sub = "Khonsu", ammo = "Homiliary",
+		main = "Mpaca's Staff", sub = "Khonsu", ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Warder's Charm +1", ear1 = "Lugalbanda Earring", ear2 = "Etiolation Earring",
 		body = "Arbatel Gown +2", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
 		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Agwu's Slops", feet = "Nyame Sollerets"

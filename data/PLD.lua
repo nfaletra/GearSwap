@@ -67,7 +67,7 @@ function job_setup()
 	autofood = 'Miso Ramen'
 	
 	update_melee_groups()
-	init_job_states({"Capacity","AutoRuneMode","AutoTrustMode","AutoTankMode","AutoWSMode","AutoShadowMode","AutoFoodMode","AutoNukeMode","AutoStunMode","AutoDefenseMode"},{"AutoBuffMode","AutoSambaMode","Weapons","OffenseMode","WeaponskillMode","Stance","IdleMode","Passive","RuneElement","PhysicalDefenseMode","MagicalDefenseMode","ResistDefenseMode","CastingMode","TreasureMode",})
+	init_job_states({"Capacity","AutoFoodMode","AutoTrustMode","AutoTankMode","AutoWSMode","AutoNukeMode","AutoJumpMode","AutoShadowMode","AutoStunMode","AutoDefenseMode"},{"AutoBuffMode","AutoSambaMode","AutoRuneMode","Weapons","OffenseMode","WeaponskillMode","Stance","IdleMode","Passive","RuneElement","CastingMode","PhysicalDefenseMode","MagicalDefenseMode","ResistDefenseMode","ExtraDefenseMode","TreasureMode"})
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -182,8 +182,6 @@ end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
-    classes.CustomDefenseGroups:clear()
-    classes.CustomDefenseGroups:append(state.ExtraDefenseMode.current)
     classes.CustomMeleeGroups:clear()
     classes.CustomMeleeGroups:append(state.ExtraDefenseMode.current)
 end
@@ -194,110 +192,6 @@ end
 
     -- Allow jobs to override this code
 function job_self_command(commandArgs, eventArgs)
-
-	if commandArgs[1] == 'RuneElement' then
-		send_command('input /ja "'..state.RuneElement.value..'" <me>')
-
-	elseif commandArgs[1] == 'SubJobEnmity' then
-
-		if player.target.type ~= "MONSTER" then
-			add_to_chat(123,'Abort: You are not targeting a monster.')
-			return
-
-		elseif player.sub_job == 'RUN' then
-			local abil_recasts = windower.ffxi.get_ability_recasts()
-			
-			if abil_recasts[24] < latency then
-				send_command('input /ja "Swordplay" <me>')
-			end
-			
-		elseif player.sub_job == 'BLU' and not moving then
-			local spell_recasts = windower.ffxi.get_spell_recasts()
-					
-			if spell_recasts[584] < spell_latency then
-				windower.chat.input('/ma "Sheep Song" <t>')
-			elseif spell_recasts[598] < spell_latency then
-				windower.chat.input('/ma "Soporific" <t>')
-			elseif spell_recasts[605] < spell_latency then
-				windower.chat.input('/ma "Geist Wall" <t>')
-			elseif spell_recasts[575] < spell_latency then
-				windower.chat.input('/ma "Jettatura" <t>')
-			elseif spell_recasts[537] < spell_latency then
-				windower.chat.input('/ma "Stinking Gas" <t>')
-			elseif spell_recasts[592] < spell_latency then
-				windower.chat.input('/ma "Blank Gaze" <t>')
-			elseif not check_auto_tank_ws() then
-				if not state.AutoTankMode.value then add_to_chat(123,'All Enmity Blue Magic on cooldown.') end
-			end
-
-		elseif player.sub_job == 'DRK' then
-			local abil_recasts = windower.ffxi.get_ability_recasts()
-			local spell_recasts = windower.ffxi.get_spell_recasts()
-			
-			if (state.HybridMode.value ~= 'Normal' or state.DefenseMode.value ~= 'None')  and buffactive['Souleater'] then
-				send_command('cancel souleater')
-			end
-			
-			if (state.HybridMode.value ~= 'Normal' or state.DefenseMode.value ~= 'None')  and buffactive['Last Resort'] then
-				send_command('cancel last resort')
-			end
-			
-			if spell_recasts[252] < spell_latency and not silent_check_silence() then
-				windower.chat.input('/ma "Stun" <t>')
-			elseif abil_recasts[85] < latency then
-				windower.chat.input('/ja "Souleater" <me>')
-			elseif abil_recasts[87] < latency then
-				windower.chat.input('/ja "Last Resort" <me>')
-			elseif abil_recasts[86] < latency then
-				windower.chat.input('/ja "Arcane Circle" <me>')
-			elseif not check_auto_tank_ws() then
-				if not state.AutoTankMode.value then add_to_chat(123,'All Enmity Dark Knight abillities on cooldown.') end
-			end
-
-		elseif player.sub_job == 'WAR' then
-			local abil_recasts = windower.ffxi.get_ability_recasts()
-			
-			if state.HybridMode.value:contains('DD') then
-				if buffactive['Defender'] then send_command('cancel defender') end
-			elseif state.HybridMode.value ~= 'Normal' and not state.HybridMode.value:contains('DD') then
-				if buffactive['Berserk'] then send_command('cancel berserk') end
-			end
-			
-			if abil_recasts[5] < latency then
-				send_command('input /ja "Provoke" <t>')
-			elseif abil_recasts[2] < latency then
-				send_command('input /ja "Warcry" <me>')
-			elseif abil_recasts[3] < latency then
-				send_command('input /ja "Defender" <me>')
-			elseif abil_recasts[4] < latency then
-				send_command('input /ja "Aggressor" <me>')
-			elseif abil_recasts[1] < latency then
-				send_command('input /ja "Berserk" <me>')
-			elseif not check_auto_tank_ws() then
-				if not state.AutoTankMode.value then add_to_chat(123,'All Enmity Warrior Job Abilities on cooldown.') end
-			end
-			
-		elseif player.sub_job == 'DNC' then
-			local abil_recasts = windower.ffxi.get_ability_recasts()
-			local under3FMs = not buffactive['Finishing Move 3'] and not buffactive['Finishing Move 4'] and not buffactive['Finishing Move 5']
-        
-			if under3FMs then
-				if abil_recasts[220] < latency then
-				send_command('@input /ja "'..state.CurrentStep.value..'" <t>')
-				return
-				end
-			elseif abil_recasts[221] < latency then
-				send_command('input /ja "Animated Flourish" <t>')
-				return
-			elseif abil_recasts[220] < latency and not buffactive['Finishing Move 5'] then
-				send_command('@input /ja "'..state.CurrentStep.value..'" <t>')
-				return
-			elseif not check_auto_tank_ws() then
-				if not state.AutoTankMode.value then add_to_chat(123,'Dancer job abilities not needed.') end
-			end
-		end
-
-	end
 
 end
 
@@ -353,26 +247,6 @@ function job_customize_idle_set(idleSet)
 
     return idleSet
 end
-
--- Modify the default melee set after it was constructed.
-function job_customize_melee_set(meleeSet)
-
-    if state.ExtraDefenseMode.value ~= 'None' then
-        meleeSet = set_combine(meleeSet, sets[state.ExtraDefenseMode.value])
-    end
-   
-    return meleeSet
-
-end
-
-function job_customize_defense_set(defenseSet)
-    if state.ExtraDefenseMode.value ~= 'None' then
-        defenseSet = set_combine(defenseSet, sets[state.ExtraDefenseMode.value])
-    end
-
-    return defenseSet
-end
-
 
 function display_current_job_state(eventArgs)
     local msg = 'Melee'
@@ -440,13 +314,12 @@ end
 function job_tick()
 	if check_majesty() then return true end
 	if check_hasso() then return true end
-	if check_buff() then return true end
 	if check_buffup() then return true end
-	if state.AutoTankMode.value and player.in_combat and player.target.type == "MONSTER" and not moving then
-		if check_flash() then return true
-		else 
-			windower.send_command('gs c SubJobEnmity')
-			tickdelay = os.clock() + 1
+	if check_buff() then return true end
+	if job_check_buff() then return true end
+	if state.AutoTankMode.value and in_combat and player.target.type == "MONSTER" and not moving then
+		if handle_enmity(S{'auto'}) then
+			add_tick_delay(2)
 			return true
 		end
 	end
@@ -457,8 +330,8 @@ function check_flash()
 	local spell_recasts = windower.ffxi.get_spell_recasts()
 
 	if spell_recasts[112] < spell_latency then
-		send_command('input /ma "Flash" <t>')
-		tickdelay = os.clock() + 2
+		windower.chat.input('/ma "Flash" <t>')
+		add_tick_delay()
 		return true
 	else
 		return false
@@ -476,12 +349,12 @@ function update_melee_groups()
 end
 
 function check_majesty()
-	if state.AutoMajesty.value and player.in_combat and not buffactive.Majesty and not silent_check_amnesia() then
+	if state.AutoMajesty.value and in_combat and not buffactive.Majesty and not silent_check_amnesia() then
 		local abil_recasts = windower.ffxi.get_ability_recasts()
 		
 		if abil_recasts[150] < latency then
 			windower.chat.input('/ja "Majesty" <me>')
-			tickdelay = os.clock() + 1.1
+			add_tick_delay()
 			return true
 		else
 			return false
@@ -497,17 +370,17 @@ function check_cover(Protectee)
 end 
 
 function check_hasso()
-if player.sub_job == 'SAM' and player.status == 'Engaged' and not (state.Stance.value == 'None' or state.Buff.Hasso or state.Buff.Seigan or state.Buff['SJ Restriction'] or main_weapon_is_one_handed() or silent_check_amnesia()) then
+	if player.sub_job == 'SAM' and player.status == 'Engaged' and wielding() == 'Two-Handed' and state.Stance.value ~= 'None' and not (state.Buff.Hasso or state.Buff.Seigan or state.Buff['SJ Restriction'] or silent_check_amnesia()) then
 		
 		local abil_recasts = windower.ffxi.get_ability_recasts()
 		
 		if state.Stance.value == 'Hasso' and abil_recasts[138] < latency then
 			windower.chat.input('/ja "Hasso" <me>')
-			tickdelay = os.clock() + 1.1
+			add_tick_delay()
 			return true
 		elseif state.Stance.value == 'Seigan' and abil_recasts[139] < latency then
 			windower.chat.input('/ja "Seigan" <me>')
-			tickdelay = os.clock() + 1.1
+			add_tick_delay()
 			return true
 		else
 			return false
@@ -517,61 +390,19 @@ if player.sub_job == 'SAM' and player.status == 'Engaged' and not (state.Stance.
 	return false
 end
 
-function check_buff()
+function job_check_buff()
 	if state.AutoBuffMode.value ~= 'Off' and not data.areas.cities:contains(world.area) then
-		local spell_recasts = windower.ffxi.get_spell_recasts()
-		for i in pairs(buff_spell_lists[state.AutoBuffMode.Value]) do
-			if not buffactive[buff_spell_lists[state.AutoBuffMode.Value][i].Buff] and (buff_spell_lists[state.AutoBuffMode.Value][i].When == 'Always' or (buff_spell_lists[state.AutoBuffMode.Value][i].When == 'Combat' and (player.in_combat or being_attacked)) or (buff_spell_lists[state.AutoBuffMode.Value][i].When == 'Engaged' and player.status == 'Engaged') or (buff_spell_lists[state.AutoBuffMode.Value][i].When == 'Idle' and player.status == 'Idle') or (buff_spell_lists[state.AutoBuffMode.Value][i].When == 'OutOfCombat' and not (player.in_combat or being_attacked))) and spell_recasts[buff_spell_lists[state.AutoBuffMode.Value][i].SpellID] < latency and silent_can_use(buff_spell_lists[state.AutoBuffMode.Value][i].SpellID) then
-				windower.chat.input('/ma "'..buff_spell_lists[state.AutoBuffMode.Value][i].Name..'" <me>')
-				tickdelay = os.clock() + 2
-				return true
-			end
-		end
-		
-		if player.in_combat then
+		if in_combat then
 			local abil_recasts = windower.ffxi.get_ability_recasts()
 
 			if not buffactive['Majesty'] and abil_recasts[150] < latency then
 				windower.chat.input('/ja "Majesty" <me>')
-				tickdelay = os.clock() + 1.1
+				add_tick_delay()
 				return true
 			else
 				return false
 			end
 		end
-		
-	else
-		return false
-	end
-end
-
-function check_buffup()
-	if buffup ~= '' then
-		local needsbuff = false
-		for i in pairs(buff_spell_lists[buffup]) do
-			if not buffactive[buff_spell_lists[buffup][i].Buff] and silent_can_use(buff_spell_lists[buffup][i].SpellID) then
-				needsbuff = true
-				break
-			end
-		end
-	
-		if not needsbuff then
-			add_to_chat(217, 'All '..buffup..' buffs are up!')
-			buffup = ''
-			return false
-		end
-		
-		local spell_recasts = windower.ffxi.get_spell_recasts()
-		
-		for i in pairs(buff_spell_lists[buffup]) do
-			if not buffactive[buff_spell_lists[buffup][i].Buff] and silent_can_use(buff_spell_lists[buffup][i].SpellID) and spell_recasts[buff_spell_lists[buffup][i].SpellID] < spell_latency then
-				windower.chat.input('/ma "'..buff_spell_lists[buffup][i].Name..'" <me>')
-				tickdelay = os.clock() + 2
-				return true
-			end
-		end
-		
-		return false
 	else
 		return false
 	end

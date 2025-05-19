@@ -10,7 +10,7 @@ function user_job_setup()
     state.MagicalDefenseMode:options('MDT_HP','MDT','MDT_Reraise')
 	state.ResistDefenseMode:options('MEVA_HP','MEVA')
 	state.IdleMode:options('Tank','Kiting','PDT','Block','MDT','Normal')
-	state.Weapons:options('None','SakpataAegis','SakpataOchain','NaeglingBlurred')
+	state.Weapons:options('None','SakpataAegis','SakpataOchain','NaeglingBlurred','ClubOchain')
 	
     state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP','Twilight'}
 	
@@ -325,7 +325,7 @@ function init_gear_sets()
     
     -- Extra defense sets.  Apply these on top of melee or defense sets.
 	sets.Knockback = {}
-    sets.MP = {head="Chev. Armet +1",neck="Coatl Gorget +1",ear2="Ethereal Earring",waist="Flume Belt +1",feet="Rev. Leggings +3"}
+    sets.MP = {head="Chev. Armet +1",neck="Coatl Gorget +1",hands="Volte Bracers",ear2="Ethereal Earring",waist="Flume Belt +1",feet="Rev. Leggings +3"}
 	sets.passive.AbsorbMP = {head="Chev. Armet +1",neck="Coatl Gorget +1",ear2="Ethereal Earring",waist="Flume Belt +1",feet="Rev. Leggings +3"}
     sets.MP_Knockback = {}
     sets.Twilight = {head="Twilight Helm", body="Twilight Mail"}
@@ -335,6 +335,7 @@ function init_gear_sets()
 	sets.weapons.SakpataAegis = {main="Sakpata's Sword",sub="Aegis"}
 	sets.weapons.NaeglingBlurred = {main="Naegling",sub="Blurred Shield"}
 	sets.weapons.SakpataOchain = {main="Sakpata's Sword",sub="Ochain"}
+	sets.weapons.ClubOchain = {main="Mafic Cudgel",sub="Ochain"}
 	sets.weapons.DualWeapons = {main="Naegling",sub="Demersal Degen +1"}
     
     sets.defense.Block = {main="Sakpata's Sword",sub="Ochain",ammo="Eluder's Sachet",
@@ -365,12 +366,12 @@ function init_gear_sets()
 	sets.defense.MEVA = {main="Malignance Sword",sub="Aegis",ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
 		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Purity Ring",ring2="Shadow Ring",
-		back=gear.fastcast_jse_back,waist="Asklepain Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+		back=gear.fastcast_jse_back,waist="Asklepian Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
     sets.defense.MEVA_HP = {main="Malignance Sword",sub="Aegis",ammo="Staunch Tathlum +1",
         head="Sakpata's Helm",neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
         body="Sakpata's Plate",hands="Sakpata's Gauntlets",ring1="Gelatinous Ring +1",ring2="Moonlight Ring",
-        back="Moonlight Cape",waist="Asklepain Belt",legs="Sakpata's Cuisses",feet="Sakpata's Leggings"}
+        back="Moonlight Cape",waist="Asklepian Belt",legs="Sakpata's Cuisses",feet="Sakpata's Leggings"}
 		
     sets.defense.PDT_Reraise = set_combine(sets.defense.PDT_HP,{head="Twilight Helm",body="Twilight Mail"})
     sets.defense.MDT_Reraise = set_combine(sets.defense.MDT_HP,{head="Twilight Helm",body="Twilight Mail"})
@@ -428,16 +429,16 @@ end
 function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'NIN' then
-        set_macro_page(2, 4)
+        set_macro_page(1, 19)
     elseif player.sub_job == 'RUN' then
-        set_macro_page(9, 4)
+        set_macro_page(1, 19)
     elseif player.sub_job == 'RDM' then
-        set_macro_page(6, 4)
+        set_macro_page(1, 19)
     elseif player.sub_job == 'BLU' then
-        set_macro_page(8, 4)
+        set_macro_page(1, 19)
     elseif player.sub_job == 'DNC' then
-        set_macro_page(4, 4)
+        set_macro_page(1, 19)
     else
-        set_macro_page(1, 4) --War/Etc
+        set_macro_page(1, 19) --War/Etc
     end
 end

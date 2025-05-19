@@ -7,7 +7,7 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'DT', 'Evasion', 'Refresh')
-	state.Weapons:options('Godhands', 'Verethragna', 'Spharai', 'Karambit', 'Varga', 'Staff', 'ProcStaff', 'ProcClub', 'Barehanded')
+	state.Weapons:options('Godhands', 'Verethragna', 'Spharai', 'Dragon', 'Karambit', 'Varga', 'Staff', 'ProcStaff', 'ProcClub', 'Barehanded')
 
 	state.ExtraMeleeMode = M{['description'] = 'Extra Melee Mode', 'None', 'Warder'}
 
@@ -249,6 +249,14 @@ function init_gear_sets()
 		back = gear.Segomo.INT_WSD, waist = "Acuity Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
+	sets.precast.WS['Dragon Blow'] =
+	{
+		ammo = "Knobkierrie",
+		head = "Mpaca's Cap", neck = "Mnk. Nodowa +2", ear1 = "Moonshade Earring", ear2 = "Ishvara Earring",
+		body = "Bhikku Cyclas +3", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Epaminondas's Ring",
+		back = gear.Segomo.VIT_WSD, waist = "Moonbow Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+	}
+
 	sets.precast.WS['Retribution'] =
 	{
 		ammo = "Knobkierrie",
@@ -417,6 +425,7 @@ function init_gear_sets()
 	sets.weapons.Godhands = { main = "Godhands" }
 	sets.weapons.Verethragna = { main = "Verethragna" }
 	sets.weapons.Spharai = { main = "Spharai" }
+	sets.weapons.Dragon = { main = "Dragon Fangs" }
 	sets.weapons.Karambit = { main = "Karambit" }
 	sets.weapons.Varga = { main = "Varga Purnikawa" }
 	sets.weapons.Staff = { main = "Xoanon", sub = "Bloodrain Strap" }
