@@ -332,7 +332,7 @@ function init_gear_sets()
 	{
 		range = empty, ammo = "Staunch Tathlum +1",
 		head = "Kaykaus Mitra +1", neck = "Debilis Medallion", ear1 = "Calamitous Earring", ear2 = "Mendi. Earring",
-		body="Viti. Tabard +3", hands = "Hieros Mittens", ring1 = "Haoma's Ring", ring2 = "Menelaus's Ring",
+		body = "Viti. Tabard +3", hands = "Hieros Mittens", ring1 = "Haoma's Ring", ring2 = "Menelaus's Ring",
 		back = "Oretan. Cape +1", waist = "Bishop's Sash", legs = "Vanya Slops", feet = "Vanya Clogs"
 	}
 
@@ -596,23 +596,23 @@ function init_gear_sets()
 	{
 		ammo = "Coiste Bodhar",
 		head = "Bunzi's Hat", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Dedition Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
+		body = "Malignance Tabard", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
 		back = "Null Shawl", waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 	sets.engaged.DT = set_combine(sets.engaged,
 	{
-		ammo = "Crepuscular Pebble",
-		ring2 = "Petrov Ring"
+		neck = "Loricate Torque +1",
+		ring2 = "Defending Ring"
 	})
 
 	sets.engaged.DW =
 	{
 		ammo = "Coiste Bodhar",
 		head = "Bunzi's Hat", neck = "Anu Torque", ear1 = "Eabani Earring", ear2 = "Dedition Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Chirich Ring +1", ring2 = "Crepuscular Ring",
+		body = "Malignance Tabard", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
 		back = "Null Shawl", waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
-	sets.engaged.DW.DT = set_combine(sets.engaged.DW, { ring2 = "Defending Ring" })
+	sets.engaged.DW.DT = set_combine(sets.engaged.DW, { neck = "Loricate Torque +1", ring2 = "Defending Ring" })
 
 	sets.engaged.DW.Haste30 = set_combine(sets.engaged.DW,
 	{

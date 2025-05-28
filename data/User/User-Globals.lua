@@ -102,3 +102,119 @@ function user_job_buff_change(buff, gain, eventArgs)
 		end
 	end
 end
+
+function user_setup()
+	cure2_threshold = 300
+	cure3_threshold = 500
+	cure4_threshold = 1000
+	cure5_threshold = 1500
+	cure6_threshold = 3000
+
+	function handle_smartcure(cmdParams)
+		if cmdParams[1] then
+			if tonumber(cmdParams[1]) then
+				cureTarget = windower.ffxi.get_mob_by_id(tonumber(cmdParams[1]))
+			else
+				cureTarget = table.concat(cmdParams, ' ')
+				cureTarget = windower.ffxi.get_mob_by_target(cureTarget)
+				if not cureTarget or not cureTarget.name then cureTarget = player.target end
+				if not cureTarget or not cureTarget.name then cureTarget = player end
+			end
+		elseif player.target.type == "SELF" or player.target.type == 'MONSTER' or player.target.type == 'NONE' then
+			cureTarget = player
+		else
+			cureTarget = player.target
+		end
+
+		if cureTarget.status == 2 or cureTarget.status == 3 then
+			windower.chat.input('/ma "Arise" '..cureTarget..'')
+			return
+		end
+		
+		local missingHP = nil
+		local spell_recasts = windower.ffxi.get_spell_recasts()
+
+		if cureTarget.type == 'MONSTER' then
+			if silent_can_use(4) and spell_recasts[4] < spell_latency then
+				windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
+			elseif spell_recasts[3] < spell_latency then
+				windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
+			elseif spell_recasts[2] < spell_latency then
+				windower.chat.input('/ma "Cure II" '..cureTarget.id..'')
+			else
+				add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
+			end
+		elseif cureTarget.in_alliance then
+			cureTarget.hp = find_player_in_alliance(cureTarget.name).hp
+			local est_max_hp = cureTarget.hp / (cureTarget.hpp / 100)
+			missingHP = math.floor(est_max_hp - cureTarget.hp)
+		else
+			local est_current_hp = 2000 * (cureTarget.hpp / 100)
+			missingHP = math.floor(2000 - est_current_hp)
+		end
+
+		if missingHP then
+			if missingHP < cure2_threshold and spell_recasts[1] then
+				if spell_recasts[1] < spell_latency then
+					windower.chat.input('/ma "Cure" '..cureTarget.id..'')
+				elseif spell_recasts[2] and spell_recasts[2] < spell_latency then
+					windower.chat.input('/ma "Cure II" '..cureTarget.id..'')
+				else
+					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
+				end
+			elseif missingHP < cure3_threshold and spell_recasts[2] then
+				if spell_recasts[2] < spell_latency then
+					windower.chat.input('/ma "Cure II" '..cureTarget.id..'')
+				elseif spell_recassts[3] and spell_recasts[3] < spell_latency then
+					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
+				elseif spell_recasts[1] < spell_latency then
+					windower.chat.input('/ma "Cure" '..cureTarget.id..'')
+				else
+					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
+				end
+			elseif missingHP < cure4_threshold and spell_recasts[3] then
+				if spell_recasts[3] < spell_latency then
+					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
+				elseif spell_recasts[4] and spell_recasts[4] < spell_latency then
+					windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
+				else
+					add_to_chat(123, 'Abort: Appropriate cures are on cooldown.')
+				end
+			elseif missingHP < cure5_threshold and spell_recasts[4] then
+				if spell_recasts[4] < spell_latency then
+					windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
+				elseif spell_recasts[3] < spell_latency then
+					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
+				elseif spell_recasts[5] and spell_recasts[5] < spell_latency then
+					windower.chat.input('/ma "Cure V" '..cureTarget.id..'')
+				else
+					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
+				end
+			elseif missingHP < cure6_threshold and spell_recasts[5] then
+				if spell_recasts[5] < spell_latency then
+					windower.chat.input('/ma "Cure V" '..cureTarget.id..'')
+				elseif spell_recasts[4] < spell_latency then
+					windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
+				elseif spell_recasts[6] and spell_recasts[6] < spell_latency then
+					windower.chat.input('/ma "Cure VI" '..cureTarget.id..'')
+				elseif spell_recasts[3] < spell_latency then
+					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
+				else
+					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
+				end
+			else
+				if spell_recasts[6] and spell_recasts[6] < spell_latency then
+					windower.chat.input('/ma "Cure VI" '..cureTarget.id..'')
+				elseif spell_recasts[5] and spell_recasts[5] < spell_latency then
+					windower.chat.input('/ma "Cure V" '..cureTarget.id..'')
+				elseif spell_recasts[4] and spell_recasts[4] < spell_latency then
+					windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
+				elseif spell_recasts[3] and spell_recasts[3] < spell_latency then
+					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
+				else
+					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
+				end
+			end
+		end
+	end
+end
