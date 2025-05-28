@@ -283,29 +283,46 @@ function check_reaction(act)
 	elseif midaction() or curact.category ~= 8 or state.DefenseMode.value ~= 'None' or ((petWillAct + 2) > os.clock()) then
 			
 	elseif targetsMe then
-		if CureAbility:contains(act_info.name) and player.hpp < 75 then
+		if act_info.skill == 34 then
+			if RefreshAbility:contains(act_info.name) then
+				if sets.Refresh_Received then
+					send_command('gs c softequip sets.Refresh_Received')
+				elseif sets.Self_Refresh then
+					send_command('gs c softequip sets.Self_Refresh')
+				elseif sets.Enhancing_Received then
+					send_command('gs c softequip sets.Phalanx_Received')
+					return
+				end
+				return
+			elseif PhalanxAbility:contains(act_info.name) then
+				if sets.Phalanx_Received then
+					send_command('gs c softequip sets.Phalanx_Received')
+				elseif sets.midcast.Phalanx then
+					send_command('gs c softequip sets.midcast.Phalanx')
+				elseif sets.Enhancing_Received then
+					send_command('gs c softequip sets.Phalanx_Received')
+					return
+				end
+				return
+			elseif ProshellAbility:contains(act_info.name) then
+				if sets.Sheltered then
+					send_command('gs c softequip sets.Sheltered')
+					return
+				elseif sets.Enhancing_Received then
+					send_command('gs c softequip sets.Phalanx_Received')
+					return
+				end
+			elseif sets.Enhancing_Received then
+				send_command('gs c softequip sets.Enhancing_Received')
+				return
+			end
+		elseif CureAbility:contains(act_info.name) and player.hpp < 75 then
 			if sets.Cure_Received then
 				send_command('gs c softequip sets.Cure_Received')
 			elseif sets.Self_Healing then
 				send_command('gs c softequip sets.Self_Healing') 
 			end
 			return
-		elseif RefreshAbility:contains(act_info.name) then
-			if sets.Refresh_Received then
-				send_command('gs c softequip sets.Refresh_Received')
-			elseif sets.Self_Refresh then
-				send_command('gs c softequip sets.Self_Refresh')
-			end
-			return
-		elseif PhalanxAbility:contains(act_info.name) then
-			if sets.Phalanx_Received then
-				send_command('gs c softequip sets.Phalanx_Received')
-			elseif sets.midcast.Phalanx then
-				send_command('gs c softequip sets.midcast.Phalanx')
-			end
-			return
-		elseif ProshellAbility:contains(act_info.name) then
-			if sets.Sheltered then send_command('gs c softequip sets.Sheltered') return end
 		end
 	elseif actor.in_party and otherTarget.in_party and targetsDistance < 10 then
 

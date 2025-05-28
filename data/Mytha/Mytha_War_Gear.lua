@@ -9,7 +9,7 @@ function user_job_setup()
 	state.IdleMode:options('Normal', 'PDT')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
 	state.Passive = M{['description'] = 'Passive Mode','None','Twilight'}
-	state.Weapons:options('None','GreatAxe','DualWeapons','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ShiningOne','ProcPolearm','ProcKatana','ProcGreatKatana','ProcClub','ProcStaff')
+	state.Weapons:options('GreatAxe','DualWeapons','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ShiningOne','ProcPolearm','ProcKatana','ProcGreatKatana','ProcClub','ProcStaff')
 	
 	autows_list = {['DualWeapons']='Savage Blade',['ProcDagger']='Cyclone',['ProcSword']='Red Lotus Blade',['ProcGreatSword']='Freezebite',['ProcScythe']='Shadow of Death',['ProcPolearm']='Raiden Thrust',['ProcGreatKatana']='Tachi: Koki',['ProcKatana']='Blade: Ei',['ProcClub']='Seraph Strike',['ProcStaff']='Earth Crusher',}
 
@@ -51,7 +51,7 @@ function init_gear_sets()
 	sets.passive.Twilight = {head="Twilight Helm",body="Twilight Mail"}
 	
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Berserk'] = {main="Pukulatmuj"}
+	sets.precast.JA['Berserk'] = {}
 	sets.precast.JA['Warcry'] = {}
 	sets.precast.JA['Defender'] = {}
 	sets.precast.JA['Aggressor'] = {}
@@ -89,7 +89,7 @@ function init_gear_sets()
 	
 	sets.Self_Healing = {}
 	sets.Cure_Received = {neck="Phalaina Locket",ring2="Kunaji Ring",waist="Gishdubar Sash"}
-						                   
+
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {ammo="Oshasha's Treatise",

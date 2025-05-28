@@ -1574,9 +1574,6 @@ end
 
 -- A function for testing lua code.  Called via "gs c test".
 function handle_test(cmdParams)
-
-	add_to_chat(tostring(silent_can_ability('Rampart')))
-
 	if user_test then
 		user_test(cmdParams)
 	elseif job_test then

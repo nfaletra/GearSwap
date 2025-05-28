@@ -305,16 +305,22 @@ end
 
 function find_breath_hpp()
 	if S{'WHM','BLM','RDM','SMN','BLU','SCH','GEO'}:contains(player.sub_job) then
-		if sets.midcast.HB_Trigger and (sets.midcast.HB_Trigger.head:contains('Vishap') or sets.midcast.HB_Trigger.head:contains('Drachen')) then
-			Breath_HPP = 65
-		else
-			Breath_HPP = 45
+		if sets.midcast.HB_Trigger and sets.midcast.HB_Trigger.head then
+			local healing_breath_head = standardize_slot(head)
+			if (healing_breath_head:contains('Vishap') or healing_breath_head.head:contains('Drachen')) then
+				Breath_HPP = 65
+			else
+				Breath_HPP = 45
+			end
 		end
 	elseif S{'PLD','DRK','BRD','NIN','RUN'}:contains(player.sub_job) then
-		if sets.midcast.HB_Trigger and (sets.midcast.HB_Trigger.head:contains('Vishap') or sets.midcast.HB_Trigger.head:contains('Drachen')) then
-			Breath_HPP = 45
-		else
-			Breath_HPP = 35
+		if sets.midcast.HB_Trigger and sets.midcast.HB_Trigger.head then
+			local healing_breath_head = standardize_slot(head)
+			if (healing_breath_head:contains('Vishap') or healing_breath_head.head:contains('Drachen')) then
+				Breath_HPP = 45
+			else
+				Breath_HPP = 35
+			end
 		end
 	end
 end

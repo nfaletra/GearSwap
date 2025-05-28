@@ -66,17 +66,9 @@ function job_setup()
 	autofood = 'Soy Ramen'
 	statusammo = nil
 	ammostock = 98
-	
-	WeaponType =  {['Yoichinoyumi'] = "Bow",
-				   ['Gandiva'] = "Bow",
-                   ['Fail-Not'] = "Bow",
-                   ['Accipiter'] = "Bow",
-                   ['Annihilator'] = "Gun",
-                   ['Fomalhaut'] = "Gun",
-				   ['Ataktos'] = "Gun",
-				   ['Armageddon'] = "Gun",
-                   ['Gastraphetes'] = "Crossbow",
-                   }
+
+	RangedWeaponType = ''
+	check_ranged_weapon_type()
 	
 	DefaultAmmo = {
 		['Bow']  = {['Default'] = "Chrono Arrow",
@@ -137,17 +129,12 @@ end
 function job_post_precast(spell, spellMap, eventArgs)
 	if spell.type == 'WeaponSkill' then
 		if not (spell.skill == 'Marksmanship' or spell.skill == 'Archery') then
-			if sets.weapons[state.Weapons.value] then
-				local standardized_set = standardize_set(sets.weapons[state.Weapons.value])
-				local WeaponType = WeaponType[standardized_set.range]
-
-				if WeaponType == 'Bow' and item_available('Hauksbok Arrow') then
-					equip({ammo="Hauksbok Arrow"})
-				elseif WeaponType == 'Crossbow' and item_available('Hauksbok Bolt') then
-					equip({ammo="Hauksbok Bolt"})
-				elseif WeaponType == 'Gun' and item_available('Hauksbok Bullet') then
-					equip({ammo="Hauksbok Bullet"})
-				end
+			if RangedWeaponType == 'Bow' and item_available('Hauksbok Arrow') then
+				equip({ammo="Hauksbok Arrow"})
+			elseif RangedWeaponType == 'Crossbow' and item_available('Hauksbok Bolt') then
+				equip({ammo="Hauksbok Bolt"})
+			elseif RangedWeaponType == 'Gun' and item_available('Hauksbok Bullet') then
+				equip({ammo="Hauksbok Bullet"})
 			end
 		end
 	
@@ -205,7 +192,7 @@ function job_post_precast(spell, spellMap, eventArgs)
 end
 
 function job_self_command(commandArgs, eventArgs)
-    if commandArgs[1]:lower() == 'statusammo' then
+	if commandArgs[1]:lower() == 'statusammo' then
 		if commandArgs[2] then
 			statusammo = table.concat(commandArgs, ' ', 2)
 		else
@@ -217,16 +204,16 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_post_midcast(spell, spellMap, eventArgs)
-    if spell.action_type == 'Ranged Attack' then
-        if state.Buff['Camouflage'] and sets.buff.Camouflage then
-            if sets.buff['Camouflage'][state.RangedMode.value] then
-                equip(sets.buff['Camouflage'][state.RangedMode.value])
-            else
-                equip(sets.buff['Camouflage'])
-            end
-        end
-        if state.Buff['Double Shot'] and sets.buff['Double Shot'] then
-            if classes.CustomRangedGroups:contains('AM') then
+	if spell.action_type == 'Ranged Attack' then
+		if state.Buff['Camouflage'] and sets.buff.Camouflage then
+			if sets.buff['Camouflage'][state.RangedMode.value] then
+				equip(sets.buff['Camouflage'][state.RangedMode.value])
+			else
+				equip(sets.buff['Camouflage'])
+			end
+		end
+		if state.Buff['Double Shot'] and sets.buff['Double Shot'] then
+			if classes.CustomRangedGroups:contains('AM') then
 				if sets.buff['Double Shot'][state.Weapons.value] then
 					if sets.buff['Double Shot'][state.Weapons.value][state.RangedMode.value] then
 						if sets.buff['Double Shot'][state.Weapons.value][state.RangedMode.value].AM then
@@ -250,7 +237,7 @@ function job_post_midcast(spell, spellMap, eventArgs)
 				else
 					equip(sets.buff['Double Shot'])
 				end
-            else
+			else
 				if sets.buff['Double Shot'][state.Weapons.value] then
 					if sets.buff['Double Shot'][state.Weapons.value][state.RangedMode.value] then
 						equip(sets.buff['Double Shot'][state.Weapons.value][state.RangedMode.value])
@@ -262,12 +249,12 @@ function job_post_midcast(spell, spellMap, eventArgs)
 				else
 					equip(sets.buff['Double Shot'])
 				end
-            end
-        end
-        if state.Buff.Barrage and sets.buff.Barrage then
-            equip(sets.buff.Barrage)
-        end
-    end
+			end
+		end
+		if state.Buff.Barrage and sets.buff.Barrage then
+			equip(sets.buff.Barrage)
+		end
+	end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -294,11 +281,11 @@ end
 
 -- Called by the 'update' self-command.
 function job_update(cmdParams, eventArgs)
-    if cmdParams[1] == 'user' and not data.areas.cities:contains(world.area) then
-        if not buffactive['Velocity Shot'] then
-            send_command('@input /ja "Velocity Shot" <me>')
-        end
-    end
+	if cmdParams[1] == 'user' and not data.areas.cities:contains(world.area) then
+		if not buffactive['Velocity Shot'] then
+			send_command('@input /ja "Velocity Shot" <me>')
+		end
+	end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -319,12 +306,12 @@ function check_ammo_precast(spell, action, spellMap, eventArgs)
 	if state.Buff['Unlimited Shot'] and spell.type == 'WeaponSkill' then
 		if data.weaponskills.elemental:contains(spell.name) then
 			if check_ws_acc():contains('Acc') then
-				equip({ammo=DefaultAmmo[WeaponType[player.equipment.range]].MagicAccUnlimited})
+				equip({ammo=DefaultAmmo[RangedWeaponType].MagicAccUnlimited})
 			else
-				equip({ammo=DefaultAmmo[WeaponType[player.equipment.range]].MagicUnlimited})
+				equip({ammo=DefaultAmmo[RangedWeaponType].MagicUnlimited})
 			end
 		else
-			equip({ammo=DefaultAmmo[WeaponType[player.equipment.range]].Unlimited})
+			equip({ammo=DefaultAmmo[RangedWeaponType].Unlimited})
 		end
 		return
 	elseif is_rare(player.equipment.ammo) then
@@ -333,8 +320,8 @@ function check_ammo_precast(spell, action, spellMap, eventArgs)
 		enable('ammo')
 		if sets.weapons[state.Weapons.value].ammo and item_available(sets.weapons[state.Weapons.value].ammo) then
 			equip({ammo=sets.weapons[state.Weapons.value].ammo})
-		elseif item_available(DefaultAmmo[WeaponType[player.equipment.range]].Default) then
-			equip({ammo=DefaultAmmo[WeaponType[player.equipment.range]].Default})
+		elseif item_available(DefaultAmmo[RangedWeaponType].Default) then
+			equip({ammo=DefaultAmmo[RangedWeaponType].Default})
 		else
 			equip({ammo=empty})
 		end
@@ -342,25 +329,25 @@ function check_ammo_precast(spell, action, spellMap, eventArgs)
 		return
 	elseif not state.UseDefaultAmmo.value then
 	elseif spell.name == 'Shadowbind' then
-		equip({ammo=DefaultAmmo[WeaponType[player.equipment.range]].Default})
+		equip({ammo=DefaultAmmo[RangedWeaponType].Default})
 	elseif spell.action_type == 'Ranged Attack' then
 		if state.RangedMode.value:contains('Acc') then
-			equip({ammo=DefaultAmmo[WeaponType[player.equipment.range]].Acc})
+			equip({ammo=DefaultAmmo[RangedWeaponType].Acc})
 		else
-			equip({ammo=DefaultAmmo[WeaponType[player.equipment.range]].Default})
+			equip({ammo=DefaultAmmo[RangedWeaponType].Default})
 		end
 	elseif spell.type == 'WeaponSkill' then
 		if data.weaponskills.elemental:contains(spell.name) then
 			if check_ws_acc():contains('Acc') then
-				equip({ammo=DefaultAmmo[WeaponType[player.equipment.range]].MagicAcc})
+				equip({ammo=DefaultAmmo[RangedWeaponType].MagicAcc})
 			else
-				equip({ammo=DefaultAmmo[WeaponType[player.equipment.range]].Magic})
+				equip({ammo=DefaultAmmo[RangedWeaponType].Magic})
 			end
 		else
 			if check_ws_acc():contains('Acc') then
-				equip({ammo=DefaultAmmo[WeaponType[player.equipment.range]].Acc})
+				equip({ammo=DefaultAmmo[RangedWeaponType].Acc})
 			else
-				equip({ammo=DefaultAmmo[WeaponType[player.equipment.range]].WS})
+				equip({ammo=DefaultAmmo[RangedWeaponType].WS})
 			end			
 		end
 			
@@ -384,12 +371,56 @@ function job_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, spellMap, eventArgs)
-	if state.UseDefaultAmmo.value and player.equipment.range and DefaultAmmo[WeaponType[player.equipment.range]].Default then
-		equip({ammo=DefaultAmmo[WeaponType[player.equipment.range]].Default})
+	if state.UseDefaultAmmo.value and player.equipment.range and DefaultAmmo[RangedWeaponType].Default then
+		equip({ammo=DefaultAmmo[RangedWeaponType].Default})
 	end
 end
 
 function job_tick()
 	if check_ammo() then return true end
 	return false
+end
+
+function job_state_change(stateField, newValue, oldValue)
+	if stateField == 'Weapons' then
+		check_ranged_weapon_type()
+	end
+end
+
+function check_ranged_weapon_type()
+	local ranged_weapon
+
+	if (state.Weapons.value == 'None' or state.UnlockWeapons.value) and (sets.midcast.RA.range or sets.midcast.RA.ranged) then
+		if sets.midcast.RA.range then
+			ranged_weapon = sets.midcast.RA.range
+		elseif sets.midcast.RA.ranged then
+			ranged_weapon = sets.midcast.RA.ranged
+		end
+	elseif state.Weapons.value ~= 'None' and sets.weapons[state.Weapons.value] and (sets.weapons[state.Weapons.value].range or sets.weapons[state.Weapons.value].ranged) then
+		if sets.weapons[state.Weapons.value].range then
+			ranged_weapon = sets.weapons[state.Weapons.value].range
+		elseif sets.weapons[state.Weapons.value].ranged then
+			ranged_weapon = sets.weapons[state.Weapons.value].ranged
+		end
+	elseif player.equipment.range then
+		ranged_weapon = player.equipment.range
+	else
+		RangedWeaponType = 'None'
+	end
+
+	if type(ranged_weapon) == 'table' then
+		ranged_weapon = ranged_weapon.name
+	end
+	
+	set_ranged_weapon_type(ranged_weapon)
+end
+
+function set_ranged_weapon_type(ranged_weapon_name)
+	local ranged_weapon_id = get_item_id_by_name(ranged_weapon_name)
+
+	if res.items[ranged_weapon_id] and res.items[ranged_weapon_id].range_type then
+		RangedWeaponType = res.items[ranged_weapon_id].range_type
+	else
+		RangedWeaponType = 'None'
+	end
 end
