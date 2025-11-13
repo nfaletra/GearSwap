@@ -154,7 +154,7 @@ function user_setup()
 		end
 
 		if missingHP then
-			if missingHP < cure2_threshold and spell_recasts[1] then
+			if missingHP < cure2_threshold then
 				if spell_recasts[1] < spell_latency then
 					windower.chat.input('/ma "Cure" '..cureTarget.id..'')
 				elseif spell_recasts[2] and spell_recasts[2] < spell_latency then
@@ -162,7 +162,7 @@ function user_setup()
 				else
 					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
 				end
-			elseif missingHP < cure3_threshold and spell_recasts[2] then
+			elseif missingHP < cure3_threshold then
 				if spell_recasts[2] < spell_latency then
 					windower.chat.input('/ma "Cure II" '..cureTarget.id..'')
 				elseif spell_recassts[3] and spell_recasts[3] < spell_latency then
@@ -172,7 +172,7 @@ function user_setup()
 				else
 					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
 				end
-			elseif missingHP < cure4_threshold and spell_recasts[3] then
+			elseif missingHP < cure4_threshold then
 				if spell_recasts[3] < spell_latency then
 					windower.chat.input('/ma "Cure III" '..cureTarget.id..'')
 				elseif spell_recasts[4] and spell_recasts[4] < spell_latency then
@@ -180,7 +180,7 @@ function user_setup()
 				else
 					add_to_chat(123, 'Abort: Appropriate cures are on cooldown.')
 				end
-			elseif missingHP < cure5_threshold and spell_recasts[4] then
+			elseif missingHP < cure5_threshold then
 				if spell_recasts[4] < spell_latency then
 					windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')
 				elseif spell_recasts[3] < spell_latency then
@@ -190,8 +190,8 @@ function user_setup()
 				else
 					add_to_chat(123,'Abort: Appropriate cures are on cooldown.')
 				end
-			elseif missingHP < cure6_threshold and spell_recasts[5] then
-				if spell_recasts[5] < spell_latency then
+			elseif missingHP < cure6_threshold then
+				if spell_recasts[5] and spell_recasts[5] < spell_latency then
 					windower.chat.input('/ma "Cure V" '..cureTarget.id..'')
 				elseif spell_recasts[4] < spell_latency then
 					windower.chat.input('/ma "Cure IV" '..cureTarget.id..'')

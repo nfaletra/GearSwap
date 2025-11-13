@@ -124,7 +124,7 @@ function init_gear_sets()
 	sets.idle =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Nyame Helm", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
+		head = "Sakpata's Helm", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Shadow Ring", ring2 = "Defending Ring",
 		back = "Atheling Mantle", waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
@@ -136,9 +136,9 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		ammo = "Coiste Bodhar",
-		head = "Nyame Helm", neck = "War. Beads +2", ear1 = "Schere Earring", ear2 = "Boii Earring +1",
-		body = "Nyame Mail", hands = "Sakpata's Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Moonlight Ring",
-		back = "Cichol's Mantle", waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		head = "Sakpata's Helm", neck = "War. Beads +2", ear1 = "Schere Earring", ear2 = "Boii Earring +1",
+		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Niqmaddu Ring", ring2 = "Moonlight Ring",
+		back = "Cichol's Mantle", waist = "Ioskeha Belt +1", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
 	}
 
 	sets.engaged.DW =

@@ -79,7 +79,7 @@ function init_gear_sets()
 		main = "Carnwenhan", sub = "Genmei Shield",
 		head = "Fili Calot +1", neck = "Loricate Torque +1", ear1 = "Enchanter's Earring +1", ear2 = "Loquac. Earring",
 		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
-		back = gear.Intarabus.FC, waist = "Embla Sash", legs = "Aya. Cosciales +2", feet = "Bihu Slippers +1"
+		back = gear.Intarabus.FC, waist = "Embla Sash", legs = "Kaykaus Tights +1", feet = "Bihu Slippers +1"
 	}
 	sets.precast.FC['Honor March'] = set_combine(sets.precast.FC.BardSong, { range = "Marsyas" })
 
