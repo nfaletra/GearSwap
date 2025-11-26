@@ -98,10 +98,10 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Collaborator'] = { head = "Skulker's Bonnet +2" }
 	sets.precast.JA['Accomplice'] = { head = "Skulker's Bonnet +2" }
-	sets.precast.JA['Flee'] = {}
-	sets.precast.JA['Hide'] = { body = "Pillager's Vest +3" }
+	sets.precast.JA['Flee'] = { feet = "Rogue's Poulaines" }
+	sets.precast.JA['Hide'] = { body = "Rogue's Vest" }
 	sets.precast.JA['Conspirator'] = {} 
-	sets.precast.JA['Steal'] = { ammo = "Barathrum" }
+	sets.precast.JA['Steal'] = { head = "Rogue's Bonnet", hands = "Rogue's Armlets", legs = "Rogue's Culottes", feet = "Rogue's Poulaines" }
 	sets.precast.JA['Mug'] = {}
 	sets.precast.JA['Despoil'] = { ammo = "Barathrum", legs = "Raider's Culottes +1", feet = "Skulk. Poulaines +2" }
 	sets.precast.JA['Perfect Dodge'] = { hands = "Plun. Armlets +3" }
