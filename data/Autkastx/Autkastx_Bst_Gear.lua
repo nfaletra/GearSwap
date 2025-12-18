@@ -38,9 +38,7 @@ function user_job_setup()
 
 	gear.Artio =
 	{
-		Idle = { name = "Artio's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%' } },
-		STP = { name = "Artio's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%' } },
-		DA = { name = "Artio's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%' } },
+		Idle = { name = "Artio's Mantle", augments = { { 'Pet: M.Acc.+20 Pet: M.Dmg.+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: Mag. Acc.+10', '"Cure" potency +10%', 'Damage taken-5%' } },
 		Pet_Macc = { name = "Artio's Mantle", augments = { 'Pet: M.Acc.+20 Pet: M.Dmg.+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: Mag. Acc.+10', '"Cure" potency +10%', 'Damage taken-5%' } },
 		Pet_Idle = { name = "Artio's Mantle", augmnents = { 'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: Accuracy+10 Pet: Rng. Acc.+10', 'Pet: Haste+10', 'Pet: Damage taken -5%' } },
 		STR_WSD = { name = "Artio's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%' } },
@@ -200,7 +198,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Ankusa Helm +3", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Thrud Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Sroda Ring", ring2 = "Gere Ring",
-		back = gear.Artio.DA, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = "Null Shawl, waist = "Sailfi Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Decimation'].PDL = set_combine(sets.precast.WS['Decimation'],
 	{
@@ -215,7 +213,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Blistering Sallet +1", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Lugra Earring +1",
 		body = "Tali'ah Manteel +2", hands = "Nyame Gauntlets", ring1 = "Epona's Ring", ring2 = "Gere Ring",
-		back = gear.Artio.DA, waist = "Fotia Belt", legs = "Meghanada Chausses +2", feet = "Nyame Sollerets"
+		back = "Null Shawnl", waist = "Fotia Belt", legs = "Meghanada Chausses +2", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Ruinator'].PDL = set_combine(sets.precast.WS['Ruinator'],
 	{
@@ -281,7 +279,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Blistering Sallet +1", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Lugra Earring +1",
 		body = "Gleti's Cuirass", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Gere Ring",
-		back = gear.Artio.DA, waist = "Fotia Belt", legs = "Meghanada Chausses +2", feet = gear.valorous.feet.crit
+		back = "Null Shawnl", waist = "Fotia Belt", legs = "Meghanada Chausses +2", feet = gear.valorous.feet.crit
 	}
 	sets.precast.WS['Rampage'].PDL = set_combine(sets.precast.WS['Rampage'],
 	{
@@ -339,7 +337,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Blistering Sallet +1", neck = "Fotia Gorget", ear1 = "Sherida Earring", ear2 = "Lugra Earring +1",
 		body = "Gleti's Cuirass", hands = "Nyame Gauntlets", ring1 = "Regal Ring", ring2 = "Gere Ring",
-		back = gear.Artio.DA, waist = "Fotia Belt", legs = "Lustratio Subligar +1", feet = gear.valorous.feet.crit
+		back = "Null Shawnl", waist = "Fotia Belt", legs = "Lustratio Subligar +1", feet = gear.valorous.feet.crit
 	}
 	sets.precast.WS['Evisceration'].PDL = set_combine(sets.precast.WS['Evisceration'],
 	{
@@ -391,7 +389,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
 		body = "Tali'ah Manteel +2", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Gere Ring",
-		back = gear.Artio.DA, waist = "Fotia Belt", legs = "Meghanada Chausses +2", feet = "Nyame Sollerets"
+		back = "Null Shawnl", waist = "Fotia Belt", legs = "Meghanada Chausses +2", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Entropy'].PDL = set_combine(sets.precast.WS['Entropy'],
 	{
@@ -496,7 +494,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Sherida Earring", ear2 = "Dedition Earring",
 		body = "Gleti's Cuirass", hands = "Malignance Gloves", ring1 = "Epona's Ring", ring2 = "Gere Ring",
-		back = gear.Artio.STP, waist = "Sailfi Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = "Null Shawnl", waist = "Sailfi Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 	sets.engaged.DW = set_combine(sets.engaged,
 	{
@@ -508,7 +506,7 @@ function init_gear_sets()
 	{
 		neck = "Shulmanu Collar", ear2 = "Enmerkar Earring",
 		body = "Totemic Jackcoat +3", hands = "Gleti's Gauntlets", ring2 = "Defending Ring",
-		back = gear.Artio.STP, legs = "Tali'ah Seraweels +2", feet = "Gleti's Boots"
+		back = "Null Shawnl", legs = "Tali'ah Seraweels +2", feet = "Gleti's Boots"
 	})
 
 	sets.engaged.DW.Pet = set_combine(sets.engaged.Pet,

@@ -43,7 +43,7 @@ function init_gear_sets()
 	-- Special sets (required by rules)
 	--------------------------------------
 	sets.TreasureHunter = { hands = "Plun. Armlets +3", feet = "Skulk. Poulaines +2" }
-	sets.Kiting = { ring1 = "Shneddick Ring" }
+	sets.Kiting = { feet = "Pill. Poulaines +3" }
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {}
