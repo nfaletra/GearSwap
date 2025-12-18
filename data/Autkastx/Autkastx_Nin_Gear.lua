@@ -14,7 +14,6 @@ function user_job_setup()
 
 	gear.Andartia =
 	{
-		DA = "Null Shawl",
 		STR_WSD = { name = "Andartia's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } },
 		MAB = { name = "Andartia's Mantle", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10' } },
 		FC = { name = "Andartia's Mantle", augments = { 'HP+60','Eva.+20 /Mag. Eva.+20', '"Fast Cast"+10', 'Phys. dmg. taken-10%' } },
@@ -43,9 +42,9 @@ function init_gear_sets()
 	sets.Enmity =
 	{
 		ammo = "Date Shuriken",
-		head = "Dampening Tam", neck = "Unmoving Collar +1", ear1 = "Cryptic Earring", ear2 = "Trux Earring",
+		neck = "Unmoving Collar +1", ear1 = "Cryptic Earring", ear2 = "Trux Earring",
 		body = "Emet Harness +1", hands = "Kurys Gloves", ring1 = "Vengeful Ring", ring2 = "Supershear Ring",
-		back = gear.Andartia.DA, waist = "Trance Belt", legs = "Zoar Subligar +1", feet = "Mochi. Kyahan +3"
+		back = "Null Shawl", waist = "Trance Belt", legs = "Zoar Subligar +1", feet = "Mochi. Kyahan +3"
 	}
 
 	-- Precast sets to enhance JAs
@@ -105,7 +104,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum +1",
 		head = "Mummu Bonnet +2", neck = "Combatant's Torque", ear1 = "Mache Earring +1", ear2 = "Telos Earring",
 		body = "Mummu Jacket +2", hands = "Mummu Wrists +2", ring1 = "Medada's Ring", ring2 = "Regal Ring",
-		back = gear.Andartia.DA, waist = "Engraved Belt", legs = "Mummu Kecks +2", feet = "Malignance Boots"
+		back = "Null Shawl", waist = "Engraved Belt", legs = "Mummu Kecks +2", feet = "Malignance Boots"
 	}
 
 	sets.precast.WS['Blade: Metsu'] =
@@ -128,7 +127,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Moonshade Earring", ear2 = "Hattori Earring +1",
 		body = "Malignance Tabard", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Regal Ring",
-		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Hattori Kyahan +3"
+		back = "Null Shawl", waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Hattori Kyahan +3"
 	}
 	sets.precast.WS['Blade: Shun'].PDL = set_combine(sets.precast.WS['Blade: Shun'],
 	{
@@ -182,7 +181,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Brutal Earring",
 		body = "Nyame Mail", hands = "Mochizuki Tekko +3", ring1 = "Gere Ring", ring2 = "Regal Ring",
-		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Hattori Kyahan +3"
+		back = "Null Shawl", waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Hattori Kyahan +3"
 	}
 	sets.precast.WS['Blade: Ku'].PDL = set_combine(sets.precast.WS['Blade: Ku'],
 	{
@@ -222,7 +221,7 @@ function init_gear_sets()
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
 		body = "Ken. Samue +1", hands = "Ryuo Tekko +1", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
-		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
+		back = "Null Shawl", waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
 	sets.precast.WS['Blade: Rin'] =
@@ -294,7 +293,7 @@ function init_gear_sets()
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
 		body = "Ken. Samue +1", hands = "Ryuo Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
-		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
+		back = "Null Shawl", waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
 	sets.precast.WS['Evisceration'] =
@@ -302,7 +301,7 @@ function init_gear_sets()
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
 		body = "Ken. Samue +1", hands = "Ryuo Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
-		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
+		back = "Null Shawl", waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
 	sets.precast.WS['Aeolian Edge'] =
@@ -332,7 +331,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
 		body = "Mpaca's Doublet", hands = "Mochizuki Tekko +3", ring1 = "Gere Ring", ring2 = "Regal Ring",
-		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mochi. Kyahan +3"
+		back = "Null Shawl", waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mochi. Kyahan +3"
 	}
 	sets.precast.WS['Raging Fists'].PDL = set_combine(sets.precast.WS['Raging Fists'],
 	{
@@ -346,7 +345,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Moonshade Earring",
 		body = "Mpaca's Doublet", hands = "Mochizuki Tekko +3", ring1 = "Gere Ring", ring2 = "Regal Ring",
-		back = gear.Andartia.DA, waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mochi. Kyahan +3"
+		back = "Null Shawl", waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mochi. Kyahan +3"
 	}
 	sets.precast.WS['Combo'].PDL = set_combine(sets.precast.WS['Combo'],
 	{
@@ -496,7 +495,7 @@ function init_gear_sets()
 	{
 		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Enervating Earring", ear2 = "Telos Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Crepuscular Ring", ring2 = "Regal Ring",
-		back = gear.Andartia.DA, waist = "Chaac Belt", legs = "Malignance Tights", feet = "Malignance Boots"
+		back = "Null Shawl", waist = "Chaac Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {})
 
@@ -543,27 +542,31 @@ function init_gear_sets()
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
 	-- Normal melee group
+	-- 0 DW
 	sets.engaged =
 	{
 		ammo = "Seki Shuriken",
-		head = "Dampening Tam", neck = "Ninja Nodowa +2", ear1 = "Cessance Earring", ear2 = "Telos Earring",
-		body = "Ken. Samue +1", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Epona's Ring",
-		back = gear.Andartia.DA, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
+		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Dedition Earring", ear2 = "Telos Earring",
+		body = "Tatena. Harama. +1", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Epona's Ring",
+		back = "Null Shawl", waist = "Sailfi Belt +1", legs = "Samnuha Tights", feet = "Tatena. Sune. +1"
 	}
+	-- 21 DW
 	sets.engaged.Haste30 = set_combine(sets.engaged,
 	{
-		head = "Hattori Zukin +2", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
-		waist = "Reiki Yotai"
+		head = "Hattori Zukin +2", ear1 = "Suppanomimi",
+		body = "Mochizuki Chainmail +3",
 	})
+	-- 32 DW
 	sets.engaged.Haste15 = set_combine(sets.engaged.Haste30,
 	{
-		ear2 = "Telos Earring",
-		body = "Mochi. Chainmail +3",
-		legs = "Hachiya Hakama +3"
+		ear2 = "Eabani Earring",
+		waist = "Reiki Yotai",
 	})
+	-- 38 DW
 	sets.engaged.Haste0 = set_combine(sets.engaged.Haste15,
 	{
-		legs = "Mochi. Hakama +3"
+		body = "Hachiya Chainmail +3",
+		legs = "Hachiya Hakama +3"
 	})
 
 	sets.engaged.DT =
@@ -571,7 +574,7 @@ function init_gear_sets()
 		ammo = "Seki Shuriken",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Cessance Earring", ear2 = "Telos Earring",
 		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Epona's Ring", ring2 = "Defending Ring",
-		back = gear.Andartia.DA, waist = "Engraved Belt", legs = "Mpaca's Hose", feet = "Malignance Boots"
+		back = "Null Shawl", waist = "Engraved Belt", legs = "Mpaca's Hose", feet = "Malignance Boots"
 	}
 	sets.engaged.DT.Haste30 = set_combine(sets.engaged.DT,
 	{
@@ -594,7 +597,7 @@ function init_gear_sets()
 		ammo = "Seki Shuriken",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Cessance Earring", ear2 = "Balder Earring +1",
 		body = "Mpaca's Doublet", hands = "Malignance Gloves", ring1 = "Vengeful Ring", ring2 = "Ilabrat Ring",
-		back = gear.Andartia.DA, waist = "Sailfi Belt +1", legs = "Mpaca's Hose", feet = "Malignance Boots"
+		back = "Null Shawl", waist = "Sailfi Belt +1", legs = "Mpaca's Hose", feet = "Malignance Boots"
 	}
 	sets.engaged.Evasion.Haste30 = set_combine(sets.engaged.Evasion,
 	{
@@ -615,9 +618,9 @@ function init_gear_sets()
 	sets.engaged.Tank =
 	{
 		ammo = "Date Shuriken",
-		head = "Dampening Tam", neck = "Ninja Nodowa +2", ear1 = "Cryptic Earring", ear2 = "Trux Earring",
+		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Cryptic Earring", ear2 = "Trux Earring",
 		body = "Ken. Samue +1", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Eihwaz Ring",
-		back = gear.Andartia.DA, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
+		back = "Null Shawl", waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = "Tatena. Sune. +1"
 	}
 	sets.engaged.Tank.Haste30 = set_combine(sets.engaged.Tank,
 	{
@@ -685,8 +688,8 @@ function init_gear_sets()
 	{
 		ammo = "Seki Shuriken",
 		head = "Hiza. Somen +2", neck = "Ninja Nodowa +2", ear1 = "Mache Earring +1", ear2 = "Mache Earring +1",
-		body = "Ken. Samue +1", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Epona's Ring",
-		back = gear.Andartia.DA, waist = "Windbuffet Belt +1", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
+		body = "Tatena. Harama. +1", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Epona's Ring",
+		back = "Null Shawl", waist = "Windbuffet Belt +1", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 	sets.engaged.H2H.DT = set_combine(sets.engaged.H2H,
 	{
@@ -702,9 +705,9 @@ function init_gear_sets()
 	sets.engaged.GKT =
 	{
 		ammo = "Seki Shuriken",
-		head = "Dampening Tam", neck = "Ninja Nodowa +2", ear1 = "Crep. Earring", ear2 = "Telos Earring",
-		body = "Ken. Samue +1", hands = gear.herculean_ta_hands, ring1 = "Gere Ring", ring2 = "Epona's Ring",
-		back = gear.Andartia.DA, waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
+		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Crep. Earring", ear2 = "Telos Earring",
+		body = "Tatena. Harama. +1", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Epona's Ring",
+		back = "Null Shawl", waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = "Tatena. Sune. +1"
 	}
 	sets.engaged.GKT.DT = set_combine(sets.engaged.GKT,
 	{

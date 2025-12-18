@@ -272,6 +272,7 @@ function init_include()
 	lastwarcry = ''
 	lasthaste = 1
 	lastflurry = 1
+	totalhaste = 0
 	
 	-- Sub-tables within the sets table that we expect to exist, and are annoying to have to
 	-- define within each individual job file.  We can define them here to make sure we don't
@@ -2489,6 +2490,35 @@ function buff_change(buff, gain)
 	if state.DisplayMode.value then update_job_states()	end
 end
 
+function calc_haste()
+	totalhaste = 0
+	
+	if buffactive[33] then -- Haste Spell
+		if lasthaste == 2 then
+			totalhaste = 30
+		else
+			totalhaste = 15
+		end
+	end
+
+	if buffactive[580] then -- Indi/Geo Haste
+		totalhaste = totalhaste + 30
+	end
+
+	if buffactive['March'] then
+		if buffactive['March'] > 1 then
+			totalhaste = totalhaste + 45
+		elseif buffactive['March'] > 0 then
+			totalhaste = totalhaste + 15
+		end
+	end
+
+	if buffactive['Mighty Guard'] then
+		totalhaste = totalhaste + 15
+	end
+
+	-- TODO: Can we detect haste bubbles?
+end
 
 -- Called when a player gains or loses a pet.
 -- pet == pet gained or lost

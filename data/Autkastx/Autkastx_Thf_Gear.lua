@@ -9,7 +9,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Aeneas', 'Gandring', 'Aeolian', 'Savage', 'Evisceration', 'Trial', 'Karambit', 'Throwing', 'SwordThrowing', 'Bow')
+	state.Weapons:options('Aeneas', 'Gandring', 'Aeolian', 'Savage', 'Evisceration', 'Karambit', 'Throwing', 'SwordThrowing', 'Bow')
 
 	state.ExtraMeleeMode = M{ ['description'] = 'Extra Melee Mode', 'None', 'Suppa', 'DWMax', 'Parry'}
 	state.AmbushMode = M(false, 'Ambush Mode')
@@ -65,18 +65,17 @@ function init_gear_sets()
 	sets.weapons.Aeolian = { main = "Gandring", sub = "Malevolence" }
 	sets.weapons.Savage = { main = "Naegling", sub = "Gleti's Knife" }
 	sets.weapons.Evisceration = { main = "Tauret", sub = "Gleti's Knife" }
-	sets.weapons.Trial = { main = "Fusetto +3", sub = "Gleti's Knife" }
 	sets.weapons.Karambit = { main = "Karambit" }
 	sets.weapons.Throwing = { main = "Aeneas", sub = "Gleti's Knife", range = "Raider's Bmrng.", ammo = empty }
 	sets.weapons.SwordThrowing = { main = "Naegling", sub = "Gleti's Knife", range = "Raider's Bmrng.", ammo = empty }
-	sets.weapons.Bow = { main = "Aeneas", sub = "Kustawi +1", range = "Kaja Bow", ammo = "Chapuli Arrow" }
+	sets.weapons.Bow = { main = "Aeneas", sub = "Kustawi +1", range = "Ullr", ammo = "Chapuli Arrow" }
 
 	-- Actions we want to use to tag TH.
 	sets.precast.Step =
 	{
 		ammo = "C. Palug Stone",
 		head = "Malignance Chapeau", neck = "Combatant's Torque", ear1 = "Mache Earring +1", ear2 = "Odr Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Ramuh Ring +1", ring2 = "Ramuh Ring +1",
+		body = "Malignance Tabard", hands = "Malignance Gloves",
 		back = gear.Toutatis.TP, waist = "Olseni Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -84,7 +83,7 @@ function init_gear_sets()
 	{
 		ammo = "C. Palug Stone",
 		head = "Malignance Chapeau", neck = "Combatant's Torque", ear1 = "Digni. Earring", ear2 = "Odr Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Ramuh Ring +1", ring2 = "Ramuh Ring +1",
+		body = "Malignance Tabard", hands = "Malignance Gloves",
 		back = gear.Toutatis.TP, waist = "Olseni Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -103,7 +102,7 @@ function init_gear_sets()
 	sets.precast.JA['Conspirator'] = {} 
 	sets.precast.JA['Steal'] = { ammo = "Barathrum" }
 	sets.precast.JA['Mug'] = {}
-	sets.precast.JA['Despoil'] = { ammo = "Barathrum", legs = "Raider's Culottes +1", feet = "Skulk. Poulaines +2" }
+	sets.precast.JA['Despoil'] = { ammo = "Barathrum", legs = "Skulker's Culottes +2", feet = "Skulk. Poulaines +2" }
 	sets.precast.JA['Perfect Dodge'] = { hands = "Plun. Armlets +3" }
 	sets.precast.JA['Feint'] = { legs = "Plun. Culottes +3" }
 
@@ -235,7 +234,7 @@ function init_gear_sets()
 		ammo = "Seeth. Bomblet +1",
 		head = "Skulker's Bonnet +2", neck = "Warder's Charm +1", ear1 = "Sherida Earring", ear2 = "Balder Earring +1",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Gere Ring", ring2 = "Mujin Band",
-		back = "Sacro Mantle", waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Toutatis.WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS["Savage Blade"] =
@@ -248,7 +247,7 @@ function init_gear_sets()
 	sets.precast.WS["Savage Blade"].PDL = set_combine(sets.precast.WS["Savage Blade"],
 	{
 		ammo = "Crepuscular Pebble",
-		head = "Skulker's Bonnet +2", neck = "Asn Gorget +2", ear1 = "Moonshade Earring",
+		head = "Skulker's Bonnet +2", neck = "Asn. Gorget +2", ear1 = "Moonshade Earring",
 		hands = "Gleti's Gauntlets", ring2 = "Sroda Ring",
 	})
 
@@ -270,7 +269,7 @@ function init_gear_sets()
 	sets.precast.WS['Empyreal Arrow'] =
 	{
 		head = "Pill. Bonnet +3", neck = "Fotia Gorget", ear1 = "Telos Earring", ear2 = "Enervating Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Apate Crepuscular", ring2 = "Regal Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Crepuscular Ring", ring2 = "Regal Ring",
 		back = gear.Toutatis.WSD, waist = "Fotia Belt", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 

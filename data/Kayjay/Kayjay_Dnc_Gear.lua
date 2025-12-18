@@ -210,9 +210,9 @@ function init_gear_sets()
 	sets.idle =
 	{
 		ammo = "Aurgelmir Orb",
-		head = "Adhemar Bonnet +1", neck = "Anu Torque", ear1 = "Brutal Earring", ear2 = "Dedition Earring",
-		body = "Mummu Jacket +2", hands = "Adhemar Wrist. +1", ring1 = "Chirich Ring +1", ring2 = "Petrov Ring",
-		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Meg. Chausses +2", feet = "Horos Toe Shoes +1"
+		head = "Malignance Chapeau", neck = "Anu Torque", ear1 = "Brutal Earring", ear2 = "Dedition Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Chirich Ring +1", ring2 = "Petrov Ring",
+		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
 	sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
@@ -256,7 +256,12 @@ function init_gear_sets()
 		back = gear.senuna_tp, waist = "Windbuffet Belt +1", legs = "Meg. Chausses +2", feet = "Horos Toe Shoes +1"
 	}
 
-	sets.engaged.DT = set_combine(sets.engaged, {})
+	sets.engaged.DT = set_combine(sets.engaged,
+	{
+		head = "Malignance Chapeau",
+		body = "Malignance Tabard", hands = "Malignance Gloves",
+		legs = "Malignance Tights", feet = "Malignance Boots"
+	})
 
 	-- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
 	sets.buff['Saber Dance'] = {} --legs="Horos Tights"

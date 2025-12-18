@@ -33,32 +33,31 @@ function user_job_setup()
 	send_command('bind ^delete input /ja "Dark Arts" <me>')
 	send_command('bind !delete input /ja "Addendum: Black" <me>')
 	send_command('bind @delete input /ja "Manifestation" <me>')
-    
+
 	select_default_macro_book()
 end
 
 function init_gear_sets()
+	--------------------------------------
+	-- Start defining the sets
+	--------------------------------------
 
-    --------------------------------------
-    -- Start defining the sets
-    --------------------------------------
-	
 	-- Weapons sets
 	sets.weapons.Mpaca = { main = "Mpaca's Staff", sub = "Enki Strap" }
 	sets.weapons.Khatvanga = { main = "Khatvanga", sub = "Khonsu" }
 	sets.weapons.Death = { main = "Mpaca's Staff", sub = "Niobid St" }
-	
-    sets.buff.Sublimation = {waist="Embla Sash"}
-    sets.buff.DTSublimation = {waist="Embla Sash"}	
-	
+
+	sets.buff.Sublimation = {waist="Embla Sash"}
+	sets.buff.DTSublimation = {waist="Embla Sash"}	
+
 	-- Treasure Hunter
-	
+
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {feet=gear.merlinic_treasure_feet})
-    
-    ---- Precast Sets ----
-    
-    -- Precast sets to enhance JAs
-    sets.precast.JA['Mana Wall'] = {back=gear.nuke_jse_back,feet="Wicce Sabots +1"}
+
+	---- Precast Sets ----
+
+	-- Precast sets to enhance JAs
+	sets.precast.JA['Mana Wall'] = {back=gear.nuke_jse_back,feet="Wicce Sabots +1"}
 
     sets.precast.JA.Manafont = {} --body="Sorcerer's Coat +2"
     
@@ -375,7 +374,7 @@ function init_gear_sets()
 	sets.Self_Healing = {neck="Phalaina Locket",ring1="Kunaji Ring",ring2="Asklepian Ring",waist="Gishdubar Sash"}
 	sets.Cure_Received = {neck="Phalaina Locket",ring1="Kunaji Ring",ring2="Asklepian Ring",waist="Gishdubar Sash"}
 	sets.Self_Refresh = {back="Grapevine Cape",waist="Gishdubar Sash",feet="Inspirited Boots"}
-		
+
 end
 
 -- Select default macro book on initial load or subjob change.

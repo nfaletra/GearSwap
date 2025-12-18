@@ -336,6 +336,16 @@ function update_melee_groups()
 	if player.equipment.main and player.equipment.main == "Terpsichore" and state.Buff['Aftermath: Lv.3'] then
 		classes.CustomMeleeGroups:append('AM')
 	end
+
+	if totalhaste then
+			if totalhaste < 15 then
+				classes.CustomMeleeGroups:append('Haste0')
+			elseif totalhaste < 30 then
+				classes.CustomMeleeGroups:append('Haste15')
+			elseif totalhaste < 45 then
+				classes.CustomMeleeGroups:append('Haste30')
+			end
+		end
 end
 
 function under3FMs()

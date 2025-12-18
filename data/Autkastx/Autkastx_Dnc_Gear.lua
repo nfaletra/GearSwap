@@ -7,7 +7,7 @@ function user_job_setup()
     state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Aeneas','LowBuff')
+	state.Weapons:options('Aeneas', 'AeneasAcc')
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWEarrings','DWMax'}
 
 	
@@ -46,7 +46,7 @@ function init_gear_sets()
 	
 	-- Weapons sets
 	sets.weapons.Aeneas = { main = "Aeneas", sub = "Centovente" }
-	sets.weapons.LowBuff = { main = "Aeneas", sub = "Gleti's Knife" }
+	sets.weapons.AeneasAcc = { main = "Aeneas", sub = "Gleti's Knife" }
 	
     -- Precast Sets
     
@@ -229,7 +229,17 @@ function init_gear_sets()
 		ammo = "Yamarang",
 		head = "Dampening Tam", neck = "Anu Torque", ear1 = "Brutal Earring", ear2 = "Sherida Earring",
 		body = "Adhemar Jacket +1", hands = "Adhemar Wrist. +1", ring1 = "Gere Ring", ring2 = "Epona's Ring",
-		back = "Null Shawl", waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = gear.herculean_ta_feet}
+		back = "Null Shawl", waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
+	}
+	sets.engaged.Haste30 = set_combine(sets.engaged,
+	{
+	})
+	sets.engaged.Haste15 = set_combine(sets.engaged,
+	{
+	})
+	sets.engaged.Haste0 = set_combine(sets.engaged,
+	{
+	})
 
 	sets.engaged.DT =
 	{
@@ -238,6 +248,15 @@ function init_gear_sets()
 		body = "Malignance Tabard", hands = "Adhemar Wrist. +1", ring1 = "Gere Ring", ring2 = "Epona's Ring",
 		back = "Null Shawl", waist = "Windbuffet Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
+	sets.engaged.DT.Haste30 = set_combine(sets.engaged,
+	{
+	})
+	sets.engaged.DT.Haste15 = set_combine(sets.engaged,
+	{
+	})
+	sets.engaged.DT.Haste0 = set_combine(sets.engaged,
+	{
+	})
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     sets.buff['Saber Dance'] = {} --legs="Horos Tights"
