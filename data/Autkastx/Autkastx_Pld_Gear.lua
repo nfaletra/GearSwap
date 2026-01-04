@@ -186,7 +186,7 @@ function init_gear_sets()
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Epaminondas's Ring",
 		back = gear.Rudianos.WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
-z
+
 	sets.precast.WS['Atonement'] =
 	{
 		ammo = "Sapience Orb",

@@ -1389,6 +1389,7 @@ function cleanup_pet_aftercast(spell, spellMap, eventArgs)
 end
 
 function pre_tick()
+	calc_haste()
 	if check_doomed() then return true end
 	if check_delayed_cast() then return true end
 	if check_use_item() then return true end

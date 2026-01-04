@@ -67,8 +67,8 @@ function init_gear_sets()
 	{
 		main = "Kali", sub = "Genmei Shield",
 		head = "Fili Calot +1", neck = "Loricate Torque +1", ear1 = "Etiolation Earring", ear2 = "Loquac. Earring",
-		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
-		back = gear.Intarabus.FC, waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Regal Pumps +1"
+		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Prolix Ring", ring2 = "Murky Ring",
+		back = gear.Intarabus.FC, waist = "Flume Belt +1", legs = "Aya. Cosciales +2", feet = "Regal Pumps +1"
 	}
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
 	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {})
@@ -182,7 +182,7 @@ function init_gear_sets()
 		main = "Daybreak", sub = "Genmei Shield", range = "Terpander",
 		head = "Kaykaus Mitra +1", neck = "Incanter's Torque", ear1 = "Meili Earring", ear2 = "Regal Earring",
 		body = "Kaykaus Bliaut +1", hands = "Kaykaus Cuffs +1", ring1 = "Metamor. Ring +1", ring2 = "Menelaus's Ring",
-		back = gear.Intarabus.FC, waist = "Luminary Sash", legs = "Kaykaus Tights +1", feet = "Kaykaus Boots +1"
+		back = "Aurist's Cape +1", waist = "Luminary Sash", legs = "Kaykaus Tights +1", feet = "Kaykaus Boots +1"
 	}
 
 	sets.midcast.Curaga = sets.midcast.Cure

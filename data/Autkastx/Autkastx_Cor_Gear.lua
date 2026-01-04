@@ -331,7 +331,7 @@ function init_gear_sets()
 	sets.midcast.RA.Crit = set_combine(sets.midcast.RA,
 	{
 		head = "Meghanada Visor +2", ear1 = "Odr Earring", ear2 = "Chas. Earring +2",
-		body = "Meg. Cuirie +2", hands = "Dingir Ring", ring1 = "Begrudging Ring",
+		body = "Meg. Cuirie +2", hands = "Chasseur's Gants +3", ring1 = "Dingir Ring", ring2 = "Begrudging Ring",
 		back = gear.Camulus.RA_Crit, waist = "K. Kachina Belt +1", legs = "Darraigner's Brais", feet = "Osh. Leggings +1"
 	})
 

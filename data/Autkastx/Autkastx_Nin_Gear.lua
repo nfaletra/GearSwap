@@ -220,7 +220,7 @@ function init_gear_sets()
 	{
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Ken. Samue +1", hands = "Ryuo Tekko +1", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
+		body = "Hattori Ningi +2", hands = "Ryuo Tekko +1", ring1 = "Ilabrat Ring", ring2 = "Regal Ring",
 		back = "Null Shawl", waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
@@ -292,7 +292,7 @@ function init_gear_sets()
 	{
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Ken. Samue +1", hands = "Ryuo Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Hattori Ningi +2", hands = "Ryuo Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = "Null Shawl", waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
@@ -300,7 +300,7 @@ function init_gear_sets()
 	{
 		ammo = "Yetshila +1",
 		head = "Adhemar Bonnet +1", neck = "Fotia Gorget", ear1 = "Lugra Earring +1", ear2 = "Odr Earring",
-		body = "Ken. Samue +1", hands = "Ryuo Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
+		body = "Hattori Ningi +2", hands = "Ryuo Tekko +1", ring1 = "Gere Ring", ring2 = "Regal Ring",
 		back = "Null Shawl", waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
 	}
 
@@ -336,7 +336,7 @@ function init_gear_sets()
 	sets.precast.WS['Raging Fists'].PDL = set_combine(sets.precast.WS['Raging Fists'],
 	{
 		ammo = "Crepuscular Pebble",
-		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring2 = "Sroda Ring",
+		body = "Tatena. Harama. +1", hands = gear.adhemar.hands.b, ring2 = "Sroda Ring",
 		feet = "Mpaca's Boots"
 	})
 
@@ -350,7 +350,7 @@ function init_gear_sets()
 	sets.precast.WS['Combo'].PDL = set_combine(sets.precast.WS['Combo'],
 	{
 		ammo = "Crepuscular Pebble",
-		body = "Ken. Samue +1", hands = gear.adhemar.hands.b, ring2 = "Sroda Ring",
+		body = "Tatena. Harama. +1", hands = gear.adhemar.hands.b, ring2 = "Sroda Ring",
 		feet = "Mpaca's Boots"
 	})
 
@@ -619,7 +619,7 @@ function init_gear_sets()
 	{
 		ammo = "Date Shuriken",
 		head = "Malignance Chapeau", neck = "Ninja Nodowa +2", ear1 = "Cryptic Earring", ear2 = "Trux Earring",
-		body = "Ken. Samue +1", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Eihwaz Ring",
+		body = "Tatena. Harama. +1", hands = gear.adhemar.hands.a, ring1 = "Gere Ring", ring2 = "Eihwaz Ring",
 		back = "Null Shawl", waist = "Windbuffet Belt +1", legs = "Samnuha Tights", feet = "Tatena. Sune. +1"
 	}
 	sets.engaged.Tank.Haste30 = set_combine(sets.engaged.Tank,

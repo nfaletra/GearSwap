@@ -51,21 +51,20 @@ end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
-
 	state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
-    state.Buff.Sentinel = buffactive.Sentinel or false
-    state.Buff.Cover = buffactive.Cover or false
+	state.Buff.Sentinel = buffactive.Sentinel or false
+	state.Buff.Cover = buffactive.Cover or false
 	state.Stance = M{['description']='Stance','Hasso','Seigan','None'}
 
 	state.CurrentStep = M{['description']='Current Step', 'Box Step', 'Quickstep'}
-	
+
 	state.AutoEmblem = M(false, 'Auto Emblem')
 	state.AutoCover = M(false, 'Auto Cover')
 	state.AutoMajesty = M(true, 'Auto Majesty')
-	
+
 	autows = 'Savage Blade'
 	autofood = 'Miso Ramen'
-	
+
 	update_melee_groups()
 	init_job_states({"Capacity","AutoFoodMode","AutoTrustMode","AutoTankMode","AutoWSMode","AutoNukeMode","AutoJumpMode","AutoShadowMode","AutoStunMode","AutoDefenseMode"},{"AutoBuffMode","AutoSambaMode","AutoRuneMode","Weapons","OffenseMode","WeaponskillMode","Stance","IdleMode","Passive","RuneElement","CastingMode","PhysicalDefenseMode","MagicalDefenseMode","ResistDefenseMode","ExtraDefenseMode","TreasureMode"})
 end

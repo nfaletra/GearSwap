@@ -95,7 +95,7 @@ gear.valorous.feet.pet_mab = { name = "Valorous Greaves", augments = {} }
 gear.merlinic = {}
 
 gear.merlinic.hands = {}
-gear.merlinic.hands.BP = { name = "Merlinic Dastanas", augments = { 'Blood Pact Dmg.+10', 'Pet: INT+10' } }
+gear.merlinic.hands.BP = { name = "Merlinic Dastanas", augments = { 'Pet: Mag. Acc.+17 Pet: "Mag.Atk.Bns."+17', 'Blood Pact Dmg.+10', 'Pet: "Mag.Atk.Bns."+9' } }
 gear.merlinic.hands.FC = { name = "Merlinic Dastanas", augments = { '"Mag.Atk.Bns."+11', '"Fast Cast"+6', 'CHR+8' } }
 
 -- Abjuration Gear

@@ -13,7 +13,7 @@ function user_job_setup()
 	gear.Nantosuelta =
 	{
 		MAB = { name = "Nantosuelta's Cape", augments = { 'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%' } },
-		Pet = { name = "Nantosuelta's Cape", augments = {'MP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Pet: "Regen"+5' } },
+		Pet = { name = "Nantosuelta's Cape", augments = { 'MP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Pet: "Regen"+5' } },
 		TP = "Null Shawl",
 	}
 	
@@ -358,7 +358,7 @@ function init_gear_sets()
 
 	sets.Kiting = { feet = "Geo. Sandals +2" }
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
-	
+
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 
 	--------------------------------------
@@ -386,11 +386,11 @@ function init_gear_sets()
 	--------------------------------------
 	-- Custom buff sets
 	--------------------------------------
-	-- Gear that converts elemental damage done to recover MP.	
+	-- Gear that converts elemental damage done to recover MP.
 	sets.RecoverMP = {body="Seidr Cotehardie"}
-	
+
 	-- Gear for Magic Burst mode.
-    sets.MagicBurst =
+	sets.MagicBurst =
 	{
 		main = "Bunzi's Rod", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
 		head = "Ea Hat +1", neck = "Sibyl Scarf", ear1 = "Regal Earring", ear2 = "Malignance Earring",
@@ -400,7 +400,7 @@ function init_gear_sets()
 
 	sets.buff.Sublimation = { waist = "Embla Sash" }
 	sets.buff.DTSublimation = { waist = "Embla Sash" }
-	
+
 	-- Weapons sets
 	sets.weapons.Idris = { main = "Idris", sub = "Genmei Shield" }
 	sets.weapons.Maxentius = { main = "Maxentius", sub = "Genmei Shield" }

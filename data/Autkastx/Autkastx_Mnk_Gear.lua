@@ -55,7 +55,7 @@ function init_gear_sets()
 	sets.precast.JA['Chakra'] =
 	{
 		head = "Genmei Kabuto", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Handler's Earring +1",
-		body = "Anch. Cyclas +2", hands = "Hes. Gloves +3", ring1 = "Niqmaddu Ring", ring2 = "Gelatinous Ring +1",
+		body = "Anch. Cyclas +3", hands = "Hes. Gloves +3", ring1 = "Niqmaddu Ring", ring2 = "Gelatinous Ring +1",
 		back = gear.Segomo.VIT_WSD, legs = "Tatena. Haidate +1", feet = "Bhikku Gaiters +3"
 	}
 
