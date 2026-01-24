@@ -748,7 +748,7 @@ function init_gear_sets()
 	sets.weapons.Naegling = { main = "Naegling", sub = "Hitaki" }
 	sets.weapons.NaeglingAcc = { main = "Naegling", sub = "Kunimitsu" }
 	sets.weapons.Kikoku = { main = "Kikoku", sub = "Kunimitsu" }
-	sets.weapons.HeishiPhys = { main = "Heishi Shorinken", sub = "Gleti's Knife" }
+	sets.weapons.HeishiPhys = { main = "Heishi Shorinken", sub = "Crepuscular Knife" }
 	sets.weapons.HeishiMag = { main = "Heishi Shorinken", sub = "Kunimitsu" }
 	sets.weapons.Magic = { main = "Gokotai", sub = "Kunimitsu" }
 	sets.weapons.Tauret = { main = "Tauret", sub = "Kunimitsu" }

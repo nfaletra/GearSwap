@@ -191,7 +191,7 @@ function init_gear_sets()
 
 	sets.midcast.Cure =
 	{
-		main = "Chatoyant Staff",
+		main = "Raetic Rod +1", sub = "Thuellaic Ecu +1",
 		head = "Vanya Hood", neck = "Clr. Torque +2", ear1 = "Glorious Earring", ear2 = "Mendicant's Earring",
 		hands = "Weath. Cuffs +1",
 		back = gear.Alaunus.FC, waist = "Austerity Belt", legs = "Ebers Pantaloons"

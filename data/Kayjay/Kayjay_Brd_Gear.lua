@@ -13,9 +13,9 @@ function user_job_setup()
 	}
 
 	-- Adjust this if using the Terpander (new +song instrument)
-	info.ExtraSongInstrument = "Terpander"
+	info.ExtraSongInstrument = "Daurdabla"
 	-- How many extra songs we can keep from Daurdabla/Terpander
-	info.ExtraSongs = 1
+	info.ExtraSongs = 2
 	-- How long to wait between singing
 	info.SongDelay = 15
 	-- Auto Songs to sing
@@ -127,7 +127,11 @@ function init_gear_sets()
 	sets.midcast.Ballad = { legs = "Fili Rhingrave +1" }
 	sets.midcast.Lullaby = { range = "Marsyas" }
 	sets.midcast['Horde Lullaby'] = { range = "Marsyas" }
-	sets.midcast['Horde Lullaby II'] = { range = "Marsyas" }
+	sets.midcast['Horde Lullaby II'] =
+	{
+		range = "Marsyas",
+		feet = "Bihu Slippers +3"
+	}
 	sets.midcast.Madrigal = { head = "Fili Calot +1", feet = "Fili Cothurnes +1" }
 	sets.midcast.Paeon = { head = "Brioso Roundlet +3" }
 	sets.midcast.March = { hands = "Fili Manchettes +1" }
