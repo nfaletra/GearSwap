@@ -276,7 +276,7 @@ function init_gear_sets()
 	{
 		ammo = gear.MAbullet,
 		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Sroda Ring", ring2 = "Epamindondas's Ring",
+		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Sroda Ring", ring2 = "Epaminondas's Ring",
 		cape = gear.Camulus.AGI_WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 

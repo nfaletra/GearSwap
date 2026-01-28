@@ -400,7 +400,7 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle = -- With +3 Empy, this set is 10% over DT Cap (54% total). When that happens, swap neck for Warder's Charm and another 5% can still be swapped out.
 	{
-		main = "Mpaca's Staff", sub = "Umbra Strap", ammo = "Staunch Tathlum +1",
+		main = "Mpaca's Staff", sub = "Kupayopl", ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Warder's Charm +1", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
 		body = "Ebers Bliaut +3", hands = "Ebers Mitts +3", ring1 = "Stikini Ring +1", ring2 = "Shadow Ring",
 		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Ebers Pant. +3", feet = "Ebers Duckbills +3"

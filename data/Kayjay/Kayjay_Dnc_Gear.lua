@@ -44,8 +44,8 @@ function init_gear_sets()
 	}
 
 	-- Weapons sets
-	sets.weapons.Aeneas = { main = "Aeneas", sub = "Ternion Dagger +1" }
-	sets.weapons.Tauret = { main = "Tauret", sub = "Ternion Dagger +1" }
+	sets.weapons.Aeneas = { main = "Aeneas", sub = "Gleti's Knife" }
+	sets.weapons.Tauret = { main = "Tauret", sub = "Gleti's Knife" }
 	
 	-- Precast Sets
 

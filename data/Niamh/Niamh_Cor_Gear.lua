@@ -19,15 +19,7 @@ function user_job_setup()
 
 	gear.Camulus =
 	{
-		Idle = { name = "Camulus's Mantle", augments = { 'INT+20', 'Eva.+20 /Mag. Eva.+20', '"Snapshot"+10' } },
-		DA = { name = "Camulus's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%' } },
-		DW = { name = "Camulus's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dual Wield"+10', 'Phys. dmg. taken-10%' } },
-		RA = { name = "Camulus's Mantle", augments = { 'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Mag. Evasion+15' } },
-		RA_Crit = { name = "Camulus's Mantle", augments = { 'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Crit.hit rate+10', 'Phys. dmg. taken-10%' } },
-		STR_WSD = { name = "Camulus's Mantle", augments = { 'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Mag. Evasion+15' } },
-		AGI_WSD = { name = "Camulus's Mantle", augments = { 'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%', 'Mag. Evasion+15' }},
-		AGI_WSD_Phys = { name = "Camulus's Mantle", augments = { 'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Weapon skill damage +10%', 'Mag. Evasion+15' } },
-		FC = { name = "Camulus's Mantle", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', '"Fast Cast"+10' } }
+		Idle = { name = "Camulus's Mantle", augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', '"Snapshot"+10', 'Damage taken-5%' } }
 	}
 
 	gear.Rostam =
@@ -277,7 +269,7 @@ function init_gear_sets()
 	{
 		ammo = gear.MAbullet,
 		head = "Nyame Helm", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
-		body = "Nyame Mail", hands = "Chasseur's Gants +3", ring1 = "Dingir Ring", ring2 = "Epamindondas's Ring",
+		body = "Nyame Mail", hands = "Chasseur's Gants +3", ring1 = "Dingir Ring", ring2 = "Epaminondas's Ring",
 		cape = gear.Camulus.AGI_WSD, waist = "Orpheus's Sash", legs = "Nyame Flanchard", feet = "Lanun Bottes +3"
 	}
 
@@ -357,9 +349,9 @@ function init_gear_sets()
 	sets.idle =
 	{
 		ammo = gear.RAbullet,
-		head = "Malignance Chapeau", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
-		back= gear.Camulus.Idle, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
+		head = "Meghanada Visor +2", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
+		body = "Meg. Cuirie +2", hands = "Meg. Gloves +2", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
+		back= gear.Camulus.Idle, waist = "Carrier's Sash", legs = "Mummu Kecks +2", feet = "Meg. Jam. +2"
 	}
 
 	sets.idle.PDT =
@@ -432,9 +424,9 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged =
 	{
-		head = "Malignance Chapeau", neck = "Combatant's Torque", ear1 = "Crep. Earring", ear2 = "Brutal Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Epona's Ring",
-		back = gear.Camulus.DA, waist = "Carrier's Sash", legs = "Chas. Culottes +3", feet = "Malignance Boots"
+		head = "Mummu Bonnet +2", neck = "Combatant's Torque", ear1 = "Crep. Earring", ear2 = "Brutal Earring",
+		body = "Mummu Jacket +2", hands = "Mummu Wrists +2", ring1 = "Defending Ring", ring2 = "Epona's Ring",
+		back = gear.Camulus.DA, waist = "Windbuffet Belt +1", legs = "Mummu Kecks +2", feet = "Mummu Gamash. +2"
 	}
 	sets.engaged.DT =
 	{
@@ -446,7 +438,7 @@ function init_gear_sets()
 	{
 		head = "Malignance Chapeau", neck = "Warder's Charm +1", ear1 = "Telos Earring", ear2 = "Brutal Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Epona's Ring",
-		back = gear.Camulus.DA, waist = "Windbuffet Belt +1", legs = "Chas. Culottes +3", feet = "Malignance Boots"
+		back = gear.Camulus.DA, waist = "Carrier's Sash", legs = "Chas. Culottes +3", feet = "Malignance Boots"
 	}
 
 	sets.engaged.DW =

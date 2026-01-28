@@ -125,11 +125,11 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Sakpata's Helm", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
-		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Shadow Ring", ring2 = "Defending Ring",
-		back = "Atheling Mantle", waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		body = "Sakpata's Plate", hands = "Sakpata's Gauntlets", ring1 = "Shadow Ring", ring2 = "Defending Ring",
+		back = "Atheling Mantle", waist = "Carrier's Sash", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
 	}
 
-	sets.Kiting = { ring1 = "Shneddick Ring" }
+	sets.Kiting = { feet = "Hermes' Sandals" }
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 
 	-- Engaged sets

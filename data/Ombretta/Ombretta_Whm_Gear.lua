@@ -184,7 +184,13 @@ function init_gear_sets()
 	-- Gear for Magic Burst mode.
 	sets.MagicBurst = { neck="Mizu. Kubikazari" }
 
-	sets.midcast.FastRecast = sets.precast.FC
+	sets.midcast.FastRecast = set_combine(sets.precast.FC,
+	{
+		ammo = "Pemphredo Tathlum",
+		head = "Vanya Hood", ear1 = "Magnetic Earring", ear2 = "Calamitous Earring",
+		ring1 = "Mephitas's Ring +1", ring2 = "Murky Ring",
+		back = "Fi Follet Cape +1", feet = "Kaykaus Boots +1"
+	})
 
 	-- Cure sets
 	sets.midcast['Full Cure'] = sets.midcast.FastRecast
@@ -224,27 +230,37 @@ function init_gear_sets()
 	sets.midcast.Erase = set_combine(sets.midcast.StatusRemoval, { neck = "Clr. Torque +2" })
 
 	-- 110 total Enhancing Magic Skill; caps even without Light Arts
-	sets.midcast['Enhancing Magic'] =
+	sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.FastRecast,
 	{
-		main = "Gada", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
-		head = "Telchine Cap", neck = "Incanter's Torque", ear1 = "Andoaa Earring",
-		body = "Telchine Chas.", hands = "Telchine Gloves", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
-		back = "Mending Cape", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Theo. Duckbills +3"
-	}
+		main = "Gada", sub = "Ammurapi Shield",
+		head = "Telchine Cap",
+		body = "Telchine Chas.", hands = "Telchine Gloves",
+		waist = "Embla Sash", legs = "Telchine Braconi", feet = "Theo. Duckbills +3"
+	})
 
-	sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'].Duration,
+	sets.midcast.BoostStat = set_combine(sets.midcast['Enhancing Magic'],
+	{
+		neck = "Incanter's Torque", ear2 = "Mimir Earring",
+	})
+
+	sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'],
 	{
 		main = "Beneficus",
-		head = "Ebers Cap +2",
-		body = "Ebers Bliaut +2", hands = "Ebers Mitts +2",
-		legs = "Piety Pantaln. +3", feet = "Ebers Duckbills +2"
+		head = "Ebers Cap +3", neck = "Incanter's Torque", ear2 = "Andoaa Earring",
+		body = "Ebers Bliaut +3", hands = "Ebers Mitts +3",
+		back = gear.Alaunus.FC, legs = "Piety Pantaln. +3", feet = "Ebers Duckbills +3"
+	})
+
+	sets.midcast.BarStatus = set_combine(sets.midcast['Enhancing Magic'],
+	{
+		neck = "Sroda Necklace", ear1 = "Mimir Earring", ear2 = "Andoaa Earring"
 	})
 
 	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'],
 	{
 		main = "Bolelabunga",
-		head = "Inyanga Tiara +2", ear2 = "Gifted Earring",
-		body = "Piety Bliaut +3", hands = "Ebers Mitts +2", ring1 = "Mephitas's Ring +1",
+		head = "Inyanga Tiara +2",
+		body = "Piety Bliaut +3", hands = "Ebers Mitts +3",
 		legs = "Th. Pant. +3", feet = "Bunzi's Sabots"
 	})
 
@@ -256,24 +272,26 @@ function init_gear_sets()
 
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],
 	{
-		head = "Chironic Hat", ear2 = "Gifted Earring",
-		hands = "Regal Cuffs", ring1 = "Mephitas's Ring +1",
+		main = "Vadose Rod",
+		head = "Chironic Hat",
+		hands = "Regal Cuffs",
 		waist = "Emphatikos Rope", legs = "Shedir Seraweels"
 	})
 
-	sets.midcast.Auspice = set_combine(sets.midcast['Enhancing Magic'], { feet = "Ebers Duckbills +2" })
+	sets.midcast.Auspice = set_combine(sets.midcast['Enhancing Magic'], { feet = "Ebers Duckbills +3" })
 
-	sets.midcast.Cursna =
+	sets.midcast.Cursna = set_combine(sets.midcast.FastRecast,
 	{
 		main = "Gada", sub = "Thuellaic Ecu +1",
-		head = "Vanya Hood", neck = "Malison Medallion", ear1 = "Meili Earring", ear2 = "Ebers Earring",
+		eck = "Debilis Medallion", ear1 = "Meili Earring", ear2 = "Ebers Earring +1",
 		body = "Ebers Bliaut +2", hands = "Fanatic Gloves", ring1 = "Menelaus's Ring", ring2 = "Haoma's Ring",
-		back = gear.Alaunus.FC, legs = "Th. Pant. +3", feet = "Vanya Clogs"
-	}
+		back = gear.Alaunus.FC, waist = "Bishop's Sash", legs = "Th. Pant. +3", feet = "Vanya Clogs"
+	})
 
 	sets.midcast.StatusRemoval =
 	{
-		head = "Ebers Cap +2",
+		head = "Ebers Cap +3",
+		back = "Mending Cape", legs = "Ebers Pant. +3"
 	}
 
 	sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {})
@@ -377,11 +395,11 @@ function init_gear_sets()
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
 	-- Basic set for if no TP weapon is defined.
-	sets.engaged = 
+	sets.engaged =
 	{
 		ammo = "Oshasha's Treatise",
 		head = "Aya. Zucchetto +2", neck = "Combatant's Torque", ear1 = "Telos Earring" , ear2 = "Brutal Earring",
-		body = "Ayanmo Corazza +2", hands = "Gazu Bracelets +1", ring1 = "Petrov Ring", ring2 = "Hetairoi Ring",
+		body = "Ayanmo Corazza +2", hands = "Gazu Bracelets +1", ring1 = "Petrov Ring", ring2 = "Rajas Ring",
 		back = gear.Alaunus.Idle, waist = "Windbuffet Belt +1", legs = "Aya. Cosciales +2", feet = "Aya. Gambieras +2"
 	}
 	sets.engaged.Acc = set_combine(sets.engaged, {})
