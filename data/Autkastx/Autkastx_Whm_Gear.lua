@@ -7,7 +7,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None', 'Maxentius', 'Daybreak', 'DualYagrush', 'DualMaxentius', 'DualDaybreak')
+	state.Weapons:options('None', 'Maxentius', 'Daybreak', 'Lorg', 'DualYagrush', 'DualMaxentius', 'DualDaybreak')
 	state.WeaponskillMode:options('Match', 'Normal', 'Proc')
 
 	info.CastSpeed = 0.2
@@ -80,6 +80,7 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Maxentius = { main = "Maxentius", sub = "Genmei Shield" }
 	sets.weapons.Daybreak = { main = "Daybreak", sub = "Genmei Shield" }
+	sets.weapons.Lorg = { main = "Lorg Mor", sub = "Genmei Shield" }
 	sets.weapons.DualYagrush = { main = "Yagrush", sub = "C. Palug Hammer" }
 	sets.weapons.DualMaxentius = { main = "Maxentius", sub = "C. Palug Hammer" }
 	sets.weapons.DualDaybreak = { main = "Daybreak", sub = "C. Palug Hammer" }
