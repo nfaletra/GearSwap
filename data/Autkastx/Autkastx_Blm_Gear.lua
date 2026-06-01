@@ -45,7 +45,7 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Mpaca = { main = "Mpaca's Staff", sub = "Enki Strap" }
 	sets.weapons.Khatvanga = { main = "Khatvanga", sub = "Khonsu" }
-	sets.weapons.Death = { main = "Mpaca's Staff", sub = "Niobid St" }
+	sets.weapons.Death = { main = "Mpaca's Staff", sub = "Niobid Strap" }
 
 	sets.buff.Sublimation = {waist="Embla Sash"}
 	sets.buff.DTSublimation = {waist="Embla Sash"}	
@@ -70,9 +70,9 @@ function init_gear_sets()
 	sets.precast.FC =
 	{
 		ammo = "Impatiens",
-		head = "Merlinic Hood", neck = "Voltsurge Torque", ear1 = "Malignance Earring", ear2 = "Etiolation Earring",
-		body = "Merlinic Jubbah", hands = gear.merlinic.hands.FC, ring1 = "Lebeche Ring", ring2 = "Medada's Ring",
-		back = gear.Taranus.Idle, waist = "Witful Belt", legs = "Agwu's Slops", feet = "Merlinic Crackows"
+		head = gear.merlinic.head.FC, neck = "Baetyl Pendant", ear1 = "Malignance Earring", ear2 = "Etiolation Earring",
+		body = gear.merlinic.body.FC, hands = "Volte Gloves", ring1 = "Lebeche Ring", ring2 = "Medada's Ring",
+		back = gear.Taranus.Idle, waist = "Witful Belt", legs = "Agwu's Slops", feet = gear.merlinic.feet.FC
 	}
 		
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
@@ -143,7 +143,7 @@ function init_gear_sets()
 	{
 		ammo = "Psilomene",
 		head = "Amalric Coif +1", neck = "Dualism Collar +1", ear1 = "Moonshade Earring", ear2 = "Etiolation Earring",
-		body = "Amalric Doublet +1", hands = "Spae. Gloves +3", ring1 = "Mephitas's Ring +1", ring2 = "Sangoma Ring",
+		body = "Amalric Doublet +1", hands = "Spae. Gloves +2", ring1 = "Mephitas's Ring +1", ring2 = "Sangoma Ring",
 		back = "Bane Cape", waist = "Shinjutsu-no-Obi +1", legs = "Amalric Slops +1", feet = "Psycloth Boots"
 	}
 
@@ -185,13 +185,13 @@ function init_gear_sets()
 		main = "Contemplator +1", sub = "Khonsu", ammo = "Pemphredo Tathlum",
 		head = empty, neck = "Src. Stole +2", ear1 = "Malignance Earring", ear2 = "Regal Earring",
 		body = "Cohort Cloak +1", hands = "Regal Cuffs", ring1 = "Kishar Ring", ring2 = "Metamor. Ring +1",
-		back = "Aurist's Cape +1", waist = "Acuity Belt +1", legs = "Spae. Tonban +3", feet = "Spae. Sabots +3"
+		back = "Aurist's Cape +1", waist = "Acuity Belt +1", legs = "Spae. Tonban +2", feet = "Spae. Sabots +2"
 	}
 
 	sets.midcast.ElementalEnfeeble = set_combine(sets.midcast['Enfeebling Magic'],
 	{
 		head = "Wicce Petasos +2",
-		body = "Spae. Coat +3", hands = "Spae. Gloves +3", ring1 = "Stikini Ring +1",
+		body = "Spaekona's Coat +2", hands = "Spae. Gloves +2", ring1 = "Stikini Ring +1",
 		legs = "Arch. Tonban +3", feet = "Arch. Sabots +3"
 	})
 
@@ -224,12 +224,12 @@ function init_gear_sets()
 	sets.midcast.Death.Resistant = set_combine(sets.midcast.Death,
 	{
 		head = "Amalric Coif +1", ear2 = "Regal Earring",
-		body = "Wicce Coat +3", hands = "Spae. Gloves +3",
-		waist = "Acuity Belt +1", legs = "Spae. Tonban +3", feet = "Wicce Sabots +2"
+		body = "Wicce Coat +3", hands = "Spae. Gloves +2",
+		waist = "Acuity Belt +1", legs = "Spae. Tonban +2", feet = "Wicce Sabots +2"
 	})
 
     sets.midcast.Stun = {sub="Clerisy Strap +1",ammo="Hasty Pinion +1",
-        head="Amalric Coif +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
+        head="Amalric Coif +1",neck="Src. Stole +2",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
         body="Zendik Robe",hands="Volte Gloves",ring1="Stikini Ring +1",ring2="Metamor. Ring +1",
         back=gear.Taranus.Idle,waist="Witful Belt",legs="Psycloth Lappas",feet="Regal Pumps +1"}
 		
@@ -245,7 +245,7 @@ function init_gear_sets()
 		
 	sets.midcast.Impact = set_combine(sets.midcast['Enfeebling Magic'],
 	{
-		body = "Crepuscular Cloak", hands = "Spae. Gloves 3", ring1 = "Stikini Ring +1",
+		body = "Crepuscular Cloak", hands = "Spae. Gloves +2", ring1 = "Stikini Ring +1",
 		legs = "Wicce Chausses +3",
 	})
 
@@ -262,7 +262,7 @@ function init_gear_sets()
 	{
 		ammo = "Seraphic Ampulla",
 		neck = "Combatant's Torque", ear1 = "Dedition Earring", ear2 = "Crep. Earring",
-		body = "Spae. Coat +3", ring1 = "Chirich Ring +1", ring2 = "Crepuscular Ring",
+		body = "Spaekona's Coat +2", ring1 = "Chirich Ring +1", ring2 = "Crepuscular Ring",
 		waist = "Oneiros Rope", legs = "Perdition Slops",
 	})
 
@@ -272,7 +272,7 @@ function init_gear_sets()
 		-- Minimal damage gear, maximum recast gear for procs.
     sets.midcast['Elemental Magic'].Proc = {main=empty,sub=empty,ammo="Impatiens",
         head="Vanya Hood",neck="Loricate Torque +1",ear1="Gifted Earring",ear2="Loquac. Earring",
-        body="Spaekona's Coat +3",hands="Regal Cuffs",ring1="Kishar Ring",ring2="Prolix Ring",
+        body="Spaekona's Coat +2",hands="Regal Cuffs",ring1="Kishar Ring",ring2="Prolix Ring",
         back="Swith Cape +1",waist="Witful Belt",legs="Assid. Pants +1",feet="Regal Pumps +1"}
 		
     sets.midcast['Elemental Magic'].OccultAcumen = {main="Khatvanga",sub="Bloodrain Strap",ammo="Seraphic Ampulla",
@@ -302,7 +302,7 @@ function init_gear_sets()
 		back = gear.Taranus.Idle, waist = "Shinjutsu-no-Obi +1", legs= "Amalric Slops +1", feet = "Wicce Sabots +2"
 	}
 
-	sets.Kiting = { ring2 = "Shneddick Ring" }
+	sets.Kiting = { feet = "Herald's Gaiters" }
 
 	-- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
 	sets.HPDown = {head="Pixie Hairpin +1",ear1="Genmei Earring",ear2="Evans Earring",
@@ -315,11 +315,11 @@ function init_gear_sets()
 		back="Tempered Cape +1",waist="Witful Belt",legs="Psycloth Lappas",feet="Vanya Clogs"}
 	
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
-    sets.buff['Mana Wall'] = {back=gear.Taranus.Idle,feet="Wicce Sabots +1"}
+    sets.buff['Mana Wall'] = { back = gear.Taranus.Idle, feet = "Wicce Sabots +2" }
 	
 	-- Gear that converts elemental damage done to recover MP.	
-	sets.RecoverMP = {body="Spaekona's Coat +3"}
-	sets.RecoverBurst = {body="Spaekona's Coat +3"}
+	sets.RecoverMP = { body = "Spaekona's Coat +2" }
+	sets.RecoverBurst = { body = "Spaekona's Coat +2" }
 	-- Gear for Magic Burst mode.
 	sets.MagicBurst =
 	{
@@ -332,7 +332,7 @@ function init_gear_sets()
 	{
 		ammo = "Pemphredo Tathlum",
 		head = "Wicce Petasos +2", hands = "Wicce Gloves +2", ring1 = "Stikini Ring +1",
-		feet = "Spae. Sabots +3"
+		feet = "Spae. Sabots +2"
 	})
 
 	sets.MagicBurst.Death = set_combine(sets.MagicBurst,
@@ -344,8 +344,8 @@ function init_gear_sets()
 	sets.MagicBurst.Death.Resistant = set_combine(sets.MagicBurst.Death,
 	{
 		head = "Amalric Coif +1", ear2 = "Regal Earring",
-		gloves = "Spae. Gloves +3", ring1 = "Metamor. Ring +1",
-		waist = "Acuity Belt +1", feet = "Spae. Sabots +3"
+		gloves = "Spae. Gloves +2", ring1 = "Metamor. Ring +1",
+		waist = "Acuity Belt +1", feet = "Spae. Sabots +2"
 	})
 
 	-- Gear for specific elemental nukes.

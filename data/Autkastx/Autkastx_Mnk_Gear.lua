@@ -1,13 +1,13 @@
 function user_job_setup()
 	-- Options: Override default values
-	state.OffenseMode:options('Normal')
-	state.WeaponskillMode:options('Match', 'Normal', 'PDL', 'Proc')
+	state.OffenseMode:options('Normal', 'Greed', 'Staff')
+	state.WeaponskillMode:options('Match', 'Normal', 'PDL', 'Greed', 'GreedSB', 'Proc')
 	state.HybridMode:options('Normal', 'DT', 'Counter', 'Subtle Blow')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'DT', 'Evasion', 'Refresh')
-	state.Weapons:options('Godhands', 'Verethragna', 'Spharai', 'Dragon', 'Karambit', 'Varga', 'Staff', 'ProcStaff', 'ProcClub', 'Barehanded')
+	state.Weapons:options('Godhands', 'Verethragna', 'Spharai', 'Dragon', 'Varga', 'Staff', 'ProcStaff', 'ProcClub', 'Barehanded')
 
 	state.ExtraMeleeMode = M{['description'] = 'Extra Melee Mode', 'None', 'Warder'}
 
@@ -27,6 +27,7 @@ function user_job_setup()
 		INT_WSD = { name = "Segomo's Mantle", augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } },
 		VIT_WSD = { name = "Segomo's Mantle", augments = { 'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%' } },
 		Counter = { name = "Segomo's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'System: 1 ID: 640 Val: 4' } },
+		STP = { name = "Segomo's Mantle", augments = { 'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', 'Store TP+10', 'Damage taken-5%' } }
 	}
 
 	select_default_macro_book()
@@ -54,9 +55,9 @@ function init_gear_sets()
 
 	sets.precast.JA['Chakra'] =
 	{
-		head = "Genmei Kabuto", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Handler's Earring +1",
+		head = "Bhikku Crown +3", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Handler's Earring +1",
 		body = "Anch. Cyclas +3", hands = "Hes. Gloves +3", ring1 = "Niqmaddu Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.Segomo.VIT_WSD, legs = "Tatena. Haidate +1", feet = "Bhikku Gaiters +3"
+		back = gear.Segomo.VIT_WSD, legs = "Bhikku Hose +3", feet = "Bhikku Gaiters +3"
 	}
 
 	-- Waltz set (chr and vit)
@@ -83,7 +84,7 @@ function init_gear_sets()
 	sets.precast.FC =
 	{
 		ammo = "Sapience Orb",
-		head = gear.herculean_fc_head, neck = "Voltsurge Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
+		head = gear.herculean_fc_head, neck = "Baetyl Pendant", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = gear.adhemar.body.d, hands = "Leyline Gloves", ring1 = "Rahab Ring", ring2 = "Medada's Ring",
 		legs = "Limbo Trousers"
 	}
@@ -273,7 +274,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Pixie Hairpin +1", neck = "Sibyl Scarf", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Archon Ring",
-		back = gear.Segomo.INT_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Segomo.INT_WSD, waist = "Skrymir Cord +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['Shell Crusher'] =
@@ -360,6 +361,15 @@ function init_gear_sets()
 		body = "Mpaca's Doublet", hands = gear.adhemar.hands.a, ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Bhikku Hose +3", feet = "Anch. Gaiters +3"
 	}
+
+	sets.engaged.Greed =
+	{
+		ammo = "Hoxne Ampulla",
+		head = "Malignance Chapeau", neck = "Mnk. Nodowa +2", ear1 = "Telos Earring", ear2 = "Schere Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
+		back = gear.Segomo.STP, waist = "Moonbow Belt +1", legs = "Bhikku Hose +3", feet = "Anch. Gaiters +3"
+	}
+
 	sets.engaged.Staff = set_combine(sets.engaged, { neck = "Anu Torque", legs = "Mpaca's Hose" })
 
 	-- Hybrid sets
@@ -384,6 +394,15 @@ function init_gear_sets()
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Defending Ring",
 		back = gear.Segomo.TP, waist = "Moonbow Belt +1", legs = "Mpaca's Hose", feet = "Malignance Boots"
 	}
+
+	sets.engaged.Greed['Subtle Blow'] =
+	{
+		ammo = "Hoxne Ampulla",
+		head = "Bhikku Crown +3", neck = "Mnk. Nodowa +2", ear1 = "Sherida Earring", ear2 = "Schere Earring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
+		back = gear.Segomo.STP, waist = "Moonbow Belt +1", legs = "Bhikku Hose +3", feet = "Anch. Gaiters +3"
+	}
+
 	sets.engaged.Staff['Subtle Blow'] = set_combine(sets.engaged['Subtle Blow'], { neck = "Anu Torque" })
 
 	-- Extra Melee Modes
@@ -416,7 +435,6 @@ function init_gear_sets()
 	sets.weapons.Verethragna = { main = "Verethragna" }
 	sets.weapons.Spharai = { main = "Spharai" }
 	sets.weapons.Dragon = { main = "Dragon Fangs" }
-	sets.weapons.Karambit = { main = "Karambit" }
 	sets.weapons.Varga = { main = "Varga Purnikawa" }
 	sets.weapons.Staff = { main = "Xoanon", sub = "Bloodrain Strap" }
 	sets.weapons.ProcStaff = { main = "Ram Staff", sub = "Bloodrain Strap" }

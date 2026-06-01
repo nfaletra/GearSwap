@@ -88,18 +88,18 @@ function init_gear_sets()
 	}
 
 	sets.precast.FC.SongDebuff = set_combine(sets.precast.FC.BardSong, {})
-	sets.precast.FC.Lullaby = { range="Marsyas" }
-	sets.precast.FC['Horde Lullaby'] = {range="Marsyas"}
-	sets.precast.FC['Horde Lullaby'].Resistant = {range="Blurred Harp +1"}
-	sets.precast.FC['Horde Lullaby'].AoE = {range="Blurred Harp +1"}
-	sets.precast.FC['Horde Lullaby II'] = {range="Marsyas"}
-	sets.precast.FC['Horde Lullaby II'].Resistant = {range="Blurred Harp +1"}
-	sets.precast.FC['Horde Lullaby II'].AoE = {range="Blurred Harp +1"}
+	sets.precast.FC.Lullaby = { range = "Marsyas" }
+	sets.precast.FC['Horde Lullaby'] = { range = "Marsyas" }
+	sets.precast.FC['Horde Lullaby'].Resistant = { range = "Marsyas" }
+	sets.precast.FC['Horde Lullaby'].AoE = { range = "Marsyas" }
+	sets.precast.FC['Horde Lullaby II'] = { range = "Daurdabla" }
+	sets.precast.FC['Horde Lullaby II'].Resistant = { range = "Daurdabla" }
+	sets.precast.FC['Horde Lullaby II'].AoE = { range = "Daurdabla" }
 		
-	sets.precast.FC.Mazurka = set_combine(sets.precast.FC.BardSong,{range="Marsyas"})
-	sets.precast.FC['Honor March'] = set_combine(sets.precast.FC.BardSong,{range="Marsyas"})
+	sets.precast.FC.Mazurka = set_combine(sets.precast.FC.BardSong, { range = "Marsyas" })
+	sets.precast.FC['Honor March'] = set_combine(sets.precast.FC.BardSong, { range = "Marsyas" })
 
-	sets.precast.FC.Daurdabla = set_combine(sets.precast.FC.BardSong, {range=info.ExtraSongInstrument})
+	sets.precast.FC.Daurdabla = set_combine(sets.precast.FC.BardSong, { range = info.ExtraSongInstrument })
 	sets.precast.DaurdablaDummy = sets.precast.FC.Daurdabla
 
 	sets.precast.FC['Goblin Gavotte'] = set_combine(sets.precast.DaurdablaDummy, {})
@@ -108,7 +108,6 @@ function init_gear_sets()
 	sets.precast.FC['Puppet\'s Operetta'] = set_combine(sets.precast.DaurdablaDummy, {})
 
 	-- Precast sets to enhance JAs
-
 	sets.precast.JA.Nightingale = { feet = "Bihu Slippers +3" }
 	sets.precast.JA.Troubadour = { body = "Bihu Jstcorps. +3" }
 	sets.precast.JA['Soul Voice'] = { legs = "Bihu Cannions +3" }
@@ -133,7 +132,7 @@ function init_gear_sets()
 		range = "Terpander",
 		head = "Pixie Hairpin +1", neck = "Baetyl Pendant",
 		ring2 = "Archon Ring",
-		waist = "Eschan Stone"
+		waist = "Skrymir Cord +1"
 	})
 
 	sets.precast.WS['Mordant Rime'] = set_combine(sets.precast.WS,
@@ -152,7 +151,7 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS['Mordant Rime'],
 	{
 		neck = "Fotia Gorget", ear2 = "Mache Earring +1",
-		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Petrov Ring",
+		body = "Bihu Jstcorps. +3", hands = "Bunzi's Gloves", ring1 = "Petrov Ring",
 		waist = "Fotia Belt"
 	})
 
@@ -177,12 +176,12 @@ function init_gear_sets()
 	-- Gear to enhance certain classes of songs
 	sets.midcast.Ballad = {}
 	sets.midcast.Lullaby = { range = "Marsyas" }
-	sets.midcast['Horde Lullaby'] = {range="Marsyas"}
-	sets.midcast['Horde Lullaby'].Resistant = {range="Blurred Harp +1"}
-	sets.midcast['Horde Lullaby'].AoE = {range="Blurred Harp +1"}
-	sets.midcast['Horde Lullaby II'] = {range="Marsyas"}
-	sets.midcast['Horde Lullaby II'].Resistant = {range="Blurred Harp +1"}
-	sets.midcast['Horde Lullaby II'].AoE = {range="Blurred Harp +1"}
+	sets.midcast['Horde Lullaby'] = { range = "Marsyas" }
+	sets.midcast['Horde Lullaby'].Resistant = { range = "Marsyas" }
+	sets.midcast['Horde Lullaby'].AoE = { range = "Marsyas" }
+	sets.midcast['Horde Lullaby II'] = { range = "Daurdabla" }
+	sets.midcast['Horde Lullaby II'].Resistant = { range = "Daurdabla" }
+	sets.midcast['Horde Lullaby II'].AoE = { range = "Daurdabla" }
 	sets.midcast.Madrigal = { head = "Fili Calot +3", back = gear.Intarabus.TP, feet = "Fili Cothurnes +2" }
 	sets.midcast.Paeon = { head = "Brioso Roundlet +1" }
 	sets.midcast.March = { hands = "Fili Manchettes +2" }
@@ -249,7 +248,7 @@ function init_gear_sets()
 	sets.midcast['Enhancing Magic'] =
 	{
 		sub = "Ammurapi Shield", ammo = "Hasty Pinion +1",
-		head = "Telchine Cap", neck = "Voltsurge Torque" , ear1 = "Andoaa Earring", ear2 = "Gifted Earring",
+		head = "Telchine Cap", neck = "Incanter's Torque" , ear1 = "Andoaa Earring", ear2 = "Gifted Earring",
 		body = "Telchine Chas.", hands = gear.telchine.hands.enhancing, ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = "Fi Follet Cape +1", waist = "Embla Sash", legs = "Telchine Braconi", feet = "Telchine Pigaches"
 	}
@@ -277,7 +276,7 @@ function init_gear_sets()
 		main = "Daybreak", sub = "Genmei Shield", range = "Terpander",
 		head = "Fili Calot +3", neck = "Loricate Torque +1", ear1 = "Etiolation Earring", ear2 = "Fili Earring +1",
 		body = "Volte Doublet", hands = "Fili Manchettes +2", ring1 = "Shadow Ring", ring2 = "Defending Ring",
-		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
+		back = "Null Shawl", waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
 	}
 
 	-- Resting sets

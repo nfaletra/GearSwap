@@ -62,8 +62,8 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	sets.precast.FC = 
 	{
-		main = "Crocea Mors", sub = "Theulliac Ecu +1", ammo = "Impatiens",
-		head = "Atrophy Chapeau +3", neck = "Voltsurge Torque", ear1 = "Malignance Earring", ear2 = "Lethargy Earring +1",
+		main = "Crocea Mors", sub = "Thuelliac Ecu +1", ammo = "Impatiens",
+		head = "Atrophy Chapeau +3", neck = "Baetyl Pendant", ear1 = "Malignance Earring", ear2 = "Lethargy Earring +1",
 		body = "Viti. Tabard +3", hands = "Leyline Gloves", ring1 = "Lebeche Ring", ring2 = "Medada's Ring",
 		back = "Perimede Cape", waist = "Witful Belt", legs = "Kaykaus Tights +1", feet = "Carmine Greaves +1"
 	}
@@ -75,8 +75,8 @@ function init_gear_sets()
 
 	sets.precast.FC.Impact = set_combine(sets.precast.FC,
 	{
-		head = empty, neck = "Voltsurge Torque",
-		body = "Crepuscular Cloak", hands = "Leyline Gloves"
+		head = empty,
+		body = "Crepuscular Cloak",
 	})
 	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, { main = "Daybreak" })
 
@@ -156,7 +156,7 @@ function init_gear_sets()
 	sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS,
 	{
 		head = "Viti. Chapeau +3", ear2 = "Brutal Earring",
-		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Epaminondas's Ring", ring2 = "Freke Ring",
+		body = "Nyame Mail", hands = "Bunzi's Gloves", ring1 = "Epaminondas's Ring", ring2 = "Freke Ring",
 		legs = "Vitiation Tights +3"
 	})
 	sets.precast.WS['Requiescat'].PDL = set_combine(sets.precast.WS['Requiescat'],
@@ -260,7 +260,7 @@ function init_gear_sets()
 		ammo = "Sroda Tathlum",
 		neck = "Dls. Torque +2", ear2 = "Malignance Earring",
 		hands = "Jhakri Cuffs +2", ring1 = "Freke Ring", ring2 = "Medada's Ring",
-		waist = "Eschan Stone", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
+		waist = "Skrymir Cord +1", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
 	})
 
 	sets.precast.WS['Seraph Strike'] = set_combine(sets.precast.WS,
@@ -268,7 +268,7 @@ function init_gear_sets()
 		ammo = "Sroda Tathlum",
 		neck = "Dls. Torque +2", ear2 = "Malignance Earring",
 		hands = "Jhakri Cuffs +2", ring1 = "Freke Ring", ring2 = "Medada's Ring",
-		waist = "Eschan Stone", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
+		waist = "Skrymir Cord +1", legs = "Leth. Fuseau +3", feet = "Leth. Houseaux +3"
 	})
 
 	sets.precast.WS['Flaming Arrow'] = set_combine(sets.precast.WS,
@@ -310,7 +310,7 @@ function init_gear_sets()
 
 	sets.midcast.FastRecast =
 	{
-		head = "Atrophy Chapeau +3", neck = "Voltsurge Torque", ear1 = "Malignance Earring", ear2 = "Leth. Earring +1",
+		head = "Atrophy Chapeau +3", neck = "Baetyl Pendant", ear1 = "Malignance Earring", ear2 = "Leth. Earring +1",
 		body = "Vitiation Tabard +3", hands = "Regal Cuffs", ring1 = "Mephitas's Ring +1", ring2 = "Medada's Ring",
 		waist = "Witful Belt", feet = "Carmine Greaves +1"
 	}
@@ -517,7 +517,7 @@ function init_gear_sets()
 	{
 		main = "Rubicundity", sub = "Ammurapi Shield", ammo = "Regal Gem",
 		head = "Pixie Hairpin +1", neck = "Erra Pendant", ear1 = "Malignance Earring", ear2 = "Digni. Earring",
-		body = "Merlinic Jubbah", hands = gear.merlinic.hands.FC, ring1 = "Evanescence Ring", ring2 = "Archon Ring",
+		body = gear.merlinic.body.FC, hands = "Volte Gloves", ring1 = "Evanescence Ring", ring2 = "Archon Ring",
 		back = gear.Sucellos.MAB, waist = "Fucho-no-obi", legs = "Merlinic Shalwar", feet = "Merlinic Crackows"
 	}
 
@@ -556,7 +556,7 @@ function init_gear_sets()
 		main = "Sakpata's Sword", sub = "Sacro Bulwark", ammo = "Staunch Tathlum +1",
 		head = "Viti. Chapeau +3", neck = "Warder's Charm +1", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
 		body = "Lethargy Sayon +3", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Mephitas's Ring +1",
-		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = "Null Shawl", waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.idle.Refresh = set_combine(sets.idle, { ring2 = "Stikini Ring +1", feet = "Volte Gaiters" })
@@ -579,7 +579,7 @@ function init_gear_sets()
 	sets.weapons.DualTauret = { main = "Tauret", sub = "Gleti's Knife" }
 	sets.weapons.DualAeolian = { main = "Tauret", sub = "Thibron" }
 	sets.weapons.DualEnspell = { main = "Crocea Mors", sub = "Ceremonial Dagger", range = "Ullr", ammo = "Beetle Arrow" }
-	sets.weapons.DualProc = { main = "Twinned Blade", sub = "Ternion Dagger +1" }
+	sets.weapons.DualProc = { main = "Twinned Blade", sub = "Gleti's Knife" }
 
 	sets.buff.Sublimation = { waist = "Embla Sash" }
 	sets.buff.DTSublimation = { waist = "Embla Sash" }

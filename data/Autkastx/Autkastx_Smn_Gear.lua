@@ -39,8 +39,8 @@ function init_gear_sets()
 	{
 		main = "Chatoyant Staff", sub = "Vox Grip", ammo = "Esper Stone +1",
 		head = "Baayami Hat +1", neck = "Incanter's Torque", ear1 = "Lodurr Earring", ear2 = "C. Palug Earring",
-		body = "Baayami Robe", hands = "Baayami Cuffs +1", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
-		back = "Conveyance Cape", waist = "Kobo Obi", legs = "Baayami Slops", feet = "Beck. Pigaches +1"
+		body = "Baayami Robe +1", hands = "Baayami Cuffs +1", ring1 = "Evoker's Ring", ring2 = "Stikini Ring +1",
+		back = "Conveyance Cape", waist = "Kobo Obi", legs = "Baayami Slops +1", feet = "Beck. Pigaches +3"
 	}
 
 	sets.precast.JA['Mana Cede'] = { hands = "Beck. Bracers +1" }
@@ -83,9 +83,9 @@ function init_gear_sets()
 	sets.precast.WS['Myrkr'] =
 	{
 		ammo = "Epitaph",
-		head = "Beckoner's Horn +2", neck = "Sanctity Necklace", ear1 = "Etiolation Earring", ear2 = "Gifted Earring",
-		body = "Con. Doublet +3", hands = "Regal Cuffs", ring1 = "Mephitas's Ring +1", ring2 = "Mephitas's Ring",
-		back = "Conveyance Cape", waist = "Luminary Sash", legs = "Psycloth Lappas", feet = "Beck. Pigaches +1"
+		head = "Beckoner's Horn +3", neck = "Sanctity Necklace", ear1 = "Etiolation Earring", ear2 = "Gifted Earring",
+		body = "Con. Doublet +3", hands = "Regal Cuffs", ring1 = "Mephitas's Ring +1", ring2 = "Metamor. Ring +1",
+		back = "Conveyance Cape", waist = "Luminary Sash", legs = "Psycloth Lappas", feet = "Beck. Pigaches +3"
 	}
 
 
@@ -95,7 +95,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast =
 	{
 		main = "Grioavolr", sub = "Clerisy Strap +1",
-		head = "Bunzi's Hat", neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
+		head = "Bunzi's Hat", neck="Baetyl Pendant",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
 		body="Inyanga Jubbah +2",hands="Volte Gloves",ring1="Kishar Ring",ring2="Prolix Ring",
 		back="Swith Cape +1",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps +1"
 	}
@@ -120,8 +120,8 @@ function init_gear_sets()
 	sets.midcast['Summoning Magic'] =
 	{
 		main = "Mpaca's Staff", sub = "Khonsu", ammo = "Epitaph",
-		head = "Beckoner's Horn +2", neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "Lodurr Earring",
-		body = "Baayami Robe", hands = "Glyphic Bracers +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
+		head = "Beckoner's Horn +3", neck = "Incanter's Torque", ear1 = "Andoaa Earring", ear2 = "Lodurr Earring",
+		body = "Baayami Robe +1", hands = "Glyphic Bracers +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = gear.Campestres.Magic, waist = "Emphatikos Rope", legs = "Assid. Pants +1", feet = "Glyph. Pigaches +1"
 	}
 
@@ -148,7 +148,7 @@ function init_gear_sets()
 	sets.midcast.Impact.OccultAcumen = set_combine(sets.midcast['Elemental Magic'].OccultAcumen, {head=empty,body="Crepuscular Cloak"})
 
     sets.midcast['Divine Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-        head=gear.merlinic_nuke_head,neck="Baetyl Pendant",ear1="Crematio Earring",ear2="Friomisi Earring",
+        head=gear.merlinic_nuke_head,neck="Incanter's Torque",ear1="Crematio Earring",ear2="Friomisi Earring",
         body=gear.merlinic_nuke_body,hands="Amalric Gages +1",ring1="Medada's Ring",ring2="Freke Ring",
 		back="Toro Cape",waist="Sekhmet Corset",legs="Merlinic Shalwar",feet = gear.amalric.feet.d}
 		
@@ -165,12 +165,12 @@ function init_gear_sets()
     sets.midcast.Aspir = sets.midcast.Drain
 		
     sets.midcast.Stun = {ammo="Hasty Pinion +1",
-		head="Amalric Coif +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
+		head="Amalric Coif +1",neck="Incanter's Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
 		body="Inyanga Jubbah +2",hands="Volte Gloves",ring1="Kishar Ring",ring2="Stikini Ring +1",
 		back="Swith Cape +1",waist="Witful Belt",legs="Psycloth Lappas",feet="Regal Pumps +1"}
 		
     sets.midcast.Stun.Resistant = {main="Daybreak",sub="Ammurapi Shield",ammo="Hasty Pinion +1",
-		head="Amalric Coif +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Gwati Earring",
+		head="Amalric Coif +1",neck="Incanter's Torque",ear1="Enchntr. Earring +1",ear2="Gwati Earring",
 		body="Inyanga Jubbah +2",hands="Volte Gloves",ring1="Kishar Ring",ring2="Stikini Ring +1",
 		back="Aurist's Cape +1",waist="Witful Belt",legs="Psycloth Lappas",feet=gear.merlinic_aspir_feet}
 		
@@ -242,7 +242,7 @@ function init_gear_sets()
 	sets.midcast.Pet.MagicalBloodPactRage =
 	{
 		main = "Grioavolr", sub = "Elan Strap +1", ammo = "Epitaph",
-		head = "C. Palug Crown", neck = "Smn. Collar +2", ear1 = "Lugalbanda Earring", ear2 = "Gelos Earring",
+		head = "C. Palug Crown", neck = "Smn. Collar +2", ear1 = "Enmerkar Earring", ear2 = "Beckoner's Earring +1",
 		body = "Apo. Dalmatica +1", hands = gear.merlinic.hands.BP, ring1 = "Varar Ring +1", ring2 = "Varar Ring +1",
 		back = gear.Campestres.Magic, waist = "Regal Belt", legs = "Enticer's Pants", feet = gear.apogee.feet.a
 	}
@@ -265,7 +265,7 @@ function init_gear_sets()
 	sets.midcast.Pet['Flaming Crush'] =
 	{
 		main = "Grioavolr" , sub = "Elan Strap +1", ammo = "Epitaph",
-		head = "C. Palug Crown", neck = "Smn. Collar +2", ear1 = "Lugalbanda Earring", ear2 = "Gelos Earring",
+		head = "C. Palug Crown", neck = "Smn. Collar +2", ear1 = "Enmerkar Earring", ear2 = "Beckoner's Earring +1",
 		body = "Apogee Dalmatica +1", hands = gear.merlinic.hands.BP, ring1 = "Varar Ring +1", ring2 = "Varar Ring +1",
 		back = gear.Campestres.Magic, waist = "Regal Belt", legs = gear.apogee.legs.a, feet = gear.apogee.feet.a
 	}

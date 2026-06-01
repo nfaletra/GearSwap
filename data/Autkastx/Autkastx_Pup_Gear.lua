@@ -87,7 +87,7 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     sets.precast.FC = {
-	head=gear.herculean_fc_head,neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
+	head=gear.herculean_fc_head,neck="Baetyl Pendant",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
 	body="Zendik Robe",hands="Malignance Gloves",ring1="Lebeche Ring",ring2="Prolix Ring",
 	back="Perimede Cape",waist="Isa Belt",legs="Rawhide Trousers",feet="Regal Pumps +1"}
 
@@ -130,9 +130,9 @@ function init_gear_sets()
 
 	sets.precast.WS['Stringing Pummel'] =
 	{
-		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Schere Earring", ear2 = "Moonshade Earring",
-		body = "Mpaca's Doublet", hands = "Ryuo Tekko +1", ring1 = "Regal Ring", ring2 = "Gere Ring",
-		back = "Null Shawl", waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Mpaca's Boots"
+		head = "Mpaca's Cap", neck = "Fotia Gorget", ear1 = "Schere Earring", ear2 = "Kara. Earring +1",
+		body = "Mpaca's Doublet", hands = "Ryuo Tekko +1", ring1 = "Niqmaddu", ring2 = "Gere Ring",
+		back = "Null Shawl", waist = "Fotia Belt", legs = "Mpaca's Hose", feet = "Ryuo Sune-Ate +1"
 	}
 
 	sets.precast.WS['Shijin Spiral'] =
@@ -168,7 +168,7 @@ function init_gear_sets()
 
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
-		head=gear.herculean_fc_head,neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
+		head=gear.herculean_fc_head,neck="Baetyl Pendant",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
 		body="Zendik Robe",hands="Malignance Gloves",ring1="Lebeche Ring",ring2="Prolix Ring",
 		back="Perimede Cape",waist="Isa Belt",legs="Rawhide Trousers",feet="Regal Pumps +1"}
 	
@@ -211,6 +211,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle =
 	{
+		range = "Animator P +1", ammo = "Automat. Oil +3",
 		head = "Nyame Helm", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Shadow Ring", ring2 = "Defending Ring",
 		back = "Null Shawl", waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
@@ -252,6 +253,7 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged =
 	{
+		range = "Neo Animator", ammo = "Automat. Oil +3",
 		head = "Malignance Chapeau", neck = "Shulmanu Collar", ear1 = "Schere Earring", ear2 = "Kara. Earring +1",
 		body = "Mpaca's Doublet", hands = "Mpaca's Gloves", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = "Null Shawl", waist = "Moonbow Belt +1", legs = "Samnuha Tights", feet = gear.herculean_ta_feet
@@ -260,6 +262,7 @@ function init_gear_sets()
 
 	sets.engaged.DT =
 	{
+		range = "Neo Animator", ammo = "Automat. Oil +3",
 		head = "Malignance Chapeau", neck = "Loricate Torque +1", ear1 = "Schere Earring", ear2 = "Odnowa Earring +1",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Niqmaddu Ring", ring2 = "Gere Ring",
 		back = "Null Shawl", waist = "Moonbow Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
@@ -275,10 +278,10 @@ function init_gear_sets()
 	sets.engaged.Godhands.Pet = set_combine(sets.engaged.Pet, sets.Godhands)
 
 	-- Weapons sets
-	sets.weapons.Godhands = { main = "Godhands", range = "Neo Animator" }
-	sets.weapons.Verethragna = { main = "Verethragna", range = "Neo Animator" }
-	sets.weapons.PetWeapons = { main = "Ohtas", range = "Neo Animator" }
-	sets.weapons.Trial = { main = "Inferno Claws", range = "Neo Animator" }
+	sets.weapons.Godhands = { main = "Godhands" }
+	sets.weapons.Verethragna = { main = "Verethragna" }
+	sets.weapons.PetWeapons = { main = "Xiucoatl" }
+	sets.weapons.Trial = { main = "Inferno Claws" }
 end
 
 -- Select default macro book on initial load or subjob change.

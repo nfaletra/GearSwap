@@ -93,7 +93,7 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	sets.precast.FC =
 	{
-		main = "C. Palug Hammer", sub = "Chanter's Shield", ammo = "Impatiens",
+		main = "C. Palug Hammer", sub = "Genmei Shield", ammo = "Impatiens",
 		head = "Ebers Cap +3", neck = "Clr. Torque +2", ear1 = "Etiolation Earring", ear2 = "Malignance Earring",
 		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Medada's Ring", ring2 = "Lebeche Ring",
 		back = "Perimede Cape", waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Regal Pumps +1"
@@ -343,7 +343,7 @@ function init_gear_sets()
 		main = "Daybreak", sub = "Ammurapi Shield", ammo = "Ghastly Tathlum +1",
 		head = empty, neck = "Saevus Pendant +1", ear1 = "Regal Earring", ear2 = "Malignance Earring",
 		body = "Cohort Cloak +1", hands = "Bunzi's Gloves", ring1 = "Freke Ring", ring2 = "Metamor. Ring +1",
-		back = "Aurist's Cape +1", waist = "Eschan Stone", legs = "Bunzi's Pants", feet = "Bunzi's Sabots"
+		back = "Aurist's Cape +1", waist = "Skrymir Cord +1", legs = "Bunzi's Pants", feet = "Bunzi's Sabots"
 	}
 	sets.midcast.Banish = set_combine(sets.midcast.Holy,
 	{
@@ -404,7 +404,7 @@ function init_gear_sets()
 		main = "Mpaca's Staff", sub = "Kupayopl", ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Warder's Charm +1", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
 		body = "Ebers Bliaut +3", hands = "Ebers Mitts +3", ring1 = "Stikini Ring +1", ring2 = "Shadow Ring",
-		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Ebers Pant. +3", feet = "Ebers Duckbills +3"
+		back = "Null Shawl", waist = "Carrier's Sash", legs = "Ebers Pant. +3", feet = "Ebers Duckbills +3"
 	}
 
 	-- Resting sets
@@ -422,7 +422,7 @@ function init_gear_sets()
 	{
 		ammo = "Amar Cluster",
 		head = "Bunzi's Hat", neck = "Combatant's Torque", ear1 = "Telos Earring" , ear2 = "Crep. Earring",
-		body = "Ayanmo Corazza +2", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
+		body = "Nyame Mail", hands = "Bunzi's Gloves", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
 		back = gear.Alaunus.TP, waist = "Cornelia's Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.engaged.DW = set_combine(sets.engaged, { ear1 = "Suppanomimi", ear2 = "Eabani Earring" })

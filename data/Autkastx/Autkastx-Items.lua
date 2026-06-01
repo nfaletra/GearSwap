@@ -43,19 +43,6 @@ gear.herculean_wsd_feet = {name="Herculean Boots",augments={'Accuracy+23 Attack+
 gear.herculean_waltz_feet = {name="Herculean Boots",augments={'Attack+10','"Waltz" potency +10%','AGI+4','Accuracy+9',}}
 gear.herculean_nuke_feet = {name="Herculean Boots",augments={'"Mag.Atk.Bns."+23','Rng.Acc.+14','Phalanx +1','Mag. Acc.+15 "Mag.Atk.Bns."+15',}}
 
-gear.merlinic_nuke_head = {name="Merlinic Hood",augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','INT+15','Mag. Acc.+3','"Mag.Atk.Bns."+13',}}
-gear.merlinic_nuke_body = {name="Merlinic Jubbah",augments={'Mag. Acc.+22 "Mag.Atk.Bns."+22','"Occult Acumen"+4','INT+10','Mag. Acc.+2','"Mag.Atk.Bns."+15',}}
-gear.merlinic_occult_body = {name="Merlinic Jubbah",augments={'Mag. Acc.+14','"Occult Acumen"+11','MND+6',}}
-gear.merlinic_refresh_hands = {name="Merlinic Dastanas",augments={'Attack+17','Pet: INT+5','"Refresh"+2','Accuracy+11 Attack+11',}}
-gear.merlinic_magpact_hands = {name="Merlinic Dastanas",augments={'Pet: Mag. Acc.+27','Blood Pact Dmg.+10','Pet: DEX+8','Pet: "Mag.Atk.Bns."+13',}}
-gear.merlinic_physpact_hands = {name="Merlinic Dastanas",augments={'Pet: Accuracy+28 Pet: Rng. Acc.+28','Blood Pact Dmg.+10','Pet: STR+7','Pet: Mag. Acc.+6',}}
-gear.merlinic_occult_hands = {name="Merlinic Dastanas",augments={'"Mag.Atk.Bns."+25','"Occult Acumen"+11','CHR+9',}}
-gear.merlinic_nuke_feet = {name="Merlinic Crackows",augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','"Conserve MP"+1','INT+11','Mag. Acc.+3','"Mag.Atk.Bns."+15',}}
-gear.merlinic_aspir_feet = {name="Merlinic Crackows",augments={'Mag. Acc.+22 "Mag.Atk.Bns."+22','"Drain" and "Aspir" potency +10','Mag. Acc.+15',}}
-gear.merlinic_treasure_feet = {name="Merlinic Crackows",augments={'Accuracy+5','"Snapshot"+2','"Treasure Hunter"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11',}}
-gear.merlinic_refresh_feet = {name="Merlinic Crackows",augments={'Pet: DEX+7','Pet: Mag. Acc.+7','"Refresh"+2','Accuracy+20 Attack+20',}}
-gear.merlinic_occult_feet = {name="Merlinic Crackows",augments={'"Occult Acumen"+11','INT+8','Mag. Acc.+4',}}
-
 gear.odyssean_wsd_hands = { name="Odyssean Gauntlets",augments={'Accuracy+26','Weapon skill damage +4%','STR+6','Attack+14',}}
 gear.odyssean_stp_legs = {name="Odyssean Cuisses",augments={'Accuracy+28','"Store TP"+6','DEX+9',}}
 gear.odyssean_fc_legs = {name="Odyssean Cuisses",augments={'"Fast Cast"+6','"Mag.Atk.Bns."+12',}}
@@ -94,9 +81,25 @@ gear.valorous.feet.pet_mab = { name = "Valorous Greaves", augments = {} }
 -- Merlinic
 gear.merlinic = {}
 
+-- Head
+gear.merlinic.head = {}
+gear.merlinic.head.FC = { name = "Merlinic Hood", augments = { '"Fast Cast"+6', 'Mag. Acc.+5', '"Mag.Atk.Bns."+10' } }
+gear.merlinic.head.OA = { name = "Merlinic Hood", augments = { '"Occult Acumen"+10', 'Mag. Acc.+2' } }
+
+-- Body
+gear.merlinic.body = {}
+gear.merlinic.body.FC = { name = "Merlinic Jubbah", augments = { '"Mag.Atk.Bns."+9', '"Fast Cast"+7' } }
+gear.merlinic.body.OA = { name = "Merlinic Jubbah", augments = { '"Occult Acumen"+9', 'MND+4', 'Mag. Acc.+10' } }
+
+-- Hands
 gear.merlinic.hands = {}
 gear.merlinic.hands.BP = { name = "Merlinic Dastanas", augments = { 'Pet: Mag. Acc.+17 Pet: "Mag.Atk.Bns."+17', 'Blood Pact Dmg.+10', 'Pet: "Mag.Atk.Bns."+9' } }
 gear.merlinic.hands.FC = { name = "Merlinic Dastanas", augments = { '"Mag.Atk.Bns."+11', '"Fast Cast"+6', 'CHR+8' } }
+
+-- Feet
+gear.merlinic.feet = {}
+gear.merlinic.feet.FC = { name = "Merlinic Crackows", augments = { '"Mag.Atk.Bns."+30', '"Fast Cast"+6', 'MND+6', 'Mag. Acc.+5' } }
+gear.merlinic.feet.OA = { name = "Merlinic Crackows", augments = { '"Occult Acumen"+10', 'INT+2', 'Mag. Acc.+14', '"Mag.Atk.Bns."+11' } }
 
 -- Abjuration Gear
 -- Adhemar gear

@@ -14,19 +14,19 @@ sets.Chocobo.game = {} -- {body="Black Race Silks"}
 sets.crafting.HQ = {} -- {ring2="Craftmaster's Ring"}
 sets.crafting.Alchemy = { main = "Caduceus", body = "Alchemist's Smock", neck = "Alchemst. Torque", ring1 = "Orvail Ring", ring2 = "Artificer's Ring" }
 sets.crafting.Alchemy.NQ = {} -- {ring1="Alchemist's Ring"}
-sets.crafting.Leathercraft = { ring1 = "Orvail Ring" } -- {neck="Tanner's Torque",sub="Beveler's Escutcheon",body="Tanner's Smock"}
+sets.crafting.Leathercraft = { ring1 = "Orvail Ring", ring2 = "Artificer's Ring" } -- {neck="Tanner's Torque",sub="Beveler's Escutcheon",body="Tanner's Smock"}
 sets.crafting.Leathercraft.NQ = {} -- {ring1="Tanner's Ring"}
-sets.crafting.Smithing = { ring1 = "Orvail Ring" } -- {neck="Smithy's Torque",sub="Smythe's Escutcheon",body="Blksmith. Smock"}
+sets.crafting.Smithing = { ring1 = "Orvail Ring", ring2 = "Artificer's Ring" } -- {neck="Smithy's Torque",sub="Smythe's Escutcheon",body="Blksmith. Smock"}
 sets.crafting.Smithing.NQ = {} -- {ring1="Smith's Ring"}
-sets.crafting.Bonecraft = { ring1 = "Orvail Ring" } -- {neck="Boneworker's Torque",sub="Ossifier's Escutcheon",body="Bonewrk. Smock"}
+sets.crafting.Bonecraft = { ring1 = "Orvail Ring", ring2 = "Artificer's Ring" } -- {neck="Boneworker's Torque",sub="Ossifier's Escutcheon",body="Bonewrk. Smock"}
 sets.crafting.Bonecraft.NQ = {} -- {ring1="Bonecrafter's Ring"}
-sets.crafting.Cooking = { ring1 = "Orvail Ring" } -- {main="Hocho",sub="Chef's Escutcheon",neck="Culin. Torque",body="Culinarian's Smock"}
+sets.crafting.Cooking = { ring1 = "Orvail Ring", ring2 = "Artificer's Ring" } -- {main="Hocho",sub="Chef's Escutcheon",neck="Culin. Torque",body="Culinarian's Smock"}
 sets.crafting.Cooking.NQ = {} -- {ring1="Chef's Ring"}
-sets.crafting.Goldsmithing = { ring1 = "Orvail Ring" } -- {neck="Goldsm. Torque",sub="Toreutic Escutcheon",body="Goldsmith's Smock"}
+sets.crafting.Goldsmithing = { ring1 = "Orvail Ring", ring2 = "Artificer's Ring" } -- {neck="Goldsm. Torque",sub="Toreutic Escutcheon",body="Goldsmith's Smock"}
 sets.crafting.Goldsmithing.NQ = {} -- {ring1="Goldsmith's Ring"}
-sets.crafting.Clothcraft = { ring1 = "Orvail Ring" } -- {neck="Weaver's Torque",sub="Plaiter's Escutcheon",body="Weaver's Smock"}
+sets.crafting.Clothcraft = { ring1 = "Orvail Ring", ring2 = "Artificer's Ring" } -- {neck="Weaver's Torque",sub="Plaiter's Escutcheon",body="Weaver's Smock"}
 sets.crafting.Clothcraft.NQ = {} -- {ring1="Tailor's Ring"}
-sets.crafting.Woodworking = { ring1 = "Orvail Ring" } -- {neck="Carver's Torque",sub="Joiner's Escutcheon",body="Carpenter's Smock"}
+sets.crafting.Woodworking = { ring1 = "Orvail Ring", ring2 = "Artificer's Ring" } -- {neck="Carver's Torque",sub="Joiner's Escutcheon",body="Carpenter's Smock"}
 sets.crafting.Woodworking.NQ = {} -- {ring1="Carpenter's Ring"}
 sets.crafting.Synergy = {}
 

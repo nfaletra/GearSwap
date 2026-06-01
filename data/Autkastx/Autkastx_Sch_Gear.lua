@@ -77,7 +77,7 @@ function init_gear_sets()
 	sets.precast.FC =
 	{
 		main = "Mpaca's Staff", sub = "Khonsu", ammo = "Impatiens",
-		head = "Merlinic Hood", neck = "Voltsurge Torque", ear1 = "Malignance Earring", ear2 = "Loquac. Earring",
+		head = gear.merlinic.head.FC, neck = "Baetyl Pendant", ear1 = "Malignance Earring", ear2 = "Loquac. Earring",
 		body = "Zendik Robe", hands = "Gende. Gages +1", ring1 = "Lebeche Ring", ring2 = "Medada's Ring",
 		back = "Perimede Cape", waist = "Witful Belt", legs = "Agwu's Slops", feet = "Peda. Loafers +3"
 	}
@@ -116,7 +116,7 @@ function init_gear_sets()
 	{
 		neck = "Baetyl Pendant", ear1 = "Regal Earring", ear2 = "Friomisi Earring",
 		hadns = "Jhakri Cuffs +2", ring2 = "Metamor. Ring +1",
-		waist = "Eschan Stone", legs = "Merlinic Shalwar"
+		waist = "Skrymir Cord +1", legs = "Merlinic Shalwar"
 	})
 	sets.precast.WS['Shining Strike'] = sets.precast.WS['Flash Nova']
 
@@ -125,7 +125,7 @@ function init_gear_sets()
 		ammo = "Staunch Tathlum +1",
 		head = "Amalric Coif +1", neck = "Dualism Collar +1", ear1 = "Evans Earring", ear2 = "Moonshade Earring",
 		body = "Acad. Gown +1", hands = "Peda. Bracers +3", ring1 = "Mephitas's Ring +1", ring2 = "Mephitas's Ring",
-		back = "Aurist's Cape +1", waist = "Shinjutsu-no-Obi +1", legs = "Agwu's Slops", feet = gear.amalric.feet.a
+		back = "Aurist's Cape +1", waist = "Shinjutsu-no-Obi +1", legs = "Agwu's Slops", feet = "Psycloth Boots"
 	}
 
 	sets.precast.WS['Cataclysm'] =
@@ -163,8 +163,8 @@ function init_gear_sets()
 	sets.midcast.FastRecast =
 	{
 		ammo = "Hasty Pinion +1",
-		head = "Merlinic Hood", neck = "Orunmila's Torque", ear1 = "Malignance Earring", ear2 = "Loquac. Earring",
-		body = "Merlinic Jubbah", hands = "Academic's Bracers +1", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
+		head = gear.merlinic.head.FC, neck = "Orunmila's Torque", ear1 = "Malignance Earring", ear2 = "Loquac. Earring",
+		body = gear.merlinic.body.FC, hands = "Academic's Bracers +1", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
 		back = "Fi Follet Cape +1", waist = "Witful Belt", legs = "Kaykaus Tights +1", feet = "Pedagogy Loafers +3"
 	}
 
@@ -266,7 +266,7 @@ function init_gear_sets()
 	{
 		main = "Rubicundity", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
 		head = "Pixie Hairpin +1", neck = "Erra Pendant", ear1 = "Regal Earring", ear2 = "Malignance Earring",
-		body = "Merlinic Jubbah", hands = "Agwu's Gages", ring1 = "Evanescence Ring", ring2 = "Archon Ring",
+		body = gear.merlinic.body.FC, hands = "Agwu's Gages", ring1 = "Evanescence Ring", ring2 = "Archon Ring",
 		back = "Bookworm's Cape", waist = "Fucho-no-obi", legs = "Peda. Pants +3", feet = "Agwu's Pigaches"
 	}
 	sets.midcast.Aspir = sets.midcast.Drain
@@ -291,7 +291,7 @@ function init_gear_sets()
 	sets.midcast['Elemental Magic'].Proc =
 	{
 		main = empty, sub = empty, ammo = "Impatiens",
-		head = "Vanya Hood", neck = "Voltsurge Torque", ear1 = "Enchntr. Earring +1", ear2 = "Malignance Earring",
+		head = "Vanya Hood", neck = "Baetyl Pendant", ear1 = "Enchntr. Earring +1", ear2 = "Malignance Earring",
 		body = "Zendik Robe", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
 		back = "Swith Cape +1", waist = "Witful Belt", legs = "Psycloth Lappas", feet = "Regal Pumps +1"
 	}
@@ -326,7 +326,7 @@ function init_gear_sets()
 		main = "Mpaca's Staff", sub = "Khonsu", ammo = "Staunch Tathlum +1",
 		head = "Nyame Helm", neck = "Warder's Charm +1", ear1 = "Lugalbanda Earring", ear2 = "Etiolation Earring",
 		body = "Arbatel Gown +2", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
-		back = "Solemnity Cape", waist = "Carrier's Sash", legs = "Agwu's Slops", feet = "Nyame Sollerets"
+		back = "Null Shawl", waist = "Carrier's Sash", legs = "Agwu's Slops", feet = "Nyame Sollerets"
 	}
 
 	-- Resting sets

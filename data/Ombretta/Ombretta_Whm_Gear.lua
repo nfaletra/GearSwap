@@ -84,7 +84,7 @@ function init_gear_sets()
 		ammo = "Incantor Stone",
 		head = "Vanya Hood", neck = "Clr. Torque +2",
 		body = "Inyanga Jubbah +2",
-		back = gear.Alaunus.FC, legs = "Aya. Cosciales +2", feet = "Regal Pumps +1"
+		back = gear.Alaunus.FC, waist = "Witful Belt", legs = "Aya. Cosciales +2", feet = "Regal Pumps +1"
 	}
 		
 	sets.precast.FC.DT = sets.precast.FC
@@ -163,7 +163,7 @@ function init_gear_sets()
 
 	-- Midcast Sets
 
-	sets.Kiting = {}
+	sets.Kiting = { feet = "Herald's Gaiters" }
 	sets.latent_refresh = {}
 	sets.latent_refresh_grip = {}
 	sets.TPEat = {}
@@ -199,8 +199,8 @@ function init_gear_sets()
 	{
 		main = "Raetic Rod +1", sub = "Thuellaic Ecu +1",
 		head = "Vanya Hood", neck = "Clr. Torque +2", ear1 = "Glorious Earring", ear2 = "Mendicant's Earring",
-		hands = "Weath. Cuffs +1",
-		back = gear.Alaunus.FC, waist = "Austerity Belt", legs = "Ebers Pantaloons"
+		hands = "Theophany Mitts +3",
+		back = gear.Alaunus.FC, waist = "Austerity Belt", legs = "Ebers Pant. +1"
 	}
 	sets.midcast.LightWeatherCure = set_combine(sets.midcast.Cure, { waist = "Hachirin-no-obi" })
 	sets.midcast.LightDayCure = set_combine(sets.midcast.Cure, { waist = "Hachirin-no-obi" })
@@ -337,7 +337,7 @@ function init_gear_sets()
 		main = "Daybreak", sub = "Ammurapi Shield", ammo = "Pemphredo Tathlum",
 		head = "Theophany Cap +3", neck = "Erra Pendant", ear1 = "Regal Earring", ear2 = "Malignance Earring",
 		body = "Theo. Bliaut +3", hands = "Theophany Mitts +3", ring1 = "Kishar Ring", ring2 = "Stikini Ring +1",
-		waist = "Luminary Sash", legs="Inyanga Shalwar +2", feet = "Theo. Duckbills +3"
+		waist = "Luminary Sash", legs = "Inyanga Shalwar +2", feet = "Theo. Duckbills +3"
 	}
 	sets.midcast['Enfeebling Magic'].Resistant = set_combine(sets.midcast['Enfeebling Magic'], {})
 

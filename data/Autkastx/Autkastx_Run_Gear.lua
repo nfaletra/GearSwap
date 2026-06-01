@@ -321,7 +321,7 @@ function init_gear_sets()
 
 	-- Extra defense sets.  Apply these on top of melee or defense sets.
 	sets.Knockback = {}
-	sets.MP = { body = "Erilaz Surcoat +2", waist = "Flume Belt +1"}
+	sets.MP = {}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 
 	-- Weapons sets
@@ -350,9 +350,9 @@ function init_gear_sets()
 	sets.engaged.DT =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Erilaz Galea +3", neck = "Warder's Charm +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
+		head = "Erilaz Galea +3", neck = "Loricate Torque +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
 		body = "Erilaz Surcoat +3", hands = "Erilaz Gauntlets +2", ring1 = "Moonlight Ring", ring2 = "Shadow Ring",
-		back = gear.Ogma.Parry, waist = "Flume Belt +1", legs = "Erilaz Leg Guards +2", feet = "Erilaz Greaves +2"
+		back = gear.Ogma.Parry, waist = "Engraved Belt", legs = "Erilaz Leg Guards +2", feet = "Erilaz Greaves +2"
 	}
 
 	sets.engaged.MEVA =

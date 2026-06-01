@@ -93,7 +93,7 @@ function init_gear_sets()
 	{
 		head = "Carmine Mask +1", neck = "Baetyl Pendant", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = "Dread Jupon", hands = "Leyline Gloves", ring1 = "Prolix Ring", ring2 = "Lebeche Ring",
-		back = "Moonlight Cape", waist = "Flume Belt +1", legs = "Rawhide Trousers", feet = "Carmine Greaves +1"
+		back = "Moonlight Cape", waist = "Carrier's Sash", legs = "Rawhide Trousers", feet = "Carmine Greaves +1"
 	}
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {body="Passion Jacket"})
@@ -261,7 +261,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Carmine Mask +1",neck="Baetyl Pendant",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
         body="Dread Jupon",hands="Leyline Gloves",ring1="Kishar Ring",ring2="Lebeche Ring",
-        back="Moonlight Cape",waist="Flume Belt +1",legs="Rawhide Trousers",feet="Carmine Greaves +1"}
+        back="Moonlight Cape",waist="Carrier's Sash",legs="Rawhide Trousers",feet="Carmine Greaves +1"}
 		
 	-- Ranged sets
 
@@ -314,11 +314,11 @@ function init_gear_sets()
 	sets.NightIdle = {}
 	
 	-- Weapons sets
-	sets.weapons.Bow = { main = "Kustawi +1", sub = "Nusku Shield", range = "Ullr" }
+	sets.weapons.Bow = { main = "Kustawi +1", sub = "Nusku Shield", range = "Fail-Not" }
 	sets.weapons.Fomalhaut = { main = "Kustawi +1", sub = "Nusku Shield", range = "Fomalhaut" }
 	sets.weapons.Armageddon = { main = "Gletis' Kinfe", sub = "Nusku Shield", range = "Armageddon" }
 	sets.weapons.Naegling = { main = "Naegling", sub = "Nusku Shield", range = "Accipiter" }
-	sets.weapons.DualBow = { main = "Perun +1", sub = "Ternion Dagger +1", range = "Ullr" }
+	sets.weapons.DualBow = { main = "Perun +1", sub = "Gleti's Knife", range = "Fail-Not" }
 	sets.weapons.DualSavageWeapons = { main = "Naegling", sub = "Gleti's Knife", range = "Accipiter" }
 	sets.weapons.DualEviscerationWeapons = { main = "Tauret", sub = "Gleti's Knife", range = "Fomalhaut"}
 	sets.weapons.DualMalevolence = {main="Malevolence",sub="Malevolence",range="Fomalhaut"}

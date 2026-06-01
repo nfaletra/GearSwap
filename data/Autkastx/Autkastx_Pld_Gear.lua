@@ -1,14 +1,14 @@
 function user_job_setup()
 	-- Options: Override default values
 	state.OffenseMode:options('Normal')
-	state.HybridMode:options('Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Ochain', 'DD', 'DW', 'TwoHanded')
+	state.HybridMode:options('Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Duban', 'DD', 'DW', 'TwoHanded')
 	state.WeaponskillMode:options('Match', 'Normal', 'Acc')
 	state.CastingMode:options('SIRD', 'Normal')
 	state.Passive:options('None', 'AbsorbMP')
 	state.PhysicalDefenseMode:options('Normal')
 	state.MagicalDefenseMode:options('Normal')
 	state.ResistDefenseMode:options('Normal')
-	state.IdleMode:options('Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Ochain', 'DD', 'DW', 'TwoHanded')
+	state.IdleMode:options('Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Duban', 'DD', 'DW', 'TwoHanded')
 	state.Weapons:options('Excalibur', 'Sakpata', 'Naegling', 'Staff', "ShiningOne", 'Caladbolg', 'DualWeapons', 'DualNaegling')
 	
 	state.ExtraDefenseMode = M{ ['description'] = 'Extra Defense Mode', 'None', 'MP', 'Twilight' }
@@ -55,17 +55,17 @@ function init_gear_sets()
 	sets.Enmity =
 	{
 		ammo = "Sapience Orb",
-		head = "Loess Barbuta +1", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
-		body = "Souv. Cuirass +1", hands = "Cab. Gauntlets +3", ring1 = "Eihwaz Ring", ring2 = "Gelatinous Ring +1",
+		head = "Loess Barbuta +1", neck = "Moonlight Necklace", ear1 = "Cryptic Earring", ear2 = "Tuisto Earring",
+		body = "Souv. Cuirass +1", hands = "Cab. Gauntlets +3", ring1 = "Eihwaz Ring", ring2 = "Supershear Ring",
 		back = gear.Rudianos.Enmity, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Chev. Sabatons +3"
 	}
 
-	sets.SIRD =
+	sets.SIRDEnmity =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Souv. Schaller +1", neck = "Loricate Torque +1",
-		body = "Chev. Cuirass +3", hands = "Regal Gauntlets",
-		waist = "Rumination Sash", legs = "Founder's Hose",
+		head = "Loess Barbuta +1", neck = "Moonlight Necklace", ear1 = "Cryptic Earring", ear2 = "Tuisto Earring",
+		body = "Chev. Cuirass +3", hands = "Souv. Handsch. +1", ring1 = "Eihwaz Ring", ring2 = "Gelatinous Ring +1",
+		back = gear.Rudianos.Enmity, waist = "Creed Baudrier", legs = "Founder's Hose", feet = "Odyssean Greaves"
 	}
 
 	-- Precast sets to enhance JAs
@@ -76,10 +76,10 @@ function init_gear_sets()
 	{
 		ammo = "Staunch Tathlum +1",
 		head = "Cab. Coronet +3",
-		body = "Rev. Surcoat +3", hands = "Cab. Gauntlets +3", ring2 = "Supershear Ring",
+		body = "Rev. Surcoat +3", hands = "Cab. Gauntlets +3",
 	})
 	sets.precast.JA['Fealty'] = set_combine(sets.Enmity, { body = "Cab. Surcoat +3" })
-	sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, { feet = "Chev. Sabatons +3" })
+	sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, {})
 	sets.precast.JA['Cover'] = set_combine(sets.Enmity, { head = "Rev. Coronet +3", body = "Cab. Surcoat +3" })
 
 	-- add mnd for Chivalry
@@ -117,9 +117,9 @@ function init_gear_sets()
 	sets.precast.FC =
 	{
 		ammo = "Sapience Orb",
-		head = "Carmine Mask +1", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
-		body = "Rev. Surcoat +3", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.Rudianos.FC, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Chev. Sabatons +3"
+		head = "Carmine Mask +1", neck = "Baetyl Pendant", ear1 = "Loquac. Earring", ear2 = "Enchntr. Earring +1",
+		body = "Rev. Surcoat +3", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
+		back = gear.Rudianos.FC, waist = "Plat. Mog. Belt", legs = "Souv. Diechlings +1", feet = "Chev. Sabatons +3"
 	}
 
 	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, { waist = "Siegel Sash" })
@@ -129,9 +129,9 @@ function init_gear_sets()
 	sets.precast.FC.CureCheat = set_combine(sets.precast.FC,
 	{
 		ammo = "Sapience Orb",
-		head = "Carmine Mask +1", neck = "Voltsurge Torque", ear1 = "Loquac. Earring", ear2 = "Enchanter's Earring +1",
+		head = "Carmine Mask +1", neck = "Baetyl Pendant", ear1 = "Loquac. Earring", ear2 = "Enchanter's Earring +1",
 		body = "Odyssean Chestplate", hands = "Leyline Gloves", ring1 = "Mephitas's Ring +1", ring2 = "Medada's Ring",
-		back  = gear.Rudianos.FC, waist = "Carrier's Sash", legs = "Eschite Cuisses", feet = "Carmine Greaves +1"
+		back  = gear.Rudianos.FC, waist = "Carrier's Sash", legs = "Carmine Cuisses +1", feet = "Carmine Greaves +1"
 	})
 
 	-- Weaponskill sets
@@ -157,9 +157,9 @@ function init_gear_sets()
 	sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS,
 	{
 		ammo = "Aurgelmir Orb",
-		head = "Flamma Zucchetto +2", neck = "Fotia Gorget", ear1 = "Mache Earring +1", ear2 = "Moonshade Earring",
-		body = "Hjarrandi Breast.", hands = "Flamma Manopolas +2", 	ring1 = "Regal Ring", ring2 = "Hetairoi Ring",
-		back = gear.Rudianos.WSD, waist = "Fotia Belt", legs = "Lustratio Subligar +1", feet = "Nyame Sollerets"
+		head = "Sakpata's Helm", neck = "Fotia Gorget", ear1 = "Mache Earring +1", ear2 = "Moonshade Earring",
+		body = "Hjarrandi Breast.", hands = "Sakpata's Gauntlets", ring1 = "Regal Ring", ring2 = "Hetairoi Ring",
+		back = gear.Rudianos.WSD, waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	})
 
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS,
@@ -184,7 +184,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Pixie Hairpin +1", neck = "Baetyl Pendant", ear1 = "Thrud Earring", ear2 = "Friomisi Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Epaminondas's Ring",
-		back = gear.Rudianos.WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Rudianos.WSD, waist = "Skrymir Cord +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['Atonement'] =
@@ -221,23 +221,28 @@ function init_gear_sets()
 	sets.midcast.FastRecast.DT = set_combine(sets.midcast.FastRecast, {})
 
 	sets.midcast.Flash = set_combine(sets.Enmity, { head = "Carmine Mask +1" })
-	sets.midcast.Flash.SIRD = set_combine(sets.midcast.Flash, sets.SIRD, {})
+	sets.midcast.Flash.SIRD = set_combine(sets.midcast.Flash, sets.SIRDEnmity, {})
 	sets.midcast.Stun = set_combine(sets.Enmity, { head = "Carmine Mask +1" })
-	sets.midcast.Stun.SIRD = set_combine(sets.midcast.Stun, sets.SIRD, {})
+	sets.midcast.Stun.SIRD = set_combine(sets.midcast.Stun, sets.SIRDEnmity, {})
+
 	sets.midcast['Blue Magic'] = set_combine(sets.Enmity, {})
-	sets.midcast['Blue Magic'].SIRD = set_combine(sets.SIRD, {})
+	sets.midcast['Blue Magic'].SIRD = set_combine(sets.SIRDEnmity, {})
 
 	sets.midcast.Cure =
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
-		body = "Souv. Cuirass +1", hands = "Macabre Gaunt. +1", ring1 = "Eihwaz Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.Rudianos.FC, waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
+		head = "Souv. Schaller +1", neck = "Sacro Gorget", ear1 = "Tuisto Earring", ear2 = "Chev. Earring +1",
+		body = "Souv. Cuirass +1", hands = "Regal Gauntlets", ring1 = "Eihwaz Ring", ring2 = "Defending Ring",
+		back = gear.Rudianos.Enmity, waist = "Rumination Sash", legs = "Founder's Hose", feet = "Odyssean Greaves"
 	}
-	sets.midcast.Cure.SIRD = set_combine(sets.midcast.Cure, sets.SIRD, {})
 
-	sets.Self_Healing = set_combine(sets.midcast.Cure, {})
-	sets.Self_Healing.SIRD = set_combine(sets.Self_Healing, sets.SIRD, {})
+	sets.Self_Healing = 
+	{
+		ammo = "Staunch Tathlum +1",
+		head = "Souv. Schaller +1", neck = "Unmoving Collar +1", ear1 = "Tuisto Earring", ear2 = "Chev. Earring +1",
+		body = "Souv. Cuirass +1", hands = "Regal Gauntlets", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
+		back = gear.Rudianos.Enmity, waist = "Plat. Mog. Belt", legs = "Founder's Hose", feet = "Odyssean Greaves"
+	}
 
 	sets.midcast.Reprisal =
 	{
@@ -246,7 +251,12 @@ function init_gear_sets()
 		body = "Rev. Surcoat +3", hands = "Regal Gauntlets", ring1 = "Kishar Ring", ring2 = "Medada's Ring",
 		back = gear.Rudianos.FC, waist = "Creed Baudrier", legs = "Souv. Diechlings +1", feet = "Chev. Sabatons +3"
 	}
-	sets.midcast.Reprisal.SIRD = set_combine(sets.midcast.Reprisal, sets.SIRD, {})
+	sets.midcast.Reprisal.SIRD = set_combine(sets.midcast.Reprisal,
+	{
+		neck = "Moonlight Necklace",
+		body = "Chev. Cuirass +3",
+		feet = "Odyssean Greaves",
+	})
 
 	sets.Cure_Received = { hands = "Souv. Handsch. +1", feet = "Souveran Schuhs +1" }
 	sets.Self_Refresh = { waist = "Gishdubar Sash" }
@@ -268,15 +278,25 @@ function init_gear_sets()
 	sets.midcast.Phalanx = set_combine(sets.midcast['Enhancing Magic'],
 	{
 		ammo = "Staunch Tathlum +1",
-		head = "Odyssean Helm", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
-		body = "Odyssean Chestplate", hands = "Souv. Handsch. +1", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
+		head = "Odyssean Helm", neck = "Incanter's Torque", ear1 = "Etiolation Earring", ear2 = "Mimir Earring",
+		body = "Odyssean Chestplate", hands = "Souv. Handsch. +1", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
 		back = "Weard Mantle", waist = "Creed Baudrier", legs = "Sakpata's Cuisses", feet = "Souveran Schuhs +1"
 	})
-	sets.midcast.Phalanx.SIRD = set_combine(sets.midcast.Phalanx, sets.SIRD, {})
+	sets.midcast.Phalanx.SIRD = set_combine(sets.midcast.Phalanx,
+	{
+		neck = "Moonlight Necklace", ear1 = "Odnowa Earring +1", ear2 = "Chev. Earring +1",
+		body = "Chev. Cuirass +3",
+		legs = "Founder's Hose", feet = "Odyssean Greaves"
+	})
 	sets.Phalanx_Received = sets.midcast.Phalanx
 
-	sets.midcast['Enlight II'] = sets.midcast['Enhancing Magic']
-	sets.midcast['Enlight II'].SIRD = sets.midcast['Enhancing Magic'].SIRD
+	sets.midcast['Enlight II'] =
+	{
+		ammo = "Staunch Tathlum +1",
+		head = "Jumalik Helm", neck = "Moonlight Necklace", ear1 = "Odnowa Earring +1", ear2 = "Magnetic Earring",
+		body = "Rev. Surcoat +3", hands = "Eschite Gauntlets", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
+		back = gear.Rudianos.FC, waist = "Asklepian Belt", legs = "Founder's Hose", feet = "Odyssean Greaves"
+	}
 
 	sets.midcast.Cocoon = sets.midcast['Enhancing Magic']
 	sets.midcast.Cocoon.SIRD = sets.midcast['Enhancing Magic'].SIRD
@@ -341,9 +361,9 @@ function init_gear_sets()
 	sets.idle.Duban =
 	{
 		sub = "Duban", ammo = "Staunch Tathlum +1",
-		head = "Chev. Armet +3", neck = "Unmoving Collar +1", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
-		body = "Sakpata's Breastplate", hands = "Souv. Handsch. +1", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
-		back = gear.Rudianos.Enmity, waist = "Flume Belt +1", legs = "Chev. Cuisses +3", feet = "Rev. Leggings +3"
+		head = "Chev. Armet +3", neck = "Kgt. Beads +2", ear1 = "Odnowa Earring +1", ear2 = "Tuisto Earring",
+		body = "Sakpata's Breastplate", hands = "Sakpata's Gauntlets", ring1 = "Moonlight Ring", ring2 = "Gelatinous Ring +1",
+		back = gear.Rudianos.Enmity, waist = "Carrier's Sash", legs = "Chev. Cuisses +3", feet = "Sakpata's Leggings"
 	}
 
 	sets.idle.DD =
@@ -351,7 +371,7 @@ function init_gear_sets()
 		sub = "Blurred Shield +1", ammo = "Coiste Bodhar",
 		head = "Flam. Zucchetto +2", neck = "Combatant's Torque", ear1 = "Brutal Earring", ear2 = "Dedition Earring",
 		body = "Dagon Breast.", hands = "Sakpata's Gauntlets", ring1 = "Chirich Ring +1", ring2 = "Petrov Ring",
-		back = gear.Rudianos.TP, waist = "Windbuffet Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
+		back = gear.Rudianos.TP, waist = "Windbuffet Belt +1", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
 	}
 
 	sets.idle.DW =
@@ -359,7 +379,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Flam. Zucchetto +2", neck = "Combatant's Torque", ear1 = "Brutal Earring", ear2 = "Dedition Earring",
 		body = "Dagon Breast.", hands = "Sakpata's Gauntlets", ring1 = "Chirich Ring +1", ring2 = "Petrov Ring",
-		back = gear.Rudianos.TP, waist = "Windbuffet Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
+		back = gear.Rudianos.TP, waist = "Windbuffet Belt +1", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
 	}
 
 	sets.idle.TwoHanded =
@@ -367,7 +387,7 @@ function init_gear_sets()
 		ammo = "Coiste Bodhar",
 		head = "Flam. Zucchetto +2", neck = "Combatant's Torque", ear1 = "Brutal Earring", ear2 = "Dedition Earring",
 		body = "Dagon Breast.", hands = "Sakpata's Gauntlets", ring1 = "Chirich Ring +1", ring2 = "Petrov Ring",
-		back = gear.Rudianos.TP, waist = "Windbuffet Belt +1", legs = "Sakpata's Cuisses", feet = "Flam. Gambieras +2"
+		back = gear.Rudianos.TP, waist = "Windbuffet Belt +1", legs = "Sakpata's Cuisses", feet = "Sakpata's Leggings"
 	}
 
 	sets.Kiting = { legs = "Carmine Cuisses +1" }
@@ -406,7 +426,7 @@ function init_gear_sets()
 	--------------------------------------
 	-- Engaged sets
 	--------------------------------------
-	-- 'Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Ochain', 'DD', 'DW'
+	-- 'Perfect', 'Perfect2', 'Priwen', 'Aegis', 'MEvaAegis', 'Duban', 'DD', 'DW'
 
 	sets.engaged = {}
 
@@ -426,7 +446,7 @@ function init_gear_sets()
 	sets.engaged.MEvaAegis = set_combine(sets.idle.MEvaAegis, {})
 
 	-- MP Restore
-	sets.engaged.Ochain = set_combine(sets.idle.Ochain, {})
+	sets.engaged.Duban = set_combine(sets.idle.Duban, {})
 
 	sets.engaged.DD = set_combine(sets.idle.DD, {})
 

@@ -69,7 +69,7 @@ function init_gear_sets()
 	{
 		main = gear.Rostam.C,
 		head = "Lanun Tricorne +3", neck = "Regal Necklace", ear1 = "Etiolation Earring", ear2 = "Odnowa Earring +1",
-		body = "Malignance Tabard", hands = "Chasseur's Gants +3", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
+		body = "Malignance Tabard", hands = "Chasseur's Gants +3", ring1 = "Defending Ring", ring2 = "Barataria Ring",
 		back = gear.Camulus.Idle, waist = "Flume Belt +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -395,7 +395,7 @@ function init_gear_sets()
 		back= gear.Camulus.Idle, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
-	sets.Kiting = { ring1 = "Shneddick Ring" }
+	sets.Kiting = { legs = "Carmine Cuisses +1" }
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 
 	-- Weapons sets
@@ -404,7 +404,7 @@ function init_gear_sets()
 	sets.weapons.Crit = { main = "Gleti's Knife", sub = "Nusku Shield", range = "Armageddon" }
 	sets.weapons.Savage = { main = "Naegling", sub = "Nusku Shield", range = "Ataktos" }
 	sets.weapons.Evisceration = { main = "Tauret", sub = "Nusku Shield", range = "Ataktos" }
-	sets.weapons.DualWeapons = { main = gear.Rostam.A, sub = "Gleti's Knife", range = "Fomalhaut" }
+	sets.weapons.DualWeapons = { main = "Naegling", sub = gear.Rostam.C, range = "Fomalhaut" }
 	sets.weapons.DualRanged = { main = gear.Rostam.A, sub = "Kustawi +1", range = "Fomalhaut" }
 	sets.weapons.DualCrit = { main = gear.Rostam.A, sub = "Gleti's Knife", range = "Armageddon" }
 	sets.weapons.DualSavage = { main = "Naegling", sub = "Gleti's Knife", range = "Ataktos" }
@@ -425,7 +425,7 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		head = "Mummu Bonnet +2", neck = "Combatant's Torque", ear1 = "Crep. Earring", ear2 = "Brutal Earring",
-		body = "Mummu Jacket +2", hands = "Mummu Wrists +2", ring1 = "Defending Ring", ring2 = "Epona's Ring",
+		body = "Mummu Jacket +2", hands = "Adhemar Wrist. +1", ring1 = "Defending Ring", ring2 = "Epona's Ring",
 		back = gear.Camulus.DA, waist = "Windbuffet Belt +1", legs = "Mummu Kecks +2", feet = "Mummu Gamash. +2"
 	}
 	sets.engaged.DT =

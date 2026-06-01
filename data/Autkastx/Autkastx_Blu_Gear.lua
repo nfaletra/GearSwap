@@ -338,7 +338,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Telchine Cap", neck = "Loricate Torque +1", ear1 = "Mendicant's Earring", ear2 = "Magnetic Earring",
 		body = "Amalric Doublet +1", hands = "Shrieker's Cuffs", ring1 = "Mephitas's Ring +1", ring2 = "Defending Ring",
-		back = "Fi Follet Cape +1", waist = "Flume Belt +1", legs = "Nyame Flanchard", feet = "Carmine Greaves +1"
+		back = "Fi Follet Cape +1", waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Carmine Greaves +1"
 	}
 
 	sets.midcast['Blue Magic']['Battery Charge'] = set_combine(sets.midcast['Blue Magic'].Buff,
@@ -398,9 +398,9 @@ function init_gear_sets()
 	sets.idle =
 	{
 		main = "Sakpata's Sword", sub = "Bolelabunga", ammo = "Staunch Tathlum +1",
-		head = "Nyame Helm", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Etiolation Earring",
+		head = "Nyame Helm", neck = "Loricate Torque +1", ear1 = "Eabani Earring", ear2 = "Etiolation Earring",
 		body = "Hashishin Mintan +3", hands = "Nyame Gauntlets", ring1 = "Stikini Ring +1", ring2 = "Defending Ring",
-		back = gear.Rosmerta.TP, waist = "Flume Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Rosmerta.TP, waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.idle.Evasion =
@@ -415,7 +415,7 @@ function init_gear_sets()
 
 	-- Extra Melee sets.  Apply these on top of melee sets.
 	sets.Knockback = {}
-	sets.MP = { waist = "Flume Belt +1", ear1 = "Suppanomimi", ear2 = "Ethereal Earring" }
+	sets.MP = {}
     sets.MP_Knockback = {}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, { ammo = "Per. Lucky Egg", hands = "Volte Bracers", legs = "Volte Hose" })
 

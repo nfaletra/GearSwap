@@ -278,7 +278,7 @@ function init_gear_sets()
 		ammo = "Seeth. Bomblet +1",
 		head = "Nyame Helm", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Dingir Ring",
-		back = gear.Toutatis.WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Toutatis.WSD, waist = "Skrymir Cord +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
@@ -312,7 +312,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Malignance Chapeau", neck = "Sanctity Necklace", ear1 = "Crep. Earring", ear2 = "Hermetic Earring",
 		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Medada's Ring", ring2 = "Metamor. Ring +1",
-		waist = "Eschan Stone", legs = "Malignance Tights", feet = "Malignance Boots"
+		waist = "Skrymir Cord +1", legs = "Malignance Tights", feet = "Malignance Boots"
 	})
 
 	-- Ranged gear

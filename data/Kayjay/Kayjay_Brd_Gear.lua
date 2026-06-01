@@ -9,7 +9,8 @@ function user_job_setup()
 	gear.Intarabus =
 	{
 		Idle = { name = "Intarabus's Cape", augments = { 'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity-10', 'Damage taken-5%' } },
-		FC = { name = "Intarabus's Cape", augments = { 'CHR+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10', 'Damage taken-5%' } }
+		FC = { name = "Intarabus's Cape", augments = { 'CHR+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10', 'Damage taken-5%' } },
+		DA = { name = "Intarabus's Cape", augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%' } }
 	}
 
 	-- Adjust this if using the Terpander (new +song instrument)
@@ -19,7 +20,7 @@ function user_job_setup()
 	-- How long to wait between singing
 	info.SongDelay = 15
 	-- Auto Songs to sing
-	info.AutoSongs = 'march min min'
+	info.AutoSongs = 'march march min min'
 	-- How long to wait between auto singing
 	info.AutoSongDelay = 210 -- 3:30 min
 
@@ -51,11 +52,11 @@ function init_gear_sets()
 	sets.weapons.Aeneas = { main = "Aeneas", sub = "Genmei Shield"}
 	sets.weapons.Naegling = { main = "Naegling", sub = "Genmei Shield" }
 	sets.weapons.Trial = { main = "Daybreak", sub = "Genmei Shield", range = "Gjallarhorn" }
-	sets.weapons.DualWeapons = { main = "Aeneas", sub = "Blurred Knife +1" }
-	sets.weapons.DualNaegling = { main = "Naegling", sub = "Blurred Knife +1" }
-	sets.weapons.DualTauret = { main = "Tauret", sub = "Blurred Knife +1" }
+	sets.weapons.DualWeapons = { main = "Aeneas", sub = "Gleti's Knife" }
+	sets.weapons.DualNaegling = { main = "Naegling", sub = "Gleti's Knife" }
+	sets.weapons.DualTauret = { main = "Tauret", sub = "Gleti's Knife" }
 	sets.weapons.DualAeolian = { main = "Tauret", sub = "Malevolence" }
-	sets.weapons.DualTrial = { main = "Aeneas", sub = "Blurred Knife +1", range = "Gjallarhorn" }
+	sets.weapons.DualTrial = { main = "Aeneas", sub = "Gleti's Knife", range = "Gjallarhorn" }
 
     sets.buff.Sublimation = { waist = "Embla Sash" }
     sets.buff.DTSublimation = { waist = "Embla Sash" }
@@ -67,7 +68,7 @@ function init_gear_sets()
 	{
 		main = "Kali", sub = "Genmei Shield",
 		head = "Fili Calot +1", neck = "Loricate Torque +1", ear1 = "Etiolation Earring", ear2 = "Loquac. Earring",
-		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Prolix Ring", ring2 = "Murky Ring",
+		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Prolix Ring",
 		back = gear.Intarabus.FC, waist = "Flume Belt +1", legs = "Aya. Cosciales +2", feet = "Regal Pumps +1"
 	}
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
@@ -79,7 +80,7 @@ function init_gear_sets()
 		main = "Carnwenhan", sub = "Genmei Shield",
 		head = "Fili Calot +1", neck = "Loricate Torque +1", ear1 = "Enchanter's Earring +1", ear2 = "Loquac. Earring",
 		body = "Inyanga Jubbah +2", hands = "Gende. Gages +1", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
-		back = gear.Intarabus.FC, waist = "Embla Sash", legs = "Kaykaus Tights +1", feet = "Bihu Slippers +1"
+		back = gear.Intarabus.FC, waist = "Embla Sash", legs = "Kaykaus Tights +1", feet = "Bihu Slippers +3"
 	}
 	sets.precast.FC['Honor March'] = set_combine(sets.precast.FC.BardSong, { range = "Marsyas" })
 
@@ -88,9 +89,9 @@ function init_gear_sets()
 
 	-- Precast sets to enhance JAs
 	
-	sets.precast.JA.Nightingale = { feet = "Bihu Slippers +1" }
-	sets.precast.JA.Troubadour = { body = "Bihu Jstcorps +1" }
-	sets.precast.JA['Soul Voice'] = { legs = "Bihu Cannions +1" }
+	sets.precast.JA.Nightingale = { feet = "Bihu Slippers +3" }
+	sets.precast.JA.Troubadour = { body = "Bihu Jstcorps. +3" }
+	sets.precast.JA['Soul Voice'] = { legs = "Bihu Cannions +3" }
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {}
@@ -120,11 +121,11 @@ function init_gear_sets()
 		range = "Terpander",
 		head = "Bunzi's Hat", neck = "Orunmila's Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = "Inyanga Jubbah +2", hands = "Leyline Gloves", ring1 = "Kishar Ring", ring2 = "Rahab Ring",
-		back = gear.Intarabus.FC, waist = "Embla Sash", legs = "Kaykaus Tights +1", feet = "Volte Gaiters"
+		back = "Fi Follet Cape +1", waist = "Embla Sash", legs = "Kaykaus Tights +1", feet = "Volte Gaiters"
 	}
 
 	-- Gear to enhance certain classes of songs
-	sets.midcast.Ballad = { legs = "Fili Rhingrave +1" }
+	sets.midcast.Ballad = { }
 	sets.midcast.Lullaby = { range = "Marsyas" }
 	sets.midcast['Horde Lullaby'] = { range = "Marsyas" }
 	sets.midcast['Horde Lullaby II'] =
@@ -134,9 +135,9 @@ function init_gear_sets()
 	}
 	sets.midcast.Madrigal = { head = "Fili Calot +1", feet = "Fili Cothurnes +1" }
 	sets.midcast.Paeon = { head = "Brioso Roundlet +3" }
-	sets.midcast.March = { hands = "Fili Manchettes +1" }
+	sets.midcast.March = { hands = "Fili Manchettes" }
 	sets.midcast['Honor March'] = set_combine(sets.midcast.March, { range = "Marsyas" })
-	sets.midcast.Minuet = { body = "Fili Hongreline +1" }
+	sets.midcast.Minuet = { body = "Fili Hongreline" }
 	sets.midcast.Minne = { legs = "Mousai Seraweels +1" }
 	sets.midcast.Carol = { hands = "Mousai Gages +1" }
 	sets.midcast["Sentinel's Scherzo"] = { feet = "Fili Cothurnes +1" }
@@ -158,7 +159,7 @@ function init_gear_sets()
 	{
 		main = "Kali", sub = "Genmei Shield", range = "Gjallarhorn",
 		head = "Bunzi's Hat", neck = "Mnbw. Whistle +1", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
-		body = "Fili Hongreline +1", hands = "Bunzi's Gloves", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
+		body = "Fili Hongreline", hands = "Bunzi's Gloves", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
 		back = gear.Intarabus.FC, waist = "Embla Sash", legs = "Inyanga Shalwar +2", feet = "Brioso Slippers +3"
 	}
 
@@ -167,7 +168,7 @@ function init_gear_sets()
 	{
 		main = "Kali", sub = "Ammurapi Shield", range = "Terpander",
 		head = "Brioso Roundlet +3", neck = "Mnbw. Whistle +1", ear1 = "Enchntr. Earring +1", ear2 = "Regal Earring",
-		body = "Brioso Justaucorps +3", hands = "Brioso Cuffs +3", ring1 = "Metamorph Ring +1", ring2 = "Stikini Ring +1",
+		body = "Brioso Justaucorps +2", hands = "Brioso Cuffs +3", ring1 = "Metamorph Ring +1", ring2 = "Stikini Ring +1",
 		back = gear.Intarabus.FC, waist = "Obstinate Sash", legs = "Inyanga Shalwar +2", feet = "Brioso Slippers +3"
 	}
 
@@ -202,7 +203,7 @@ function init_gear_sets()
 	sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], { back = "Grapevine Cape", waist = "Gishdubar Sash" })
 	sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'],
 	{
-		head = "Umuthi Hat", neck = "Incanter's Toruqe", ear1 = "Mimir Earring", ear2 = "Andoaa Earring",
+		head = "Umuthi Hat", neck = "Incanter's Torque", ear1 = "Mimir Earring", ear2 = "Andoaa Earring",
 		hands = "Inyanga Dastanas +2", ring1 = "Stikini Ring +1", ring2 = "Stikini Ring +1",
 		back = "Fi Follet Cape +1", legs = "Shedir Seraweels", feet = "Kaykaus Boots +1"
 	})
@@ -238,7 +239,7 @@ function init_gear_sets()
 		range = "Linos",
 		head = "Aya. Zucchetto +2", neck = "Bard's Charm +2", ear1 = "Suppanomimi", ear2 = "Brutal Earring",
 		body = "Ayanmo Corazza +2", hands = "Aya. Manopolas +2", ring1 = "Chirich Ring +1", ring2 = "Chirich Ring +1",
-		back = gear.Intarabus.Idle, waist = "Reiki Yotai", legs = "Aya. Cosciales +2", feet = "Aya. Gambieras +2"
+		back = gear.Intarabus.DA, waist = "Reiki Yotai", legs = "Aya. Cosciales +2", feet = "Aya. Gambieras +2"
 	}
 end
 

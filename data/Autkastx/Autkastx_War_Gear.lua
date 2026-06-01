@@ -39,10 +39,10 @@ function init_gear_sets()
 	sets.passive.Twilight = { head = "Twilight Helm", body = "Twilight Mail" }
 
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Berserk'] = { body = "Pumm. Lorica +1", back = gear.Cichol.TP, feet = "Agoge Calligae +3" }
+	sets.precast.JA['Berserk'] = { body = "Pumm. Lorica +3", back = gear.Cichol.TP, feet = "Agoge Calligae +3" }
 	sets.precast.JA['Warcry'] = { head = "Agoge Mask +4" }
 	sets.precast.JA['Defender'] = {}
-	sets.precast.JA['Aggressor'] = { head = "Pumm. Mask +1", body = "Agoge Lorica +3" }
+	sets.precast.JA['Aggressor'] = { head = "Pummeler's Mask +2", body = "Agoge Lorica +3" }
 	sets.precast.JA['Mighty Strikes'] = { hands = "Agoge Mufflers +3" }
 	sets.precast.JA["Warrior's Charge"] = {}
 	sets.precast.JA['Tomahawk'] = { ammo = "Thr. Tomahawk", feet = "Agoge Calligae +3" }
@@ -62,15 +62,15 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 
 	sets.precast.FC = {ammo="Impatiens",
-		head="Carmine Mask +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
+		head="Carmine Mask +1",neck="Baetyl Pendant",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
 		body="Odyss. Chestplate",hands="Leyline Gloves",ring1="Lebeche Ring",ring2="Prolix Ring",
-		back = gear.Cichol.TP,waist="Flume Belt +1",legs=gear.odyssean_fc_legs,feet="Odyssean Greaves"}
+		back = gear.Cichol.TP,waist="Carrier's Sash",legs=gear.odyssean_fc_legs,feet="Odyssean Greaves"}
 	
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
 	-- Midcast Sets
 	sets.midcast.FastRecast = {ammo="Staunch Tathlum +1",
-		head="Carmine Mask +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
+		head="Carmine Mask +1",neck="Baetyl Pendant",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
 		body="Odyss. Chestplate",hands="Leyline Gloves",ring1="Lebeche Ring",ring2="Prolix Ring",
 		back = gear.Cichol.TP,waist="Tempus Fugit",legs=gear.odyssean_fc_legs,feet="Odyssean Greaves"}
 	
@@ -110,7 +110,7 @@ function init_gear_sets()
 		ammo = "Knobkierrie",
 		head = "Pixie Hairpin +1", neck = "Fotia Gorget", ear1 = "Friomisi Earring", ear2 = "Lugra Earring +1",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Archon Ring", ring2 = "Medada's Ring",
-		back = gear.Cichol.STR_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Cichol.STR_WSD, waist = "Skrymir Cord +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['Red Lotus Blade'] =
@@ -128,7 +128,7 @@ function init_gear_sets()
 		ammo = "Knobkierrie",
 		head = "Nyame Helm", neck = "War. Beads +2", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Epaminondas's Ring", ring2 = "Medada's Ring",
-		back = gear.Cichol.STR_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Cichol.STR_WSD, waist = "Skrymir Cord +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['Shining Blade'] = {}
@@ -322,7 +322,7 @@ function init_gear_sets()
 		ammo = "Seeth. Bomblet +1",
 		head = "Nyame Helm", neck = "War. Beads +2", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Medada's Ring", ring2 = "Epaminondas's Ring",
-		back = gear.Cichol.STR_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Cichol.STR_WSD, waist = "Skrymir Cord +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['Judgment'] =

@@ -57,20 +57,14 @@ function init_gear_sets()
 	{
 		head = gear.acro.head.call_beast, neck = "Loricate Torque +1", ear1 = "Eabani Earring", ear2 = "Sanare Earring",
 		body = "Mirke Wardecors", hands = "Ankusa Gloves +3", ring1 = "Gelatinous Ring +1", ring2 = "Defending Ring",
-		back = gear.Artio.FC, waist = "Flume Belt +1", legs = gear.acro.legs.call_beast, feet = gear.acro.feet.call_beast
+		back = gear.Artio.FC, waist = "Carrier's Sash", legs = gear.acro.legs.call_beast, feet = gear.acro.feet.call_beast
 	}
 	sets.precast.JA['Bestial Loyalty'] = set_combine(sets.precast.JA['Call Beast'], {})
 
 	sets.precast.JA.Familiar = { legs = "Ankusa Trousers +3" }
 	sets.precast.JA.Spur = { main = "Skullrender", sub = "Skullrender", back = gear.Artio.Idle, feet = "Nukumi Ocreae +1" }
 
-	sets.precast.JA['Feral Howl'] =
-	{
-		ammo = "Pemphredo Tathlum",
-		head = "Malignance Chapeau", neck = "Sanctity Necklace", ear1 = "Crep. Earring", ear2 = "Digni. Earring",
-		body = "Ankusa Jackcoat +3", hands = "Malignance Gloves", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
-		back = gear.Artio.CHR_WSD, waist = "Eschan Stone", legs = "Malignance Tights", feet = "Malignance Boots"
-	}
+	sets.precast.JA['Feral Howl'] = { body = "Ankusa Jackcoat +3" }
 
 	sets.precast.JA.Reward =
 	{
@@ -85,7 +79,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Ankusa Helm +3", neck = "Bst. Collar +2", ear1 = "Crep. Earring", ear2 = "Enchantr. Earring +1",
 		body = "Ankusa Jackcoat +3", hands = "Ankusa Gloves +3", ring1 = "Metamor. Ring +1", ring2 = "Stikini Ring +1",
-		back = gear.Artio.CHR_WSD, waist = "Eschan Stone", legs = "Ankusa Trousers +3", feet = "Ankusa Gaiters +3"
+		back = gear.Artio.CHR_WSD, waist = "Skrymir Cord +1", legs = "Ankusa Trousers +3", feet = "Ankusa Gaiters +3"
 	}
 
 	sets.precast.JA.Ready = { legs = "Gleti's Breeches" }
@@ -96,7 +90,7 @@ function init_gear_sets()
 		ammo = "Voluspa Tathlum",
 		head = "Anwig Salade", neck = "Unmoving Collar +1", ear1 = "Handler's Earring +1", ear2 = "Enchantr. Earring +1",
 		body = "Gleti's Cuirass", hands = "Gleti's Gauntlets", ring1 = "Metamor. Ring +1",
-		back = gear.Artio.CHR_WSD, waist = "Flume Belt +1", legs = "Dashing Subligar", feet = "Nyame Sollerets"
+		back = gear.Artio.CHR_WSD, waist = "Carrier's Sash", legs = "Dashing Subligar", feet = "Nyame Sollerets"
 	}
 
 		-- HEALING WALTZ
@@ -107,7 +101,7 @@ function init_gear_sets()
 		main = "Shukuyu's Scythe", sub = "Bloodrain Strap", ammo = "Sapience Orb",
 		head = "Nyame Helm", neck = "Orunmila's Torque", ear1 = "Enchntr. Earring +1", ear2 = "Loquac. Earring",
 		body = "Sacro Breastplate", hands = "Leyline Gloves", ring1 = "Medada's Ring", ring2 = "Rahab Ring",
-		back = gear.Artio.FC, waist = "Flume Belt +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Artio.FC, waist = "Carrier's Sash", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
@@ -261,7 +255,7 @@ function init_gear_sets()
 		ammo = "Ghastly Tathlum +1",
 		head = "Nyame Helm", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
-		back = gear.Artio.CHR_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Artio.CHR_WSD, waist = "Skrymir Cord +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Primal Rend']['Subtle Blow'] = set_combine(sets.precast.WS['Primal Rend'], sets.SubtleBlow)
 
@@ -270,7 +264,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Nyame Helm", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
-		back = gear.Artio.MND_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Artio.MND_WSD, waist = "Skrymir Cord +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 	sets.precast.WS['Cloudsplitter']['Subtle Blow'] = set_combine(sets.precast.WS['Cloudsplitter'], sets.SubtleBlow)
 
@@ -309,7 +303,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Pixie Hairpin +1", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Archon Ring",
-		back = gear.Artio.MND_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Artio.MND_WSD, waist = "Skrymir Cord +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['Red Lotus Blade'] =
@@ -317,7 +311,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Nyame Helm", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
-		back = gear.Artio.STR_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Artio.STR_WSD, waist = "Skrymir Cord +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['Burning Blade'] = {} -- Empty for omen/proc purproses
@@ -327,7 +321,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Nyame Helm", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
-		back = gear.Artio.STR_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Artio.STR_WSD, waist = "Skrymir Cord +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['Shining Blade'] = {} -- Empty for omen/proc purproses
@@ -353,7 +347,7 @@ function init_gear_sets()
 		ammo = "Pemphredo Tathlum",
 		head = "Nyame Helm", neck = "Baetyl Pendant", ear1 = "Friomisi Earring", ear2 = "Moonshade Earring",
 		body = "Nyame Mail", hands = "Nyame Gauntlets", ring1 = "Metamor. Ring +1", ring2 = "Medada's Ring",
-		back = gear.Artio.CHR_WSD, waist = "Eschan Stone", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
+		back = gear.Artio.CHR_WSD, waist = "Skrymir Cord +1", legs = "Nyame Flanchard", feet = "Nyame Sollerets"
 	}
 
 	sets.precast.WS['True Strike'] =
