@@ -364,7 +364,7 @@ function init_gear_sets()
 	{
 		main = "Bolelabunga", sub = "Sors Shield", ammo = "Homiliary",
 		head = "Inyanga Tiara +2", neck = "Loricate Torque +1", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
-		body = "Inyanga Jubbah +2", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
+		body = "Inyanga Jubbah +2", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Murky Ring",
 		back = gear.Alaunus.Idle, waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyanga Crackows +2"
 	}
 
@@ -380,7 +380,7 @@ function init_gear_sets()
 	{
 		main = "Daybreak", sub = "Genmei Shield", ammo = "Homiliary",
 		head = "Bunzi's Hat", neck = "Warder's Charm +1", ear1 = "Etiolation Earring", ear2 = "Eabani Earring",
-		body = "Ebers Bliaut +2", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Defending Ring",
+		body = "Ebers Bliaut +2", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Murky Ring",
 		back = gear.Alaunus.Idle, waist = "Carrier's Sash", legs = "Bunzi's Pants", feet = "Inyan. Crackows +2"
 	}
 

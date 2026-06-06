@@ -336,7 +336,7 @@ function init_gear_sets()
 	-- Not really used anymore, was for the days of specific staves for specific avatars.
 	sets.perp.staff_and_grip = {}
 
-	sets.Kiting = { ring2 = "Shneddick Ring" }
+	sets.Kiting = { feet = "Herald's Gaiters" }
 	sets.latent_refresh = { waist = "Fucho-no-obi" }
 	sets.latent_refresh_grip = { sub = "Oneiros Grip" }
 	sets.TPEat = { neck = "Chrys. Torque" }

@@ -221,7 +221,7 @@ function init_gear_sets()
 	{
 		main = "Daybreak", sub = "Genmei Shield", range = "Terpander",
 		head = "Inyanga Tiara +2", neck = "Loricate Torque +1", ear1 = "Eabani Earring", ear2 = "Ethereal Earring",
-		body = "Inyanga Jubbah +2", hands = "Inyan. Dastanas +2", ring1 = "Inyanga Ring", ring2 = "Stikini Ring +1",
+		body = "Inyanga Jubbah +2", hands = "Inyan. Dastanas +2", ring1 = "Murky Ring", ring2 = "Stikini Ring +1",
 		back = gear.Intarabus.Idle, waist = "Carrier's Sash", legs = "Inyanga Shalwar +2", feet = "Inyan. Crackows +2"
 	}
 

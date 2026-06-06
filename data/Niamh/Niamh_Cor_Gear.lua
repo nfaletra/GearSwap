@@ -350,7 +350,7 @@ function init_gear_sets()
 	{
 		ammo = gear.RAbullet,
 		head = "Meghanada Visor +2", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
-		body = "Meg. Cuirie +2", hands = "Meg. Gloves +2", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
+		body = "Meg. Cuirie +2", hands = "Meg. Gloves +2", ring1 = "Murky Ring", ring2 = "Gelatinous Ring +1",
 		back= gear.Camulus.Idle, waist = "Carrier's Sash", legs = "Mummu Kecks +2", feet = "Meg. Jam. +2"
 	}
 
@@ -358,7 +358,7 @@ function init_gear_sets()
 	{
 		ammo = gear.RAbullet,
 		head = "Malignance Chapeau", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Murky Ring", ring2 = "Gelatinous Ring +1",
 		back= gear.Camulus.Idle, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -366,32 +366,7 @@ function init_gear_sets()
 	{
 		ammo = gear.RAbullet,
 		head = "Malignance Chapeau", neck = "Warder's Charm +1", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Gelatinous Ring +1",
-		back= gear.Camulus.Idle, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
-	}
-
-	-- Defense sets
-	sets.defense.PDT =
-	{
-		ammo = gear.RAbullet,
-		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Shadow Ring",
-		back= gear.Camulus.Idle, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
-	}
-
-	sets.defense.MDT =
-	{
-		ammo = gear.RAbullet,
-		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Shadow Ring",
-		back= gear.Camulus.Idle, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
-	}
-
-	sets.defense.MEVA =
-	{
-		ammo = gear.RAbullet,
-		head = "Malignance Chapeau", neck = "Comm. Charm +2", ear1 = "Eabani Earring", ear2 = "Odnowa Earring +1",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Shadow Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Murky Ring", ring2 = "Gelatinous Ring +1",
 		back= gear.Camulus.Idle, waist = "Carrier's Sash", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 
@@ -425,19 +400,19 @@ function init_gear_sets()
 	sets.engaged =
 	{
 		head = "Mummu Bonnet +2", neck = "Combatant's Torque", ear1 = "Crep. Earring", ear2 = "Brutal Earring",
-		body = "Mummu Jacket +2", hands = "Adhemar Wrist. +1", ring1 = "Defending Ring", ring2 = "Epona's Ring",
+		body = "Mummu Jacket +2", hands = "Adhemar Wrist. +1", ring1 = "Murky Ring", ring2 = "Epona's Ring",
 		back = gear.Camulus.DA, waist = "Windbuffet Belt +1", legs = "Mummu Kecks +2", feet = "Mummu Gamash. +2"
 	}
 	sets.engaged.DT =
 	{
 		head = "Malignance Chapeau", neck = "Combatant's Torque", ear1 = "Crep. Earring", ear2 = "Brutal Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Epona's Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Murky Ring", ring2 = "Epona's Ring",
 		back = gear.Camulus.DA, waist = "Carrier's Sash", legs = "Chas. Culottes +3", feet = "Malignance Boots"
 	}
 	sets.engaged.MEVA =
 	{
 		head = "Malignance Chapeau", neck = "Warder's Charm +1", ear1 = "Telos Earring", ear2 = "Brutal Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Epona's Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Murky Ring", ring2 = "Epona's Ring",
 		back = gear.Camulus.DA, waist = "Carrier's Sash", legs = "Chas. Culottes +3", feet = "Malignance Boots"
 	}
 
@@ -464,7 +439,7 @@ function init_gear_sets()
 	sets.engaged.DW.DT =
 	{
 		head = "Malignance Chapeau", neck = "Combatant's Torque", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
-		body = "Malignance Tabard", hands = gear.adhemar.hands.a, ring1 = "Defending Ring", ring2 = "Epona's Ring",
+		body = "Malignance Tabard", hands = gear.adhemar.hands.a, ring1 = "Murky Ring", ring2 = "Epona's Ring",
 		back = gear.Camulus.DA, waist = "Reiki Yotai", legs = "Samnuha Tights", feet = "Malignance Boots"
 	}
 	sets.engaged.DW.DT.Haste30 = set_combine(sets.engaged.DW.DT,
@@ -485,7 +460,7 @@ function init_gear_sets()
 	sets.engaged.DW.MEVA =
 	{
 		head = "Malignance Chapeau", neck = "Combatant's Torque", ear1 = "Eabani Earring", ear2 = "Brutal Earring",
-		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Defending Ring", ring2 = "Epona's Ring",
+		body = "Malignance Tabard", hands = "Malignance Gloves", ring1 = "Murky Ring", ring2 = "Epona's Ring",
 		back = gear.Camulus.DA, waist = "Reiki Yotai", legs = "Malignance Tights", feet = "Malignance Boots"
 	}
 	sets.engaged.DW.MEVA.Haste30 = set_combine(sets.engaged.DW.MEVA,

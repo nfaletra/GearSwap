@@ -80,7 +80,7 @@ function init_gear_sets()
 	--------------------------------------
 	-- Precast sets to enhance JAs
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
-	sets.precast.JA['Bounty Shot'] = set_combine(sets.TreasureHunter, {hands="Amini Glove. +1"})
+	sets.precast.JA['Bounty Shot'] = set_combine(sets.TreasureHunter, { hands = "Amini Glove. +2" })
 	sets.precast.JA['Camouflage'] = {body="Orion Jerkin +1"}
 	sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
 	sets.precast.JA['Shadowbind'] = {hands="Orion Bracers +1"}
@@ -104,8 +104,8 @@ function init_gear_sets()
 	
 	sets.precast.RA =
 	{
-		head = "Amini Gapette", neck = "Scout's Gorget +2",
-		body = "Amini Caban", hands = "Carmine Fin. Ga. +1", ring1 = "Crepuscular Ring",
+		head = "Amini Gapette +2", neck = "Scout's Gorget +2",
+		body = "Amini Caban +3", hands = "Carmine Fin. Ga. +1", ring1 = "Crepuscular Ring",
 		waist = "Impulse Belt", legs = "Orion Braccae +2", feet = "Meg. Jam. +2"
 	}
 
@@ -166,7 +166,7 @@ function init_gear_sets()
 	{
 		ammo = "Chrono Arrow",
 		head = "Orion Beret +3", neck = "Fotia Gorget", ear1 = "Odr Earring", ear2 = "Amini Earring +1",
-		body = "Amini Caban +3", hands = "Amini Glove. +3", ring1 = "Begrudging Ring", ring2 = "Regal Ring",
+		body = "Amini Caban +3", hands = "Amini Glove. +2", ring1 = "Begrudging Ring", ring2 = "Regal Ring",
 		back = "Belenus's Cape", waist = "Fotia Belt", legs = "Nyame Flanchard", feet = "Amini Bottillons +3"
 	}
 	sets.precast.WS['Jishnu\'s Radiance'].PDL = set_combine(sets.precast.WS['Jishnu\'s Radiance'],
@@ -347,8 +347,8 @@ function init_gear_sets()
 	sets.engaged.DT =
 	{
 		head = "Malignance Chapeau", neck = "Iskur Gorget", ear1 = "Dedition Earring", ear2 = "Sherida Earring",
-		body = "Tatenahshi Haramaki +1", hands = "Amini Glovelettes +3", ring1 = "Epona's Ring", ring2 = "Defending Ring",
-		back = "Null Shawl", waist = "Windbuffet Belt +1", legs = "Amini Bragues +3", feet = "Tatenashi Sune-ate +1"
+		body = "Tatenahshi Haramaki +1", hands = "Amini Glovelettes +2", ring1 = "Epona's Ring", ring2 = "Defending Ring",
+		back = "Null Shawl", waist = "Windbuffet Belt +1", legs = "Amini Bragues +2", feet = "Tatenashi Sune-ate +1"
 	}
 	sets.engaged.DW.DT = set_combine(sets.engaged,
 	{
